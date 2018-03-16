@@ -4,12 +4,13 @@ import { logger } from './main';
 import { GalaxyStore, DSourceEntry } from './generator';
 
 export function slugify(str: string) {
-    str = str.replace(/[_\/\\]/g, '-');
+    str = str.replace(/[_\\]/g, '-');
     str = str.replace('AI', 'Ai');
     str = str.replace('UI', 'Ui');
     str = str.replace(/[A-Z]+/g, (m) => '-' + m.toLowerCase());
     str = str.replace(/^[\-]+/, '');
-    str = str.replace(/\-+/g, '-');
+    str = str.replace(/[\/]+/g, '');
+    str = str.replace(/\s*\-+\s*/g, '-');
     return str;
 }
 
@@ -22,6 +23,7 @@ export class DocsRegistry {
     public constructor() {
         logger.info('Populating Galaxy docs..');
         this.populateGalaxy();
+        this.registerPage(new PageCustom('/', 'SC2 API', 'index.nj'));
         logger.info(`Done, ${this.pages.size} pages registered.`);
     }
 
@@ -30,10 +32,10 @@ export class DocsRegistry {
 
         for (const name in this.galaxy.entries)  {
             const page = <GalaxyApiEntry>this.registerPage(new GalaxyApiEntry(name, this.galaxy.entries[name]));
-            this.galaxyEntryPages.set(page.dentry.id, page);
+            this.galaxyEntryPages.set(page.params.dentry.id, page);
         }
 
-        this.registerPage(new PageDefault('Galaxy API Reference', '/galaxy/reference'));
+        this.registerPage(new PageCustom('/galaxy/reference', 'Galaxy API Reference'));
     }
 
     private registerPage(page: PageDefinition) {
@@ -44,29 +46,40 @@ export class DocsRegistry {
     }
 }
 
+export type PageParams = {};
+
 export abstract class PageDefinition {
-    title: string;
     permalink: string;
-    content?: string;
+    title: string;
     registry: DocsRegistry;
+    template?: string;
+    params: PageParams;
+
+    constructor() {
+        this.params = {};
+    }
 }
 
-export class PageDefault extends PageDefinition {
-    constructor(title: string, permalink: string, content?: string) {
+export class PageCustom extends PageDefinition {
+
+    constructor(permalink: string, title: string, template?: string, params?: {}) {
         super();
-        this.title = title;
         this.permalink = permalink;
-        this.content = content;
+        this.title = title;
+        this.template = template;
+        this.params = params;
     }
 }
 
 export class GalaxyApiEntry extends PageDefinition {
-    dentry: DSourceEntry;
+    params: {
+        dentry: DSourceEntry,
+    };
 
     constructor(name: string, entry: DSourceEntry) {
         super();
         this.title = entry.name;
         this.permalink = '/galaxy/reference/' + slugify(name);
-        this.dentry = entry;
+        this.params.dentry = entry;
     }
 }

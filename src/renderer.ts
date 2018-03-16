@@ -1,17 +1,78 @@
+import * as util from 'util';
 import * as markdown from 'markdown-it';
 // import * as markdownItTocAndAnchor from 'markdown-it-toc-and-anchor';
-import { PageDefinition, GalaxyApiEntry, PageDefault, slugify } from './context';
+import { PageDefinition, GalaxyApiEntry, PageCustom, slugify } from './context';
 import { DFunction, DKind, DFunctionParameter, DSourceEntry, DCategoryList, DPreset } from './generator';
 import * as hljs from 'highlight.js';
+import * as nj from 'nunjucks';
+
+const ntpl = nj.configure('templates', {
+    autoescape: true,
+    watch: true,
+    throwOnUndefined: true,
+});
+ntpl.addExtension('AutoEscapeExtension', new (require("nunjucks-autoescape")(nj))(ntpl));
+ntpl.addFilter('md', (content) => {
+    content = md.render(content);
+    content = content.replace(/<table>/g, '<table class="table table-striped">');
+    return content;
+});
+
+ntpl.addFilter('toc', (content: string) => {
+    type TocItem = {id?: string, title?: string, children: TocItem[], parent?: TocItem, currLevel: number;};
+    const reToc = /<h([2-5]) id="([^\"]+)"><a[^>]+>#<\/a>\s*([^<]+)/g;
+    const rootToc: TocItem = {
+        children: [],
+        currLevel: 1,
+    };
+    let currToc = rootToc;
+    let matches: RegExpExecArray;
+    while (matches = reToc.exec(content)) {
+        const mlevel = Number(matches[1]) - 1;
+        while (mlevel > currToc.currLevel) {
+            if (currToc.children.length) {
+                currToc = currToc.children[currToc.children.length - 1];
+            }
+            else {
+                currToc.children.push({
+                    id: '',
+                    title: '',
+                    children: [],
+                    currLevel: currToc.currLevel + 1,
+                    parent: currToc,
+                });
+            }
+        }
+        while (mlevel < currToc.currLevel && currToc.parent) {
+            currToc = currToc.parent;
+        }
+
+        let mtitle = matches[3];
+        if (currToc.parent && currToc.title && mtitle.startsWith(currToc.title)) {
+            mtitle = mtitle.substring(currToc.title.length + 2);
+        }
+
+        currToc.children.push({
+            id: matches[2],
+            title: mtitle,
+            children: [],
+            currLevel: currToc.currLevel + 1,
+            parent: currToc,
+        });
+    }
+
+    return rootToc;
+});
 
 // ---
 // TODO: MOST OF THIS SHIT MUST BE MOVED TO PROPER TEMPLATING SYSTEM
 // ---
 
 const markdownItTocAndAnchor = require('markdown-it-toc-and-anchor').default;
-const md = markdown({
+const md = markdown();
+md.set({
     typographer: true,
-    highlight: function(str, lang) {
+    highlight: (str, lang) => {
         if (lang && hljs.getLanguage(lang)) {
             try {
                 return (
@@ -30,31 +91,16 @@ const md = markdown({
             "</code></pre>"
         );
     }
-}).use(markdownItTocAndAnchor, {});
+});
+md.use(markdownItTocAndAnchor, {});
 
 const html = (strings: TemplateStringsArray, ...values: any[]) =>
 values.reduce((acc, v, i) => acc + (Array.isArray(v) ? v.join('\n') : String(v)) + strings[i + 1], strings[0]);
 
-const tplRoot = (title: string, content: string) => html`
-<!doctype html>
-<html>
-    <head>
-        <link rel="stylesheet" href="/dist/bootstrap.min.css">
-        <link rel="stylesheet" href="/dist/monokai.css">
-        <title>${title}</title>
-    </head>
-    <body>
-        <div class="container">
-            ${content}
-        <div>
-    </body>
-</html>
-`;
-
 function getRelated(page: GalaxyApiEntry) {
     const related: GalaxyApiEntry[] = [];
 
-    const list = page.registry.galaxy.categoryEntryMap[page.dentry.rootCategory];
+    const list = page.registry.galaxy.categoryEntryMap[page.params.dentry.rootCategory];
     if (list) {
         for (const item of list) {
             related.push(page.registry.galaxyEntryPages.get(item));
@@ -65,7 +111,7 @@ function getRelated(page: GalaxyApiEntry) {
 }
 
 function renderExamples(page: GalaxyApiEntry) {
-    const list = page.registry.galaxy.usageTable[page.dentry.id];
+    const list = page.registry.galaxy.usageTable[page.params.dentry.id];
     if (!list) return '--- None found ---';
 
     const o: string[] = [];
@@ -73,7 +119,7 @@ function renderExamples(page: GalaxyApiEntry) {
     for (const item of list) {
         const fname = /([^\/]+)$/.exec(item.sourceLink)[1].split('#');
         if (previousFile !== fname[0]) {
-            o.push(`##### ${item.modName} --- *[${fname[0]}](${item.sourceLink})*`);
+            o.push(`#### ${item.modName}\n --- *[${fname[0]}](${item.sourceLink})*`);
         }
         o.push('```c\n' + '// ' + fname[1] + '\n' + item.sourceLine + '\n```');
         previousFile = fname[0];
@@ -113,7 +159,7 @@ function wrapCode(code: string) {
 }
 
 const tplGalaxyPreset = (entry: DPreset) => html`
-Base type --- \`${entry.baseType}\`
+> Base type --- \`${entry.baseType}\`
 
 Name | Identifier | Code
 --- | --- | ---
@@ -127,9 +173,9 @@ ${entry.presets.map((item) => {
 const tplGalaxyFunction = (entry: DFunction) => html`
 ${entry.grammar ? `> *Grammar* --- ${entry.grammar.replace(/~/g, '__')}` + (entry.flags ? '\\\n' : '') : ''}` +
 `${entry.flags ? `> *Flags* --- ${entry.flags.map((item) => `\`${item}\``).join(' | ')}` : ''}
-${entry.hint ? '\n' + entry.hint.replace(/"([^"]+)"/g, '*"$1"*') : ''}
+${entry.hint ? '\n' + entry.hint.replace(/"([^"]+)"/g, '*"$1"*').replace(/'([^']+)'/g, '*"$1"*') : ''}
 `+ (!entry.parameters.length ? '' : (html`
-#### Arguments\n
+### Arguments\n
 ${entry.parameters.map((param) => {
     return '- ' + renderGalaxyType(param);
 }).join('\n')}
@@ -140,16 +186,16 @@ ${entry.rawCode ? '\n```c\n' + wrapCode(entry.rawCode) + '\n```' : ''}`
 // (dfunc.flags.length ? ' \\' : '')
 
 const tplGalaxyEntry = (page: GalaxyApiEntry) => html`
-## ${page.dentry.name}
-${tplKind[page.dentry.kind](page.dentry)}
+# ${page.params.dentry.name}
+${tplKind[page.params.dentry.kind](page.params.dentry)}
 
-#### Related
+### Related
 
-Category: [${page.dentry.categories[page.dentry.categories.length - 1]}](/galaxy/reference)
+Category: [${page.params.dentry.categories[page.params.dentry.categories.length - 1]}](/galaxy/reference#${slugify(page.params.dentry.categories[page.params.dentry.categories.length - 1])})
 
-${getRelated(page).map((item) => renderListItem(item))}
+${getRelated(page).map((item) => renderListItem(item)).join('')}
 
-#### Examples
+### Examples
 
 ${renderExamples(page)}
 `
@@ -167,7 +213,7 @@ const tplKind: any = {
 
 function renderListItem(itemPage: GalaxyApiEntry) {
     const o: string[] = [];
-    const entry = itemPage.dentry;
+    const entry = itemPage.params.dentry;
 
     o.push('- ');
     o.push('***[' + entry.kind.substr(0, 1) + ']***');
@@ -178,12 +224,13 @@ function renderListItem(itemPage: GalaxyApiEntry) {
 
     if (entry.kind === DKind.Function) {
         o.push(' --- ( ');
-        if ((<DFunction>entry).parameters.length) {
-            o.push((<DFunction>entry).parameters.map((item) => '' + item.galaxyType + '').join(' **,** '));
-        }
-        else {
-            o.push('void');
-        }
+        // if ((<DFunction>entry).parameters.length) {
+        //     o.push((<DFunction>entry).parameters.map((item) => '' + item.galaxyType + '').join(' **,** '));
+        // }
+        // else {
+        //     o.push('void');
+        // }
+        o.push((<DFunction>entry).symbolName);
         o.push(' )');
     }
 
@@ -192,12 +239,19 @@ function renderListItem(itemPage: GalaxyApiEntry) {
     return o.join('');
 }
 
-function renderDefaultPage(page: PageDefault) {
+function renderDefaultPage(page: PageCustom) {
+    if (page.template) {
+        return ntpl.render(page.template, Object.assign({title: page.title}, page.params));
+    }
+
     function renderCategoryList(list: DCategoryList, depth = 0) {
         const o: string[] = [];
+        if (depth === 1 && list.categories.length) {
+            o.push(`## ${list.fullname}\n---\n`);
+        }
         if (page.registry.galaxy.categoryEntryMap[list.fullname]) {
             if (depth !== 0) {
-                o.push(`## ${list.fullname}\n`);
+                o.push(`### ${list.fullname}\n`);
             }
 
             for (const key in page.registry.galaxy.categoryEntryMap[list.fullname]) {
@@ -218,9 +272,9 @@ function renderDefaultPage(page: PageDefault) {
         case '/galaxy/reference':
         {
             const o: string[] = [];
-            o.push(`# ${page.title}\n`);
+            // o.push(`# ${page.title}\n`);
             o.push(renderCategoryList(page.registry.galaxy.listing));
-            return o.join('');
+            return ntpl.render('page/markdown.nj', Object.assign({title: page.title, content: o.join('')}, page.params));
         }
 
         default:
@@ -237,16 +291,15 @@ export function renderPage(page: PageDefinition) {
         case GalaxyApiEntry:
         {
             content = tplGalaxyEntry(<GalaxyApiEntry>page);
+            return ntpl.render('page/markdown.nj', Object.assign({title: page.title, content: content}, page.params));
             break;
         }
-        case PageDefault:
+        case PageCustom:
         {
-            content = renderDefaultPage(<PageDefault>page);
+            content = renderDefaultPage(<PageCustom>page);
             break;
         }
     }
 
-    content = md.render(content);
-    content = content.replace(/<table>/g, '<table class="table table-striped">')
-    return tplRoot(page.title, content);
+    return content;
 }

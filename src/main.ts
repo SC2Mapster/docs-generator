@@ -28,11 +28,12 @@ const registry = new DocsRegistry();
 function startServer() {
     app.use(express.static('_site'));
     app.use((req, res, next) => {
-        const page = registry.pages.get(req.path.replace(/\/+$/, ''));
+        const page = registry.pages.get(req.path.replace(/(?!^)\/+$/, ''));
         logger.debug(`Requested: ${req.path}`);
         if (page) {
             logger.debug(`matched: ${page.constructor.name} :: ${page.title}`);
             res.send(renderPage(page));
+            logger.debug('done');
         }
         else {
             res.send(JSON.stringify(Array.from(registry.pages.keys())));
@@ -43,7 +44,7 @@ function startServer() {
     // });
 
     logger.info('Starting local server..');
-    app.listen(4000);
+    app.listen(3100);
 }
 
 async function reindex() {
@@ -67,8 +68,9 @@ function build() {
 }
 
 switch (process.argv[2]) {
-    case 'server': startServer(); break;
     case 'reindex': reindex(); break;
     case 'build': build(); break;
-    default: logger.error('unknown cmd'); break;
+    case 'server':
+    default:
+        startServer(); break;
 }

@@ -21,7 +21,7 @@ Host local server for serving doc pages. `nodemon` & `browsersync` is used to ai
 
 ### TOOO
 - [x] Adapt [nunjucks](https://github.com/mozilla/nunjucks) as templateing system; utilize HTML for better content structuring
-- [ ] Add search functionality
+- [ ] Add search functionality - http://fusejs.io/
 - [ ] Insert graphical labels from Trigger Editor
 - [x] Add Table of Concepts for listing pages
 - [ ] Attempt to recognize mentions about other functions in Hint of function, and link them properly. Example: Last Created Revealer

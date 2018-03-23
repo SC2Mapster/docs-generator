@@ -1,0 +1,13 @@
+{% extends 'base.nj' %}
+
+{% block content %}
+    {% for name, item in lstore.frame %}
+        <h3><a href="{{ page.permalink ~ '/' ~ (item.name|slugify) }}">{{ item.name }}</a></h3>
+        <p>
+            {% if item.blizzardOnly %}
+                <span class="badge badge-danger">Blizzard only</span>
+            {% endif %}
+        </p>
+        <code>{{ item|dump }}</code>
+    {% endfor %}
+{% endblock %}

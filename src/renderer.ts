@@ -1,7 +1,7 @@
 import * as util from 'util';
 import * as markdown from 'markdown-it';
 // import * as markdownItTocAndAnchor from 'markdown-it-toc-and-anchor';
-import { PageDefinition, GalaxyApiEntry, PageCustom, slugify } from './context';
+import { PageDefinition, GalaxyApiEntry, PageCustom, slugify, LayoutsPage, LayoutsFrame, LayoutsFrameList } from './context';
 import { DFunction, DKind, DFunctionParameter, DSourceEntry, DCategoryList, DPreset } from './generator';
 import * as hljs from 'highlight.js';
 import * as nj from 'nunjucks';
@@ -9,7 +9,7 @@ import * as nj from 'nunjucks';
 const ntpl = nj.configure('templates', {
     autoescape: true,
     watch: true,
-    throwOnUndefined: true,
+    throwOnUndefined: false,
 });
 ntpl.addExtension('AutoEscapeExtension', new (require("nunjucks-autoescape")(nj))(ntpl));
 ntpl.addFilter('md', (content) => {
@@ -63,6 +63,22 @@ ntpl.addFilter('toc', (content: string) => {
 
     return rootToc;
 });
+
+ntpl.addFilter('hljs', (code: string, language: string) => {
+    return (
+        '<pre class="hljs"><code>' +
+        hljs.highlight(language, code, true).value +
+        '</code></pre>'
+    );
+});
+
+ntpl.addFilter('slugify', (str: string) => {
+    return slugify(str);
+});
+
+// ntpl.addFilter('link', (code: string) => {
+//     return '';
+// });
 
 // ---
 // TODO: MOST OF THIS SHIT MUST BE MOVED TO PROPER TEMPLATING SYSTEM
@@ -241,7 +257,7 @@ function renderListItem(itemPage: GalaxyApiEntry) {
 
 function renderDefaultPage(page: PageCustom) {
     if (page.template) {
-        return ntpl.render(page.template, Object.assign({title: page.title}, page.params));
+        return ntpl.render(page.template, Object.assign({title: page.title, page: page}, page.vars));
     }
 
     function renderCategoryList(list: DCategoryList, depth = 0) {
@@ -295,6 +311,8 @@ export function renderPage(page: PageDefinition) {
             break;
         }
         case PageCustom:
+        case LayoutsFrame:
+        case LayoutsFrameList:
         {
             content = renderDefaultPage(<PageCustom>page);
             break;

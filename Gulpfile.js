@@ -25,7 +25,7 @@ gulp.task('browser-sync', () => {
 gulp.task('nodemon', (done) => {
     var started = false;
     return nodemon({
-        watch: ['src/renderer.ts'],
+        watch: ['src/renderer.ts', 'src/context.ts'],
         ext: 'ts',
         exec: 'ts-node ./src/main.ts serve',
         stdout: false,

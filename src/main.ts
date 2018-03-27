@@ -7,6 +7,8 @@ import * as winston from 'winston';
 import { DocsRegistry } from './context';
 import { renderPage } from './renderer';
 import { generateGalaxyReference, generateGalaxyUsage } from './generator';
+import { generateLayoutsReference } from './layouts/usage';
+import { reindexLayouts } from './layouts/generator';
 
 export const logger = new (winston.Logger)({
     level: 'debug',
@@ -22,10 +24,9 @@ export const logger = new (winston.Logger)({
     ],
 });
 
-const app = express();
-const registry = new DocsRegistry();
-
 function startServer() {
+    const app = express();
+    const registry = new DocsRegistry();
     app.use(express.static('_site'));
     app.use((req, res, next) => {
         const page = registry.pages.get(req.path.replace(/(?!^)\/+$/, ''));
@@ -56,6 +57,7 @@ async function reindex() {
 
 function build() {
     const siteDir = '_site';
+    const registry = new DocsRegistry();
     for (const page of registry.pages.values()) {
         logger.info(`generating: ${page.permalink}`);
 
@@ -65,10 +67,12 @@ function build() {
             renderPage(page)
         );
     }
+    logger.info('Done!');
 }
 
 switch (process.argv[2]) {
     case 'reindex': reindex(); break;
+    case 'reindex:layouts': reindexLayouts(); break;
     case 'build': build(); break;
     case 'server':
     default:

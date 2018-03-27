@@ -18,8 +18,23 @@ ntpl.addFilter('md', (content) => {
     return content;
 });
 
+type TocItem = {id?: string, title?: string, children: TocItem[], parent?: TocItem, currLevel: number;};
+
+ntpl.addFilter('tocc', (toc: TocItem) => {
+    const rootToc: TocItem = {
+        children: [],
+        currLevel: 1,
+    };
+    return rootToc;
+});
+
+ntpl.addFilter('toca', (toc: TocItem, content: string, level: number) => {
+    content = `<h${level}>${content}</h${level}>`;
+    content = md.render(content);
+    return content;
+});
+
 ntpl.addFilter('toc', (content: string) => {
-    type TocItem = {id?: string, title?: string, children: TocItem[], parent?: TocItem, currLevel: number;};
     const reToc = /<h([2-5]) id="([^\"]+)"><a[^>]+>#<\/a>\s*([^<]+)/g;
     const rootToc: TocItem = {
         children: [],

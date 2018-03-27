@@ -21,36 +21,111 @@ export type Desc = {
 export type ClassField = {
     name: string;
     type: string;
-    readonly: boolean;
+    constant: boolean;
+    defaultValue: string;
 };
 
 export type Class = {
     name: string;
-    inherits: string[];
+    inheritanceList: string[];
     fields: ClassField[];
 };
 
 export type Frame = {
     name: string;
     blizzOnly: boolean;
-    class: string;
-    desc: string;
+    classType: string;
+    descType: string;
+    category: string;
 };
 
-export type LayoutsStore = {
-    type: {
+export type LayoutsSchema = {
+    types: {
         [name: string]: DataType;
     };
-    field: {
+    fields: {
         [name: string]: Field;
     };
-    desc: {
+    descs: {
         [name: string]: Desc;
     };
-    class: {
+    classes: {
         [name: string]: Class;
     };
-    frame: {
+    frames: {
         [name: string]: Frame;
     };
+};
+
+//
+
+export type RefOccurence = {
+    modName: string;
+    filename: string;
+    sourceUrl: string;
+    lineStart: number;
+    posStart: number;
+};
+
+export type ElementOccurence = RefOccurence & {
+    frameType: string;
+    attributes: { [key: string]: string };
+};
+
+export type FrameOccurence = RefOccurence & {
+};
+
+export type RefStore = {
+    frameOccurences: { [frameName: string]: FrameOccurence[]; };
+    fieldOccurences: { [fieldName: string]: ElementOccurence[]; };
+};
+
+export type FrameCategoryInfo = {
+    name: string
+    description?: string;
+    frameNames: string[];
+};
+
+export type FieldMetaAttr = {
+    type: string;
+    required: boolean;
+};
+
+export type FieldMeta = {
+    attrs: { [attrName: string]: FieldMetaAttr; }
+};
+
+export type ClassMeta = {
+    fields: { [fieldName: string]: FieldMeta; }
+};
+
+export type MetadataStore = {
+    categoryInfo: FrameCategoryInfo[];
+    categoryMap: { [categoryName: string]: string; };
+    frameCategoryMap: { [frameName: string]: string[]; };
+    classMeta: { [className: string]: ClassMeta; };
+};
+
+export interface LayoutsStoreComplete {
+    schema: LayoutsSchema;
+    refs: RefStore;
+    metadata: MetadataStore;
+};
+
+export class LayoutsManager implements LayoutsStoreComplete {
+    schema: LayoutsSchema;
+    refs: RefStore;
+    metadata: MetadataStore;
+
+    // public get categorizedFrames() {
+    //     const categoryFrameMap = new Map<string, Frame[]>();
+    //     for (const name in this.metadata.categoryMap) {
+    //         const categoryName = this.metadata.categoryMap[name];
+    //         if (!categoryFrameMap.has(categoryName)) categoryFrameMap.set(categoryName, []);
+    //         categoryFrameMap.get(categoryName).push(this.schema.frames[name]);
+    //     }
+    //     console.log(categoryFrameMap);
+
+    //     return categoryFrameMap;
+    // }
 };

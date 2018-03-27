@@ -6,33 +6,63 @@
     <hr>
 
     <ul>
-        <li><strong>Class:</strong> {{ inheritanceList|reverse|join(' <em>—></em> ')|safe }}</li>
+        <li><strong>Class:</strong> {{ inheritanceList|join(' <em><—</em> ')|safe }}</li>
         <li><strong>Desc:</strong> {{ frame.desc }}</li>
         {% if frame.blizzOnly %}<li><span class="badge badge-danger">Blizzard only</span></li>{% endif %}
     </ul>
 
     <h2>Fields</h2>
-    <dl class="row">
+    <dl class="row frame-fields">
         {% for classType in classList %}
+            {% set classMeta = lst.metadata.classMeta[classType.name] %}
             <dd class="col-12"><hr></dd>
             <dt class="col-md-4 text-right"></dt>
-            <dd class="col-md-8"><h4 class="d-inline-block">{{ classType.name }}</h4> - [<em>{{ classType.fields|length }}</em>]</dd>
+            <dd class="col-md-8"><h4 class="d-inline-block">{{ classType.name }}</h4> — [<em>{{ classType.fields|length }}</em>]</dd>
 
-            {% for item in classType.fields %}
+            {% for fieldName, item in classType.fields %}
+                {% set fieldMeta = classMeta.fields[fieldName] %}
+                {% set attrNames = [] %}
+                {% for attrName, attrInfo in fieldMeta.attrs %}
+                    {% set attrNames = (attrNames.push(attrName~'=""'), attrNames) %}
+                {% endfor %}
                 <dt class="col-md-4 text-right">{{ item.name }}</dt>
                 <dd class="col-md-8">
                     <p>
-                        <a href="">{{ item.type }}</a>
-                        {% if item.readonly %}
-                            - <span class="badge badge-primary">[readonly]</span>
+                        <a href="">{{ item.fieldKind }}</a> - {{ item.type }}
+                        {% if item.constant %}
+                            — <span class="badge badge-primary">[constant]</span>
                         {% endif %}
                     </p>
-                    {% autoescape false %}{{ ('<' ~ item.name ~ ' val="X"' ~ '/>')|hljs('xml') }}{% endautoescape %}
+                    <dl class="row">
+                        {% for attrName, attrInfo in fieldMeta.attrs %}
+                            <dt class="col-lg-3 text-right"><em>{{ attrName }}</em></dt>
+                            <dd class="col-lg-9">
+                                <code>{{ attrInfo.type }}</code>
+                                —
+                                {% if attrInfo.required %}
+                                    <span class="badge badge-primary">[required]</span>
+                                {% else %}
+                                    <span class="badge badge">[optional]</span>
+                                {% endif %}
+                            </dd>
+                        {% endfor %}
+                    </dl>
+                    {% autoescape false %}{{ ('<' ~ item.name ~ ' ' ~ (attrNames|join(' ')) ~ '/>')|hljs('xml') }}{% endautoescape %}
+                    {# {% for foccur in fieldOccurrences[fieldName] %}
+                        {% if loop.index < 10 %}
+                            {% autoescape false %}{{ foccur.attributes|dump|hljs('js') }}{% endautoescape %}
+                            <br>
+                            {{ foccur.frameType }}
+                            <a href="{{ foccur.sourceUrl }}">[#]</a>
+                            <br>
+                        {% endif %}
+                    {% endfor %} #}
                 </dd>
+                <dd class="col-12"><hr></dd>
             {% endfor %}
         {% endfor %}
 
-        {% for descType in descList %}
+        {# {% for descType in descList %}
             <dd class="col-12"><hr></dd>
             <dt class="col-md-4 text-right"></dt>
             <dd class="col-md-8"><h4 class="d-inline-block">{{ descType.name }}</h4> - [<em>{{ descType.fields|length }}</em>]</dd>
@@ -43,9 +73,17 @@
                     {% autoescape false %}{{ ('<' ~ item.name ~ ' val="X"' ~ '/>')|hljs('xml') }}{% endautoescape %}
                 </dd>
             {% endfor %}
-        {% endfor %}
+        {% endfor %} #}
     </dl>
 
     <h3>Examples</h3>
-    -
+    <ul>
+        {% for item in occurrences %}
+            {% if loop.index < 100 %}
+                <li>{{ item.modName }} :: {{ item.filename }} #L {{ item.lineStart }}</li>
+            {% elseif loop.index === 100 %}
+                <li>... and {{ (loop.length-1) }} more</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
 {% endblock %}

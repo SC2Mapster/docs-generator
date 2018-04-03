@@ -1,5 +1,14 @@
 {% extends 'base.nj' %} 
 
+{% block toc %}
+    {% if content %}
+        {% set toc = content|md|toc %}
+        {% if toc.children|length %}
+            {% include 'parts/toc-section.nj' %}
+        {% endif %}
+    {% endif %}
+{% endblock %}
+
 {% block content %}
     {% autoescape false %}
         {% filter md %}{{ content }}{% endfilter %}

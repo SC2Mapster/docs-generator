@@ -3,39 +3,43 @@ export type DataType = {
     size: number;
 };
 
-export type Field = {
+export type ClassFieldDef = {
     name: string;
     attributes: {
-        name: string;
-        type: string;
-    }[];
+        [name: string]: {
+            name: string;
+            required: boolean;
+        };
+    };
+    enumValues?: string[];
 };
 
 export type Desc = {
     name: string;
-    fields: {
-        name: string;
-    }[];
+    inheritanceList: string[];
+    fields: { [fieldName: string]: FieldInfo };
 };
 
-export type ClassField = {
+export type FieldInfo = {
     name: string;
+    fieldKind: string;
     type: string;
     constant: boolean;
     defaultValue: string;
+    flags?: string[];
 };
 
 export type Class = {
     name: string;
     inheritanceList: string[];
-    fields: ClassField[];
+    fields: { [fieldName: string]: FieldInfo };
 };
 
 export type Frame = {
     name: string;
     blizzOnly: boolean;
     classType: string;
-    descType: string;
+    desc: string;
     category: string;
 };
 
@@ -43,8 +47,8 @@ export type LayoutsSchema = {
     types: {
         [name: string]: DataType;
     };
-    fields: {
-        [name: string]: Field;
+    classFields: {
+        [name: string]: ClassFieldDef;
     };
     descs: {
         [name: string]: Desc;
@@ -57,7 +61,8 @@ export type LayoutsSchema = {
     };
 };
 
-//
+// ---
+// ---
 
 export type RefOccurence = {
     modName: string;
@@ -80,6 +85,9 @@ export type RefStore = {
     fieldOccurences: { [fieldName: string]: ElementOccurence[]; };
 };
 
+// ---
+// ---
+
 export type FrameCategoryInfo = {
     name: string
     description?: string;
@@ -89,13 +97,20 @@ export type FrameCategoryInfo = {
 export type FieldMetaAttr = {
     type: string;
     required: boolean;
+    occurrenceCount: number;
+    values: string[];
 };
 
 export type FieldMeta = {
+    occurrenceCount: number;
     attrs: { [attrName: string]: FieldMetaAttr; }
 };
 
 export type ClassMeta = {
+    fields: { [fieldName: string]: FieldMeta; }
+};
+
+export type DescMeta = {
     fields: { [fieldName: string]: FieldMeta; }
 };
 
@@ -104,6 +119,7 @@ export type MetadataStore = {
     categoryMap: { [categoryName: string]: string; };
     frameCategoryMap: { [frameName: string]: string[]; };
     classMeta: { [className: string]: ClassMeta; };
+    descMeta: { [descName: string]: DescMeta; };
 };
 
 export interface LayoutsStoreComplete {
@@ -112,20 +128,3 @@ export interface LayoutsStoreComplete {
     metadata: MetadataStore;
 };
 
-export class LayoutsManager implements LayoutsStoreComplete {
-    schema: LayoutsSchema;
-    refs: RefStore;
-    metadata: MetadataStore;
-
-    // public get categorizedFrames() {
-    //     const categoryFrameMap = new Map<string, Frame[]>();
-    //     for (const name in this.metadata.categoryMap) {
-    //         const categoryName = this.metadata.categoryMap[name];
-    //         if (!categoryFrameMap.has(categoryName)) categoryFrameMap.set(categoryName, []);
-    //         categoryFrameMap.get(categoryName).push(this.schema.frames[name]);
-    //     }
-    //     console.log(categoryFrameMap);
-
-    //     return categoryFrameMap;
-    // }
-};

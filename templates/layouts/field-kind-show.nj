@@ -1,0 +1,23 @@
+<h1>{{ fieldKind.name }}</h1>
+
+<h3>Attributes</h3>
+
+<dl class="row">
+    {% for attrName, attrInfo in fieldKind.attributes %}
+        <dt class="col-lg-3 text-right"><em>{{ attrName }}</em></dt>
+        <dd class="col-lg-9">
+            {% if attrInfo.required %}
+                <span class="badge badge-primary">[required]</span>
+            {% else %}
+                <span class="badge badge">[optional]</span>
+            {% endif %}
+        </dd>
+    {% endfor %}
+</dl>
+
+<h3>Usage</h3>
+<ul>
+    {% for item in usage %}
+        <li><a href="{{ item.fieldPage|link }}">{{ item.fieldName }}</a> in <a href="{{ item.page|link }}">{{ item.page.title }}</a></li>
+    {% endfor %}
+</ul>

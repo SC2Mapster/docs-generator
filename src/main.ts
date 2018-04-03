@@ -4,7 +4,7 @@ import * as yaml from 'js-yaml';
 import * as express from 'express';
 import * as sugar from 'sugar';
 import * as winston from 'winston';
-import { DocsRegistry } from './context';
+import { PageRegistry } from './context';
 import { renderPage } from './renderer';
 import { generateGalaxyReference, generateGalaxyUsage } from './generator';
 import { generateLayoutsReference } from './layouts/usage';
@@ -26,11 +26,15 @@ export const logger = new (winston.Logger)({
 
 function startServer() {
     const app = express();
-    const registry = new DocsRegistry();
-    app.use(express.static('_site'));
+    const registry = new PageRegistry();
     app.use((req, res, next) => {
-        const page = registry.pages.get(req.path.replace(/(?!^)\/+$/, ''));
-        logger.debug(`Requested: ${req.path}`);
+        if (req.path.match(/^\/dist\/.+/)) {
+            return next();
+        }
+        let key = req.path.replace(/(?!^)\/+$/, '');
+        key = key.replace(/^\//, '');
+        const page = registry.pages.get(key);
+        logger.debug(`Requested: ${key} :: ${req.path}`);
         if (page) {
             logger.debug(`matched: ${page.constructor.name} :: ${page.title}`);
             res.send(renderPage(page));
@@ -40,6 +44,7 @@ function startServer() {
             res.send(JSON.stringify(Array.from(registry.pages.keys())));
         }
     });
+    app.use(express.static('_site'));
     // app.get('/', (req, res) => {
     //     res.send(renderPage());
     // });
@@ -57,7 +62,7 @@ async function reindex() {
 
 function build() {
     const siteDir = '_site';
-    const registry = new DocsRegistry();
+    const registry = new PageRegistry();
     for (const page of registry.pages.values()) {
         logger.info(`generating: ${page.permalink}`);
 

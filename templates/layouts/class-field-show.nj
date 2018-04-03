@@ -1,0 +1,86 @@
+<h1><small class="text-muted">Field:</small> {{ classField.name }} — <a href="{{ page.parent|link }}">{{ classType.name }}</a></h1>
+
+<h3>Field info</h3>
+
+<p>
+    {% if fieldKind %}
+        <a href="{{ fieldKind|link }}">{{ classField.fieldKind }}</a> — <code>{{ classField.type }}</code>
+    {% else %}
+        <span class="text-muted">— Unknown —</span>
+    {% endif %}
+    {% if classField.constant %}
+        — <span class="badge badge-primary" title="Constant/readonly - cannot be modified">C</span>
+    {% endif %}
+</p>
+
+<h3>Attributes</h3>
+
+<dl class="row">
+    {% for attrName, attrInfo in fieldMeta.attrs %}
+        <dt class="col-lg-3 text-right"><em>{{ attrName }}</em></dt>
+        <dd class="col-lg-9">
+            <code>{{ attrInfo.type }}</code>
+            {% if attrInfo.required %}
+                <span class="badge badge-primary" title="Attribute required">R</span>
+            {% endif %}
+            {% if attrInfo.values %}
+                {# <ul>
+                    {% for item in attrInfo.values %}
+                        <li>{{ item }}</li>
+                    {% endfor %}
+                </ul> #}
+                <br>
+                <code class="text-muted">{{ attrInfo.values|join(' | ') }}</code>
+            {% endif %}
+        </dd>
+    {% endfor %}
+</dl>
+
+<h3>XML syntax</h3>
+{% set attrNames = [] %}
+{% for attrName, attrInfo in fieldMeta.attrs %}
+    {% set attrNames = (attrNames.push(attrName~'=""'), attrNames) %}
+{% endfor %}
+{% autoescape false %}{{ ('<' ~ classField.name ~ ' ' ~ (attrNames|join(' ')) ~ '/>')|hljs('xml') }}{% endautoescape %}
+
+{# {% if classField.flags %}
+    <h3>Flags list</h3>
+
+    <ul>
+        {% for item in classField.flags %}
+            <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+{% endif %} #}
+
+{# {% if fieldKind.enumValues %}
+    <h3>Enum values</h3>
+
+    <ul>
+        {% for item in fieldKind.enumValues %}
+            <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+{% endif %} #}
+
+{# <h2>Frames list</h2>
+<p>
+    {% for item in framesList %}
+        <a href="{{ item|link }}">{{ item.title }}</a>
+        {% if not loop.last %} | {% endif %}
+    {% endfor %}
+</p> #}
+
+<h2>Examples</h2>
+{% macro xmlField(name, attributes) -%}
+    <{{ name }}{% for attrName, attrValue in attributes %} {{ attrName }}="{{ attrValue }}"{% endfor %}/>
+{%- endmacro %}
+{% for foccur in fieldOccurrences %}
+    {% if loop.index < 200 %}
+        {% autoescape false %}{{ xmlField(classField.name, foccur.attributes)|hljs('xml') }}{% endautoescape %}
+    {% elseif loop.index == 200 %}
+        <small class="text-muted">— skipped <em>{{ fieldOccurrences.length - loop.index }}</em> more occurrences —</small>
+    {% endif %}
+{% else %}
+    <p class="text-muted">— None —</p>
+{% endfor %}

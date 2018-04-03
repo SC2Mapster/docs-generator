@@ -1,7 +1,8 @@
 import * as util from 'util';
 import * as markdown from 'markdown-it';
 // import * as markdownItTocAndAnchor from 'markdown-it-toc-and-anchor';
-import { PageDefinition, GalaxyApiEntry, PageCustom, slugify, LayoutsPage, LayoutsFrame, LayoutsFrameList } from './context';
+import { PageDefinition, PageCustom, slugify, PageDocDefinition } from './page/page';
+import { GalaxyApiEntry } from './page/galaxy';
 import { DFunction, DKind, DFunctionParameter, DSourceEntry, DCategoryList, DPreset } from './generator';
 import * as hljs from 'highlight.js';
 import * as nj from 'nunjucks';
@@ -89,6 +90,10 @@ ntpl.addFilter('hljs', (code: string, language: string) => {
 
 ntpl.addFilter('slugify', (str: string) => {
     return slugify(str);
+});
+
+ntpl.addFilter('link', (page: PageDefinition) => {
+    return `/${page.permalink}`;
 });
 
 // ntpl.addFilter('link', (code: string) => {
@@ -251,7 +256,7 @@ function renderListItem(itemPage: GalaxyApiEntry) {
     if (entry.kind === DKind.Function) {
         o.push(' --- ' + renderGalaxyType((<DFunction>entry).returnType));
     }
-    o.push(` --- **[${itemPage.title}](${itemPage.permalink})**`);
+    o.push(` --- **[${itemPage.title}](/${itemPage.permalink})**`);
 
     if (entry.kind === DKind.Function) {
         o.push(' --- ( ');
@@ -271,10 +276,6 @@ function renderListItem(itemPage: GalaxyApiEntry) {
 }
 
 function renderDefaultPage(page: PageCustom) {
-    if (page.template) {
-        return ntpl.render(page.template, Object.assign({title: page.title, page: page}, page.vars));
-    }
-
     function renderCategoryList(list: DCategoryList, depth = 0) {
         const o: string[] = [];
         if (depth === 1 && list.categories.length) {
@@ -300,18 +301,17 @@ function renderDefaultPage(page: PageCustom) {
     }
 
     switch (page.permalink) {
-        case '/galaxy/reference':
+        case 'galaxy/reference':
         {
             const o: string[] = [];
             // o.push(`# ${page.title}\n`);
             o.push(renderCategoryList(page.registry.galaxy.listing));
-            return ntpl.render('page/markdown.nj', Object.assign({title: page.title, content: o.join('')}, page.params));
+            return ntpl.render('galaxy/list.nj', Object.assign({title: page.title, page: page, content: o.join('')}, page.params));
         }
+    }
 
-        default:
-        {
-            return '# 404';
-        }
+    if (page.template) {
+        return ntpl.render(page.template, Object.assign({title: page.title, page: page}, page.vars));
     }
 }
 
@@ -322,16 +322,23 @@ export function renderPage(page: PageDefinition) {
         case GalaxyApiEntry:
         {
             content = tplGalaxyEntry(<GalaxyApiEntry>page);
-            return ntpl.render('page/markdown.nj', Object.assign({title: page.title, content: content}, page.params));
+            content = ntpl.render('page/markdown.nj', Object.assign({title: page.title, page: page, content: content}, page.params));
             break;
         }
         case PageCustom:
-        case LayoutsFrame:
-        case LayoutsFrameList:
+        case PageDocDefinition:
         {
             content = renderDefaultPage(<PageCustom>page);
             break;
         }
+    }
+
+    if (page.permalink !== 'galaxy/reference') {
+        content = ntpl.render('base.nj', {
+            title: page.title,
+            page: page,
+            content: content,
+        });
     }
 
     return content;

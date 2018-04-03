@@ -116,10 +116,10 @@ export async function generateLayoutsReference() {
             parser.process(modmatch[1], relativeFilename, s);
         }
     }
-    // processMod('D:/ntdev/sc2-res-v420');
-    // processMod('D:/ntdev/SC2GameData-master/heroes');
-    processMod('/run/media/kk/nt1/ntdev/sc2-res-v420');
-    processMod('/run/media/kk/nt1/ntdev/SC2GameData-master/heroes');
+    processMod('D:/ntdev/sc2-res-v420');
+    processMod('D:/ntdev/SC2GameData-master/heroes');
+    // processMod('/run/media/kk/nt1/ntdev/sc2-res-v420');
+    // processMod('/run/media/kk/nt1/ntdev/SC2GameData-master/heroes');
 
     return parser.refStore;
 }

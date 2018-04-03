@@ -1,34 +1,30 @@
-{% extends 'base.nj' %}
-
-{% block content %}
-    {% for category in lstore.metadata.categoryInfo %}
-        <h2>{{ category.name }}</h2>
-        {% if category.description %}
-            <p>{{ category.description }}</p>
-        {% endif %}
-        <hr>
-        <div class="frames-section-list">
-            {% set framesList = lstore.metadata.frameCategoryMap[category.name] %}
-            {% for name in framesList %}
-                {% set frame = lstore.schema.frames[name] %}
-                {% set typeClass = lstore.schema.classes[frame.classType] %}
-                <div class="frame-item">
-                    <h5>
-                        <a href="{{ page.permalink ~ '/' ~ (frame.name|slugify) }}">
-                            {{ frame.name }}
-                            {# <small>{{ frame.class[name] }}</small> #}
-                            {% if frame.blizzOnly %}
-                                <span class="badge badge-danger">Blizzard only</span>
-                            {% else %}
-                                {# <span class="badge badge-default">Usable</span> #}
-                            {% endif %}
-                        </a>
-                    </h5>
-                    {% if typeClass -%}
-                        <small class="ctype">[ {{ typeClass.inheritanceList|join(' <em><—</em> ')|safe }} ]</small>
-                    {%- endif %}
-                </div>
-            {% endfor %}
-        </div>
-    {% endfor %}
-{% endblock %}
+{% for category in lstore.metadata.categoryInfo %}
+    <h2>{{ category.name }}</h2>
+    {% if category.description %}
+        <p>{{ category.description }}</p>
+    {% endif %}
+    <hr>
+    <div class="frames-section-list">
+        {% set framesList = lstore.metadata.frameCategoryMap[category.name] %}
+        {% for name in framesList %}
+            {% set frame = lstore.schema.frames[name] %}
+            {% set typeClass = lstore.schema.classes[frame.classType] %}
+            <div class="frame-item">
+                <h5>
+                    <a href="/{{ page.permalink ~ '/' ~ (frame.name|slugify) }}">
+                        {{ frame.name }}
+                        {# <small>{{ frame.class[name] }}</small> #}
+                        {% if frame.blizzOnly %}
+                            <span class="badge badge-danger text-uppercase">Blizzard only</span>
+                        {% else %}
+                            {# <span class="badge badge-default">Usable</span> #}
+                        {% endif %}
+                    </a>
+                </h5>
+                {% if typeClass -%}
+                    <small class="ctype">[ {{ typeClass.inheritanceList|join(' <em><—</em> ')|safe }} ]</small>
+                {%- endif %}
+            </div>
+        {% endfor %}
+    </div>
+{% endfor %}

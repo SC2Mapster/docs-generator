@@ -1,0 +1,50 @@
+<h1>{{ classType.name }}</h1>
+
+<dl>
+    <dt>Inheritance list</dt>
+    <dd>
+        {% for item in classList %}
+            <a href="{{ item|link }}">{{ item.title }}</a>
+            {% if not loop.last %}<em><—</em>{% endif %}
+        {% endfor %}
+    </dd>
+    
+    <dt>Used by frames</dt>
+    <dd>
+        <ul>
+            {% for item in framesList %}
+                <li><a href="{{ item|link }}">{{ item.title }}</a></li>
+            {% endfor %}
+        </ul>
+    </dd>
+</dl>
+
+<h2>Fields</h2>
+<dl class="row frame-fields">
+    {% for item in fields %}
+        <dt class="col-md-4 text-right"><a href="{{ item.fieldPage|link }}">{{ item.fieldPage.def.name }}</a></dt>
+        <dd class="col-md-8">
+            {% if item.fieldKindPage %}
+                <a href="{{ item.fieldKindPage|link }}"><code>{{ item.fieldKindPage.title }}</code></a>
+            {% endif %}
+        </dd>
+    {% else %}
+        <dd class="col-12"><p class="text-muted">— None —</p></dd>
+    {% endfor %}
+</dl>
+
+<h2>Extended by</h2>
+<ul>
+    {% for item in extendedByList %}
+        <li><a href="{{ item|link }}">{{ item.title }}</a></li>
+    {% else %}
+        <p class="text-muted">— None —</p>
+    {% endfor %}
+</ul>
+
+{# <h2>Frame list implementation</h2>
+<ul>
+    {% for item in framesList %}
+        <li><a href="{{ item|link }}">{{ item.title }}</a></li>
+    {% endfor %}
+</ul> #}

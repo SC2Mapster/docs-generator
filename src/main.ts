@@ -41,9 +41,10 @@ function startServer() {
             logger.debug('done');
         }
         else {
-            res.send(JSON.stringify(Array.from(registry.pages.keys())));
+            return next();
         }
     });
+    app.use(express.static('static'));
     app.use(express.static('_site'));
     // app.get('/', (req, res) => {
     //     res.send(renderPage());
@@ -58,6 +59,7 @@ async function reindex() {
     // const galStore = <GalaxyStore>yaml.load(fs.readFileSync('_data/galaxy.yml', 'utf8'));
     await generateGalaxyUsage(galStore);
     fs.writeFileSync('_data/galaxy.yml', yaml.dump(galStore));
+    logger.info('Done!');
 }
 
 function build() {
@@ -79,7 +81,7 @@ switch (process.argv[2]) {
     case 'reindex': reindex(); break;
     case 'reindex:layouts': reindexLayouts(); break;
     case 'build': build(); break;
-    case 'server':
+    case 'serve':
     default:
         startServer(); break;
 }

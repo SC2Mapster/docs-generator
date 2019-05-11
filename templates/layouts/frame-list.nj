@@ -13,14 +13,11 @@
                 <h5>
                     <a href="/{{ page.permalink ~ '/' ~ (frame.name|slugify) }}">
                         {{ frame.name }}
-                        {# <small>{{ frame.class[name] }}</small> #}
-                        {% if frame.blizzOnly %}
-                            <span class="badge badge-danger text-uppercase">Blizzard only</span>
-                        {% else %}
-                            {# <span class="badge badge-default">Usable</span> #}
-                        {% endif %}
                     </a>
                 </h5>
+                {% if frame.blizzOnly %}
+                    <span class="badge badge-danger text-uppercase" title="Blizzard only"><small>BLZ</small></span>
+                {% endif %}
                 {% if typeClass -%}
                     <small class="ctype">[ {{ typeClass.inheritanceList|join(' <em><—</em> ')|safe }} ]</small>
                 {%- endif %}

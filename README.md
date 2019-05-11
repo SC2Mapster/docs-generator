@@ -2,16 +2,16 @@
 
 ### Contributions guide
 
-**Requiments:** `node` and `npm`
+**Requiments:** `node` and `yarn`
 
-**Installation:** Clone repo, then `npm install`
+**Installation:** Clone repo, then `yarn install`
 
 **Usage:**
 
-> `npm run reindex`\
+> `yarn run reindex`\
 Build index storage, required to generate doc pages.
 
-> `npm run build`\
+> `yarn run build`\
 Build doc pages
 
 > `gulp serve`\

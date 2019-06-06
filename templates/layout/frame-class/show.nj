@@ -1,0 +1,30 @@
+<h1>{{ frameClass.name }}</h1>
+
+<dl class="row">
+    <dt class="col-lg-3">Parent</dt>
+    <dd class="col-lg-9">
+        {% if frameClass.cparent %}
+            <a href="{{ frameClass.cparent|dpage|link }}">{{ frameClass.cparent.name }}</a>
+        {% else %}
+            <code>- None -</code>
+        {% endif %}
+    </dd>
+</dl>
+
+<h3>Properties</h3>
+
+<dl class="row">
+    {% for frameProperty in frameClass.properties.values() %}
+        <div class="col-12"><hr class="small"></div>
+        <dt class="col-lg-3 text-right">
+            <code class="text-nowrap">{{ frameProperty.name }}</code>
+        </dt>
+        <dd class="col-lg-9">
+            <p>type = <a href="{{ frameProperty.etype.type|dpage|link }}"><code>{{ frameProperty.etype.type.name }}</code></a></p>
+
+            {% if frameProperty.etype.label %}
+                <blockquote>{{ frameProperty.etype.label|md|safe }}</blockquote>
+            {% endif %}
+        </dd>
+    {% endfor %}
+</dl>

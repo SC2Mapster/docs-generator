@@ -5,6 +5,8 @@ import { GalaxyStore, DSourceEntry } from './generator';
 import { LayoutsRegistry } from './page/layouts';
 import { GalaxyApiEntry } from './page/galaxy';
 import { PageDefinition, PageCustom, PageOptions, DocElementDefinition, PageDocDefinition } from './page/page';
+import { setupRegistry } from './renderer';
+import { populateLayoutPages } from './page/uiLayout';
 
 export class PageRegistry {
     public galaxy: GalaxyStore;
@@ -12,12 +14,17 @@ export class PageRegistry {
 
     public pages = new Map<string, PageDefinition>();
     public rootPage: PageDefinition;
+    public defPageMap = new Map<DocElementDefinition, PageDefinition>();
 
     public constructor() {
         logger.info('Populating Galaxy docs..');
         this.populateGalaxy();
+
         logger.info('Populating Layouts docs..');
         (new LayoutsRegistry(this)).install();
+
+        logger.info('Populating Layouts docs v2..');
+        populateLayoutPages(this);
 
         this.rootPage = new PageCustom({
             title: 'SC2 API Docs',
@@ -28,6 +35,8 @@ export class PageRegistry {
         this.installPage(this.rootPage);
 
         logger.info(`Done, ${this.pages.size} pages registered.`);
+
+        setupRegistry(this);
     }
 
     protected populateGalaxy() {
@@ -54,7 +63,9 @@ export class PageRegistry {
     }
 
     addDocPage<T extends DocElementDefinition>(def: T, options?: PageOptions, parent?: PageDefinition) {
-        return this.registerPage(new PageDocDefinition(def, options), parent);
+        const page = this.registerPage(new PageDocDefinition(def, options), parent);
+        this.defPageMap.set(def, page);
+        return page;
     }
 
     registerPage<T extends PageDefinition>(page: T, parent?: PageDefinition) {

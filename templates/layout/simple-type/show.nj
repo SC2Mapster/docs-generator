@@ -1,0 +1,78 @@
+<h1>{{ simpleType.name }}</h1>
+
+<dl class="row">
+    <dt class="col-lg-3">Kind</dt>
+    <dd class="col-lg-9"><code>{{ simpleTypeKind }}</code></dd>
+
+    <dt class="col-lg-3">Native datatype</dt>
+    <dd class="col-lg-9"><code>{{ nativeDataType }}</code></dd>
+
+    <dt class="col-lg-3">Flags</dt>
+    <dd class="col-lg-9"><code>-</code></dd>
+
+    {% if simpleType.internalType %}
+        <dt class="col-lg-3">Internal type</dt>
+        <dd class="col-lg-9"><code>{{ simpleType.internalType }}</code></dd>
+    {% endif %}
+
+    {% if simpleType.union %}
+        <dt class="col-lg-3">Union of types</dt>
+        <dd class="col-lg-9">
+            <ul>
+                {% for unType in simpleType.union %}
+                    <li><a href="{{ unType|dpage|link }}">{{ unType.name }}</a></li>
+                {% endfor %}
+            </ul>
+        </dd>
+    {% endif %}
+</dl>
+
+{% if simpleType.emap %}
+    <h3>Enumeration</h3>
+
+    <table class="table table-sm table-striped">
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>Name</th>
+                <th>Label</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in simpleType.emap.values() %}
+                <tr>
+                    <td><small>{{ loop.index }}.</small></td>
+                    <td class="text-nowrap"><code>{{ item.name }}</code></td>
+                    <td>
+                        {% if item.label %}
+                            {{ item.label|md|safe }}
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endif %}
+
+{% if simpleType.patterns %}
+    <h3>Regex patterns</h3>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>Pattern</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in simpleType.patterns %}
+                <tr>
+                    <td><small>{{ loop.index }}.</small></td>
+                    <td>
+                        {% autoescape false %}{{ (item.toString())|hljs('javascript') }}{% endautoescape %}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endif %}

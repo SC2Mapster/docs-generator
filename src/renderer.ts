@@ -1,11 +1,12 @@
 import * as util from 'util';
 import * as markdown from 'markdown-it';
 // import * as markdownItTocAndAnchor from 'markdown-it-toc-and-anchor';
-import { PageDefinition, PageCustom, slugify, PageDocDefinition } from './page/page';
+import { PageDefinition, PageCustom, slugify, PageDocDefinition, DocElementDefinition } from './page/page';
 import { GalaxyApiEntry } from './page/galaxy';
 import { DFunction, DKind, DFunctionParameter, DSourceEntry, DCategoryList, DPreset } from './generator';
 import * as hljs from 'highlight.js';
 import * as nj from 'nunjucks';
+import { PageRegistry } from './context';
 
 const ntpl = nj.configure('templates', {
     autoescape: true,
@@ -93,12 +94,11 @@ ntpl.addFilter('slugify', (str: string) => {
 });
 
 ntpl.addFilter('link', (page: PageDefinition) => {
+    if (!page) {
+        return 'javascript:void(0);';
+    }
     return `/${page.permalink}`;
 });
-
-// ntpl.addFilter('link', (code: string) => {
-//     return '';
-// });
 
 // ---
 // TODO: MOST OF THIS SHIT MUST BE MOVED TO PROPER TEMPLATING SYSTEM
@@ -342,4 +342,10 @@ export function renderPage(page: PageDefinition) {
     }
 
     return content;
+}
+
+export function setupRegistry(pageRegistry: PageRegistry) {
+    ntpl.addFilter('dpage', (def: DocElementDefinition) => {
+        return pageRegistry.defPageMap.get(def);
+    });
 }

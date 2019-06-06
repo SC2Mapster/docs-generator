@@ -1,0 +1,32 @@
+<h1>{{ frame.name }}</h1>
+
+<dl class="row">
+    <dt class="col-lg-3 text-right">Class</dt>
+    <dd class="col-lg-9">
+        {% for item in frame.fclasses.values() %}
+            <a href="{{ item|dpage|link }}">{{ item.name }}</a>
+            {% if not loop.last %}<em>&lt;—</em>{% endif %}
+        {% endfor %}
+    </dd>
+    {% if frame.blizzOnly %}
+        <dd class="col-lg-3 text-right"><span class="badge badge-danger text-uppercase">Blizzard restricted</span></dd>
+    {% endif %}
+</dl>
+
+<h3>Properties</h3>
+
+<div class="container-fluid">
+    <dl class="row frame-fields">
+        {% for frameClass in frame.fclasses.values() %}
+            <dt class="col-md-4 text-right">&nbsp;</dt>
+            <dd class="col-md-8 class-divider">
+                <h4 class="d-inline-block"><code>— {{ frameClass.name }}</code></h4>
+                <small class="float-right text-muted">{{ frameClass.properties|length }}</small>
+            </dd>
+
+            {% for frameClass in frame.fclasses.values() %}
+                {% include 'layout/frame-class/properties.nj' %}
+            {% endfor %}
+        {% endfor %}
+    </dl>
+</div>

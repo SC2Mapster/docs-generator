@@ -4,12 +4,20 @@
 @import 'hljs';
 @import 'sidebar';
 
+@mixin clearfix() {
+    &::after {
+        display: block;
+        content: "";
+        clear: both;
+    }
+}
+
 html {
-    font-size: 17px;
+    font-size: 18px;
 }
 
 body {
-    line-height: 1.4em;
+    line-height: 1.35em;
 }
 
 blockquote {
@@ -36,6 +44,10 @@ strong, dt {
 hr.small {
     margin-top: 0.2rem;
     margin-bottom: 0.2rem;
+}
+
+.clearfix {
+    @include clearfix();
 }
 
 ::-webkit-scrollbar
@@ -133,7 +145,7 @@ h6 {
 .frame-item {
     // padding: 0.2rem 0;
     // margin: 0.6rem 0;
-    margin: 0.2rem 0;
+    margin: 0.3rem 0;
     border-left: 3px solid #000;
 
     h5 {
@@ -145,7 +157,7 @@ h6 {
         margin: 0;
     }
 
-    a {
+    h5 >a {
         position: relative;
         display: flex;
         align-items: center;
@@ -163,10 +175,16 @@ h6 {
     }
 
     .ctype {
+        font-size: 0.6rem;
         float: right;
-        display: block;
-        padding: 0.5rem 2rem;
+        text-align: right;
+        display: inline-block;
+        padding: 0.5rem 0;
+        padding-left: 1rem;
         padding-top: 0;
+        max-width: 40%;
+        overflow: hidden;
+        line-height: 1rem;
     }
 
     &::before {
@@ -181,6 +199,7 @@ h6 {
 }
 
 .frame-fields {
+    width: 100%;
     font-size: 0.9em;
     line-height: 1.1em;
 

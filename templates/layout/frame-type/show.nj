@@ -1,22 +1,50 @@
+{% from "layout/frame-class/_ctype.nj" import property_list, desc_element_list %}
+
 <h1>{{ frame.name }}</h1>
 
 <dl class="row">
-    <dt class="col-lg-3 text-right">Class</dt>
-    <dd class="col-lg-9">
+    <dt class="col-lg-2 text-right">Class</dt>
+    <dd class="col-lg-10">
         {% for item in frame.fclasses.values() %}
             <a href="{{ item|dpage|link }}">{{ item.name }}</a>
             {% if not loop.last %}<em>&lt;—</em>{% endif %}
         {% endfor %}
     </dd>
+
+    <dt class="col-lg-2 text-right">Desc</dt>
+    <dd class="col-lg-10">
+        {% for item in frameDescs %}
+            <a href="{{ item|dpage|link }}">{{ item.name }}</a>
+            {% if not loop.last %}<em>&lt;—</em>{% endif %}
+        {% else %}
+            <code class="text-muted">- None -</code>
+        {% endfor %}
+    </dd>
+
     {% if frame.blizzOnly %}
-        <dd class="col-lg-3 text-right"><span class="badge badge-danger text-uppercase">Blizzard restricted</span></dd>
+        <dt class="col-lg-2"></dt>
+        <dd class="col-lg-10"><span class="badge badge-danger text-uppercase">Blizzard restricted</span></dd>
     {% endif %}
 </dl>
 
-<h3>Properties</h3>
+<h2>Properties</h2>
 
 <div class="container-fluid">
     <dl class="row frame-fields">
+        {% for cDesc in frameDescs %}
+            <dt class="col-md-4 text-right">&nbsp;</dt>
+            <dd class="col-md-8 class-divider">
+                <h4 class="d-inline-block"><code>— {{ cDesc.name }}</code></h4>
+                <small class="float-right text-muted">{{ cDesc.origin.elements|length }}</small>
+            </dd>
+
+            {% if cDesc.origin.elements|length %}
+                {{ desc_element_list(cDesc.origin.elements) }}
+            {% else %}
+                <code class="text-muted">- None -</code>
+            {% endif %}
+        {% endfor %}
+
         {% for frameClass in frame.fclasses.values() %}
             <dt class="col-md-4 text-right">&nbsp;</dt>
             <dd class="col-md-8 class-divider">
@@ -24,9 +52,14 @@
                 <small class="float-right text-muted">{{ frameClass.properties|length }}</small>
             </dd>
 
-            {% for frameClass in frame.fclasses.values() %}
-                {% include 'layout/frame-class/properties.nj' %}
-            {% endfor %}
+            {% if frameClass.properties|length %}
+                {{ property_list(frameClass.properties.values()) }}
+            {% else %}
+                <dt class="col-md-4"></dt>
+                <dd class="col-md-8 text-center">
+                    <code class="text-muted">- None -</code>
+                </dd>
+            {% endif %}
         {% endfor %}
     </dl>
 </div>

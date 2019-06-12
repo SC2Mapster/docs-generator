@@ -1,0 +1,41 @@
+{% from "layout/complex-type/_ctype.nj" import attr_list, element_list %}
+
+<h1>{{ elementDef.name }}</h1>
+
+{% if elementDef.label %}
+    <p>{{ elementDef.label }}</p>
+{% endif %}
+
+{% macro xmlField(name, attributes) -%}
+    {%- autoescape false -%}
+        {%- filter hljs('xml') -%}
+            <{{ name }}{% for attrName, attrInfo in attributes -%}
+            {%- set attrStr = attrName ~ '="' ~ attrInfo.default|default('') ~ '"' -%}
+                {{ ' \n    ' }}{{ attrStr }} {% for i in range(0, 30 - attrStr.length) %} {% endfor -%}
+                {%- if not attrInfo.required %} -optional{% else %}          {% endif -%}
+                {%- if attrInfo.type %}  -type:{{ attrInfo.type.name }}{% endif -%}
+            {%- endfor %}{{ '\n' }}/>
+        {%- endfilter -%}
+    {%- endautoescape -%}
+    {%- endmacro %}
+<div>
+    {{ xmlField(elementDef.name, elementDef.type.attributes) }}
+</div>
+
+{% if elementDef.documentation %}
+    <blockquote>
+        {{ elementDef.documentation|md|safe }}
+    </blockquote>
+{% endif %}
+
+<h3>Attributes</h3>
+
+{{ attr_list(elementDef.type.attributes.values(), elementDef.type.indeterminateAttributes.values()) }}
+
+<h3>Elements</h3>
+
+{% if elementDef.type.struct.size %}
+    {{ element_list(elementDef.type.struct.values()) }}
+{% else %}
+    <p><code class="text-muted">- None -</code></p>
+{% endif %}

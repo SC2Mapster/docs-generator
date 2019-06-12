@@ -1,7 +1,7 @@
 import { PageRegistry } from "../context";
 
 export function slugify(str: string) {
-    str = str.replace(/[_\\:<>]/g, '-');
+    str = str.replace(/[_\\:<>\.]/g, '-');
     str = str.replace('AI', 'Ai');
     str = str.replace('UI', 'Ui');
     str = str.replace(/[A-Z]+/g, (m) => '-' + m.toLowerCase());

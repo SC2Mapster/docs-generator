@@ -1,3 +1,5 @@
+{% from "layout/frame-class/_ctype.nj" import property_list %}
+
 <h1>{{ frameClass.name }}</h1>
 
 <dl class="row">
@@ -13,18 +15,4 @@
 
 <h3>Properties</h3>
 
-<dl class="row">
-    {% for frameProperty in frameClass.properties.values() %}
-        <div class="col-12"><hr class="small"></div>
-        <dt class="col-lg-3 text-right">
-            <code class="text-nowrap">{{ frameProperty.name }}</code>
-        </dt>
-        <dd class="col-lg-9">
-            <p>type = <a href="{{ frameProperty.etype.type|dpage|link }}"><code>{{ frameProperty.etype.type.name }}</code></a></p>
-
-            {% if frameProperty.etype.label %}
-                <blockquote>{{ frameProperty.etype.label|md|safe }}</blockquote>
-            {% endif %}
-        </dd>
-    {% endfor %}
-</dl>
+{{ property_list(frameClass.properties.values()) }}

@@ -1,3 +1,5 @@
+{% from "layout/complex-type/_ctype.nj" import attr_list, element_list %}
+
 <h1>{{ complexType.name }}</h1>
 
 {% if complexType.label %}
@@ -32,125 +34,12 @@
 
 <h3>Attributes</h3>
 
-<dl class="row">
-    {% for attrInfo in complexType.attributes.values() %}
-        <div class="col-12"><hr class="small"></div>
-        <dt class="col-lg-3 text-right">
-            <small>@</small><em>{{ attrInfo.name }}</em>
-            {% if attrInfo.required %}<code>&nbsp;</code>{% else %}<code title="Attribute optional">?</code>{% endif %}
-        </dt>
-        <dd class="col-lg-9">
-            type = <a href="{{ attrInfo.type|dpage|link }}"><code>{{ attrInfo.type.name }}</code></a>
-
-            {% if attrInfo.default %}
-                &nbsp; <code> | </code>default = <em>{{ attrInfo.default }}</em>
-            {% endif %}
-
-            {# {% if attrInfo.required %}
-                <span class="float-right badge badge-secondary" title="Attribute required">R</span>
-            {% endif %} #}
-
-            {% if attrInfo.documentation %}
-                <blockquote class="m-1 mb-2 mt-2">
-                    {% autoescape false %}
-                        {% filter md %}{{ attrInfo.documentation }}{% endfilter %}
-                    {% endautoescape %}
-                </blockquote>
-            {% else %}
-                <br>
-            {% endif %}
-            
-            {% if attrInfo.type.emap %}
-                <div class="ml-2 text-justify">
-                    {% set comma = joiner(' | ') %}
-                    {%- for enumInfo in attrInfo.type.emap.values() -%}
-                        {# <small><code>{{ comma() }}</code><code class="text-muted">{{ enumInfo.name }}</code></small> #}
-                        <small><code>{% if not loop.last or true %} |&nbsp;{% endif %}</code><code class="text-muted">{{ enumInfo.name }}</code></small>
-                    {%- endfor -%}
-                </div>
-            {% endif %}
-        </dd>
-    {% endfor %}
-
-    {% for indeterminateAttr in complexType.indeterminateAttributes.values() %}
-        <div class="col-12"><hr class="small"></div>
-        <dt class="col-lg-3 text-right">
-            {# <small>@</small><em>{{ indeterminateAttr.key.name }}</em> #}
-            <small>@</small><a href="{{ indeterminateAttr.key|dpage|link }}"><code>{{ indeterminateAttr.key.name }}</code></a>
-        </dt>
-        <dd class="col-lg-9">
-            type = <a href="{{ indeterminateAttr.value|dpage|link }}"><code>{{ indeterminateAttr.value.name }}</code></a>
-        </dd>
-    {% endfor %}
-</dl>
-
-{# <h3>Attributes</h3>
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th>Attr</th>
-            <th>Type</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for attrName, attrInfo in complexType.attributes %}
-        {% endfor %}
-    </tbody>
-</table> #}
-
+{{ attr_list(complexType.attributes.values(), complexType.indeterminateAttributes.values()) }}
 
 <h3>Elements</h3>
 
 {% if complexType.struct.size %}
-    <dl class="row">
-        {% for elementDef in complexType.struct.values() %}
-            <div class="col-12"><hr class="small"></div>
-            <dt class="col-lg-3 text-right">
-                <code>&lt;{{ elementDef.name }}&gt;</code>
-            </dt>
-            <dd class="col-lg-9">
-                <div>type = <a href="{{ elementDef.type|dpage|link }}"><code>{{ elementDef.type.name }}</code></a></div>
-
-                {% if elementDef.label %}
-                    <p class="mt-1 mb-1">{{ elementDef.label }}</p>
-                {% endif %}
-
-                {% if elementDef.alternateTypes %}
-                    {# <ul>
-                        {% for altTypeName, altComplexType in elementDef.alternateTypes %}
-                            <li>
-                                <code class="text-muted">type=</code><em>"{{ altTypeName }}"</em> —
-                                <a href="{{ altComplexType|dpage|link }}"><code>{{ altComplexType.name }}</code></a>
-                            </li>
-                        {% endfor %}
-                    </ul> #}
-
-                    <table class="table table-sm table-striped">
-                        <thead>
-                            <tr>
-                                <th colspan="2">Alternate types</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for altTypeName, altComplexType in elementDef.alternateTypes %}
-                                <tr>
-                                    <td><code class="text-muted">type = </code> <em>{{ altTypeName }}</em></td>
-                                    <td><a href="{{ altComplexType|dpage|link }}"><code>{{ altComplexType.name }}</code></a></td>
-                                </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
-                {% endif %}
-            </dd>
-            {% if elementDef.documentation %}
-                <blockquote>
-                    {% autoescape false %}
-                        {% filter md %}{{ elementDef.documentation }}{% endfilter %}
-                    {% endautoescape %}
-                </blockquote>
-            {% endif %}
-        {% endfor %}
-    </dl>
+    {{ element_list(complexType.struct.values()) }}
 {% else %}
-    <p><code>- None -</code></p>
+    <p><code class="text-muted">- None -</code></p>
 {% endif %}

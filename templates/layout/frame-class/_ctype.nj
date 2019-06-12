@@ -1,0 +1,72 @@
+{% macro property_list(properties) %}
+    <dl class="row frame-fields">
+        {% for frameProperty in properties %}
+            <div class="col-12"><hr class="small"></div>
+            <dt class="col-lg-4 text-right">
+                <div>
+                    <code class="text-nowrap"><a href="{{ frameProperty|dpage|link }}">{{ frameProperty.name }}</a></code>
+                    {% if frameProperty.isReadonly %}
+                        <span class="badge badge-primary" title="Readonly">R</span>
+                    {% else %}
+                        <span class="badge" style="visibility: hidden;">R</span>
+                    {% endif %}
+                </div>
+                {# <small>{{ frameProperty.etype.type.name }}</small> #}
+            </dt>
+            <dd class="col-lg-8">
+                {# <p>type = <a href="{{ frameProperty.etype.type|dpage|link }}"><code>{{ frameProperty.etype.type.name }}</code></a></p> #}
+                {{ element_row(frameProperty.etype) }}
+                {% if frameProperty.etype.label %}
+                    <br>
+                    <blockquote>{{ frameProperty.etype.label|md|safe }}</blockquote>
+                {% endif %}
+            </dd>
+        {% endfor %}
+    </dl>
+{% endmacro %}
+
+{% macro desc_element_list(elements) %}
+    <dl class="row frame-fields">
+        {% for etype in elements %}
+            <div class="col-12"><hr class="small"></div>
+            <dt class="col-lg-4 text-right">
+                <div>
+                    <code class="text-nowrap">{{ etype.name }}</code>
+                    <span class="badge" style="visibility: hidden;">R</span>
+                </div>
+            </dt>
+            <dd class="col-lg-8">
+                {{ element_row(etype) }}
+                {% if etype.label %}
+                    <br>
+                    <blockquote>{{ etype.label|md|safe }}</blockquote>
+                {% endif %}
+            </dd>
+        {% endfor %}
+    </dl>
+{% endmacro %}
+
+{% macro element_row(etype) %}
+    <dl class="row dl-attrs">
+        {% for attrInfo in etype.type.attributes.values() %}
+            <dt class="col-lg-4 text-right">
+                <div class="text-nowrap">
+                    <small class="text-muted">@</small>
+                    <em>{{ attrInfo.name }}</em>
+                    {% if attrInfo.required %}<code>&nbsp;</code>{% else %}<code title="Attribute optional">?</code>{% endif %}
+                </div>
+            </dt>
+            <dd class="col-lg-8">
+                <span class="text-nowrap">[ <a href="{{ attrInfo.type|dpage|link }}">{{ attrInfo.type.name }}</a> ]</span>
+                {% if attrInfo.type.emap %}
+                    <div class="mt-1 mb-1 text-justify">
+                        {% set comma = joiner(' | ') %}
+                        {%- for enumInfo in attrInfo.type.emap.values() -%}
+                            <small><code>{{ comma() }}</code><code class="text-muted">{{ enumInfo.name }}</code></small>
+                        {%- endfor -%}
+                    </div>
+                {% endif %}
+            </dd>
+        {% endfor %}
+    </dl>
+{% endmacro %}

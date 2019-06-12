@@ -1,0 +1,16 @@
+{% from "layout/frame-class/_ctype.nj" import element_row %}
+
+<h1><small class="text-muted">Property:</small> {{ frameProperty.name }} — <a href="{{ page.parent|link }}">{{ frameProperty.fclass.name }}</a></h1>
+
+{% if frameProperty.etype.label %}
+    <blockquote>{{ frameProperty.etype.label|md|safe }}</blockquote>
+{% endif %}
+
+<h3>Attributes</h3>
+
+{{ element_row(frameProperty.etype) }}
+
+{% if frameProperty.etype.documentation %}
+    <h3>Description</h3>
+    <blockquote>{{ frameProperty.etype.documentation|md|safe }}</blockquote>
+{% endif %}

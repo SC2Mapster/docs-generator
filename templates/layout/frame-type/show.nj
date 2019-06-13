@@ -2,6 +2,11 @@
 
 <h1>{{ frame.name }}</h1>
 
+{% if frame.complexType.label %}
+    {{ frame.complexType.label|md|safe }}
+    <hr>
+{% endif %}
+
 <dl class="row">
     <dt class="col-lg-2 text-right">Class</dt>
     <dd class="col-lg-10">
@@ -26,6 +31,13 @@
         <dd class="col-lg-10"><span class="badge badge-danger text-uppercase">Blizzard restricted</span></dd>
     {% endif %}
 </dl>
+
+{% if frame.complexType.documentation %}
+    <h2>Description</h2>
+    <blockquote>
+        {{ frame.complexType.documentation|md|safe }}
+    </blockquote>
+{% endif %}
 
 <h2>Properties</h2>
 

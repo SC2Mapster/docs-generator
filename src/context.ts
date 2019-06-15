@@ -20,8 +20,8 @@ export class PageRegistry {
         logger.info('Populating Galaxy docs..');
         this.populateGalaxy();
 
-        // logger.info('Populating Layouts docs..');
-        // (new LayoutsRegistry(this)).install();
+        logger.info('Populating Layouts docs..');
+        (new LayoutsRegistry(this)).install();
 
         logger.info('Populating Layouts docs v2..');
         populateLayoutPages(this);

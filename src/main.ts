@@ -7,8 +7,6 @@ import * as winston from 'winston';
 import { PageRegistry } from './context';
 import { renderPage } from './renderer';
 import { generateGalaxyReference, generateGalaxyUsage } from './generator';
-import { generateLayoutsReference } from './layouts/usage';
-import { reindexLayouts } from './layouts/generator';
 
 export const logger = new (winston.Logger)({
     level: 'debug',
@@ -79,7 +77,6 @@ function build() {
 
 switch (process.argv[2]) {
     case 'reindex': reindex(); break;
-    case 'reindex:layouts': reindexLayouts(); break;
     case 'build': build(); break;
     case 'serve':
     default:

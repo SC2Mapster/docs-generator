@@ -2,7 +2,6 @@ import * as fs from 'fs';
 import * as yaml from 'js-yaml';
 import { logger } from './main';
 import { GalaxyStore, DSourceEntry } from './generator';
-import { LayoutsRegistry } from './page/layouts';
 import { GalaxyApiEntry } from './page/galaxy';
 import { PageDefinition, PageCustom, PageOptions, DocElementDefinition, PageDocDefinition } from './page/page';
 import { setupRegistry } from './renderer';
@@ -19,9 +18,6 @@ export class PageRegistry {
     public constructor() {
         logger.info('Populating Galaxy docs..');
         this.populateGalaxy();
-
-        logger.info('Populating Layouts docs..');
-        (new LayoutsRegistry(this)).install();
 
         logger.info('Populating Layouts docs v2..');
         populateLayoutPages(this);

@@ -76,9 +76,24 @@ function build() {
 }
 
 switch (process.argv[2]) {
-    case 'reindex': reindex(); break;
-    case 'build': build(); break;
+    case 'reindex':
+    {
+        reindex();
+        break;
+    }
+    case 'build':
+    {
+        build();
+        break;
+    }
     case 'serve':
+    {
+        startServer();
+        break;
+    }
     default:
-        startServer(); break;
+    {
+        logger.error('unknown cmd');
+        process.exit(1);
+    }
 }

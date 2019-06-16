@@ -1,5 +1,5 @@
 const gulp = require('gulp');
-const nodemon = require('nodemon');
+const nodemon = require('gulp-nodemon');
 const browserSync = require('browser-sync');
 const sass = require('gulp-sass');
 const gulpif = require('gulp-if');
@@ -23,17 +23,15 @@ gulp.task('browser-sync', () => {
 });
 
 gulp.task('nodemon', (done) => {
-    var started = false;
     return nodemon({
         watch: ['src/renderer.ts', 'src/context.ts', 'src/page/**/*.ts'],
         ext: 'ts',
         exec: 'ts-node ./src/main.ts serve',
         stdout: false,
-    }).on('start', function () {
-        if (!started) {
-            done();
-            started = true; 
+        env: {
+            TEMPLATE_WATCH: true,
         }
+    }).on('start', function () {
     }).on('restart', function () {
     }).on('stderr', function(stderr) {
         console.error(stderr.toString().trimRight());

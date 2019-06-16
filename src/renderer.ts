@@ -10,7 +10,7 @@ import { PageRegistry } from './context';
 
 const ntpl = nj.configure('templates', {
     autoescape: true,
-    watch: true,
+    watch: process.env.TEMPLATE_WATCH !== void 0 ? Boolean(process.env.TEMPLATE_WATCH) : false,
     throwOnUndefined: false,
 });
 ntpl.addExtension('AutoEscapeExtension', new (require("nunjucks-autoescape")(nj))(ntpl));

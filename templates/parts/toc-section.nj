@@ -1,7 +1,7 @@
 <ul class="{% if toc.currLevel == 1 %}section-nav{% endif %}">
     {% for item in toc.children %}
         <li class="toc-entry toc-h{{ item.currLevel }}">
-            <a href="#{{ item.id }}">{{ item.title|safe }}</a>
+            <a href="#{{ item.id }}" title="{{ item.title|safe }}">{{ item.title|safe }}</a>
             {% if item.children|length %}
                 {% set toc = item %}
                 {% include 'parts/toc-section.nj' %}

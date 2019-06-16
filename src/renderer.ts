@@ -66,7 +66,7 @@ ntpl.addFilter('toc', (content: string) => {
 
         let mtitle = matches[3];
         if (currToc.parent && currToc.title && mtitle.startsWith(currToc.title)) {
-            mtitle = mtitle.substring(currToc.title.length + 2);
+            mtitle = mtitle.substring(currToc.title.length + 3);
         }
 
         currToc.children.push({

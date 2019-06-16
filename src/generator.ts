@@ -1,18 +1,17 @@
-import * as fs from 'fs';
-import * as path from 'path';
 import * as glob from 'glob';
-import * as yaml from 'js-yaml';
+import * as path from 'path';
+import * as gt from 'plaxtony/lib/src/compiler/types';
+import { Printer } from 'plaxtony/lib/src/compiler/printer';
+import { Store, createTextDocumentFromFs, S2WorkspaceWatcher } from 'plaxtony/lib/src/service/store';
+import { findSC2ArchiveDirectories } from 'plaxtony/lib/src/sc2mod/archive';
+import * as trig from 'plaxtony/lib/src/sc2mod/trigger';
+import * as loc from 'plaxtony/lib/src/sc2mod/localization';
+import { forEachChild } from 'plaxtony/lib/src/compiler/utils';
+import { getLineAndCharacterOfPosition } from 'plaxtony/lib/src/service/utils';
+import { mockupStoreFromS2Workspace, mockupStoreFromDirectory } from 'plaxtony/lib/tests/helpers';
+import { logger } from './main';
 
-import * as gt from '../node_modules/plaxtony/lib/compiler/types';
-import { Printer } from '../node_modules/plaxtony/lib/compiler/printer';
-import { Store, createTextDocumentFromFs, S2WorkspaceWatcher } from '../node_modules/plaxtony/lib/service/store';
-import { SC2Workspace, SC2Archive, resolveArchiveDirectory, findSC2ArchiveDirectories } from '../node_modules/plaxtony/lib/sc2mod/archive';
-import * as trig from '../node_modules/plaxtony/lib/sc2mod/trigger';
-import * as loc from '../node_modules/plaxtony/lib/sc2mod/localization';
-import { forEachChild } from 'plaxtony/lib/compiler/utils';
-import { getLineAndCharacterOfPosition } from 'plaxtony/lib/service/utils';
-
-const modsBaseDir = path.resolve('_repo/sc2-data-trigger-master');
+const modsBaseDir = path.resolve('ext/SC2GameData');
 
 export enum DKind {
     Library = 'Library',
@@ -111,26 +110,11 @@ export type GalaxyStore = {
     },
 };
 
-async function mockupStoreFromS2Workspace(directory: string, modSources: string[]) {
-    const store = new Store();
-    const ws = new S2WorkspaceWatcher(directory, modSources);
-    const workspaces: SC2Workspace[] = [];
-    ws.onDidOpen((ev) => {
-        store.updateDocument(ev.document);
-    });
-    ws.onDidOpenS2Archive((ev) => {
-        workspaces.push(ev.workspace);
-    });
-    await ws.watch();
-    for (const ws of workspaces) {
-        await store.updateS2Workspace(ws, 'enUS');
-    }
-    return store;
-}
-
 export async function generateGalaxyReference() {
+    logger.info(`[generateGalaxyReference] init`)
     const printer = new Printer();
     const store = await mockupStoreFromS2Workspace('mods/core.sc2mod', [modsBaseDir]);
+    logger.info(`[generateGalaxyReference] mods/core opened`);
     const tlang = store.s2workspace.locComponent.triggers;
 
     function enumerateCategories(categoryChain: string[]) {
@@ -405,17 +389,29 @@ export type GalaxyModUsage = {
     sourceLink: string;
 };
 
-export async function generateGalaxyUsage(gstore: GalaxyStore) {
-    const srcList = await findSC2ArchiveDirectories(modsBaseDir);
+function findAllArchiveDirectories(directory: string) {
+    return new Promise<string[]>((resolve, reject) => {
+        glob('**/*.+(SC2Mod|SC2Campaign|SC2Map|StormMod|StormMap)/', {nocase: true, realpath: true, cwd: directory, nounique: true} , (err, matches) => {
+            if (err) {
+                reject(err);
+            }
+            else {
+                resolve(matches);
+            }
+        });
+    });
+}
+
+export async function generateGalaxyUsage(gstore: GalaxyStore, repoURL: string) {
+    const srcList = await findAllArchiveDirectories(modsBaseDir);
     const modPathOffset = 'file://'.length + modsBaseDir.length + 1;
-    const repoPrefix = 'https://github.com/Talv/sc2-data-trigger/blob/v4.2.0/';
-    for (const src of srcList) {
-        // console.log(`processing: ${src}`);
-        // if (src.indexOf('alliedcommanders.sc2mod') === -1) continue;
-        const store = await mockupStoreFromS2Workspace(src, [modsBaseDir]);
+    for (const key in srcList) {
+        const src = srcList[key];
+        const modName = path.relative(modsBaseDir, src);
+        logger.info(`[${Number(key) + 1}/${srcList.length}]: ${modName}`);
+
+        const store = await mockupStoreFromDirectory(src);
         store.rootPath = src;
-        const modName = store.s2workspace.rootArchive.name;
-        console.log(modName);
 
         function retrieveSourceLine(sourceFile: gt.SourceFile, node: gt.Node) {
             let code = sourceFile.text.substr(node.pos, node.end - node.pos);
@@ -426,6 +422,7 @@ export async function generateGalaxyUsage(gstore: GalaxyStore) {
             return code;
         }
 
+        const localCounter: Map<string, number> = new Map();
         function collectReferences(sourceFile: gt.SourceFile, child: gt.Node) {
             if (
                 child.kind === gt.SyntaxKind.Identifier &&
@@ -433,24 +430,19 @@ export async function generateGalaxyUsage(gstore: GalaxyStore) {
                 (<gt.CallExpression>child.parent).expression === child
             ) {
                 let indName = (<gt.Identifier>child).name;
-                // const sym = store.resolveGlobalSymbol(indName);
-                // if (sym) {
-                //     const decl = <gt.FunctionDeclaration>sym.declarations[0];
-                //     if (decl.kind === gt.SyntaxKind.FunctionDeclaration) {
-                //         const el = store.s2metadata.findElementByName(indName);
-                //         if (el) {
-                //             indName = el.id;
-                //         }
-                //     }
-                // }
                 if (gstore.entries[indName]) {
                     const childLine = getLineAndCharacterOfPosition(sourceFile, child.pos).line + 1;
                     if (!gstore.usageTable[indName]) gstore.usageTable[indName] = [];
-                    // limit to 50 entries for the time being..
-                    if (gstore.usageTable[indName].length < 50) {
+
+                    // limit to 100 entries global entries and 10 local
+                    if (!localCounter.has(indName)) {
+                        localCounter.set(indName, 0);
+                    }
+                    if (gstore.usageTable[indName].length < 100 && localCounter.get(indName) < 10) {
+                        localCounter.set(indName, localCounter.get(indName) + 1);
                         gstore.usageTable[indName].push({
                             modName: modName,
-                            sourceLink: repoPrefix + sourceFile.fileName.substr(modPathOffset) + '#L' + childLine,
+                            sourceLink: repoURL + sourceFile.fileName.substr(modPathOffset) + '#L' + childLine,
                             sourceLine: retrieveSourceLine(sourceFile, child.parent),
                         });
                     }
@@ -461,18 +453,11 @@ export async function generateGalaxyUsage(gstore: GalaxyStore) {
             });
         }
 
-        // for (const sourceFile of store.documents.values()) {
         for (const sourceFile of store.documents.values()) {
-            if (!store.isDocumentInWorkspace(sourceFile.fileName, false)) continue;
-            console.log(`filename: ${sourceFile.fileName}`);
+            if (!store.isUriInWorkspace(sourceFile.fileName)) continue;
+            logger.info(`${path.relative(modsBaseDir, sourceFile.fileName.substr(5))}`);
+            localCounter.clear();
             collectReferences(sourceFile, sourceFile);
         }
-
-        // for (const name in gstore.entries) {
-        //     const entry = gstore.entries[name];
-        //     if (entry.kind !== DKind.Function) continue;
-        //     const sym = store.resolveGlobalSymbol(name);
-        //     if (!sym) continue;
-        // }
     }
 };

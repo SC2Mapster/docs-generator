@@ -1,6 +1,6 @@
+import * as proc from 'child_process';
 import * as path from 'path';
 import * as fs from 'fs-extra';
-import * as yaml from 'js-yaml';
 import * as express from 'express';
 import * as sugar from 'sugar';
 import * as winston from 'winston';
@@ -53,10 +53,16 @@ function startServer() {
 }
 
 async function reindex() {
+    const originHash = proc.spawnSync('git', [
+        '--git-dir=ext/SC2GameData/.git', 'show-ref', '--hash', 'origin/master'
+    ], {
+        encoding: 'utf8',
+    }).stdout;
+    const githubURL = `https://github.com/SC2Mapster/SC2GameData/blob/${originHash.trim()}/`
+
     const galStore = await generateGalaxyReference();
-    // const galStore = <GalaxyStore>yaml.load(fs.readFileSync('_data/galaxy.yml', 'utf8'));
-    await generateGalaxyUsage(galStore);
-    fs.writeFileSync('_data/galaxy.yml', yaml.dump(galStore));
+    await generateGalaxyUsage(galStore, githubURL);
+    await fs.writeJSON('_data/galaxy.json', galStore);
     logger.info('Done!');
 }
 

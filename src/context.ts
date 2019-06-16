@@ -1,5 +1,4 @@
-import * as fs from 'fs';
-import * as yaml from 'js-yaml';
+import * as fs from 'fs-extra';
 import { logger } from './main';
 import { GalaxyStore, DSourceEntry } from './generator';
 import { GalaxyApiEntry } from './page/galaxy';
@@ -36,7 +35,7 @@ export class PageRegistry {
     }
 
     protected populateGalaxy() {
-        this.galaxy = <GalaxyStore>yaml.load(fs.readFileSync('_data/galaxy.yml', 'utf8'));
+        this.galaxy = <GalaxyStore>(fs.readJSONSync('_data/galaxy.json', { encoding: 'utf8' }));
         const galRootPage = this.addPage({
             title: 'Galaxy API',
             slug: 'galaxy',

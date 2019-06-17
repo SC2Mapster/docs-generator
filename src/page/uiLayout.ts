@@ -1,7 +1,7 @@
 import { PageRegistry } from '../context';
 import { PageCustom } from './page';
-import * as sch from '../../layout-tools/src/schema/base';
-import { generateSchema, SchemaRegistryBrowser } from '../../layout-tools/src/schema/registry';
+import * as sch from '../../ext/sc2-layout/src/schema/base';
+import { generateSchema, SchemaRegistryBrowser } from '../../ext/sc2-layout/src/schema/registry';
 
 interface LayoutBuildContext {
     schema: SchemaRegistryBrowser;

@@ -73,4 +73,4 @@ gulp.task('watch', function () {
     gulp.watch('./theme/**/*.scss', ['sass']);
 });
 
-gulp.task('serve', ['nodemon', 'browser-sync', 'watch']);
+gulp.task('serve', gulp.series('sass', 'nodemon', 'browser-sync', 'watch'));

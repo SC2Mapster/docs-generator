@@ -16,7 +16,7 @@ export function populateLayoutPages(pageRegistry: PageRegistry) {
     }));
 
     const lCtx = <LayoutBuildContext>{
-        schema: generateSchema('layout-schema/sc2layout'),
+        schema: generateSchema('ext/sc2layout-schema/sc2layout'),
         pageRegistry: pageRegistry,
         rootSection: rootSection,
     };

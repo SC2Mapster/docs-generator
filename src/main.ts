@@ -3,22 +3,16 @@ import * as path from 'path';
 import * as fs from 'fs-extra';
 import * as express from 'express';
 import * as sugar from 'sugar';
-import * as winston from 'winston';
+import { createLogger, format, transports } from 'winston';
 import { PageRegistry } from './context';
 import { renderPage } from './renderer';
 import { generateGalaxyReference, generateGalaxyUsage } from './generator';
 
-export const logger = new (winston.Logger)({
+export const logger = createLogger({
     level: 'debug',
-
+    format: format.combine(format.colorize(), format.simple()),
     transports: [
-        new (winston.transports.Console)({
-            colorize: true,
-            prettyPrint: true,
-            timestamp: function() {
-                return sugar.Date.format(new Date(Date.now()), '{HH}:{mm}:{ss}.{SSS}');
-            },
-        }),
+        new transports.Console(),
     ],
 });
 
@@ -62,6 +56,7 @@ async function reindex() {
 
     const galStore = await generateGalaxyReference();
     await generateGalaxyUsage(galStore, githubURL);
+    await fs.ensureDir('_data');
     await fs.writeJSON('_data/galaxy.json', galStore);
     logger.info('Done!');
 }
@@ -69,6 +64,7 @@ async function reindex() {
 function build() {
     const siteDir = '_site';
     const registry = new PageRegistry();
+
     for (const page of registry.pages.values()) {
         logger.info(`generating: ${page.permalink}`);
 

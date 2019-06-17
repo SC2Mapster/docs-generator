@@ -4,12 +4,12 @@ For Galaxy script and SC2Layout.
 
 **Requiments:**
 
-- `node` 
+- `node`
 - `yarn`
 
 **Installation:**
 
-Clone repo, then `yarn install`
+Clone repo, then `yarn install`, `git submodule init`, `git submodule update`
 
 **Usage:**
 

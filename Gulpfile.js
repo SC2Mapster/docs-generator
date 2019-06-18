@@ -12,14 +12,16 @@ const config = {
     prod: argv.prod === true
 };
 
-gulp.task('browser-sync', () => {
-	browserSync.init({
+gulp.task('browser-sync', (done) => {
+	const bs = browserSync.init({
         proxy: 'http://localhost:3100',
         open: false,
         // logLevel: 'debug',
         logConnections: true,
         // files: ['public/**/*.*'],
-	});
+    });
+    gulp.watch(['templates/**/*.nj'], bs.reload);
+    done();
 });
 
 gulp.task('nodemon', (done) => {
@@ -32,6 +34,7 @@ gulp.task('nodemon', (done) => {
             TEMPLATE_WATCH: true,
         }
     }).on('start', function () {
+        done();
     }).on('restart', function () {
     }).on('stderr', function(stderr) {
         console.error(stderr.toString().trimRight());
@@ -67,10 +70,8 @@ gulp.task('sass', function () {
     ;
 });
 
-gulp.task('watch', function () {
-    // gulp.watch(['_site/dist/**/*'], browserSync.reload);
-    gulp.watch(['templates/**/*.nj'], browserSync.reload);
-    gulp.watch('./theme/**/*.scss', ['sass']);
+gulp.task('watch:css', function (done) {
+    gulp.watch('./theme/**/*.scss', gulp.task('sass'));
 });
 
-gulp.task('serve', gulp.series('sass', 'nodemon', 'browser-sync', 'watch'));
+gulp.task('serve', gulp.parallel('sass', 'nodemon', 'browser-sync', 'watch:css'));

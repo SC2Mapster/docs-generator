@@ -1,21 +1,30 @@
 <h1>Frame types</h1>
-
+<input class="form-control" id="myInput" type="text" placeholder="Search..."><br />
 <div class="frames-section-list">
     {% for frame in frameList %}
-        <div class="frame-item">
-            <h5>
-                <a href="{{ frame|dpage|link }}">{{ frame.name }}</a>
-            </h5>
-            {% if frame.blizzOnly %}
-                <span class="badge badge-danger text-uppercase" title="Blizzard restricted"><small>B</small></span>
-            {% endif %}
-
-            <small class="ctype">
-                {%- for item in frame.fclasses.values() -%}
-                    <a class="text-muted" href="{{ item|dpage|link }}">{{ item.name }}</a>
-                    {%- if not loop.last %} <em>&lt;</em> {% endif -%}
-                {%- endfor -%}
-            </small>
-        </div>
+    <div class="frame-item">
+        <h5><a href="{{ frame|dpage|link }}">{{ frame.name }}</a></h5>
+    {% if frame.blizzOnly %}
+        <span class="badge badge-danger text-uppercase" title="Blizzard restricted"><small>B</small></span>
+    {% endif %}
+        <small class="ctype">
+        {%- for item in frame.fclasses.values() -%}
+            <a class="text-muted" href="{{ item|dpage|link }}">{{ item.name }}</a>
+            {%- if not loop.last %}<em>&lt;</em>{% endif -%}
+        {%- endfor -%}
+        </small>
+    </div>
     {% endfor %}
 </div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $("#myInput").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $(".frames-section-list div").filter(function() {
+                $(this).toggle($(this).find("h5 > a").text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+</script> 

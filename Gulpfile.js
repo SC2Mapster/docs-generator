@@ -12,21 +12,10 @@ const autoprefixer = require("gulp-autoprefixer");
 
 const server = browserSync.create();
 
-function reload(done) {
+function browserSyncReload(done) {
     server.reload();
     done();
 }
-
-// function serve(done) {
-//     server.init({
-//         proxy: 'http://localhost:3100',
-//         open: false,
-//         // logLevel: 'debug',
-//         logConnections: true,
-//         // files: ['public/**/*.*'],
-//     });
-//     done();
-// }
 
 const config = {
     prod: argv.prod === true
@@ -54,46 +43,27 @@ function style() {
 }
 
 function monitor(done) {
-    let stream;
-
-    stream = nodemon({
-        watch: ['src/renderer.ts', 'src/context.ts', 'src/page/**/*.ts', 'templates/**/*.nj'],
-        ext: 'ts scss nj',
-        // tasks: function(changes) {
-        //     var tasks = [];
-        //     if (!changes) return tasks;
-        //     changes.forEach(function(file) {
-        //         //if ( path.extname(file) === '.ts' && !~tasks.indexOf("compileTypescript") ) tasks.push("compileTypescript");
-        //         if ( path.extname(file) === '.ts' ) stream.emit("restart", 0);
-        //         if ( path.extname(file) === '.nj' ) stream.emit("restart", 0);
-        //         if ( path.extname(file) === '.scss' && !~tasks.indexOf("style") ) {
-        //             tasks.push("style");
-        //             tasks.push("reload");
-        //         }
-        //         //if ( path.extname(file) === '.nj' && !~tasks.indexOf("reload") ) tasks.push("reload");
-        //     })
-        //     //tasks.push("reload");
-        //     return tasks;
-        // },
+    const stream = nodemon({
+        watch: ['src/renderer.ts', 'src/context.ts', 'src/page/**/*.ts'],
+        ext: 'ts',
         exec: 'ts-node ./src/main.ts serve',
         stdout: false,
         env: {
             TEMPLATE_WATCH: true,
         },
-        done: done,
+        done: () => {
+            // so this mother fucker is magically catching SIGINT and calls `done`
+            // which then allows Gulp to proceed with other tasks or do a clean exit
+            console.debug('nodemon SIGINT');
+            done();
+        },
     });
 
-    stream.on("start", function() {
-        server.init({
-            proxy: 'http://localhost:3100',
-            open: false,
-            // logLevel: 'debug',
-            logConnections: true,
-            // files: ['public/**/*.*'],
-        }, function() {
-            console.log("wtflulz");
-        });
-    })
+    const bs = server.init({
+        proxy: 'http://localhost:3100',
+        open: false,
+        logConnections: true,
+    });
 
     stream.on('stderr', function(stderr) {
         console.error(stderr.toString().trimRight());
@@ -111,8 +81,29 @@ function monitor(done) {
     return stream;
 }
 
-const watchStyles = () => watch('./theme/**/*.scss', style);
+function watchFiles(done) {
+    watch('./templates/**/*.nj', browserSyncReload);
+    watch('./theme/**/*.scss', style);
+    done();
+}
 
-exports.reload = reload;
-exports.style = style;
-exports.default = parallel(style, watchStyles, monitor);
+function generate(done) {
+    // TODO: generate pages by spawning ts-node process directly, without yarn
+    done();
+}
+
+function clean(done) {
+    // TODO: cleanup _site/**
+    done();
+}
+
+// compile static CSS & JS etc.
+exports.compile = series(clean, style);
+
+// compile and generate pages
+exports.build = series(exports.compile, generate);
+
+// development entry point with browserSync proxy
+exports.dev = parallel(monitor, watchFiles);
+
+exports.default = series(exports.compile, parallel(monitor, watchFiles));

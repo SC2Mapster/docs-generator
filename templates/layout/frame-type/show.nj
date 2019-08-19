@@ -1,4 +1,5 @@
 {% from "layout/frame-class/_ctype.nj" import property_list, desc_element_list %}
+{% from "_helpers.nj" import github_link %}
 
 <h1>{{ frame.name }}</h1>
 
@@ -61,7 +62,10 @@
             <dt class="col-md-4 text-right">&nbsp;</dt>
             <dd class="col-md-8 class-divider">
                 <h4 class="d-inline-block"><code>— {{ frameClass.name }}</code></h4>
-                <small class="float-right text-muted">{{ frameClass.properties|length }}</small>
+                <small class="text-muted">({{ frameClass.properties|length }})</small>
+                <div class="float-right">
+                    {{ github_link({ src: 'SC2Mapster/sc2layout-schema/blob/master/sc2layout/doc/frameClass/' ~ frameClass.name ~ '.md' }) }}
+                </div>
             </dd>
 
             {% if frameClass.properties|length %}

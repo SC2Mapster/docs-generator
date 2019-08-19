@@ -104,6 +104,6 @@ exports.compile = series(clean, style);
 exports.build = series(exports.compile, generate);
 
 // development entry point with browserSync proxy
-exports.dev = parallel(monitor, watchFiles);
+exports.serve = parallel(monitor, watchFiles);
 
 exports.default = series(exports.compile, parallel(monitor, watchFiles));

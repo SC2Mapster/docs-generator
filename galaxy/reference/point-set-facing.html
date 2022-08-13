@@ -1,0 +1,269 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Make Point Face Angle / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Make Point Face Angle"/>
+                <meta property="og:description" content="Changes the facing of a point."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="make-point-face-angle"><a class="markdownIt-Anchor" href="#make-point-face-angle">#</a> Make Point Face Angle</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Make <strong>p</strong> face <strong>angle</strong> degrees<br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Changes the facing of a point.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>point</code> — Point</li>
+<li><code>fixed</code> — Angle</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">PointSetFacing</span><span class="hljs-params">(point p, fixed inFacing)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#point-creation-and-modification">Point / Creation And Modification</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>point</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-point-from-xyz">Point From XYZ</a></strong> — ( libNtve_gf_PointFromXYZ )</li>
+<li><em><strong>[F]</strong></em> — <code>point</code> — <strong><a href="/galaxy/reference/point">Point From XY</a></strong> — ( Point )</li>
+<li><em><strong>[F]</strong></em> — <code>point</code> — <strong><a href="/galaxy/reference/point-from-name">Point From Name</a></strong> — ( PointFromName )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/point-set">Move Point</a></strong> — ( PointSet )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/point-set-facing">Make Point Face Angle</a></strong> — ( PointSetFacing )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/point-set-height">Set Point Height</a></strong> — ( PointSetHeight )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/thorner01.sc2map/MapScript.galaxy#L397">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L397</span>
+PointSetFacing(lv_currentPoint, AngleBetweenPoints(lv_currentPoint, gv_trainPath[lv_currentTarget]))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3716</span>
+PointSetFacing(lv_ret, (PointGetFacing(lp_source) + lp_rotate))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L397</span>
+PointSetFacing(lv_currentPoint, AngleBetweenPoints(lv_currentPoint, gv_trainPath[lv_currentTarget]))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3716</span>
+PointSetFacing(lv_ret, (PointGetFacing(lp_source) + lp_rotate))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1326</span>
+PointSetFacing(gv_hybridReleaseLocation[auto0CF21101_var], AngleBetweenPoints(gv_hybridCellLocation[auto0CF21101_var], gv_hybridReleaseLocation[auto0CF21101_var]))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2228</span>
+PointSetFacing(lv_location, UnitGetFacing(auto174509A1_var))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3090</span>
+PointSetFacing(lv_tempLoc, UnitGetFacing(UnitGroupLoopCurrent()))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3090</span>
+PointSetFacing(lv_tempLoc, UnitGetFacing(UnitGroupLoopCurrent()))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1326</span>
+PointSetFacing(gv_hybridReleaseLocation[auto0CF21101_var], AngleBetweenPoints(gv_hybridCellLocation[auto0CF21101_var], gv_hybridReleaseLocation[auto0CF21101_var]))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2228</span>
+PointSetFacing(lv_location, UnitGetFacing(auto174509A1_var))
+</code></pre>
+<h4 id="campaignsswarmstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmstorysc2campaign">#</a> campaigns/swarmstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstory.sc2campaign/base.sc2data/TriggerLibs/SwarmCampaignLib.galaxy#L1194">SwarmCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1194</span>
+PointSetFacing(lv_dropLocation, PointGetFacing(lp_location))
+</code></pre>
+<h4 id="campaignsvoidsc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidsc2campaign">#</a> campaigns/void.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/void.sc2campaign/base.sc2maps/maps/campaign/void/paiur01.sc2map/MapScript.galaxy#L476">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L476</span>
+PointSetFacing(lv_hybridPoint, UnitGetFacing(lv_hybrid))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L507</span>
+PointSetFacing(lv_hybridPoint, UnitGetFacing(lv_hybrid))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2255</span>
+PointSetFacing(lv_hybridCellPoint, <span class="hljs-number">180.01</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2259</span>
+PointSetFacing(lv_hybridCellPoint, <span class="hljs-number">0.32</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L476</span>
+PointSetFacing(lv_hybridPoint, UnitGetFacing(lv_hybrid))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L507</span>
+PointSetFacing(lv_hybridPoint, UnitGetFacing(lv_hybrid))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2255</span>
+PointSetFacing(lv_hybridCellPoint, <span class="hljs-number">180.01</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2259</span>
+PointSetFacing(lv_hybridCellPoint, <span class="hljs-number">0.32</span>)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignMissionLib.galaxy#L3220">VoidCampaignMissionLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3220</span>
+PointSetFacing(lv_dropLocation, PointGetFacing(lp_location))
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign-2"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign-2">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignStoryLib.galaxy#L629">VoidCampaignStoryLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L629</span>
+PointSetFacing(libVCST_gv_pS_ConversationCutscenePosition, <span class="hljs-number">270.0</span>)
+</code></pre>
+<h4 id="modscoresc2mod"><a class="markdownIt-Anchor" href="#modscoresc2mod">#</a> mods/core.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/core.sc2mod/base.sc2data/TriggerLibs/NativeLib.galaxy#L3982">NativeLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3982</span>
+PointSetFacing(lv_pointWithFacing, lp_angle)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4008</span>
+PointSetFacing(lv_pointWithFacing, lp_angle)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3269</span>
+PointSetFacing(lv_pointWithFacing, lp_angle)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3307</span>
+PointSetFacing(lv_pointWithFacing, lp_angle)
+</code></pre>
+<h4 id="modsheroesstormmod"><a class="markdownIt-Anchor" href="#modsheroesstormmod">#</a> mods/heroes.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroes.stormmod/base.stormmaps/maps/heroes/singleplayermaps/startingexperience/tutorialmapmechanics.stormmap/MapScript.galaxy#L1404">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1404</span>
+PointSetFacing(gv_originalPlayerPoint, UnitGetFacing(gv_heroPlayer))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2068</span>
+PointSetFacing(lv_position, UnitGetFacing(libStEx_gv_hERO_FriendlyUther))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1404</span>
+PointSetFacing(gv_originalPlayerPoint, UnitGetFacing(gv_heroPlayer))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2068</span>
+PointSetFacing(lv_position, UnitGetFacing(libStEx_gv_hERO_FriendlyUther))
+</code></pre>
+<h4 id="modsheroesbrawlmodsarenamodemodsgardenarenastormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsarenamodemodsgardenarenastormmod">#</a> mods/heroesbrawlmods/arenamodemods/gardenarena.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/arenamodemods/gardenarena.stormmod/base.stormdata/LibAMGT.galaxy#L432">LibAMGT.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L432</span>
+PointSetFacing(libAMGT_gv_aRMGardenMinionGroup[libAMGT_gv_aRMGardenMinionGroupCount].lv_positions[lv_minionIndex], UnitGetFacing(lv_itMinion))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L670</span>
+PointSetFacing(libAMGT_gv_aRMGardenTerrors[libAMGT_gv_aRMGardenTerrorCount].lv_position, UnitGetFacing(lp_terror))
+</code></pre>
+<h4 id="modsheroesbrawlmodsarenamodemodspunisherarenastormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsarenamodemodspunisherarenastormmod">#</a> mods/heroesbrawlmods/arenamodemods/punisherarena.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/arenamodemods/punisherarena.stormmod/base.stormdata/LibAMPU.galaxy#L114">LibAMPU.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L114</span>
+PointSetFacing(libAMPU_gv_aRMPunisherPunisherSpawnLocations[lv_itTeam], UnitGetFacing(libAMPU_gv_aRMPunisherPunishers[lv_itTeam].lv_unit))
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodscoopdeadmansstandstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodscoopdeadmansstandstormmod">#</a> mods/heroesbrawlmods/brawlmapmods/coop/deadmansstand.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/coop/deadmansstand.stormmod/base.stormdata/LibPEB1.galaxy#L298">LibPEB1.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L298</span>
+PointSetFacing(lv_meleeAnchor, lv_facingAngle)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L299</span>
+PointSetFacing(lv_rangedAnchor, lv_facingAngle)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L313</span>
+PointSetFacing(libPEB1_gv_pVEMinionWaveMinionRally[lp_lane].lv_rallyPosition[lv_rallyStructures][libCore_ge_MinionTypes_Wizard][<span class="hljs-number">1</span>], lv_facingAngle)
+</code></pre>
+<h4 id="modsheroesdatastormmod"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/GameLib.galaxy#L8794">GameLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L8794</span>
+PointSetFacing(lv_spawnPoint, PointGetFacing(lv_basePoint))
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodshauntedminesstormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodshauntedminesstormmod">#</a> mods/heroesmapmods/battlegroundmapmods/hauntedmines.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/hauntedmines.stormmod/base.stormdata/LibMHtM.galaxy#L616">LibMHtM.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L616</span>
+PointSetFacing(libMHtM_gv_mMUnderworldMinionGroups[libMHtM_gv_mMUnderworldMinionGroupCount].lv_positions[lv_minionIndex], UnitGetFacing(lv_itMinion))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L648</span>
+PointSetFacing(libMHtM_gv_mMUnderworldBossLocation, UnitGetFacing(libMHtM_gv_mMUnderworldBoss))
+</code></pre>
+<h4 id="modsmissionpacksnovacampaignsc2mod"><a class="markdownIt-Anchor" href="#modsmissionpacksnovacampaignsc2mod">#</a> mods/missionpacks/novacampaign.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/novacampaign.sc2mod/base.sc2data/LibNCMI.galaxy#L3393">LibNCMI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3393</span>
+PointSetFacing(lv_dropLocation, PointGetFacing(lp_location))
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOMI.galaxy#L6229">LibCOMI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L6229</span>
+PointSetFacing(lv_spawnPosition, UnitGetFacing(lp_targetUnit))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11197</span>
+PointSetFacing(lv_dropLocation, PointGetFacing(lp_location))
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod-2"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod-2">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOMU.galaxy#L832">LibCOMU.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L832</span>
+PointSetFacing(lv_spawnPosition, UnitGetFacing(lp_killingUnit))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1019</span>
+PointSetFacing(lv_departPoint, AngleBetweenPoints(lv_departPoint, lv_teleportPoint))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1030</span>
+PointSetFacing(lv_teleportPoint, AngleBetweenPoints(lv_teleportPoint, lv_departPoint))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3479</span>
+PointSetFacing(lv_spawnPosition, UnitGetFacing(lp_civilianUnit))
+</code></pre>
+<h4 id="modsvoidprologuesc2mod"><a class="markdownIt-Anchor" href="#modsvoidprologuesc2mod">#</a> mods/voidprologue.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/voidprologue.sc2mod/base.sc2data/LibA3DDD02B.galaxy#L882">LibA3DDD02B.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L882</span>
+PointSetFacing(lv_dropLocation, PointGetFacing(lp_location))
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

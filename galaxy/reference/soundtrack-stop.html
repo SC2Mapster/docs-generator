@@ -1,0 +1,413 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Stop Soundtrack (Current &amp; Queued) / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Stop Soundtrack (Current &amp; Queued)"/>
+                <meta property="og:description" content="Stops the current &amp; queued soundtrack for the specified player group."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="stop-soundtrack-current-queued"><a class="markdownIt-Anchor" href="#stop-soundtrack-current-queued">#</a> Stop Soundtrack (Current &amp; Queued)</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Stop current &amp; queued <strong>category</strong> soundtrack for <strong>players</strong> (<strong>fade</strong>)<br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Stops the current &amp; queued soundtrack for the specified player group.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>playergroup</code> — Players</li>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-soundtrack-category">SoundtrackCategory</a> ]</em> — Category</li>
+<li><code>bool</code> <em>[ preset::<a href="/galaxy/reference/preset-sound-fade-option">SoundFadeOption</a> ]</em> — Fade</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">SoundtrackStop</span><span class="hljs-params">(
+	playergroup players,
+	<span class="hljs-keyword">int</span> category,
+	<span class="hljs-keyword">bool</span> fade,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#sound-soundtracks">Sound / Soundtracks</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/soundtrack-play">Play Soundtrack</a></strong> — ( SoundtrackPlay )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/soundtrack-pause">Pause Soundtrack</a></strong> — ( SoundtrackPause )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/soundtrack-stop-current">Stop Soundtrack (Current)</a></strong> — ( SoundtrackStopCurrent )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/soundtrack-stop">Stop Soundtrack (Current &amp; Queued)</a></strong> — ( SoundtrackStop )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/soundtrack-wait">Wait For Soundtrack</a></strong> — ( SoundtrackWait )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/soundtrack-default">Set Default Soundtrack</a></strong> — ( SoundtrackDefault )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/soundtrack-set-continuous">Enable/Disable Soundtrack Continuous</a></strong> — ( SoundtrackSetContinuous )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/soundtrack-set-delay">Set Soundtrack Delay</a></strong> — ( SoundtrackSetDelay )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/soundtrack-set-shuffle">Enable/Disable Soundtrack Shuffle</a></strong> — ( SoundtrackSetShuffle )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/tarcade.sc2map/MapScript.galaxy#L4065">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4065</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8900</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2801</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12470</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12946</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L14688</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L36498</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4065</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8900</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2801</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12470</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12946</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L14688</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L36498</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="campaignslibertystorysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertystorysc2campaign">#</a> campaigns/libertystory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/libertystory.sc2campaign/base.sc2data/TriggerLibs/CampaignLib.galaxy#L6011">CampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L6011</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryAmbience, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10211</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10212</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryAmbience, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="campaignsswarmsc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmsc2campaign">#</a> campaigns/swarm.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarm.sc2campaign/base.sc2maps/maps/campaign/voidprologue/voidprologue03.sc2map/MapScript.galaxy#L6290">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L6290</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8990</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9232</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9244</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9412</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9671</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9845</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5325</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5679</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5263</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6104</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6746</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6750</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7199</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7559</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5203</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8794</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9162</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6799</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7258</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5516</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4815</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5295</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5462</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6019</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6294</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6508</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5700</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6087</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7376</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5227</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5298</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5579</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5957</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7521</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7837</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8003</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8144</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8291</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10173</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10603</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10701</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10952</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1304</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryAmbience, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1797</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryAmbience, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6763</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryAmbience, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7703</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryAmbience, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12155</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryAmbience, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8428</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryAmbience, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8567</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8571</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryAmbience, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6300</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6724</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7762</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8544</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L105</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7045</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7428</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5323</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5955</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6059</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6067</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9995</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10023</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10051</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10079</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10365</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10804</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10883</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10962</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3019</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4882</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4294</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1569</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryAmbience, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3515</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2861</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3733</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3289</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3019</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4882</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4294</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1569</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryAmbience, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3515</span>
+SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

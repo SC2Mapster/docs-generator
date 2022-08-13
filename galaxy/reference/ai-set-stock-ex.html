@@ -1,0 +1,333 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Set StockEx / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Set StockEx"/>
+                <meta property="og:description" content="Set stock for a player to make units of the specified unit type.  (More advanced than Set Stock)"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="set-stockex"><a class="markdownIt-Anchor" href="#set-stockex">#</a> Set StockEx</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Set stock for player <strong>player</strong> at town <strong>town</strong> to make <strong>count</strong> units of type <strong>unitType</strong> using build flags <strong>buildFlags|buildFlags</strong> and stock flags <strong>stockFlags|StockFlags</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Set stock for a player to make units of the specified unit type.  (More advanced than Set Stock)</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> — Player</li>
+<li><code>int</code> — Town</li>
+<li><code>int</code> — Count</li>
+<li><code>string</code> <em>[ gamelink::Unit ]</em> — Unit Type</li>
+<li><code>int</code> — Build Flags</li>
+<li><code>int</code> — Stock Flags</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">AISetStockEx</span><span class="hljs-params">(
+	<span class="hljs-keyword">int</span> player,
+	<span class="hljs-keyword">int</span> town,
+	<span class="hljs-keyword">int</span> count,
+	<span class="hljs-built_in">string</span> aliasType,
+	<span class="hljs-keyword">int</span> buildFlags,
+	<span class="hljs-keyword">int</span> stockFlags,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#ai-advanced-construction-actions">AI Advanced / Construction / Actions</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-build">Build</a></strong> — ( AIBuild )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-train">Train</a></strong> — ( AITrain )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-research">Research</a></strong> — ( AIResearch )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-make-always">Make Always</a></strong> — ( AIMakeAlways )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-make-once">Make Once</a></strong> — ( AIMakeOnce )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-clear-build-queue">Clear Build Queue</a></strong> — ( AIClearBuildQueue )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-clear-train-queue">Clear Train Queue</a></strong> — ( AIClearTrainQueue )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-clear-research-queue">Clear Research Queue</a></strong> — ( AIClearResearchQueue )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-clear-stock">Clear Stock</a></strong> — ( AIClearStock )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-enable-stock">Enable Stock</a></strong> — ( AIEnableStock )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-set-stock-ex">Set StockEx</a></strong> — ( AISetStockEx )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-set-stock">Set Stock</a></strong> — ( AISetStock )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-set-stock-opt">Set StockOpt</a></strong> — ( AISetStockOpt )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-set-stock-unit-next">Set StockUnitNext</a></strong> — ( AISetStockUnitNext )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/ai-set-stock-town">Set StockTown</a></strong> — ( AISetStockTown )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/ai-set-stock-expand">Set StockExpand</a></strong> — ( AISetStockExpand )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-set-stock-alias">Set StockAlias</a></strong> — ( AISetStockAlias )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-set-stock-free">Set StockFree</a></strong> — ( AISetStockFree )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-default-economy">Default Economy</a></strong> — ( AIDefaultEconomy )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-default-expansion">Default Expansion</a></strong> — ( AIDefaultExpansion )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="modscoresc2mod"><a class="markdownIt-Anchor" href="#modscoresc2mod">#</a> mods/core.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/core.sc2mod/base.sc2data/TriggerLibs/MeleeAI.galaxy#L412">MeleeAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L412</span>
+AISetStockEx(player, c_townMain, want, what, c_makeDefault, c_stockDefense)
+</code></pre>
+<h4 id="modscoresc2mod-2"><a class="markdownIt-Anchor" href="#modscoresc2mod-2">#</a> mods/core.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/core.sc2mod/base.sc2data/TriggerLibs/MeleeLowAI.galaxy#L482">MeleeLowAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L482</span>
+AISetStockEx(player, town, <span class="hljs-number">2</span>, c_TB_MissileTurret, c_makeResourceDefense | c_nearDropoff, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L486</span>
+AISetStockEx(player, town, <span class="hljs-number">1</span>, c_TB_Bunker, c_makeResourceDefense | c_nearDropoff, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L627</span>
+AISetStockEx(player, town, <span class="hljs-number">2</span>, c_ZB_SporeCrawler, c_makeResourceDefense | c_nearDropoff, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L631</span>
+AISetStockEx(player, town, <span class="hljs-number">2</span>, c_ZB_SpineCrawler, c_makeResourceDefense | c_nearDropoff, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L767</span>
+AISetStockEx(player, town, <span class="hljs-number">1</span>, c_PB_Pylon, c_makeExpanPower, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L768</span>
+AISetStockEx(player, town, <span class="hljs-number">2</span>, c_PB_Pylon, c_makeResourceDefense | c_nearDropoff, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L773</span>
+AISetStockEx(player, town, <span class="hljs-number">2</span>, c_PB_PhotonCannon, c_makeResourceDefense | c_nearDropoff, <span class="hljs-number">0</span>)
+</code></pre>
+<h4 id="modslibertysc2mod"><a class="markdownIt-Anchor" href="#modslibertysc2mod">#</a> mods/liberty.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/liberty.sc2mod/base.sc2data/TriggerLibs/Protoss/ProtossHigh.galaxy#L1010">ProtossHigh.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1010</span>
+AISetStockEx(player, mainTown, pylonCount, c_PB_Pylon, c_makeExpanPower, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1018</span>
+AISetStockEx(player, mainTown, cannonCount, c_PB_PhotonCannon, c_makeDefense, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1024</span>
+AISetStockEx(player, mainTown, pylonCount, c_PB_Pylon, c_makeExpanPower, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1037</span>
+AISetStockEx(player, mainTown, cannonCount, c_PB_PhotonCannon, c_makeDefense, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1078</span>
+AISetStockEx(player, town, <span class="hljs-number">1</span>, c_PB_Pylon, c_makeExpanPower, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1085</span>
+AISetStockEx(player, town, <span class="hljs-number">1</span>, c_PB_PhotonCannon, c_makeDefense, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1091</span>
+AISetStockEx(player, town, <span class="hljs-number">2</span>, c_PB_Pylon, c_makeExpanPower, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1104</span>
+AISetStockEx(player, town, amount, c_PB_PhotonCannon, c_makeDefense, <span class="hljs-number">0</span>)
+</code></pre>
+<h4 id="modslibertysc2mod-2"><a class="markdownIt-Anchor" href="#modslibertysc2mod-2">#</a> mods/liberty.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/liberty.sc2mod/base.sc2data/TriggerLibs/Terran/TerranHigh.galaxy#L1101">TerranHigh.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1101</span>
+AISetStockEx(player, mainTown, turretCount, c_TB_MissileTurret, c_makeResourceDefense, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1116</span>
+AISetStockEx(player, mainTown, orbitalCount, c_TB_OrbitalCommand, c_makeDefault, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1154</span>
+AISetStockEx(player, town, <span class="hljs-number">1</span>, c_TB_OrbitalCommand, c_makeDefault, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1163</span>
+AISetStockEx(player, town, <span class="hljs-number">1</span>, c_TB_PlanetaryFortress, c_makeDefault, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1179</span>
+AISetStockEx(player, town, amount, c_TB_MissileTurret, c_makeResourceDefense | c_nearDropoff, <span class="hljs-number">0</span>)
+</code></pre>
+<h4 id="modslibertysc2mod-3"><a class="markdownIt-Anchor" href="#modslibertysc2mod-3">#</a> mods/liberty.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/liberty.sc2mod/base.sc2data/TriggerLibs/Zerg/ZergHigh.galaxy#L1044">ZergHigh.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1044</span>
+AISetStockEx(player, mainTown, spineCrawlerCount, c_ZB_SpineCrawler, c_makeDefense, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1051</span>
+AISetStockEx(player, mainTown, sporeCrawlerCount, c_ZB_SporeCrawler, c_makeResourceDefense, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1102</span>
+AISetStockEx(player, town, amount, c_ZB_SpineCrawler, c_makeDefense, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1106</span>
+AISetStockEx(player, town, amount, c_ZB_SporeCrawler, c_makeResourceDefense, <span class="hljs-number">0</span>)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/TriggerLibs/MeleeAI.galaxy#L418">MeleeAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L418</span>
+AISetStockEx(player, c_townMain, want, what, c_makeDefault, c_stockDefense)
+</code></pre>
+<h4 id="modsswarmsc2mod"><a class="markdownIt-Anchor" href="#modsswarmsc2mod">#</a> mods/swarm.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/swarm.sc2mod/base.sc2data/TriggerLibs/Protoss/ProtossHigh.galaxy#L1005">ProtossHigh.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1005</span>
+AISetStockEx(player, mainTown, pylonCount, c_PB_Pylon, c_makeExpanPower, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1013</span>
+AISetStockEx(player, mainTown, cannonCount, c_PB_PhotonCannon, c_makeDefense, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1019</span>
+AISetStockEx(player, mainTown, pylonCount, c_PB_Pylon, c_makeExpanPower, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1032</span>
+AISetStockEx(player, mainTown, cannonCount, c_PB_PhotonCannon, c_makeDefense, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1073</span>
+AISetStockEx(player, town, <span class="hljs-number">1</span>, c_PB_Pylon, c_makeExpanPower, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1080</span>
+AISetStockEx(player, town, <span class="hljs-number">1</span>, c_PB_PhotonCannon, c_makeDefense, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1086</span>
+AISetStockEx(player, town, <span class="hljs-number">2</span>, c_PB_Pylon, c_makeExpanPower, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1099</span>
+AISetStockEx(player, town, amount, c_PB_PhotonCannon, c_makeDefense, <span class="hljs-number">0</span>)
+</code></pre>
+<h4 id="modsswarmsc2mod-2"><a class="markdownIt-Anchor" href="#modsswarmsc2mod-2">#</a> mods/swarm.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/swarm.sc2mod/base.sc2data/TriggerLibs/Terran/TerranHigh.galaxy#L1092">TerranHigh.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1092</span>
+AISetStockEx(player, mainTown, turretCount, c_TB_MissileTurret, c_makeResourceDefense, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1107</span>
+AISetStockEx(player, mainTown, orbitalCount, c_TB_OrbitalCommand, c_makeDefault, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1145</span>
+AISetStockEx(player, town, <span class="hljs-number">1</span>, c_TB_OrbitalCommand, c_makeDefault, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1154</span>
+AISetStockEx(player, town, <span class="hljs-number">1</span>, c_TB_PlanetaryFortress, c_makeDefault, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1170</span>
+AISetStockEx(player, town, amount, c_TB_MissileTurret, c_makeResourceDefense | c_nearDropoff, <span class="hljs-number">0</span>)
+</code></pre>
+<h4 id="modsswarmsc2mod-3"><a class="markdownIt-Anchor" href="#modsswarmsc2mod-3">#</a> mods/swarm.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/swarm.sc2mod/base.sc2data/TriggerLibs/Zerg/ZergHigh.galaxy#L1062">ZergHigh.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1062</span>
+AISetStockEx(player, mainTown, spineCrawlerCount, c_ZB_SpineCrawler, c_makeDefense, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1069</span>
+AISetStockEx(player, mainTown, sporeCrawlerCount, c_ZB_SporeCrawler, c_makeResourceDefense, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1120</span>
+AISetStockEx(player, town, amount, c_ZB_SpineCrawler, c_makeDefense, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1124</span>
+AISetStockEx(player, town, amount, c_ZB_SporeCrawler, c_makeResourceDefense, <span class="hljs-number">0</span>)
+</code></pre>
+<h4 id="modsvoidsc2mod"><a class="markdownIt-Anchor" href="#modsvoidsc2mod">#</a> mods/void.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/void.sc2mod/base.sc2data/TriggerLibs/Protoss/ProtossHigh.galaxy#L1042">ProtossHigh.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1042</span>
+AISetStockEx(player, mainTown, pylonCount, c_PB_Pylon, c_makeExpanPower, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1050</span>
+AISetStockEx(player, mainTown, cannonCount, c_PB_PhotonCannon, c_makeDefense, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1056</span>
+AISetStockEx(player, mainTown, pylonCount, c_PB_Pylon, c_makeExpanPower, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1069</span>
+AISetStockEx(player, mainTown, cannonCount, c_PB_PhotonCannon, c_makeDefense, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1110</span>
+AISetStockEx(player, town, <span class="hljs-number">1</span>, c_PB_Pylon, c_makeExpanPower, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1117</span>
+AISetStockEx(player, town, <span class="hljs-number">1</span>, c_PB_PhotonCannon, c_makeDefense, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1123</span>
+AISetStockEx(player, town, <span class="hljs-number">2</span>, c_PB_Pylon, c_makeExpanPower, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1136</span>
+AISetStockEx(player, town, amount, c_PB_PhotonCannon, c_makeDefense, <span class="hljs-number">0</span>)
+</code></pre>
+<h4 id="modsvoidsc2mod-2"><a class="markdownIt-Anchor" href="#modsvoidsc2mod-2">#</a> mods/void.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/void.sc2mod/base.sc2data/TriggerLibs/Terran/TerranHigh.galaxy#L1106">TerranHigh.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1106</span>
+AISetStockEx(player, mainTown, turretCount, c_TB_MissileTurret, c_makeResourceDefense, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1121</span>
+AISetStockEx(player, mainTown, orbitalCount, c_TB_OrbitalCommand, c_makeDefault, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1159</span>
+AISetStockEx(player, town, <span class="hljs-number">1</span>, c_TB_OrbitalCommand, c_makeDefault, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1168</span>
+AISetStockEx(player, town, <span class="hljs-number">1</span>, c_TB_PlanetaryFortress, c_makeDefault, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1184</span>
+AISetStockEx(player, town, amount, c_TB_MissileTurret, c_makeResourceDefense | c_nearDropoff, <span class="hljs-number">0</span>)
+</code></pre>
+<h4 id="modsvoidsc2mod-3"><a class="markdownIt-Anchor" href="#modsvoidsc2mod-3">#</a> mods/void.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/void.sc2mod/base.sc2data/TriggerLibs/Zerg/ZergHigh.galaxy#L1072">ZergHigh.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1072</span>
+AISetStockEx(player, mainTown, spineCrawlerCount, c_ZB_SpineCrawler, c_makeDefense, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1079</span>
+AISetStockEx(player, mainTown, sporeCrawlerCount, c_ZB_SporeCrawler, c_makeResourceDefense, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1130</span>
+AISetStockEx(player, town, amount, c_ZB_SpineCrawler, c_makeDefense, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1134</span>
+AISetStockEx(player, town, amount, c_ZB_SporeCrawler, c_makeResourceDefense, <span class="hljs-number">0</span>)
+</code></pre>
+<h4 id="modswarcoopwarmeleeaisc2mod"><a class="markdownIt-Anchor" href="#modswarcoopwarmeleeaisc2mod">#</a> mods/warcoop/warmeleeai.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/warcoop/warmeleeai.sc2mod/base.sc2data/TriggerLibs/Orc/Orc.galaxy#L42">Orc.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L42</span>
+AISetStockEx(player, townid, <span class="hljs-number">1</span>, unitid, c_makeDefault, c_stockNormal)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

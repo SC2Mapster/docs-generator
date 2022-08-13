@@ -1,0 +1,289 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Height At Point / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Height At Point"/>
+                <meta property="og:description" content="Returns the height at a point.
+
+Returns: fixed"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="height-at-point"><a class="markdownIt-Anchor" href="#height-at-point">#</a> Height At Point</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — <strong>type</strong> height at <strong>point</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Function</code></p>
+</blockquote>
+<p>Returns the height at a point.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-height-type">HeightType</a> ]</em> — Type</li>
+<li><code>point</code> — Point</li>
+</ul>
+<p>Returns — <code>fixed</code></p>
+<pre class="hljs"><code><span class="hljs-function">native fixed <span class="hljs-title">WorldHeight</span><span class="hljs-params">(<span class="hljs-keyword">int</span> inType, point inPos)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#environment-terrain-and-water">Environment / Terrain And Water</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/environment-show">Show/Hide Environment</a></strong> — ( EnvironmentShow )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/world-height">Height At Point</a></strong> — ( WorldHeight )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> <em>[ gamelink::TerrainTex ]</em> — <strong><a href="/galaxy/reference/terrain-texture">Terrain Texture At Point</a></strong> — ( TerrainTexture )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/cliff-level">Cliff Level Of Point (Integer)</a></strong> — ( CliffLevel )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/point-pathing-cliff-level">Cliff Level Of Point (Real)</a></strong> — ( PointPathingCliffLevel )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/cross-cliff">Line Crosses Cliff</a></strong> — ( CrossCliff )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/has-custom-cell-attribute">Terrain Has Custom Attribute</a></strong> — ( HasCustomCellAttribute )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/terrain-show-region">Show/Hide Terrain</a></strong> — ( TerrainShowRegion )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/water-set-state">Set Water State</a></strong> — ( WaterSetState )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/water-pause">Pause/Unpause Water Transition</a></strong> — ( WaterPause )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/ttosh01.sc2map/MapScript.galaxy#L2971">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2971</span>
+WorldHeight(c_heightMapGround, UnitGetPosition(autoD2B9032B_var))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7921</span>
+WorldHeight(c_heightMapGround, UnitGetPosition(autoD60EF79C_var))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7932</span>
+WorldHeight(c_heightMapGround, gv__4LavaDoodadPositions[autoDFEF9D84_var])
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7941</span>
+WorldHeight(c_heightMapGround, gv__4LavaNydusPositions[autoEB0AC6E5_var])
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7949</span>
+WorldHeight(c_heightMapGround, gv__4LavaFireNydusPositions[autoEA18677F_var])
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2971</span>
+WorldHeight(c_heightMapGround, UnitGetPosition(autoD2B9032B_var))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7921</span>
+WorldHeight(c_heightMapGround, UnitGetPosition(autoD60EF79C_var))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7932</span>
+WorldHeight(c_heightMapGround, gv__4LavaDoodadPositions[autoDFEF9D84_var])
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7941</span>
+WorldHeight(c_heightMapGround, gv__4LavaNydusPositions[autoEB0AC6E5_var])
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7949</span>
+WorldHeight(c_heightMapGround, gv__4LavaFireNydusPositions[autoEA18677F_var])
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1870</span>
+WorldHeight(c_heightMapGround, UnitGetPosition(UnitGroupLoopCurrent()))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1870</span>
+WorldHeight(c_heightMapGround, UnitGetPosition(UnitGroupLoopCurrent()))
+</code></pre>
+<h4 id="campaignsswarmstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmstorysc2campaign">#</a> campaigns/swarmstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstory.sc2campaign/base.sc2data/TriggerLibs/SwarmCampaignDataHelperLib.galaxy#L98">SwarmCampaignDataHelperLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L98</span>
+WorldHeight(c_heightMapGround, lv_k)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L98</span>
+WorldHeight(c_heightMapGround, <span class="hljs-keyword">lv_t</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L98</span>
+WorldHeight(c_heightMapGround, lv_k)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L98</span>
+WorldHeight(c_heightMapGround, <span class="hljs-keyword">lv_t</span>)
+</code></pre>
+<h4 id="campaignsvoidsc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidsc2campaign">#</a> campaigns/void.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/void.sc2campaign/base.sc2maps/maps/campaign/void/sc2epilogue03.sc2map/MapScript.galaxy#L2121">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2121</span>
+WorldHeight(c_heightMapGround, PointWithOffsetPolar(gv_voidCrystals[lv_index].lv_center, gf_VoidCrystalRadiusatAngle(lv_currentAngle, lv_index), lv_currentAngle))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2131</span>
+WorldHeight(c_heightMapGround, PointWithOffsetPolar(gv_voidCrystals[lv_index].lv_center, gf_VoidCrystalRadiusatAngle(lv_currentAngle, lv_index), lv_currentAngle))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2121</span>
+WorldHeight(c_heightMapGround, PointWithOffsetPolar(gv_voidCrystals[lv_index].lv_center, gf_VoidCrystalRadiusatAngle(lv_currentAngle, lv_index), lv_currentAngle))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2131</span>
+WorldHeight(c_heightMapGround, PointWithOffsetPolar(gv_voidCrystals[lv_index].lv_center, gf_VoidCrystalRadiusatAngle(lv_currentAngle, lv_index), lv_currentAngle))
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignMissionLib.galaxy#L4833">VoidCampaignMissionLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4833</span>
+WorldHeight(c_heightMapGround, CameraGetTarget(<span class="hljs-number">1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4836</span>
+WorldHeight(c_heightMapGround, EventPlayerEffectUsedPoint(c_effectLocationTargetPoint))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5657</span>
+WorldHeight(c_heightMapGround, lv_k)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5657</span>
+WorldHeight(c_heightMapGround, <span class="hljs-keyword">lv_t</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5657</span>
+WorldHeight(c_heightMapGround, lv_k)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5657</span>
+WorldHeight(c_heightMapGround, <span class="hljs-keyword">lv_t</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5741</span>
+WorldHeight(c_heightMapGround, lv_k)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5741</span>
+WorldHeight(c_heightMapGround, <span class="hljs-keyword">lv_t</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5741</span>
+WorldHeight(c_heightMapGround, lv_k)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5741</span>
+WorldHeight(c_heightMapGround, <span class="hljs-keyword">lv_t</span>)
+</code></pre>
+<h4 id="modsfrontierssc2mod"><a class="markdownIt-Anchor" href="#modsfrontierssc2mod">#</a> mods/frontiers.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/frontiers.sc2mod/base.sc2data/Lib6CB3363F.galaxy#L585">Lib6CB3363F.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L585</span>
+WorldHeight(c_heightMapGround, UnitGetPosition(lib6CB3363F_gv_fT_PlayerUnit[lp_playerFiring]))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L600</span>
+WorldHeight(c_heightMapGround, UnitGetPosition(lib6CB3363F_gv_fT_PlayerUnit[lp_playerFiring]))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L610</span>
+WorldHeight(c_heightMapGround, UnitGetPosition(lib6CB3363F_gv_fT_PlayerUnit[lp_playerFiring]))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L623</span>
+WorldHeight(c_heightMapGround, UnitGetPosition(lib6CB3363F_gv_fT_PlayerUnit[lp_playerFiring]))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L633</span>
+WorldHeight(c_heightMapGround, UnitGetPosition(lib6CB3363F_gv_fT_PlayerUnit[lp_playerFiring]))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1814</span>
+WorldHeight(c_heightMapGround, UnitGetPosition(EventPlayerEffectUsedUnit(c_effectUnitCaster)))
+</code></pre>
+<h4 id="modsmissionpacksnovacampaignsc2mod"><a class="markdownIt-Anchor" href="#modsmissionpacksnovacampaignsc2mod">#</a> mods/missionpacks/novacampaign.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/novacampaign.sc2mod/base.sc2data/LibNCMI.galaxy#L4715">LibNCMI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4715</span>
+WorldHeight(c_heightMapGround, lv_k)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4715</span>
+WorldHeight(c_heightMapGround, <span class="hljs-keyword">lv_t</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4715</span>
+WorldHeight(c_heightMapGround, lv_k)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4715</span>
+WorldHeight(c_heightMapGround, <span class="hljs-keyword">lv_t</span>)
+</code></pre>
+<h4 id="modsnovastoryassetssc2mod"><a class="markdownIt-Anchor" href="#modsnovastoryassetssc2mod">#</a> mods/novastoryassets.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/novastoryassets.sc2mod/base.sc2maps/maps/campaign/nova/nova01.sc2map/MapScript.galaxy#L555">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L555</span>
+WorldHeight(c_heightMapGround, PointWithOffsetPolar(lp_point, lp_radius, (lv_i * <span class="hljs-number">45.0</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4480</span>
+WorldHeight(c_heightMapGround, CameraGetTarget(<span class="hljs-number">1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4483</span>
+WorldHeight(c_heightMapGround, EventPlayerEffectUsedPoint(c_effectLocationTargetPoint))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L555</span>
+WorldHeight(c_heightMapGround, PointWithOffsetPolar(lp_point, lp_radius, (lv_i * <span class="hljs-number">45.0</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4480</span>
+WorldHeight(c_heightMapGround, CameraGetTarget(<span class="hljs-number">1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4483</span>
+WorldHeight(c_heightMapGround, EventPlayerEffectUsedPoint(c_effectLocationTargetPoint))
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOMI.galaxy#L20970">LibCOMI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L20970</span>
+WorldHeight(c_heightMapGround, lv_k)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L20970</span>
+WorldHeight(c_heightMapGround, <span class="hljs-keyword">lv_t</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L20970</span>
+WorldHeight(c_heightMapGround, lv_k)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L20970</span>
+WorldHeight(c_heightMapGround, <span class="hljs-keyword">lv_t</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L23333</span>
+WorldHeight(c_heightMapGround, lv_k)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L23333</span>
+WorldHeight(c_heightMapGround, <span class="hljs-keyword">lv_t</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L23333</span>
+WorldHeight(c_heightMapGround, lv_k)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L23333</span>
+WorldHeight(c_heightMapGround, <span class="hljs-keyword">lv_t</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L25312</span>
+WorldHeight(c_heightMapGround, lv_effectTargetPoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L25321</span>
+WorldHeight(c_heightMapGround, lv_cameraTargetPoint)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,401 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Kill Model / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Kill Model"/>
+                <meta property="og:description" content="Tells a model actor type to play its death animation and then destroy itself.  It will only work on model actors, such as those created by the &quot;Attach Model to Unit&quot; action."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="kill-model"><a class="markdownIt-Anchor" href="#kill-model">#</a> Kill Model</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Kill actor model <strong>model</strong><br>
+<em>Flags</em> — <code>Action</code></p>
+</blockquote>
+<p>Tells a model actor type to play its death animation and then destroy itself.  It will only work on model actors, such as those created by the <em>“Attach Model to Unit”</em> action.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>actor</code> — Model</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">libNtve_gf_KillModel</span><span class="hljs-params">(actor lp_model)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#actor-destroy-actors">Actor / Destroy Actors</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/actor-scope-kill">Kill Actor Scope</a></strong> — ( ActorScopeKill )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/actor-world-particle-fxdestroy">Kill All Particles</a></strong> — ( ActorWorldParticleFXDestroy )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-kill-model">Kill Model</a></strong> — ( libNtve_gf_KillModel )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/actor-scope-orphan">Orphan Actor Scope</a></strong> — ( ActorScopeOrphan )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-remove-doodadsin-region">Remove Doodads in Region</a></strong> — ( libNtve_gf_RemoveDoodadsinRegion )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-remove-death-modelsin-region">Remove Death Models in Region</a></strong> — ( libNtve_gf_RemoveDeathModelsinRegion )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-remove-death-modelsin-region-immediately">Remove Death Models in Region Immediately</a></strong> — ( libNtve_gf_RemoveDeathModelsinRegionImmediately )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/challenges/economy.sc2map/MapScript.galaxy#L656">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L656</span>
+libNtve_gf_KillModel(gv_chokeGhostDepot1)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L661</span>
+libNtve_gf_KillModel(gv_chokeGhostDepot2)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L666</span>
+libNtve_gf_KillModel(gv_chokeGhostBarracks)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L837</span>
+libNtve_gf_KillModel(gv_chokeGhostDepot1)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L842</span>
+libNtve_gf_KillModel(gv_chokeGhostDepot2)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L847</span>
+libNtve_gf_KillModel(gv_chokeGhostBarracks)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L870</span>
+libNtve_gf_KillModel(gv_chokeGhostDepot1)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L894</span>
+libNtve_gf_KillModel(gv_chokeGhostDepot2)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L918</span>
+libNtve_gf_KillModel(gv_chokeGhostBarracks)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4720</span>
+libNtve_gf_KillModel(lv_birth)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7259</span>
+libNtve_gf_KillModel(libNtve_gf_ActorLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7264</span>
+libNtve_gf_KillModel(libNtve_gf_ActorLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7892</span>
+libNtve_gf_KillModel(lv_effect)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3010</span>
+libNtve_gf_KillModel(libNtve_gf_ActorLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1974</span>
+libNtve_gf_KillModel(gv_structureSelectionActor)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4060</span>
+libNtve_gf_KillModel(gv_aberrationSelectionActor)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6272</span>
+libNtve_gf_KillModel(gv_briefingVikingPingActor1)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6273</span>
+libNtve_gf_KillModel(gv_briefingVikingPingActor2)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6274</span>
+libNtve_gf_KillModel(gv_briefingVikingPingActor3)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6433</span>
+libNtve_gf_KillModel(gv_briefingNexusPingActor)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L708</span>
+libNtve_gf_KillModel(libNtve_gf_ActorLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L717</span>
+libNtve_gf_KillModel(libNtve_gf_ActorLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L726</span>
+libNtve_gf_KillModel(libNtve_gf_ActorLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4554</span>
+libNtve_gf_KillModel(gv_virophagePingActor)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4568</span>
+libNtve_gf_KillModel(gv_broodLordPingActor1)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4569</span>
+libNtve_gf_KillModel(gv_broodLordPingActor2)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4648</span>
+libNtve_gf_KillModel(gv_virophagePingActor)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4649</span>
+libNtve_gf_KillModel(gv_broodLordPingActor1)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4650</span>
+libNtve_gf_KillModel(gv_broodLordPingActor2)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3556</span>
+libNtve_gf_KillModel(gv_nukeActor)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3588</span>
+libNtve_gf_KillModel(gv_nukeActor)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3681</span>
+libNtve_gf_KillModel(gv_salvagePingActor)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3882</span>
+libNtve_gf_KillModel(gv_respawnSalvagePingActor1)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3883</span>
+libNtve_gf_KillModel(gv_respawnSalvagePingActor2)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1787</span>
+libNtve_gf_KillModel(gv_tippedDetectorPing)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2866</span>
+libNtve_gf_KillModel(libNtve_gf_ActorLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2947</span>
+libNtve_gf_KillModel(lv_bullhornExclamation)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2998</span>
+libNtve_gf_KillModel(lv_bullhornExclamation)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3049</span>
+libNtve_gf_KillModel(lv_bullhornExclamation)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3100</span>
+libNtve_gf_KillModel(lv_bullhornExclamation)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3151</span>
+libNtve_gf_KillModel(lv_bullhornExclamation)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3202</span>
+libNtve_gf_KillModel(lv_bullhornExclamation)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3474</span>
+libNtve_gf_KillModel(gv_pingActor_Tower1)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3534</span>
+libNtve_gf_KillModel(gv_pingActor_Tower2)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3594</span>
+libNtve_gf_KillModel(gv_pingActor_Tower3)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1908</span>
+libNtve_gf_KillModel(gv_actorC4FrontDoor)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3330</span>
+libNtve_gf_KillModel(gv_actorSpeak01)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3331</span>
+libNtve_gf_KillModel(gv_actorSpeak05)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5816</span>
+libNtve_gf_KillModel(gv_actorBrutaliskInPrison)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6202</span>
+libNtve_gf_KillModel(gv_actorSelectionFusionCore)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6232</span>
+libNtve_gf_KillModel(gv_actorRocks01)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6687</span>
+libNtve_gf_KillModel(gv_actorSpeak02)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6747</span>
+libNtve_gf_KillModel(gv_actorSpeak01)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6977</span>
+libNtve_gf_KillModel(gv_actorSpeak05)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7166</span>
+libNtve_gf_KillModel(gv_actorSpeak03)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1205</span>
+libNtve_gf_KillModel(gv_roadblockActor01)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1206</span>
+libNtve_gf_KillModel(gv_roadblockActor02)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1207</span>
+libNtve_gf_KillModel(gv_roadblockActor03)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3127</span>
+libNtve_gf_KillModel(gv_actorObjectiveMain)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3368</span>
+libNtve_gf_KillModel(gv_holoReticules[<span class="hljs-number">1</span>])
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3371</span>
+libNtve_gf_KillModel(gv_holoReticules[<span class="hljs-number">2</span>])
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3374</span>
+libNtve_gf_KillModel(gv_holoReticules[<span class="hljs-number">3</span>])
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3377</span>
+libNtve_gf_KillModel(gv_holoReticules[<span class="hljs-number">4</span>])
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3380</span>
+libNtve_gf_KillModel(gv_holoReticules[<span class="hljs-number">5</span>])
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3383</span>
+libNtve_gf_KillModel(gv_holoReticules[<span class="hljs-number">6</span>])
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1605</span>
+libNtve_gf_KillModel(gv_geyserPing)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1635</span>
+libNtve_gf_KillModel(gv_commandCenterPing)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1665</span>
+libNtve_gf_KillModel(gv_barracksPing)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2053</span>
+libNtve_gf_KillModel(lv_talkIcon)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2114</span>
+libNtve_gf_KillModel(lv_talkIcon)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2170</span>
+libNtve_gf_KillModel(lv_talkIcon)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2226</span>
+libNtve_gf_KillModel(lv_talkIcon)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2282</span>
+libNtve_gf_KillModel(lv_talkIcon)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2338</span>
+libNtve_gf_KillModel(lv_talkIcon)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2394</span>
+libNtve_gf_KillModel(lv_talkIcon)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1685</span>
+libNtve_gf_KillModel(gv_bunkerBridgeEastPing)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1691</span>
+libNtve_gf_KillModel(gv_bunkerBridgeWestPing)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1697</span>
+libNtve_gf_KillModel(gv_bunkerBaseEastPing)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1703</span>
+libNtve_gf_KillModel(gv_bunkerBaseWestPing)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1742</span>
+libNtve_gf_KillModel(gv_bunkerBridgeEastPing)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1747</span>
+libNtve_gf_KillModel(gv_bunkerBridgeWestPing)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1752</span>
+libNtve_gf_KillModel(gv_bunkerBaseEastPing)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1757</span>
+libNtve_gf_KillModel(gv_bunkerBaseWestPing)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4732</span>
+libNtve_gf_KillModel(gv_bunkerBaseEastPing)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4733</span>
+libNtve_gf_KillModel(gv_bunkerBaseWestPing)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13548</span>
+libNtve_gf_KillModel(gv_briefingTZeratulCrystalEffect)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L32348</span>
+libNtve_gf_KillModel(gv_briefingTZeratulCrystalEffect)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L32486</span>
+libNtve_gf_KillModel(gv_briefingTZeratulCrystalEffect)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L32608</span>
+libNtve_gf_KillModel(gv_briefingTZeratulCrystalEffect)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L32733</span>
+libNtve_gf_KillModel(gv_briefingTZeratulCrystalEffect)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L36413</span>
+libNtve_gf_KillModel(gv_debriefingTTychus02CrystalEffect)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1729</span>
+libNtve_gf_KillModel(gv_brutaliskPingActor)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2175</span>
+libNtve_gf_KillModel(lv_talkIcon)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1538</span>
+libNtve_gf_KillModel(libNtve_gf_ActorLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1625</span>
+libNtve_gf_KillModel(libNtve_gf_ActorLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4168</span>
+libNtve_gf_KillModel(gv_actorMindblastIndicator)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4287</span>
+libNtve_gf_KillModel(gv_actorMindblastIndicator)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1548</span>
+libNtve_gf_KillModel(gv_p1GateDesignator)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2192</span>
+libNtve_gf_KillModel(gv_p1ObjectiveDesignator)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3094</span>
+libNtve_gf_KillModel(gv_p2GateDesignator)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

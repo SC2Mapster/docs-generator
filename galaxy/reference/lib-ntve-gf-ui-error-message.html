@@ -1,0 +1,145 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Error Message / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Error Message"/>
+                <meta property="og:description" content="Displays an error message."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="error-message"><a class="markdownIt-Anchor" href="#error-message">#</a> Error Message</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Display <strong>message</strong> and play <strong>sound</strong> for <strong>players</strong><br>
+<em>Flags</em> — <code>Action</code></p>
+</blockquote>
+<p>Displays an error message.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>playergroup</code> — Players</li>
+<li><code>text</code> — Message</li>
+<li><code>soundlink</code> — Sound</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">libNtve_gf_UIErrorMessage</span><span class="hljs-params">(
+	playergroup lp_players,
+	text lp_message,
+	soundlink lp_sound,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#ui-text">UI / Text</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>text</code> — <strong><a href="/galaxy/reference/ui-hot-key-string">Hot Key String</a></strong> — ( UIHotKeyString )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ui-display-message">Text Message</a></strong> — ( UIDisplayMessage )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ui-clear-messages">Clear Text Messages</a></strong> — ( UIClearMessages )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ui-show-cinematic-text">Show Cinematic Text</a></strong> — ( UIShowCinematicText )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ui-hide-cinematic-text">Hide Cinematic Text</a></strong> — ( UIHideCinematicText )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ui-show-text-crawl">Show Text Crawl</a></strong> — ( UIShowTextCrawl )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ui-hide-text-crawl">Hide Text Crawl</a></strong> — ( UIHideTextCrawl )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-ui-error-message">Error Message</a></strong> — ( libNtve_gf_UIErrorMessage )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="modsheroesdatastormmod"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/GameDataHelperLib.galaxy#L6586">GameDataHelperLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L6586</span>
+libNtve_gf_UIErrorMessage(libCore_gv_playerGroupFromPlayer[lv_player], StringExternal(<span class="hljs-string">"Param/Value/lib_GDHL_F272EA53"</span>), SoundLink(<span class="hljs-string">"UI_GenericError"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7529</span>
+libNtve_gf_UIErrorMessage(libCore_gv_playerGroupFromPlayer[lv_player], StringExternal(<span class="hljs-string">"Param/Value/lib_GDHL_D9EC6B41"</span>), SoundLink(<span class="hljs-string">"UI_GenericError"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7601</span>
+libNtve_gf_UIErrorMessage(libCore_gv_playerGroupFromPlayer[UnitGetOwner(lv_eventUnit)], StringExternal(<span class="hljs-string">"Param/Value/lib_GDHL_EC6CBAAF"</span>), SoundLink(<span class="hljs-string">"UI_GenericError"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<h4 id="modsheroesdatastormmod-2"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-2">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/GameLib.galaxy#L16288">GameLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L16288</span>
+libNtve_gf_UIErrorMessage(libCore_gv_playerGroupFromPlayer[lv_player], StringExternal(<span class="hljs-string">"Param/Value/lib_Game_5C4701FE"</span>), SoundLink(<span class="hljs-string">"UI_GenericError"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodsinfernalshrinesstormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodsinfernalshrinesstormmod">#</a> mods/heroesmapmods/battlegroundmapmods/infernalshrines.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/infernalshrines.stormmod/base.stormdata/LibMSHE.galaxy#L2088">LibMSHE.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2088</span>
+libNtve_gf_UIErrorMessage(libCore_gv_playerGroupFromPlayer[EventPlayerEffectUsedUnitOwner(c_effectPlayerCaster)], StringExternal(<span class="hljs-string">"Param/Value/lib_MSHE_D63B1DB4"</span>), SoundLink(<span class="hljs-string">"UI_GenericError"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodsinfernalshrinesdatastormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodsinfernalshrinesdatastormmod">#</a> mods/heroesmapmods/battlegroundmapmods/infernalshrinesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/infernalshrinesdata.stormmod/base.stormdata/LibMSHD.galaxy#L150">LibMSHD.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L150</span>
+libNtve_gf_UIErrorMessage(libCore_gv_playerGroupFromPlayer[EventPlayerEffectUsedUnitOwner(c_effectPlayerCaster)], StringExternal(<span class="hljs-string">"Param/Value/lib_MSHD_D63B1DB4"</span>), SoundLink(<span class="hljs-string">"UI_GenericError"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<h4 id="modsheromodschogallstormmod"><a class="markdownIt-Anchor" href="#modsheromodschogallstormmod">#</a> mods/heromods/chogall.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heromods/chogall.stormmod/base.stormdata/LibHCHO.galaxy#L1962">LibHCHO.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1962</span>
+libNtve_gf_UIErrorMessage(PlayerGroupSingle(EventPlayer()), StringExternal(<span class="hljs-string">"Param/Value/lib_HCHO_35C15FA3"</span>), SoundLink(<span class="hljs-string">"UI_GenericError_Heroes"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOMI.galaxy#L24120">LibCOMI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L24120</span>
+libNtve_gf_UIErrorMessage(PlayerGroupSingle(EventPlayer()), StringExternal(<span class="hljs-string">"Error/CannotAdvancedConstruction"</span>), SoundLink(<span class="hljs-string">"UI_GenericError"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L26017</span>
+libNtve_gf_UIErrorMessage(PlayerGroupSingle(lv_p), StringExternal(<span class="hljs-string">"Param/Value/lib_COMI_8F36DA6F"</span>), SoundLink(<span class="hljs-string">"UI_GenericError"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

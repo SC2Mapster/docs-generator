@@ -1,0 +1,437 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Catalog Field Value Set / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Catalog Field Value Set"/>
+                <meta property="og:description" content="Sets the value of a field for an entry.  To find the name of a field path, open the data editor and turn on View Raw Data.  For example, if you wanted to set the unit for the first index of a train ability, your field path string would be &quot;InfoArray[0].Unit&quot;.
+
+Returns: bool"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="catalog-field-value-set"><a class="markdownIt-Anchor" href="#catalog-field-value-set">#</a> Catalog Field Value Set</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Set value of <strong>catalog</strong> <strong>entry</strong> <strong>fieldPath</strong> for player <strong>player</strong> to <strong>value</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Sets the value of a field for an entry.  To find the name of a field path, open the data editor and turn on View Raw Data.  For example, if you wanted to set the unit for the first index of a train ability, your field path string would be <em>“InfoArray[0].Unit”</em>.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-catalog-type">CatalogType</a> ]</em> — Catalog</li>
+<li><code>string</code> <em>[ catalogentry ]</em> — Entry</li>
+<li><code>string</code> <em>[ catalogfieldpath ]</em> — Field Path</li>
+<li><code>int</code> — Player</li>
+<li><code>string</code> — Value</li>
+</ul>
+<p>Returns — <code>bool</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">bool</span> <span class="hljs-title">CatalogFieldValueSet</span><span class="hljs-params">(
+	<span class="hljs-keyword">int</span> catalog,
+	<span class="hljs-built_in">string</span> entry,
+	<span class="hljs-built_in">string</span> fieldPath,
+	<span class="hljs-keyword">int</span> player,
+	<span class="hljs-built_in">string</span> value,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#catalog-support">Catalog / Support</a></p>
+<ul>
+<li><em><strong>[P]</strong></em> — <strong><a href="/galaxy/reference/preset-upgrade-operation">Upgrade Operation</a></strong></li>
+<li><em><strong>[P]</strong></em> — <strong><a href="/galaxy/reference/preset-no-game-link">No Game Link</a></strong></li>
+<li><em><strong>[P]</strong></em> — <strong><a href="/galaxy/reference/preset-no-alert">No Alert</a></strong></li>
+<li><em><strong>[P]</strong></em> — <strong><a href="/galaxy/reference/preset-cost-type">Cost Type</a></strong></li>
+<li><em><strong>[P]</strong></em> — <strong><a href="/galaxy/reference/preset-catalog-type">Catalog Type</a></strong></li>
+<li><em><strong>[P]</strong></em> — <strong><a href="/galaxy/reference/preset-any-game-link">Any Game Link</a></strong></li>
+<li><em><strong>[P]</strong></em> — <strong><a href="/galaxy/reference/preset-field-type-category">Field Type Category</a></strong></li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/catalog-field-value-set">Catalog Field Value Set</a></strong> — ( CatalogFieldValueSet )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-catalog-field-value-set-as-real">Catalog Field Value Set As Real</a></strong> — ( libNtve_gf_CatalogFieldValueSetAsReal )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/catalog-field-value-modify">Catalog Field Value Modify</a></strong> — ( CatalogFieldValueModify )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-catalog-field-value-modify-based-on-default-value">Catalog Field Value Modify (Based On Default Value)</a></strong> — ( libNtve_gf_CatalogFieldValueModifyBasedOnDefaultValue )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/catalog-reference-set">Catalog Reference Set</a></strong> — ( CatalogReferenceSet )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-catalog-reference-set-as-real">Catalog Reference Set As Real</a></strong> — ( libNtve_gf_CatalogReferenceSetAsReal )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/catalog-reference-modify">Catalog Reference Modify</a></strong> — ( CatalogReferenceModify )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-catalog-reference-modify-based-on-default-value">Catalog Reference Modify (Based On Default Value)</a></strong> — ( libNtve_gf_CatalogReferenceModifyBasedOnDefaultValue )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/catalog-link-replace">Catalog Link Replace</a></strong> — ( CatalogLinkReplace )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> — <strong><a href="/galaxy/reference/catalog-link-replacement">Catalog Link Replacement</a></strong> — ( CatalogLinkReplacement )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignsswarmsc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmsc2campaign">#</a> campaigns/swarm.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarm.sc2campaign/base.sc2maps/maps/campaign/voidprologue/voidprologue01.sc2map/MapScript.galaxy#L5805">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L5805</span>
+CatalogFieldValueSet(c_gameCatalogUnit, <span class="hljs-string">"VoidSeeker"</span>, <span class="hljs-string">"TurningRate"</span>, <span class="hljs-number">0</span>, <span class="hljs-string">"30"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2993</span>
+CatalogFieldValueSet(c_gameCatalogEffect, <span class="hljs-string">"PsiDecimatorSearch"</span>, <span class="hljs-string">"AreaArray[0].Radius"</span>, gv_pLAYER_02_DOMINION, FixedToString(gv_psifieldradius, c_fixedPrecisionAny))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2998</span>
+CatalogFieldValueSet(c_gameCatalogEffect, <span class="hljs-string">"PsiDecimatorSearch"</span>, <span class="hljs-string">"AreaArray[0].Radius"</span>, gv_pLAYER_02_DOMINION, FixedToString(<span class="hljs-number">0.0</span>, c_fixedPrecisionAny))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3282</span>
+CatalogFieldValueSet(c_gameCatalogEffect, <span class="hljs-string">"PsiDecimatorSearch"</span>, <span class="hljs-string">"AreaArray[0].Radius"</span>, gv_pLAYER_02_DOMINION, FixedToString(gv_psifieldradius, c_fixedPrecisionAny))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L646</span>
+CatalogFieldValueSet(c_gameCatalogButton, lp_button, <span class="hljs-string">"Tooltip"</span>, gv_pLAYER_01_USER, lp_tooltipPath)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L652</span>
+CatalogFieldValueSet(c_gameCatalogButton, lp_button, <span class="hljs-string">"Tooltip"</span>, gv_pLAYER_01_USER, gv_selectLarva_OriginalTooltip)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L557</span>
+CatalogFieldValueSet(c_gameCatalogButton, lv_button, <span class="hljs-string">"Tooltip"</span>, gv_pLAYER_01_USER, lp_tooltipPath)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L573</span>
+CatalogFieldValueSet(c_gameCatalogButton, lv_button, <span class="hljs-string">"Tooltip"</span>, gv_pLAYER_01_USER, gv_crushingGrip_OriginalTooltip)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L577</span>
+CatalogFieldValueSet(c_gameCatalogButton, lv_button, <span class="hljs-string">"Tooltip"</span>, gv_pLAYER_01_USER, gv_kineticBlast_OriginalTooltip)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L701</span>
+CatalogFieldValueSet(c_gameCatalogButton, lp_button, <span class="hljs-string">"Tooltip"</span>, gv_pLAYER_01_USER, lp_tooltipPath)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L727</span>
+CatalogFieldValueSet(c_gameCatalogButton, lp_button, <span class="hljs-string">"Tooltip"</span>, gv_pLAYER_01_USER, lv_originalText)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1568</span>
+CatalogFieldValueSet(c_gameCatalogEffect, <span class="hljs-string">"SJPirateCapitalShipLeftDamage"</span>, <span class="hljs-string">"Amount"</span>, gv_pLAYER_01_USER, <span class="hljs-string">"3"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1569</span>
+CatalogFieldValueSet(c_gameCatalogEffect, <span class="hljs-string">"SJPirateCapitalShipRightDamage"</span>, <span class="hljs-string">"Amount"</span>, gv_pLAYER_01_USER, <span class="hljs-string">"3"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1570</span>
+CatalogFieldValueSet(c_gameCatalogEffect, <span class="hljs-string">"SJPirateYamatoADamage"</span>, <span class="hljs-string">"Amount"</span>, gv_pLAYER_01_USER, <span class="hljs-string">"200"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1571</span>
+CatalogFieldValueSet(c_gameCatalogEffect, <span class="hljs-string">"SJPirateYamatoBDamage"</span>, <span class="hljs-string">"Amount"</span>, gv_pLAYER_01_USER, <span class="hljs-string">"200"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1574</span>
+CatalogFieldValueSet(c_gameCatalogEffect, <span class="hljs-string">"SJPirateCapitalShipLeftDamage"</span>, <span class="hljs-string">"Amount"</span>, gv_pLAYER_01_USER, <span class="hljs-string">"5"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1575</span>
+CatalogFieldValueSet(c_gameCatalogEffect, <span class="hljs-string">"SJPirateCapitalShipRightDamage"</span>, <span class="hljs-string">"Amount"</span>, gv_pLAYER_01_USER, <span class="hljs-string">"5"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1576</span>
+CatalogFieldValueSet(c_gameCatalogEffect, <span class="hljs-string">"SJPirateYamatoADamage"</span>, <span class="hljs-string">"Amount"</span>, gv_pLAYER_01_USER, <span class="hljs-string">"300"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1577</span>
+CatalogFieldValueSet(c_gameCatalogEffect, <span class="hljs-string">"SJPirateYamatoBDamage"</span>, <span class="hljs-string">"Amount"</span>, gv_pLAYER_01_USER, <span class="hljs-string">"300"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6829</span>
+CatalogFieldValueSet(c_gameCatalogAbil, <span class="hljs-string">"DroneCarcassHarvest"</span>, <span class="hljs-string">"CastIntroTime["</span> + IntToString(<span class="hljs-number">0</span>) + <span class="hljs-string">"]"</span>, gv_pLAYER_01_USER, <span class="hljs-string">"3"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7051</span>
+CatalogFieldValueSet(c_gameCatalogAbil, <span class="hljs-string">"DroneCarcassHarvest"</span>, <span class="hljs-string">"CastIntroTime["</span> + IntToString(<span class="hljs-number">0</span>) + <span class="hljs-string">"]"</span>, gv_pLAYER_01_USER, <span class="hljs-string">"60"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1086</span>
+CatalogFieldValueSet(c_gameCatalogUnit, <span class="hljs-string">"Viper"</span>, <span class="hljs-string">"EnergyStart"</span>, <span class="hljs-number">1</span>, FixedToString(libHots_gf_DifficultyValueFixed2(<span class="hljs-number">25.0</span>, <span class="hljs-number">25.0</span>, <span class="hljs-number">50.0</span>), c_fixedPrecisionAny))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L631</span>
+CatalogFieldValueSet(c_gameCatalogUnit, <span class="hljs-string">"HotSHunterBurrowed"</span>, <span class="hljs-string">"Sight"</span>, gv_pLAYER_04_ZERG, <span class="hljs-string">"3"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3594</span>
+CatalogFieldValueSet(c_gameCatalogBehavior, <span class="hljs-string">"QueenSpawnLarvaTimer"</span>, <span class="hljs-string">"Duration"</span>, gv_pLAYER_05_ZERG_ALLIES, <span class="hljs-string">"25"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L718</span>
+CatalogFieldValueSet(c_gameCatalogUnit, <span class="hljs-string">"BroodLord"</span>, <span class="hljs-string">"Speed"</span>, gv_pLAYER_04_FERALZERG, <span class="hljs-string">"1"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L724</span>
+CatalogFieldValueSet(c_gameCatalogUnit, <span class="hljs-string">"Mutalisk"</span>, <span class="hljs-string">"Speed"</span>, gv_pLAYER_04_FERALZERG, <span class="hljs-string">"1"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1057</span>
+CatalogFieldValueSet(c_gameCatalogUnit, <span class="hljs-string">"Mutalisk"</span>, <span class="hljs-string">"Speed"</span>, gv_pLAYER_04_FERALZERG, CatalogFieldValueGet(c_gameCatalogUnit, <span class="hljs-string">"Mutalisk"</span>, <span class="hljs-string">"Speed"</span>, gv_pLAYER_01_USER))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L523</span>
+CatalogFieldValueSet(c_gameCatalogUnit, <span class="hljs-string">"UmojanLabGenerator"</span>, <span class="hljs-string">"Sight"</span>, gv_pLAYER_02_DOMINION, <span class="hljs-string">"0"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1484</span>
+CatalogFieldValueSet(c_gameCatalogBehavior, <span class="hljs-string">"SpawnLarva"</span>, <span class="hljs-string">"InfoArray["</span> + IntToString(<span class="hljs-number">0</span>) + <span class="hljs-string">"].Delay"</span>, gv_pLAYER_01_USER, <span class="hljs-string">"12"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3244</span>
+CatalogFieldValueSet(c_gameCatalogBehavior, <span class="hljs-string">"SpawnLarva"</span>, <span class="hljs-string">"InfoArray["</span> + IntToString(<span class="hljs-number">0</span>) + <span class="hljs-string">"].Delay"</span>, gv_pLAYER_01_USER, <span class="hljs-string">"6"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L631</span>
+CatalogFieldValueSet(c_gameCatalogUnit, <span class="hljs-string">"HotSHunterBurrowed"</span>, <span class="hljs-string">"Sight"</span>, gv_pLAYER_04_ZERG, <span class="hljs-string">"3"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3594</span>
+CatalogFieldValueSet(c_gameCatalogBehavior, <span class="hljs-string">"QueenSpawnLarvaTimer"</span>, <span class="hljs-string">"Duration"</span>, gv_pLAYER_05_ZERG_ALLIES, <span class="hljs-string">"25"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L718</span>
+CatalogFieldValueSet(c_gameCatalogUnit, <span class="hljs-string">"BroodLord"</span>, <span class="hljs-string">"Speed"</span>, gv_pLAYER_04_FERALZERG, <span class="hljs-string">"1"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L724</span>
+CatalogFieldValueSet(c_gameCatalogUnit, <span class="hljs-string">"Mutalisk"</span>, <span class="hljs-string">"Speed"</span>, gv_pLAYER_04_FERALZERG, <span class="hljs-string">"1"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1057</span>
+CatalogFieldValueSet(c_gameCatalogUnit, <span class="hljs-string">"Mutalisk"</span>, <span class="hljs-string">"Speed"</span>, gv_pLAYER_04_FERALZERG, CatalogFieldValueGet(c_gameCatalogUnit, <span class="hljs-string">"Mutalisk"</span>, <span class="hljs-string">"Speed"</span>, gv_pLAYER_01_USER))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L523</span>
+CatalogFieldValueSet(c_gameCatalogUnit, <span class="hljs-string">"UmojanLabGenerator"</span>, <span class="hljs-string">"Sight"</span>, gv_pLAYER_02_DOMINION, <span class="hljs-string">"0"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1484</span>
+CatalogFieldValueSet(c_gameCatalogBehavior, <span class="hljs-string">"SpawnLarva"</span>, <span class="hljs-string">"InfoArray["</span> + IntToString(<span class="hljs-number">0</span>) + <span class="hljs-string">"].Delay"</span>, gv_pLAYER_01_USER, <span class="hljs-string">"12"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3244</span>
+CatalogFieldValueSet(c_gameCatalogBehavior, <span class="hljs-string">"SpawnLarva"</span>, <span class="hljs-string">"InfoArray["</span> + IntToString(<span class="hljs-number">0</span>) + <span class="hljs-string">"].Delay"</span>, gv_pLAYER_01_USER, <span class="hljs-string">"6"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2993</span>
+CatalogFieldValueSet(c_gameCatalogEffect, <span class="hljs-string">"PsiDecimatorSearch"</span>, <span class="hljs-string">"AreaArray[0].Radius"</span>, gv_pLAYER_02_DOMINION, FixedToString(gv_psifieldradius, c_fixedPrecisionAny))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2998</span>
+CatalogFieldValueSet(c_gameCatalogEffect, <span class="hljs-string">"PsiDecimatorSearch"</span>, <span class="hljs-string">"AreaArray[0].Radius"</span>, gv_pLAYER_02_DOMINION, FixedToString(<span class="hljs-number">0.0</span>, c_fixedPrecisionAny))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3282</span>
+CatalogFieldValueSet(c_gameCatalogEffect, <span class="hljs-string">"PsiDecimatorSearch"</span>, <span class="hljs-string">"AreaArray[0].Radius"</span>, gv_pLAYER_02_DOMINION, FixedToString(gv_psifieldradius, c_fixedPrecisionAny))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L646</span>
+CatalogFieldValueSet(c_gameCatalogButton, lp_button, <span class="hljs-string">"Tooltip"</span>, gv_pLAYER_01_USER, lp_tooltipPath)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L652</span>
+CatalogFieldValueSet(c_gameCatalogButton, lp_button, <span class="hljs-string">"Tooltip"</span>, gv_pLAYER_01_USER, gv_selectLarva_OriginalTooltip)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L557</span>
+CatalogFieldValueSet(c_gameCatalogButton, lv_button, <span class="hljs-string">"Tooltip"</span>, gv_pLAYER_01_USER, lp_tooltipPath)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L573</span>
+CatalogFieldValueSet(c_gameCatalogButton, lv_button, <span class="hljs-string">"Tooltip"</span>, gv_pLAYER_01_USER, gv_crushingGrip_OriginalTooltip)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L577</span>
+CatalogFieldValueSet(c_gameCatalogButton, lv_button, <span class="hljs-string">"Tooltip"</span>, gv_pLAYER_01_USER, gv_kineticBlast_OriginalTooltip)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L701</span>
+CatalogFieldValueSet(c_gameCatalogButton, lp_button, <span class="hljs-string">"Tooltip"</span>, gv_pLAYER_01_USER, lp_tooltipPath)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L727</span>
+CatalogFieldValueSet(c_gameCatalogButton, lp_button, <span class="hljs-string">"Tooltip"</span>, gv_pLAYER_01_USER, lv_originalText)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1568</span>
+CatalogFieldValueSet(c_gameCatalogEffect, <span class="hljs-string">"SJPirateCapitalShipLeftDamage"</span>, <span class="hljs-string">"Amount"</span>, gv_pLAYER_01_USER, <span class="hljs-string">"3"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1569</span>
+CatalogFieldValueSet(c_gameCatalogEffect, <span class="hljs-string">"SJPirateCapitalShipRightDamage"</span>, <span class="hljs-string">"Amount"</span>, gv_pLAYER_01_USER, <span class="hljs-string">"3"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1570</span>
+CatalogFieldValueSet(c_gameCatalogEffect, <span class="hljs-string">"SJPirateYamatoADamage"</span>, <span class="hljs-string">"Amount"</span>, gv_pLAYER_01_USER, <span class="hljs-string">"200"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1571</span>
+CatalogFieldValueSet(c_gameCatalogEffect, <span class="hljs-string">"SJPirateYamatoBDamage"</span>, <span class="hljs-string">"Amount"</span>, gv_pLAYER_01_USER, <span class="hljs-string">"200"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1574</span>
+CatalogFieldValueSet(c_gameCatalogEffect, <span class="hljs-string">"SJPirateCapitalShipLeftDamage"</span>, <span class="hljs-string">"Amount"</span>, gv_pLAYER_01_USER, <span class="hljs-string">"5"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1575</span>
+CatalogFieldValueSet(c_gameCatalogEffect, <span class="hljs-string">"SJPirateCapitalShipRightDamage"</span>, <span class="hljs-string">"Amount"</span>, gv_pLAYER_01_USER, <span class="hljs-string">"5"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1576</span>
+CatalogFieldValueSet(c_gameCatalogEffect, <span class="hljs-string">"SJPirateYamatoADamage"</span>, <span class="hljs-string">"Amount"</span>, gv_pLAYER_01_USER, <span class="hljs-string">"300"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1577</span>
+CatalogFieldValueSet(c_gameCatalogEffect, <span class="hljs-string">"SJPirateYamatoBDamage"</span>, <span class="hljs-string">"Amount"</span>, gv_pLAYER_01_USER, <span class="hljs-string">"300"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6829</span>
+CatalogFieldValueSet(c_gameCatalogAbil, <span class="hljs-string">"DroneCarcassHarvest"</span>, <span class="hljs-string">"CastIntroTime["</span> + IntToString(<span class="hljs-number">0</span>) + <span class="hljs-string">"]"</span>, gv_pLAYER_01_USER, <span class="hljs-string">"3"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7051</span>
+CatalogFieldValueSet(c_gameCatalogAbil, <span class="hljs-string">"DroneCarcassHarvest"</span>, <span class="hljs-string">"CastIntroTime["</span> + IntToString(<span class="hljs-number">0</span>) + <span class="hljs-string">"]"</span>, gv_pLAYER_01_USER, <span class="hljs-string">"60"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1086</span>
+CatalogFieldValueSet(c_gameCatalogUnit, <span class="hljs-string">"Viper"</span>, <span class="hljs-string">"EnergyStart"</span>, <span class="hljs-number">1</span>, FixedToString(libHots_gf_DifficultyValueFixed2(<span class="hljs-number">25.0</span>, <span class="hljs-number">25.0</span>, <span class="hljs-number">50.0</span>), c_fixedPrecisionAny))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5805</span>
+CatalogFieldValueSet(c_gameCatalogUnit, <span class="hljs-string">"VoidSeeker"</span>, <span class="hljs-string">"TurningRate"</span>, <span class="hljs-number">0</span>, <span class="hljs-string">"30"</span>)
+</code></pre>
+<h4 id="campaignsswarmstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmstorysc2campaign">#</a> campaigns/swarmstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstory.sc2campaign/base.sc2data/TriggerLibs/SwarmCampaignLib.galaxy#L651">SwarmCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L651</span>
+CatalogFieldValueSet(c_gameCatalogAbil, <span class="hljs-string">"RallyHatchery"</span>, <span class="hljs-string">"SmartPriority"</span>, <span class="hljs-number">1</span>, IntToString(<span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1709</span>
+CatalogFieldValueSet(c_gameCatalogButton, <span class="hljs-string">"Overlord"</span>, <span class="hljs-string">"Tooltip"</span>, <span class="hljs-number">1</span>, <span class="hljs-string">"Button/Tooltip/Overlord"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L16511</span>
+CatalogFieldValueSet(c_gameCatalogButton, <span class="hljs-string">"Overlord"</span>, <span class="hljs-string">"Tooltip"</span>, <span class="hljs-number">1</span>, <span class="hljs-string">"Param/Value/lib_SwaC_F5BAFC76"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L16522</span>
+CatalogFieldValueSet(c_gameCatalogButton, <span class="hljs-string">"Overlord"</span>, <span class="hljs-string">"Tooltip"</span>, <span class="hljs-number">1</span>, <span class="hljs-string">"Button/Tooltip/Overlord"</span>)
+</code></pre>
+<h4 id="campaignsvoidsc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidsc2campaign">#</a> campaigns/void.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/void.sc2campaign/base.sc2maps/maps/campaign/void/paiur01.sc2map/MapScript.galaxy#L7075">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L7075</span>
+CatalogFieldValueSet(c_gameCatalogUnit, <span class="hljs-string">"Phoenix"</span>, <span class="hljs-string">"Acceleration"</span>, gv_pLAYER_01_USER, <span class="hljs-string">"1000"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7076</span>
+CatalogFieldValueSet(c_gameCatalogUnit, <span class="hljs-string">"CarrierAiur"</span>, <span class="hljs-string">"Acceleration"</span>, gv_pLAYER_01_USER, <span class="hljs-string">"1000"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4671</span>
+CatalogFieldValueSet(c_gameCatalogBehavior, <span class="hljs-string">"ConsumeSearchTimedKill"</span>, <span class="hljs-string">"Duration"</span>, autoFB4D4A28_var, <span class="hljs-string">"6"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1337</span>
+CatalogFieldValueSet(c_gameCatalogAbil, <span class="hljs-string">"ChampionWarpTrain"</span>, <span class="hljs-string">"InfoArray["</span> + IntToString(<span class="hljs-number">1</span>) + <span class="hljs-string">"].Cooldown.TimeUse"</span>, gv_pLAYER_08_NERAZIM, <span class="hljs-string">"10"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1338</span>
+CatalogFieldValueSet(c_gameCatalogAbil, <span class="hljs-string">"ChampionWarpTrain"</span>, <span class="hljs-string">"InfoArray["</span> + IntToString(<span class="hljs-number">3</span>) + <span class="hljs-string">"].Cooldown.TimeUse"</span>, gv_pLAYER_07_TALDARIM, <span class="hljs-string">"10"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1339</span>
+CatalogFieldValueSet(c_gameCatalogAbil, <span class="hljs-string">"ChampionWarpTrain"</span>, <span class="hljs-string">"InfoArray["</span> + IntToString(<span class="hljs-number">5</span>) + <span class="hljs-string">"].Cooldown.TimeUse"</span>, gv_pLAYER_09_PURIFIER, <span class="hljs-string">"10"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1113</span>
+CatalogFieldValueSet(c_gameCatalogUnit, <span class="hljs-string">"KerriganVoid"</span>, <span class="hljs-string">"Speed"</span>, gv_pLAYER_02_DOMINION5, <span class="hljs-string">"2.75"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1114</span>
+CatalogFieldValueSet(c_gameCatalogAbil, <span class="hljs-string">"Apocalypse"</span>, <span class="hljs-string">"Cost["</span> + IntToString(<span class="hljs-number">0</span>) + <span class="hljs-string">"].Cooldown.TimeStart"</span>, gv_pLAYER_02_DOMINION5, <span class="hljs-string">"0"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1115</span>
+CatalogFieldValueSet(c_gameCatalogAbil, <span class="hljs-string">"Apocalypse"</span>, <span class="hljs-string">"Cost["</span> + IntToString(<span class="hljs-number">0</span>) + <span class="hljs-string">"].Cooldown.TimeUse"</span>, gv_pLAYER_02_DOMINION5, <span class="hljs-string">"0"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7075</span>
+CatalogFieldValueSet(c_gameCatalogUnit, <span class="hljs-string">"Phoenix"</span>, <span class="hljs-string">"Acceleration"</span>, gv_pLAYER_01_USER, <span class="hljs-string">"1000"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7076</span>
+CatalogFieldValueSet(c_gameCatalogUnit, <span class="hljs-string">"CarrierAiur"</span>, <span class="hljs-string">"Acceleration"</span>, gv_pLAYER_01_USER, <span class="hljs-string">"1000"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4671</span>
+CatalogFieldValueSet(c_gameCatalogBehavior, <span class="hljs-string">"ConsumeSearchTimedKill"</span>, <span class="hljs-string">"Duration"</span>, autoFB4D4A28_var, <span class="hljs-string">"6"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1337</span>
+CatalogFieldValueSet(c_gameCatalogAbil, <span class="hljs-string">"ChampionWarpTrain"</span>, <span class="hljs-string">"InfoArray["</span> + IntToString(<span class="hljs-number">1</span>) + <span class="hljs-string">"].Cooldown.TimeUse"</span>, gv_pLAYER_08_NERAZIM, <span class="hljs-string">"10"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1338</span>
+CatalogFieldValueSet(c_gameCatalogAbil, <span class="hljs-string">"ChampionWarpTrain"</span>, <span class="hljs-string">"InfoArray["</span> + IntToString(<span class="hljs-number">3</span>) + <span class="hljs-string">"].Cooldown.TimeUse"</span>, gv_pLAYER_07_TALDARIM, <span class="hljs-string">"10"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1339</span>
+CatalogFieldValueSet(c_gameCatalogAbil, <span class="hljs-string">"ChampionWarpTrain"</span>, <span class="hljs-string">"InfoArray["</span> + IntToString(<span class="hljs-number">5</span>) + <span class="hljs-string">"].Cooldown.TimeUse"</span>, gv_pLAYER_09_PURIFIER, <span class="hljs-string">"10"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1113</span>
+CatalogFieldValueSet(c_gameCatalogUnit, <span class="hljs-string">"KerriganVoid"</span>, <span class="hljs-string">"Speed"</span>, gv_pLAYER_02_DOMINION5, <span class="hljs-string">"2.75"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1114</span>
+CatalogFieldValueSet(c_gameCatalogAbil, <span class="hljs-string">"Apocalypse"</span>, <span class="hljs-string">"Cost["</span> + IntToString(<span class="hljs-number">0</span>) + <span class="hljs-string">"].Cooldown.TimeStart"</span>, gv_pLAYER_02_DOMINION5, <span class="hljs-string">"0"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1115</span>
+CatalogFieldValueSet(c_gameCatalogAbil, <span class="hljs-string">"Apocalypse"</span>, <span class="hljs-string">"Cost["</span> + IntToString(<span class="hljs-number">0</span>) + <span class="hljs-string">"].Cooldown.TimeUse"</span>, gv_pLAYER_02_DOMINION5, <span class="hljs-string">"0"</span>)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignLib.galaxy#L6439">VoidCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L6439</span>
+CatalogFieldValueSet(c_gameCatalogButton, lp_buttonLink, <span class="hljs-string">"Tooltip"</span>, <span class="hljs-number">1</span>, lv_fullString)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6440</span>
+CatalogFieldValueSet(c_gameCatalogUnit, lp_unitLink, <span class="hljs-string">"Description"</span>, <span class="hljs-number">1</span>, lv_fullString)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6473</span>
+CatalogFieldValueSet(c_gameCatalogButton, lp_buttonLink, <span class="hljs-string">"Tooltip"</span>, <span class="hljs-number">1</span>, lv_fullString)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6474</span>
+CatalogFieldValueSet(c_gameCatalogUnit, lp_unitLink, <span class="hljs-string">"Description"</span>, <span class="hljs-number">1</span>, lv_fullString)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign-2"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign-2">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignMissionLib.galaxy#L2129">VoidCampaignMissionLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2129</span>
+CatalogFieldValueSet(c_gameCatalogButton, <span class="hljs-string">"Pylon"</span>, <span class="hljs-string">"Tooltip"</span>, <span class="hljs-number">1</span>, <span class="hljs-string">"Button/Tooltip/Pylon"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7414</span>
+CatalogFieldValueSet(c_gameCatalogButton, <span class="hljs-string">"Pylon"</span>, <span class="hljs-string">"Tooltip"</span>, <span class="hljs-number">1</span>, <span class="hljs-string">"Param/Value/lib_VoiC_F569C4E3"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7427</span>
+CatalogFieldValueSet(c_gameCatalogButton, <span class="hljs-string">"Pylon"</span>, <span class="hljs-string">"Tooltip"</span>, <span class="hljs-number">1</span>, <span class="hljs-string">"Button/Tooltip/Pylon"</span>)
+</code></pre>
+<h4 id="modscoresc2mod"><a class="markdownIt-Anchor" href="#modscoresc2mod">#</a> mods/core.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/core.sc2mod/base.sc2data/TriggerLibs/NativeLib.galaxy#L1373">NativeLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1373</span>
+CatalogFieldValueSet(c_gameCatalogUnit, lp_unitType, <span class="hljs-string">"TacticalAIRange"</span>, lp_player, IntToString(lp_distance))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1391</span>
+CatalogFieldValueSet(c_gameCatalogUnit, lp_unitType, <span class="hljs-string">"TacticalAIThink"</span>, lp_player, lv_aIThinkTempStr)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1766</span>
+CatalogFieldValueSet(lp_catalog, lp_entry, lp_fieldPath, lp_player, FixedToString(lp_value, c_fixedPrecisionAny))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3502</span>
+CatalogFieldValueSet(c_gameCatalogLoot, lv_generator, <span class="hljs-string">"MaxLevel"</span>, lp_dropPlayer, lv_level)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3504</span>
+CatalogFieldValueSet(c_gameCatalogLoot, lv_generator, <span class="hljs-string">"MinLevel"</span>, lp_dropPlayer, lv_level)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1200</span>
+CatalogFieldValueSet(c_gameCatalogUnit, lp_unitType, <span class="hljs-string">"TacticalAIThink"</span>, lp_player, lv_aIThinkTempStr)
+</code></pre>
+<h4 id="modsfrontierssc2mod"><a class="markdownIt-Anchor" href="#modsfrontierssc2mod">#</a> mods/frontiers.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/frontiers.sc2mod/base.sc2data/Lib6CB3363F.galaxy#L480">Lib6CB3363F.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L480</span>
+CatalogFieldValueSet(c_gameCatalogUnit, lib6CB3363F_gv_fT_GameUnitType[lib6CB3363F_gv_fT_GameSelection[lv_i]], <span class="hljs-string">"Speed"</span>, lv_i, FixedToString(lib6CB3363F_gv_fT_PlayerSpeedTotal[lv_i], c_fixedPrecisionAny))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L573</span>
+CatalogFieldValueSet(c_gameCatalogUnit, lib6CB3363F_gv_fT_GameUnitType[lib6CB3363F_gv_fT_GameSelection[lp_playerFiring]], <span class="hljs-string">"Speed"</span>, lp_playerFiring, FixedToString((lib6CB3363F_gv_fT_PlayerSpeedTotal[lp_playerFiring] * lib6CB3363F_gv_fT_WeaponSpeedModMultiplier[lp_gunType]), c_fixedPrecisionAny))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L982</span>
+CatalogFieldValueSet(c_gameCatalogUnit, lib6CB3363F_gv_fT_GameUnitType[lib6CB3363F_gv_fT_GameSelection[lv_i]], <span class="hljs-string">"Speed"</span>, lv_i, FixedToString(lib6CB3363F_gv_fT_PlayerSpeedTotal[lv_i], c_fixedPrecisionAny))
+</code></pre>
+<h4 id="modsheroesstormmod"><a class="markdownIt-Anchor" href="#modsheroesstormmod">#</a> mods/heroes.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroes.stormmod/base.stormmaps/maps/heroes/singleplayermaps/%2810%29trymemode.stormmap/MapScript.galaxy#L1527">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1527</span>
+CatalogFieldValueSet(c_gameCatalogWeapon, <span class="hljs-string">"GuardTowerL2Weapon"</span>, <span class="hljs-string">"Cost.Vital[Energy]"</span>, libCore_gv_cOMPUTER_TeamOrder, <span class="hljs-string">"0"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1528</span>
+CatalogFieldValueSet(c_gameCatalogWeapon, <span class="hljs-string">"GuardTowerL3Weapon"</span>, <span class="hljs-string">"Cost.Vital[Energy]"</span>, libCore_gv_cOMPUTER_TeamOrder, <span class="hljs-string">"0"</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

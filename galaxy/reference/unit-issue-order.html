@@ -1,0 +1,419 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Issue Order / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Issue Order"/>
+                <meta property="og:description" content="Issues an order to a unit.
+
+Returns: bool"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="issue-order"><a class="markdownIt-Anchor" href="#issue-order">#</a> Issue Order</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Order <strong>u</strong> to <strong>ord</strong> (<strong>queue|Replace/After/Before Existing Orders</strong>)<br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Issues an order to a unit.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>unit</code> — Unit</li>
+<li><code>order</code> — Order</li>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-unit-order-queue-option">Unit_Order_Queue_Option</a> ]</em> — Queue</li>
+</ul>
+<p>Returns — <code>bool</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">bool</span> <span class="hljs-title">UnitIssueOrder</span><span class="hljs-params">(
+	unit inUnit,
+	order inOrder,
+	<span class="hljs-keyword">int</span> inQueueType,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#unit-orders">Unit / Orders</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>order</code> — <strong><a href="/galaxy/reference/event-unit-order">Triggering Order</a></strong> — ( EventUnitOrder )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/unit-issue-order">Issue Order</a></strong> — ( UnitIssueOrder )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/unit-group-issue-order">Issue Order To Unit Group</a></strong> — ( UnitGroupIssueOrder )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/unit-order-count">Unit Order Count</a></strong> — ( UnitOrderCount )</li>
+<li><em><strong>[F]</strong></em> — <code>order</code> — <strong><a href="/galaxy/reference/unit-order">Unit Order</a></strong> — ( UnitOrder )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/unit-order-is-acquired">Unit Order Is Acquired</a></strong> — ( UnitOrderIsAcquired )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/unit-order-has-abil">Unit Has Order With Ability</a></strong> — ( UnitOrderHasAbil )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-unit-order">Unit Is Issued Order</a></strong> — ( TriggerAddEventUnitOrder )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-unit-becomes-idle">Unit Becomes Idle</a></strong> — ( TriggerAddEventUnitBecomesIdle )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-wait-until-idle">Wait Until Unit Becomes Idle</a></strong> — ( UnitWaitUntilIdle )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-group-wait-until-idle">Wait Until Unit Group Becomes Idle</a></strong> — ( UnitGroupWaitUntilIdle )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/unit-rally-point">Unit Rally Point</a></strong> — ( UnitRallyPoint )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/unit-rally-point-count">Unit Rally Point Count</a></strong> — ( UnitRallyPointCount )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/unit-rally-point-target-count">Unit Rally Point Target Count</a></strong> — ( UnitRallyPointTargetCount )</li>
+<li><em><strong>[F]</strong></em> — <code>point</code> — <strong><a href="/galaxy/reference/unit-rally-point-target-point">Unit Rally Point Target Point</a></strong> — ( UnitRallyPointTargetPoint )</li>
+<li><em><strong>[F]</strong></em> — <code>unit</code> — <strong><a href="/galaxy/reference/unit-rally-point-target-unit">Unit Rally Point Target Unit</a></strong> — ( UnitRallyPointTargetUnit )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/unit-order-get-progress">Unit Order Get Progress</a></strong> — ( UnitOrderGetProgress )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/challenges/advancedcommand.sc2map/MapScript.galaxy#L922">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L922</span>
+UnitIssueOrder(UnitGroupLoopCurrent(), Order(AbilityCommand(<span class="hljs-string">"HoldFire"</span>, <span class="hljs-number">0</span>)), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L317</span>
+UnitIssueOrder(UnitGroupLoopCurrent(), Order(AbilityCommand(<span class="hljs-string">"stop"</span>, <span class="hljs-number">0</span>)), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1571</span>
+UnitIssueOrder(UnitGroupLoopCurrent(), Order(AbilityCommand(<span class="hljs-string">"AssaultMode"</span>, <span class="hljs-number">0</span>)), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1572</span>
+UnitIssueOrder(UnitGroupLoopCurrent(), OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"attack"</span>, <span class="hljs-number">0</span>), PointFromId(<span class="hljs-number">16</span>)), c_orderQueueAddToEnd)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1058</span>
+UnitIssueOrder(UnitGroupLoopCurrent(), Order(AbilityCommand(<span class="hljs-string">"stop"</span>, <span class="hljs-number">0</span>)), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1196</span>
+UnitIssueOrder(UnitGroupLoopCurrent(), OrderTargetingUnit(AbilityCommand(<span class="hljs-string">"attack"</span>, <span class="hljs-number">0</span>), gv_nWRocks), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1701</span>
+UnitIssueOrder(gv_cINESen01, Order(AbilityCommand(<span class="hljs-string">"HallucinationArchon"</span>, <span class="hljs-number">0</span>)), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1703</span>
+UnitIssueOrder(gv_cINESen01, Order(AbilityCommand(<span class="hljs-string">"HallucinationArchon"</span>, <span class="hljs-number">0</span>)), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1705</span>
+UnitIssueOrder(gv_cINEHT01, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"PsiStorm"</span>, <span class="hljs-number">0</span>), RegionGetCenter(RegionFromId(<span class="hljs-number">27</span>))), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1715</span>
+UnitIssueOrder(gv_cINEHT01, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"PsiStorm"</span>, <span class="hljs-number">0</span>), RegionGetCenter(RegionFromId(<span class="hljs-number">30</span>))), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1742</span>
+UnitIssueOrder(gv_cINESen03, Order(AbilityCommand(<span class="hljs-string">"HallucinationArchon"</span>, <span class="hljs-number">0</span>)), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1744</span>
+UnitIssueOrder(gv_cINESen03, Order(AbilityCommand(<span class="hljs-string">"HallucinationArchon"</span>, <span class="hljs-number">0</span>)), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1746</span>
+UnitIssueOrder(gv_cINEHT02, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"PsiStorm"</span>, <span class="hljs-number">0</span>), RegionRandomPoint(RegionFromId(<span class="hljs-number">28</span>))), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1747</span>
+UnitIssueOrder(gv_cINEHT03, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"PsiStorm"</span>, <span class="hljs-number">0</span>), RegionRandomPoint(RegionFromId(<span class="hljs-number">29</span>))), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1415</span>
+UnitIssueOrder(UnitGroupLoopCurrent(), Order(AbilityCommand(<span class="hljs-string">"stop"</span>, <span class="hljs-number">0</span>)), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2116</span>
+UnitIssueOrder(UnitGroupLoopCurrent(), OrderTargetingUnit(AbilityCommand(<span class="hljs-string">"SCVHarvest"</span>, <span class="hljs-number">0</span>), UnitFromId(<span class="hljs-number">22</span>)), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2388</span>
+UnitIssueOrder(gv_bunker, OrderTargetingUnit(AbilityCommand(<span class="hljs-string">"BunkerTransport"</span>, <span class="hljs-number">0</span>), gv_marine01), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2389</span>
+UnitIssueOrder(gv_bunker, OrderTargetingUnit(AbilityCommand(<span class="hljs-string">"BunkerTransport"</span>, <span class="hljs-number">0</span>), gv_marine02), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L286</span>
+UnitIssueOrder(UnitGroupLoopCurrent(), Order(AbilityCommand(<span class="hljs-string">"stop"</span>, <span class="hljs-number">0</span>)), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L907</span>
+UnitIssueOrder(UnitGroupLoopCurrent(), Order(AbilityCommand(<span class="hljs-string">"stop"</span>, <span class="hljs-number">0</span>)), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L932</span>
+UnitIssueOrder(UnitGroupUnit(UnitGroup(<span class="hljs-string">"Overseer"</span>, gv_pLAYER_COMPUTER1, RegionFromId(<span class="hljs-number">1</span>), UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))), <span class="hljs-number">0</span>), <span class="hljs-number">1</span>), OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"move"</span>, <span class="hljs-number">1</span>), PointFromId(<span class="hljs-number">786</span>)), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L933</span>
+UnitIssueOrder(UnitGroupUnit(UnitGroup(<span class="hljs-string">"Overseer"</span>, gv_pLAYER_COMPUTER1, RegionFromId(<span class="hljs-number">2</span>), UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))), <span class="hljs-number">0</span>), <span class="hljs-number">1</span>), OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"move"</span>, <span class="hljs-number">1</span>), PointFromId(<span class="hljs-number">789</span>)), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L934</span>
+UnitIssueOrder(UnitGroupUnit(UnitGroup(<span class="hljs-string">"Overseer"</span>, gv_pLAYER_COMPUTER1, RegionFromId(<span class="hljs-number">3</span>), UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))), <span class="hljs-number">0</span>), <span class="hljs-number">1</span>), OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"move"</span>, <span class="hljs-number">1</span>), PointFromId(<span class="hljs-number">790</span>)), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L300</span>
+UnitIssueOrder(UnitGroupLoopCurrent(), Order(AbilityCommand(<span class="hljs-string">"stop"</span>, <span class="hljs-number">0</span>)), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L879</span>
+UnitIssueOrder(UnitGroupLoopCurrent(), Order(AbilityCommand(<span class="hljs-string">"move"</span>, <span class="hljs-number">2</span>)), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L884</span>
+UnitIssueOrder(UnitGroupLoopCurrent(), Order(AbilityCommand(<span class="hljs-string">"stop"</span>, <span class="hljs-number">0</span>)), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L820</span>
+UnitIssueOrder(gv_boss, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"SS_CarrierSpawnInterceptor"</span>, <span class="hljs-number">0</span>), lv_tempLoc), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L847</span>
+UnitIssueOrder(gv_boss, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"move"</span>, <span class="hljs-number">0</span>), lv_targetLoc), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1109</span>
+UnitIssueOrder(lp_guardian, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"move"</span>, <span class="hljs-number">0</span>), lv_target), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1160</span>
+UnitIssueOrder(gv_boss, Order(AbilityCommand(<span class="hljs-string">"SS_LeviathanSpawnBombs"</span>, <span class="hljs-number">0</span>)), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1178</span>
+UnitIssueOrder(gv_boss, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"move"</span>, <span class="hljs-number">0</span>), lv_targetLoc), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1548</span>
+UnitIssueOrder(lv_lightningProjector, Order(AbilityCommand(<span class="hljs-string">"SS_LightningProjectorToggle"</span>, <span class="hljs-number">0</span>)), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1556</span>
+UnitIssueOrder(lv_lightningProjector, Order(AbilityCommand(<span class="hljs-string">"SS_LightningProjectorToggle"</span>, <span class="hljs-number">1</span>)), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1563</span>
+UnitIssueOrder(lv_lightningProjector, Order(AbilityCommand(<span class="hljs-string">"SS_LightningProjectorToggle"</span>, <span class="hljs-number">0</span>)), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1681</span>
+UnitIssueOrder(lp_scienceVessel, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"SS_ScienceVesselTeleport"</span>, <span class="hljs-number">0</span>), lv_target), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1727</span>
+UnitIssueOrder(lp_battlecruiser, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"move"</span>, <span class="hljs-number">0</span>), lv_target), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L308</span>
+UnitIssueOrder(UnitLastCreated(), OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"move"</span>, <span class="hljs-number">0</span>), PointFromId(<span class="hljs-number">3242</span>)), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L309</span>
+UnitIssueOrder(UnitLastCreated(), Order(AbilityCommand(<span class="hljs-string">"move"</span>, <span class="hljs-number">2</span>)), c_orderQueueAddToEnd)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L328</span>
+UnitIssueOrder(lv_randomHut, OrderTargetingPoint(null, PointFromId(<span class="hljs-number">856</span>)), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L329</span>
+UnitIssueOrder(lv_randomHut, OrderTargetingUnit(null, gv_tHEONETRUCK), c_orderQueueAddToEnd)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L333</span>
+UnitIssueOrder(lv_randomHut, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"Rally"</span>, <span class="hljs-number">0</span>), gv_noTruckColonistRallyPoint[gv_noTruckColonistRallyIndex]), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L335</span>
+UnitIssueOrder(lv_randomHut, Order(AbilityCommand(<span class="hljs-string">"HutTransport"</span>, <span class="hljs-number">1</span>)), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L374</span>
+UnitIssueOrder(UnitLastCreated(), OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"move"</span>, <span class="hljs-number">0</span>), lp_param_SpoogeTarget), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L375</span>
+UnitIssueOrder(UnitLastCreated(), Order(AbilityCommand(<span class="hljs-string">"GenerateCreep"</span>, <span class="hljs-number">0</span>)), c_orderQueueAddToEnd)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L377</span>
+UnitIssueOrder(UnitLastCreated(), Order(AbilityCommand(<span class="hljs-string">"move"</span>, <span class="hljs-number">2</span>)), c_orderQueueAddToEnd)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L409</span>
+UnitIssueOrder(lv_u, Order(AbilityCommand(<span class="hljs-string">"BurrowZerglingUp"</span>, <span class="hljs-number">0</span>)), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L465</span>
+UnitIssueOrder(auto1B9E687D_var, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"move"</span>, <span class="hljs-number">0</span>), PointFromId(<span class="hljs-number">481</span>)), c_orderQueueAddToEnd)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L903</span>
+UnitIssueOrder(UnitGroupUnit(lv_attackersLeft, lv_i), OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"attack"</span>, <span class="hljs-number">0</span>), PointFromId(<span class="hljs-number">228</span>)), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L904</span>
+UnitIssueOrder(UnitGroupUnit(lv_attackersLeft, (lv_i + <span class="hljs-number">7</span>)), OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"attack"</span>, <span class="hljs-number">0</span>), PointFromId(<span class="hljs-number">228</span>)), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L906</span>
+UnitIssueOrder(UnitGroupUnit(lv_attackersRight, lv_i), OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"attack"</span>, <span class="hljs-number">0</span>), PointFromId(<span class="hljs-number">317</span>)), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L907</span>
+UnitIssueOrder(UnitGroupUnit(lv_attackersRight, (lv_i + <span class="hljs-number">7</span>)), OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"attack"</span>, <span class="hljs-number">0</span>), PointFromId(<span class="hljs-number">317</span>)), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L920</span>
+UnitIssueOrder(lv_tempUnit, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"attack"</span>, <span class="hljs-number">0</span>), PointFromId(<span class="hljs-number">230</span>)), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L930</span>
+UnitIssueOrder(lv_tempUnit, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"attack"</span>, <span class="hljs-number">0</span>), PointFromId(<span class="hljs-number">230</span>)), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1419</span>
+UnitIssueOrder(auto7ECFBFDB_var, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"InfestedTerrans"</span>, <span class="hljs-number">0</span>), lv_point), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2649</span>
+UnitIssueOrder(lv_factory, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"FactoryLand"</span>, <span class="hljs-number">0</span>), RegionGetCenter(lv_pickedRegion)), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2689</span>
+UnitIssueOrder(EventUnit(), OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"FactoryLand"</span>, <span class="hljs-number">0</span>), RegionGetCenter(EventUnitRegion())), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L331</span>
+UnitIssueOrder(gv_superWarpGateP04, OrderTargetingPoint(lp_trainCmd, PointWithOffsetPolar(UnitGetPosition(gv_purifier), lp_radius, lv_currentDegree)), c_orderQueueAddToEnd)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L389</span>
+UnitIssueOrder(gv_superWarpGateP02, OrderTargetingPoint(lp_trainCmd, UnitGetPosition(UnitGroupRandomUnit(gv_currentWaveSources, c_unitCountAlive))), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1160</span>
+UnitIssueOrder(gv_purifier, Order(AbilityCommand(<span class="hljs-string">"PurifierTogglePower"</span>, <span class="hljs-number">1</span>)), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1179</span>
+UnitIssueOrder(gv_purifier, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"move"</span>, <span class="hljs-number">0</span>), PointFromId(<span class="hljs-number">1065</span>)), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1180</span>
+UnitIssueOrder(gv_purifier, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"move"</span>, <span class="hljs-number">0</span>), RegionGetCenter(RegionFromId(<span class="hljs-number">13</span>))), c_orderQueueAddToEnd)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1285</span>
+UnitIssueOrder(gv_purifier, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"move"</span>, <span class="hljs-number">0</span>), RegionGetCenter(RegionFromId(<span class="hljs-number">13</span>))), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1286</span>
+UnitIssueOrder(gv_purifier, Order(AbilityCommand(<span class="hljs-string">"move"</span>, <span class="hljs-number">2</span>)), c_orderQueueAddToEnd)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1287</span>
+UnitIssueOrder(gv_purifier, Order(AbilityCommand(<span class="hljs-string">"PurifierTogglePower"</span>, <span class="hljs-number">0</span>)), c_orderQueueAddToEnd)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1311</span>
+UnitIssueOrder(gv_purifier, Order(AbilityCommand(<span class="hljs-string">"PurifierPlanetCracker"</span>, <span class="hljs-number">0</span>)), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1312</span>
+UnitIssueOrder(gv_purifier, Order(AbilityCommand(<span class="hljs-string">"move"</span>, <span class="hljs-number">2</span>)), c_orderQueueAddToEnd)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L313</span>
+UnitIssueOrder(UnitLastCreated(), Order(AbilityCommand(<span class="hljs-string">"BurrowInfestedCivilianUp"</span>, <span class="hljs-number">0</span>)), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L321</span>
+UnitIssueOrder(UnitLastCreated(), Order(AbilityCommand(<span class="hljs-string">"BurrowInfestedTerranCampaignUp"</span>, <span class="hljs-number">0</span>)), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L336</span>
+UnitIssueOrder(UnitLastCreated(), Order(AbilityCommand(<span class="hljs-string">"BurrowDroneUp"</span>, <span class="hljs-number">0</span>)), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L401</span>
+UnitIssueOrder(lp_unit, Order(AbilityCommand(<span class="hljs-string">"move"</span>, <span class="hljs-number">2</span>)), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L409</span>
+UnitIssueOrder(lp_unit, Order(AbilityCommand(<span class="hljs-string">"move"</span>, <span class="hljs-number">2</span>)), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L501</span>
+UnitIssueOrder(lv_overlord, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"move"</span>, <span class="hljs-number">0</span>), gv_infestationOverlordLocation[lp_colonyIndex][lv_overlordIndex]), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L502</span>
+UnitIssueOrder(lv_overlord, Order(AbilityCommand(<span class="hljs-string">"move"</span>, <span class="hljs-number">2</span>)), c_orderQueueAddToEnd)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L534</span>
+UnitIssueOrder(lv_overseer, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"move"</span>, <span class="hljs-number">0</span>), gv_infestationOverseerLocation[lp_colonyIndex][lv_overseerIndex]), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L535</span>
+UnitIssueOrder(lv_overseer, Order(AbilityCommand(<span class="hljs-string">"move"</span>, <span class="hljs-number">2</span>)), c_orderQueueAddToEnd)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L606</span>
+UnitIssueOrder(UnitLastCreated(), OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"attack"</span>, <span class="hljs-number">0</span>), gv_infestationDefenderLocation[lp_colonyIndex][lp_defenderIndex]), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2062</span>
+UnitIssueOrder(UnitLastCreated(), OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"attack"</span>, <span class="hljs-number">0</span>), PointWithOffsetPolar(gv_trainList[lv_trainIndex].lv_escorts[lv_i].lv_waitPosition, gv_trainList[lv_trainIndex].lv_escorts[lv_i].lv_polarRadius, (PointGetFacing(gv_trainList[lv_trainIndex].lv_escorts[lv_i].lv_waitPosition) + gv_trainList[lv_trainIndex].lv_escorts[lv_i].lv_polarAngle))), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2069</span>
+UnitIssueOrder(gv_trainList[lv_trainIndex].lv_escorts[lv_i].lv_escort, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"attack"</span>, <span class="hljs-number">0</span>), PointWithOffsetPolar(gv_trainList[lv_trainIndex].lv_escorts[lv_i].lv_waitPosition, gv_trainList[lv_trainIndex].lv_escorts[lv_i].lv_polarRadius, (PointGetFacing(gv_trainList[lv_trainIndex].lv_escorts[lv_i].lv_waitPosition) + gv_trainList[lv_trainIndex].lv_escorts[lv_i].lv_polarAngle))), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2155</span>
+UnitIssueOrder(auto499A4BF2_var, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"move"</span>, <span class="hljs-number">0</span>), PointWithOffsetPolar(UnitGetPosition(auto499A4BF2_var), <span class="hljs-number">1.0</span>, AngleBetweenPoints(UnitGetPosition(auto499A4BF2_var), gv_trainPath[FixedToInt(UnitGetCustomValue(auto499A4BF2_var, <span class="hljs-number">0</span>))]))), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2518</span>
+UnitIssueOrder(gv_trainList[lv_trainIndex].lv_escorts[lv_i].lv_escort, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"attack"</span>, <span class="hljs-number">0</span>), PointWithOffsetPolar(UnitGetPosition(gv_trainList[lv_trainIndex].lv_trainCars[gv_trainList[lv_trainIndex].lv_lastCar]), <span class="hljs-number">4.0</span>, (UnitGetFacing(gv_trainList[lv_trainIndex].lv_trainCars[gv_trainList[lv_trainIndex].lv_lastCar]) + <span class="hljs-number">90.0</span>))), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2522</span>
+UnitIssueOrder(gv_trainList[lv_trainIndex].lv_escorts[lv_i].lv_escort, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"attack"</span>, <span class="hljs-number">0</span>), PointWithOffsetPolar(UnitGetPosition(gv_trainList[lv_trainIndex].lv_trainCars[gv_trainList[lv_trainIndex].lv_lastCar]), <span class="hljs-number">4.0</span>, (UnitGetFacing(gv_trainList[lv_trainIndex].lv_trainCars[gv_trainList[lv_trainIndex].lv_lastCar]) + <span class="hljs-number">270.0</span>))), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2525</span>
+UnitIssueOrder(gv_trainList[lv_trainIndex].lv_escorts[lv_i].lv_escort, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"attack"</span>, <span class="hljs-number">0</span>), PointWithOffsetPolar(UnitGetPosition(gv_trainList[lv_trainIndex].lv_trainCars[gv_trainList[lv_trainIndex].lv_lastCar]), <span class="hljs-number">4.0</span>, (UnitGetFacing(gv_trainList[lv_trainIndex].lv_trainCars[gv_trainList[lv_trainIndex].lv_lastCar]) + <span class="hljs-number">180.0</span>))), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2569</span>
+UnitIssueOrder(gv_trainList[lv_trainIndex].lv_escorts[lv_i].lv_escort, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"attack"</span>, <span class="hljs-number">0</span>), lv_exitPoint), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4546</span>
+UnitIssueOrder(UnitLastCreated(), OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"attack"</span>, <span class="hljs-number">0</span>), PointFromId(<span class="hljs-number">1788</span>)), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4559</span>
+UnitIssueOrder(UnitLastCreated(), OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"attack"</span>, <span class="hljs-number">0</span>), PointFromId(<span class="hljs-number">1788</span>)), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4631</span>
+UnitIssueOrder(UnitLastCreated(), OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"attack"</span>, <span class="hljs-number">0</span>), PointFromId(<span class="hljs-number">1778</span>)), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L358</span>
+UnitIssueOrder(lp_nuker, Order(AbilityCommand(<span class="hljs-string">"GhostCloak"</span>, <span class="hljs-number">0</span>)), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L361</span>
+UnitIssueOrder(lp_nuker, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"TacNukeStrike"</span>, <span class="hljs-number">0</span>), lp_nukeTarget), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L362</span>
+UnitIssueOrder(lp_nuker, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"move"</span>, <span class="hljs-number">0</span>), lp_retreatTo), c_orderQueueAddToEnd)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L363</span>
+UnitIssueOrder(lp_nuker, Order(AbilityCommand(<span class="hljs-string">"GhostCloak"</span>, <span class="hljs-number">1</span>)), c_orderQueueAddToEnd)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1031</span>
+UnitIssueOrder(UnitFromId(<span class="hljs-number">271</span>), OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"CommandCenterLand"</span>, <span class="hljs-number">0</span>), PointFromId(<span class="hljs-number">46</span>)), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1032</span>
+UnitIssueOrder(UnitFromId(<span class="hljs-number">271</span>), Order(AbilityCommand(<span class="hljs-string">"CommandCenterTransport"</span>, <span class="hljs-number">1</span>)), c_orderQueueAddToEnd)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1033</span>
+UnitIssueOrder(UnitFromId(<span class="hljs-number">274</span>), OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"BarracksLand"</span>, <span class="hljs-number">0</span>), PointFromId(<span class="hljs-number">276</span>)), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1034</span>
+UnitIssueOrder(UnitFromId(<span class="hljs-number">270</span>), OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"FactoryLand"</span>, <span class="hljs-number">0</span>), PointFromId(<span class="hljs-number">275</span>)), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1035</span>
+UnitIssueOrder(UnitFromId(<span class="hljs-number">1056</span>), OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"SpecOpsDropshipTransport"</span>, <span class="hljs-number">2</span>), RegionGetCenter(RegionFromId(<span class="hljs-number">4</span>))), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1036</span>
+UnitIssueOrder(UnitFromId(<span class="hljs-number">1056</span>), OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"move"</span>, <span class="hljs-number">0</span>), PointFromId(<span class="hljs-number">100</span>)), c_orderQueueAddToEnd)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L443</span>
+UnitIssueOrder(gv_odin, Order(AbilityCommand(<span class="hljs-string">"move"</span>, <span class="hljs-number">2</span>)), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L481</span>
+UnitIssueOrder(autoA69D9812_var, Order(AbilityCommand(<span class="hljs-string">"move"</span>, <span class="hljs-number">2</span>)), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L483</span>
+UnitIssueOrder(UnitFromId(<span class="hljs-number">713</span>), Order(AbilityCommand(<span class="hljs-string">"move"</span>, <span class="hljs-number">2</span>)), c_orderQueueReplace)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L500</span>
+UnitIssueOrder(UnitFromId(<span class="hljs-number">2242</span>), OrderSetAutoCast(AbilityCommand(<span class="hljs-string">"Repair"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">true</span>), c_orderQueueReplace)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

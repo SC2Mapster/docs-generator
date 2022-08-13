@@ -1,0 +1,400 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Enable/Disable Revealer / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Enable/Disable Revealer"/>
+                <meta property="og:description" content="Enables/Disables the specified revealer but does not destroy it. "/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="enabledisable-revealer"><a class="markdownIt-Anchor" href="#enabledisable-revealer">#</a> Enable/Disable Revealer</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — <strong>enable|Enable/Disable</strong> <strong>r</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Enables/Disables the specified revealer but does not destroy it.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>revealer</code> — Revealer</li>
+<li><code>bool</code> <em>[ preset::<a href="/galaxy/reference/preset-enable-disable-option">Enable_Disable_Option</a> ]</em> — Enable</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">VisRevealerEnable</span><span class="hljs-params">(revealer r, <span class="hljs-keyword">bool</span> enable)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#visibility-revealers">Visibility / Revealers</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>revealer</code> — <strong><a href="/galaxy/reference/vis-revealer-create">Create Revealer</a></strong> — ( VisRevealerCreate )</li>
+<li><em><strong>[F]</strong></em> — <code>revealer</code> — <strong><a href="/galaxy/reference/vis-revealer-last-created">Last Created Revealer</a></strong> — ( VisRevealerLastCreated )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/vis-revealer-enable">Enable/Disable Revealer</a></strong> — ( VisRevealerEnable )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/vis-revealer-update">Update Revealer</a></strong> — ( VisRevealerUpdate )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/vis-revealer-destroy">Destroy Revealer</a></strong> — ( VisRevealerDestroy )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/thanson03a.sc2map/MapScript.galaxy#L1316">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1316</span>
+VisRevealerEnable(gv_colonist_Outpost_Alpha, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1412</span>
+VisRevealerEnable(gv_colonist_Outpost_Beta, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1526</span>
+VisRevealerEnable(gv_colonist_Outpost_Gamma, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1640</span>
+VisRevealerEnable(gv_colonist_Outpost_Omega, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1688</span>
+VisRevealerEnable(gv_infestationRevealer[lv_colonyIndex], <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1739</span>
+VisRevealerEnable(gv_infestationRevealer[lv_colonyIndex], <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2589</span>
+VisRevealerEnable(gv_baseRevealerSouth, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2661</span>
+VisRevealerEnable(gv_baseRevealerNorth, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2733</span>
+VisRevealerEnable(gv_baseRevealerEast, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L432</span>
+VisRevealerEnable(VisRevealerLastCreated(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L750</span>
+VisRevealerEnable(VisRevealerLastCreated(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L634</span>
+VisRevealerEnable(gv_artifactRevealer, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3115</span>
+VisRevealerEnable(gv_artifactRevealer, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3126</span>
+VisRevealerEnable(gv_artifactRevealer, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L742</span>
+VisRevealerEnable(VisRevealerLastCreated(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L745</span>
+VisRevealerEnable(VisRevealerLastCreated(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L748</span>
+VisRevealerEnable(VisRevealerLastCreated(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L751</span>
+VisRevealerEnable(VisRevealerLastCreated(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L754</span>
+VisRevealerEnable(VisRevealerLastCreated(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1577</span>
+VisRevealerEnable(gv_p1MiTuRevealer, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1580</span>
+VisRevealerEnable(gv_p1MiTuRevealer, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1697</span>
+VisRevealerEnable(gv_p1TankRevealer, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1702</span>
+VisRevealerEnable(gv_p1TankRevealer, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2039</span>
+VisRevealerEnable(gv_p1Spec2Revealer, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L442</span>
+VisRevealerEnable(VisRevealerLastCreated(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L547</span>
+VisRevealerEnable(VisRevealerLastCreated(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L560</span>
+VisRevealerEnable(VisRevealerLastCreated(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1705</span>
+VisRevealerEnable(gv_artifactRevealer, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1709</span>
+VisRevealerEnable(gv_artifactRevealer, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2650</span>
+VisRevealerEnable(VisRevealerLastCreated(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3663</span>
+VisRevealerEnable(VisRevealerLastCreated(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3668</span>
+VisRevealerEnable(VisRevealerLastCreated(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3672</span>
+VisRevealerEnable(VisRevealerLastCreated(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3678</span>
+VisRevealerEnable(VisRevealerLastCreated(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7910</span>
+VisRevealerEnable(VisRevealerLastCreated(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7912</span>
+VisRevealerEnable(VisRevealerLastCreated(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7932</span>
+VisRevealerEnable(VisRevealerLastCreated(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3412</span>
+VisRevealerEnable(gv__1Nuke1Revealer, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L920</span>
+VisRevealerEnable(gv_artifactRevealer, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1185</span>
+VisRevealerEnable(gv_artifactRevealer, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1316</span>
+VisRevealerEnable(gv_colonist_Outpost_Alpha, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1412</span>
+VisRevealerEnable(gv_colonist_Outpost_Beta, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1526</span>
+VisRevealerEnable(gv_colonist_Outpost_Gamma, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1640</span>
+VisRevealerEnable(gv_colonist_Outpost_Omega, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1688</span>
+VisRevealerEnable(gv_infestationRevealer[lv_colonyIndex], <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1739</span>
+VisRevealerEnable(gv_infestationRevealer[lv_colonyIndex], <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2589</span>
+VisRevealerEnable(gv_baseRevealerSouth, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2661</span>
+VisRevealerEnable(gv_baseRevealerNorth, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2733</span>
+VisRevealerEnable(gv_baseRevealerEast, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L432</span>
+VisRevealerEnable(VisRevealerLastCreated(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L750</span>
+VisRevealerEnable(VisRevealerLastCreated(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L634</span>
+VisRevealerEnable(gv_artifactRevealer, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3115</span>
+VisRevealerEnable(gv_artifactRevealer, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3126</span>
+VisRevealerEnable(gv_artifactRevealer, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L742</span>
+VisRevealerEnable(VisRevealerLastCreated(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L745</span>
+VisRevealerEnable(VisRevealerLastCreated(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L748</span>
+VisRevealerEnable(VisRevealerLastCreated(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L751</span>
+VisRevealerEnable(VisRevealerLastCreated(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L754</span>
+VisRevealerEnable(VisRevealerLastCreated(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1577</span>
+VisRevealerEnable(gv_p1MiTuRevealer, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1580</span>
+VisRevealerEnable(gv_p1MiTuRevealer, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1697</span>
+VisRevealerEnable(gv_p1TankRevealer, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1702</span>
+VisRevealerEnable(gv_p1TankRevealer, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2039</span>
+VisRevealerEnable(gv_p1Spec2Revealer, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L442</span>
+VisRevealerEnable(VisRevealerLastCreated(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L547</span>
+VisRevealerEnable(VisRevealerLastCreated(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L560</span>
+VisRevealerEnable(VisRevealerLastCreated(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1705</span>
+VisRevealerEnable(gv_artifactRevealer, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1709</span>
+VisRevealerEnable(gv_artifactRevealer, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2650</span>
+VisRevealerEnable(VisRevealerLastCreated(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3663</span>
+VisRevealerEnable(VisRevealerLastCreated(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3668</span>
+VisRevealerEnable(VisRevealerLastCreated(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3672</span>
+VisRevealerEnable(VisRevealerLastCreated(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3678</span>
+VisRevealerEnable(VisRevealerLastCreated(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7910</span>
+VisRevealerEnable(VisRevealerLastCreated(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7912</span>
+VisRevealerEnable(VisRevealerLastCreated(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7932</span>
+VisRevealerEnable(VisRevealerLastCreated(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3412</span>
+VisRevealerEnable(gv__1Nuke1Revealer, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L920</span>
+VisRevealerEnable(gv_artifactRevealer, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1185</span>
+VisRevealerEnable(gv_artifactRevealer, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9853</span>
+VisRevealerEnable(gv_s3VortexRevealer, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L355</span>
+VisRevealerEnable(VisRevealerLastCreated(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L357</span>
+VisRevealerEnable(VisRevealerLastCreated(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L981</span>
+VisRevealerEnable(VisRevealerLastCreated(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5723</span>
+VisRevealerEnable(gv_visiblilityRevealers[lv_i], <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1591</span>
+VisRevealerEnable(gv_revealLeftGate, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4877</span>
+VisRevealerEnable(VisRevealerLastCreated(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5395</span>
+VisRevealerEnable(VisRevealerLastCreated(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12959</span>
+VisRevealerEnable(VisRevealerLastCreated(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2464</span>
+VisRevealerEnable(gv_quillgorCampRevealer[auto3BCA1ED2_var], <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2467</span>
+VisRevealerEnable(gv_quillgorCampRevealer[auto3BCA1ED2_var], <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6015</span>
+VisRevealerEnable(VisRevealerLastCreated(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3493</span>
+VisRevealerEnable(gv_yagdraRescueRevealer, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3588</span>
+VisRevealerEnable(gv_yagdraRescueRevealer, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3644</span>
+VisRevealerEnable(gv_yagdraRescueRevealer, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3653</span>
+VisRevealerEnable(gv_yagdraRescueRevealer, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4177</span>
+VisRevealerEnable(VisRevealerLastCreated(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4900</span>
+VisRevealerEnable(gv_yagdraBossRevealer, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6655</span>
+VisRevealerEnable(gv_yagdraRescueRevealer, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6670</span>
+VisRevealerEnable(gv_kraithBossRevealer, <span class="hljs-literal">false</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

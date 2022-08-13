@@ -1,0 +1,458 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Change Unit Damage / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Change Unit Damage"/>
+                <meta property="og:description" content="Modifies the amount of damage a unit deals or takes.  Minimal means 10% damage.  Mega means 300% damage."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="change-unit-damage"><a class="markdownIt-Anchor" href="#change-unit-damage">#</a> Change Unit Damage</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Make <strong>unit</strong> <strong>takeDeal</strong> <strong>option</strong> damage<br>
+<em>Flags</em> — <code>Action</code></p>
+</blockquote>
+<p>Modifies the amount of damage a unit deals or takes.  Minimal means 10% damage.  Mega means 300% damage.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>unit</code> — Unit</li>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-unit-damage-taken-dealt">UnitDamageTakenDealt</a> ]</em> — Take/Deal</li>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-unit-damage-change-option">UnitDamageChangeOption</a> ]</em> — Option</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">libNtve_gf_ChangeUnitDamage</span><span class="hljs-params">(
+	unit lp_unit,
+	<span class="hljs-keyword">int</span> lp_takeDeal,
+	<span class="hljs-keyword">int</span> lp_option,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#unit-properties">Unit / Properties</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>string</code> <em>[ gamelink::Unit ]</em> — <strong><a href="/galaxy/reference/unit-get-type">Unit Type Of Unit</a></strong> — ( UnitGetType )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/unit-get-tag">Unit Tag</a></strong> — ( UnitGetTag )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/unit-get-seed">Unit Seed</a></strong> — ( UnitGetSeed )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-unit-property">Unit Property Changes</a></strong> — ( TriggerAddEventUnitProperty )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-unit-property">Unit_Property</a> ]</em> — <strong><a href="/galaxy/reference/event-unit-property">Triggering Unit Property</a></strong> — ( EventUnitProperty )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/event-unit-property-change-int">Triggering Unit Property Change (Integer)</a></strong> — ( EventUnitPropertyChangeInt )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/event-unit-property-change-fixed">Triggering Unit Property Change (Real)</a></strong> — ( EventUnitPropertyChangeFixed )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-set-property-fixed">Set Unit Property</a></strong> — ( UnitSetPropertyFixed )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-set-state">Set Unit State</a></strong> — ( UnitSetState )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-set-seed">Set Unit Seed</a></strong> — ( UnitSetSeed )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-reset-seed">Reset Unit Seed</a></strong> — ( UnitResetSeed )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-make-unit-invulnerable">Make Unit Invulnerable</a></strong> — ( libNtve_gf_MakeUnitInvulnerable )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-make-unit-uncommandable">Make Unit Uncommandable</a></strong> — ( libNtve_gf_MakeUnitUncommandable )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/unit-get-property-fixed">Unit Property</a></strong> — ( UnitGetPropertyFixed )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/unit-get-property-int">Unit Property (Int)</a></strong> — ( UnitGetPropertyInt )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/unit-type-get-property">Unit Type Property</a></strong> — ( UnitTypeGetProperty )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/unit-test-state">Unit Classification Check</a></strong> — ( UnitTestState )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/unit-type-test-flag">Unit Type Classification Check</a></strong> — ( UnitTypeTestFlag )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/unit-type-test-attribute">Unit Type Attribute Check</a></strong> — ( UnitTypeTestAttribute )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/unit-test-plane">Unit Targetable Check</a></strong> — ( UnitTestPlane )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-unit-is-invulnerable">Unit Is Invulnerable</a></strong> — ( libNtve_gf_UnitIsInvulnerable )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-unit-get-property-kills">Unit Kills</a></strong> — ( libNtve_gf_UnitGetPropertyKills )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-unit-get-property-resources">Unit Resources</a></strong> — ( libNtve_gf_UnitGetPropertyResources )</li>
+<li><em><strong>[F]</strong></em> — <code>point</code> — <strong><a href="/galaxy/reference/unit-get-attachment-point">Unit Attachment Point</a></strong> — ( UnitGetAttachmentPoint )</li>
+<li><em><strong>[F]</strong></em> — <code>text</code> — <strong><a href="/galaxy/reference/unit-type-get-name">Name Of Unit Type</a></strong> — ( UnitTypeGetName )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> — <strong><a href="/galaxy/reference/unit-type-get-gender-code">Gender Code Of Unit Type</a></strong> — ( UnitTypeGetGenderCode )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/unit-type-get-cost">Unit Type Cost</a></strong> — ( UnitTypeGetCost )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/unit-type-is-affected-by-upgrade">Unit Type Is Affected By Upgrade</a></strong> — ( UnitTypeIsAffectedByUpgrade )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-reset-speed">Reset Movement Speed</a></strong> — ( UnitResetSpeed )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/unit-mover-exists">Unit Uses Mover</a></strong> — ( UnitMoverExists )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-unit-mover-exists">Unit Type Uses Mover</a></strong> — ( libNtve_gf_UnitMoverExists )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> <em>[ gamelink::Unit ]</em> — <strong><a href="/galaxy/reference/unit-type-from-string">Unit Type From String</a></strong> — ( UnitTypeFromString )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-set-team-color-index">Set Unit Color</a></strong> — ( UnitSetTeamColorIndex )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-set-unit-info-button-ability-tooltip">Set Unit Info Button - Ability Tooltip</a></strong> — ( libNtve_gf_SetUnitInfoButtonAbilityTooltip )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-set-unit-info-button-button-tooltip">Set Unit Info Button - Button Tooltip</a></strong> — ( libNtve_gf_SetUnitInfoButtonButtonTooltip )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-set-unit-info-button-item-tooltip">Set Unit Info Button - Item Tooltip</a></strong> — ( libNtve_gf_SetUnitInfoButtonItemTooltip )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-reset-unit-info-button-ability-tooltip">Reset Unit Info Button - Ability Tooltip</a></strong> — ( libNtve_gf_ResetUnitInfoButtonAbilityTooltip )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-reset-unit-info-button-button-tooltip">Reset Unit Info Button - Button Tooltip</a></strong> — ( libNtve_gf_ResetUnitInfoButtonButtonTooltip )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-reset-unit-info-button-item-tooltip">Reset Unit Info Button - Item Tooltip</a></strong> — ( libNtve_gf_ResetUnitInfoButtonItemTooltip )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-set-info-button-tooltip">Set Unit Command Button Tooltip</a></strong> — ( UnitSetInfoButtonTooltip )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-clear-info-button-tooltip">Reset Unit Command Button Tooltip</a></strong> — ( UnitClearInfoButtonTooltip )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-set-cursor">Set Unit Highlight Cursor</a></strong> — ( UnitSetCursor )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-set-ping-cursor">Set Unit Ping Cursor</a></strong> — ( UnitSetPingCursor )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-set-info-text">Set Unit Info</a></strong> — ( UnitSetInfoText )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-set-info-text2">Set Unit Info Text</a></strong> — ( UnitSetInfoText2 )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-set-info-tip">Set Unit Info Tip</a></strong> — ( UnitSetInfoTip )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-set-info-sub-tip">Set Unit Info SubTip</a></strong> — ( UnitSetInfoSubTip )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-clear-info-text">Clear Unit Info</a></strong> — ( UnitClearInfoText )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-force-status-bar">Set Unit Status Bar State (Deprecated)</a></strong> — ( UnitForceStatusBar )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-status-bar-override">Show Unit Status Bar</a></strong> — ( UnitStatusBarOverride )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-status-bar-clear-override">Hide Unit Status Bar</a></strong> — ( UnitStatusBarClearOverride )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-set-scale">Set Unit Scale</a></strong> — ( UnitSetScale )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-unit-set-variation">Set Unit Model Variation</a></strong> — ( libNtve_gf_UnitSetVariation )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-set-height">Change Unit Height</a></strong> — ( UnitSetHeight )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/unit-get-height">Height Of Unit</a></strong> — ( UnitGetHeight )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-change-unit-damage">Change Unit Damage</a></strong> — ( libNtve_gf_ChangeUnitDamage )</li>
+<li><em><strong>[F]</strong></em> — <code>unit</code> — <strong><a href="/galaxy/reference/unit-add-on-child">Add On Child</a></strong> — ( UnitAddOnChild )</li>
+<li><em><strong>[F]</strong></em> — <code>unit</code> — <strong><a href="/galaxy/reference/unit-add-on-parent">Add On Parent</a></strong> — ( UnitAddOnParent )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/thanson01.sc2map/MapScript.galaxy#L5781">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L5781</span>
+libNtve_gf_ChangeUnitDamage(auto0F0F1029_var, libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_Minimal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4990</span>
+libNtve_gf_ChangeUnitDamage(UnitLastCreated(), libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_Minimal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4992</span>
+libNtve_gf_ChangeUnitDamage(UnitLastCreated(), libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_Minimal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4994</span>
+libNtve_gf_ChangeUnitDamage(UnitLastCreated(), libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_Minimal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4996</span>
+libNtve_gf_ChangeUnitDamage(UnitLastCreated(), libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_Minimal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4998</span>
+libNtve_gf_ChangeUnitDamage(UnitLastCreated(), libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_Minimal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5000</span>
+libNtve_gf_ChangeUnitDamage(UnitLastCreated(), libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_Minimal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5002</span>
+libNtve_gf_ChangeUnitDamage(UnitLastCreated(), libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_Minimal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5004</span>
+libNtve_gf_ChangeUnitDamage(UnitLastCreated(), libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_Minimal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5270</span>
+libNtve_gf_ChangeUnitDamage(UnitFromId(<span class="hljs-number">2722</span>), libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_No)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5271</span>
+libNtve_gf_ChangeUnitDamage(UnitFromId(<span class="hljs-number">1678</span>), libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_No)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5272</span>
+libNtve_gf_ChangeUnitDamage(UnitFromId(<span class="hljs-number">1594</span>), libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_No)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4492</span>
+libNtve_gf_ChangeUnitDamage(UnitFromId(<span class="hljs-number">90</span>), libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_No)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3207</span>
+libNtve_gf_ChangeUnitDamage(UnitFromId(<span class="hljs-number">2</span>), libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_No)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5500</span>
+libNtve_gf_ChangeUnitDamage(UnitFromId(<span class="hljs-number">341</span>), libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_No)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2579</span>
+libNtve_gf_ChangeUnitDamage(gv_odin, libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_No)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6763</span>
+libNtve_gf_ChangeUnitDamage(gv_odin, libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_Full)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8173</span>
+libNtve_gf_ChangeUnitDamage(gv_hercules, libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_No)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4117</span>
+libNtve_gf_ChangeUnitDamage(gv_raynor, libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_No)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4251</span>
+libNtve_gf_ChangeUnitDamage(auto78DDF86E_var, libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_No)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5126</span>
+libNtve_gf_ChangeUnitDamage(UnitLastCreated(), libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_Minimal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5131</span>
+libNtve_gf_ChangeUnitDamage(UnitLastCreated(), libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_Minimal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2102</span>
+libNtve_gf_ChangeUnitDamage(auto2ABD4060_var, libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_Minimal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4329</span>
+libNtve_gf_ChangeUnitDamage(gv_tHEONEDRILL, libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_No)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4429</span>
+libNtve_gf_ChangeUnitDamage(gv_tHEONEDOOR, libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_No)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2574</span>
+libNtve_gf_ChangeUnitDamage(gv_uNITDaMothership, libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_No)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2577</span>
+libNtve_gf_ChangeUnitDamage(gv_uNITDaMothership, libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_Full)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2613</span>
+libNtve_gf_ChangeUnitDamage(gv_uNITDaMothership, libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_No)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2617</span>
+libNtve_gf_ChangeUnitDamage(gv_uNITDaMothership, libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_Full)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2655</span>
+libNtve_gf_ChangeUnitDamage(gv_uNITDaMothership, libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_No)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2659</span>
+libNtve_gf_ChangeUnitDamage(gv_uNITDaMothership, libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_Full)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3468</span>
+libNtve_gf_ChangeUnitDamage(autoFC32028A_var, libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_No)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5374</span>
+libNtve_gf_ChangeUnitDamage(auto49807F1C_var, libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_No)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7450</span>
+libNtve_gf_ChangeUnitDamage(auto1B452B0B_var, libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_No)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9806</span>
+libNtve_gf_ChangeUnitDamage(gv__1BroodchamberNuke, libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_No)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10045</span>
+libNtve_gf_ChangeUnitDamage(auto0A2AAA69_var, libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_Full)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10533</span>
+libNtve_gf_ChangeUnitDamage(gv__2BroodchamberNuke, libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_No)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10594</span>
+libNtve_gf_ChangeUnitDamage(UnitLastCreated(), libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_Minimal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10839</span>
+libNtve_gf_ChangeUnitDamage(auto7651948C_var, libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_Full)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11410</span>
+libNtve_gf_ChangeUnitDamage(auto5E71AC3A_var, libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_Full)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11525</span>
+libNtve_gf_ChangeUnitDamage(lv_chosenUnit, libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_No)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5518</span>
+libNtve_gf_ChangeUnitDamage(UnitFromId(<span class="hljs-number">29</span>), libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_No)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4416</span>
+libNtve_gf_ChangeUnitDamage(gv_artifact, libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_No)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4502</span>
+libNtve_gf_ChangeUnitDamage(gv_artifact, libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_No)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9912</span>
+libNtve_gf_ChangeUnitDamage(lv_victoryVoidSeeker, libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_No)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L500</span>
+libNtve_gf_ChangeUnitDamage(autoF1102D1B_var, libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_No)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2848</span>
+libNtve_gf_ChangeUnitDamage(UnitFromId(<span class="hljs-number">85</span>), libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_Full)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2911</span>
+libNtve_gf_ChangeUnitDamage(UnitFromId(<span class="hljs-number">97</span>), libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_Full)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2974</span>
+libNtve_gf_ChangeUnitDamage(UnitFromId(<span class="hljs-number">84</span>), libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_Full)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3037</span>
+libNtve_gf_ChangeUnitDamage(UnitFromId(<span class="hljs-number">103</span>), libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_Full)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5781</span>
+libNtve_gf_ChangeUnitDamage(auto0F0F1029_var, libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_Minimal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4990</span>
+libNtve_gf_ChangeUnitDamage(UnitLastCreated(), libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_Minimal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4992</span>
+libNtve_gf_ChangeUnitDamage(UnitLastCreated(), libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_Minimal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4994</span>
+libNtve_gf_ChangeUnitDamage(UnitLastCreated(), libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_Minimal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4996</span>
+libNtve_gf_ChangeUnitDamage(UnitLastCreated(), libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_Minimal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4998</span>
+libNtve_gf_ChangeUnitDamage(UnitLastCreated(), libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_Minimal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5000</span>
+libNtve_gf_ChangeUnitDamage(UnitLastCreated(), libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_Minimal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5002</span>
+libNtve_gf_ChangeUnitDamage(UnitLastCreated(), libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_Minimal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5004</span>
+libNtve_gf_ChangeUnitDamage(UnitLastCreated(), libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_Minimal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5270</span>
+libNtve_gf_ChangeUnitDamage(UnitFromId(<span class="hljs-number">2722</span>), libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_No)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5271</span>
+libNtve_gf_ChangeUnitDamage(UnitFromId(<span class="hljs-number">1678</span>), libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_No)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5272</span>
+libNtve_gf_ChangeUnitDamage(UnitFromId(<span class="hljs-number">1594</span>), libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_No)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4492</span>
+libNtve_gf_ChangeUnitDamage(UnitFromId(<span class="hljs-number">90</span>), libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_No)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3207</span>
+libNtve_gf_ChangeUnitDamage(UnitFromId(<span class="hljs-number">2</span>), libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_No)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5500</span>
+libNtve_gf_ChangeUnitDamage(UnitFromId(<span class="hljs-number">341</span>), libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_No)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2579</span>
+libNtve_gf_ChangeUnitDamage(gv_odin, libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_No)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6763</span>
+libNtve_gf_ChangeUnitDamage(gv_odin, libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_Full)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8173</span>
+libNtve_gf_ChangeUnitDamage(gv_hercules, libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_No)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4117</span>
+libNtve_gf_ChangeUnitDamage(gv_raynor, libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_No)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4251</span>
+libNtve_gf_ChangeUnitDamage(auto78DDF86E_var, libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_No)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5126</span>
+libNtve_gf_ChangeUnitDamage(UnitLastCreated(), libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_Minimal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5131</span>
+libNtve_gf_ChangeUnitDamage(UnitLastCreated(), libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_Minimal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2102</span>
+libNtve_gf_ChangeUnitDamage(auto2ABD4060_var, libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_Minimal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4329</span>
+libNtve_gf_ChangeUnitDamage(gv_tHEONEDRILL, libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_No)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4429</span>
+libNtve_gf_ChangeUnitDamage(gv_tHEONEDOOR, libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_No)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2574</span>
+libNtve_gf_ChangeUnitDamage(gv_uNITDaMothership, libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_No)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2577</span>
+libNtve_gf_ChangeUnitDamage(gv_uNITDaMothership, libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_Full)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2613</span>
+libNtve_gf_ChangeUnitDamage(gv_uNITDaMothership, libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_No)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2617</span>
+libNtve_gf_ChangeUnitDamage(gv_uNITDaMothership, libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_Full)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2655</span>
+libNtve_gf_ChangeUnitDamage(gv_uNITDaMothership, libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_No)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2659</span>
+libNtve_gf_ChangeUnitDamage(gv_uNITDaMothership, libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_Full)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3468</span>
+libNtve_gf_ChangeUnitDamage(autoFC32028A_var, libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_No)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5374</span>
+libNtve_gf_ChangeUnitDamage(auto49807F1C_var, libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_No)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7450</span>
+libNtve_gf_ChangeUnitDamage(auto1B452B0B_var, libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_No)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9806</span>
+libNtve_gf_ChangeUnitDamage(gv__1BroodchamberNuke, libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_No)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10045</span>
+libNtve_gf_ChangeUnitDamage(auto0A2AAA69_var, libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_Full)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10533</span>
+libNtve_gf_ChangeUnitDamage(gv__2BroodchamberNuke, libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_No)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10594</span>
+libNtve_gf_ChangeUnitDamage(UnitLastCreated(), libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_Minimal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10839</span>
+libNtve_gf_ChangeUnitDamage(auto7651948C_var, libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_Full)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11410</span>
+libNtve_gf_ChangeUnitDamage(auto5E71AC3A_var, libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_Full)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11525</span>
+libNtve_gf_ChangeUnitDamage(lv_chosenUnit, libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_No)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5518</span>
+libNtve_gf_ChangeUnitDamage(UnitFromId(<span class="hljs-number">29</span>), libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_No)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4416</span>
+libNtve_gf_ChangeUnitDamage(gv_artifact, libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_No)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4502</span>
+libNtve_gf_ChangeUnitDamage(gv_artifact, libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_No)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9912</span>
+libNtve_gf_ChangeUnitDamage(lv_victoryVoidSeeker, libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_No)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L500</span>
+libNtve_gf_ChangeUnitDamage(autoF1102D1B_var, libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_No)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2848</span>
+libNtve_gf_ChangeUnitDamage(UnitFromId(<span class="hljs-number">85</span>), libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_Full)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2911</span>
+libNtve_gf_ChangeUnitDamage(UnitFromId(<span class="hljs-number">97</span>), libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_Full)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2974</span>
+libNtve_gf_ChangeUnitDamage(UnitFromId(<span class="hljs-number">84</span>), libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_Full)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3037</span>
+libNtve_gf_ChangeUnitDamage(UnitFromId(<span class="hljs-number">103</span>), libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_Full)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

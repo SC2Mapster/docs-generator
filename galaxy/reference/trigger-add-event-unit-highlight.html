@@ -1,0 +1,210 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Unit Is Highlighted / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Unit Is Highlighted"/>
+                <meta property="og:description" content="This event fires when a unit is highlighted or unhighlighted by a player.  Use &quot;Triggering Unit&quot; to refer to the unit being highlighted/unhighlighted.  Use &quot;Triggering Player&quot; to get the player."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="unit-is-highlighted"><a class="markdownIt-Anchor" href="#unit-is-highlighted">#</a> Unit Is Highlighted</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — <strong>unit</strong> is <strong>state</strong> by Player <strong>player</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Event</code></p>
+</blockquote>
+<p>This event fires when a unit is highlighted or unhighlighted by a player.  Use <em>“Triggering Unit”</em> to refer to the unit being highlighted/unhighlighted.  Use <em>“Triggering Player”</em> to get the player.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>unitref</code> <em>[ unit ]</em> — Unit</li>
+<li><code>int</code> — Player</li>
+<li><code>bool</code> <em>[ preset::<a href="/galaxy/reference/preset-highlight-state">HighlightState</a> ]</em> — Highlighted/Unhighlighted</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">TriggerAddEventUnitHighlight</span><span class="hljs-params">(
+	trigger t,
+	unitref u,
+	<span class="hljs-keyword">int</span> player,
+	<span class="hljs-keyword">bool</span> state,
+)</span></span>;
+</code></pre>
+<h3 id="event-parameters"><a class="markdownIt-Anchor" href="#event-parameters">#</a> Event parameters</h3>
+<ul>
+<li><a href="/galaxy/reference/event-game-user">Triggering Game User</a> — EventGameUser</li>
+<li><a href="/galaxy/reference/event-player">Triggering Player</a> — EventPlayer</li>
+<li><a href="/galaxy/reference/event-unit">Triggering Unit</a> — EventUnit</li>
+</ul>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: [Selection / Clicks and Highlights](/galaxy/reference#selection-clicks and-highlights)</p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-unit-click">Unit Is Clicked</a></strong> — ( TriggerAddEventUnitClick )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-unit-highlight">Unit Is Highlighted</a></strong> — ( TriggerAddEventUnitHighlight )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/tstory01.sc2map/MapScript.galaxy#L21940">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L21940</span>
+TriggerAddEventUnitHighlight(gt_HotspotHighlighted, null, c_playerAny, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L21959</span>
+TriggerAddEventUnitHighlight(gt_HotspotUnhighlighted, null, c_playerAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L22661</span>
+TriggerAddEventUnitHighlight(gt_BridgeMissionArchivesHighlighted, null, c_playerAny, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L22688</span>
+TriggerAddEventUnitHighlight(gt_BridgeMissionArchivesUnhighlighted, null, c_playerAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L23150</span>
+TriggerAddEventUnitHighlight(gt_CantinaTrophiesHighlighted, null, c_playerAny, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L23180</span>
+TriggerAddEventUnitHighlight(gt_CantinaTrophiesUnhighlighted, null, c_playerAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L23753</span>
+TriggerAddEventUnitHighlight(gt_LabArtifactHighlighted, null, c_playerAny, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L23783</span>
+TriggerAddEventUnitHighlight(gt_LabArtifactUnhighlighted, null, c_playerAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L24627</span>
+TriggerAddEventUnitHighlight(gt_MarSaraBriefcaseHighlighted, null, c_playerAny, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L24654</span>
+TriggerAddEventUnitHighlight(gt_MarSaraBriefcaseHologramHighlighted, null, c_playerAny, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L21940</span>
+TriggerAddEventUnitHighlight(gt_HotspotHighlighted, null, c_playerAny, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L21959</span>
+TriggerAddEventUnitHighlight(gt_HotspotUnhighlighted, null, c_playerAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L22661</span>
+TriggerAddEventUnitHighlight(gt_BridgeMissionArchivesHighlighted, null, c_playerAny, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L22688</span>
+TriggerAddEventUnitHighlight(gt_BridgeMissionArchivesUnhighlighted, null, c_playerAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L23150</span>
+TriggerAddEventUnitHighlight(gt_CantinaTrophiesHighlighted, null, c_playerAny, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L23180</span>
+TriggerAddEventUnitHighlight(gt_CantinaTrophiesUnhighlighted, null, c_playerAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L23753</span>
+TriggerAddEventUnitHighlight(gt_LabArtifactHighlighted, null, c_playerAny, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L23783</span>
+TriggerAddEventUnitHighlight(gt_LabArtifactUnhighlighted, null, c_playerAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L24627</span>
+TriggerAddEventUnitHighlight(gt_MarSaraBriefcaseHighlighted, null, c_playerAny, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L24654</span>
+TriggerAddEventUnitHighlight(gt_MarSaraBriefcaseHologramHighlighted, null, c_playerAny, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="campaignsswarmstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmstorysc2campaign">#</a> campaigns/swarmstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstory.sc2campaign/base.sc2data/TriggerLibs/SwarmCampaignLib.galaxy#L20010">SwarmCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L20010</span>
+TriggerAddEventUnitHighlight(libSwaC_gt_ZS_ArmyCustomEggHighlight, null, c_playerAny, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L20054</span>
+TriggerAddEventUnitHighlight(libSwaC_gt_ZS_ArmyCustomEggUnhighlight, null, c_playerAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L20243</span>
+TriggerAddEventUnitHighlight(libSwaC_gt_ZS_ArmyCustomEggMouseOver, null, c_playerAny, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L20710</span>
+TriggerAddEventUnitHighlight(libSwaC_gt_ZS_ArmyCustomEvolutionUnitHighlight, null, c_playerAny, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L20768</span>
+TriggerAddEventUnitHighlight(libSwaC_gt_ZS_ArmyCustomEvolutionUnitUnhighlight, null, c_playerAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="campaignsswarmstoryutilsc2mod"><a class="markdownIt-Anchor" href="#campaignsswarmstoryutilsc2mod">#</a> campaigns/swarmstoryutil.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstoryutil.sc2mod/base.sc2data/Lib281DEC45.galaxy#L12124">Lib281DEC45.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L12124</span>
+TriggerAddEventUnitHighlight(lib281DEC45_gt_ZSS_InteractiveHighlightStart, null, c_playerAny, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12169</span>
+TriggerAddEventUnitHighlight(lib281DEC45_gt_ZSS_InteractiveHighlightStop, null, c_playerAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignStoryLib.galaxy#L6654">VoidCampaignStoryLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L6654</span>
+TriggerAddEventUnitHighlight(libVCST_gt_PS_InteractiveHighlightStart, null, c_playerAny, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6703</span>
+TriggerAddEventUnitHighlight(libVCST_gt_PS_InteractiveHighlightStop, null, c_playerAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="modsmissionpacksnovacampaignsc2mod"><a class="markdownIt-Anchor" href="#modsmissionpacksnovacampaignsc2mod">#</a> mods/missionpacks/novacampaign.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/novacampaign.sc2mod/base.sc2data/LibNCST.galaxy#L5476">LibNCST.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L5476</span>
+TriggerAddEventUnitHighlight(libNCST_gt_NS_InteractiveHighlightStart, null, c_playerAny, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5524</span>
+TriggerAddEventUnitHighlight(libNCST_gt_NS_InteractiveHighlightStop, null, c_playerAny, <span class="hljs-literal">false</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

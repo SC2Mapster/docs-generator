@@ -1,0 +1,293 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Top-Right Of Region Bounds / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Top-Right Of Region Bounds"/>
+                <meta property="og:description" content="Returns the maximum bounds of a region. For a rectangle region, this is the top-right corner of the rectangle. In the general case, this is a point comprising the right-most X coordinate and the top-most Y coordinate of the region.
+
+Returns: point"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="top-right-of-region-bounds"><a class="markdownIt-Anchor" href="#top-right-of-region-bounds">#</a> Top-Right Of Region Bounds</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Top-right of <strong>r</strong> bounds<br>
+<em>Flags</em> — <code>Native</code> | <code>Function</code></p>
+</blockquote>
+<p>Returns the maximum bounds of a region. For a rectangle region, this is the top-right corner of the rectangle. In the general case, this is a point comprising the right-most X coordinate and the top-most Y coordinate of the region.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>region</code> — Region</li>
+</ul>
+<p>Returns — <code>point</code></p>
+<pre class="hljs"><code><span class="hljs-function">native point <span class="hljs-title">RegionGetBoundsMax</span><span class="hljs-params">(region r)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#region-modification">Region / Modification</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>point</code> — <strong><a href="/galaxy/reference/region-random-point">Random Point In Region</a></strong> — ( RegionRandomPoint )</li>
+<li><em><strong>[F]</strong></em> — <code>point</code> — <strong><a href="/galaxy/reference/region-get-center">Center Of Region</a></strong> — ( RegionGetCenter )</li>
+<li><em><strong>[F]</strong></em> — <code>unit</code> — <strong><a href="/galaxy/reference/region-get-attach-unit">Unit Attached To Region</a></strong> — ( RegionGetAttachUnit )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/region-attach-to-unit">Attach Region To Unit</a></strong> — ( RegionAttachToUnit )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/region-set-center">Move Region</a></strong> — ( RegionSetCenter )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-width-of-region">Width Of Region</a></strong> — ( libNtve_gf_WidthOfRegion )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-height-of-region">Height Of Region</a></strong> — ( libNtve_gf_HeightOfRegion )</li>
+<li><em><strong>[F]</strong></em> — <code>point</code> — <strong><a href="/galaxy/reference/region-get-bounds-min">Bottom-Left Of Region Bounds</a></strong> — ( RegionGetBoundsMin )</li>
+<li><em><strong>[F]</strong></em> — <code>point</code> — <strong><a href="/galaxy/reference/region-get-bounds-max">Top-Right Of Region Bounds</a></strong> — ( RegionGetBoundsMax )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/tarcade.sc2map/MapScript.galaxy#L2523">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2523</span>
+RegionGetBoundsMax(lv_boundary)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2561</span>
+RegionGetBoundsMax(lv_bounds)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3134</span>
+RegionGetBoundsMax(lv_bounds)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2798</span>
+RegionGetBoundsMax(RegionFromId(<span class="hljs-number">14</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2809</span>
+RegionGetBoundsMax(RegionFromId(<span class="hljs-number">14</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2820</span>
+RegionGetBoundsMax(RegionFromId(<span class="hljs-number">14</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L35</span>
+RegionGetBoundsMax(lp_circle)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2523</span>
+RegionGetBoundsMax(lv_boundary)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2561</span>
+RegionGetBoundsMax(lv_bounds)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3134</span>
+RegionGetBoundsMax(lv_bounds)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2798</span>
+RegionGetBoundsMax(RegionFromId(<span class="hljs-number">14</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2809</span>
+RegionGetBoundsMax(RegionFromId(<span class="hljs-number">14</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2820</span>
+RegionGetBoundsMax(RegionFromId(<span class="hljs-number">14</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L35</span>
+RegionGetBoundsMax(lp_circle)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L469</span>
+RegionGetBoundsMax(RegionPlayableMap())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L470</span>
+RegionGetBoundsMax(RegionPlayableMap())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L469</span>
+RegionGetBoundsMax(RegionPlayableMap())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L470</span>
+RegionGetBoundsMax(RegionPlayableMap())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L583</span>
+RegionGetBoundsMax(RegionPlayableMap())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L584</span>
+RegionGetBoundsMax(RegionPlayableMap())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L497</span>
+RegionGetBoundsMax(RegionFromId(<span class="hljs-number">1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L583</span>
+RegionGetBoundsMax(RegionPlayableMap())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L584</span>
+RegionGetBoundsMax(RegionPlayableMap())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L497</span>
+RegionGetBoundsMax(RegionFromId(<span class="hljs-number">1</span>))
+</code></pre>
+<h4 id="modscoresc2mod"><a class="markdownIt-Anchor" href="#modscoresc2mod">#</a> mods/core.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/core.sc2mod/base.sc2data/TriggerLibs/NativeLib.galaxy#L4171">NativeLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4171</span>
+RegionGetBoundsMax(lp_region)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4177</span>
+RegionGetBoundsMax(lp_region)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3470</span>
+RegionGetBoundsMax(lp_region)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3476</span>
+RegionGetBoundsMax(lp_region)
+</code></pre>
+<h4 id="modsheroesstormmod"><a class="markdownIt-Anchor" href="#modsheroesstormmod">#</a> mods/heroes.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroes.stormmod/base.stormmaps/maps/heroes/singleplayermaps/startingexperience/tutorialveteran.stormmap/MapScript.galaxy#L616">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L616</span>
+RegionGetBoundsMax(lp_area)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L618</span>
+RegionGetBoundsMax(lp_area)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L616</span>
+RegionGetBoundsMax(lp_area)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L618</span>
+RegionGetBoundsMax(lp_area)
+</code></pre>
+<h4 id="modsheroesdatastormmod"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/GameDataHelperLib.galaxy#L260">GameDataHelperLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L260</span>
+RegionGetBoundsMax(RegionPlayableMap())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L261</span>
+RegionGetBoundsMax(RegionPlayableMap())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L265</span>
+RegionGetBoundsMax(RegionPlayableMap())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L272</span>
+RegionGetBoundsMax(RegionPlayableMap())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L287</span>
+RegionGetBoundsMax(RegionPlayableMap())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L298</span>
+RegionGetBoundsMax(RegionPlayableMap())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L338</span>
+RegionGetBoundsMax(RegionPlayableMap())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L343</span>
+RegionGetBoundsMax(RegionPlayableMap())
+</code></pre>
+<h4 id="modsheroesdatastormmod-2"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-2">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/GameLib.galaxy#L1148">GameLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1148</span>
+RegionGetBoundsMax(lp_bound)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1148</span>
+RegionGetBoundsMax(libGame_gv_cameraBound_Regions[lv_itIndex])
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1148</span>
+RegionGetBoundsMax(lp_bound)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1148</span>
+RegionGetBoundsMax(libGame_gv_cameraBound_Regions[lv_itIndex])
+</code></pre>
+<h4 id="modsheroesdatastormmod-3"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-3">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/StartingExperienceLib.galaxy#L1017">StartingExperienceLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1017</span>
+RegionGetBoundsMax(RegionPlayableMap())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1050</span>
+RegionGetBoundsMax(RegionPlayableMap())
+</code></pre>
+<h4 id="modsheroesdatastormmod-4"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-4">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/SupportLib.galaxy#L626">SupportLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L626</span>
+RegionGetBoundsMax(RegionEntireMap())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L627</span>
+RegionGetBoundsMax(RegionEntireMap())
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOMI.galaxy#L5228">LibCOMI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L5228</span>
+RegionGetBoundsMax(RegionPlayableMap())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5229</span>
+RegionGetBoundsMax(RegionPlayableMap())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5230</span>
+RegionGetBoundsMax(RegionPlayableMap())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5231</span>
+RegionGetBoundsMax(RegionPlayableMap())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5235</span>
+RegionGetBoundsMax(RegionPlayableMap())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5243</span>
+RegionGetBoundsMax(RegionPlayableMap())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5261</span>
+RegionGetBoundsMax(RegionPlayableMap())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5263</span>
+RegionGetBoundsMax(RegionPlayableMap())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5275</span>
+RegionGetBoundsMax(RegionPlayableMap())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5324</span>
+RegionGetBoundsMax(RegionPlayableMap())
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

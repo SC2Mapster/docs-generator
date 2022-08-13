@@ -1,0 +1,288 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Pulse Screen Image / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Pulse Screen Image"/>
+                <meta property="og:description" content="Causes a screen image to change between two transperency values at the specified interval."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="pulse-screen-image"><a class="markdownIt-Anchor" href="#pulse-screen-image">#</a> Pulse Screen Image</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Pulse screen image <strong>screenImageID</strong> between <strong>transparency1</strong> and <strong>transparency2</strong> every <strong>period</strong> seconds<br>
+<em>Flags</em> — <code>Action</code></p>
+</blockquote>
+<p>Causes a screen image to change between two transperency values at the specified interval.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> — ScreenImageID</li>
+<li><code>fixed</code> — Period</li>
+<li><code>fixed</code> — Transparency1</li>
+<li><code>fixed</code> — Transparency2</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">libNtve_gf_PulseScreenImage</span><span class="hljs-params">(
+	<span class="hljs-keyword">int</span> lp_screenImageID,
+	fixed lp_period,
+	fixed lp_transparency1,
+	fixed lp_transparency2,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#dialog-screen-image">Dialog / Screen Image</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-display-screen-image">Display Screen Image</a></strong> — ( libNtve_gf_DisplayScreenImage )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-hide-screen-image">Show/Hide Screen Image</a></strong> — ( libNtve_gf_HideScreenImage )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-pulse-screen-image">Pulse Screen Image</a></strong> — ( libNtve_gf_PulseScreenImage )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-stop-pulsing-screen-image">Stop Pulsing Screen Image</a></strong> — ( libNtve_gf_StopPulsingScreenImage )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ dialog ]</em> — <strong><a href="/galaxy/reference/lib-ntve-gf-screen-image-dialog">Screen Image Dialog</a></strong> — ( libNtve_gf_ScreenImageDialog )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ control ]</em> — <strong><a href="/galaxy/reference/lib-ntve-gf-screen-image-dialog-item">Screen Image Dialog Item</a></strong> — ( libNtve_gf_ScreenImageDialogItem )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/ttutorial01.sc2map/MapScript.galaxy#L1770">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1770</span>
+libNtve_gf_PulseScreenImage(<span class="hljs-number">1</span>, <span class="hljs-number">1.75</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1779</span>
+libNtve_gf_PulseScreenImage(<span class="hljs-number">1</span>, <span class="hljs-number">1.75</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1806</span>
+libNtve_gf_PulseScreenImage(<span class="hljs-number">1</span>, <span class="hljs-number">1.75</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1807</span>
+libNtve_gf_PulseScreenImage(<span class="hljs-number">2</span>, <span class="hljs-number">1.75</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1819</span>
+libNtve_gf_PulseScreenImage(<span class="hljs-number">1</span>, <span class="hljs-number">1.75</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1836</span>
+libNtve_gf_PulseScreenImage(<span class="hljs-number">1</span>, <span class="hljs-number">1.75</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1837</span>
+libNtve_gf_PulseScreenImage(<span class="hljs-number">2</span>, <span class="hljs-number">1.75</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1849</span>
+libNtve_gf_PulseScreenImage(<span class="hljs-number">3</span>, <span class="hljs-number">1.75</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2489</span>
+libNtve_gf_PulseScreenImage(<span class="hljs-number">9</span>, <span class="hljs-number">1.75</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9487</span>
+libNtve_gf_PulseScreenImage(<span class="hljs-number">27</span>, <span class="hljs-number">1.75</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1770</span>
+libNtve_gf_PulseScreenImage(<span class="hljs-number">1</span>, <span class="hljs-number">1.75</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1779</span>
+libNtve_gf_PulseScreenImage(<span class="hljs-number">1</span>, <span class="hljs-number">1.75</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1806</span>
+libNtve_gf_PulseScreenImage(<span class="hljs-number">1</span>, <span class="hljs-number">1.75</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1807</span>
+libNtve_gf_PulseScreenImage(<span class="hljs-number">2</span>, <span class="hljs-number">1.75</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1819</span>
+libNtve_gf_PulseScreenImage(<span class="hljs-number">1</span>, <span class="hljs-number">1.75</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1836</span>
+libNtve_gf_PulseScreenImage(<span class="hljs-number">1</span>, <span class="hljs-number">1.75</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1837</span>
+libNtve_gf_PulseScreenImage(<span class="hljs-number">2</span>, <span class="hljs-number">1.75</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1849</span>
+libNtve_gf_PulseScreenImage(<span class="hljs-number">3</span>, <span class="hljs-number">1.75</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2489</span>
+libNtve_gf_PulseScreenImage(<span class="hljs-number">9</span>, <span class="hljs-number">1.75</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9487</span>
+libNtve_gf_PulseScreenImage(<span class="hljs-number">27</span>, <span class="hljs-number">1.75</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2453</span>
+libNtve_gf_PulseScreenImage(<span class="hljs-number">1</span>, <span class="hljs-number">1.75</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2530</span>
+libNtve_gf_PulseScreenImage(<span class="hljs-number">1</span>, <span class="hljs-number">1.75</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3563</span>
+libNtve_gf_PulseScreenImage(<span class="hljs-number">1</span>, <span class="hljs-number">1.75</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3950</span>
+libNtve_gf_PulseScreenImage(<span class="hljs-number">1</span>, <span class="hljs-number">1.75</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4031</span>
+libNtve_gf_PulseScreenImage(<span class="hljs-number">1</span>, <span class="hljs-number">1.75</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4834</span>
+libNtve_gf_PulseScreenImage(<span class="hljs-number">1</span>, <span class="hljs-number">1.75</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4915</span>
+libNtve_gf_PulseScreenImage(<span class="hljs-number">1</span>, <span class="hljs-number">1.75</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5766</span>
+libNtve_gf_PulseScreenImage(<span class="hljs-number">1</span>, <span class="hljs-number">1.75</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5843</span>
+libNtve_gf_PulseScreenImage(<span class="hljs-number">1</span>, <span class="hljs-number">1.75</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2453</span>
+libNtve_gf_PulseScreenImage(<span class="hljs-number">1</span>, <span class="hljs-number">1.75</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2530</span>
+libNtve_gf_PulseScreenImage(<span class="hljs-number">1</span>, <span class="hljs-number">1.75</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3563</span>
+libNtve_gf_PulseScreenImage(<span class="hljs-number">1</span>, <span class="hljs-number">1.75</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3950</span>
+libNtve_gf_PulseScreenImage(<span class="hljs-number">1</span>, <span class="hljs-number">1.75</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4031</span>
+libNtve_gf_PulseScreenImage(<span class="hljs-number">1</span>, <span class="hljs-number">1.75</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4834</span>
+libNtve_gf_PulseScreenImage(<span class="hljs-number">1</span>, <span class="hljs-number">1.75</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4915</span>
+libNtve_gf_PulseScreenImage(<span class="hljs-number">1</span>, <span class="hljs-number">1.75</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5766</span>
+libNtve_gf_PulseScreenImage(<span class="hljs-number">1</span>, <span class="hljs-number">1.75</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5843</span>
+libNtve_gf_PulseScreenImage(<span class="hljs-number">1</span>, <span class="hljs-number">1.75</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3606</span>
+libNtve_gf_PulseScreenImage(<span class="hljs-number">12</span>, <span class="hljs-number">0.5</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3928</span>
+libNtve_gf_PulseScreenImage(<span class="hljs-number">1</span>, <span class="hljs-number">1.75</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3929</span>
+libNtve_gf_PulseScreenImage(<span class="hljs-number">2</span>, <span class="hljs-number">1.75</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3938</span>
+libNtve_gf_PulseScreenImage(<span class="hljs-number">3</span>, <span class="hljs-number">1.75</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4555</span>
+libNtve_gf_PulseScreenImage(<span class="hljs-number">8</span>, <span class="hljs-number">1.75</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4916</span>
+libNtve_gf_PulseScreenImage(<span class="hljs-number">8</span>, <span class="hljs-number">1.75</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5917</span>
+libNtve_gf_PulseScreenImage(<span class="hljs-number">11</span>, <span class="hljs-number">1.75</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6242</span>
+libNtve_gf_PulseScreenImage(<span class="hljs-number">3</span>, <span class="hljs-number">1.75</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6286</span>
+libNtve_gf_PulseScreenImage(<span class="hljs-number">15</span>, <span class="hljs-number">1.75</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6609</span>
+libNtve_gf_PulseScreenImage(<span class="hljs-number">12</span>, <span class="hljs-number">1.75</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2234</span>
+libNtve_gf_PulseScreenImage(<span class="hljs-number">1</span>, <span class="hljs-number">1.75</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3606</span>
+libNtve_gf_PulseScreenImage(<span class="hljs-number">12</span>, <span class="hljs-number">0.5</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3928</span>
+libNtve_gf_PulseScreenImage(<span class="hljs-number">1</span>, <span class="hljs-number">1.75</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3929</span>
+libNtve_gf_PulseScreenImage(<span class="hljs-number">2</span>, <span class="hljs-number">1.75</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3938</span>
+libNtve_gf_PulseScreenImage(<span class="hljs-number">3</span>, <span class="hljs-number">1.75</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4555</span>
+libNtve_gf_PulseScreenImage(<span class="hljs-number">8</span>, <span class="hljs-number">1.75</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4916</span>
+libNtve_gf_PulseScreenImage(<span class="hljs-number">8</span>, <span class="hljs-number">1.75</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5917</span>
+libNtve_gf_PulseScreenImage(<span class="hljs-number">11</span>, <span class="hljs-number">1.75</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6242</span>
+libNtve_gf_PulseScreenImage(<span class="hljs-number">3</span>, <span class="hljs-number">1.75</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6286</span>
+libNtve_gf_PulseScreenImage(<span class="hljs-number">15</span>, <span class="hljs-number">1.75</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6609</span>
+libNtve_gf_PulseScreenImage(<span class="hljs-number">12</span>, <span class="hljs-number">1.75</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2234</span>
+libNtve_gf_PulseScreenImage(<span class="hljs-number">1</span>, <span class="hljs-number">1.75</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,297 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Catalog Link Replace / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Catalog Link Replace"/>
+                <meta property="og:description" content="Most game functionality will switch to using the replacement value when possible instead of the original value."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="catalog-link-replace"><a class="markdownIt-Anchor" href="#catalog-link-replace">#</a> Catalog Link Replace</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Replace <strong>catalog</strong> links set to <strong>value</strong> with <strong>replacement</strong> for player <strong>player</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Most game functionality will switch to using the replacement value when possible instead of the original value.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> — Player</li>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-catalog-type">CatalogType</a> ]</em> — Catalog</li>
+<li><code>string</code> — Value</li>
+<li><code>string</code> — Replacement</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">CatalogLinkReplace</span><span class="hljs-params">(
+	<span class="hljs-keyword">int</span> player,
+	<span class="hljs-keyword">int</span> catalog,
+	<span class="hljs-built_in">string</span> idA,
+	<span class="hljs-built_in">string</span> idB,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#catalog-support">Catalog / Support</a></p>
+<ul>
+<li><em><strong>[P]</strong></em> — <strong><a href="/galaxy/reference/preset-upgrade-operation">Upgrade Operation</a></strong></li>
+<li><em><strong>[P]</strong></em> — <strong><a href="/galaxy/reference/preset-no-game-link">No Game Link</a></strong></li>
+<li><em><strong>[P]</strong></em> — <strong><a href="/galaxy/reference/preset-no-alert">No Alert</a></strong></li>
+<li><em><strong>[P]</strong></em> — <strong><a href="/galaxy/reference/preset-cost-type">Cost Type</a></strong></li>
+<li><em><strong>[P]</strong></em> — <strong><a href="/galaxy/reference/preset-catalog-type">Catalog Type</a></strong></li>
+<li><em><strong>[P]</strong></em> — <strong><a href="/galaxy/reference/preset-any-game-link">Any Game Link</a></strong></li>
+<li><em><strong>[P]</strong></em> — <strong><a href="/galaxy/reference/preset-field-type-category">Field Type Category</a></strong></li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/catalog-field-value-set">Catalog Field Value Set</a></strong> — ( CatalogFieldValueSet )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-catalog-field-value-set-as-real">Catalog Field Value Set As Real</a></strong> — ( libNtve_gf_CatalogFieldValueSetAsReal )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/catalog-field-value-modify">Catalog Field Value Modify</a></strong> — ( CatalogFieldValueModify )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-catalog-field-value-modify-based-on-default-value">Catalog Field Value Modify (Based On Default Value)</a></strong> — ( libNtve_gf_CatalogFieldValueModifyBasedOnDefaultValue )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/catalog-reference-set">Catalog Reference Set</a></strong> — ( CatalogReferenceSet )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-catalog-reference-set-as-real">Catalog Reference Set As Real</a></strong> — ( libNtve_gf_CatalogReferenceSetAsReal )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/catalog-reference-modify">Catalog Reference Modify</a></strong> — ( CatalogReferenceModify )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-catalog-reference-modify-based-on-default-value">Catalog Reference Modify (Based On Default Value)</a></strong> — ( libNtve_gf_CatalogReferenceModifyBasedOnDefaultValue )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/catalog-link-replace">Catalog Link Replace</a></strong> — ( CatalogLinkReplace )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> — <strong><a href="/galaxy/reference/catalog-link-replacement">Catalog Link Replacement</a></strong> — ( CatalogLinkReplacement )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignsswarmstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmstorysc2campaign">#</a> campaigns/swarmstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstory.sc2campaign/base.sc2data/TriggerLibs/SwarmCampaignLib.galaxy#L22471">SwarmCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L22471</span>
+CatalogLinkReplace(<span class="hljs-number">1</span>, c_gameCatalogUnit, (lv_unitType), (lv_unitUsed))
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignLib.galaxy#L6157">VoidCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L6157</span>
+CatalogLinkReplace(lp_player, c_gameCatalogUnit, (libVoiC_gf_PC_ArmyCategoryUnitType(lv_armyCategory)), (libVoiC_gf_PC_ArmyCategoryUnitType(lv_armyCategory)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6170</span>
+CatalogLinkReplace(lp_player, c_gameCatalogUnit, (libVoiC_gf_PC_ArmyCategoryUnitType(libVoiC_gf_PC_ArmyCategoryOfArmyUnit(lv_armyCategory2))), (libVoiC_gf_PC_StoryArmyUnitUnitType(lv_armyCategory2)))
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodscoopdeadmansstandstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodscoopdeadmansstandstormmod">#</a> mods/heroesbrawlmods/brawlmapmods/coop/deadmansstand.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/coop/deadmansstand.stormmod/base.stormdata/LibPEB1.galaxy#L723">LibPEB1.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L723</span>
+CatalogLinkReplace(lp_playerIndex, c_gameCatalogSound, <span class="hljs-string">"Diablo_LightningBreath_Launch"</span>, <span class="hljs-string">"Diablo_LightningEndless_Launch"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L734</span>
+CatalogLinkReplace(lp_playerIndex, c_gameCatalogSound, <span class="hljs-string">"Kerrigan_Maelstrom_Cast"</span>, <span class="hljs-string">"Kerrigan_Omegastorm_Cast"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L735</span>
+CatalogLinkReplace(lp_playerIndex, c_gameCatalogSound, <span class="hljs-string">"Kerrigan_Maelstrom_Loop"</span>, <span class="hljs-string">"Kerrigan_Omegastorm_Loop"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L736</span>
+CatalogLinkReplace(lp_playerIndex, c_gameCatalogSound, <span class="hljs-string">"Kerrigan_Maelstrom_Impact"</span>, <span class="hljs-string">"Kerrigan_Omegastorm_Impact"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L737</span>
+CatalogLinkReplace(lp_playerIndex, c_gameCatalogSound, <span class="hljs-string">"Kerrigan_Maelstrom_End"</span>, <span class="hljs-string">"Kerrigan_Omegastorm_End"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L761</span>
+CatalogLinkReplace(lp_playerIndex, c_gameCatalogModel, <span class="hljs-string">"StitchesSlamModel"</span>, <span class="hljs-string">"StitchesSlamSmashModel"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L764</span>
+CatalogLinkReplace(lp_playerIndex, c_gameCatalogSound, <span class="hljs-string">"Stitches_Slam_Cast"</span>, <span class="hljs-string">"Stitches_Slam_Pulverize_Cast"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L709</span>
+CatalogLinkReplace(lp_playerIndex, c_gameCatalogSound, <span class="hljs-string">"Diablo_LightningBreath_Launch"</span>, <span class="hljs-string">"Diablo_LightningEndless_Launch"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L720</span>
+CatalogLinkReplace(lp_playerIndex, c_gameCatalogSound, <span class="hljs-string">"Kerrigan_Maelstrom_Cast"</span>, <span class="hljs-string">"Kerrigan_Omegastorm_Cast"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L721</span>
+CatalogLinkReplace(lp_playerIndex, c_gameCatalogSound, <span class="hljs-string">"Kerrigan_Maelstrom_Loop"</span>, <span class="hljs-string">"Kerrigan_Omegastorm_Loop"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L722</span>
+CatalogLinkReplace(lp_playerIndex, c_gameCatalogSound, <span class="hljs-string">"Kerrigan_Maelstrom_Impact"</span>, <span class="hljs-string">"Kerrigan_Omegastorm_Impact"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L723</span>
+CatalogLinkReplace(lp_playerIndex, c_gameCatalogSound, <span class="hljs-string">"Kerrigan_Maelstrom_End"</span>, <span class="hljs-string">"Kerrigan_Omegastorm_End"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L747</span>
+CatalogLinkReplace(lp_playerIndex, c_gameCatalogModel, <span class="hljs-string">"StitchesSlamModel"</span>, <span class="hljs-string">"StitchesSlamSmashModel"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L749</span>
+CatalogLinkReplace(lp_playerIndex, c_gameCatalogSound, <span class="hljs-string">"Stitches_Slam_Cast"</span>, <span class="hljs-string">"Stitches_Slam_Pulverize_Cast"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L750</span>
+CatalogLinkReplace(lp_playerIndex, c_gameCatalogSound, <span class="hljs-string">"Stitches_Slam_WideSlam_Cast"</span>, <span class="hljs-string">"Stitches_Slam_Pulverize_Cast"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L751</span>
+CatalogLinkReplace(lp_playerIndex, c_gameCatalogSound, <span class="hljs-string">"Stitches_Slam_MegaSmash_Cast"</span>, <span class="hljs-string">"Stitches_Slam_Pulverize_Cast"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L763</span>
+CatalogLinkReplace(lp_playerIndex, c_gameCatalogSound, <span class="hljs-string">"Stitches_MeatHook_AttackLaunch"</span>, <span class="hljs-string">"Stitches_FishingHook_AttackLaunch"</span>)
+</code></pre>
+<h4 id="modsheroesdatastormmod"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/GameLib.galaxy#L5875">GameLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L5875</span>
+CatalogLinkReplace(lp_player, lv_catalog, lv_replaceFrom, lv_changeTo)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5912</span>
+CatalogLinkReplace(lp_player, lv_catalog, lv_replaceFrom, lv_replaceFrom)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L18639</span>
+CatalogLinkReplace(lv_mountingPlayer, c_gameCatalogSound, <span class="hljs-string">"GenericMountMoveStartSound"</span>, (libGame_gv_players[lv_mountIndex].lv_mountData.lv_moveStartSound))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L18643</span>
+CatalogLinkReplace(lv_mountingPlayer, c_gameCatalogSound, <span class="hljs-string">"GenericMountMoveStopSound"</span>, (libGame_gv_players[lv_mountIndex].lv_mountData.lv_moveStopSound))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L18647</span>
+CatalogLinkReplace(lv_mountingPlayer, c_gameCatalogSound, <span class="hljs-string">"GenericMountTurboSound"</span>, (libGame_gv_players[lv_mountIndex].lv_mountData.lv_turboSound))
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodshauntedminesstormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodshauntedminesstormmod">#</a> mods/heroesmapmods/battlegroundmapmods/hauntedmines.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/hauntedmines.stormmod/base.stormdata/LibMHtM.galaxy#L93">LibMHtM.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L93</span>
+CatalogLinkReplace(lv_itPlayer, c_gameCatalogModel, <span class="hljs-string">"CaptureMacGuffinBeamRavenCourt"</span>, <span class="hljs-string">"CaptureMacGuffinBeamUnderground"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L94</span>
+CatalogLinkReplace(lv_itPlayer, c_gameCatalogSound, <span class="hljs-string">"Event_RavenCurse_CollectTributeStart"</span>, <span class="hljs-string">"Event_Mines_EnterMinesStart"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L95</span>
+CatalogLinkReplace(lv_itPlayer, c_gameCatalogSound, <span class="hljs-string">"Event_RavenCurse_CollectTributeLoop"</span>, <span class="hljs-string">"Event_Mines_EnterMinesLoop"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L96</span>
+CatalogLinkReplace(lv_itPlayer, c_gameCatalogSound, <span class="hljs-string">"Event_RavenCurse_CollectTributeEnd"</span>, <span class="hljs-string">"StormNoSound"</span>)
+</code></pre>
+<h4 id="modsmissionpackscampaigncommonsc2mod"><a class="markdownIt-Anchor" href="#modsmissionpackscampaigncommonsc2mod">#</a> mods/missionpacks/campaigncommon.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/campaigncommon.sc2mod/base.sc2data/LibComC.galaxy#L1873">LibComC.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1873</span>
+CatalogLinkReplace(lp_player, c_gameCatalogUnit, (libComC_gf_CC_ArmyCategoryUnitType(lv_armyCategory)), (libComC_gf_CC_ArmyCategoryUnitType(lv_armyCategory)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1886</span>
+CatalogLinkReplace(lp_player, c_gameCatalogUnit, (libComC_gf_CC_ArmyCategoryUnitType(lv_armyCategory)), (libComC_gf_NC_StoryArmyUnitUnitType(lv_armyCategory2)))
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOMI.galaxy#L5489">LibCOMI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L5489</span>
+CatalogLinkReplace(lv_mengskplayer, c_gameCatalogSound, <span class="hljs-string">"TrooperMengsk_Attack"</span>, <span class="hljs-string">"TrooperMengsk_Attack_MoraleLow"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5490</span>
+CatalogLinkReplace(lv_mengskplayer, c_gameCatalogSound, <span class="hljs-string">"TrooperMengsk_What"</span>, <span class="hljs-string">"TrooperMengsk_What_MoraleLow"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5491</span>
+CatalogLinkReplace(lv_mengskplayer, c_gameCatalogSound, <span class="hljs-string">"TrooperMengsk_Yes"</span>, <span class="hljs-string">"TrooperMengsk_Yes_MoraleLow"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5494</span>
+CatalogLinkReplace(lv_mengskplayer, c_gameCatalogSound, <span class="hljs-string">"TrooperMengsk_Attack"</span>, <span class="hljs-string">"TrooperMengsk_Attack"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5495</span>
+CatalogLinkReplace(lv_mengskplayer, c_gameCatalogSound, <span class="hljs-string">"TrooperMengsk_What"</span>, <span class="hljs-string">"TrooperMengsk_What"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5496</span>
+CatalogLinkReplace(lv_mengskplayer, c_gameCatalogSound, <span class="hljs-string">"TrooperMengsk_Yes"</span>, <span class="hljs-string">"TrooperMengsk_Yes"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5499</span>
+CatalogLinkReplace(lv_mengskplayer, c_gameCatalogSound, <span class="hljs-string">"TrooperMengsk_Attack"</span>, <span class="hljs-string">"TrooperMengsk_Attack_MoraleHigh"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5500</span>
+CatalogLinkReplace(lv_mengskplayer, c_gameCatalogSound, <span class="hljs-string">"TrooperMengsk_What"</span>, <span class="hljs-string">"TrooperMengsk_What_MoraleHigh"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5501</span>
+CatalogLinkReplace(lv_mengskplayer, c_gameCatalogSound, <span class="hljs-string">"TrooperMengsk_Yes"</span>, <span class="hljs-string">"TrooperMengsk_Yes_MoraleHigh"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L26468</span>
+CatalogLinkReplace(UnitGetOwner(libCOMI_gf_EventTychusHero()), c_gameCatalogUnit, <span class="hljs-string">"TychusResearchCenter"</span>, <span class="hljs-string">"TychusResearchCenterUnlocked"</span>)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod-2"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod-2">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOOC.galaxy#L4015">LibCOOC.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4015</span>
+CatalogLinkReplace(lp_player, c_gameCatalogUnit, (libCOOC_gf_CC_ArmyCategoryUnitType(lv_armyCategory)), (libCOOC_gf_CC_ArmyCategoryUnitType(lv_armyCategory)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4022</span>
+CatalogLinkReplace(lp_player, c_gameCatalogUnit, (libCOOC_gf_CC_ArmyCategoryUnitType(libCOOC_gf_CC_ArmyCategoryOfArmyUnit(lv_armyCategory2))), (libCOOC_gf_CC_StoryArmyUnitUnitType(lv_armyCategory2)))
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod-3"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod-3">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOUI.galaxy#L5400">LibCOUI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L5400</span>
+CatalogLinkReplace(lv_replacePlayer, c_gameCatalogAbil, lv_replaceTarget, (lv_abil))
+</code></pre>
+<h4 id="modswarcoopwarclassicsystemsc2mod"><a class="markdownIt-Anchor" href="#modswarcoopwarclassicsystemsc2mod">#</a> mods/warcoop/warclassicsystem.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/warcoop/warclassicsystem.sc2mod/base.sc2data/TriggerLibs/WarClassicSystem.galaxy#L127">WarClassicSystem.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L127</span>
+CatalogLinkReplace(lp_player, c_gameCatalogAbil, lv_oldLink, lv_newLink)
+</code></pre>
+<h4 id="modswarcoopwarcoopdatasc2mod"><a class="markdownIt-Anchor" href="#modswarcoopwarcoopdatasc2mod">#</a> mods/warcoop/warcoopdata.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/warcoop/warcoopdata.sc2mod/base.sc2data/TriggerLibs/WarCoopData.galaxy#L2043">WarCoopData.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2043</span>
+CatalogLinkReplace(lp_legendPlayer, c_gameCatalogAbil, (UserDataGetGameLink(<span class="hljs-string">"LegendAbilityReplacements"</span>, lv_abilityReplacementInstance, <span class="hljs-string">"AbilityToReplace"</span>, <span class="hljs-number">1</span>)), (UserDataGetGameLink(<span class="hljs-string">"LegendAbilityReplacements"</span>, lv_abilityReplacementInstance, <span class="hljs-string">"AbilityReplacement"</span>, <span class="hljs-number">1</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2109</span>
+CatalogLinkReplace(lp_player, c_gameCatalogAbil, lv_oldLink, lv_newLink)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2371</span>
+CatalogLinkReplace(lp_player, c_gameCatalogUnit, lv_from, lv_to)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2387</span>
+CatalogLinkReplace(lp_player, c_gameCatalogAbil, lv_from, lv_to)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2402</span>
+CatalogLinkReplace(lp_player, c_gameCatalogAbil, lv_from, lv_to)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2410</span>
+CatalogLinkReplace(lp_player, c_gameCatalogButton, lv_from, lv_to)
+</code></pre>
+<h4 id="modswarcoopwarmeleeaisc2mod"><a class="markdownIt-Anchor" href="#modswarcoopwarmeleeaisc2mod">#</a> mods/warcoop/warmeleeai.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/warcoop/warmeleeai.sc2mod/base.sc2data/LibW3AI.galaxy#L75">LibW3AI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L75</span>
+CatalogLinkReplace(lv_p, c_gameCatalogModel, <span class="hljs-string">"Ofar"</span>, <span class="hljs-string">"Othr"</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,168 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Points Connected By Pathing / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Points Connected By Pathing"/>
+                <meta property="og:description" content="Returns true if the specified points are connected by ground pathing.
+
+Returns: bool"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="points-connected-by-pathing"><a class="markdownIt-Anchor" href="#points-connected-by-pathing">#</a> Points Connected By Pathing</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — <strong>p1|Point</strong> and <strong>p2|Point</strong> are connected by pathing<br>
+<em>Flags</em> — <code>Native</code> | <code>Function</code></p>
+</blockquote>
+<p>Returns true if the specified points are connected by ground pathing.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>point</code> — Point 1</li>
+<li><code>point</code> — Point 2</li>
+</ul>
+<p>Returns — <code>bool</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">bool</span> <span class="hljs-title">PointPathingIsConnected</span><span class="hljs-params">(point p1, point p2)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#point-pathing">Point / Pathing</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/point-pathing-passable">Point Is Passable</a></strong> — ( PointPathingPassable )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/point-pathing-is-connected">Points Connected By Pathing</a></strong> — ( PointPathingIsConnected )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/point-pathing-cost">Pathing Cost Between Points</a></strong> — ( PointPathingCost )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-pathing-type">PathingType</a> ]</em> — <strong><a href="/galaxy/reference/pathing-type">Pathing Type At Point</a></strong> — ( PathingType )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignsswarmsc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmsc2campaign">#</a> campaigns/swarm.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarm.sc2campaign/base.sc2maps/maps/campaign/voidprologue/voidprologue03.sc2map/MapScript.galaxy#L1466">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1466</span>
+PointPathingIsConnected(UnitGetPosition(auto16E4DC23_var), UnitGetPosition(lv_currentUnit))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6413</span>
+PointPathingIsConnected(UnitGetPosition(autoB0D64614_var), UnitGetPosition(lv_currentUnit))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6474</span>
+PointPathingIsConnected(UnitGetPosition(autoFA044A09_var), UnitGetPosition(lv_currentUnit))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1466</span>
+PointPathingIsConnected(UnitGetPosition(auto16E4DC23_var), UnitGetPosition(lv_currentUnit))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6413</span>
+PointPathingIsConnected(UnitGetPosition(autoB0D64614_var), UnitGetPosition(lv_currentUnit))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6474</span>
+PointPathingIsConnected(UnitGetPosition(autoFA044A09_var), UnitGetPosition(lv_currentUnit))
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOMI.galaxy#L6807">LibCOMI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L6807</span>
+PointPathingIsConnected(lv_pathingCheckPoint, lv_pointIter)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6903</span>
+PointPathingIsConnected(lv_pathingCheckPoint, lv_pointIter)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11085</span>
+PointPathingIsConnected(lv_dropLocation, lv_dropPodLocation)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11159</span>
+PointPathingIsConnected(lv_dropLocation, lv_dropPodLocation)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11858</span>
+PointPathingIsConnected(lv_testDropPoint, lp_initialDropPoint)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod-2"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod-2">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOMU.galaxy#L3135">LibCOMU.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3135</span>
+PointPathingIsConnected(lv_targetLocation, PlayerStartLocation(<span class="hljs-number">1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4234</span>
+PointPathingIsConnected(lv_riftLocation, PlayerStartLocation(<span class="hljs-number">1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4282</span>
+PointPathingIsConnected(lv_spawnLocation, PlayerStartLocation(<span class="hljs-number">1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6949</span>
+PointPathingIsConnected(lv_spawnPoint, PlayerStartLocation(<span class="hljs-number">1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7028</span>
+PointPathingIsConnected(lv_spawnLocation, PlayerStartLocation(<span class="hljs-number">1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7167</span>
+PointPathingIsConnected(lv_spawnPoint, PlayerStartLocation(<span class="hljs-number">1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10773</span>
+PointPathingIsConnected(UnitGetPosition(lv_spawningStructure), UnitGetPosition(lv_targetStructure))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10863</span>
+PointPathingIsConnected(lv_spawnPoint, PlayerStartLocation(<span class="hljs-number">1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10933</span>
+PointPathingIsConnected(lv_spawnPoint, PlayerStartLocation(<span class="hljs-number">1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11037</span>
+PointPathingIsConnected(lv_dropLocation, PlayerStartLocation(lv_indexPlayer))
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

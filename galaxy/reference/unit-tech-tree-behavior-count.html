@@ -1,0 +1,154 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Tech Tree Behavior Count For Unit / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Tech Tree Behavior Count For Unit"/>
+                <meta property="og:description" content="Returns the count of the specified behavior for the specified unit.
+
+Returns: int"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="tech-tree-behavior-count-for-unit"><a class="markdownIt-Anchor" href="#tech-tree-behavior-count-for-unit">#</a> Tech Tree Behavior Count For Unit</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Count of <strong>behaviorType|Behavior</strong> at <strong>inUnit</strong>, counting <strong>countType</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Function</code></p>
+</blockquote>
+<p>Returns the count of the specified behavior for the specified unit.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>unit</code> — Unit</li>
+<li><code>string</code> <em>[ gamelink::Behavior ]</em> — Behavior Type</li>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-tech-tree-count-type">TechTreeCountType</a> ]</em> — Count Type</li>
+</ul>
+<p>Returns — <code>int</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">int</span> <span class="hljs-title">UnitTechTreeBehaviorCount</span><span class="hljs-params">(
+	unit inUnit,
+	<span class="hljs-built_in">string</span> behaviorType,
+	<span class="hljs-keyword">int</span> countType,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#tech-tree-counts">Tech Tree / Counts</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/tech-tree-behavior-count">Behavior Count For Player</a></strong> — ( TechTreeBehaviorCount )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/tech-tree-ability-count">Ability Count For Player</a></strong> — ( TechTreeAbilityCount )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/tech-tree-unit-count">Unit Count For Player</a></strong> — ( TechTreeUnitCount )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/tech-tree-unit-alias-count">Unit Alias Count For Player</a></strong> — ( TechTreeUnitAliasCount )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/tech-tree-upgrade-count">Upgrade Count For Player</a></strong> — ( TechTreeUpgradeCount )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/unit-tech-tree-behavior-count">Tech Tree Behavior Count For Unit</a></strong> — ( UnitTechTreeBehaviorCount )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/unit-tech-tree-unit-count">Tech Tree Unit Count For Unit</a></strong> — ( UnitTechTreeUnitCount )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/unit-tech-tree-upgrade-count">Tech Tree Upgrade Count For Unit</a></strong> — ( UnitTechTreeUpgradeCount )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="modsheroesbrawlmodsbrawlmapmodshanamurapayloadpushstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodshanamurapayloadpushstormmod">#</a> mods/heroesbrawlmods/brawlmapmods/hanamurapayloadpush.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/hanamurapayloadpush.stormmod/base.stormdata/LibMHPP.galaxy#L140">LibMHPP.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L140</span>
+UnitTechTreeBehaviorCount(libMHPP_gv_payload.lv_payload, <span class="hljs-string">"PayloadAllyProximityBehavior1"</span>, c_techCountQueuedOrBetter)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L140</span>
+UnitTechTreeBehaviorCount(libMHPP_gv_payload.lv_payload, <span class="hljs-string">"PayloadAllyProximityBehavior2"</span>, c_techCountQueuedOrBetter)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L140</span>
+UnitTechTreeBehaviorCount(libMHPP_gv_payload.lv_payload, <span class="hljs-string">"PayloadAllyProximityBehavior3"</span>, c_techCountQueuedOrBetter)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1080</span>
+UnitTechTreeBehaviorCount(libMHPP_gv_payload.lv_payload, <span class="hljs-string">"PayloadAllyProximityBehavior1"</span>, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1080</span>
+UnitTechTreeBehaviorCount(libMHPP_gv_payload.lv_payload, <span class="hljs-string">"PayloadAllyProximityBehavior2"</span>, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1080</span>
+UnitTechTreeBehaviorCount(libMHPP_gv_payload.lv_payload, <span class="hljs-string">"PayloadAllyProximityBehavior3"</span>, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1288</span>
+UnitTechTreeBehaviorCount(libMHPP_gv_payload.lv_payload, <span class="hljs-string">"PayloadAllyProximityBehavior1"</span>, c_techCountQueuedOrBetter)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1288</span>
+UnitTechTreeBehaviorCount(libMHPP_gv_payload.lv_payload, <span class="hljs-string">"PayloadAllyProximityBehavior2"</span>, c_techCountQueuedOrBetter)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1288</span>
+UnitTechTreeBehaviorCount(libMHPP_gv_payload.lv_payload, <span class="hljs-string">"PayloadAllyProximityBehavior3"</span>, c_techCountQueuedOrBetter)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1789</span>
+UnitTechTreeBehaviorCount(libMHPP_gv_payload.lv_payload, <span class="hljs-string">"PayloadAllyProximityBehavior1"</span>, c_techCountQueuedOrBetter)
+</code></pre>
+<h4 id="modsheroesdatastormmod"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/GameDataHelperLib.galaxy#L3161">GameDataHelperLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3161</span>
+UnitTechTreeBehaviorCount(lv_rexxar, <span class="hljs-string">"ShrubStatusController"</span>, c_techCountQueuedOrBetter)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3175</span>
+UnitTechTreeBehaviorCount(lv_misha, <span class="hljs-string">"ShrubStatusController"</span>, c_techCountQueuedOrBetter)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3258</span>
+UnitTechTreeBehaviorCount(lv_rexxar, <span class="hljs-string">"ShrubStatusController"</span>, c_techCountQueuedOrBetter)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3258</span>
+UnitTechTreeBehaviorCount(lv_misha, <span class="hljs-string">"ShrubStatusController"</span>, c_techCountQueuedOrBetter)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

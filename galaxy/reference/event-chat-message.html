@@ -1,0 +1,445 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Chat String / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Chat String"/>
+                <meta property="og:description" content="Returns a chat message entered by a player. Only works in conjunction with the &quot;Chat Message&quot; Event. Use the &quot;Word Of String&quot; function to identify individual words within the string.
+
+Returns: string"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="chat-string"><a class="markdownIt-Anchor" href="#chat-string">#</a> Chat String</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — <strong>m|Matched/Entered</strong> chat string<br>
+<em>Flags</em> — <code>Native</code> | <code>Function</code></p>
+</blockquote>
+<p>Returns a chat message entered by a player. Only works in conjunction with the <em>“Chat Message”</em> Event. Use the <em>“Word Of String”</em> function to identify individual words within the string.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>bool</code> <em>[ preset::<a href="/galaxy/reference/preset-chat-response-option">Chat_Response_Option</a> ]</em> — Matched</li>
+</ul>
+<p>Returns — <code>string</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-built_in">string</span> <span class="hljs-title">EventChatMessage</span><span class="hljs-params">(<span class="hljs-keyword">bool</span> matchedOnly)</span></span>;
+</code></pre>
+<h3 id="supported-triggers"><a class="markdownIt-Anchor" href="#supported-triggers">#</a> Supported triggers</h3>
+<ul>
+<li><a href="/galaxy/reference/trigger-add-event-chat-message">Chat Message</a> — TriggerAddEventChatMessage</li>
+</ul>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#game-chat-and-console">Game / Chat And Console</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-chat-message">Chat Message</a></strong> — ( TriggerAddEventChatMessage )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-cheat-used">Cheat Used</a></strong> — ( TriggerAddEventCheatUsed )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> — <strong><a href="/galaxy/reference/event-chat-message">Chat String</a></strong> — ( EventChatMessage )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-game-cheat-type">GameCheatType</a> ]</em> — <strong><a href="/galaxy/reference/event-cheat-used">Cheat Type Used</a></strong> — ( EventCheatUsed )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/console-command">Console Command</a></strong> — ( ConsoleCommand )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/game-cheats-enabled">Cheats Enabled</a></strong> — ( GameCheatsEnabled )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/game-cheat-allow">Allow Cheat</a></strong> — ( GameCheatAllow )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/tarcade.sc2map/MapScript.galaxy#L4305">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4305</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4305</span>
+EventChatMessage(<span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4455</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L18661</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L18661</span>
+EventChatMessage(<span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L18675</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L18687</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L18968</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L18969</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19082</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19082</span>
+EventChatMessage(<span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19092</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19093</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4305</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4305</span>
+EventChatMessage(<span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4455</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L18661</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L18661</span>
+EventChatMessage(<span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L18675</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L18687</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L18968</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L18969</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19082</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19082</span>
+EventChatMessage(<span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19092</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19093</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="campaignslibertystorysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertystorysc2campaign">#</a> campaigns/libertystory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/libertystory.sc2campaign/base.sc2data/TriggerLibs/CampaignLib.galaxy#L14426">CampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L14426</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="campaignsswarmsc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmsc2campaign">#</a> campaigns/swarm.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarm.sc2campaign/base.sc2maps/maps/campaign/swarm/zspace01.sc2map/MapScript.galaxy#L1780">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1780</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1780</span>
+EventChatMessage(<span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1790</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1780</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1780</span>
+EventChatMessage(<span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1790</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="campaignsswarmstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmstorysc2campaign">#</a> campaigns/swarmstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstory.sc2campaign/base.sc2data/TriggerLibs/SwarmCampaignLib.galaxy#L22950">SwarmCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L22950</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L23536</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L23537</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L23537</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L23538</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L23538</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L23638</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L23678</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L23738</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L23738</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="campaignsswarmstoryutilsc2mod"><a class="markdownIt-Anchor" href="#campaignsswarmstoryutilsc2mod">#</a> campaigns/swarmstoryutil.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstoryutil.sc2mod/base.sc2data/Lib281DEC45.galaxy#L8266">Lib281DEC45.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L8266</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignLib.galaxy#L10031">VoidCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L10031</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10032</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10032</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10033</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10033</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10133</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10173</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10233</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10233</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign-2"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign-2">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignMissionLib.galaxy#L6564">VoidCampaignMissionLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L6564</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6566</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6731</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign-3"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign-3">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignUILib.galaxy#L6059">VoidCampaignUILib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L6059</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6065</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6110</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6116</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6141</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9450</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9477</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9506</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9535</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="modscoresc2mod"><a class="markdownIt-Anchor" href="#modscoresc2mod">#</a> mods/core.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/core.sc2mod/base.sc2data/TriggerLibs/MeleeAI.galaxy#L88">MeleeAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L88</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="modsheroesbrawlmodsarenamodemodsarenamodestormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsarenamodemodsarenamodestormmod">#</a> mods/heroesbrawlmods/arenamodemods/arenamode.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/arenamodemods/arenamode.stormmod/base.stormdata/LibAREN.galaxy#L2571">LibAREN.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2571</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2572</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2573</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2574</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2620</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2660</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="modsheroesbrawlmodsarenamodemodspunisherarenastormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsarenamodemodspunisherarenastormmod">#</a> mods/heroesbrawlmods/arenamodemods/punisherarena.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/arenamodemods/punisherarena.stormmod/base.stormdata/LibAMPU.galaxy#L2346">LibAMPU.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2346</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2346</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2396</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2396</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2410</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2410</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodsblackheartsrevengestormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodsblackheartsrevengestormmod">#</a> mods/heroesbrawlmods/brawlmapmods/blackheartsrevenge.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/blackheartsrevenge.stormmod/base.stormdata/LibMDoE.galaxy#L3730">LibMDoE.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3730</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodscoopdeadmansstandstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodscoopdeadmansstandstormmod">#</a> mods/heroesbrawlmods/brawlmapmods/coop/deadmansstand.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/coop/deadmansstand.stormmod/base.stormdata/LibPEB1.galaxy#L12591">LibPEB1.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L12591</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12799</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodscooppvebrawlmodstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodscooppvebrawlmodstormmod">#</a> mods/heroesbrawlmods/brawlmapmods/coop/pvebrawlmod.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/coop/pvebrawlmod.stormmod/base.stormdata/LibPVEB.galaxy#L3186">LibPVEB.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3186</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3187</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3188</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodscooppvebrawluimodstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodscooppvebrawluimodstormmod">#</a> mods/heroesbrawlmods/brawlmapmods/coop/pvebrawluimod.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/coop/pvebrawluimod.stormmod/base.stormdata/LibPBUI.galaxy#L1673">LibPBUI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1673</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1673</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1700</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodscooppvemodstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodscooppvemodstormmod">#</a> mods/heroesbrawlmods/brawlmapmods/coop/pvemod.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/coop/pvemod.stormmod/base.stormdata/LibPVEM.galaxy#L3247">LibPVEM.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3247</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3248</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3249</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodshanamurapayloadpushstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodshanamurapayloadpushstormmod">#</a> mods/heroesbrawlmods/brawlmapmods/hanamurapayloadpush.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/hanamurapayloadpush.stormmod/base.stormdata/LibMHPP.galaxy#L2075">LibMHPP.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2075</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2079</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2138</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2142</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodslunarfestivalstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodslunarfestivalstormmod">#</a> mods/heroesbrawlmods/brawlmapmods/lunarfestival.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/lunarfestival.stormmod/base.stormdata/LibLNYF.galaxy#L2071">LibLNYF.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2071</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodspullpartystormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodspullpartystormmod">#</a> mods/heroesbrawlmods/brawlmapmods/pullparty.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/pullparty.stormmod/base.stormdata/LibMMPP.galaxy#L197">LibMMPP.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L197</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L263</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="modsheroesbrawlmodsheroselectionmodsingameheroselectionstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsheroselectionmodsingameheroselectionstormmod">#</a> mods/heroesbrawlmods/heroselectionmods/ingameheroselection.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/heroselectionmods/ingameheroselection.stormmod/base.stormdata/LibIGHS.galaxy#L1882">LibIGHS.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1882</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2040</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2125</span>
+EventChatMessage(<span class="hljs-literal">false</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

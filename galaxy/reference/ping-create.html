@@ -1,0 +1,426 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Create Ping (Deprecated) / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Create Ping (Deprecated)"/>
+                <meta property="og:description" content="Creates a minimap ping using the facing angle of a point.  Use &quot;Last Created Ping&quot; to refer to the created ping.
+
+Returns: ping [ ping ]"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="create-ping-deprecated"><a class="markdownIt-Anchor" href="#create-ping-deprecated">#</a> Create Ping (Deprecated)</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Create a ping for <strong>players</strong> at <strong>position</strong> (using point facing), using model <strong>model</strong> and color <strong>color</strong>, lasting <strong>duration</strong> seconds<br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Creates a minimap ping using the facing angle of a point.  Use <em>“Last Created Ping”</em> to refer to the created ping.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>playergroup</code> — Players</li>
+<li><code>string</code> <em>[ gamelink::Model ]</em> — Model</li>
+<li><code>point</code> — Position</li>
+<li><code>color</code> — Color</li>
+<li><code>fixed</code> — Duration</li>
+</ul>
+<p>Returns — <code>int</code> <em>[ ping ]</em></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">int</span> <span class="hljs-title">PingCreate</span><span class="hljs-params">(
+	playergroup players,
+	<span class="hljs-built_in">string</span> modelLink,
+	point position,
+	color intColor,
+	fixed duration,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#ping-basic">Ping / Basic</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-ping">Player Ping</a></strong> — ( TriggerAddEventPing )</li>
+<li><em><strong>[F]</strong></em> — <code>unit</code> — <strong><a href="/galaxy/reference/event-ping-unit">Player Ping Unit</a></strong> — ( EventPingUnit )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> <em>[ gamelink::Unit ]</em> — <strong><a href="/galaxy/reference/event-ping-unit-type">Player Ping Unit Type</a></strong> — ( EventPingUnitType )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/event-ping-unit-control-player">Player Ping Unit ControlPlayer</a></strong> — ( EventPingUnitControlPlayer )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/event-ping-unit-upkeep-player">Player Ping Unit UpkeepPlayer</a></strong> — ( EventPingUnitUpkeepPlayer )</li>
+<li><em><strong>[F]</strong></em> — <code>point</code> — <strong><a href="/galaxy/reference/event-ping-unit-position">Player Ping Unit Position</a></strong> — ( EventPingUnitPosition )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/event-ping-unit-is-under-construction">Player Ping Unit Is Under Construction</a></strong> — ( EventPingUnitIsUnderConstruction )</li>
+<li><em><strong>[F]</strong></em> — <code>point</code> — <strong><a href="/galaxy/reference/event-ping-point">Player Ping Location</a></strong> — ( EventPingPoint )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/event-pinged-minimap">Player Ping Is From Minimap</a></strong> — ( EventPingedMinimap )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/event-ping-option">Player Ping Option</a></strong> — ( EventPingOption )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ping-set-player-pings-shown">Show/Hide Player Pings</a></strong> — ( PingSetPlayerPingsShown )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/minimap-ping">Ping Minimap</a></strong> — ( MinimapPing )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/minimap-ping-possible-enemy-start-locations">Ping Minimap Possible Enemy Start Locations</a></strong> — ( MinimapPingPossibleEnemyStartLocations )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ ping ]</em> — <strong><a href="/galaxy/reference/ping-create">Create Ping (Deprecated)</a></strong> — ( PingCreate )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ ping ]</em> — <strong><a href="/galaxy/reference/ping-create-with-player-id">Create Ping With Point Facing</a></strong> — ( PingCreateWithPlayerId )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ ping ]</em> — <strong><a href="/galaxy/reference/ping-create-from-data">Create Ping From Data</a></strong> — ( PingCreateFromData )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-create-ping-facing-angle">Create Ping Facing Angle</a></strong> — ( libNtve_gf_CreatePingFacingAngle )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ping-set-visible">Show/Hide Ping</a></strong> — ( PingSetVisible )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ ping ]</em> — <strong><a href="/galaxy/reference/ping-last-created">Last Created Ping</a></strong> — ( PingLastCreated )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/ping-is-visible">Ping Is Visible</a></strong> — ( PingIsVisible )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/challenges/protosscombat.sc2map/MapScript.galaxy#L602">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L602</span>
+PingCreate(PlayerGroupAll(), <span class="hljs-string">"PingObjective"</span>, RegionGetCenter(RegionFromId(<span class="hljs-number">13</span>)), ColorWithAlpha(<span class="hljs-number">0.78</span>, <span class="hljs-number">26.27</span>, <span class="hljs-number">4.31</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L605</span>
+PingCreate(PlayerGroupAll(), <span class="hljs-string">"PingObjective"</span>, RegionGetCenter(RegionFromId(<span class="hljs-number">14</span>)), ColorWithAlpha(<span class="hljs-number">0.78</span>, <span class="hljs-number">26.27</span>, <span class="hljs-number">4.31</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L608</span>
+PingCreate(PlayerGroupAll(), <span class="hljs-string">"PingObjective"</span>, RegionGetCenter(RegionFromId(<span class="hljs-number">15</span>)), ColorWithAlpha(<span class="hljs-number">0.78</span>, <span class="hljs-number">26.27</span>, <span class="hljs-number">4.31</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L611</span>
+PingCreate(PlayerGroupAll(), <span class="hljs-string">"PingWarning"</span>, RegionGetCenter(RegionFromId(<span class="hljs-number">2</span>)), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L614</span>
+PingCreate(PlayerGroupAll(), <span class="hljs-string">"PingWarning"</span>, RegionGetCenter(RegionFromId(<span class="hljs-number">4</span>)), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L617</span>
+PingCreate(PlayerGroupAll(), <span class="hljs-string">"PingWarning"</span>, RegionGetCenter(RegionFromId(<span class="hljs-number">5</span>)), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L546</span>
+PingCreate(PlayerGroupAll(), <span class="hljs-string">"PingObjective"</span>, RegionGetCenter(RegionFromId(<span class="hljs-number">13</span>)), ColorWithAlpha(<span class="hljs-number">0.78</span>, <span class="hljs-number">26.27</span>, <span class="hljs-number">4.31</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L549</span>
+PingCreate(PlayerGroupAll(), <span class="hljs-string">"PingObjective"</span>, RegionGetCenter(RegionFromId(<span class="hljs-number">14</span>)), ColorWithAlpha(<span class="hljs-number">0.78</span>, <span class="hljs-number">26.27</span>, <span class="hljs-number">4.31</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L552</span>
+PingCreate(PlayerGroupAll(), <span class="hljs-string">"PingObjective"</span>, RegionGetCenter(RegionFromId(<span class="hljs-number">15</span>)), ColorWithAlpha(<span class="hljs-number">0.78</span>, <span class="hljs-number">26.27</span>, <span class="hljs-number">4.31</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L555</span>
+PingCreate(PlayerGroupAll(), <span class="hljs-string">"PingWarning"</span>, RegionGetCenter(RegionFromId(<span class="hljs-number">2</span>)), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L558</span>
+PingCreate(PlayerGroupAll(), <span class="hljs-string">"PingWarning"</span>, RegionGetCenter(RegionFromId(<span class="hljs-number">4</span>)), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L561</span>
+PingCreate(PlayerGroupAll(), <span class="hljs-string">"PingWarning"</span>, RegionGetCenter(RegionFromId(<span class="hljs-number">5</span>)), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L606</span>
+PingCreate(PlayerGroupAll(), <span class="hljs-string">"PingObjective"</span>, RegionGetCenter(RegionFromId(<span class="hljs-number">13</span>)), ColorWithAlpha(<span class="hljs-number">0.78</span>, <span class="hljs-number">26.27</span>, <span class="hljs-number">4.31</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L609</span>
+PingCreate(PlayerGroupAll(), <span class="hljs-string">"PingObjective"</span>, RegionGetCenter(RegionFromId(<span class="hljs-number">14</span>)), ColorWithAlpha(<span class="hljs-number">0.78</span>, <span class="hljs-number">26.27</span>, <span class="hljs-number">4.31</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L612</span>
+PingCreate(PlayerGroupAll(), <span class="hljs-string">"PingObjective"</span>, RegionGetCenter(RegionFromId(<span class="hljs-number">15</span>)), ColorWithAlpha(<span class="hljs-number">0.78</span>, <span class="hljs-number">26.27</span>, <span class="hljs-number">4.31</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L615</span>
+PingCreate(PlayerGroupAll(), <span class="hljs-string">"PingWarning"</span>, RegionGetCenter(RegionFromId(<span class="hljs-number">2</span>)), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L618</span>
+PingCreate(PlayerGroupAll(), <span class="hljs-string">"PingWarning"</span>, RegionGetCenter(RegionFromId(<span class="hljs-number">4</span>)), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L621</span>
+PingCreate(PlayerGroupAll(), <span class="hljs-string">"PingWarning"</span>, RegionGetCenter(RegionFromId(<span class="hljs-number">5</span>)), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L355</span>
+PingCreate(PlayerGroupSingle(gv_p1_USER), <span class="hljs-string">"PingSimple"</span>, UnitGetPosition(lp_unit), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">5.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2443</span>
+PingCreate(PlayerGroupSingle(gv_p1_USER), <span class="hljs-string">"PingSimple"</span>, UnitGetPosition(gv_pingConvoy), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">3.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4304</span>
+PingCreate(PlayerGroupSingle(gv_p1_USER), <span class="hljs-string">"PingSimple"</span>, UnitGetPosition(EventUnit()), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">4.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2043</span>
+PingCreate(PlayerGroupSingle(gv_pLAYER01_USER), <span class="hljs-string">"PingWarning"</span>, libNtve_gf_CenterOfUnitGroup(gv_terrorFleetGroup), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2140</span>
+PingCreate(PlayerGroupSingle(gv_pLAYER01_USER), <span class="hljs-string">"PingWarning"</span>, libNtve_gf_CenterOfUnitGroup(gv_terrorFleetGroup), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2235</span>
+PingCreate(PlayerGroupSingle(gv_pLAYER01_USER), <span class="hljs-string">"PingWarning"</span>, libNtve_gf_CenterOfUnitGroup(gv_terrorFleetGroup), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3753</span>
+PingCreate(PlayerGroupAll(), <span class="hljs-string">"PingArrow"</span>, gv_pathtoAlpha[lv_pathIndex], ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">6.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3794</span>
+PingCreate(PlayerGroupAll(), <span class="hljs-string">"PingArrow"</span>, gv_pathtoBeta[lv_pathIndex], ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">6.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3835</span>
+PingCreate(PlayerGroupAll(), <span class="hljs-string">"PingArrow"</span>, gv_pathtoGamma[lv_pathIndex], ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">6.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3876</span>
+PingCreate(PlayerGroupAll(), <span class="hljs-string">"PingArrow"</span>, gv_pathtoOmega[lv_pathIndex], ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">6.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1341</span>
+PingCreate(PlayerGroupAll(), <span class="hljs-string">"PingWarning"</span>, RegionGetCenter(gv_infestationRegion[lv_colonyIndex]), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">74.90</span>), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3372</span>
+PingCreate(PlayerGroupAll(), <span class="hljs-string">"PingArrow"</span>, gv_trainPath[lv_currentPingPoint], ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">6.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3386</span>
+PingCreate(PlayerGroupAll(), <span class="hljs-string">"PingArrow"</span>, gv_trainPath[lv_currentPingPoint], ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">6.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3428</span>
+PingCreate(PlayerGroupAll(), <span class="hljs-string">"PingArrow"</span>, gv_trainPath[lv_currentPingPoint], ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">6.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3441</span>
+PingCreate(PlayerGroupAll(), <span class="hljs-string">"PingArrow"</span>, gv_trainPath[lv_currentPingPoint], ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">6.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3483</span>
+PingCreate(PlayerGroupAll(), <span class="hljs-string">"PingArrow"</span>, gv_trainPath[lv_currentPingPoint], ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">6.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3496</span>
+PingCreate(PlayerGroupAll(), <span class="hljs-string">"PingArrow"</span>, gv_trainPath[lv_currentPingPoint], ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">6.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4779</span>
+PingCreate(PlayerGroupSingle(gv_pLAYER_01_USER), <span class="hljs-string">"PingBoss"</span>, PointFromId(<span class="hljs-number">1788</span>), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4781</span>
+PingCreate(PlayerGroupSingle(gv_pLAYER_01_USER), <span class="hljs-string">"PingBoss"</span>, PointFromId(<span class="hljs-number">1778</span>), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4834</span>
+PingCreate(PlayerGroupSingle(gv_pLAYER_01_USER), <span class="hljs-string">"PingBoss"</span>, PointFromId(<span class="hljs-number">1788</span>), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1225</span>
+PingCreate(PlayerGroupSingle(gv_p01_USER), <span class="hljs-string">"PingSimple"</span>, UnitGetPosition(UnitFromId(<span class="hljs-number">2</span>)), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1443</span>
+PingCreate(PlayerGroupSingle(gv_p01_USER), <span class="hljs-string">"PingWarning"</span>, UnitGetPosition(gv_battlecruiser1), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1448</span>
+PingCreate(PlayerGroupSingle(gv_p01_USER), <span class="hljs-string">"PingWarning"</span>, UnitGetPosition(gv_battlecruiser2), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2706</span>
+PingCreate(PlayerGroupSingle(<span class="hljs-number">1</span>), <span class="hljs-string">"PingNumeric1"</span>, UnitGetPosition(UnitFromId(<span class="hljs-number">808</span>)), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">50.20</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2709</span>
+PingCreate(PlayerGroupSingle(<span class="hljs-number">1</span>), <span class="hljs-string">"PingNumeric2"</span>, UnitGetPosition(UnitFromId(<span class="hljs-number">806</span>)), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">50.20</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2712</span>
+PingCreate(PlayerGroupSingle(<span class="hljs-number">1</span>), <span class="hljs-string">"PingNumeric3"</span>, UnitGetPosition(UnitFromId(<span class="hljs-number">807</span>)), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">50.20</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5886</span>
+PingCreate(PlayerGroupAll(), <span class="hljs-string">"PingObjective"</span>, UnitGetPosition(gv_brutalisk), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8178</span>
+PingCreate(PlayerGroupAll(), <span class="hljs-string">"PingObjective"</span>, PointFromId(<span class="hljs-number">1808</span>), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10592</span>
+PingCreate(PlayerGroupAll(), <span class="hljs-string">"PingObjective"</span>, PointFromId(<span class="hljs-number">194</span>), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2118</span>
+PingCreate(PlayerGroupSingle(gv_p1_USER), <span class="hljs-string">"PingSimple"</span>, UnitGetPosition(EventUnit()), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2550</span>
+PingCreate(PlayerGroupSingle(gv_p1_USER), <span class="hljs-string">"PingWarning"</span>, UnitGetPosition(EventUnit()), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4183</span>
+PingCreate(PlayerGroupAll(), <span class="hljs-string">"PingWarning"</span>, PointFromId(<span class="hljs-number">463</span>), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4648</span>
+PingCreate(PlayerGroupAll(), <span class="hljs-string">"MinimapPing"</span>, RegionGetCenter(RegionFromId(<span class="hljs-number">59</span>)), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5209</span>
+PingCreate(PlayerGroupAll(), <span class="hljs-string">"MinimapPing"</span>, RegionGetCenter(RegionFromId(<span class="hljs-number">59</span>)), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2304</span>
+PingCreate(PlayerGroupActive(), <span class="hljs-string">"PingWarning"</span>, RegionGetCenter(gv_createNydusWormTarget), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">5.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2340</span>
+PingCreate(PlayerGroupActive(), <span class="hljs-string">"PingWarning"</span>, RegionGetCenter(gv_createNydusWormTarget), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">5.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4293</span>
+PingCreate(PlayerGroupAll(), <span class="hljs-string">"PingArrow"</span>, gv_sitePath1[lv_pathIndex], ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">6.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4338</span>
+PingCreate(PlayerGroupAll(), <span class="hljs-string">"PingArrow"</span>, gv_sitePath2[lv_pathIndex], ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">6.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4383</span>
+PingCreate(PlayerGroupAll(), <span class="hljs-string">"PingArrow"</span>, gv_sitePath3[lv_pathIndex], ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">6.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4211</span>
+PingCreate(gv_fORCEGOOD_GUYS, <span class="hljs-string">"PingObjective"</span>, UnitGetPosition(UnitFromId(<span class="hljs-number">37</span>)), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4312</span>
+PingCreate(gv_fORCEGOOD_GUYS, <span class="hljs-string">"PingObjective"</span>, UnitGetPosition(gv_uNITVault), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4975</span>
+PingCreate(PlayerGroupAll(), <span class="hljs-string">"PingWarning"</span>, UnitGetPosition(lv_nydusWorm), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7913</span>
+PingCreate(PlayerGroupAll(), <span class="hljs-string">"PingObjective"</span>, PointFromId(<span class="hljs-number">1189</span>), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7915</span>
+PingCreate(PlayerGroupAll(), <span class="hljs-string">"PingObjective"</span>, PointFromId(<span class="hljs-number">1190</span>), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7917</span>
+PingCreate(PlayerGroupAll(), <span class="hljs-string">"PingObjective"</span>, PointFromId(<span class="hljs-number">1191</span>), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1197</span>
+PingCreate(PlayerGroupAll(), <span class="hljs-string">"PingBoss"</span>, UnitGetPosition(gv_leviathan), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3771</span>
+PingCreate(PlayerGroupAll(), <span class="hljs-string">"PingSimple"</span>, UnitGetPosition(gv_firstMutaSpawner), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3951</span>
+PingCreate(PlayerGroupAll(), <span class="hljs-string">"PingAlert"</span>, PointFromId(<span class="hljs-number">199</span>), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">4.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3952</span>
+PingCreate(PlayerGroupAll(), <span class="hljs-string">"PingAlert"</span>, PointFromId(<span class="hljs-number">202</span>), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">4.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3953</span>
+PingCreate(PlayerGroupAll(), <span class="hljs-string">"PingAlert"</span>, PointFromId(<span class="hljs-number">299</span>), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">4.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3954</span>
+PingCreate(PlayerGroupAll(), <span class="hljs-string">"PingAlert"</span>, PointFromId(<span class="hljs-number">342</span>), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">4.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3955</span>
+PingCreate(PlayerGroupAll(), <span class="hljs-string">"PingAlert"</span>, PointFromId(<span class="hljs-number">470</span>), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">4.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3956</span>
+PingCreate(PlayerGroupAll(), <span class="hljs-string">"PingAlert"</span>, PointFromId(<span class="hljs-number">531</span>), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">4.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4052</span>
+PingCreate(PlayerGroupAll(), <span class="hljs-string">"PingAlert"</span>, PointFromId(<span class="hljs-number">116</span>), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">4.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4053</span>
+PingCreate(PlayerGroupAll(), <span class="hljs-string">"PingAlert"</span>, PointFromId(<span class="hljs-number">138</span>), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">4.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5952</span>
+PingCreate(PlayerGroupAll(), <span class="hljs-string">"PingArrow"</span>, gv_runoutPingPoints[auto59554051_var], ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), lv_real)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8280</span>
+PingCreate(PlayerGroupSingle(gv_p1_USER), <span class="hljs-string">"PingObjective"</span>, UnitGetPosition(UnitFromId(<span class="hljs-number">1561</span>)), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5653</span>
+PingCreate(PlayerGroupAll(), <span class="hljs-string">"PingObjective"</span>, PointFromId(<span class="hljs-number">651</span>), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5659</span>
+PingCreate(PlayerGroupAll(), <span class="hljs-string">"PingObjective"</span>, PointFromId(<span class="hljs-number">656</span>), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5665</span>
+PingCreate(PlayerGroupAll(), <span class="hljs-string">"PingObjective"</span>, PointFromId(<span class="hljs-number">659</span>), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5941</span>
+PingCreate(PlayerGroupAll(), <span class="hljs-string">"PingObjective"</span>, PointFromId(<span class="hljs-number">603</span>), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5949</span>
+PingCreate(PlayerGroupAll(), <span class="hljs-string">"PingObjective"</span>, PointFromId(<span class="hljs-number">549</span>), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5957</span>
+PingCreate(PlayerGroupAll(), <span class="hljs-string">"PingObjective"</span>, PointFromId(<span class="hljs-number">355</span>), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L735</span>
+PingCreate(PlayerGroupSingle(gv_p01_USER), <span class="hljs-string">"PingObjective"</span>, UnitGetPosition(UnitFromId(<span class="hljs-number">952</span>)), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4051</span>
+PingCreate(PlayerGroupSingle(gv_p01_USER), <span class="hljs-string">"PingObjective"</span>, UnitGetPosition(UnitFromId(<span class="hljs-number">46</span>)), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4055</span>
+PingCreate(PlayerGroupSingle(gv_p01_USER), <span class="hljs-string">"PingObjective"</span>, UnitGetPosition(UnitFromId(<span class="hljs-number">929</span>)), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4059</span>
+PingCreate(PlayerGroupSingle(gv_p01_USER), <span class="hljs-string">"PingObjective"</span>, UnitGetPosition(UnitFromId(<span class="hljs-number">38</span>)), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4063</span>
+PingCreate(PlayerGroupSingle(gv_p01_USER), <span class="hljs-string">"PingObjective"</span>, UnitGetPosition(UnitFromId(<span class="hljs-number">36</span>)), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L355</span>
+PingCreate(PlayerGroupSingle(gv_p1_USER), <span class="hljs-string">"PingSimple"</span>, UnitGetPosition(lp_unit), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">5.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2443</span>
+PingCreate(PlayerGroupSingle(gv_p1_USER), <span class="hljs-string">"PingSimple"</span>, UnitGetPosition(gv_pingConvoy), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">3.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4304</span>
+PingCreate(PlayerGroupSingle(gv_p1_USER), <span class="hljs-string">"PingSimple"</span>, UnitGetPosition(EventUnit()), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">4.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2043</span>
+PingCreate(PlayerGroupSingle(gv_pLAYER01_USER), <span class="hljs-string">"PingWarning"</span>, libNtve_gf_CenterOfUnitGroup(gv_terrorFleetGroup), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2140</span>
+PingCreate(PlayerGroupSingle(gv_pLAYER01_USER), <span class="hljs-string">"PingWarning"</span>, libNtve_gf_CenterOfUnitGroup(gv_terrorFleetGroup), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2235</span>
+PingCreate(PlayerGroupSingle(gv_pLAYER01_USER), <span class="hljs-string">"PingWarning"</span>, libNtve_gf_CenterOfUnitGroup(gv_terrorFleetGroup), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3753</span>
+PingCreate(PlayerGroupAll(), <span class="hljs-string">"PingArrow"</span>, gv_pathtoAlpha[lv_pathIndex], ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">6.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3794</span>
+PingCreate(PlayerGroupAll(), <span class="hljs-string">"PingArrow"</span>, gv_pathtoBeta[lv_pathIndex], ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">6.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3835</span>
+PingCreate(PlayerGroupAll(), <span class="hljs-string">"PingArrow"</span>, gv_pathtoGamma[lv_pathIndex], ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">6.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3876</span>
+PingCreate(PlayerGroupAll(), <span class="hljs-string">"PingArrow"</span>, gv_pathtoOmega[lv_pathIndex], ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">6.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1341</span>
+PingCreate(PlayerGroupAll(), <span class="hljs-string">"PingWarning"</span>, RegionGetCenter(gv_infestationRegion[lv_colonyIndex]), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">74.90</span>), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3372</span>
+PingCreate(PlayerGroupAll(), <span class="hljs-string">"PingArrow"</span>, gv_trainPath[lv_currentPingPoint], ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">6.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3386</span>
+PingCreate(PlayerGroupAll(), <span class="hljs-string">"PingArrow"</span>, gv_trainPath[lv_currentPingPoint], ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">6.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3428</span>
+PingCreate(PlayerGroupAll(), <span class="hljs-string">"PingArrow"</span>, gv_trainPath[lv_currentPingPoint], ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">6.0</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

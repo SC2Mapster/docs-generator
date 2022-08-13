@@ -1,0 +1,403 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Award Achievement / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Award Achievement"/>
+                <meta property="og:description" content="This feature only works on Blizzard-signed maps."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="award-achievement"><a class="markdownIt-Anchor" href="#award-achievement">#</a> Award Achievement</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Unlock the <strong>name</strong> achievement for player <strong>p</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code> | <code>Restricted</code></p>
+</blockquote>
+<p>This feature only works on Blizzard-signed maps.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> — Player</li>
+<li><code>string</code> <em>[ gamelink::Achievement ]</em> — Name</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">AchievementAward</span><span class="hljs-params">(<span class="hljs-keyword">int</span> player, <span class="hljs-built_in">string</span> name)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#game-achievements">Game / Achievements</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/achievement-award">Award Achievement</a></strong> — ( AchievementAward )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/achievement-term-quantity-set">Set Achievement Term Quantity</a></strong> — ( AchievementTermQuantitySet )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/achievement-term-quantity-add">Add To Achievement Term Quantity</a></strong> — ( AchievementTermQuantityAdd )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/achievement-erase">Erase Achievement</a></strong> — ( AchievementErase )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/achievements-disable">Disable Achievements</a></strong> — ( AchievementsDisable )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/achievements-disabled">Achievements Are Disabled</a></strong> — ( AchievementsDisabled )</li>
+<li><em><strong>[F]</strong></em> — <code>text</code> — <strong><a href="/galaxy/reference/achievement-percent-text">Get Achievement Percent Text</a></strong> — ( AchievementPercentText )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/achievement-panel-set-category">Set Achievement Panel Category</a></strong> — ( AchievementPanelSetCategory )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/challenges/advancedcommand.sc2map/MapScript.galaxy#L991">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L991</span>
+AchievementAward(gv_pLAYER_USER, <span class="hljs-string">"Challenge_AdvancedCommand_Basic"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L998</span>
+AchievementAward(gv_pLAYER_USER, <span class="hljs-string">"Challenge_AdvancedCommand_Mastery"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1005</span>
+AchievementAward(gv_pLAYER_USER, <span class="hljs-string">"Challenge_AdvancedCommand_Dominance"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L414</span>
+AchievementAward(gv_pLAYER_USER, <span class="hljs-string">"Challenge_ProtossCombat_Basic"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L417</span>
+AchievementAward(gv_pLAYER_USER, <span class="hljs-string">"Challenge_ProtossCombat_Mastery"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L423</span>
+AchievementAward(gv_pLAYER_USER, <span class="hljs-string">"Challenge_ProtossCombat_Dominance"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1253</span>
+AchievementAward(gv_pLAYER_USER, <span class="hljs-string">"Challenge_ProtossPsionics_Basic"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1259</span>
+AchievementAward(gv_pLAYER_USER, <span class="hljs-string">"Challenge_ProtossPsionics_Mastery"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1265</span>
+AchievementAward(gv_pLAYER_USER, <span class="hljs-string">"Challenge_ProtossPsionics_Dominance"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L148</span>
+AchievementAward(gv_pLAYER_USER, <span class="hljs-string">"Challenge_Economy_Basic"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L151</span>
+AchievementAward(gv_pLAYER_USER, <span class="hljs-string">"Challenge_Economy_Mastery"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L157</span>
+AchievementAward(gv_pLAYER_USER, <span class="hljs-string">"Challenge_Economy_Dominance"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L231</span>
+AchievementAward(gv_pLAYER_USER, <span class="hljs-string">"Challenge_RushDefense_Basic"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L234</span>
+AchievementAward(gv_pLAYER_USER, <span class="hljs-string">"Challenge_RushDefense_Mastery"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L240</span>
+AchievementAward(gv_pLAYER_USER, <span class="hljs-string">"Challenge_RushDefense_Dominance"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L378</span>
+AchievementAward(gv_pLAYER_USER, <span class="hljs-string">"Challenge_TerranCombat_Basic"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L381</span>
+AchievementAward(gv_pLAYER_USER, <span class="hljs-string">"Challenge_TerranCombat_Mastery"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L387</span>
+AchievementAward(gv_pLAYER_USER, <span class="hljs-string">"Challenge_TerranCombat_Dominance"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L996</span>
+AchievementAward(gv_pLAYER_USER, <span class="hljs-string">"Challenge_TerranCovertOps_Basic"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1003</span>
+AchievementAward(gv_pLAYER_USER, <span class="hljs-string">"Challenge_TerranCovertOps_Mastery"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1010</span>
+AchievementAward(gv_pLAYER_USER, <span class="hljs-string">"Challenge_TerranCovertOps_Dominance"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L424</span>
+AchievementAward(gv_pLAYER_USER, <span class="hljs-string">"Challenge_ZergCombat_Basic"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L427</span>
+AchievementAward(gv_pLAYER_USER, <span class="hljs-string">"Challenge_ZergCombat_Mastery"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L433</span>
+AchievementAward(gv_pLAYER_USER, <span class="hljs-string">"Challenge_ZergCombat_Dominance"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L955</span>
+AchievementAward(gv_pLAYER_USER, <span class="hljs-string">"Challenge_ZergInfestation_Basic"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L962</span>
+AchievementAward(gv_pLAYER_USER, <span class="hljs-string">"Challenge_ZergInfestation_Mastery"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L969</span>
+AchievementAward(gv_pLAYER_USER, <span class="hljs-string">"Challenge_ZergInfestation_Dominance"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3342</span>
+AchievementAward(<span class="hljs-number">1</span>, <span class="hljs-string">"LostVikingBronze"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3347</span>
+AchievementAward(<span class="hljs-number">1</span>, <span class="hljs-string">"LostVikingSilver"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3352</span>
+AchievementAward(<span class="hljs-number">1</span>, <span class="hljs-string">"LostVikingGold"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5754</span>
+AchievementAward(<span class="hljs-number">1</span>, <span class="hljs-string">"TStory01_13"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5158</span>
+AchievementAward(gv_p1_USER, <span class="hljs-string">"THanson01_1"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5162</span>
+AchievementAward(gv_p1_USER, <span class="hljs-string">"THanson01_1"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5166</span>
+AchievementAward(gv_p1_USER, <span class="hljs-string">"THanson01_2"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5170</span>
+AchievementAward(gv_p1_USER, <span class="hljs-string">"THanson01_3"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5174</span>
+AchievementAward(gv_p1_USER, <span class="hljs-string">"Anniversary_THanson01"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4236</span>
+AchievementAward(gv_pLAYER_01_USER, <span class="hljs-string">"THanson02_3"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4306</span>
+AchievementAward(gv_pLAYER_01_USER, <span class="hljs-string">"THanson02_1"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4310</span>
+AchievementAward(gv_pLAYER_01_USER, <span class="hljs-string">"THanson02_2"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4314</span>
+AchievementAward(gv_pLAYER_01_USER, <span class="hljs-string">"Anniversary_THanson02"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5295</span>
+AchievementAward(gv_pLAYER01_USER, <span class="hljs-string">"THanson03A_1"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5299</span>
+AchievementAward(gv_pLAYER01_USER, <span class="hljs-string">"THanson03A_2"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5303</span>
+AchievementAward(gv_pLAYER01_USER, <span class="hljs-string">"THanson03A_3"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3546</span>
+AchievementAward(gv_p01_USER, <span class="hljs-string">"THanson03B_1"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3550</span>
+AchievementAward(gv_p01_USER, <span class="hljs-string">"THanson03B_2"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3554</span>
+AchievementAward(gv_p01_USER, <span class="hljs-string">"THanson03B_3"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4583</span>
+AchievementAward(gv_pLAYER_01_USER, <span class="hljs-string">"THorner01_2"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4668</span>
+AchievementAward(gv_pLAYER_01_USER, <span class="hljs-string">"THorner01_2"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4738</span>
+AchievementAward(gv_pLAYER_01_USER, <span class="hljs-string">"THorner01_2"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5043</span>
+AchievementAward(gv_pLAYER_01_USER, <span class="hljs-string">"THorner01_1"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5047</span>
+AchievementAward(gv_pLAYER_01_USER, <span class="hljs-string">"THorner01_3"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5051</span>
+AchievementAward(gv_pLAYER_01_USER, <span class="hljs-string">"Anniversary_THorner01"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L993</span>
+AchievementAward(gv_p01_USER, <span class="hljs-string">"THorner02_3"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4372</span>
+AchievementAward(gv_p01_USER, <span class="hljs-string">"THorner02_2"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4485</span>
+AchievementAward(gv_p01_USER, <span class="hljs-string">"Anniversary_THorner02"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4516</span>
+AchievementAward(gv_p01_USER, <span class="hljs-string">"THorner02_1"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1873</span>
+AchievementAward(gv_p01_USER, <span class="hljs-string">"THorner03_2"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4465</span>
+AchievementAward(gv_p01_USER, <span class="hljs-string">"THorner03_1"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4469</span>
+AchievementAward(gv_p01_USER, <span class="hljs-string">"THorner03_3"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4475</span>
+AchievementAward(gv_p01_USER, <span class="hljs-string">"Anniversary_THorner03"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4494</span>
+AchievementAward(gv_p01_USER, <span class="hljs-string">"THorner04_2"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4536</span>
+AchievementAward(gv_p01_USER, <span class="hljs-string">"Anniversary_THorner_04"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4597</span>
+AchievementAward(gv_p01_USER, <span class="hljs-string">"THorner04_1"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4601</span>
+AchievementAward(gv_p01_USER, <span class="hljs-string">"THorner04_3"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8016</span>
+AchievementAward(gv_p01_USER, <span class="hljs-string">"THorner05_2"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10254</span>
+AchievementAward(gv_p01_USER, <span class="hljs-string">"THorner05_1"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10826</span>
+AchievementAward(gv_p01_USER, <span class="hljs-string">"FeatOfStrength_THorner05S"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10830</span>
+AchievementAward(gv_p01_USER, <span class="hljs-string">"THorner05_3"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4014</span>
+AchievementAward(gv_p1_USER, <span class="hljs-string">"Anniversary_TRaynor01"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4088</span>
+AchievementAward(gv_p1_USER, <span class="hljs-string">"TRaynor01_2"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4148</span>
+AchievementAward(gv_p1_USER, <span class="hljs-string">"TRaynor01_1"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4152</span>
+AchievementAward(gv_p1_USER, <span class="hljs-string">"TRaynor01_3"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4194</span>
+AchievementAward(gv_pLAYER_01_USER, <span class="hljs-string">"TRaynor02_2"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4296</span>
+AchievementAward(gv_pLAYER_01_USER, <span class="hljs-string">"TRaynor02_1"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4300</span>
+AchievementAward(gv_pLAYER_01_USER, <span class="hljs-string">"TRaynor02_3"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4304</span>
+AchievementAward(gv_pLAYER_01_USER, <span class="hljs-string">"Anniversary_TRaynor02"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4204</span>
+AchievementAward(gv_pLAYER01_USER, <span class="hljs-string">"TRaynor03_3"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4208</span>
+AchievementAward(gv_pLAYER01_USER, <span class="hljs-string">"Anniversary_TRaynor03"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4275</span>
+AchievementAward(gv_pLAYER01_USER, <span class="hljs-string">"TRaynor03_1"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4279</span>
+AchievementAward(gv_pLAYER01_USER, <span class="hljs-string">"TRaynor03_2"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L17374</span>
+AchievementAward(<span class="hljs-number">1</span>, <span class="hljs-string">"IhanCrystal"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L26240</span>
+AchievementAward(<span class="hljs-number">1</span>, <span class="hljs-string">"TStory01_12"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L26317</span>
+AchievementAward(<span class="hljs-number">1</span>, <span class="hljs-string">"TStory01_11"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4255</span>
+AchievementAward(gv_p01_USER, <span class="hljs-string">"TTosh01_3"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4298</span>
+AchievementAward(gv_p01_USER, <span class="hljs-string">"FeatOfStrength_TTosh01"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4358</span>
+AchievementAward(gv_p01_USER, <span class="hljs-string">"TTosh01_1"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4690</span>
+AchievementAward(gv_p01_USER, <span class="hljs-string">"TTosh01_2"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4694</span>
+AchievementAward(gv_p01_USER, <span class="hljs-string">"Anniversary_TTosh01"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3457</span>
+AchievementAward(gv_p1_USER, <span class="hljs-string">"FeatOfStrength_TTosh02"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3538</span>
+AchievementAward(gv_p1_USER, <span class="hljs-string">"TTosh02_1"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3542</span>
+AchievementAward(gv_p1_USER, <span class="hljs-string">"TTosh02_2"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3546</span>
+AchievementAward(gv_p1_USER, <span class="hljs-string">"TTosh02_3"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3550</span>
+AchievementAward(gv_p1_USER, <span class="hljs-string">"Anniversary_TTosh02"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4560</span>
+AchievementAward(gv_p1_USER, <span class="hljs-string">"TTosh03A_1"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4564</span>
+AchievementAward(gv_p1_USER, <span class="hljs-string">"TTosh03A_2"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4568</span>
+AchievementAward(gv_p1_USER, <span class="hljs-string">"TTosh03A_3"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4852</span>
+AchievementAward(gv_pLAYER01_USER, <span class="hljs-string">"TTosh03B_2"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4967</span>
+AchievementAward(gv_pLAYER01_USER, <span class="hljs-string">"TTosh03B_1"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4971</span>
+AchievementAward(gv_pLAYER01_USER, <span class="hljs-string">"TTosh03B_3"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3924</span>
+AchievementAward(gv_p1_USER, <span class="hljs-string">"TTychus01_1"</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,433 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>User Data Instance / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: User Data Instance"/>
+                <meta property="og:description" content="Returns an instance for the given user type by index. User types are defined within the Data module.
+
+Returns: userinstance [ userinstance ]"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="user-data-instance"><a class="markdownIt-Anchor" href="#user-data-instance">#</a> User Data Instance</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — User data instance <strong>index</strong> for <strong>userType</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Function</code></p>
+</blockquote>
+<p>Returns an instance for the given user type by index. User types are defined within the Data module.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>string</code> <em>[ gamelink::User ]</em> — User Type</li>
+<li><code>int</code> — Index</li>
+</ul>
+<p>Returns — <code>string</code> <em>[ userinstance ]</em></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-built_in">string</span> <span class="hljs-title">UserDataInstance</span><span class="hljs-params">(<span class="hljs-built_in">string</span> inType, <span class="hljs-keyword">int</span> inIndex)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#user-data-basic">User Data / Basic</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/user-data-instance-count">Number Of User Data Instances</a></strong> — ( UserDataInstanceCount )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-user-data-instance-get-index">Index Of User Data Instance</a></strong> — ( libNtve_gf_UserDataInstanceGetIndex )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> <em>[ userinstance ]</em> — <strong><a href="/galaxy/reference/user-data-instance">User Data Instance</a></strong> — ( UserDataInstance )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/user-data-field-count">Number Of User Data Fields</a></strong> — ( UserDataFieldCount )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> <em>[ userfield ]</em> — <strong><a href="/galaxy/reference/user-data-field">User Data Field</a></strong> — ( UserDataField )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-user-data-type">UserDataType</a> ]</em> — <strong><a href="/galaxy/reference/user-data-field-type">Type Of User Data Field</a></strong> — ( UserDataFieldType )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/user-data-field-value-count">Value Count Of User Data Field</a></strong> — ( UserDataFieldValueCount )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/user-data-field-is-modifiable">Is User Data Field Modifiable</a></strong> — ( UserDataFieldIsModifiable )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignsswarmstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmstorysc2campaign">#</a> campaigns/swarmstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstory.sc2campaign/base.sc2data/TriggerLibs/SwarmCampaignLib.galaxy#L6569">SwarmCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L6569</span>
+UserDataInstance(<span class="hljs-string">"ConversationTimestamps"</span>, lv_index)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6570</span>
+UserDataInstance(<span class="hljs-string">"ConversationTimestamps"</span>, lv_index)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6571</span>
+UserDataInstance(<span class="hljs-string">"ConversationTimestamps"</span>, lv_index)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6574</span>
+UserDataInstance(<span class="hljs-string">"ConversationTimestamps"</span>, lv_index)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12539</span>
+UserDataInstance(<span class="hljs-string">"KerriganLevels"</span>, lp_kerriganLevel)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12545</span>
+UserDataInstance(<span class="hljs-string">"KerriganLevels"</span>, lp_kerriganLevel)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12551</span>
+UserDataInstance(<span class="hljs-string">"KerriganLevels"</span>, lp_kerriganLevel)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12557</span>
+UserDataInstance(<span class="hljs-string">"KerriganLevels"</span>, lp_kerriganLevel)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13352</span>
+UserDataInstance(<span class="hljs-string">"Scenes"</span>, autoE6D62441_ai)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L15107</span>
+UserDataInstance(<span class="hljs-string">"Maps"</span>, auto085E4190_ai)
+</code></pre>
+<h4 id="campaignsswarmstoryutilsc2mod"><a class="markdownIt-Anchor" href="#campaignsswarmstoryutilsc2mod">#</a> campaigns/swarmstoryutil.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstoryutil.sc2mod/base.sc2data/Lib281DEC45.galaxy#L466">Lib281DEC45.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L466</span>
+UserDataInstance(<span class="hljs-string">"Character"</span>, auto4FB8B176_ai)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L487</span>
+UserDataInstance(<span class="hljs-string">"Character"</span>, auto2DC3C7B3_ai)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L527</span>
+UserDataInstance(<span class="hljs-string">"Character"</span>, auto7E4635CA_ai)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L556</span>
+UserDataInstance(<span class="hljs-string">"Character"</span>, auto3171AB38_ai)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L577</span>
+UserDataInstance(<span class="hljs-string">"Character"</span>, auto4F1F65F6_ai)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L599</span>
+UserDataInstance(<span class="hljs-string">"WriterStates"</span>, lv_index)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2241</span>
+UserDataInstance(<span class="hljs-string">"Character"</span>, auto7D6EB66D_ai)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2315</span>
+UserDataInstance(<span class="hljs-string">"ScriptedScenes"</span>, lv_index)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2333</span>
+UserDataInstance(<span class="hljs-string">"StoryStates"</span>, (DialogControlGetSelectedItem(lib281DEC45_gv_zSS_DebugStoryStateList, <span class="hljs-number">1</span>)-UserDataInstanceCount(<span class="hljs-string">"WriterStates"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2336</span>
+UserDataInstance(<span class="hljs-string">"WriterStates"</span>, DialogControlGetSelectedItem(lib281DEC45_gv_zSS_DebugStoryStateList, <span class="hljs-number">1</span>))
+</code></pre>
+<h4 id="campaignsvoidsc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidsc2campaign">#</a> campaigns/void.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/void.sc2campaign/base.sc2maps/maps/campaign/void/paiur06.sc2map/MapScript.galaxy#L696">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L696</span>
+UserDataInstance(<span class="hljs-string">"CampaignPerk"</span>, autoB586D847_ai)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L746</span>
+UserDataInstance(<span class="hljs-string">"CampaignPerkGroup"</span>, auto85715C34_ai)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1782</span>
+UserDataInstance(<span class="hljs-string">"Clickable"</span>, autoFBE30DB1_ai)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L696</span>
+UserDataInstance(<span class="hljs-string">"CampaignPerk"</span>, autoB586D847_ai)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L746</span>
+UserDataInstance(<span class="hljs-string">"CampaignPerkGroup"</span>, auto85715C34_ai)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1782</span>
+UserDataInstance(<span class="hljs-string">"Clickable"</span>, autoFBE30DB1_ai)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignLib.galaxy#L152">VoidCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L152</span>
+UserDataInstance(<span class="hljs-string">"Maps"</span>, auto13D0B222_ai)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L262</span>
+UserDataInstance(<span class="hljs-string">"CampaignPerkGroup"</span>, autoC48AB1B0_ai)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L276</span>
+UserDataInstance(<span class="hljs-string">"CampaignPerk"</span>, auto640166B0_ai)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L385</span>
+UserDataInstance(<span class="hljs-string">"CampaignPerk"</span>, auto125AB858_ai)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L475</span>
+UserDataInstance(<span class="hljs-string">"CampaignPerk"</span>, auto4718CF27_ai)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L610</span>
+UserDataInstance(<span class="hljs-string">"Maps"</span>, auto4BF17532_ai)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L766</span>
+UserDataInstance(<span class="hljs-string">"Maps"</span>, autoF9C1F36E_ai)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L814</span>
+UserDataInstance(<span class="hljs-string">"CampaignPerk"</span>, autoD497A8FA_ai)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L824</span>
+UserDataInstance(<span class="hljs-string">"CampaignPerkGroup"</span>, auto250D5CDF_ai)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L832</span>
+UserDataInstance(<span class="hljs-string">"CampaignPerk"</span>, autoC368E7AC_ai)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign-2"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign-2">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignMissionLib.galaxy#L1273">VoidCampaignMissionLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1273</span>
+UserDataInstance(<span class="hljs-string">"CampaignPerk"</span>, autoD89F2D02_ai)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1283</span>
+UserDataInstance(<span class="hljs-string">"SpearofAdunUpgrade"</span>, auto2A422365_ai)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1357</span>
+UserDataInstance(<span class="hljs-string">"CampaignPerk"</span>, auto1132B9C5_ai)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7318</span>
+UserDataInstance(<span class="hljs-string">"CampaignPerk"</span>, autoAFC1BA1E_ai)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign-3"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign-3">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignStoryLib.galaxy#L160">VoidCampaignStoryLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L160</span>
+UserDataInstance(<span class="hljs-string">"Scenes"</span>, lv_index)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L166</span>
+UserDataInstance(<span class="hljs-string">"Conversations"</span>, lv_index)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L693</span>
+UserDataInstance(<span class="hljs-string">"Clickable"</span>, auto792D16C3_ai)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L742</span>
+UserDataInstance(<span class="hljs-string">"Clickable"</span>, auto741B8B93_ai)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L768</span>
+UserDataInstance(<span class="hljs-string">"Clickable"</span>, auto67314A6A_ai)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L790</span>
+UserDataInstance(<span class="hljs-string">"Clickable"</span>, auto2104D7CD_ai)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L814</span>
+UserDataInstance(<span class="hljs-string">"WriterStates"</span>, lv_stateIndex)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L844</span>
+UserDataInstance(<span class="hljs-string">"StoryStates"</span>, lv_stateIndex)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L867</span>
+UserDataInstance(<span class="hljs-string">"StoryStates"</span>, lv_stateIndex)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L890</span>
+UserDataInstance(<span class="hljs-string">"StoryStates"</span>, lv_stateIndex)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign-4"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign-4">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignUILib.galaxy#L1779">VoidCampaignUILib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1779</span>
+UserDataInstance(<span class="hljs-string">"Clickable"</span>, lv_clickableIndex)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1779</span>
+UserDataInstance(<span class="hljs-string">"Clickable"</span>, lv_clickableIndex)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1780</span>
+UserDataInstance(<span class="hljs-string">"Clickable"</span>, lv_clickableIndex)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1783</span>
+UserDataInstance(<span class="hljs-string">"Clickable"</span>, lv_clickableIndex)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1785</span>
+UserDataInstance(<span class="hljs-string">"Clickable"</span>, lv_clickableIndex)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2423</span>
+UserDataInstance(<span class="hljs-string">"SpearofAdunUpgrade"</span>, autoF43AEDEA_ai)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2447</span>
+UserDataInstance(<span class="hljs-string">"CampaignPerkGroup"</span>, autoAD50C843_ai)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2464</span>
+UserDataInstance(<span class="hljs-string">"CampaignPerk"</span>, auto52E4901E_ai)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3266</span>
+UserDataInstance(<span class="hljs-string">"Clickable"</span>, auto8B731360_ai)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4964</span>
+UserDataInstance(<span class="hljs-string">"CampaignPerkGroup"</span>, auto4958AC6C_ai)
+</code></pre>
+<h4 id="modscoresc2mod"><a class="markdownIt-Anchor" href="#modscoresc2mod">#</a> mods/core.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/core.sc2mod/base.sc2data/TriggerLibs/NativeLib.galaxy#L6105">NativeLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L6105</span>
+UserDataInstance(lp_userType, lv_index)
+</code></pre>
+<h4 id="modsheroesdatastormmod"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/GameLib.galaxy#L17942">GameLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L17942</span>
+UserDataInstance(libGame_gv_wheelCmdUserType, lv_i)
+</code></pre>
+<h4 id="modslibertysc2mod"><a class="markdownIt-Anchor" href="#modslibertysc2mod">#</a> mods/liberty.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/liberty.sc2mod/base.sc2data/TriggerLibs/LibertyLib.galaxy#L960">LibertyLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L960</span>
+UserDataInstance(auto0F553801_userType, auto0F553801_i)
+</code></pre>
+<h4 id="modsmissionpackscampaigncommonsc2mod"><a class="markdownIt-Anchor" href="#modsmissionpackscampaigncommonsc2mod">#</a> mods/missionpacks/campaigncommon.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/campaigncommon.sc2mod/base.sc2data/LibComC.galaxy#L939">LibComC.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L939</span>
+UserDataInstance(<span class="hljs-string">"Maps"</span>, autoEE21E2F4_ai)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1475</span>
+UserDataInstance(<span class="hljs-string">"MissionObjective"</span>, lv_index)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1483</span>
+UserDataInstance(<span class="hljs-string">"MissionObjective"</span>, lv_index)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1567</span>
+UserDataInstance(<span class="hljs-string">"Timestamps"</span>, lv_index)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1632</span>
+UserDataInstance(<span class="hljs-string">"Timestamps"</span>, lv_index)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2710</span>
+UserDataInstance(<span class="hljs-string">"CampaignPerk"</span>, auto1802D124_ai)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2787</span>
+UserDataInstance(<span class="hljs-string">"CampaignPerk"</span>, auto3E2E736C_ai)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2794</span>
+UserDataInstance(<span class="hljs-string">"CampaignPerk"</span>, auto25F557A7_ai)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2816</span>
+UserDataInstance(<span class="hljs-string">"CampaignPerk"</span>, autoC862D1E5_ai)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3322</span>
+UserDataInstance(<span class="hljs-string">"Scenes"</span>, autoA514DBDD_ai)
+</code></pre>
+<h4 id="modsmissionpacksnovacampaignsc2mod"><a class="markdownIt-Anchor" href="#modsmissionpacksnovacampaignsc2mod">#</a> mods/missionpacks/novacampaign.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/novacampaign.sc2mod/base.sc2data/LibNCMI.galaxy#L2322">LibNCMI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2322</span>
+UserDataInstance(<span class="hljs-string">"CampaignPerk"</span>, auto8C73AC62_ai)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2357</span>
+UserDataInstance(<span class="hljs-string">"CampaignPerk"</span>, auto833582E7_ai)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2364</span>
+UserDataInstance(<span class="hljs-string">"CampaignPerk"</span>, auto4EDF563F_ai)
+</code></pre>
+<h4 id="modsmissionpacksnovacampaignsc2mod-2"><a class="markdownIt-Anchor" href="#modsmissionpacksnovacampaignsc2mod-2">#</a> mods/missionpacks/novacampaign.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/novacampaign.sc2mod/base.sc2data/LibNCST.galaxy#L159">LibNCST.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L159</span>
+UserDataInstance(<span class="hljs-string">"Scenes"</span>, lv_index)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L166</span>
+UserDataInstance(<span class="hljs-string">"Conversations"</span>, lv_index)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L615</span>
+UserDataInstance(<span class="hljs-string">"Clickable"</span>, auto792D16C3_ai)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L655</span>
+UserDataInstance(<span class="hljs-string">"Clickable"</span>, auto741B8B93_ai)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L680</span>
+UserDataInstance(<span class="hljs-string">"Clickable"</span>, auto67314A6A_ai)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L701</span>
+UserDataInstance(<span class="hljs-string">"Clickable"</span>, auto2104D7CD_ai)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L725</span>
+UserDataInstance(<span class="hljs-string">"WriterStates"</span>, lv_stateIndex)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L755</span>
+UserDataInstance(<span class="hljs-string">"StoryStates"</span>, lv_stateIndex)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L778</span>
+UserDataInstance(<span class="hljs-string">"StoryStates"</span>, lv_stateIndex)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L801</span>
+UserDataInstance(<span class="hljs-string">"StoryStates"</span>, lv_stateIndex)
+</code></pre>
+<h4 id="modsmissionpacksnovacampaignsc2mod-3"><a class="markdownIt-Anchor" href="#modsmissionpacksnovacampaignsc2mod-3">#</a> mods/missionpacks/novacampaign.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/novacampaign.sc2mod/base.sc2data/LibNCUI.galaxy#L701">LibNCUI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L701</span>
+UserDataInstance(<span class="hljs-string">"CampaignPerk"</span>, auto5BE8490E_ai)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L724</span>
+UserDataInstance(<span class="hljs-string">"CampaignTechItem"</span>, auto6993E792_ai)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1128</span>
+UserDataInstance(<span class="hljs-string">"CampaignPerk"</span>, auto833E559F_ai)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1139</span>
+UserDataInstance(<span class="hljs-string">"CampaignTechItem"</span>, auto7D186AAC_ai)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1541</span>
+UserDataInstance(<span class="hljs-string">"Clickable"</span>, auto8B731360_ai)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1595</span>
+UserDataInstance(<span class="hljs-string">"CampaignTechItem"</span>, autoF0F09191_ai)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1766</span>
+UserDataInstance(<span class="hljs-string">"CampaignTechItem"</span>, auto808FC461_ai)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2481</span>
+UserDataInstance(<span class="hljs-string">"CampaignPerk"</span>, auto02DE18CB_ai)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2620</span>
+UserDataInstance(<span class="hljs-string">"CampaignPerkGroup"</span>, auto88841389_ai)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2625</span>
+UserDataInstance(<span class="hljs-string">"CampaignPerk"</span>, auto2EB6B837_ai)
+</code></pre>
+<h4 id="modsmissionpacksnovacampaignsc2mod-4"><a class="markdownIt-Anchor" href="#modsmissionpacksnovacampaignsc2mod-4">#</a> mods/missionpacks/novacampaign.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/novacampaign.sc2mod/base.sc2data/LibNovC.galaxy#L256">LibNovC.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L256</span>
+UserDataInstance(<span class="hljs-string">"CampaignTechItem"</span>, autoF251B207_ai)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L433</span>
+UserDataInstance(<span class="hljs-string">"CampaignTechItem"</span>, autoA6D914FE_ai)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L516</span>
+UserDataInstance(<span class="hljs-string">"CampaignPerkGroup"</span>, auto24839C6C_ai)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L529</span>
+UserDataInstance(<span class="hljs-string">"CampaignPerk"</span>, autoCCC6D65B_ai)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

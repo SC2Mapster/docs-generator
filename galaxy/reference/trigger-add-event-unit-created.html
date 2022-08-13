@@ -1,0 +1,471 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Unit Is Created / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Unit Is Created"/>
+                <meta property="og:description" content="This event fires when a unit is created.  Use &quot;Created Unit&quot; to refer to the unit created.  Use &quot;Ability That Created Unit&quot; to get the ability that created the unit.  Use &quot;Behavior That Created Unit&quot; to get the behavior that created the unit."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="unit-is-created"><a class="markdownIt-Anchor" href="#unit-is-created">#</a> Unit Is Created</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — <strong>creator</strong> creates a unit with ability <strong>ability</strong> or behavior <strong>behavior</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Event</code></p>
+</blockquote>
+<p>This event fires when a unit is created.  Use <em>“Created Unit”</em> to refer to the unit created.  Use <em>“Ability That Created Unit”</em> to get the ability that created the unit.  Use <em>“Behavior That Created Unit”</em> to get the behavior that created the unit.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>unitref</code> <em>[ unit ]</em> — Creator</li>
+<li><code>string</code> <em>[ gamelink::Abil ]</em> — Ability</li>
+<li><code>string</code> <em>[ gamelink::Behavior ]</em> — Behavior</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">TriggerAddEventUnitCreated</span><span class="hljs-params">(
+	trigger t,
+	unitref u,
+	<span class="hljs-built_in">string</span> creatorAbil,
+	<span class="hljs-built_in">string</span> creatorBehavior,
+)</span></span>;
+</code></pre>
+<h3 id="event-parameters"><a class="markdownIt-Anchor" href="#event-parameters">#</a> Event parameters</h3>
+<ul>
+<li><a href="/galaxy/reference/event-unit-created-unit">Created Unit</a> — EventUnitCreatedUnit</li>
+<li><a href="/galaxy/reference/event-unit-created-behavior">Behavior That Created Unit</a> — EventUnitCreatedBehavior</li>
+<li><a href="/galaxy/reference/event-unit-created-abil">Ability That Created Unit</a> — EventUnitCreatedAbil</li>
+<li><a href="/galaxy/reference/event-unit">Triggering Unit</a> — EventUnit</li>
+</ul>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#ability-basic">Ability / Basic</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-ability-remove">Remove Ability</a></strong> — ( UnitAbilityRemove )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-ability-add">Add Ability</a></strong> — ( UnitAbilityAdd )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-unit-ability">Unit Uses Ability</a></strong> — ( TriggerAddEventUnitAbility )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-unit-ability-auto-cast-change">Unit Changes Ability Auto Cast State</a></strong> — ( TriggerAddEventUnitAbilityAutoCastChange )</li>
+<li><em><strong>[F]</strong></em> — <code>abilcmd</code> — <strong><a href="/galaxy/reference/event-unit-ability">Triggering Ability</a></strong> — ( EventUnitAbility )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-ability-stage">AbilityStage</a> ]</em> — <strong><a href="/galaxy/reference/event-unit-ability-stage">Triggering Ability Stage</a></strong> — ( EventUnitAbilityStage )</li>
+<li><em><strong>[F]</strong></em> — <code>point</code> — <strong><a href="/galaxy/reference/event-unit-target-point">Triggering Ability Target Point</a></strong> — ( EventUnitTargetPoint )</li>
+<li><em><strong>[F]</strong></em> — <code>unit</code> — <strong><a href="/galaxy/reference/event-unit-target-unit">Triggering Ability Target Unit</a></strong> — ( EventUnitTargetUnit )</li>
+<li><em><strong>[F]</strong></em> — <code>unit</code> — <strong><a href="/galaxy/reference/event-unit-ability-other-unit">Triggering Ability Other Unit</a></strong> — ( EventUnitAbilityOtherUnit )</li>
+<li><em><strong>[F]</strong></em> — <code>abilcmd</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-event-item-ability-or-unit-ability">Ability From Item or Trigger</a></strong> — ( libNtve_gf_EventItemAbilityOrUnitAbility )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-unit-created">Unit Is Created</a></strong> — ( TriggerAddEventUnitCreated )</li>
+<li><em><strong>[F]</strong></em> — <code>unit</code> — <strong><a href="/galaxy/reference/event-unit-created-unit">Created Unit</a></strong> — ( EventUnitCreatedUnit )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> <em>[ gamelink::Behavior ]</em> — <strong><a href="/galaxy/reference/event-unit-created-behavior">Behavior That Created Unit</a></strong> — ( EventUnitCreatedBehavior )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> <em>[ gamelink::Abil ]</em> — <strong><a href="/galaxy/reference/event-unit-created-abil">Ability That Created Unit</a></strong> — ( EventUnitCreatedAbil )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-ability-show">Show/Hide Ability For Unit</a></strong> — ( UnitAbilityShow )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/unit-ability-check">Ability Enabled For Unit</a></strong> — ( UnitAbilityCheck )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/unit-ability-count">Number Of Abilities On Unit</a></strong> — ( UnitAbilityCount )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> <em>[ gamelink::Abil ]</em> — <strong><a href="/galaxy/reference/unit-ability-get">Unit Ability</a></strong> — ( UnitAbilityGet )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> <em>[ gamelink::Abil ]</em> — <strong><a href="/galaxy/reference/lib-ntve-gf-unit-ability-get-by-type">Unit Ability By Class</a></strong> — ( libNtve_gf_UnitAbilityGetByType )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/unit-check-abil-cmd-state">Unit Ability Command State</a></strong> — ( UnitCheckAbilCmdState )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/unit-abil-order-state-flags">Unit Ability Order State (Flags)</a></strong> — ( UnitAbilOrderStateFlags )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/unit-ability-exists">Unit Has Ability</a></strong> — ( UnitAbilityExists )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-ability-enable">Enable/Disable Ability For Unit</a></strong> — ( UnitAbilityEnable )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-ability-change-level">Add Level To Unit Ability</a></strong> — ( UnitAbilityChangeLevel )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-ability-change-link">Replace Unit Ability</a></strong> — ( UnitAbilityChangeLink )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-ability-change-card-id">Set Ability Default Submenu</a></strong> — ( UnitAbilityChangeCardId )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/unit-ability-get-level">Current Level For Unit Ability</a></strong> — ( UnitAbilityGetLevel )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/unit-ability-max-level">Maximum Level For Unit Ability</a></strong> — ( UnitAbilityMaxLevel )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-ability-matches-filters">Ability Matches Filters</a></strong> — ( libNtve_gf_AbilityMatchesFilters )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> <em>[ gamelink::Abil ]</em> — <strong><a href="/galaxy/reference/lib-ntve-gf-unit-ability-by-filters">Unit Ability By Filters</a></strong> — ( libNtve_gf_UnitAbilityByFilters )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> — <strong><a href="/galaxy/reference/unit-ability-get-card-id">Unit Ability Default Submenu</a></strong> — ( UnitAbilityGetCardId )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/tvalerian02b.sc2map/MapScript.galaxy#L2799">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2799</span>
+TriggerAddEventUnitCreated(gt_CatchtheMutaPart1, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2799</span>
+TriggerAddEventUnitCreated(gt_CatchtheMutaPart1, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1190</span>
+TriggerAddEventUnitCreated(gt_CreatedUnit, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1610</span>
+TriggerAddEventUnitCreated(gt_CreatedUnit, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1527</span>
+TriggerAddEventUnitCreated(gt_UpdateProtossRemainingTemplarArchonCreated, null, <span class="hljs-string">"ArchonWarp"</span>, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2115</span>
+TriggerAddEventUnitCreated(gt_RevealNewRedBaseFrontUnits, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2189</span>
+TriggerAddEventUnitCreated(gt_RevealNewRedBaseBackUnits, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1663</span>
+TriggerAddEventUnitCreated(gt_AttachInfoTextUmojans, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1690</span>
+TriggerAddEventUnitCreated(gt_AttachInfoTextPlayer, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1775</span>
+TriggerAddEventUnitCreated(gt_SentryBotUnitInfo, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2001</span>
+TriggerAddEventUnitCreated(gt_PlayerUnitSpawned, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4933</span>
+TriggerAddEventUnitCreated(gt_BattlecruiserTrained, null, <span class="hljs-string">"SJMercStarportTrain"</span>, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6227</span>
+TriggerAddEventUnitCreated(gt_AchievementControl70Mutalisks, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2021</span>
+TriggerAddEventUnitCreated(gt_ArchonsMerged, null, <span class="hljs-string">"ArchonWarp"</span>, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1047</span>
+TriggerAddEventUnitCreated(gt_UltraliskEscaped, UnitRefFromUnit(UnitFromId(<span class="hljs-number">48</span>)), <span class="hljs-string">"FreeUltralisk"</span>, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2013</span>
+TriggerAddEventUnitCreated(gt_TorrasqueCreatedRevived, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2021</span>
+TriggerAddEventUnitCreated(gt_ArchonsMerged, null, <span class="hljs-string">"ArchonWarp"</span>, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1047</span>
+TriggerAddEventUnitCreated(gt_UltraliskEscaped, UnitRefFromUnit(UnitFromId(<span class="hljs-number">48</span>)), <span class="hljs-string">"FreeUltralisk"</span>, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2013</span>
+TriggerAddEventUnitCreated(gt_TorrasqueCreatedRevived, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1190</span>
+TriggerAddEventUnitCreated(gt_CreatedUnit, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1610</span>
+TriggerAddEventUnitCreated(gt_CreatedUnit, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1527</span>
+TriggerAddEventUnitCreated(gt_UpdateProtossRemainingTemplarArchonCreated, null, <span class="hljs-string">"ArchonWarp"</span>, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2115</span>
+TriggerAddEventUnitCreated(gt_RevealNewRedBaseFrontUnits, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2189</span>
+TriggerAddEventUnitCreated(gt_RevealNewRedBaseBackUnits, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1663</span>
+TriggerAddEventUnitCreated(gt_AttachInfoTextUmojans, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1690</span>
+TriggerAddEventUnitCreated(gt_AttachInfoTextPlayer, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1775</span>
+TriggerAddEventUnitCreated(gt_SentryBotUnitInfo, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2001</span>
+TriggerAddEventUnitCreated(gt_PlayerUnitSpawned, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4933</span>
+TriggerAddEventUnitCreated(gt_BattlecruiserTrained, null, <span class="hljs-string">"SJMercStarportTrain"</span>, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6227</span>
+TriggerAddEventUnitCreated(gt_AchievementControl70Mutalisks, null, null, null)
+</code></pre>
+<h4 id="campaignsswarmstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmstorysc2campaign">#</a> campaigns/swarmstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstory.sc2campaign/base.sc2data/TriggerLibs/SwarmCampaignLib.galaxy#L15950">SwarmCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L15950</span>
+TriggerAddEventUnitCreated(libSwaC_gt_ZS_CinematicModeGlowOff, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L16377</span>
+TriggerAddEventUnitCreated(libSwaC_gt_ZS_CampaignUnitCreated, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L17240</span>
+TriggerAddEventUnitCreated(libSwaC_gt_ZS_OverlordRally, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L18734</span>
+TriggerAddEventUnitCreated(libSwaC_gt_ZS_CampaignStatsUnitCreated, null, null, null)
+</code></pre>
+<h4 id="campaignsvoidsc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidsc2campaign">#</a> campaigns/void.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/void.sc2campaign/base.sc2maps/maps/campaign/sc2tutorial.sc2map/MapScript.galaxy#L3224">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3224</span>
+TriggerAddEventUnitCreated(gt_InfoTextUnitCreated, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8545</span>
+TriggerAddEventUnitCreated(gt_TerranMakeMarinesUpdateObjective, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8714</span>
+TriggerAddEventUnitCreated(gt_TerranMakeMarinesComplete, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10302</span>
+TriggerAddEventUnitCreated(gt_ZergMakeOverlordComplete, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10750</span>
+TriggerAddEventUnitCreated(gt_ZergMakeDronesReminderController, UnitRefFromVariable(<span class="hljs-string">"gv_zergHatchery"</span>), null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10818</span>
+TriggerAddEventUnitCreated(gt_ZergMakeDronesComplete, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11925</span>
+TriggerAddEventUnitCreated(gt_ZergMakeZerglingsMorphStarted, UnitRefFromVariable(<span class="hljs-string">"gv_zergHatchery"</span>), null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12005</span>
+TriggerAddEventUnitCreated(gt_ZergMakeZerglingsComplete, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L14119</span>
+TriggerAddEventUnitCreated(gt_ZergMakeRoachesMorphStarted, UnitRefFromVariable(<span class="hljs-string">"gv_zergHatchery"</span>), null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L14200</span>
+TriggerAddEventUnitCreated(gt_ZergMakeRoachesComplete, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5335</span>
+TriggerAddEventUnitCreated(gt_VictoryAmonBeamController, UnitRefFromVariable(<span class="hljs-string">"gv_amonUnit"</span>), <span class="hljs-string">"AmonHostDeathBeam"</span>, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L944</span>
+TriggerAddEventUnitCreated(gt_CyberspaceColoringUnitCreated, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3654</span>
+TriggerAddEventUnitCreated(gt_HybridCreated, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6335</span>
+TriggerAddEventUnitCreated(gt_VoidThrasherSpawnsUnitGroup, UnitRefFromVariable(<span class="hljs-string">"gv_voidThrasher"</span>), <span class="hljs-string">"NarudEpilogueTrain"</span>, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3224</span>
+TriggerAddEventUnitCreated(gt_InfoTextUnitCreated, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8545</span>
+TriggerAddEventUnitCreated(gt_TerranMakeMarinesUpdateObjective, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8714</span>
+TriggerAddEventUnitCreated(gt_TerranMakeMarinesComplete, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10302</span>
+TriggerAddEventUnitCreated(gt_ZergMakeOverlordComplete, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10750</span>
+TriggerAddEventUnitCreated(gt_ZergMakeDronesReminderController, UnitRefFromVariable(<span class="hljs-string">"gv_zergHatchery"</span>), null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10818</span>
+TriggerAddEventUnitCreated(gt_ZergMakeDronesComplete, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11925</span>
+TriggerAddEventUnitCreated(gt_ZergMakeZerglingsMorphStarted, UnitRefFromVariable(<span class="hljs-string">"gv_zergHatchery"</span>), null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12005</span>
+TriggerAddEventUnitCreated(gt_ZergMakeZerglingsComplete, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L14119</span>
+TriggerAddEventUnitCreated(gt_ZergMakeRoachesMorphStarted, UnitRefFromVariable(<span class="hljs-string">"gv_zergHatchery"</span>), null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L14200</span>
+TriggerAddEventUnitCreated(gt_ZergMakeRoachesComplete, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5335</span>
+TriggerAddEventUnitCreated(gt_VictoryAmonBeamController, UnitRefFromVariable(<span class="hljs-string">"gv_amonUnit"</span>), <span class="hljs-string">"AmonHostDeathBeam"</span>, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L944</span>
+TriggerAddEventUnitCreated(gt_CyberspaceColoringUnitCreated, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3654</span>
+TriggerAddEventUnitCreated(gt_HybridCreated, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6335</span>
+TriggerAddEventUnitCreated(gt_VoidThrasherSpawnsUnitGroup, UnitRefFromVariable(<span class="hljs-string">"gv_voidThrasher"</span>), <span class="hljs-string">"NarudEpilogueTrain"</span>, null)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignLib.galaxy#L10699">VoidCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L10699</span>
+TriggerAddEventUnitCreated(libVoiC_gt_PC_StatUnitCreated, null, null, null)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign-2"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign-2">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignMissionLib.galaxy#L8012">VoidCampaignMissionLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L8012</span>
+TriggerAddEventUnitCreated(libVCMI_gt_PM_CampaignUnitCreated, null, null, null)
+</code></pre>
+<h4 id="modsheroesstormmod"><a class="markdownIt-Anchor" href="#modsheroesstormmod">#</a> mods/heroes.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroes.stormmod/base.stormmaps/maps/heroes/singleplayermaps/startingexperience/tutorial01.stormmap/MapScript.galaxy#L2034">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2034</span>
+TriggerAddEventUnitCreated(gt_IntroRaynorIsCreated, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6347</span>
+TriggerAddEventUnitCreated(gt__2A_EscapeAbathurUsedNest, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2034</span>
+TriggerAddEventUnitCreated(gt_IntroRaynorIsCreated, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6347</span>
+TriggerAddEventUnitCreated(gt__2A_EscapeAbathurUsedNest, null, null, null)
+</code></pre>
+<h4 id="modsheroesbrawlmodsarenamodemodsgardenarenastormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsarenamodemodsgardenarenastormmod">#</a> mods/heroesbrawlmods/arenamodemods/gardenarena.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/arenamodemods/gardenarena.stormmod/base.stormdata/LibAMGT.galaxy#L1508">LibAMGT.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1508</span>
+TriggerAddEventUnitCreated(libAMGT_gt_ARMGardenSeedDropped, null, null, null)
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodsblackheartsrevengestormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodsblackheartsrevengestormmod">#</a> mods/heroesbrawlmods/brawlmapmods/blackheartsrevenge.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/blackheartsrevenge.stormmod/base.stormdata/LibMDoE.galaxy#L2619">LibMDoE.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2619</span>
+TriggerAddEventUnitCreated(libMDoE_gt_CannonballIsFired, null, null, null)
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodscoopdeadmansstandstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodscoopdeadmansstandstormmod">#</a> mods/heroesbrawlmods/brawlmapmods/coop/deadmansstand.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/coop/deadmansstand.stormmod/base.stormdata/LibPEB1.galaxy#L5767">LibPEB1.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L5767</span>
+TriggerAddEventUnitCreated(libPEB1_gt_ToxicNestDamageBehavior, null, <span class="hljs-string">"AbathurToxicNest"</span>, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7273</span>
+TriggerAddEventUnitCreated(libPEB1_gt_ScourgeMissileCreated, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7479</span>
+TriggerAddEventUnitCreated(libPEB1_gt_ArchangelManageAdds, null, <span class="hljs-string">"ArchangelDropUltralisk"</span>, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7480</span>
+TriggerAddEventUnitCreated(libPEB1_gt_ArchangelManageAdds, null, <span class="hljs-string">"ArchangelChaserBanelings"</span>, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7481</span>
+TriggerAddEventUnitCreated(libPEB1_gt_ArchangelManageAdds, null, <span class="hljs-string">"ArchangelHellfireMissiles"</span>, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7482</span>
+TriggerAddEventUnitCreated(libPEB1_gt_ArchangelManageAdds, null, <span class="hljs-string">"ArchangelToxicSludgling"</span>, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7483</span>
+TriggerAddEventUnitCreated(libPEB1_gt_ArchangelManageAdds, null, <span class="hljs-string">"ArchangelVileTumor"</span>, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7484</span>
+TriggerAddEventUnitCreated(libPEB1_gt_ArchangelManageAdds, null, <span class="hljs-string">"ArchangelBileLauncher"</span>, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4487</span>
+TriggerAddEventUnitCreated(libPEB1_gt_ToxicNestDamageBehavior, null, <span class="hljs-string">"AbathurToxicNest"</span>, null)
+</code></pre>
+<h4 id="modsheroesdatastormmod"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/GameDataHelperLib.galaxy#L4242">GameDataHelperLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4242</span>
+TriggerAddEventUnitCreated(libGDHL_gt_SummonedUnitAPApplication, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5454</span>
+TriggerAddEventUnitCreated(libGDHL_gt_HeroAbathurLocustNestSetFacing, null, <span class="hljs-string">"AbathurLocustNest"</span>, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5492</span>
+TriggerAddEventUnitCreated(libGDHL_gt_HeroAbathurLocustNestCast, null, <span class="hljs-string">"AbathurLocustNest"</span>, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5958</span>
+TriggerAddEventUnitCreated(libGDHL_gt_HeroAbathurMonstrosityAddSymbioteStacks, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6211</span>
+TriggerAddEventUnitCreated(libGDHL_gt_HeroArtanisSpearofAdunPurifierBeamUnitCreated, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6501</span>
+TriggerAddEventUnitCreated(libGDHL_gt_HeroArthasArmyoftheDeadGhoulSpawned, null, <span class="hljs-string">"ArthasGhoulMagazine"</span>, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6942</span>
+TriggerAddEventUnitCreated(libGDHL_gt_HeroAzmodanDemonicInvasionAddUnitstoUnitGroup, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10472</span>
+TriggerAddEventUnitCreated(libGDHL_gt_HeroJainaWaterElementalCreated, null, <span class="hljs-string">"JainaSummonWaterElemental"</span>, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10759</span>
+TriggerAddEventUnitCreated(libGDHL_gt_HeroJainaFrostbiteIceblockItem, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11000</span>
+TriggerAddEventUnitCreated(libGDHL_gt_HeroKaelthasPhoenixSpawnSelection, null, <span class="hljs-string">"KaelthasPhoenix"</span>, null)
+</code></pre>
+<h4 id="modsheroesdatastormmod-2"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-2">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/GameLib.galaxy#L16375">GameLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L16375</span>
+TriggerAddEventUnitCreated(libGame_gt_ConfineCreatedUnitsToBaseUntilCountdownEnds, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L16452</span>
+TriggerAddEventUnitCreated(libGame_gt_RemoveUnitsCreatedOutsideOfBaseUntilCountdownEnds, null, null, null)
+</code></pre>
+<h4 id="modsheroesdatastormmod-3"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-3">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/MapMechanicsLib.galaxy#L4319">MapMechanicsLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4319</span>
+TriggerAddEventUnitCreated(libMapM_gt_SummonerMinionLanerScaling, null, null, null)
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodsblackheartsbaystormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodsblackheartsbaystormmod">#</a> mods/heroesmapmods/battlegroundmapmods/blackheartsbay.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/blackheartsbay.stormmod/base.stormdata/LibBBAY.galaxy#L1193">LibBBAY.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1193</span>
+TriggerAddEventUnitCreated(libBBAY_gt_MMBBCannonballsHeroSpawned, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1757</span>
+TriggerAddEventUnitCreated(libBBAY_gt_MMBBCannonballsBattleshipShootingMissileCreated, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2201</span>
+TriggerAddEventUnitCreated(libBBAY_gt_MMBBCannonballsDoubloonDropped, null, null, null)
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodshanamurastormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodshanamurastormmod">#</a> mods/heroesmapmods/battlegroundmapmods/hanamura.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/hanamura.stormmod/base.stormdata/LibNPLD.galaxy#L929">LibNPLD.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L929</span>
+TriggerAddEventUnitCreated(libNPLD_gt_PlayerCreatesTurretFromMapMechanicAbility, null, <span class="hljs-string">"MapMechanicAbilityTarget"</span>, null)
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodshauntedminesstormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodshauntedminesstormmod">#</a> mods/heroesmapmods/battlegroundmapmods/hauntedmines.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/hauntedmines.stormmod/base.stormdata/LibMHtM.galaxy#L1968">LibMHtM.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1968</span>
+TriggerAddEventUnitCreated(libMHtM_gt_MMHMSkullDroppedShareVision, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2025</span>
+TriggerAddEventUnitCreated(libMHtM_gt_MMHMSkullDroppedVerifyPathable, null, null, null)
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodsinfernalshrinesstormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodsinfernalshrinesstormmod">#</a> mods/heroesmapmods/battlegroundmapmods/infernalshrines.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/infernalshrines.stormmod/base.stormdata/LibMSHE.galaxy#L1379">LibMSHE.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1379</span>
+TriggerAddEventUnitCreated(libMSHE_gt_MMISCursedEventMinionTracker, null, <span class="hljs-string">"CursedShrineSpawn"</span>, null)
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodsoverwatchdatastormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodsoverwatchdatastormmod">#</a> mods/heroesmapmods/battlegroundmapmods/overwatchdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/overwatchdata.stormmod/base.stormdata/LibOVER.galaxy#L528">LibOVER.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L528</span>
+TriggerAddEventUnitCreated(libOVER_gt_BioticEmitterScaling, null, <span class="hljs-string">"MapMechanicAbilityTarget2"</span>, null)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

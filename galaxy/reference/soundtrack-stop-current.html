@@ -1,0 +1,374 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Stop Soundtrack (Current) / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Stop Soundtrack (Current)"/>
+                <meta property="og:description" content="Stops a soundtrack for the specified player group. Queued soundtracks are not affected."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="stop-soundtrack-current"><a class="markdownIt-Anchor" href="#stop-soundtrack-current">#</a> Stop Soundtrack (Current)</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Stop current <strong>category</strong> soundtrack for <strong>players</strong> (<strong>fade</strong>)<br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Stops a soundtrack for the specified player group. Queued soundtracks are not affected.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>playergroup</code> — Players</li>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-soundtrack-category">SoundtrackCategory</a> ]</em> — Category</li>
+<li><code>bool</code> <em>[ preset::<a href="/galaxy/reference/preset-sound-fade-option">SoundFadeOption</a> ]</em> — Fade</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">SoundtrackStopCurrent</span><span class="hljs-params">(
+	playergroup players,
+	<span class="hljs-keyword">int</span> category,
+	<span class="hljs-keyword">bool</span> fade,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#sound-soundtracks">Sound / Soundtracks</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/soundtrack-play">Play Soundtrack</a></strong> — ( SoundtrackPlay )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/soundtrack-pause">Pause Soundtrack</a></strong> — ( SoundtrackPause )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/soundtrack-stop-current">Stop Soundtrack (Current)</a></strong> — ( SoundtrackStopCurrent )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/soundtrack-stop">Stop Soundtrack (Current &amp; Queued)</a></strong> — ( SoundtrackStop )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/soundtrack-wait">Wait For Soundtrack</a></strong> — ( SoundtrackWait )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/soundtrack-default">Set Default Soundtrack</a></strong> — ( SoundtrackDefault )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/soundtrack-set-continuous">Enable/Disable Soundtrack Continuous</a></strong> — ( SoundtrackSetContinuous )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/soundtrack-set-delay">Set Soundtrack Delay</a></strong> — ( SoundtrackSetDelay )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/soundtrack-set-shuffle">Enable/Disable Soundtrack Shuffle</a></strong> — ( SoundtrackSetShuffle )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignsswarmsc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmsc2campaign">#</a> campaigns/swarm.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarm.sc2campaign/base.sc2maps/maps/campaign/voidprologue/voidprologue02.sc2map/MapScript.galaxy#L1441">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1441</span>
+SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5632</span>
+SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11009</span>
+SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11012</span>
+SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7938</span>
+SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8030</span>
+SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11282</span>
+SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9561</span>
+SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L950</span>
+SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12460</span>
+SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12463</span>
+SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5632</span>
+SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11009</span>
+SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11012</span>
+SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7938</span>
+SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8030</span>
+SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11282</span>
+SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9561</span>
+SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L950</span>
+SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12460</span>
+SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12463</span>
+SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1441</span>
+SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="campaignsswarmstoryutilsc2mod"><a class="markdownIt-Anchor" href="#campaignsswarmstoryutilsc2mod">#</a> campaigns/swarmstoryutil.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstoryutil.sc2mod/base.sc2data/Lib281DEC45.galaxy#L12323">Lib281DEC45.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L12323</span>
+SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="campaignsvoidsc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidsc2campaign">#</a> campaigns/void.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/void.sc2campaign/base.sc2maps/maps/campaign/void/paiur02.sc2map/MapScript.galaxy#L7855">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L7855</span>
+SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3952</span>
+SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryAmbience, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5570</span>
+SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryAmbience, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5693</span>
+SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryAmbience, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7855</span>
+SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3952</span>
+SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryAmbience, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5570</span>
+SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryAmbience, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5693</span>
+SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryAmbience, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignUILib.galaxy#L1920">VoidCampaignUILib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1920</span>
+SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5294</span>
+SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="modsheroesstormmod"><a class="markdownIt-Anchor" href="#modsheroesstormmod">#</a> mods/heroes.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroes.stormmod/base.stormmaps/maps/heroes/singleplayermaps/startingexperience/tutorialveteran.stormmap/MapScript.galaxy#L8027">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L8027</span>
+SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8311</span>
+SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8542</span>
+SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9040</span>
+SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9306</span>
+SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9735</span>
+SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9964</span>
+SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8027</span>
+SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8311</span>
+SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8542</span>
+SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9040</span>
+SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9306</span>
+SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9735</span>
+SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9964</span>
+SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodscooppvebrawluimodstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodscooppvebrawluimodstormmod">#</a> mods/heroesbrawlmods/brawlmapmods/coop/pvebrawluimod.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/coop/pvebrawluimod.stormmod/base.stormdata/LibPBUI.galaxy#L528">LibPBUI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L528</span>
+SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryAmbience, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1526</span>
+SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryAmbience, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodscooppvemodstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodscooppvemodstormmod">#</a> mods/heroesbrawlmods/brawlmapmods/coop/pvemod.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/coop/pvemod.stormmod/base.stormdata/LibPVEU.galaxy#L517">LibPVEU.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L517</span>
+SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryAmbience, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1804</span>
+SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryAmbience, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="modsheroesbrawlmodsheroselectionmodsingameheroselectionstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsheroselectionmodsingameheroselectionstormmod">#</a> mods/heroesbrawlmods/heroselectionmods/ingameheroselection.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/heroselectionmods/ingameheroselection.stormmod/base.stormdata/LibIGHS.galaxy#L1025">LibIGHS.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1025</span>
+SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryAmbience, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1744</span>
+SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryAmbience, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="modsheroesdatastormmod"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/GameLib.galaxy#L6712">GameLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L6712</span>
+SoundtrackStopCurrent(PlayerGroupSingle(lp_player), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="modsheroesdatastormmod-2"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-2">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/SoundLib.galaxy#L748">SoundLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L748</span>
+SoundtrackStopCurrent(lv_livingPlayers, c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L810</span>
+SoundtrackStopCurrent(PlayerGroupSingle(lp_player), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodsbraxisholdoutstormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodsbraxisholdoutstormmod">#</a> mods/heroesmapmods/battlegroundmapmods/braxisholdout.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/braxisholdout.stormmod/base.stormdata/LibSCHO.galaxy#L1391">LibSCHO.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1391</span>
+SoundtrackStopCurrent(libCore_gv_allHeroPlayersPlusObserver, c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodsvolskayadatastormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodsvolskayadatastormmod">#</a> mods/heroesmapmods/battlegroundmapmods/volskayadata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/volskayadata.stormmod/base.stormdata/LibVolV.galaxy#L290">LibVolV.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L290</span>
+SoundtrackStopCurrent(PlayerGroupSingle(lv_player), c_soundtrackCategoryAmbience, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L411</span>
+SoundtrackStopCurrent(PlayerGroupSingle(lv_playerVehicleAbandonedPlayerInteger), c_soundtrackCategoryAmbience, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L470</span>
+SoundtrackStopCurrent(PlayerGroupSingle(lv_player), c_soundtrackCategoryAmbience, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodswarheadjunctionstormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodswarheadjunctionstormmod">#</a> mods/heroesmapmods/battlegroundmapmods/warheadjunction.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/warheadjunction.stormmod/base.stormdata/LibMSC2.galaxy#L470">LibMSC2.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L470</span>
+SoundtrackStopCurrent(libCore_gv_allHeroPlayersPlusObserver, c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="modsmissionpacksnovacampaignsc2mod"><a class="markdownIt-Anchor" href="#modsmissionpacksnovacampaignsc2mod">#</a> mods/missionpacks/novacampaign.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/novacampaign.sc2mod/base.sc2data/LibNCUI.galaxy#L1270">LibNCUI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1270</span>
+SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1287</span>
+SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="modsnovastoryassetssc2mod"><a class="markdownIt-Anchor" href="#modsnovastoryassetssc2mod">#</a> mods/novastoryassets.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/novastoryassets.sc2mod/base.sc2maps/maps/campaign/nova/nova01.sc2map/MapScript.galaxy#L9916">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L9916</span>
+SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryAmbience, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6227</span>
+SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryAmbience, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6293</span>
+SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryAmbience, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6359</span>
+SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryAmbience, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6420</span>
+SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryAmbience, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6526</span>
+SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryAmbience, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6664</span>
+SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6700</span>
+SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9916</span>
+SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryAmbience, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6227</span>
+SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryAmbience, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6293</span>
+SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryAmbience, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6359</span>
+SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryAmbience, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6420</span>
+SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryAmbience, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6526</span>
+SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryAmbience, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6664</span>
+SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6700</span>
+SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-literal">true</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

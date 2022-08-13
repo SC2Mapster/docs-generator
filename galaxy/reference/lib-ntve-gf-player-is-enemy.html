@@ -1,0 +1,429 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Get Relationship Between Players / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Get Relationship Between Players"/>
+                <meta property="og:description" content="Returns true of the source player is treating the target player as ally, enemy, or neutral.  Use the Mutual options to check if two players treat each other as mutual allies, enemies, or neutrals.
+
+Returns: bool"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="get-relationship-between-players"><a class="markdownIt-Anchor" href="#get-relationship-between-players">#</a> Get Relationship Between Players</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Player <strong>sourcePlayer</strong> treats player <strong>targetPlayer</strong> as <strong>relation|Ally/Enemy/Neutral</strong><br>
+<em>Flags</em> — <code>Function</code></p>
+</blockquote>
+<p>Returns true of the source player is treating the target player as ally, enemy, or neutral.  Use the Mutual options to check if two players treat each other as mutual allies, enemies, or neutrals.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> — Source Player</li>
+<li><code>int</code> — Target Player</li>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-player-relation">PlayerRelation</a> ]</em> — Relation</li>
+</ul>
+<p>Returns — <code>bool</code></p>
+<pre class="hljs"><code><span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">libNtve_gf_PlayerIsEnemy</span><span class="hljs-params">(
+	<span class="hljs-keyword">int</span> lp_sourcePlayer,
+	<span class="hljs-keyword">int</span> lp_targetPlayer,
+	<span class="hljs-keyword">int</span> lp_relation,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#player-alliances">Player / Alliances</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-player-alliance-change">Player Changes Alliances</a></strong> — ( TriggerAddEventPlayerAllianceChange )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-set-alliance">Set Alliance</a></strong> — ( libNtve_gf_SetAlliance )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-set-alliance-one-way">Set Alliance (One-Way)</a></strong> — ( libNtve_gf_SetAllianceOneWay )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/player-set-alliance">Set Alliance Aspect</a></strong> — ( PlayerSetAlliance )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-set-player-group-alliance">Set Alliance For Player Group</a></strong> — ( libNtve_gf_SetPlayerGroupAlliance )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-set-alliance-between-two-player-groups">Set Alliance Between Two Player Groups</a></strong> — ( libNtve_gf_SetAllianceBetweenTwoPlayerGroups )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-set-alliance-aspect-for-player-group">Set Alliance Aspect For Player Group</a></strong> — ( libNtve_gf_SetAllianceAspectForPlayerGroup )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/player-get-alliance">Alliance Aspect</a></strong> — ( PlayerGetAlliance )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-player-is-enemy">Get Relationship Between Players</a></strong> — ( libNtve_gf_PlayerIsEnemy )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/thanson02.sc2map/MapScript.galaxy#L4224">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4224</span>
+libNtve_gf_PlayerIsEnemy(UnitGetOwner(EventUnit()), gv_pLAYER_01_USER, libNtve_ge_PlayerRelation_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5185</span>
+libNtve_gf_PlayerIsEnemy(UnitGetOwner(EventUnit()), UnitGetOwner(libNtve_gf_KillingUnit()), libNtve_ge_PlayerRelation_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2329</span>
+libNtve_gf_PlayerIsEnemy(UnitGetOwner(EventUnit()), gv_p01_USER, libNtve_ge_PlayerRelation_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3397</span>
+libNtve_gf_PlayerIsEnemy(UnitGetOwner(EventUnit()), UnitGetOwner(libNtve_gf_KillingUnit()), libNtve_ge_PlayerRelation_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1256</span>
+libNtve_gf_PlayerIsEnemy(UnitGetOwner(libNtve_gf_KillingUnit()), gv_p2_RAYNOR_LIGHTBLUE, libNtve_ge_PlayerRelation_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3271</span>
+libNtve_gf_PlayerIsEnemy(gv_pLAYER_01_USER, UnitGetOwner(EventUnit()), libNtve_ge_PlayerRelation_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5149</span>
+libNtve_gf_PlayerIsEnemy(UnitGetOwner(EventUnit()), UnitGetOwner(libNtve_gf_KillingUnit()), libNtve_ge_PlayerRelation_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4224</span>
+libNtve_gf_PlayerIsEnemy(UnitGetOwner(EventUnit()), gv_pLAYER_01_USER, libNtve_ge_PlayerRelation_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5185</span>
+libNtve_gf_PlayerIsEnemy(UnitGetOwner(EventUnit()), UnitGetOwner(libNtve_gf_KillingUnit()), libNtve_ge_PlayerRelation_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2329</span>
+libNtve_gf_PlayerIsEnemy(UnitGetOwner(EventUnit()), gv_p01_USER, libNtve_ge_PlayerRelation_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3397</span>
+libNtve_gf_PlayerIsEnemy(UnitGetOwner(EventUnit()), UnitGetOwner(libNtve_gf_KillingUnit()), libNtve_ge_PlayerRelation_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1256</span>
+libNtve_gf_PlayerIsEnemy(UnitGetOwner(libNtve_gf_KillingUnit()), gv_p2_RAYNOR_LIGHTBLUE, libNtve_ge_PlayerRelation_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3271</span>
+libNtve_gf_PlayerIsEnemy(gv_pLAYER_01_USER, UnitGetOwner(EventUnit()), libNtve_ge_PlayerRelation_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5149</span>
+libNtve_gf_PlayerIsEnemy(UnitGetOwner(EventUnit()), UnitGetOwner(libNtve_gf_KillingUnit()), libNtve_ge_PlayerRelation_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5079</span>
+libNtve_gf_PlayerIsEnemy(gv_pLAYER_01_USER, UnitGetOwner(EventUnit()), libNtve_ge_PlayerRelation_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5100</span>
+libNtve_gf_PlayerIsEnemy(UnitGetOwner(EventUnit()), UnitGetOwner(libNtve_gf_KillingUnit()), libNtve_ge_PlayerRelation_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4889</span>
+libNtve_gf_PlayerIsEnemy(UnitGetOwner(EventUnit()), gv_pLAYER_01_USER, libNtve_ge_PlayerRelation_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7154</span>
+libNtve_gf_PlayerIsEnemy(UnitGetOwner(EventUnit()), gv_pLAYER_01_USER, libNtve_ge_PlayerRelation_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4733</span>
+libNtve_gf_PlayerIsEnemy(UnitGetOwner(EventUnit()), UnitGetOwner(libNtve_gf_KillingUnit()), libNtve_ge_PlayerRelation_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L798</span>
+libNtve_gf_PlayerIsEnemy(gv_pLAYER_01_USER, UnitGetOwner(autoEACA5FB9_var), libNtve_ge_PlayerRelation_Ally)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4392</span>
+libNtve_gf_PlayerIsEnemy(UnitGetOwner(EventUnit()), gv_pLAYER_01_USER, libNtve_ge_PlayerRelation_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5084</span>
+libNtve_gf_PlayerIsEnemy(UnitGetOwner(EventUnit()), gv_pLAYER_01_USER, libNtve_ge_PlayerRelation_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7603</span>
+libNtve_gf_PlayerIsEnemy(UnitGetOwner(EventUnit()), gv_pLAYER_01_USER, libNtve_ge_PlayerRelation_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7657</span>
+libNtve_gf_PlayerIsEnemy(UnitGetOwner(EventUnit()), gv_pLAYER_01_USER, libNtve_ge_PlayerRelation_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1058</span>
+libNtve_gf_PlayerIsEnemy(lp_player, gv_pLAYER_01_USER, libNtve_ge_PlayerRelation_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1070</span>
+libNtve_gf_PlayerIsEnemy(lp_player, gv_pLAYER_01_USER, libNtve_ge_PlayerRelation_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1083</span>
+libNtve_gf_PlayerIsEnemy(lp_player, gv_pLAYER_01_USER, libNtve_ge_PlayerRelation_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4831</span>
+libNtve_gf_PlayerIsEnemy(UnitGetOwner(EventUnit()), UnitGetOwner(lv_indexUnit), libNtve_ge_PlayerRelation_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7010</span>
+libNtve_gf_PlayerIsEnemy(UnitGetOwner(EventUnit()), UnitGetOwner(libNtve_gf_KillingUnit()), libNtve_ge_PlayerRelation_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5100</span>
+libNtve_gf_PlayerIsEnemy(UnitGetOwner(EventUnit()), UnitGetOwner(libNtve_gf_KillingUnit()), libNtve_ge_PlayerRelation_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4889</span>
+libNtve_gf_PlayerIsEnemy(UnitGetOwner(EventUnit()), gv_pLAYER_01_USER, libNtve_ge_PlayerRelation_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7154</span>
+libNtve_gf_PlayerIsEnemy(UnitGetOwner(EventUnit()), gv_pLAYER_01_USER, libNtve_ge_PlayerRelation_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4733</span>
+libNtve_gf_PlayerIsEnemy(UnitGetOwner(EventUnit()), UnitGetOwner(libNtve_gf_KillingUnit()), libNtve_ge_PlayerRelation_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L798</span>
+libNtve_gf_PlayerIsEnemy(gv_pLAYER_01_USER, UnitGetOwner(autoEACA5FB9_var), libNtve_ge_PlayerRelation_Ally)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4392</span>
+libNtve_gf_PlayerIsEnemy(UnitGetOwner(EventUnit()), gv_pLAYER_01_USER, libNtve_ge_PlayerRelation_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5084</span>
+libNtve_gf_PlayerIsEnemy(UnitGetOwner(EventUnit()), gv_pLAYER_01_USER, libNtve_ge_PlayerRelation_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7603</span>
+libNtve_gf_PlayerIsEnemy(UnitGetOwner(EventUnit()), gv_pLAYER_01_USER, libNtve_ge_PlayerRelation_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7657</span>
+libNtve_gf_PlayerIsEnemy(UnitGetOwner(EventUnit()), gv_pLAYER_01_USER, libNtve_ge_PlayerRelation_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1058</span>
+libNtve_gf_PlayerIsEnemy(lp_player, gv_pLAYER_01_USER, libNtve_ge_PlayerRelation_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1070</span>
+libNtve_gf_PlayerIsEnemy(lp_player, gv_pLAYER_01_USER, libNtve_ge_PlayerRelation_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1083</span>
+libNtve_gf_PlayerIsEnemy(lp_player, gv_pLAYER_01_USER, libNtve_ge_PlayerRelation_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4831</span>
+libNtve_gf_PlayerIsEnemy(UnitGetOwner(EventUnit()), UnitGetOwner(lv_indexUnit), libNtve_ge_PlayerRelation_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7010</span>
+libNtve_gf_PlayerIsEnemy(UnitGetOwner(EventUnit()), UnitGetOwner(libNtve_gf_KillingUnit()), libNtve_ge_PlayerRelation_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5079</span>
+libNtve_gf_PlayerIsEnemy(gv_pLAYER_01_USER, UnitGetOwner(EventUnit()), libNtve_ge_PlayerRelation_Enemy)
+</code></pre>
+<h4 id="campaignsswarmstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmstorysc2campaign">#</a> campaigns/swarmstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstory.sc2campaign/base.sc2data/TriggerLibs/SwarmCampaignLib.galaxy#L1295">SwarmCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1295</span>
+libNtve_gf_PlayerIsEnemy(lp_player, UnitGetOwner(autoEFB1326A_var), libNtve_ge_PlayerRelation_Ally)
+</code></pre>
+<h4 id="campaignsvoidsc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidsc2campaign">#</a> campaigns/void.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/void.sc2campaign/base.sc2maps/maps/campaign/void/pcampaigntest.sc2map/MapScript.galaxy#L478">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L478</span>
+libNtve_gf_PlayerIsEnemy(UnitGetOwner(UnitGroupLoopCurrent()), gv_pLAYER_01_USER, libNtve_ge_PlayerRelation_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L478</span>
+libNtve_gf_PlayerIsEnemy(UnitGetOwner(UnitGroupLoopCurrent()), gv_pLAYER_01_USER, libNtve_ge_PlayerRelation_EnemyMutual)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L482</span>
+libNtve_gf_PlayerIsEnemy(UnitGetOwner(UnitGroupLoopCurrent()), gv_pLAYER_01_USER, libNtve_ge_PlayerRelation_Neutral)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L482</span>
+libNtve_gf_PlayerIsEnemy(UnitGetOwner(UnitGroupLoopCurrent()), gv_pLAYER_01_USER, libNtve_ge_PlayerRelation_NeutralMutual)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L486</span>
+libNtve_gf_PlayerIsEnemy(UnitGetOwner(UnitGroupLoopCurrent()), gv_pLAYER_01_USER, libNtve_ge_PlayerRelation_Ally)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L486</span>
+libNtve_gf_PlayerIsEnemy(UnitGetOwner(UnitGroupLoopCurrent()), gv_pLAYER_01_USER, libNtve_ge_PlayerRelation_NeutralMutual)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L874</span>
+libNtve_gf_PlayerIsEnemy(EventUnitOwnerNew(), gv_pLAYER_01_USER, libNtve_ge_PlayerRelation_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L874</span>
+libNtve_gf_PlayerIsEnemy(EventUnitOwnerNew(), gv_pLAYER_01_USER, libNtve_ge_PlayerRelation_EnemyMutual)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L878</span>
+libNtve_gf_PlayerIsEnemy(EventUnitOwnerNew(), gv_pLAYER_01_USER, libNtve_ge_PlayerRelation_Neutral)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L878</span>
+libNtve_gf_PlayerIsEnemy(EventUnitOwnerNew(), gv_pLAYER_01_USER, libNtve_ge_PlayerRelation_NeutralMutual)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4294</span>
+libNtve_gf_PlayerIsEnemy(gv_pLAYER_01_USER, UnitGetOwner(EventUnit()), libNtve_ge_PlayerRelation_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5281</span>
+libNtve_gf_PlayerIsEnemy(gv_pLAYER_01_USER, UnitGetOwner(EventUnit()), libNtve_ge_PlayerRelation_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2350</span>
+libNtve_gf_PlayerIsEnemy(UnitGetOwner(EventUnit()), gv_pLAYER_01_USER, libNtve_ge_PlayerRelation_Ally)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2379</span>
+libNtve_gf_PlayerIsEnemy(UnitGetOwner(EventUnit()), gv_pLAYER_01_USER, libNtve_ge_PlayerRelation_Ally)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2408</span>
+libNtve_gf_PlayerIsEnemy(UnitGetOwner(EventUnit()), gv_pLAYER_01_USER, libNtve_ge_PlayerRelation_Ally)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2437</span>
+libNtve_gf_PlayerIsEnemy(UnitGetOwner(EventUnit()), gv_pLAYER_01_USER, libNtve_ge_PlayerRelation_Ally)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2466</span>
+libNtve_gf_PlayerIsEnemy(UnitGetOwner(EventUnit()), gv_pLAYER_01_USER, libNtve_ge_PlayerRelation_Ally)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2495</span>
+libNtve_gf_PlayerIsEnemy(UnitGetOwner(EventUnit()), gv_pLAYER_01_USER, libNtve_ge_PlayerRelation_Ally)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2524</span>
+libNtve_gf_PlayerIsEnemy(UnitGetOwner(EventUnit()), gv_pLAYER_01_USER, libNtve_ge_PlayerRelation_Ally)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2553</span>
+libNtve_gf_PlayerIsEnemy(UnitGetOwner(EventUnit()), gv_pLAYER_01_USER, libNtve_ge_PlayerRelation_Ally)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2582</span>
+libNtve_gf_PlayerIsEnemy(UnitGetOwner(EventUnit()), gv_pLAYER_01_USER, libNtve_ge_PlayerRelation_Ally)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2611</span>
+libNtve_gf_PlayerIsEnemy(UnitGetOwner(EventUnit()), gv_pLAYER_01_USER, libNtve_ge_PlayerRelation_Ally)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L478</span>
+libNtve_gf_PlayerIsEnemy(UnitGetOwner(UnitGroupLoopCurrent()), gv_pLAYER_01_USER, libNtve_ge_PlayerRelation_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L478</span>
+libNtve_gf_PlayerIsEnemy(UnitGetOwner(UnitGroupLoopCurrent()), gv_pLAYER_01_USER, libNtve_ge_PlayerRelation_EnemyMutual)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L482</span>
+libNtve_gf_PlayerIsEnemy(UnitGetOwner(UnitGroupLoopCurrent()), gv_pLAYER_01_USER, libNtve_ge_PlayerRelation_Neutral)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L482</span>
+libNtve_gf_PlayerIsEnemy(UnitGetOwner(UnitGroupLoopCurrent()), gv_pLAYER_01_USER, libNtve_ge_PlayerRelation_NeutralMutual)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L486</span>
+libNtve_gf_PlayerIsEnemy(UnitGetOwner(UnitGroupLoopCurrent()), gv_pLAYER_01_USER, libNtve_ge_PlayerRelation_Ally)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L486</span>
+libNtve_gf_PlayerIsEnemy(UnitGetOwner(UnitGroupLoopCurrent()), gv_pLAYER_01_USER, libNtve_ge_PlayerRelation_NeutralMutual)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L874</span>
+libNtve_gf_PlayerIsEnemy(EventUnitOwnerNew(), gv_pLAYER_01_USER, libNtve_ge_PlayerRelation_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L874</span>
+libNtve_gf_PlayerIsEnemy(EventUnitOwnerNew(), gv_pLAYER_01_USER, libNtve_ge_PlayerRelation_EnemyMutual)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L878</span>
+libNtve_gf_PlayerIsEnemy(EventUnitOwnerNew(), gv_pLAYER_01_USER, libNtve_ge_PlayerRelation_Neutral)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L878</span>
+libNtve_gf_PlayerIsEnemy(EventUnitOwnerNew(), gv_pLAYER_01_USER, libNtve_ge_PlayerRelation_NeutralMutual)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4294</span>
+libNtve_gf_PlayerIsEnemy(gv_pLAYER_01_USER, UnitGetOwner(EventUnit()), libNtve_ge_PlayerRelation_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5281</span>
+libNtve_gf_PlayerIsEnemy(gv_pLAYER_01_USER, UnitGetOwner(EventUnit()), libNtve_ge_PlayerRelation_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2350</span>
+libNtve_gf_PlayerIsEnemy(UnitGetOwner(EventUnit()), gv_pLAYER_01_USER, libNtve_ge_PlayerRelation_Ally)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2379</span>
+libNtve_gf_PlayerIsEnemy(UnitGetOwner(EventUnit()), gv_pLAYER_01_USER, libNtve_ge_PlayerRelation_Ally)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2408</span>
+libNtve_gf_PlayerIsEnemy(UnitGetOwner(EventUnit()), gv_pLAYER_01_USER, libNtve_ge_PlayerRelation_Ally)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2437</span>
+libNtve_gf_PlayerIsEnemy(UnitGetOwner(EventUnit()), gv_pLAYER_01_USER, libNtve_ge_PlayerRelation_Ally)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2466</span>
+libNtve_gf_PlayerIsEnemy(UnitGetOwner(EventUnit()), gv_pLAYER_01_USER, libNtve_ge_PlayerRelation_Ally)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2495</span>
+libNtve_gf_PlayerIsEnemy(UnitGetOwner(EventUnit()), gv_pLAYER_01_USER, libNtve_ge_PlayerRelation_Ally)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2524</span>
+libNtve_gf_PlayerIsEnemy(UnitGetOwner(EventUnit()), gv_pLAYER_01_USER, libNtve_ge_PlayerRelation_Ally)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2553</span>
+libNtve_gf_PlayerIsEnemy(UnitGetOwner(EventUnit()), gv_pLAYER_01_USER, libNtve_ge_PlayerRelation_Ally)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2582</span>
+libNtve_gf_PlayerIsEnemy(UnitGetOwner(EventUnit()), gv_pLAYER_01_USER, libNtve_ge_PlayerRelation_Ally)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2611</span>
+libNtve_gf_PlayerIsEnemy(UnitGetOwner(EventUnit()), gv_pLAYER_01_USER, libNtve_ge_PlayerRelation_Ally)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignLib.galaxy#L10264">VoidCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L10264</span>
+libNtve_gf_PlayerIsEnemy(EventUnitDamageSourcePlayer(), EventPlayer(), libNtve_ge_PlayerRelation_Enemy)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign-2"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign-2">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignMissionLib.galaxy#L962">VoidCampaignMissionLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L962</span>
+libNtve_gf_PlayerIsEnemy(<span class="hljs-number">1</span>, lv_i, libNtve_ge_PlayerRelation_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L962</span>
+libNtve_gf_PlayerIsEnemy(<span class="hljs-number">1</span>, lv_i, libNtve_ge_PlayerRelation_EnemyMutual)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3331</span>
+libNtve_gf_PlayerIsEnemy(lp_player, UnitGetOwner(auto5CF01D86_var), libNtve_ge_PlayerRelation_Ally)
+</code></pre>
+<h4 id="modscoresc2mod"><a class="markdownIt-Anchor" href="#modscoresc2mod">#</a> mods/core.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/core.sc2mod/base.sc2data/TriggerLibs/NativeLib.galaxy#L3889">NativeLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3889</span>
+libNtve_gf_PlayerIsEnemy(lp_player, lv_itPlayer, lp_alliance)
+</code></pre>
+<h4 id="modsheroesbrawlmodsarenamodemodstemplearenastormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsarenamodemodstemplearenastormmod">#</a> mods/heroesbrawlmods/arenamodemods/templearena.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/arenamodemods/templearena.stormmod/base.stormdata/LibAMCT.galaxy#L324">LibAMCT.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L324</span>
+libNtve_gf_PlayerIsEnemy(UnitGetOwner(libAMCT_gv_aRMSkyTemple[lp_templeIndex].lv_temple), UnitGetOwner(libAMCT_gv_aRMSkyTemple[lp_templeIndex].lv_targetUnit), libNtve_ge_PlayerRelation_Enemy)
+</code></pre>
+<h4 id="modsheroesdatastormmod"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/AILib.galaxy#L471">AILib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L471</span>
+libNtve_gf_PlayerIsEnemy(lv_defenderOwner, lv_unitOwner, libNtve_ge_PlayerRelation_Enemy)
+</code></pre>
+<h4 id="modsheroesdatastormmod-2"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-2">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/GameLib.galaxy#L9011">GameLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L9011</span>
+libNtve_gf_PlayerIsEnemy(UnitGetOwner(lv_itUnit), UnitGetOwner(lp_killedUnit), libNtve_ge_PlayerRelation_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L18997</span>
+libNtve_gf_PlayerIsEnemy(UnitGetOwner(lv_itUnit), UnitGetOwner(lv_dyingStructureUnit), libNtve_ge_PlayerRelation_Enemy)
+</code></pre>
+<h4 id="modsheroesdatastormmod-3"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-3">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/MapMechanicsLib.galaxy#L2300">MapMechanicsLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2300</span>
+libNtve_gf_PlayerIsEnemy(lp_player, lv_itPlayer, libNtve_ge_PlayerRelation_Ally)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2336</span>
+libNtve_gf_PlayerIsEnemy(lp_player, lv_itPlayer, libNtve_ge_PlayerRelation_Ally)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

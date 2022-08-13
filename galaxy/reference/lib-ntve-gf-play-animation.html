@@ -1,0 +1,413 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Play Animation / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Play Animation"/>
+                <meta property="og:description" content="Plays an animation on an actor with a chosen name (Identifier).  The Identifier is used to clear the animation or otherwise modify it after it starts playing."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="play-animation"><a class="markdownIt-Anchor" href="#play-animation">#</a> Play Animation</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Play <strong>animation</strong> animation for <strong>target</strong> as <strong>identifier</strong>, using <strong>flags|Options</strong> options and <strong>blendTime</strong> blend time<br>
+<em>Flags</em> — <code>Action</code></p>
+</blockquote>
+<p>Plays an animation on an actor with a chosen name (Identifier).  The Identifier is used to clear the animation or otherwise modify it after it starts playing.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>actor</code> — Target</li>
+<li><code>string</code> — Identifier</li>
+<li><code>string</code> <em>[ modelanim ]</em> — Animation</li>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-animation-flag">AnimationFlag</a> ]</em> — Flags</li>
+<li><code>fixed</code> — Blend Time</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">libNtve_gf_PlayAnimation</span><span class="hljs-params">(
+	actor lp_target,
+	<span class="hljs-built_in">string</span> lp_identifier,
+	<span class="hljs-built_in">string</span> lp_animation,
+	<span class="hljs-keyword">int</span> lp_flags,
+	fixed lp_blendTime,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#animation-basic">Animation / Basic</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-play-animation">Play Animation</a></strong> — ( libNtve_gf_PlayAnimation )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-play-animation-on-doodads-in-region">Play Animation On Doodads In Region</a></strong> — ( libNtve_gf_PlayAnimationOnDoodadsInRegion )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-kill-doodads-in-region">Kill Doodads In Region</a></strong> — ( libNtve_gf_KillDoodadsInRegion )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-clear-animation">Clear Animation</a></strong> — ( libNtve_gf_ClearAnimation )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-clear-animation-on-doodads-in-region">Clear Animation On Doodads In Region</a></strong> — ( libNtve_gf_ClearAnimationOnDoodadsInRegion )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-turn-animation-properties-on">Turn Animation Properties On</a></strong> — ( libNtve_gf_TurnAnimationPropertiesOn )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-turn-animation-properties-on-with-blend-in-out">Turn Animation Properties On With Blend In/Out</a></strong> — ( libNtve_gf_TurnAnimationPropertiesOnWithBlendInOut )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-turn-animation-properties-off">Turn Animation Properties Off</a></strong> — ( libNtve_gf_TurnAnimationPropertiesOff )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-turn-all-animation-properties-off">Turn All Animation Properties Off</a></strong> — ( libNtve_gf_TurnAllAnimationPropertiesOff )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/tarcade.sc2map/MapScript.galaxy#L3111">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3111</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(gv_viking), c_animNameDefault, <span class="hljs-string">"Walk Left"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3119</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(gv_viking), c_animNameDefault, <span class="hljs-string">"Walk Right"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3127</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(gv_viking), c_animNameDefault, <span class="hljs-string">"Walk"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3175</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(gv_viking), <span class="hljs-string">"VikingFly"</span>, <span class="hljs-string">"Walk"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5677</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(gv_boss), c_animNameDefault, <span class="hljs-string">"Birth"</span>, c_animFlagFullMatch | c_animFlagNonLooping, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6884</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(lv_plane), c_animNameDefault, <span class="hljs-string">"Walk"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6997</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(lv_plane), c_animNameDefault, <span class="hljs-string">"Walk"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7777</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(gv_viking), c_animNameDefault, <span class="hljs-string">"Birth"</span>, c_animFlagNonLooping, <span class="hljs-number">0.25</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8773</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(gv_vikingCine), c_animNameDefault, <span class="hljs-string">"Walk"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8780</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(gv_vikingCine), c_animNameDefault, <span class="hljs-string">"Walk Right"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3627</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(UnitLastCreated()), c_animNameDefault, <span class="hljs-string">"Birth 02"</span>, <span class="hljs-number">0</span>, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3635</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(lv_nydusWorm), c_animNameDefault, <span class="hljs-string">"Spell"</span>, <span class="hljs-number">0</span>, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3832</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(lv_unit), c_animNameDefault, <span class="hljs-string">"Land Forward"</span>, <span class="hljs-number">0</span>, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3955</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(autoFBC7DD9D_var), c_animNameDefault, <span class="hljs-string">"Unburrow"</span>, <span class="hljs-number">0</span>, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2732</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(autoEF719771_var), c_animNameDefault, <span class="hljs-string">"Talk"</span>, c_animFlagNonLooping, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2736</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(autoEF719771_var), c_animNameDefault, <span class="hljs-string">"Talk 01"</span>, c_animFlagNonLooping, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2747</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(auto25373960_var), c_animNameDefault, <span class="hljs-string">"Talk"</span>, c_animFlagNonLooping, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2751</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(auto25373960_var), c_animNameDefault, <span class="hljs-string">"Talk 01"</span>, c_animFlagNonLooping, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3244</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(lv_colonistShip), c_animNameDefault, <span class="hljs-string">"Land Forward"</span>, c_animFlagNonLooping, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3361</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(lv_colonistShip), c_animNameDefault, <span class="hljs-string">"Land Forward"</span>, c_animFlagNonLooping, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3478</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(lv_colonistShip), c_animNameDefault, <span class="hljs-string">"Land Forward"</span>, c_animFlagNonLooping, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3375</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(lv_carrionBirdLocal), c_animNameDefault, <span class="hljs-string">"Death"</span>, c_animFlagPlayForever | c_animFlagNonLooping, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L463</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(lp_diamondback), c_animNameDefault, <span class="hljs-string">"Stand Morph End"</span>, <span class="hljs-number">0</span>, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2315</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(UnitLastCreated()), c_animNameDefault, <span class="hljs-string">"Birth"</span>, c_animFlagPlayForever | c_animFlagNonLooping, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2615</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(lv_trainCarToAnimate_LOCAL), c_animNameDefault, <span class="hljs-string">"Stand Work Start"</span>, c_animFlagPlayForever | c_animFlagNonLooping, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2625</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(lv_trainCarToAnimate_LOCAL), c_animNameDefault, <span class="hljs-string">"Stand Work"</span>, c_animFlagPlayForever | c_animFlagNonLooping, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2629</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(lv_trainCarToAnimate_LOCAL), c_animNameDefault, <span class="hljs-string">"Stand Work 01"</span>, c_animFlagPlayForever | c_animFlagNonLooping, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2633</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(lv_trainCarToAnimate_LOCAL), c_animNameDefault, <span class="hljs-string">"Stand Work 02"</span>, c_animFlagPlayForever | c_animFlagNonLooping, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2637</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(lv_trainCarToAnimate_LOCAL), c_animNameDefault, <span class="hljs-string">"Stand Work 03"</span>, c_animFlagPlayForever | c_animFlagNonLooping, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5903</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(UnitLastCreated()), c_animNameDefault, <span class="hljs-string">"Birth"</span>, c_animFlagPlayForever | c_animFlagNonLooping, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5966</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(UnitGroupUnit(UnitGroup(<span class="hljs-string">"AdjutantCapsule"</span>, c_playerAny, RegionCircle(CameraGetTarget(gv_pLAYER_01_USER), <span class="hljs-number">10.0</span>), UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))), <span class="hljs-number">0</span>), <span class="hljs-number">1</span>)), c_animNameDefault, <span class="hljs-string">"Morph"</span>, <span class="hljs-number">0</span>, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5969</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(UnitGroupUnit(UnitGroup(<span class="hljs-string">"AdjutantCapsule"</span>, c_playerAny, RegionCircle(CameraGetTarget(gv_pLAYER_01_USER), <span class="hljs-number">10.0</span>), UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))), <span class="hljs-number">0</span>), <span class="hljs-number">1</span>)), c_animNameDefault, <span class="hljs-string">"Stand"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1902</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(EventUnit()), c_animNameDefault, <span class="hljs-string">"Work Start"</span>, c_animFlagNonLooping, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1904</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(EventUnit()), c_animNameDefault, <span class="hljs-string">"Work"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1906</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(EventUnit()), c_animNameDefault, <span class="hljs-string">"Work End"</span>, c_animFlagNonLooping, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1949</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(EventUnit()), c_animNameDefault, <span class="hljs-string">"Work Start"</span>, c_animFlagNonLooping, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1951</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(EventUnit()), c_animNameDefault, <span class="hljs-string">"Work"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1953</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(EventUnit()), c_animNameDefault, <span class="hljs-string">"Work End"</span>, c_animFlagNonLooping, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1996</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(EventUnit()), c_animNameDefault, <span class="hljs-string">"Work Start"</span>, c_animFlagNonLooping, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1998</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(EventUnit()), c_animNameDefault, <span class="hljs-string">"Work"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2000</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(EventUnit()), c_animNameDefault, <span class="hljs-string">"Work End"</span>, c_animFlagNonLooping, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2107</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(EventUnit()), c_animNameDefault, <span class="hljs-string">"Work Start"</span>, c_animFlagNonLooping, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L449</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(UnitFromId(<span class="hljs-number">109</span>)), c_animNameDefault, <span class="hljs-string">"Stand Work"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L843</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(auto1FE7BFD6_var), c_animNameDefault, <span class="hljs-string">"Fidget Inferior"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L902</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(auto32B93861_var), c_animNameDefault, <span class="hljs-string">"Fidget Inferior"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L954</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(auto9297DEB2_var), c_animNameDefault, <span class="hljs-string">"Fidget Inferior"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2036</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(autoDB1C39FB_var), c_animNameDefault, <span class="hljs-string">"Stand Work"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2275</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(auto846B43D4_var), c_animNameDefault, <span class="hljs-string">"Stand Work"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2535</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(autoE78DF35B_var), c_animNameDefault, <span class="hljs-string">"Stand Work"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2780</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(auto5513543B_var), c_animNameDefault, <span class="hljs-string">"Stand Work"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3056</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(autoAD30467A_var), c_animNameDefault, <span class="hljs-string">"Stand Work"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5315</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(UnitFromId(<span class="hljs-number">109</span>)), c_animNameDefault, <span class="hljs-string">"Stand Work End"</span>, c_animFlagNonLooping, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1364</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(autoC0A4CB95_var), c_animNameDefault, <span class="hljs-string">"Fidget Inferior End"</span>, <span class="hljs-number">0</span>, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2128</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(auto4D3A1C8E_var), c_animNameDefault, <span class="hljs-string">"Fidget Inferior"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6085</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(autoCA8D34D4_var), c_animNameDefault, <span class="hljs-string">"Stand Victory"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6337</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(autoB4C5CF69_var), c_animNameDefault, <span class="hljs-string">"Stand Victory"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7258</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(UnitFromId(<span class="hljs-number">358</span>)), c_animNameDefault, <span class="hljs-string">"Cover Start"</span>, c_animFlagPlayForever | c_animFlagNonLooping, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7260</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(UnitFromId(<span class="hljs-number">358</span>)), c_animNameDefault, <span class="hljs-string">"Cover"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4216</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(UnitFromId(<span class="hljs-number">2388</span>)), c_animNameDefault, <span class="hljs-string">"Stand Work"</span>, c_animFlagPlayForever | c_animFlagNonLooping, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11768</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(UnitFromId(<span class="hljs-number">459</span>)), c_animNameDefault, <span class="hljs-string">"Stand Work"</span>, c_animFlagPlayForever | c_animFlagNonLooping, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12287</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(gv_hybrid), c_animNameDefault, <span class="hljs-string">"Stand Angry"</span>, <span class="hljs-number">0</span>, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12622</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(gv_hybrid), c_animNameDefault, <span class="hljs-string">"Attack"</span>, c_animFlagNonLooping, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12848</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(gv_hybrid), c_animNameDefault, <span class="hljs-string">"Stand Angry"</span>, <span class="hljs-number">0</span>, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12855</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(gv_hercules), c_animNameDefault, <span class="hljs-string">"Land Forward"</span>, c_animFlagNonLooping, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12857</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(gv_hybrid), c_animNameDefault, <span class="hljs-string">"Stand Angry"</span>, <span class="hljs-number">0</span>, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L522</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(UnitFromId(<span class="hljs-number">331</span>)), <span class="hljs-string">"Work"</span>, <span class="hljs-string">"Stand Work"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L972</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(gv_crazyOldClarice), c_animNameDefault, <span class="hljs-string">"Talk One"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1401</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(gv_mutteringJohn), c_animNameDefault, <span class="hljs-string">"Talk One"</span>, c_animFlagNonLooping, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2247</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(UnitFromId(<span class="hljs-number">728</span>)), c_animNameDefault, <span class="hljs-string">"Fidget Inferior End"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2250</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(UnitFromId(<span class="hljs-number">216</span>)), c_animNameDefault, <span class="hljs-string">"Fidget Inferior End"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2253</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(UnitFromId(<span class="hljs-number">1074</span>)), c_animNameDefault, <span class="hljs-string">"Fidget Inferior End"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2256</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(UnitFromId(<span class="hljs-number">925</span>)), c_animNameDefault, <span class="hljs-string">"Fidget Inferior End"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2259</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(UnitFromId(<span class="hljs-number">912</span>)), c_animNameDefault, <span class="hljs-string">"Fidget Inferior End"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3481</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(gv_holoboards[<span class="hljs-number">1</span>]), c_animNameDefault, <span class="hljs-string">"Talk Five"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3542</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(gv_holoboards[<span class="hljs-number">2</span>]), c_animNameDefault, <span class="hljs-string">"Talk One"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L549</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(UnitFromId(<span class="hljs-number">1314</span>)), c_animNameDefault, <span class="hljs-string">"Stand Work 02"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1968</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(UnitFromId(<span class="hljs-number">599</span>)), c_animNameDefault, <span class="hljs-string">"Stand Victory"</span>, c_animFlagNonLooping, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2106</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(lv_colonist), c_animNameDefault, <span class="hljs-string">"Talk"</span>, c_animFlagNonLooping, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2162</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(lv_colonist), c_animNameDefault, <span class="hljs-string">"Talk"</span>, c_animFlagNonLooping, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2218</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(lv_colonist), c_animNameDefault, <span class="hljs-string">"Talk"</span>, c_animFlagNonLooping, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2274</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(lv_colonist), c_animNameDefault, <span class="hljs-string">"Talk"</span>, c_animFlagNonLooping, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2330</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(lv_colonist), c_animNameDefault, <span class="hljs-string">"Talk"</span>, c_animFlagNonLooping, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2386</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(lv_colonist), c_animNameDefault, <span class="hljs-string">"Talk"</span>, c_animFlagNonLooping, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2442</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(lv_colonist), c_animNameDefault, <span class="hljs-string">"Talk"</span>, c_animFlagNonLooping, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2970</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(gv_marineTaunter), c_animNameDefault, <span class="hljs-string">"Talk"</span>, c_animFlagNonLooping, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L371</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(gv_nydusWormP03), c_animNameDefault, <span class="hljs-string">"Spell"</span>, <span class="hljs-number">0</span>, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L382</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(lp_nydus), c_animNameDefault, <span class="hljs-string">"Spell"</span>, <span class="hljs-number">0</span>, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L395</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(lp_nydus), c_animNameDefault, <span class="hljs-string">"Spell"</span>, <span class="hljs-number">0</span>, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L456</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(lp_nydus), c_animNameDefault, <span class="hljs-string">"Spell"</span>, <span class="hljs-number">0</span>, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L654</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(auto9BEE0C26_var), c_animNameDefault, <span class="hljs-string">"Fidget"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L662</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(auto5113CC99_var), c_animNameDefault, <span class="hljs-string">"Fidget"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1006</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(autoE5881838_var), c_animNameDefault, <span class="hljs-string">"Stand Work"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1057</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(autoED36AC6D_var), c_animNameDefault, <span class="hljs-string">"Stand Work"</span>, c_animFlagNonLooping, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2519</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(UnitLastCreated()), c_animNameDefault, <span class="hljs-string">"Birth 02"</span>, <span class="hljs-number">0</span>, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2523</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(gv_nydusWormP03), c_animNameDefault, <span class="hljs-string">"Spell"</span>, <span class="hljs-number">0</span>, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3489</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(lp_unit), <span class="hljs-string">"Blink"</span>, <span class="hljs-string">"Stand Blink"</span>, c_animFlagNonLooping, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3509</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(lp_unit), <span class="hljs-string">"Blink"</span>, <span class="hljs-string">"Stand Blink"</span>, c_animFlagNonLooping, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3623</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(lp_speaker), c_animNameDefault, lp_anim, c_animFlagPlayForever, gv_talkBlendTime)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6675</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(gf_ActorUnit(lp_actorID)), gv_aNIMID_ACTORLIGHTING, lv_anim, c_animFlagFullMatch | c_animFlagPlayForever, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6754</span>
+libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(gf_ActorUnit(lp_actorID)), gv_aNIMID_ACTORLISTEN, <span class="hljs-string">"Stand Listen"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

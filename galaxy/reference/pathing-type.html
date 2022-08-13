@@ -1,0 +1,226 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Pathing Type At Point / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Pathing Type At Point"/>
+                <meta property="og:description" content="Returns the type of pathing at the specific point. Ground pathing allows all units, Building pathing means a building has blocked pathing, Cliff pathing means the terrain cliffs are blocking pathing, and Unpathable means that units can never move through the point.
+
+Returns: preset [ preset::PathingType ]"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="pathing-type-at-point"><a class="markdownIt-Anchor" href="#pathing-type-at-point">#</a> Pathing Type At Point</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Pathing type at <strong>p1</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Function</code></p>
+</blockquote>
+<p>Returns the type of pathing at the specific point. Ground pathing allows all units, Building pathing means a building has blocked pathing, Cliff pathing means the terrain cliffs are blocking pathing, and Unpathable means that units can never move through the point.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>point</code> — Point</li>
+</ul>
+<p>Returns — <code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-pathing-type">PathingType</a> ]</em></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">int</span> <span class="hljs-title">PathingType</span><span class="hljs-params">(point inPos)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#point-pathing">Point / Pathing</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/point-pathing-passable">Point Is Passable</a></strong> — ( PointPathingPassable )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/point-pathing-is-connected">Points Connected By Pathing</a></strong> — ( PointPathingIsConnected )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/point-pathing-cost">Pathing Cost Between Points</a></strong> — ( PointPathingCost )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-pathing-type">PathingType</a> ]</em> — <strong><a href="/galaxy/reference/pathing-type">Pathing Type At Point</a></strong> — ( PathingType )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignsvoidsc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidsc2campaign">#</a> campaigns/void.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/void.sc2campaign/base.sc2maps/maps/campaign/void/pkorhal01.sc2map/MapScript.galaxy#L835">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L835</span>
+PathingType(lv_testPoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L849</span>
+PathingType(lv_testPoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1097</span>
+PathingType(lv_testPoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1111</span>
+PathingType(lv_testPoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1928</span>
+PathingType(UnitGetPosition(gv_titanicWarpPrism))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L835</span>
+PathingType(lv_testPoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L849</span>
+PathingType(lv_testPoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1097</span>
+PathingType(lv_testPoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1111</span>
+PathingType(lv_testPoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1928</span>
+PathingType(UnitGetPosition(gv_titanicWarpPrism))
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignMissionLib.galaxy#L936">VoidCampaignMissionLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L936</span>
+PathingType(PointWithOffsetPolar(lp_startingPoint, lv_i, lp_angle))
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodscoopdeadmansstandstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodscoopdeadmansstandstormmod">#</a> mods/heroesbrawlmods/brawlmapmods/coop/deadmansstand.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/coop/deadmansstand.stormmod/base.stormdata/LibPEB1.galaxy#L2864">LibPEB1.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2864</span>
+PathingType(lv_spawnPoints[auto4CB41B2D_var])
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2885</span>
+PathingType(lv_testPoint)
+</code></pre>
+<h4 id="modsheroesdatastormmod"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/GameDataHelperLib.galaxy#L9360">GameDataHelperLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L9360</span>
+PathingType(lv_newLocation)
+</code></pre>
+<h4 id="modsheroesdatastormmod-2"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-2">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/GameLib.galaxy#L14693">GameLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L14693</span>
+PathingType(UnitGetPosition(lv_timeStopEndingUnit))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L14693</span>
+PathingType(UnitGetPosition(lv_timeStopEndingUnit))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L14693</span>
+PathingType(UnitGetPosition(lv_timeStopEndingUnit))
+</code></pre>
+<h4 id="modsheroesdatastormmod-3"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-3">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/StartingExperienceLib.galaxy#L1948">StartingExperienceLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1948</span>
+PathingType(lp_locationTarget)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1948</span>
+PathingType(lp_locationTarget)
+</code></pre>
+<h4 id="modsnovastoryassetssc2mod"><a class="markdownIt-Anchor" href="#modsnovastoryassetssc2mod">#</a> mods/novastoryassets.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/novastoryassets.sc2mod/base3.sc2maps/maps/campaign/nova/nova07.sc2map/MapScript.galaxy#L3811">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3811</span>
+PathingType(UnitGetPosition(UnitGroupLoopCurrent()))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3811</span>
+PathingType(UnitGetPosition(UnitGroupLoopCurrent()))
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOMI.galaxy#L11085">LibCOMI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L11085</span>
+PathingType(lv_dropLocation)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11159</span>
+PathingType(lv_dropLocation)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11858</span>
+PathingType(lv_testDropPoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L27608</span>
+PathingType(UnitGetPosition(libCOMI_gv_cM_ZeratulProphecyArtifact))
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod-2"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod-2">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOMU.galaxy#L523">LibCOMU.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L523</span>
+PathingType(UnitGetPosition(lp_killedUnit))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1017</span>
+PathingType(lv_teleportPoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3135</span>
+PathingType(lv_targetLocation)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4282</span>
+PathingType(lv_spawnLocation)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4637</span>
+PathingType(lp_spawnPoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6949</span>
+PathingType(lv_spawnPoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7167</span>
+PathingType(lv_spawnPoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7172</span>
+PathingType(lv_mineSpawnPoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7181</span>
+PathingType(lv_mineSpawnPoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10863</span>
+PathingType(lv_spawnPoint)
+</code></pre>
+<h4 id="modswarcooplegendsgromhellscreamsc2mod"><a class="markdownIt-Anchor" href="#modswarcooplegendsgromhellscreamsc2mod">#</a> mods/warcoop/legends/gromhellscream.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/warcoop/legends/gromhellscream.sc2mod/base.sc2data/LibLGrm.galaxy#L47">LibLGrm.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L47</span>
+PathingType(lv_currentpoint)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

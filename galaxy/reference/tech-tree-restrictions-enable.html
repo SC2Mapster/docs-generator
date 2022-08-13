@@ -1,0 +1,205 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Enable/Disable Tech Tree Restrictions / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Enable/Disable Tech Tree Restrictions"/>
+                <meta property="og:description" content="Enables or disables all tech restrictions for the specified player.  When tech restrictions are enabled, then all ability commands that are flagged as Restricted or Suppressed will not show up on unit command cards in game.  Use &quot;Allow/Disallow Ability For Player&quot;, &quot;Allow/Disallow Behavior For Player&quot;, &quot;Allow/Disallow Unit For Player&quot;, and &quot;Allow/Disallow Upgrade For Player&quot; to enable Restricted or Suppressed commands.  If a command is Restricted, then the ability, behavior, unit, or upgrade that is tied to it must be directly allowed.  If a command is Suppressed, however, then it may be enabled when something else is allowed.  For example, if the train Banshee command is Restricted, and the build Factory and build Starport commands are Suppressed, allowing the Banshee will also allow the Factory and Starport, because you cannot train a Banshee without first constructing those buildings."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="enabledisable-tech-tree-restrictions"><a class="markdownIt-Anchor" href="#enabledisable-tech-tree-restrictions">#</a> Enable/Disable Tech Tree Restrictions</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — <strong>isEnabled|Enable/Disable</strong> tech tree restrictions for player <strong>p</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Enables or disables all tech restrictions for the specified player.  When tech restrictions are enabled, then all ability commands that are flagged as Restricted or Suppressed will not show up on unit command cards in game.  Use <em>“Allow/Disallow Ability For Player”</em>, <em>“Allow/Disallow Behavior For Player”</em>, <em>“Allow/Disallow Unit For Player”</em>, and <em>“Allow/Disallow Upgrade For Player”</em> to enable Restricted or Suppressed commands.  If a command is Restricted, then the ability, behavior, unit, or upgrade that is tied to it must be directly allowed.  If a command is Suppressed, however, then it may be enabled when something else is allowed.  For example, if the train Banshee command is Restricted, and the build Factory and build Starport commands are Suppressed, allowing the Banshee will also allow the Factory and Starport, because you cannot train a Banshee without first constructing those buildings.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> — Player</li>
+<li><code>bool</code> <em>[ preset::<a href="/galaxy/reference/preset-enable-disable-option">Enable_Disable_Option</a> ]</em> — Enabled</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">TechTreeRestrictionsEnable</span><span class="hljs-params">(
+	<span class="hljs-keyword">int</span> player,
+	<span class="hljs-keyword">bool</span> enable,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#tech-tree-global-restrictions">Tech Tree / Global Restrictions</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/tech-tree-requirements-enable">Enable/Disable Tech Tree Requirements</a></strong> — ( TechTreeRequirementsEnable )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/tech-tree-requirements-enabled">Requirements Are Enabled For Player</a></strong> — ( TechTreeRequirementsEnabled )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/tech-tree-restrictions-enable">Enable/Disable Tech Tree Restrictions</a></strong> — ( TechTreeRestrictionsEnable )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/tech-tree-restrictions-enabled">Restrictions Are Enabled For Player</a></strong> — ( TechTreeRestrictionsEnabled )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/challenges/advancedcommand.sc2map/MapScript.galaxy#L212">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L212</span>
+TechTreeRestrictionsEnable(gv_pLAYER_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L533</span>
+TechTreeRestrictionsEnable(gv_pLAYER_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L298</span>
+TechTreeRestrictionsEnable(gv_pLAYER_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L231</span>
+TechTreeRestrictionsEnable(gv_pLAYER_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L494</span>
+TechTreeRestrictionsEnable(gv_pLAYER_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L207</span>
+TechTreeRestrictionsEnable(gv_pLAYER_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L540</span>
+TechTreeRestrictionsEnable(gv_pLAYER_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L207</span>
+TechTreeRestrictionsEnable(gv_pLAYER_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1076</span>
+TechTreeRestrictionsEnable(gv_p01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L816</span>
+TechTreeRestrictionsEnable(gv_p03_DOMINION_RED, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1076</span>
+TechTreeRestrictionsEnable(gv_p01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L816</span>
+TechTreeRestrictionsEnable(gv_p03_DOMINION_RED, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L212</span>
+TechTreeRestrictionsEnable(gv_pLAYER_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L231</span>
+TechTreeRestrictionsEnable(gv_pLAYER_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L533</span>
+TechTreeRestrictionsEnable(gv_pLAYER_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L298</span>
+TechTreeRestrictionsEnable(gv_pLAYER_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L494</span>
+TechTreeRestrictionsEnable(gv_pLAYER_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L207</span>
+TechTreeRestrictionsEnable(gv_pLAYER_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L540</span>
+TechTreeRestrictionsEnable(gv_pLAYER_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L207</span>
+TechTreeRestrictionsEnable(gv_pLAYER_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="campaignslibertystorysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertystorysc2campaign">#</a> campaigns/libertystory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/libertystory.sc2campaign/base.sc2data/TriggerLibs/CampaignLib.galaxy#L6969">CampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L6969</span>
+TechTreeRestrictionsEnable(lp_player, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="campaignsswarmsc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmsc2campaign">#</a> campaigns/swarm.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarm.sc2campaign/base.sc2maps/maps/campaign/swarm/zlab01.sc2map/MapScript.galaxy#L1122">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1122</span>
+TechTreeRestrictionsEnable(gv_pLAYER_02_DOMINION2, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1122</span>
+TechTreeRestrictionsEnable(gv_pLAYER_02_DOMINION2, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="campaignsswarmstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmstorysc2campaign">#</a> campaigns/swarmstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstory.sc2campaign/base.sc2data/TriggerLibs/SwarmCampaignLib.galaxy#L7110">SwarmCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L7110</span>
+TechTreeRestrictionsEnable(lp_player, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignLib.galaxy#L5901">VoidCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L5901</span>
+TechTreeRestrictionsEnable(lp_player, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="modsmissionpackscampaigncommonsc2mod"><a class="markdownIt-Anchor" href="#modsmissionpackscampaigncommonsc2mod">#</a> mods/missionpacks/campaigncommon.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/campaigncommon.sc2mod/base.sc2data/LibComC.galaxy#L1821">LibComC.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1821</span>
+TechTreeRestrictionsEnable(lp_player, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOOC.galaxy#L3871">LibCOOC.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3871</span>
+TechTreeRestrictionsEnable(lp_player, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="modsvoidprologuesc2mod"><a class="markdownIt-Anchor" href="#modsvoidprologuesc2mod">#</a> mods/voidprologue.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/voidprologue.sc2mod/base.sc2data/LibA3DDD02B.galaxy#L5358">LibA3DDD02B.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L5358</span>
+TechTreeRestrictionsEnable(lp_player, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="modswarcoopwarcoopdatasc2mod"><a class="markdownIt-Anchor" href="#modswarcoopwarcoopdatasc2mod">#</a> mods/warcoop/warcoopdata.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/warcoop/warcoopdata.sc2mod/base.sc2data/TriggerLibs/WarCoopData.galaxy#L2075">WarCoopData.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2075</span>
+TechTreeRestrictionsEnable(lp_player, <span class="hljs-literal">true</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

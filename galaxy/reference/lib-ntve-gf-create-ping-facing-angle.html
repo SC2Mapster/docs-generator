@@ -1,0 +1,426 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Create Ping Facing Angle / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Create Ping Facing Angle"/>
+                <meta property="og:description" content="Creates a minimap ping facing a specified angle.  Use &quot;Last Created Ping&quot; to refer to the created ping."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="create-ping-facing-angle"><a class="markdownIt-Anchor" href="#create-ping-facing-angle">#</a> Create Ping Facing Angle</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Create a ping for <strong>players</strong> at <strong>position</strong> facing <strong>angle</strong>, using model <strong>model</strong> and color <strong>color</strong>, lasting <strong>duration</strong> seconds<br>
+<em>Flags</em> — <code>Action</code></p>
+</blockquote>
+<p>Creates a minimap ping facing a specified angle.  Use <em>“Last Created Ping”</em> to refer to the created ping.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>playergroup</code> — Players</li>
+<li><code>string</code> <em>[ gamelink::Model ]</em> — Model</li>
+<li><code>point</code> — Position</li>
+<li><code>color</code> — Color</li>
+<li><code>fixed</code> — Duration</li>
+<li><code>fixed</code> — Angle</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">libNtve_gf_CreatePingFacingAngle</span><span class="hljs-params">(
+	playergroup lp_players,
+	<span class="hljs-built_in">string</span> lp_model,
+	point lp_position,
+	color lp_color,
+	fixed lp_duration,
+	fixed lp_angle,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#ping-basic">Ping / Basic</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-ping">Player Ping</a></strong> — ( TriggerAddEventPing )</li>
+<li><em><strong>[F]</strong></em> — <code>unit</code> — <strong><a href="/galaxy/reference/event-ping-unit">Player Ping Unit</a></strong> — ( EventPingUnit )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> <em>[ gamelink::Unit ]</em> — <strong><a href="/galaxy/reference/event-ping-unit-type">Player Ping Unit Type</a></strong> — ( EventPingUnitType )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/event-ping-unit-control-player">Player Ping Unit ControlPlayer</a></strong> — ( EventPingUnitControlPlayer )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/event-ping-unit-upkeep-player">Player Ping Unit UpkeepPlayer</a></strong> — ( EventPingUnitUpkeepPlayer )</li>
+<li><em><strong>[F]</strong></em> — <code>point</code> — <strong><a href="/galaxy/reference/event-ping-unit-position">Player Ping Unit Position</a></strong> — ( EventPingUnitPosition )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/event-ping-unit-is-under-construction">Player Ping Unit Is Under Construction</a></strong> — ( EventPingUnitIsUnderConstruction )</li>
+<li><em><strong>[F]</strong></em> — <code>point</code> — <strong><a href="/galaxy/reference/event-ping-point">Player Ping Location</a></strong> — ( EventPingPoint )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/event-pinged-minimap">Player Ping Is From Minimap</a></strong> — ( EventPingedMinimap )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/event-ping-option">Player Ping Option</a></strong> — ( EventPingOption )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ping-set-player-pings-shown">Show/Hide Player Pings</a></strong> — ( PingSetPlayerPingsShown )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/minimap-ping">Ping Minimap</a></strong> — ( MinimapPing )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/minimap-ping-possible-enemy-start-locations">Ping Minimap Possible Enemy Start Locations</a></strong> — ( MinimapPingPossibleEnemyStartLocations )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ ping ]</em> — <strong><a href="/galaxy/reference/ping-create">Create Ping (Deprecated)</a></strong> — ( PingCreate )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ ping ]</em> — <strong><a href="/galaxy/reference/ping-create-with-player-id">Create Ping With Point Facing</a></strong> — ( PingCreateWithPlayerId )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ ping ]</em> — <strong><a href="/galaxy/reference/ping-create-from-data">Create Ping From Data</a></strong> — ( PingCreateFromData )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-create-ping-facing-angle">Create Ping Facing Angle</a></strong> — ( libNtve_gf_CreatePingFacingAngle )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ping-set-visible">Show/Hide Ping</a></strong> — ( PingSetVisible )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ ping ]</em> — <strong><a href="/galaxy/reference/ping-last-created">Last Created Ping</a></strong> — ( PingLastCreated )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/ping-is-visible">Ping Is Visible</a></strong> — ( PingIsVisible )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/challenges/economy.sc2map/MapScript.galaxy#L791">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L791</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"PingSimple"</span>, RegionGetCenter(RegionFromId(<span class="hljs-number">4</span>)), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">4.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L540</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"PingWarning"</span>, PointFromId(<span class="hljs-number">47</span>), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">4.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L802</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"PingWarning"</span>, PointFromId(<span class="hljs-number">3</span>), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">4.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1563</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"PingSimple"</span>, PointFromId(<span class="hljs-number">1649</span>), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">8.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1790</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"PingObjective"</span>, RegionGetCenter(RegionFromId(<span class="hljs-number">2</span>)), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1955</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"PingSimple"</span>, PointFromId(<span class="hljs-number">3242</span>), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">5.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5328</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"PingObjective"</span>, PointFromId(<span class="hljs-number">1638</span>), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1278</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"PingObjective"</span>, UnitGetPosition(gv_infestor1), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1286</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"PingObjective"</span>, UnitGetPosition(gv_infestor2), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1837</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupSingle(gv_pLAYER_01_USER), <span class="hljs-string">"PingWarning"</span>, UnitGetPosition(autoE55A534E_var), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1013</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupSingle(gv_pLAYER01_USER), <span class="hljs-string">"PingObjective"</span>, UnitGetPosition(UnitFromId(<span class="hljs-number">2466</span>)), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1019</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupSingle(gv_pLAYER01_USER), <span class="hljs-string">"PingObjective"</span>, UnitGetPosition(UnitFromId(<span class="hljs-number">2915</span>)), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1025</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupSingle(gv_pLAYER01_USER), <span class="hljs-string">"PingObjective"</span>, UnitGetPosition(UnitFromId(<span class="hljs-number">2819</span>)), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1171</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupSingle(gv_pLAYER01_USER), <span class="hljs-string">"PingBoss"</span>, UnitGetPosition(gv_purifier), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1518</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"PingObjective"</span>, RegionGetCenter(gv_infestationRegion[lv_colonyIndex]), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3795</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"PingObjective"</span>, RegionGetCenter(RegionFromId(<span class="hljs-number">4</span>)), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3800</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"PingObjective"</span>, RegionGetCenter(RegionFromId(<span class="hljs-number">17</span>)), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3805</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"PingObjective"</span>, RegionGetCenter(RegionFromId(<span class="hljs-number">16</span>)), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3811</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"PingObjective"</span>, RegionGetCenter(gv_infestationRegion[lv_initialInfestation]), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L433</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"PingObjective"</span>, UnitGetPosition(lp_diamondback), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2669</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupActive(), <span class="hljs-string">"PingSimple"</span>, UnitGetPosition(lv_trainCarToPing_LOCAL), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L999</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupSingle(gv_p01_USER), <span class="hljs-string">"PingObjective"</span>, PointFromId(<span class="hljs-number">51</span>), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1243</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"PingObjective"</span>, UnitGetPosition(UnitFromId(<span class="hljs-number">767</span>)), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1247</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"PingObjective"</span>, UnitGetPosition(UnitFromId(<span class="hljs-number">894</span>)), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1251</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"PingObjective"</span>, UnitGetPosition(UnitFromId(<span class="hljs-number">893</span>)), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6360</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupSingle(gv_p01_USER), <span class="hljs-string">"PingWarning"</span>, PointFromId(<span class="hljs-number">1652</span>), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6369</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupSingle(gv_p01_USER), <span class="hljs-string">"PingWarning"</span>, PointFromId(<span class="hljs-number">1654</span>), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6378</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupSingle(gv_p01_USER), <span class="hljs-string">"PingWarning"</span>, PointFromId(<span class="hljs-number">1653</span>), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6465</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupSingle(gv_p01_USER), <span class="hljs-string">"PingWarning"</span>, PointFromId(<span class="hljs-number">1654</span>), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6472</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupSingle(gv_p01_USER), <span class="hljs-string">"PingWarning"</span>, PointFromId(<span class="hljs-number">1652</span>), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6479</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupSingle(gv_p01_USER), <span class="hljs-string">"PingWarning"</span>, PointFromId(<span class="hljs-number">1653</span>), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9860</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"PingWarning"</span>, UnitGetPosition(gv_hybrid), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">2.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3163</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"PingObjective"</span>, UnitGetPosition(gv_holoboards[<span class="hljs-number">2</span>]), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3205</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"PingObjective"</span>, UnitGetPosition(gv_holoboards[<span class="hljs-number">3</span>]), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3247</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"PingObjective"</span>, UnitGetPosition(gv_holoboards[<span class="hljs-number">4</span>]), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3289</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"PingObjective"</span>, UnitGetPosition(gv_holoboards[<span class="hljs-number">5</span>]), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3331</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"PingObjective"</span>, UnitGetPosition(gv_holoboards[<span class="hljs-number">6</span>]), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4352</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"PingObjective"</span>, UnitGetPosition(UnitFromId(<span class="hljs-number">158</span>)), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5434</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"PingObjective"</span>, UnitGetPosition(gv_holoboards[<span class="hljs-number">1</span>]), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4453</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"PingObjective"</span>, PointFromId(<span class="hljs-number">553</span>), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4517</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"PingObjective"</span>, PointFromId(<span class="hljs-number">577</span>), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1972</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupSingle(gv_pLAYER01_USER), <span class="hljs-string">"PingObjective"</span>, RegionGetCenter(RegionFromId(<span class="hljs-number">72</span>)), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2050</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupSingle(gv_pLAYER01_USER), <span class="hljs-string">"PingObjective"</span>, RegionGetCenter(RegionFromId(<span class="hljs-number">3</span>)), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2139</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupSingle(gv_pLAYER01_USER), <span class="hljs-string">"PingObjective"</span>, RegionGetCenter(RegionFromId(<span class="hljs-number">71</span>)), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1695</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"PingObjective"</span>, UnitGetPosition(gv_brutalisk), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1762</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"PingObjective"</span>, PointFromId(<span class="hljs-number">443</span>), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2193</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"PingObjective"</span>, RegionGetCenter(RegionFromId(<span class="hljs-number">22</span>)), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2565</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"PingObjective"</span>, RegionGetCenter(RegionFromId(<span class="hljs-number">31</span>)), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4776</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"PingObjective"</span>, RegionGetCenter(RegionFromId(<span class="hljs-number">8</span>)), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1166</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"PingObjective"</span>, UnitGetPosition(gv_spectreUnitArray[lv_iNT]), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2376</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"MinimapPing"</span>, RegionGetCenter(RegionFromId(<span class="hljs-number">27</span>)), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2953</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"MinimapPing"</span>, RegionGetCenter(RegionFromId(<span class="hljs-number">9</span>)), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3338</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"MinimapPing"</span>, RegionGetCenter(RegionFromId(<span class="hljs-number">27</span>)), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3952</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"MinimapPing"</span>, RegionGetCenter(RegionFromId(<span class="hljs-number">59</span>)), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4164</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupSingle(gv_p1_USER), <span class="hljs-string">"PingObjective"</span>, UnitGetPosition(gv_artifact), Color(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L740</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"PingObjective"</span>, UnitGetPosition(gv_tHEONEDRILL), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1432</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"PingObjective"</span>, PointFromId(<span class="hljs-number">316</span>), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1663</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"PingObjective"</span>, UnitGetPosition(UnitFromId(<span class="hljs-number">90</span>)), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1672</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"PingObjective"</span>, UnitGetPosition(UnitFromId(<span class="hljs-number">271</span>)), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1681</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"PingObjective"</span>, UnitGetPosition(UnitFromId(<span class="hljs-number">592</span>)), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3656</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"PingWarning"</span>, UnitGetPosition(EventUnit()), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3737</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"PingWarning"</span>, UnitGetPosition(lv_transferUnit), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3816</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"PingWarning"</span>, UnitGetPosition(lv_transferUnit), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L386</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"PingObjective"</span>, UnitGetPosition(lp_target), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2416</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"PingBoss"</span>, UnitGetPosition(gv_uNIT_KERRIGAN), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5126</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"PingAlert"</span>, UnitGetPosition(UnitFromId(<span class="hljs-number">1178</span>)), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">3.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5137</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"PingObjective"</span>, UnitGetPosition(UnitFromId(<span class="hljs-number">1178</span>)), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L721</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"PingObjective"</span>, PointFromId(<span class="hljs-number">13</span>), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L914</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupSingle(gv_pLAYER01_USER), <span class="hljs-string">"PingObjective"</span>, UnitGetPosition(gv_artifactVault), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1040</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupSingle(gv_pLAYER01_USER), <span class="hljs-string">"PingArrow"</span>, PointWithOffset(UnitGetPosition(gv_wALLOFFIRE), <span class="hljs-number">0.0</span>, gv_ping_VertSpace_Increment), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2892</span>
+libNtve_gf_CreatePingFacingAngle(gv_fORCEGOOD_GUYS, <span class="hljs-string">"PingSimple"</span>, RegionGetCenter(RegionFromId(<span class="hljs-number">32</span>)), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">4.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4414</span>
+libNtve_gf_CreatePingFacingAngle(gv_fORCEGOOD_GUYS, <span class="hljs-string">"PingObjective"</span>, UnitGetPosition(gv_uNITPrison[lv_iNT]), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5669</span>
+libNtve_gf_CreatePingFacingAngle(gv_fORCEGOOD_GUYS, <span class="hljs-string">"PingObjective"</span>, UnitGetPosition(gv_uNITPrison[<span class="hljs-number">1</span>]), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L499</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"PingSimple"</span>, RegionGetCenter(lv_region), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1429</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"PingSimple"</span>, PointFromId(<span class="hljs-number">388</span>), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2094</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"PingWarning"</span>, RegionGetCenter(RegionFromId(<span class="hljs-number">31</span>)), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">12.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2468</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"PingSimple"</span>, PointFromId(<span class="hljs-number">59</span>), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2634</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"PingSimple"</span>, PointFromId(<span class="hljs-number">465</span>), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1558</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"PingObjective"</span>, RegionGetCenter(RegionFromId(<span class="hljs-number">2</span>)), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2536</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"PingSimple"</span>, RegionGetCenter(RegionFromId(<span class="hljs-number">16</span>)), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3684</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"PingObjective"</span>, RegionGetCenter(RegionFromId(<span class="hljs-number">15</span>)), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4571</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"PingSimple"</span>, RegionGetCenter(RegionFromId(<span class="hljs-number">17</span>)), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4670</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"PingWarning"</span>, UnitGetPosition(UnitLastCreated()), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">3.5</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5617</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"PingObjective"</span>, RegionGetCenter(RegionFromId(<span class="hljs-number">22</span>)), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6277</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"PingSimple"</span>, RegionGetCenter(RegionFromId(<span class="hljs-number">29</span>)), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7023</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"PingBoss"</span>, UnitGetPosition(gv_tHEONEBROODMOTHER), ColorWithAlpha(<span class="hljs-number">50.20</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">50.20</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7068</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"PingBoss"</span>, UnitGetPosition(gv_tHEONEBROODMOTHER), ColorWithAlpha(<span class="hljs-number">50.20</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">50.20</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7162</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"PingBoss"</span>, UnitGetPosition(gv_tHEONEBROODMOTHER), ColorWithAlpha(<span class="hljs-number">50.20</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">50.20</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2941</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"PingBoss"</span>, UnitGetPosition(gv_leviathan), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2983</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupSingle(gv_pLAYER_USER), <span class="hljs-string">"PingWarning"</span>, RegionGetCenter(RegionFromId(<span class="hljs-number">2</span>)), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2988</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupSingle(gv_pLAYER_USER), <span class="hljs-string">"PingWarning"</span>, RegionGetCenter(RegionFromId(<span class="hljs-number">11</span>)), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3102</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"PingSimple"</span>, UnitGetPosition(lv_nydusWorm), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3747</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupSingle(gv_pLAYER_USER), <span class="hljs-string">"PingBoss"</span>, UnitGetPosition(gv_kerrigan), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4647</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupSingle(gv_pLAYER_USER), <span class="hljs-string">"PingObjective"</span>, UnitGetPosition(gv_artifact), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">135.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2295</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"PingObjective"</span>, UnitGetPosition(UnitFromId(<span class="hljs-number">7</span>)), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2301</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"PingObjective"</span>, UnitGetPosition(UnitFromId(<span class="hljs-number">208</span>)), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">4.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3778</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"PingSimple"</span>, PointFromId(<span class="hljs-number">461</span>), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">4.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3933</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"PingObjective"</span>, UnitGetPosition(UnitFromId(<span class="hljs-number">74</span>)), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3939</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"PingObjective"</span>, UnitGetPosition(UnitFromId(<span class="hljs-number">692</span>)), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">4.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4635</span>
+libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), <span class="hljs-string">"PingObjective"</span>, PointFromId(<span class="hljs-number">110</span>), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">5.0</span>, <span class="hljs-number">270.0</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

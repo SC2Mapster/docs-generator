@@ -1,0 +1,37 @@
+# Options -Multiviews -Indexes +FollowSymLinks
+RewriteEngine On
+RewriteBase /
+#DirectorySlash Off
+
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+RewriteRule ^(data|star-tools|stats)($|/.*) - [L]
+
+# remove trailing slash
+RewriteRule ^(.*)\/(\?.*)?$ $1$2 [R=302,L]
+
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteRule ^(.*)\.html$ /$1 [L,R=301]
+# 
+#example.com/page will display the contents of example.com/page.html
+RewriteCond %{REQUEST_URI} ^/(galaxy|ui-layout).*
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+)$ $1.html [L,QSA]
+
+#301 from example.com/page.html to example.com/page
+#RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /.*\.html\ HTTP/
+#RewriteRule ^(.*)\.html$ /$1 [R=302,L]
+
+# reqest to example.com/ will be forwarded to example.com/sub-page
+#RewriteRule ^$ galaxy/reference [L,R=302]
+
+# old layout URLs
+RewriteRule ^layouts/frame(.*)$ /ui-layout/frame-type$1 [R=301,L]
+RewriteRule ^layouts/class(.*)$ /ui-layout/frame-class$1 [R=301,L]
+RewriteRule ^layouts$ /ui-layout [R=301,L]
+
+AddDefaultCharset utf-8

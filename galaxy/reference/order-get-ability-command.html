@@ -1,0 +1,430 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Ability Command For Order / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Ability Command For Order"/>
+                <meta property="og:description" content="Returns the ability command for the order.
+
+Returns: abilcmd"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="ability-command-for-order"><a class="markdownIt-Anchor" href="#ability-command-for-order">#</a> Ability Command For Order</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Ability command for <strong>o</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Function</code></p>
+</blockquote>
+<p>Returns the ability command for the order.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>order</code> — Order</li>
+</ul>
+<p>Returns — <code>abilcmd</code></p>
+<pre class="hljs"><code><span class="hljs-function">native abilcmd <span class="hljs-title">OrderGetAbilityCommand</span><span class="hljs-params">(order inOrder)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#order-order-properties">Order / Order Properties</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/order-get-player">Player For Order</a></strong> — ( OrderGetPlayer )</li>
+<li><em><strong>[F]</strong></em> — <code>abilcmd</code> — <strong><a href="/galaxy/reference/order-get-ability-command">Ability Command For Order</a></strong> — ( OrderGetAbilityCommand )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/order-get-flag">Flag Is Enabled For Order</a></strong> — ( OrderGetFlag )</li>
+<li><em><strong>[F]</strong></em> — <code>unit</code> — <strong><a href="/galaxy/reference/order-get-target-item">Target Item For Order</a></strong> — ( OrderGetTargetItem )</li>
+<li><em><strong>[F]</strong></em> — <code>point</code> — <strong><a href="/galaxy/reference/order-get-target-point">Target Point For Order</a></strong> — ( OrderGetTargetPoint )</li>
+<li><em><strong>[F]</strong></em> — <code>point</code> — <strong><a href="/galaxy/reference/order-get-target-position">Target Position For Order</a></strong> — ( OrderGetTargetPosition )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-order-target-type">OrderTargetType</a> ]</em> — <strong><a href="/galaxy/reference/order-get-target-type">Target Type For Order</a></strong> — ( OrderGetTargetType )</li>
+<li><em><strong>[F]</strong></em> — <code>unit</code> — <strong><a href="/galaxy/reference/order-get-target-unit">Target Unit For Order</a></strong> — ( OrderGetTargetUnit )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/unit-order-is-valid">Order Is Valid</a></strong> — ( UnitOrderIsValid )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/order-set-flag">Order Set Flag</a></strong> — ( OrderSetFlag )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2data/TriggerLibs/Tactical/TactCampAI.galaxy#L16">TactCampAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L16</span>
+OrderGetAbilityCommand (ord)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L124</span>
+OrderGetAbilityCommand(curOrd)
+</code></pre>
+<h4 id="campaignslibertysc2campaign-2"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign-2">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/tstory01.sc2map/MapScript.galaxy#L3678">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3678</span>
+OrderGetAbilityCommand(lv_order)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L20937</span>
+OrderGetAbilityCommand(UnitOrder(gf_GetBGActor(lv_bGActorID), <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L519</span>
+OrderGetAbilityCommand(UnitOrder(lv_defender, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L519</span>
+OrderGetAbilityCommand(UnitOrder(lv_defender, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L519</span>
+OrderGetAbilityCommand(UnitOrder(lv_defender, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5375</span>
+OrderGetAbilityCommand(UnitOrder(autoE5915620_var, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5375</span>
+OrderGetAbilityCommand(UnitOrder(autoE5915620_var, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5375</span>
+OrderGetAbilityCommand(UnitOrder(autoE5915620_var, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7473</span>
+OrderGetAbilityCommand(UnitOrder(auto0685ADAD_var, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7473</span>
+OrderGetAbilityCommand(UnitOrder(auto0685ADAD_var, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7473</span>
+OrderGetAbilityCommand(UnitOrder(auto0685ADAD_var, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3678</span>
+OrderGetAbilityCommand(lv_order)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L20937</span>
+OrderGetAbilityCommand(UnitOrder(gf_GetBGActor(lv_bGActorID), <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L519</span>
+OrderGetAbilityCommand(UnitOrder(lv_defender, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L519</span>
+OrderGetAbilityCommand(UnitOrder(lv_defender, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L519</span>
+OrderGetAbilityCommand(UnitOrder(lv_defender, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5375</span>
+OrderGetAbilityCommand(UnitOrder(autoE5915620_var, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5375</span>
+OrderGetAbilityCommand(UnitOrder(autoE5915620_var, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5375</span>
+OrderGetAbilityCommand(UnitOrder(autoE5915620_var, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7473</span>
+OrderGetAbilityCommand(UnitOrder(auto0685ADAD_var, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7473</span>
+OrderGetAbilityCommand(UnitOrder(auto0685ADAD_var, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7473</span>
+OrderGetAbilityCommand(UnitOrder(auto0685ADAD_var, <span class="hljs-number">0</span>))
+</code></pre>
+<h4 id="campaignsswarmsc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmsc2campaign">#</a> campaigns/swarm.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarm.sc2campaign/base.sc2data/TriggerLibs/Tactical/TactCampAI.galaxy#L16">TactCampAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L16</span>
+OrderGetAbilityCommand (ord)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L124</span>
+OrderGetAbilityCommand(curOrd)
+</code></pre>
+<h4 id="campaignsswarmsc2campaign-2"><a class="markdownIt-Anchor" href="#campaignsswarmsc2campaign-2">#</a> campaigns/swarm.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarm.sc2campaign/base.sc2maps/maps/campaign/swarm/zlab03.sc2map/MapScript.galaxy#L744">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L744</span>
+OrderGetAbilityCommand(UnitOrder(lp_u, lv_index))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L525</span>
+OrderGetAbilityCommand(UnitOrder(lv_indexUnit, (lv_indexOrder - <span class="hljs-number">1</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3623</span>
+OrderGetAbilityCommand(UnitOrder(lv_indexUnit, (lv_indexOrder - <span class="hljs-number">1</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2765</span>
+OrderGetAbilityCommand(UnitOrder(gv_kerrigan, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1625</span>
+OrderGetAbilityCommand(UnitOrder(lp_harvester, lv_index))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L744</span>
+OrderGetAbilityCommand(UnitOrder(lp_u, lv_index))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L525</span>
+OrderGetAbilityCommand(UnitOrder(lv_indexUnit, (lv_indexOrder - <span class="hljs-number">1</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3623</span>
+OrderGetAbilityCommand(UnitOrder(lv_indexUnit, (lv_indexOrder - <span class="hljs-number">1</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2765</span>
+OrderGetAbilityCommand(UnitOrder(gv_kerrigan, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1625</span>
+OrderGetAbilityCommand(UnitOrder(lp_harvester, lv_index))
+</code></pre>
+<h4 id="campaignsswarmstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmstorysc2campaign">#</a> campaigns/swarmstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstory.sc2campaign/base.sc2data/TriggerLibs/SwarmCampaignLib.galaxy#L2400">SwarmCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2400</span>
+OrderGetAbilityCommand(lv_currentOrder)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2400</span>
+OrderGetAbilityCommand(lv_currentOrder)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2472</span>
+OrderGetAbilityCommand(lv_currentOrder)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2472</span>
+OrderGetAbilityCommand(lv_currentOrder)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2483</span>
+OrderGetAbilityCommand(lv_currentOrder)
+</code></pre>
+<h4 id="campaignsvoidsc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidsc2campaign">#</a> campaigns/void.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/void.sc2campaign/base.sc2data/TriggerLibs/Tactical/TactCampAI.galaxy#L16">TactCampAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L16</span>
+OrderGetAbilityCommand (ord)
+</code></pre>
+<h4 id="campaignsvoidsc2campaign-2"><a class="markdownIt-Anchor" href="#campaignsvoidsc2campaign-2">#</a> campaigns/void.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/void.sc2campaign/base.sc2maps/maps/campaign/sc2tutorial.sc2map/MapScript.galaxy#L2948">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2948</span>
+OrderGetAbilityCommand(UnitOrder(UnitGroupLoopCurrent(), IntLoopCurrent()))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3014</span>
+OrderGetAbilityCommand(EventUnitOrder())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3014</span>
+OrderGetAbilityCommand(EventUnitOrder())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3014</span>
+OrderGetAbilityCommand(EventUnitOrder())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3072</span>
+OrderGetAbilityCommand(UnitOrder(EventUnit(), <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3101</span>
+OrderGetAbilityCommand(UnitOrder(UnitGroupLoopCurrent(), <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3351</span>
+OrderGetAbilityCommand(UnitOrder(UnitGroupLoopCurrent(), <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3369</span>
+OrderGetAbilityCommand(UnitOrder(UnitGroupLoopCurrent(), <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3547</span>
+OrderGetAbilityCommand(UnitOrder(UnitGroupLoopCurrent(), <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3547</span>
+OrderGetAbilityCommand(UnitOrder(UnitGroupLoopCurrent(), <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2410</span>
+OrderGetAbilityCommand(UnitOrder(auto50687FF9_var, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2414</span>
+OrderGetAbilityCommand(UnitOrder(auto50687FF9_var, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3102</span>
+OrderGetAbilityCommand(UnitOrder(autoDD24C83D_var, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3332</span>
+OrderGetAbilityCommand(UnitOrder(auto220BF287_var, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3332</span>
+OrderGetAbilityCommand(UnitOrder(auto220BF287_var, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3453</span>
+OrderGetAbilityCommand(UnitOrder(auto70400E0A_var, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3453</span>
+OrderGetAbilityCommand(UnitOrder(auto70400E0A_var, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3811</span>
+OrderGetAbilityCommand(UnitOrder(auto4D4BD4E5_var, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3811</span>
+OrderGetAbilityCommand(UnitOrder(auto4D4BD4E5_var, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6580</span>
+OrderGetAbilityCommand(UnitOrder(gv_narud, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2948</span>
+OrderGetAbilityCommand(UnitOrder(UnitGroupLoopCurrent(), IntLoopCurrent()))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3014</span>
+OrderGetAbilityCommand(EventUnitOrder())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3014</span>
+OrderGetAbilityCommand(EventUnitOrder())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3014</span>
+OrderGetAbilityCommand(EventUnitOrder())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3072</span>
+OrderGetAbilityCommand(UnitOrder(EventUnit(), <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3101</span>
+OrderGetAbilityCommand(UnitOrder(UnitGroupLoopCurrent(), <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3351</span>
+OrderGetAbilityCommand(UnitOrder(UnitGroupLoopCurrent(), <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3369</span>
+OrderGetAbilityCommand(UnitOrder(UnitGroupLoopCurrent(), <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3547</span>
+OrderGetAbilityCommand(UnitOrder(UnitGroupLoopCurrent(), <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3547</span>
+OrderGetAbilityCommand(UnitOrder(UnitGroupLoopCurrent(), <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2410</span>
+OrderGetAbilityCommand(UnitOrder(auto50687FF9_var, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2414</span>
+OrderGetAbilityCommand(UnitOrder(auto50687FF9_var, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3102</span>
+OrderGetAbilityCommand(UnitOrder(autoDD24C83D_var, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3332</span>
+OrderGetAbilityCommand(UnitOrder(auto220BF287_var, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3332</span>
+OrderGetAbilityCommand(UnitOrder(auto220BF287_var, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3453</span>
+OrderGetAbilityCommand(UnitOrder(auto70400E0A_var, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3453</span>
+OrderGetAbilityCommand(UnitOrder(auto70400E0A_var, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3811</span>
+OrderGetAbilityCommand(UnitOrder(auto4D4BD4E5_var, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3811</span>
+OrderGetAbilityCommand(UnitOrder(auto4D4BD4E5_var, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6580</span>
+OrderGetAbilityCommand(UnitOrder(gv_narud, <span class="hljs-number">0</span>))
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignMissionLib.galaxy#L2324">VoidCampaignMissionLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2324</span>
+OrderGetAbilityCommand(lv_currentOrder)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2324</span>
+OrderGetAbilityCommand(lv_currentOrder)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2395</span>
+OrderGetAbilityCommand(lv_currentOrder)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2395</span>
+OrderGetAbilityCommand(lv_currentOrder)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2406</span>
+OrderGetAbilityCommand(lv_currentOrder)
+</code></pre>
+<h4 id="modsbalancemultisc2mod"><a class="markdownIt-Anchor" href="#modsbalancemultisc2mod">#</a> mods/balancemulti.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/balancemulti.sc2mod/base.sc2data/TriggerLibs/VoidMultiLib.galaxy#L41">VoidMultiLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L41</span>
+OrderGetAbilityCommand(lv_order)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L267</span>
+OrderGetAbilityCommand(lv_order)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L41</span>
+OrderGetAbilityCommand(lv_order)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L267</span>
+OrderGetAbilityCommand(lv_order)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L41</span>
+OrderGetAbilityCommand(lv_order)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L267</span>
+OrderGetAbilityCommand(lv_order)
+</code></pre>
+<h4 id="modscoresc2mod"><a class="markdownIt-Anchor" href="#modscoresc2mod">#</a> mods/core.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/core.sc2mod/base.sc2data/TriggerLibs/Tactical/TactProtAI.galaxy#L1068">TactProtAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1068</span>
+OrderGetAbilityCommand(curOrder)
+</code></pre>
+<h4 id="modscoresc2mod-2"><a class="markdownIt-Anchor" href="#modscoresc2mod-2">#</a> mods/core.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/core.sc2mod/base.sc2data/TriggerLibs/Tactical/TactTerrAI.galaxy#L160">TactTerrAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L160</span>
+OrderGetAbilityCommand(curOrd)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1613</span>
+OrderGetAbilityCommand (autoCastOrd)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1623</span>
+OrderGetAbilityCommand(curOrder)
+</code></pre>
+<h4 id="modscoresc2mod-3"><a class="markdownIt-Anchor" href="#modscoresc2mod-3">#</a> mods/core.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/core.sc2mod/base.sc2data/TriggerLibs/Tactical/TacticalAI.galaxy#L277">TacticalAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L277</span>
+OrderGetAbilityCommand(o)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L284</span>
+OrderGetAbilityCommand(o)
+</code></pre>
+<h4 id="modsheroesbrawlmodsarenamodemodstemplearenastormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsarenamodemodstemplearenastormmod">#</a> mods/heroesbrawlmods/arenamodemods/templearena.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/arenamodemods/templearena.stormmod/base.stormdata/LibAMCT.galaxy#L2206">LibAMCT.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2206</span>
+OrderGetAbilityCommand(lv_currentOrder)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

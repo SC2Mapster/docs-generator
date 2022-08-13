@@ -1,0 +1,310 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Send Actor Message To Actor Region With Filters / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Send Actor Message To Actor Region With Filters"/>
+                <meta property="og:description" content="Sends an actor message to all the actors contained within the specified region actor.  The Intersect Type parameter defines which radius will be used to determine intersection with the region.  The Class Filters parameter is used to specify which types of actors should receive the message.  The format for Class Filters is a list of comma delimited actor types.  The Terms parameter is used to specify a condition that an actor in the region must meet in order to receive the message.  The format for Terms is a list of semi colon delimited actor terms.  An actor message will perform an action and/or trigger an event on the actor it is sent to."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="send-actor-message-to-actor-region-with-filters"><a class="markdownIt-Anchor" href="#send-actor-message-to-actor-region-with-filters">#</a> Send Actor Message To Actor Region With Filters</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Send actor message <strong>message</strong> to all actors that intersect actor region <strong>region</strong> with their <strong>intersectType</strong> that belong to class <strong>classFilters</strong> and match terms <strong>terms</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Sends an actor message to all the actors contained within the specified region actor.  The Intersect Type parameter defines which radius will be used to determine intersection with the region.  The Class Filters parameter is used to specify which types of actors should receive the message.  The format for Class Filters is a list of comma delimited actor types.  The Terms parameter is used to specify a condition that an actor in the region must meet in order to receive the message.  The format for Terms is a list of semi colon delimited actor terms.  An actor message will perform an action and/or trigger an event on the actor it is sent to.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>actor</code> — Region</li>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-actor-intersect-type">ActorIntersectType</a> ]</em> — Intersect Type</li>
+<li><code>string</code> <em>[ actormsg ]</em> — Message</li>
+<li><code>string</code> — Class Filters</li>
+<li><code>string</code> — Terms</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">ActorRegionSend</span><span class="hljs-params">(
+	actor a,
+	<span class="hljs-keyword">int</span> intersect,
+	<span class="hljs-built_in">string</span> msg,
+	<span class="hljs-built_in">string</span> filters,
+	<span class="hljs-built_in">string</span> terms,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#actor-send-actor-messages">Actor / Send Actor Messages</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/actor-send">Send Actor Message</a></strong> — ( ActorSend )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/actor-send-as-text">Send Actor Message As Text</a></strong> — ( ActorSendAsText )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-send-actor-message-to-unit">Send Actor Message To Unit</a></strong> — ( libNtve_gf_SendActorMessageToUnit )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/actor-scope-send">Send Actor Message To Scope</a></strong> — ( ActorScopeSend )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-actor-region-send-simple">Send Actor Message To Actor Region</a></strong> — ( libNtve_gf_ActorRegionSendSimple )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/actor-region-send">Send Actor Message To Actor Region With Filters</a></strong> — ( ActorRegionSend )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-send-actor-message-to-game-region">Send Actor Message To Game Region</a></strong> — ( libNtve_gf_SendActorMessageToGameRegion )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-send-actor-message-to-game-region-with-filters">Send Actor Message To Game Region With Filters</a></strong> — ( libNtve_gf_SendActorMessageToGameRegionWithFilters )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/actor-send-to">Send Actor Message Via Name</a></strong> — ( ActorSendTo )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/actor-send-to-as-text">Send Actor Message As Text Via Name</a></strong> — ( ActorSendToAsText )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/thorner02.sc2map/MapScript.galaxy#L340">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L340</span>
+ActorRegionSend(lv_actorRegion, c_actorIntersectAgainstRadiusContact, <span class="hljs-string">"Signal Down"</span>, <span class="hljs-string">"Doodad"</span>, <span class="hljs-string">"ScopeContains PortZionScrapElevatorLeft"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L344</span>
+ActorRegionSend(lv_actorRegion, c_actorIntersectAgainstRadiusContact, <span class="hljs-string">"Signal Up"</span>, <span class="hljs-string">"Doodad"</span>, <span class="hljs-string">"ScopeContains PortZionScrapElevatorLeft"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L340</span>
+ActorRegionSend(lv_actorRegion, c_actorIntersectAgainstRadiusContact, <span class="hljs-string">"Signal Down"</span>, <span class="hljs-string">"Doodad"</span>, <span class="hljs-string">"ScopeContains PortZionScrapElevatorLeft"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L344</span>
+ActorRegionSend(lv_actorRegion, c_actorIntersectAgainstRadiusContact, <span class="hljs-string">"Signal Up"</span>, <span class="hljs-string">"Doodad"</span>, <span class="hljs-string">"ScopeContains PortZionScrapElevatorLeft"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L992</span>
+ActorRegionSend(lv_actorRegion, c_actorIntersectAgainstRadiusContact, <span class="hljs-string">"ModelSwap UmojanLabWallConsolesDeath"</span>, <span class="hljs-string">"Doodad"</span>, (<span class="hljs-string">"ScopeContains "</span> + (<span class="hljs-string">"UmojanLabWallConsoles"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L537</span>
+ActorRegionSend(lv_actorRegion, c_actorIntersectAgainstRadiusContact, lp_message, <span class="hljs-string">"Doodad"</span>, lv_termsString)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L992</span>
+ActorRegionSend(lv_actorRegion, c_actorIntersectAgainstRadiusContact, <span class="hljs-string">"ModelSwap UmojanLabWallConsolesDeath"</span>, <span class="hljs-string">"Doodad"</span>, (<span class="hljs-string">"ScopeContains "</span> + (<span class="hljs-string">"UmojanLabWallConsoles"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L537</span>
+ActorRegionSend(lv_actorRegion, c_actorIntersectAgainstRadiusContact, lp_message, <span class="hljs-string">"Doodad"</span>, lv_termsString)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L520</span>
+ActorRegionSend(lv_actorRegion, c_actorIntersectAgainstRadiusContact, lp_actorMessage, <span class="hljs-string">"Doodad"</span>, (<span class="hljs-string">"ScopeContains "</span> + lp_doodadType))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L520</span>
+ActorRegionSend(lv_actorRegion, c_actorIntersectAgainstRadiusContact, lp_actorMessage, <span class="hljs-string">"Doodad"</span>, (<span class="hljs-string">"ScopeContains "</span> + lp_doodadType))
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignMissionLib.galaxy#L3687">VoidCampaignMissionLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3687</span>
+ActorRegionSend(lv_actorRegion, c_actorIntersectAgainstRadiusContact, lp_message, <span class="hljs-string">"Doodad"</span>, lv_terms)
+</code></pre>
+<h4 id="modscoresc2mod"><a class="markdownIt-Anchor" href="#modscoresc2mod">#</a> mods/core.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/core.sc2mod/base.sc2data/TriggerLibs/NativeLib.galaxy#L434">NativeLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L434</span>
+ActorRegionSend(lp_region, c_actorIntersectAgainstRadiusContact, lp_message, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L447</span>
+ActorRegionSend(lv_actorRegion, c_actorIntersectAgainstRadiusContact, lp_message, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L461</span>
+ActorRegionSend(lv_actorRegion, lp_intersectType, lp_message, lp_classFilters, lp_terms)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1150</span>
+ActorRegionSend(lv_actorRegion, c_actorIntersectAgainstRadiusContact, <span class="hljs-string">"Destroy"</span>, <span class="hljs-string">"Doodad"</span>, lv_animTermsString)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1164</span>
+ActorRegionSend(lv_actorRegion, c_actorIntersectAgainstRadiusContact, <span class="hljs-string">"Destroy"</span>, <span class="hljs-string">"Model"</span>, <span class="hljs-string">"ScopeContains _DeathModel"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1179</span>
+ActorRegionSend(lv_actorRegion, c_actorIntersectAgainstRadiusContact, <span class="hljs-string">"Destroy Immediate"</span>, <span class="hljs-string">"Model"</span>, <span class="hljs-string">"ScopeContains _DeathModel"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1285</span>
+ActorRegionSend(lv_actorRegion, c_actorIntersectAgainstRadiusContact, (lv_actorMessageString), <span class="hljs-string">"Doodad"</span>, lv_termsString)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1496</span>
+ActorRegionSend(lv_actorRegion, c_actorIntersectAgainstRadiusContact, (lv_actorMessageString), <span class="hljs-string">"Doodad"</span>, lv_termsString)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1521</span>
+ActorRegionSend(lv_actorRegion, c_actorIntersectAgainstRadiusContact, <span class="hljs-string">"AnimPlay Death Death PlayForever,NonLooping"</span>, <span class="hljs-string">"Doodad"</span>, lv_animTermsString)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1522</span>
+ActorRegionSend(lv_actorRegion, c_actorIntersectAgainstRadiusContact, <span class="hljs-string">"StatusIncrement DoodadKilled"</span>, <span class="hljs-string">"Doodad"</span>, lv_statusTermsString)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L317</span>
+ActorRegionSend(lp_region, c_actorIntersectAgainstRadiusContact, lp_message, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L330</span>
+ActorRegionSend(lv_actorRegion, c_actorIntersectAgainstRadiusContact, lp_message, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L344</span>
+ActorRegionSend(lv_actorRegion, lp_intersectType, lp_message, lp_classFilters, lp_terms)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1045</span>
+ActorRegionSend(lv_actorRegion, c_actorIntersectAgainstRadiusContact, <span class="hljs-string">"Destroy"</span>, <span class="hljs-string">"Doodad"</span>, lv_animTermsString)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1059</span>
+ActorRegionSend(lv_actorRegion, c_actorIntersectAgainstRadiusContact, <span class="hljs-string">"Destroy"</span>, <span class="hljs-string">"Model"</span>, <span class="hljs-string">"ScopeContains _DeathModel"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1060</span>
+ActorRegionSend(lv_actorRegion, c_actorIntersectAgainstRadiusContact, <span class="hljs-string">"Destroy"</span>, <span class="hljs-string">"Unit"</span>, <span class="hljs-string">"ScopeContains _DeathModel"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1075</span>
+ActorRegionSend(lv_actorRegion, c_actorIntersectAgainstRadiusContact, <span class="hljs-string">"Destroy Immediate"</span>, <span class="hljs-string">"Model"</span>, <span class="hljs-string">"ScopeContains _DeathModel"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1181</span>
+ActorRegionSend(lv_actorRegion, c_actorIntersectAgainstRadiusContact, (lv_actorMessageString), <span class="hljs-string">"Doodad"</span>, lv_termsString)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1305</span>
+ActorRegionSend(lv_actorRegion, c_actorIntersectAgainstRadiusContact, (lv_actorMessageString), <span class="hljs-string">"Doodad"</span>, lv_termsString)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1330</span>
+ActorRegionSend(lv_actorRegion, c_actorIntersectAgainstRadiusContact, <span class="hljs-string">"AnimPlay Death Death PlayForever,NonLooping"</span>, <span class="hljs-string">"Doodad"</span>, lv_animTermsString)
+</code></pre>
+<h4 id="modsheroesstormmod"><a class="markdownIt-Anchor" href="#modsheroesstormmod">#</a> mods/heroes.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroes.stormmod/base.stormmaps/maps/heroes/singleplayermaps/startingexperience/tutorialveteran.stormmap/MapScript.galaxy#L927">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L927</span>
+ActorRegionSend(lv_actorRegion, c_actorIntersectAgainstRadiusContact, <span class="hljs-string">"Destroy"</span>, <span class="hljs-string">"Model"</span>, <span class="hljs-string">"ScopeContains _DeadClearable"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L928</span>
+ActorRegionSend(lv_actorRegion, c_actorIntersectAgainstRadiusContact, <span class="hljs-string">"Destroy"</span>, <span class="hljs-string">"Unit"</span>, <span class="hljs-string">"ScopeContains _DeadClearable"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L927</span>
+ActorRegionSend(lv_actorRegion, c_actorIntersectAgainstRadiusContact, <span class="hljs-string">"Destroy"</span>, <span class="hljs-string">"Model"</span>, <span class="hljs-string">"ScopeContains _DeadClearable"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L928</span>
+ActorRegionSend(lv_actorRegion, c_actorIntersectAgainstRadiusContact, <span class="hljs-string">"Destroy"</span>, <span class="hljs-string">"Unit"</span>, <span class="hljs-string">"ScopeContains _DeadClearable"</span>)
+</code></pre>
+<h4 id="modsheroesbrawlmodsarenamodemodsarenamodestormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsarenamodemodsarenamodestormmod">#</a> mods/heroesbrawlmods/arenamodemods/arenamode.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/arenamodemods/arenamode.stormmod/base.stormdata/LibAREN.galaxy#L1296">LibAREN.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1296</span>
+ActorRegionSend(lv_actorRegion, c_actorIntersectAgainstRadiusContact, <span class="hljs-string">"Signal Activate"</span>, <span class="hljs-string">"Doodad"</span>, <span class="hljs-string">"ScopeContains _StartingPlatform"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1299</span>
+ActorRegionSend(lv_actorRegion, c_actorIntersectAgainstRadiusContact, <span class="hljs-string">"Signal Deactivate"</span>, <span class="hljs-string">"Doodad"</span>, <span class="hljs-string">"ScopeContains _StartingPlatform"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2147</span>
+ActorRegionSend(lv_actorRegion, c_actorIntersectAgainstRadiusContact, ((<span class="hljs-string">"Signal "</span> + lv_actorMessageTeamString + lv_actorMessageLevelString + <span class="hljs-string">"Kill"</span>)), <span class="hljs-string">"Doodad"</span>, <span class="hljs-string">"ScopeContains _Spectator"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2519</span>
+ActorRegionSend(lv_actorRegion, c_actorIntersectAgainstRadiusContact, <span class="hljs-string">"Signal OrderMegaKill"</span>, <span class="hljs-string">"Doodad"</span>, <span class="hljs-string">"ScopeContains _Spectator"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2520</span>
+ActorRegionSend(lv_actorRegion, c_actorIntersectAgainstRadiusContact, <span class="hljs-string">"Signal ChaosMegaKill"</span>, <span class="hljs-string">"Doodad"</span>, <span class="hljs-string">"ScopeContains _Spectator"</span>)
+</code></pre>
+<h4 id="modsheroesbrawlmodsarenamodemodsgardenarenastormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsarenamodemodsgardenarenastormmod">#</a> mods/heroesbrawlmods/arenamodemods/gardenarena.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/arenamodemods/gardenarena.stormmod/base.stormdata/LibAMGT.galaxy#L178">LibAMGT.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L178</span>
+ActorRegionSend(lv_actorRegion, c_actorIntersectAgainstRadiusContact, <span class="hljs-string">"Signal NightOn"</span>, <span class="hljs-string">"Doodad"</span>, <span class="hljs-string">"ScopeContains _StreetLamp"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L185</span>
+ActorRegionSend(lv_actorRegion, c_actorIntersectAgainstRadiusContact, <span class="hljs-string">"Signal NightOff"</span>, <span class="hljs-string">"Doodad"</span>, <span class="hljs-string">"ScopeContains _StreetLamp"</span>)
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodscoopescapefrombraxisstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodscoopescapefrombraxisstormmod">#</a> mods/heroesbrawlmods/brawlmapmods/coop/escapefrombraxis.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/coop/escapefrombraxis.stormmod/base.stormdata/LibPEB1.galaxy#L2156">LibPEB1.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2156</span>
+ActorRegionSend(lv_actorRegion, c_actorIntersectAgainstRadiusContact, <span class="hljs-string">"Destroy"</span>, <span class="hljs-string">"Model"</span>, <span class="hljs-string">"ScopeContains _Clearable"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2157</span>
+ActorRegionSend(lv_actorRegion, c_actorIntersectAgainstRadiusContact, <span class="hljs-string">"Destroy"</span>, <span class="hljs-string">"Unit"</span>, <span class="hljs-string">"ScopeContains _Clearable"</span>)
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodscooppvemodstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodscooppvemodstormmod">#</a> mods/heroesbrawlmods/brawlmapmods/coop/pvemod.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/coop/pvemod.stormmod/base.stormdata/LibPVEM.galaxy#L1497">LibPVEM.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1497</span>
+ActorRegionSend(lv_actorRegion, c_actorIntersectAgainstRadiusContact, <span class="hljs-string">"Destroy"</span>, <span class="hljs-string">"Model"</span>, <span class="hljs-string">"ScopeContains _Clearable"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1498</span>
+ActorRegionSend(lv_actorRegion, c_actorIntersectAgainstRadiusContact, <span class="hljs-string">"Destroy"</span>, <span class="hljs-string">"Unit"</span>, <span class="hljs-string">"ScopeContains _Clearable"</span>)
+</code></pre>
+<h4 id="modsheroesdatastormmod"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/HeroesLib.galaxy#L2931">HeroesLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2931</span>
+ActorRegionSend(lv_actorRegion, c_actorIntersectAgainstRadiusContact, lp_message, <span class="hljs-string">"Doodad"</span>, lv_termsString)
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodstowersofdoomstormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodstowersofdoomstormmod">#</a> mods/heroesmapmods/battlegroundmapmods/towersofdoom.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/towersofdoom.stormmod/base.stormdata/LibMTOD.galaxy#L688">LibMTOD.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L688</span>
+ActorRegionSend(lv_actorRegion, c_actorIntersectAgainstRadiusContact, <span class="hljs-string">"Destroy"</span>, <span class="hljs-string">"Model"</span>, <span class="hljs-string">"ScopeContains _ToDClearable"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L689</span>
+ActorRegionSend(lv_actorRegion, c_actorIntersectAgainstRadiusContact, <span class="hljs-string">"Destroy"</span>, <span class="hljs-string">"Unit"</span>, <span class="hljs-string">"ScopeContains _ToDClearable"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L844</span>
+ActorRegionSend(lv_actorRegion, c_actorIntersectAgainstRadiusContact, <span class="hljs-string">"SetPlayerId 11"</span>, <span class="hljs-string">"Doodad"</span>, <span class="hljs-string">"ScopeContains _TownIndicator"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L845</span>
+ActorRegionSend(lv_actorRegion, c_actorIntersectAgainstRadiusContact, <span class="hljs-string">"Signal Order"</span>, <span class="hljs-string">"Doodad"</span>, <span class="hljs-string">"ScopeContains _CaptureBanner"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L848</span>
+ActorRegionSend(lv_actorRegion, c_actorIntersectAgainstRadiusContact, <span class="hljs-string">"SetPlayerId 12"</span>, <span class="hljs-string">"Doodad"</span>, <span class="hljs-string">"ScopeContains _TownIndicator"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L849</span>
+ActorRegionSend(lv_actorRegion, c_actorIntersectAgainstRadiusContact, <span class="hljs-string">"Signal Chaos"</span>, <span class="hljs-string">"Doodad"</span>, <span class="hljs-string">"ScopeContains _CaptureBanner"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1964</span>
+ActorRegionSend(lv_actorRegion, c_actorIntersectAgainstRadiusContact, <span class="hljs-string">"Signal OpenSesame"</span>, <span class="hljs-string">"Doodad"</span>, <span class="hljs-string">"ScopeContains _ArchwayDoor"</span>)
+</code></pre>
+<h4 id="modsmissionpacksnovacampaignsc2mod"><a class="markdownIt-Anchor" href="#modsmissionpacksnovacampaignsc2mod">#</a> mods/missionpacks/novacampaign.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/novacampaign.sc2mod/base.sc2data/LibNCMI.galaxy#L3824">LibNCMI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3824</span>
+ActorRegionSend(lv_actorRegion, c_actorIntersectAgainstRadiusContact, lp_message, <span class="hljs-string">"Doodad"</span>, lv_terms)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOMI.galaxy#L3669">LibCOMI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3669</span>
+ActorRegionSend(lv_ar, c_actorIntersectAgainstRadiusContact, lp_extraMessage, <span class="hljs-string">"Model"</span>, (<span class="hljs-string">"ModelName "</span> + lv_modelOld + <span class="hljs-string">"; PlayerId "</span> + IntToString(lp_player) + <span class="hljs-string">" "</span> + IntToString(lp_player)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3670</span>
+ActorRegionSend(lv_ar, c_actorIntersectAgainstRadiusContact, lp_extraMessage, <span class="hljs-string">"Unit"</span>, (<span class="hljs-string">"ModelName "</span> + lv_modelOld + <span class="hljs-string">"; PlayerId "</span> + IntToString(lp_player) + <span class="hljs-string">" "</span> + IntToString(lp_player)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11576</span>
+ActorRegionSend(lv_actorRegion, c_actorIntersectAgainstRadiusContact, lp_message, <span class="hljs-string">"Doodad"</span>, lv_terms)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

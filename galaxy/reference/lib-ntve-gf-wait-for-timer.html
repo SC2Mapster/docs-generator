@@ -1,0 +1,405 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Wait For Timer / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Wait For Timer"/>
+                <meta property="og:description" content="Pauses a trigger until the chosen Timer has reached a certain point.  This point is set by using the Time parameter, and the WaitType parameter."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="wait-for-timer"><a class="markdownIt-Anchor" href="#wait-for-timer">#</a> Wait For Timer</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Wait for <strong>timer</strong> to have <strong>time</strong> seconds <strong>waitType|Elapsed/Remaining</strong><br>
+<em>Flags</em> — <code>Action</code></p>
+</blockquote>
+<p>Pauses a trigger until the chosen Timer has reached a certain point.  This point is set by using the Time parameter, and the WaitType parameter.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>timer</code> — Timer</li>
+<li><code>fixed</code> — Time</li>
+<li><code>bool</code> <em>[ preset::<a href="/galaxy/reference/preset-elapsed-remaining-option">ElapsedRemainingOption</a> ]</em> — WaitType</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">libNtve_gf_WaitForTimer</span><span class="hljs-params">(
+	timer lp_timer,
+	fixed lp_time,
+	<span class="hljs-keyword">bool</span> lp_waitType,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#general-waits">General / Waits</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/wait">Wait</a></strong> — ( Wait )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-wait-for-condition">Wait For Condition</a></strong> — (  )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-wait-for-condition-with-maximum-duration">Wait For Condition With Maximum Duration</a></strong> — (  )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-wait-for-timer">Wait For Timer</a></strong> — ( libNtve_gf_WaitForTimer )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-critical-section">Critical Section</a></strong> — (  )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/thanson03b.sc2map/MapScript.galaxy#L1471">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1471</span>
+libNtve_gf_WaitForTimer(lv_infestationTimer, <span class="hljs-number">60.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1786</span>
+libNtve_gf_WaitForTimer(gv_nextTrainTimer, <span class="hljs-number">0.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L866</span>
+libNtve_gf_WaitForTimer(lv_periodTimer, <span class="hljs-number">0.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1435</span>
+libNtve_gf_WaitForTimer(lv_recycleDelay, <span class="hljs-number">0.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1561</span>
+libNtve_gf_WaitForTimer(gv_dropPodTimer, <span class="hljs-number">115.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1566</span>
+libNtve_gf_WaitForTimer(gv_dropPodTimer, <span class="hljs-number">150.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1574</span>
+libNtve_gf_WaitForTimer(gv_dropPodTimer, <span class="hljs-number">120.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1578</span>
+libNtve_gf_WaitForTimer(gv_dropPodTimer, <span class="hljs-number">150.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1586</span>
+libNtve_gf_WaitForTimer(gv_dropPodTimer, <span class="hljs-number">120.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1599</span>
+libNtve_gf_WaitForTimer(gv_dropPodTimer, <span class="hljs-number">150.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1615</span>
+libNtve_gf_WaitForTimer(gv_dropPodTimer, <span class="hljs-number">20.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1519</span>
+libNtve_gf_WaitForTimer(gv_platformBlowsTimerArea01, <span class="hljs-number">15.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1522</span>
+libNtve_gf_WaitForTimer(gv_platformBlowsTimerArea01, <span class="hljs-number">0.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1587</span>
+libNtve_gf_WaitForTimer(gv_platformBlowsTimerArea02, <span class="hljs-number">15.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1590</span>
+libNtve_gf_WaitForTimer(gv_platformBlowsTimerArea02, <span class="hljs-number">0.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1655</span>
+libNtve_gf_WaitForTimer(gv_platformBlowsTimerArea03, <span class="hljs-number">15.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1658</span>
+libNtve_gf_WaitForTimer(gv_platformBlowsTimerArea03, <span class="hljs-number">0.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1723</span>
+libNtve_gf_WaitForTimer(gv_platformBlowsTimerArea04, <span class="hljs-number">15.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1726</span>
+libNtve_gf_WaitForTimer(gv_platformBlowsTimerArea04, <span class="hljs-number">0.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4185</span>
+libNtve_gf_WaitForTimer(gv_platformDelayTimer, <span class="hljs-number">0.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1471</span>
+libNtve_gf_WaitForTimer(lv_infestationTimer, <span class="hljs-number">60.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1786</span>
+libNtve_gf_WaitForTimer(gv_nextTrainTimer, <span class="hljs-number">0.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L866</span>
+libNtve_gf_WaitForTimer(lv_periodTimer, <span class="hljs-number">0.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1435</span>
+libNtve_gf_WaitForTimer(lv_recycleDelay, <span class="hljs-number">0.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1561</span>
+libNtve_gf_WaitForTimer(gv_dropPodTimer, <span class="hljs-number">115.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1566</span>
+libNtve_gf_WaitForTimer(gv_dropPodTimer, <span class="hljs-number">150.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1574</span>
+libNtve_gf_WaitForTimer(gv_dropPodTimer, <span class="hljs-number">120.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1578</span>
+libNtve_gf_WaitForTimer(gv_dropPodTimer, <span class="hljs-number">150.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1586</span>
+libNtve_gf_WaitForTimer(gv_dropPodTimer, <span class="hljs-number">120.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1599</span>
+libNtve_gf_WaitForTimer(gv_dropPodTimer, <span class="hljs-number">150.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1615</span>
+libNtve_gf_WaitForTimer(gv_dropPodTimer, <span class="hljs-number">20.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1519</span>
+libNtve_gf_WaitForTimer(gv_platformBlowsTimerArea01, <span class="hljs-number">15.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1522</span>
+libNtve_gf_WaitForTimer(gv_platformBlowsTimerArea01, <span class="hljs-number">0.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1587</span>
+libNtve_gf_WaitForTimer(gv_platformBlowsTimerArea02, <span class="hljs-number">15.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1590</span>
+libNtve_gf_WaitForTimer(gv_platformBlowsTimerArea02, <span class="hljs-number">0.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1655</span>
+libNtve_gf_WaitForTimer(gv_platformBlowsTimerArea03, <span class="hljs-number">15.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1658</span>
+libNtve_gf_WaitForTimer(gv_platformBlowsTimerArea03, <span class="hljs-number">0.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1723</span>
+libNtve_gf_WaitForTimer(gv_platformBlowsTimerArea04, <span class="hljs-number">15.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1726</span>
+libNtve_gf_WaitForTimer(gv_platformBlowsTimerArea04, <span class="hljs-number">0.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4185</span>
+libNtve_gf_WaitForTimer(gv_platformDelayTimer, <span class="hljs-number">0.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3261</span>
+libNtve_gf_WaitForTimer(TimerLastStarted(), <span class="hljs-number">0.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3366</span>
+libNtve_gf_WaitForTimer(TimerLastStarted(), <span class="hljs-number">0.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1609</span>
+libNtve_gf_WaitForTimer(gv_timedAttackTimer, <span class="hljs-number">115.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1611</span>
+libNtve_gf_WaitForTimer(gv_timedAttackTimer, <span class="hljs-number">70.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1613</span>
+libNtve_gf_WaitForTimer(gv_timedAttackTimer, <span class="hljs-number">30.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4920</span>
+libNtve_gf_WaitForTimer(gv_s2_LockdownTimer, <span class="hljs-number">45.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5474</span>
+libNtve_gf_WaitForTimer(gv_s2_LockdownTimer, <span class="hljs-number">45.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6175</span>
+libNtve_gf_WaitForTimer(gv_s2_LockdownTimer, <span class="hljs-number">45.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5568</span>
+libNtve_gf_WaitForTimer(gv_reinforcement_Timer, <span class="hljs-number">300.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5570</span>
+libNtve_gf_WaitForTimer(gv_reinforcement_Timer, <span class="hljs-number">190.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5572</span>
+libNtve_gf_WaitForTimer(gv_reinforcement_Timer, <span class="hljs-number">100.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5574</span>
+libNtve_gf_WaitForTimer(gv_reinforcement_Timer, <span class="hljs-number">90.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1730</span>
+libNtve_gf_WaitForTimer(lv_waitTimer, <span class="hljs-number">90.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1732</span>
+libNtve_gf_WaitForTimer(lv_waitTimer, <span class="hljs-number">45.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1734</span>
+libNtve_gf_WaitForTimer(lv_waitTimer, <span class="hljs-number">0.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2930</span>
+libNtve_gf_WaitForTimer(lv_waitTimer, <span class="hljs-number">90.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2935</span>
+libNtve_gf_WaitForTimer(lv_waitTimer, <span class="hljs-number">80.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2937</span>
+libNtve_gf_WaitForTimer(lv_waitTimer, <span class="hljs-number">70.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2939</span>
+libNtve_gf_WaitForTimer(lv_waitTimer, <span class="hljs-number">60.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2941</span>
+libNtve_gf_WaitForTimer(lv_waitTimer, <span class="hljs-number">50.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2943</span>
+libNtve_gf_WaitForTimer(lv_waitTimer, <span class="hljs-number">40.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2945</span>
+libNtve_gf_WaitForTimer(lv_waitTimer, <span class="hljs-number">32.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L756</span>
+libNtve_gf_WaitForTimer(gv_cutsceneLoadingTimer, <span class="hljs-number">0.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1708</span>
+libNtve_gf_WaitForTimer(gv_holdoutTimer, <span class="hljs-number">750.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1710</span>
+libNtve_gf_WaitForTimer(gv_holdoutTimer, <span class="hljs-number">474.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1712</span>
+libNtve_gf_WaitForTimer(gv_holdoutTimer, <span class="hljs-number">375.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1714</span>
+libNtve_gf_WaitForTimer(gv_holdoutTimer, <span class="hljs-number">290.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1716</span>
+libNtve_gf_WaitForTimer(gv_holdoutTimer, <span class="hljs-number">230.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1718</span>
+libNtve_gf_WaitForTimer(gv_holdoutTimer, <span class="hljs-number">215.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1720</span>
+libNtve_gf_WaitForTimer(gv_holdoutTimer, <span class="hljs-number">60.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3261</span>
+libNtve_gf_WaitForTimer(TimerLastStarted(), <span class="hljs-number">0.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3366</span>
+libNtve_gf_WaitForTimer(TimerLastStarted(), <span class="hljs-number">0.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1609</span>
+libNtve_gf_WaitForTimer(gv_timedAttackTimer, <span class="hljs-number">115.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1611</span>
+libNtve_gf_WaitForTimer(gv_timedAttackTimer, <span class="hljs-number">70.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1613</span>
+libNtve_gf_WaitForTimer(gv_timedAttackTimer, <span class="hljs-number">30.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4920</span>
+libNtve_gf_WaitForTimer(gv_s2_LockdownTimer, <span class="hljs-number">45.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5474</span>
+libNtve_gf_WaitForTimer(gv_s2_LockdownTimer, <span class="hljs-number">45.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6175</span>
+libNtve_gf_WaitForTimer(gv_s2_LockdownTimer, <span class="hljs-number">45.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5568</span>
+libNtve_gf_WaitForTimer(gv_reinforcement_Timer, <span class="hljs-number">300.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5570</span>
+libNtve_gf_WaitForTimer(gv_reinforcement_Timer, <span class="hljs-number">190.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5572</span>
+libNtve_gf_WaitForTimer(gv_reinforcement_Timer, <span class="hljs-number">100.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5574</span>
+libNtve_gf_WaitForTimer(gv_reinforcement_Timer, <span class="hljs-number">90.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1730</span>
+libNtve_gf_WaitForTimer(lv_waitTimer, <span class="hljs-number">90.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1732</span>
+libNtve_gf_WaitForTimer(lv_waitTimer, <span class="hljs-number">45.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1734</span>
+libNtve_gf_WaitForTimer(lv_waitTimer, <span class="hljs-number">0.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2930</span>
+libNtve_gf_WaitForTimer(lv_waitTimer, <span class="hljs-number">90.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2935</span>
+libNtve_gf_WaitForTimer(lv_waitTimer, <span class="hljs-number">80.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2937</span>
+libNtve_gf_WaitForTimer(lv_waitTimer, <span class="hljs-number">70.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2939</span>
+libNtve_gf_WaitForTimer(lv_waitTimer, <span class="hljs-number">60.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2941</span>
+libNtve_gf_WaitForTimer(lv_waitTimer, <span class="hljs-number">50.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2943</span>
+libNtve_gf_WaitForTimer(lv_waitTimer, <span class="hljs-number">40.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2945</span>
+libNtve_gf_WaitForTimer(lv_waitTimer, <span class="hljs-number">32.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L756</span>
+libNtve_gf_WaitForTimer(gv_cutsceneLoadingTimer, <span class="hljs-number">0.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1708</span>
+libNtve_gf_WaitForTimer(gv_holdoutTimer, <span class="hljs-number">750.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1710</span>
+libNtve_gf_WaitForTimer(gv_holdoutTimer, <span class="hljs-number">474.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1712</span>
+libNtve_gf_WaitForTimer(gv_holdoutTimer, <span class="hljs-number">375.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1714</span>
+libNtve_gf_WaitForTimer(gv_holdoutTimer, <span class="hljs-number">290.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1716</span>
+libNtve_gf_WaitForTimer(gv_holdoutTimer, <span class="hljs-number">230.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1718</span>
+libNtve_gf_WaitForTimer(gv_holdoutTimer, <span class="hljs-number">215.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1720</span>
+libNtve_gf_WaitForTimer(gv_holdoutTimer, <span class="hljs-number">60.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,406 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Unit Filter Match / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Unit Filter Match"/>
+                <meta property="og:description" content="Returns true if the specified unit matches the specified filter criteria from the perspective of the specified player.
+
+Returns: bool"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="unit-filter-match"><a class="markdownIt-Anchor" href="#unit-filter-match">#</a> Unit Filter Match</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — <strong>inUnit</strong> is <strong>inFilter</strong> for player <strong>inPlayer</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Function</code></p>
+</blockquote>
+<p>Returns true if the specified unit matches the specified filter criteria from the perspective of the specified player.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>unit</code> — Unit</li>
+<li><code>int</code> — Player</li>
+<li><code>unitfilter</code> — Filter</li>
+</ul>
+<p>Returns — <code>bool</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">bool</span> <span class="hljs-title">UnitFilterMatch</span><span class="hljs-params">(
+	unit inUnit,
+	<span class="hljs-keyword">int</span> inPlayer,
+	unitfilter inFilter,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#unit-filters">Unit / Filters</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/unit-filter-match">Unit Filter Match</a></strong> — ( UnitFilterMatch )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-filter-set-state">Set State Of Unit Filter</a></strong> — ( UnitFilterSetState )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-unit-filter-state">UnitFilterState</a> ]</em> — <strong><a href="/galaxy/reference/unit-filter-get-state">State Of Unit Filter</a></strong> — ( UnitFilterGetState )</li>
+<li><em><strong>[F]</strong></em> — <code>unitfilter</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-convert-target-filter-string-to-unit-filter">Convert Target Filter String To Unit Filter</a></strong> — ( libNtve_gf_ConvertTargetFilterStringToUnitFilter )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/challenges/protosscombat.sc2map/MapScript.galaxy#L1769">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1769</span>
+UnitFilterMatch(EventUnit(), gv_pLAYER_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterStructure) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L819</span>
+UnitFilterMatch(EventUnit(), gv_pLAYER_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHallucination - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L986</span>
+UnitFilterMatch(EventUnitProgressUnit(), gv_pLAYER_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterStructure) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1588</span>
+UnitFilterMatch(EventUnit(), gv_pLAYER_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterStructure) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1675</span>
+UnitFilterMatch(EventUnit(), gv_pLAYER_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterStructure) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7294</span>
+UnitFilterMatch(EventUnit(), gv_p1_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1850</span>
+UnitFilterMatch(EventUnit(), gv_p1_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2134</span>
+UnitFilterMatch(EventUnit(), gv_pLAYER_03_INFESTED_REFUGEES, UnitFilter((<span class="hljs-number">1</span> &lt;&lt; c_targetFilterStructure) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterPreventDefeat), <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2217</span>
+UnitFilterMatch(EventUnit(), gv_pLAYER_01_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2390</span>
+UnitFilterMatch(EventUnit(), gv_pLAYER_03_INFESTED_REFUGEES, UnitFilter((<span class="hljs-number">1</span> &lt;&lt; c_targetFilterStructure) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterPreventDefeat), <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2318</span>
+UnitFilterMatch(EventUnit(), gv_pLAYER06_TERRORFLEET, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2382</span>
+UnitFilterMatch(EventUnit(), gv_pLAYER06_TERRORFLEET, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2446</span>
+UnitFilterMatch(EventUnit(), gv_pLAYER06_TERRORFLEET, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2653</span>
+UnitFilterMatch(EventUnit(), gv_pLAYER07_RESOURCES, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2333</span>
+UnitFilterMatch(EventUnit(), UnitGetOwner(EventUnit()), UnitFilter((<span class="hljs-number">1</span> &lt;&lt; c_targetFilterStructure), <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1892</span>
+UnitFilterMatch(EventUnit(), gv_p06_JUNKERS, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1939</span>
+UnitFilterMatch(EventUnit(), gv_p06_JUNKERS, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1986</span>
+UnitFilterMatch(EventUnit(), gv_p06_JUNKERS, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2023</span>
+UnitFilterMatch(EventUnit(), gv_p06_JUNKERS, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2097</span>
+UnitFilterMatch(EventUnit(), gv_p06_JUNKERS, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2145</span>
+UnitFilterMatch(EventUnit(), gv_p06_JUNKERS, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2184</span>
+UnitFilterMatch(EventUnit(), gv_p06_JUNKERS, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2254</span>
+UnitFilterMatch(EventUnit(), gv_p06_JUNKERS, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2303</span>
+UnitFilterMatch(EventUnit(), gv_p06_JUNKERS, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2391</span>
+UnitFilterMatch(EventUnit(), gv_p01_USER, UnitFilter((<span class="hljs-number">1</span> &lt;&lt; c_targetFilterGround), <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterAir) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L886</span>
+UnitFilterMatch(EventUnit(), gv_p01_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L886</span>
+UnitFilterMatch(EventUnit(), gv_p02_TYCHUS, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1819</span>
+UnitFilterMatch(EventUnit(), gv_p01_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3459</span>
+UnitFilterMatch(EventUnit(), gv_p01_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterAir) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterStructure) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterInvulnerable - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3519</span>
+UnitFilterMatch(EventUnit(), gv_p01_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterAir) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterStructure) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterInvulnerable - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3579</span>
+UnitFilterMatch(EventUnit(), gv_p01_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterAir) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterStructure) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterInvulnerable - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2253</span>
+UnitFilterMatch(EventUnit(), gv_p01_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3568</span>
+UnitFilterMatch(EventUnit(), gv_p01_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterAir) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6307</span>
+UnitFilterMatch(EventUnit(), gv_p01_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6409</span>
+UnitFilterMatch(EventUnit(), gv_p01_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6539</span>
+UnitFilterMatch(EventUnit(), gv_p01_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8358</span>
+UnitFilterMatch(EventUnit(), gv_p01_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8639</span>
+UnitFilterMatch(EventUnit(), gv_p01_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8776</span>
+UnitFilterMatch(EventUnit(), gv_p01_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9063</span>
+UnitFilterMatch(EventUnit(), gv_p01_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9119</span>
+UnitFilterMatch(EventUnit(), gv_p01_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L822</span>
+UnitFilterMatch(EventUnit(), gv_p1_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L867</span>
+UnitFilterMatch(EventUnit(), gv_p1_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L908</span>
+UnitFilterMatch(EventUnit(), gv_p1_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L950</span>
+UnitFilterMatch(EventUnit(), gv_p1_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1059</span>
+UnitFilterMatch(EventUnit(), gv_p1_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1120</span>
+UnitFilterMatch(EventUnit(), gv_p1_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1228</span>
+UnitFilterMatch(EventUnit(), gv_p1_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1268</span>
+UnitFilterMatch(EventUnit(), gv_p1_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1339</span>
+UnitFilterMatch(EventUnit(), gv_p1_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1387</span>
+UnitFilterMatch(EventUnit(), gv_p1_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1794</span>
+UnitFilterMatch(EventUnit(), gv_pLAYER_01_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4019</span>
+UnitFilterMatch(EventUnit(), gv_pLAYER_01_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L933</span>
+UnitFilterMatch(EventUnit(), gv_pLAYER01_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1473</span>
+UnitFilterMatch(EventUnit(), gv_pLAYER01_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L967</span>
+UnitFilterMatch(EventUnit(), gv_p01_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1050</span>
+UnitFilterMatch(EventUnit(), gv_p01_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterAir) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1174</span>
+UnitFilterMatch(lv_u, gv_p01_USER, UnitFilter((<span class="hljs-number">1</span> &lt;&lt; c_targetFilterBuried), <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1410</span>
+UnitFilterMatch(EventUnit(), gv_p01_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterAir) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterStructure) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1483</span>
+UnitFilterMatch(EventUnit(), gv_p01_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterAir) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1644</span>
+UnitFilterMatch(EventUnit(), gv_p01_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1915</span>
+UnitFilterMatch(EventUnit(), gv_p01_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2045</span>
+UnitFilterMatch(EventUnit(), gv_p1_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2175</span>
+UnitFilterMatch(EventUnit(), gv_p1_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2546</span>
+UnitFilterMatch(EventUnit(), gv_p1_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3648</span>
+UnitFilterMatch(EventUnit(), gv_p1_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3941</span>
+UnitFilterMatch(EventUnit(), gv_p1_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4438</span>
+UnitFilterMatch(EventUnit(), gv_p1_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterStructure) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2076</span>
+UnitFilterMatch(EventUnit(), gv_pLAYER02_TOSH, UnitFilter((<span class="hljs-number">1</span> &lt;&lt; c_targetFilterVisible), <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2142</span>
+UnitFilterMatch(EventUnit(), gv_pLAYER01_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3492</span>
+UnitFilterMatch(EventUnit(), gv_pLAYER02_TOSH, UnitFilter((<span class="hljs-number">1</span> &lt;&lt; c_targetFilterVisible), <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3592</span>
+UnitFilterMatch(EventUnit(), gv_pLAYER01_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4072</span>
+UnitFilterMatch(EventUnit(), gv_pLAYER01_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4076</span>
+UnitFilterMatch(EventUnit(), gv_pLAYER02_TOSH, UnitFilter((<span class="hljs-number">1</span> &lt;&lt; c_targetFilterVisible), <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4472</span>
+UnitFilterMatch(EventUnit(), gv_pLAYER01_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4514</span>
+UnitFilterMatch(EventUnit(), gv_pLAYER01_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1752</span>
+UnitFilterMatch(EventUnit(), gv_p2_ZERG, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterAir) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1833</span>
+UnitFilterMatch(EventUnit(), gv_p1_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterAir) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2540</span>
+UnitFilterMatch(EventUnit(), gv_p1_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3827</span>
+UnitFilterMatch(EventUnit(), gv_p2_ZERG, UnitFilter((<span class="hljs-number">1</span> &lt;&lt; c_targetFilterStructure), <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4353</span>
+UnitFilterMatch(EventUnit(), gv_p1_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L833</span>
+UnitFilterMatch(EventUnit(), gv_p1_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L966</span>
+UnitFilterMatch(EventUnit(), gv_p1_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1197</span>
+UnitFilterMatch(EventUnit(), gv_p1_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1339</span>
+UnitFilterMatch(EventUnit(), gv_p1_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3548</span>
+UnitFilterMatch(EventUnitProgressUnit(), gv_p3_WARPEDINPROTOSS, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterStructure) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterWorker) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1008</span>
+UnitFilterMatch(EventUnit(), gv_p01_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3215</span>
+UnitFilterMatch(EventUnit(), gv_p01_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3335</span>
+UnitFilterMatch(EventUnit(), gv_p01_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3455</span>
+UnitFilterMatch(EventUnit(), gv_p01_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3578</span>
+UnitFilterMatch(EventUnit(), gv_p01_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3699</span>
+UnitFilterMatch(EventUnit(), gv_p01_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2240</span>
+UnitFilterMatch(EventUnit(), gv_pLAYER01_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2367</span>
+UnitFilterMatch(EventUnit(), gv_pLAYER_01_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4111</span>
+UnitFilterMatch(EventUnit(), gv_pLAYER_01_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5417</span>
+UnitFilterMatch(EventUnit(), gv_pLAYER_01_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5589</span>
+UnitFilterMatch(EventUnit(), gv_p01_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5641</span>
+UnitFilterMatch(EventUnit(), gv_p01_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5701</span>
+UnitFilterMatch(EventUnit(), gv_p01_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5761</span>
+UnitFilterMatch(EventUnit(), gv_p01_USER, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))))
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

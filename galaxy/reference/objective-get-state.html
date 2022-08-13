@@ -1,0 +1,403 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Objective State / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Objective State"/>
+                <meta property="og:description" content="Returns the state of an objective.
+
+Returns: preset [ preset::ObjectiveState ]"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="objective-state"><a class="markdownIt-Anchor" href="#objective-state">#</a> Objective State</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — <strong>objective</strong> state<br>
+<em>Flags</em> — <code>Native</code> | <code>Function</code></p>
+</blockquote>
+<p>Returns the state of an objective.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> <em>[ objective ]</em> — Objective</li>
+</ul>
+<p>Returns — <code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-objective-state">ObjectiveState</a> ]</em></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">int</span> <span class="hljs-title">ObjectiveGetState</span><span class="hljs-params">(<span class="hljs-keyword">int</span> inObjective)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#objective-basic">Objective / Basic</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ objective ]</em> — <strong><a href="/galaxy/reference/objective-create">Create Objective</a></strong> — ( ObjectiveCreate )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ objective ]</em> — <strong><a href="/galaxy/reference/objective-create-for-players">Create Objective For Players</a></strong> — ( ObjectiveCreateForPlayers )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/objective-show">Show/Hide Objective</a></strong> — ( ObjectiveShow )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/objective-set-state">Set Objective State</a></strong> — ( ObjectiveSetState )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ objective ]</em> — <strong><a href="/galaxy/reference/objective-last-created">Last Created Objective</a></strong> — ( ObjectiveLastCreated )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/objective-visible">Objective Is Visible</a></strong> — ( ObjectiveVisible )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-objective-state">ObjectiveState</a> ]</em> — <strong><a href="/galaxy/reference/objective-get-state">Objective State</a></strong> — ( ObjectiveGetState )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/challenges/advancedcommand.sc2map/MapScript.galaxy#L1011">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1011</span>
+ObjectiveGetState(gv_objectiveKill1)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1011</span>
+ObjectiveGetState(gv_objectiveKill2)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1011</span>
+ObjectiveGetState(gv_objectiveKill3)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1018</span>
+ObjectiveGetState(gv_objectiveKill1)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1018</span>
+ObjectiveGetState(gv_objectiveKill2)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1018</span>
+ObjectiveGetState(gv_objectiveKill3)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1025</span>
+ObjectiveGetState(gv_objectiveKill1)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1025</span>
+ObjectiveGetState(gv_objectiveKill2)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1025</span>
+ObjectiveGetState(gv_objectiveKill3)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1032</span>
+ObjectiveGetState(gv_objectiveKill1)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1270</span>
+ObjectiveGetState(gv_objectiveKill1)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1270</span>
+ObjectiveGetState(gv_objectiveKill2)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1270</span>
+ObjectiveGetState(gv_objectiveKill3)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1276</span>
+ObjectiveGetState(gv_objectiveKill1)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1276</span>
+ObjectiveGetState(gv_objectiveKill2)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1276</span>
+ObjectiveGetState(gv_objectiveKill3)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1282</span>
+ObjectiveGetState(gv_objectiveKill1)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1282</span>
+ObjectiveGetState(gv_objectiveKill2)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1282</span>
+ObjectiveGetState(gv_objectiveKill3)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1288</span>
+ObjectiveGetState(gv_objectiveKill1)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L149</span>
+ObjectiveGetState(gv_objectiveEconomySilver)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L155</span>
+ObjectiveGetState(gv_objectiveEconomyGold)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1046</span>
+ObjectiveGetState(gv_objectiveEconomySilver)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1051</span>
+ObjectiveGetState(gv_objectiveEconomyGold)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1194</span>
+ObjectiveGetState(gv_objectiveEconomySilver)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1199</span>
+ObjectiveGetState(gv_objectiveEconomyGold)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1014</span>
+ObjectiveGetState(gv_objectiveKill1)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1014</span>
+ObjectiveGetState(gv_objectiveKill2)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1014</span>
+ObjectiveGetState(gv_objectiveKill3)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1019</span>
+ObjectiveGetState(gv_objectiveKill1)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1019</span>
+ObjectiveGetState(gv_objectiveKill2)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1019</span>
+ObjectiveGetState(gv_objectiveKill3)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1024</span>
+ObjectiveGetState(gv_objectiveKill1)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1024</span>
+ObjectiveGetState(gv_objectiveKill2)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1024</span>
+ObjectiveGetState(gv_objectiveKill3)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1029</span>
+ObjectiveGetState(gv_objectiveKill1)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L973</span>
+ObjectiveGetState(gv_objectiveKill1)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L973</span>
+ObjectiveGetState(gv_objectiveKill2)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L973</span>
+ObjectiveGetState(gv_objectiveKill3)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L978</span>
+ObjectiveGetState(gv_objectiveKill1)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L978</span>
+ObjectiveGetState(gv_objectiveKill2)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L978</span>
+ObjectiveGetState(gv_objectiveKill3)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L983</span>
+ObjectiveGetState(gv_objectiveKill1)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L983</span>
+ObjectiveGetState(gv_objectiveKill2)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L983</span>
+ObjectiveGetState(gv_objectiveKill3)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L988</span>
+ObjectiveGetState(gv_objectiveKill1)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5157</span>
+ObjectiveGetState(gv_objective_ReachHanson)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5157</span>
+ObjectiveGetState(gv_objective_SaveColonists)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5157</span>
+ObjectiveGetState(gv_bonusObjectiveCollectChrysalis)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5161</span>
+ObjectiveGetState(gv_objective_ReachHanson)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5161</span>
+ObjectiveGetState(gv_objective_SaveColonists)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5161</span>
+ObjectiveGetState(gv_objective_DontLetColonistsDie)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5161</span>
+ObjectiveGetState(gv_bonusObjectiveCollectChrysalis)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4305</span>
+ObjectiveGetState(gv_objectiveCleanseInfestation)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4305</span>
+ObjectiveGetState(gv_researchObjectiveKilltheInfestors)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5294</span>
+ObjectiveGetState(gv_primaryObjectiveDestroyProtossNexus)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5294</span>
+ObjectiveGetState(gv_primaryObjectiveDestroyPurifier)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5294</span>
+ObjectiveGetState(gv_bonusObjectiveDestroyFirstTerrorFleet)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5294</span>
+ObjectiveGetState(gv_bonusObjectiveDestroyFirstTerrorFleet)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5294</span>
+ObjectiveGetState(gv_bonusObjectiveDestroySecondTerrorFleet)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5294</span>
+ObjectiveGetState(gv_bonusObjectiveDestroySecondTerrorFleet)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5294</span>
+ObjectiveGetState(gv_bonusObjectiveDestroyThirdTerrorFleet)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5294</span>
+ObjectiveGetState(gv_bonusObjectiveDestroyThirdTerrorFleet)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3545</span>
+ObjectiveGetState(gv_objectiveDestroyInfestation)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5042</span>
+ObjectiveGetState(gv_objective_TheGreatTrainRobbery)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5042</span>
+ObjectiveGetState(gv_objective_Locate)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5042</span>
+ObjectiveGetState(gv_objective_DefilerSkeletons)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5042</span>
+ObjectiveGetState(gv_objective_DontMissTrains)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4484</span>
+ObjectiveGetState(gv_primaryObjectiveBuyContract)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4515</span>
+ObjectiveGetState(gv_primaryObjectiveBuyContract)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4515</span>
+ObjectiveGetState(gv_primaryObjectiveDestroyOrlan)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4515</span>
+ObjectiveGetState(gv_bonusObjectiveFindContraband)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4464</span>
+ObjectiveGetState(gv_objectiveDestroyDominionBases)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4464</span>
+ObjectiveGetState(gv_objectiveDestroytheLoki)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4464</span>
+ObjectiveGetState(gv_objectiveDevourerSamples)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4596</span>
+ObjectiveGetState(gv_objectiveAccessTower1)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4596</span>
+ObjectiveGetState(gv_objectiveAccessTower2)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4596</span>
+ObjectiveGetState(gv_objectiveAccessTower3)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10253</span>
+ObjectiveGetState(gv_objectiveFusionReactor)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10253</span>
+ObjectiveGetState(gv_objectiveEscape)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10253</span>
+ObjectiveGetState(gv_objectiveProtossRelics)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10253</span>
+ObjectiveGetState(gv_researchObjectiveBrutalisk)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10817</span>
+ObjectiveGetState(gv_researchObjectiveBrutalisk)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4147</span>
+ObjectiveGetState(gv_objectiveDestroyLogisticalHQ)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4147</span>
+ObjectiveGetState(gv_objectiveDestroyDominionHoloboards)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4147</span>
+ObjectiveGetState(gv_objectiveRaynorMustLIVE)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1695</span>
+ObjectiveGetState(gv_objectiveRebels)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1695</span>
+ObjectiveGetState(gv_objectiveRebels)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1889</span>
+ObjectiveGetState(gv_objectiveRebels)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1894</span>
+ObjectiveGetState(gv_objectiveRebels)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1928</span>
+ObjectiveGetState(gv_objectiveDominionBase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2001</span>
+ObjectiveGetState(gv_objectiveDominionBase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2101</span>
+ObjectiveGetState(gv_objectiveRebels)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2157</span>
+ObjectiveGetState(gv_objectiveRebels)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2213</span>
+ObjectiveGetState(gv_objectiveRebels)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2269</span>
+ObjectiveGetState(gv_objectiveRebels)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4274</span>
+ObjectiveGetState(gv_objectiveHoldOut)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4274</span>
+ObjectiveGetState(gv_objectiveRescue)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4357</span>
+ObjectiveGetState(gv_objectiveCollect)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4357</span>
+ObjectiveGetState(gv_objectiveRescue)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

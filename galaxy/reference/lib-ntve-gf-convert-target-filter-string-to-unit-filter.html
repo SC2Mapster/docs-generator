@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Convert Target Filter String To Unit Filter / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Convert Target Filter String To Unit Filter"/>
+                <meta property="og:description" content="Takes a target filter string (obtained from the catalog) and returns a unit filter.
+
+Returns: unitfilter"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="convert-target-filter-string-to-unit-filter"><a class="markdownIt-Anchor" href="#convert-target-filter-string-to-unit-filter">#</a> Convert Target Filter String To Unit Filter</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Convert Target Filter String <strong>targetFilterString|string</strong> To Unit Filter<br>
+<em>Flags</em> — <code>Function</code></p>
+</blockquote>
+<p>Takes a target filter string (obtained from the catalog) and returns a unit filter.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>string</code> — Target Filter String</li>
+</ul>
+<p>Returns — <code>unitfilter</code></p>
+<pre class="hljs"><code><span class="hljs-function">unitfilter <span class="hljs-title">libNtve_gf_ConvertTargetFilterStringToUnitFilter</span><span class="hljs-params">(
+	<span class="hljs-built_in">string</span> lp_targetFilterString,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#unit-filters">Unit / Filters</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/unit-filter-match">Unit Filter Match</a></strong> — ( UnitFilterMatch )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-filter-set-state">Set State Of Unit Filter</a></strong> — ( UnitFilterSetState )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-unit-filter-state">UnitFilterState</a> ]</em> — <strong><a href="/galaxy/reference/unit-filter-get-state">State Of Unit Filter</a></strong> — ( UnitFilterGetState )</li>
+<li><em><strong>[F]</strong></em> — <code>unitfilter</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-convert-target-filter-string-to-unit-filter">Convert Target Filter String To Unit Filter</a></strong> — ( libNtve_gf_ConvertTargetFilterStringToUnitFilter )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/ttosh03a.sc2map/MapScript.galaxy#L466">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L466</span>
+libNtve_gf_ConvertTargetFilterStringToUnitFilter(CatalogFieldValueGet(c_gameCatalogAbil, <span class="hljs-string">"Snipe"</span>, <span class="hljs-string">"TargetFilters["</span> + IntToString(<span class="hljs-number">0</span>) + <span class="hljs-string">"]"</span>, lp_owner))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L466</span>
+libNtve_gf_ConvertTargetFilterStringToUnitFilter(CatalogFieldValueGet(c_gameCatalogAbil, <span class="hljs-string">"Snipe"</span>, <span class="hljs-string">"TargetFilters["</span> + IntToString(<span class="hljs-number">0</span>) + <span class="hljs-string">"]"</span>, lp_owner))
+</code></pre>
+<h4 id="modscoresc2mod"><a class="markdownIt-Anchor" href="#modscoresc2mod">#</a> mods/core.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/core.sc2mod/base.sc2data/TriggerLibs/NativeLib.galaxy#L5759">NativeLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L5759</span>
+libNtve_gf_ConvertTargetFilterStringToUnitFilter(CatalogFieldValueGet(c_gameCatalogWeapon, UnitWeaponGet(lp_u, lv_weapon), <span class="hljs-string">"TargetFilters"</span>, UnitGetOwner(lp_u)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4897</span>
+libNtve_gf_ConvertTargetFilterStringToUnitFilter(CatalogFieldValueGet(c_gameCatalogWeapon, UnitWeaponGet(lp_u, lv_weapon), <span class="hljs-string">"TargetFilters"</span>, UnitGetOwner(lp_u)))
+</code></pre>
+<h4 id="modslibertysc2mod"><a class="markdownIt-Anchor" href="#modslibertysc2mod">#</a> mods/liberty.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/liberty.sc2mod/base.sc2data/TriggerLibs/LibertyLib.galaxy#L967">LibertyLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L967</span>
+libNtve_gf_ConvertTargetFilterStringToUnitFilter(UserDataGetString(libLbty_gv_starCraftEventsEventTable, lv_itInstance, <span class="hljs-string">"MessageFilter"</span>, <span class="hljs-number">1</span>))
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOMI.galaxy#L16779">LibCOMI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L16779</span>
+libNtve_gf_ConvertTargetFilterStringToUnitFilter(lv_effectFilterString)
+</code></pre>
+<h4 id="modswarcoopwarclassicsystemsc2mod"><a class="markdownIt-Anchor" href="#modswarcoopwarclassicsystemsc2mod">#</a> mods/warcoop/warclassicsystem.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/warcoop/warclassicsystem.sc2mod/base.sc2data/TriggerLibs/WarClassicTactical.galaxy#L151">WarClassicTactical.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L151</span>
+libNtve_gf_ConvertTargetFilterStringToUnitFilter(CatalogFieldValueGet(c_gameCatalogAbil, lp_abil, <span class="hljs-string">"TargetFilters["</span> + IntToString(lv_index) + <span class="hljs-string">"]"</span>, lp_owner))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L157</span>
+libNtve_gf_ConvertTargetFilterStringToUnitFilter(CatalogFieldValueGet(c_gameCatalogEffect, (((lp_abil) + <span class="hljs-string">"@Search"</span>)), <span class="hljs-string">"SearchFilters"</span>, lp_owner))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L353</span>
+libNtve_gf_ConvertTargetFilterStringToUnitFilter(CatalogFieldValueGet(c_gameCatalogEffect, (((lp_abil) + <span class="hljs-string">"@Search"</span>)), <span class="hljs-string">"SearchFilters"</span>, lp_owner))
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

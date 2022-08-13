@@ -1,0 +1,406 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Show/Hide Alert Type / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Show/Hide Alert Type"/>
+                <meta property="og:description" content="native void UISetAlertTypeVisible(playergroup inPlayers, string inAlert, bool inVisible);"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="showhide-alert-type"><a class="markdownIt-Anchor" href="#showhide-alert-type">#</a> Show/Hide Alert Type</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — <strong>showHide</strong> <strong>alert</strong> for <strong>playerGroup</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>playergroup</code> — Player Group</li>
+<li><code>string</code> <em>[ gamelink::Alert ]</em> — Alert</li>
+<li><code>bool</code> <em>[ preset::<a href="/galaxy/reference/preset-show-hide-option">ShowHideOption</a> ]</em> — Show/Hide</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">UISetAlertTypeVisible</span><span class="hljs-params">(
+	playergroup inPlayers,
+	<span class="hljs-built_in">string</span> inAlert,
+	<span class="hljs-keyword">bool</span> inVisible,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#ui-alerts">UI / Alerts</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-alert">Alert</a></strong> — ( TriggerAddEventAlert )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> <em>[ gamelink::Alert ]</em> — <strong><a href="/galaxy/reference/event-alert">Triggering Alert</a></strong> — ( EventAlert )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ui-alert-point">Create Alert At Point</a></strong> — ( UIAlertPoint )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ui-alert-unit">Create Alert At Unit</a></strong> — ( UIAlertUnit )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ui-alert">Create Alert With No Source</a></strong> — ( UIAlert )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ui-alert-clear">Clear Alerts</a></strong> — ( UIAlertClear )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ui-set-alert-type-visible">Show/Hide Alert Type</a></strong> — ( UISetAlertTypeVisible )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignsswarmsc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmsc2campaign">#</a> campaigns/swarm.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarm.sc2campaign/base.sc2maps/maps/campaign/voidprologue/voidprologue03.sc2map/MapScript.galaxy#L946">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L946</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackUnitAlly"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L947</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackUnitAlly_Prot"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6689</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackUnitAlly_Zerg"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6845</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackUnitAlly_Zerg"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6492</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackTownAlly"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6493</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackTownAlly_Terr"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12608</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackTownAlly"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12609</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackTownAlly_Terr"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1309</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackUnitAlly"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1310</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackUnitAlly_Prot"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1311</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackUnitAlly_Terr"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1312</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackUnitAlly_Zerg"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1846</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackUnitAlly"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4182</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackUnit_Zerg"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4785</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackUnit_Zerg"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6109</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackUnit_Zerg"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6560</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackUnit_Zerg"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7972</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackUnit_Zerg"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8311</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackUnit_Zerg"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8447</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackUnit_Zerg"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6689</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackUnitAlly_Zerg"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6845</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackUnitAlly_Zerg"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6492</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackTownAlly"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6493</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackTownAlly_Terr"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12608</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackTownAlly"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12609</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackTownAlly_Terr"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1309</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackUnitAlly"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1310</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackUnitAlly_Prot"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1311</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackUnitAlly_Terr"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1312</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackUnitAlly_Zerg"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1846</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackUnitAlly"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4182</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackUnit_Zerg"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4785</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackUnit_Zerg"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6109</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackUnit_Zerg"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6560</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackUnit_Zerg"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7972</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackUnit_Zerg"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8311</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackUnit_Zerg"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8447</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackUnit_Zerg"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L946</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackUnitAlly"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L947</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackUnitAlly_Prot"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1445</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackTownAlly_Prot"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1446</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackUnitAlly_Prot"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L859</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackUnitAlly_Prot"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L860</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackTownAlly_Prot"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1105</span>
+UISetAlertTypeVisible(PlayerGroupSingle(gv_pLAYER_01_USER), <span class="hljs-string">"AttackTownAlly"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1106</span>
+UISetAlertTypeVisible(PlayerGroupSingle(gv_pLAYER_01_USER), <span class="hljs-string">"AttackTownAlly_Prot"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1107</span>
+UISetAlertTypeVisible(PlayerGroupSingle(gv_pLAYER_01_USER), <span class="hljs-string">"AttackTownAlly_Terr"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1108</span>
+UISetAlertTypeVisible(PlayerGroupSingle(gv_pLAYER_01_USER), <span class="hljs-string">"AttackTownAlly_Zerg"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1109</span>
+UISetAlertTypeVisible(PlayerGroupSingle(gv_pLAYER_01_USER), <span class="hljs-string">"AttackUnitAlly"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1110</span>
+UISetAlertTypeVisible(PlayerGroupSingle(gv_pLAYER_01_USER), <span class="hljs-string">"AttackUnitAlly_Prot"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1111</span>
+UISetAlertTypeVisible(PlayerGroupSingle(gv_pLAYER_01_USER), <span class="hljs-string">"AttackUnitAlly_Terr"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1112</span>
+UISetAlertTypeVisible(PlayerGroupSingle(gv_pLAYER_01_USER), <span class="hljs-string">"AttackUnitAlly_Zerg"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1189</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackUnitAlly"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1190</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackUnitAlly_Prot"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1632</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackTownAlly_Prot"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1633</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackUnitAlly_Prot"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1645</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackUnitAlly_Prot"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1646</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackTownAlly_Prot"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1687</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackUnitAlly_Prot"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1688</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackTownAlly_Prot"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1423</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackTownAlly_Prot"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1424</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackUnitAlly_Prot"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1429</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackUnitAlly"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1430</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackUnitAlly_Prot"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1431</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackTownAlly"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1432</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackTownAlly_Prot"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1089</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackUnitAlly_Prot"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1090</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackTownAlly_Prot"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7387</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackUnitAlly_Prot"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7388</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackTownAlly_Prot"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1952</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackTownAlly_Prot"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1953</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackTownAlly_Terr"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1954</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackTownAlly_Zerg"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1955</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackUnitAlly_Prot"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1956</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackUnitAlly_Terr"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1957</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackUnitAlly_Zerg"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1856</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackTownAlly"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1857</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackTownAlly_Prot"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1858</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackTownAlly_Terr"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1859</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackTownAlly_Zerg"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1860</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackUnitAlly"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1861</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackUnitAlly_Prot"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1862</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackUnitAlly_Terr"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1863</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackUnitAlly_Zerg"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L859</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackUnitAlly_Prot"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L860</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackTownAlly_Prot"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1445</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackTownAlly_Prot"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1446</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackUnitAlly_Prot"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1105</span>
+UISetAlertTypeVisible(PlayerGroupSingle(gv_pLAYER_01_USER), <span class="hljs-string">"AttackTownAlly"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1106</span>
+UISetAlertTypeVisible(PlayerGroupSingle(gv_pLAYER_01_USER), <span class="hljs-string">"AttackTownAlly_Prot"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1107</span>
+UISetAlertTypeVisible(PlayerGroupSingle(gv_pLAYER_01_USER), <span class="hljs-string">"AttackTownAlly_Terr"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1108</span>
+UISetAlertTypeVisible(PlayerGroupSingle(gv_pLAYER_01_USER), <span class="hljs-string">"AttackTownAlly_Zerg"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1109</span>
+UISetAlertTypeVisible(PlayerGroupSingle(gv_pLAYER_01_USER), <span class="hljs-string">"AttackUnitAlly"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1110</span>
+UISetAlertTypeVisible(PlayerGroupSingle(gv_pLAYER_01_USER), <span class="hljs-string">"AttackUnitAlly_Prot"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1111</span>
+UISetAlertTypeVisible(PlayerGroupSingle(gv_pLAYER_01_USER), <span class="hljs-string">"AttackUnitAlly_Terr"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1112</span>
+UISetAlertTypeVisible(PlayerGroupSingle(gv_pLAYER_01_USER), <span class="hljs-string">"AttackUnitAlly_Zerg"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1189</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackUnitAlly"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1190</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackUnitAlly_Prot"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1632</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackTownAlly_Prot"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1633</span>
+UISetAlertTypeVisible(PlayerGroupAll(), <span class="hljs-string">"AttackUnitAlly_Prot"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

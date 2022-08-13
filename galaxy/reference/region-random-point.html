@@ -1,0 +1,405 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Random Point In Region / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Random Point In Region"/>
+                <meta property="og:description" content="Returns a random point in the specified region.  For regions with multiple shapes, this is not guaranteed to work.
+
+Returns: point"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="random-point-in-region"><a class="markdownIt-Anchor" href="#random-point-in-region">#</a> Random Point In Region</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Random point in <strong>r</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Function</code></p>
+</blockquote>
+<p>Returns a random point in the specified region.  For regions with multiple shapes, this is not guaranteed to work.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>region</code> — Region</li>
+</ul>
+<p>Returns — <code>point</code></p>
+<pre class="hljs"><code><span class="hljs-function">native point <span class="hljs-title">RegionRandomPoint</span><span class="hljs-params">(region r)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#region-modification">Region / Modification</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>point</code> — <strong><a href="/galaxy/reference/region-random-point">Random Point In Region</a></strong> — ( RegionRandomPoint )</li>
+<li><em><strong>[F]</strong></em> — <code>point</code> — <strong><a href="/galaxy/reference/region-get-center">Center Of Region</a></strong> — ( RegionGetCenter )</li>
+<li><em><strong>[F]</strong></em> — <code>unit</code> — <strong><a href="/galaxy/reference/region-get-attach-unit">Unit Attached To Region</a></strong> — ( RegionGetAttachUnit )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/region-attach-to-unit">Attach Region To Unit</a></strong> — ( RegionAttachToUnit )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/region-set-center">Move Region</a></strong> — ( RegionSetCenter )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-width-of-region">Width Of Region</a></strong> — ( libNtve_gf_WidthOfRegion )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-height-of-region">Height Of Region</a></strong> — ( libNtve_gf_HeightOfRegion )</li>
+<li><em><strong>[F]</strong></em> — <code>point</code> — <strong><a href="/galaxy/reference/region-get-bounds-min">Bottom-Left Of Region Bounds</a></strong> — ( RegionGetBoundsMin )</li>
+<li><em><strong>[F]</strong></em> — <code>point</code> — <strong><a href="/galaxy/reference/region-get-bounds-max">Top-Right Of Region Bounds</a></strong> — ( RegionGetBoundsMax )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/challenges/protosspsionics.sc2map/MapScript.galaxy#L1746">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1746</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">28</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1747</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">29</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7262</span>
+RegionRandomPoint(lv_region)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L447</span>
+RegionRandomPoint(RegionCircle(lp_target, <span class="hljs-number">1.0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1253</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">37</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1254</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">37</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1255</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">37</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1414</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">14</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4449</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">16</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6408</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">19</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6414</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">26</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6415</span>
+RegionRandomPoint(RegionCircle(PointFromId(<span class="hljs-number">1328</span>), <span class="hljs-number">8.0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6424</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">26</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L457</span>
+RegionRandomPoint(lp_spawnRegion)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4923</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">44</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4941</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">45</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4949</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">45</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5264</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">29</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5266</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">30</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5268</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">31</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5270</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">32</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5272</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">33</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5274</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">35</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6009</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">4</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6010</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">4</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6011</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">4</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6012</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">5</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6013</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">5</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6014</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">6</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6015</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">6</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6016</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">26</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6017</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">26</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6018</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">27</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L311</span>
+RegionRandomPoint(gv_infestationRegion[lp_colony])
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L319</span>
+RegionRandomPoint(gv_infestationRegion[lp_colony])
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L335</span>
+RegionRandomPoint(RegionCircle(UnitGetPosition(gv_infestationVirophageUnit[lp_colonyIndex]), <span class="hljs-number">5.0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L785</span>
+RegionRandomPoint(RegionCircle(RegionGetCenter(gv_infestationRegion[lv_colonyIndex]), lv_sPAWN_RADIUS))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L836</span>
+RegionRandomPoint(RegionCircle(RegionGetCenter(lp_locale), <span class="hljs-number">2.0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4005</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">6</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4008</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">6</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4217</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">55</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4220</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">55</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4273</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">9</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2300</span>
+RegionRandomPoint(RegionCircle(UnitGetPosition(gv_trainList[lv_trainIndex].lv_trainCars[RandomInt(<span class="hljs-number">1</span>, gv_trainList[lv_trainIndex].lv_lastCar)]), <span class="hljs-number">2.0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2305</span>
+RegionRandomPoint(RegionCircle(UnitGetPosition(gv_trainList[lv_trainIndex].lv_trainCars[RandomInt(<span class="hljs-number">1</span>, gv_trainList[lv_trainIndex].lv_lastCar)]), <span class="hljs-number">2.0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2312</span>
+RegionRandomPoint(RegionCircle(UnitGetPosition(gv_trainList[lv_trainIndex].lv_trainCars[lv_trainMidPoint]), <span class="hljs-number">2.0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1858</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">28</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1863</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">32</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1910</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">33</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1957</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">34</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2064</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">29</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2068</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">36</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2116</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">37</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2163</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">35</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2226</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">38</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2274</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">40</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7138</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">31</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7144</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">31</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7149</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">3</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7155</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">3</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7160</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">33</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7166</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">33</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7171</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">5</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7176</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">39</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4502</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">126</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4509</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">126</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9206</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">52</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9484</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">112</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9492</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">51</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9500</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">47</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9508</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">103</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9516</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">55</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9524</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">56</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9532</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">57</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2503</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">94</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2783</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">17</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3064</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">23</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3067</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">23</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3070</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">23</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3078</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">60</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3081</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">60</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3084</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">60</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5810</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">25</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5815</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">25</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3277</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">6</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3337</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">10</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3397</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">13</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5177</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">6</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5181</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">6</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5185</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">7</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5189</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">7</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5437</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">8</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5438</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">12</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5442</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">10</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5443</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">20</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5448</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">9</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5449</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">31</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1238</span>
+RegionRandomPoint(gv_critterHavens[lv_index])
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5124</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">64</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5129</span>
+RegionRandomPoint(RegionFromId(<span class="hljs-number">66</span>))
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

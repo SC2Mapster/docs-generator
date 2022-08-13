@@ -1,0 +1,407 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Show/Hide Objective / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Show/Hide Objective"/>
+                <meta property="og:description" content="Sets the state of an objective to either hidden or active."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="showhide-objective"><a class="markdownIt-Anchor" href="#showhide-objective">#</a> Show/Hide Objective</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — <strong>show|Show/Hide</strong> <strong>objective</strong> for <strong>players|Player Group</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Sets the state of an objective to either hidden or active.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> <em>[ objective ]</em> — Objective</li>
+<li><code>playergroup</code> — Players</li>
+<li><code>bool</code> <em>[ preset::<a href="/galaxy/reference/preset-show-hide-option">ShowHideOption</a> ]</em> — Show</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">ObjectiveShow</span><span class="hljs-params">(
+	<span class="hljs-keyword">int</span> inObjective,
+	playergroup inPlayers,
+	<span class="hljs-keyword">bool</span> inShow,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#objective-basic">Objective / Basic</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ objective ]</em> — <strong><a href="/galaxy/reference/objective-create">Create Objective</a></strong> — ( ObjectiveCreate )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ objective ]</em> — <strong><a href="/galaxy/reference/objective-create-for-players">Create Objective For Players</a></strong> — ( ObjectiveCreateForPlayers )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/objective-show">Show/Hide Objective</a></strong> — ( ObjectiveShow )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/objective-set-state">Set Objective State</a></strong> — ( ObjectiveSetState )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ objective ]</em> — <strong><a href="/galaxy/reference/objective-last-created">Last Created Objective</a></strong> — ( ObjectiveLastCreated )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/objective-visible">Objective Is Visible</a></strong> — ( ObjectiveVisible )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-objective-state">ObjectiveState</a> ]</em> — <strong><a href="/galaxy/reference/objective-get-state">Objective State</a></strong> — ( ObjectiveGetState )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/challenges/protosscombat.sc2map/MapScript.galaxy#L723">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L723</span>
+ObjectiveShow(gv_objectiveSurvive01, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L724</span>
+ObjectiveShow(gv_objectiveSurvive02, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L725</span>
+ObjectiveShow(gv_objectiveSurvive03, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L755</span>
+ObjectiveShow(gv_objectiveSurvive01, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L756</span>
+ObjectiveShow(gv_objectiveSurvive02, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L757</span>
+ObjectiveShow(gv_objectiveSurvive03, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L787</span>
+ObjectiveShow(gv_objectiveSurvive01, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L788</span>
+ObjectiveShow(gv_objectiveSurvive02, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L789</span>
+ObjectiveShow(gv_objectiveSurvive03, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L822</span>
+ObjectiveShow(gv_objectiveSurvive01, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L671</span>
+ObjectiveShow(gv_objectiveSurvive01, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L672</span>
+ObjectiveShow(gv_objectiveSurvive02, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L673</span>
+ObjectiveShow(gv_objectiveSurvive03, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L703</span>
+ObjectiveShow(gv_objectiveSurvive01, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L704</span>
+ObjectiveShow(gv_objectiveSurvive02, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L705</span>
+ObjectiveShow(gv_objectiveSurvive03, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L735</span>
+ObjectiveShow(gv_objectiveSurvive01, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L736</span>
+ObjectiveShow(gv_objectiveSurvive02, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L737</span>
+ObjectiveShow(gv_objectiveSurvive03, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L770</span>
+ObjectiveShow(gv_objectiveSurvive01, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L729</span>
+ObjectiveShow(gv_objectiveSurvive01, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L730</span>
+ObjectiveShow(gv_objectiveSurvive02, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L731</span>
+ObjectiveShow(gv_objectiveSurvive03, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L761</span>
+ObjectiveShow(gv_objectiveSurvive01, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L762</span>
+ObjectiveShow(gv_objectiveSurvive02, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L763</span>
+ObjectiveShow(gv_objectiveSurvive03, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L793</span>
+ObjectiveShow(gv_objectiveSurvive01, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L794</span>
+ObjectiveShow(gv_objectiveSurvive02, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L795</span>
+ObjectiveShow(gv_objectiveSurvive03, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L828</span>
+ObjectiveShow(gv_objectiveSurvive01, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2040</span>
+ObjectiveShow(gv_bonusObjectiveDestroyFirstTerrorFleet, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2137</span>
+ObjectiveShow(gv_bonusObjectiveDestroySecondTerrorFleet, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2232</span>
+ObjectiveShow(gv_bonusObjectiveDestroyThirdTerrorFleet, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5670</span>
+ObjectiveShow(gv_bonusObjectiveDestroyFirstTerrorFleet, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5703</span>
+ObjectiveShow(gv_bonusObjectiveDestroyFirstTerrorFleet, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5761</span>
+ObjectiveShow(gv_bonusObjectiveDestroySecondTerrorFleet, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5794</span>
+ObjectiveShow(gv_bonusObjectiveDestroySecondTerrorFleet, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5852</span>
+ObjectiveShow(gv_bonusObjectiveDestroyThirdTerrorFleet, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5885</span>
+ObjectiveShow(gv_bonusObjectiveDestroyThirdTerrorFleet, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1236</span>
+ObjectiveShow(gv_objectiveDestroytheLoki, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6754</span>
+ObjectiveShow(gv_objectiveDestroyDominionForces, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7393</span>
+ObjectiveShow(gv_objectiveFusionReactor, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8174</span>
+ObjectiveShow(gv_objectiveEscape, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8175</span>
+ObjectiveShow(gv_objectiveRaynorSurvive, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8177</span>
+ObjectiveShow(gv_objectiveRaynorSurvive, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4579</span>
+ObjectiveShow(gv_objectiveRebels, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2614</span>
+ObjectiveShow(gv_primaryObjectiveStopProtossGas, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2191</span>
+ObjectiveShow(gv_objectiveCellBlock_A, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2563</span>
+ObjectiveShow(gv_objectiveCellBlock_B, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7989</span>
+ObjectiveShow(gv_objectiveNydusWorms, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4047</span>
+ObjectiveShow(gv_objectiveOvermindTendrils, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2040</span>
+ObjectiveShow(gv_bonusObjectiveDestroyFirstTerrorFleet, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2137</span>
+ObjectiveShow(gv_bonusObjectiveDestroySecondTerrorFleet, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2232</span>
+ObjectiveShow(gv_bonusObjectiveDestroyThirdTerrorFleet, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5670</span>
+ObjectiveShow(gv_bonusObjectiveDestroyFirstTerrorFleet, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5703</span>
+ObjectiveShow(gv_bonusObjectiveDestroyFirstTerrorFleet, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5761</span>
+ObjectiveShow(gv_bonusObjectiveDestroySecondTerrorFleet, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5794</span>
+ObjectiveShow(gv_bonusObjectiveDestroySecondTerrorFleet, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5852</span>
+ObjectiveShow(gv_bonusObjectiveDestroyThirdTerrorFleet, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5885</span>
+ObjectiveShow(gv_bonusObjectiveDestroyThirdTerrorFleet, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1236</span>
+ObjectiveShow(gv_objectiveDestroytheLoki, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6754</span>
+ObjectiveShow(gv_objectiveDestroyDominionForces, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7393</span>
+ObjectiveShow(gv_objectiveFusionReactor, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8174</span>
+ObjectiveShow(gv_objectiveEscape, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8175</span>
+ObjectiveShow(gv_objectiveRaynorSurvive, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8177</span>
+ObjectiveShow(gv_objectiveRaynorSurvive, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4579</span>
+ObjectiveShow(gv_objectiveRebels, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2614</span>
+ObjectiveShow(gv_primaryObjectiveStopProtossGas, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2191</span>
+ObjectiveShow(gv_objectiveCellBlock_A, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2563</span>
+ObjectiveShow(gv_objectiveCellBlock_B, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7989</span>
+ObjectiveShow(gv_objectiveNydusWorms, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4047</span>
+ObjectiveShow(gv_objectiveOvermindTendrils, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L723</span>
+ObjectiveShow(gv_objectiveSurvive01, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L724</span>
+ObjectiveShow(gv_objectiveSurvive02, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L725</span>
+ObjectiveShow(gv_objectiveSurvive03, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L755</span>
+ObjectiveShow(gv_objectiveSurvive01, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L756</span>
+ObjectiveShow(gv_objectiveSurvive02, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L757</span>
+ObjectiveShow(gv_objectiveSurvive03, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L787</span>
+ObjectiveShow(gv_objectiveSurvive01, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L788</span>
+ObjectiveShow(gv_objectiveSurvive02, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L789</span>
+ObjectiveShow(gv_objectiveSurvive03, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L822</span>
+ObjectiveShow(gv_objectiveSurvive01, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L671</span>
+ObjectiveShow(gv_objectiveSurvive01, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L672</span>
+ObjectiveShow(gv_objectiveSurvive02, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L673</span>
+ObjectiveShow(gv_objectiveSurvive03, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L703</span>
+ObjectiveShow(gv_objectiveSurvive01, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L704</span>
+ObjectiveShow(gv_objectiveSurvive02, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L705</span>
+ObjectiveShow(gv_objectiveSurvive03, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L735</span>
+ObjectiveShow(gv_objectiveSurvive01, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L736</span>
+ObjectiveShow(gv_objectiveSurvive02, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L737</span>
+ObjectiveShow(gv_objectiveSurvive03, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L770</span>
+ObjectiveShow(gv_objectiveSurvive01, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L729</span>
+ObjectiveShow(gv_objectiveSurvive01, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L730</span>
+ObjectiveShow(gv_objectiveSurvive02, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L731</span>
+ObjectiveShow(gv_objectiveSurvive03, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L761</span>
+ObjectiveShow(gv_objectiveSurvive01, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L762</span>
+ObjectiveShow(gv_objectiveSurvive02, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L763</span>
+ObjectiveShow(gv_objectiveSurvive03, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L793</span>
+ObjectiveShow(gv_objectiveSurvive01, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L794</span>
+ObjectiveShow(gv_objectiveSurvive02, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

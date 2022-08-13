@@ -1,0 +1,416 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Show/Hide Portrait / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Show/Hide Portrait"/>
+                <meta property="og:description" content="Shows or hides the specified portrait for the specified player group."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="showhide-portrait"><a class="markdownIt-Anchor" href="#showhide-portrait">#</a> Show/Hide Portrait</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — <strong>Visible|Show</strong> <strong>Portrait</strong> for <strong>Players</strong> (<strong>forceVisible|Do/Do Not</strong> force visible)<br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Shows or hides the specified portrait for the specified player group.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> <em>[ portrait ]</em> — Portrait</li>
+<li><code>playergroup</code> — Players</li>
+<li><code>bool</code> <em>[ preset::<a href="/galaxy/reference/preset-show-hide-option">ShowHideOption</a> ]</em> — Show/Hide</li>
+<li><code>bool</code> <em>[ preset::<a href="/galaxy/reference/preset-do-do-not-option">Do_Do_Not_Option</a> ]</em> — ForceVisible</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">PortraitSetVisible</span><span class="hljs-params">(
+	<span class="hljs-keyword">int</span> p,
+	playergroup players,
+	<span class="hljs-keyword">bool</span> isVisible,
+	<span class="hljs-keyword">bool</span> forceVisible,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#portrait-basic">Portrait / Basic</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ portrait ]</em> — <strong><a href="/galaxy/reference/portrait-create">Create Portrait</a></strong> — ( PortraitCreate )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/portrait-set-visible">Show/Hide Portrait</a></strong> — ( PortraitSetVisible )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ portrait ]</em> — <strong><a href="/galaxy/reference/portrait-last-created">Last Created Portrait</a></strong> — ( PortraitLastCreated )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/portrait-visible">Portrait Is Visible</a></strong> — ( PortraitVisible )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/tarcade.sc2map/MapScript.galaxy#L8519">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L8519</span>
+PortraitSetVisible(PortraitLastCreated(), PlayerGroupAll(), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5803</span>
+PortraitSetVisible(libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_CenterLeft), PlayerGroupAll(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6698</span>
+PortraitSetVisible(libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_CenterLeft), PlayerGroupAll(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L927</span>
+PortraitSetVisible(libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_CenterLeft), PlayerGroupAll(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3333</span>
+PortraitSetVisible(gv_newItems[lp_newItemIndex].lv_flash, PlayerGroupAll(), lp_hideShow, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10545</span>
+PortraitSetVisible(gv_zPlanetPanel_PortraitBorder, PlayerGroupAll(), lp_showHide, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10546</span>
+PortraitSetVisible(gv_zPlanetPanel_PortraitPlanet, PlayerGroupAll(), lp_showHide, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13051</span>
+PortraitSetVisible(libNtve_gf_FullscreenPortrait(), PlayerGroupAll(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13541</span>
+PortraitSetVisible(PortraitLastCreated(), PlayerGroupAll(), <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L15168</span>
+PortraitSetVisible(PortraitLastCreated(), PlayerGroupAll(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L15172</span>
+PortraitSetVisible(PortraitLastCreated(), PlayerGroupAll(), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19589</span>
+PortraitSetVisible(PortraitLastCreated(), PlayerGroupAll(), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19618</span>
+PortraitSetVisible(PortraitLastCreated(), PlayerGroupAll(), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L26540</span>
+PortraitSetVisible(gv_bridgeCommunicatorPortraitValerian, PlayerGroupAll(), <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5393</span>
+PortraitSetVisible(libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_BottomLeft), PlayerGroupAll(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6039</span>
+PortraitSetVisible(libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_CenterLeft), PlayerGroupAll(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6320</span>
+PortraitSetVisible(libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_CenterLeft), PlayerGroupAll(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L661</span>
+PortraitSetVisible(gv_cinematicWindow, PlayerGroupAll(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1126</span>
+PortraitSetVisible(libNtve_gf_CinematicPortrait(<span class="hljs-number">4</span>), PlayerGroupAll(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1207</span>
+PortraitSetVisible(gv_cinematicWindow, PlayerGroupAll(), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1275</span>
+PortraitSetVisible(gv_cinematicWindow, PlayerGroupAll(), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1428</span>
+PortraitSetVisible(gv_cinematicWindow, PlayerGroupAll(), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1435</span>
+PortraitSetVisible(gv_portrait_Adjutant, PlayerGroupAll(), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1637</span>
+PortraitSetVisible(gv_portrait_Adjutant, PlayerGroupAll(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1723</span>
+PortraitSetVisible(libNtve_gf_CinematicPortrait(<span class="hljs-number">4</span>), PlayerGroupAll(), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2008</span>
+PortraitSetVisible(libNtve_gf_CinematicPortrait(<span class="hljs-number">4</span>), PlayerGroupAll(), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2707</span>
+PortraitSetVisible(libNtve_gf_CinematicPortrait(<span class="hljs-number">4</span>), PlayerGroupAll(), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6182</span>
+PortraitSetVisible(libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_CenterLeft), PlayerGroupAll(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7138</span>
+PortraitSetVisible(PortraitLastCreated(), PlayerGroupAll(), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7157</span>
+PortraitSetVisible(PortraitLastCreated(), PlayerGroupAll(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5465</span>
+PortraitSetVisible(libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_BottomLeft), PlayerGroupAll(), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5503</span>
+PortraitSetVisible(libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_BottomLeft), PlayerGroupAll(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5668</span>
+PortraitSetVisible(libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_BottomLeft), PlayerGroupAll(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6725</span>
+PortraitSetVisible(gv_victoryPortrait, PlayerGroupAll(), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8519</span>
+PortraitSetVisible(PortraitLastCreated(), PlayerGroupAll(), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5803</span>
+PortraitSetVisible(libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_CenterLeft), PlayerGroupAll(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6698</span>
+PortraitSetVisible(libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_CenterLeft), PlayerGroupAll(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L927</span>
+PortraitSetVisible(libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_CenterLeft), PlayerGroupAll(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3333</span>
+PortraitSetVisible(gv_newItems[lp_newItemIndex].lv_flash, PlayerGroupAll(), lp_hideShow, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10545</span>
+PortraitSetVisible(gv_zPlanetPanel_PortraitBorder, PlayerGroupAll(), lp_showHide, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10546</span>
+PortraitSetVisible(gv_zPlanetPanel_PortraitPlanet, PlayerGroupAll(), lp_showHide, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13051</span>
+PortraitSetVisible(libNtve_gf_FullscreenPortrait(), PlayerGroupAll(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13541</span>
+PortraitSetVisible(PortraitLastCreated(), PlayerGroupAll(), <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L15168</span>
+PortraitSetVisible(PortraitLastCreated(), PlayerGroupAll(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L15172</span>
+PortraitSetVisible(PortraitLastCreated(), PlayerGroupAll(), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19589</span>
+PortraitSetVisible(PortraitLastCreated(), PlayerGroupAll(), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19618</span>
+PortraitSetVisible(PortraitLastCreated(), PlayerGroupAll(), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L26540</span>
+PortraitSetVisible(gv_bridgeCommunicatorPortraitValerian, PlayerGroupAll(), <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5393</span>
+PortraitSetVisible(libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_BottomLeft), PlayerGroupAll(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6039</span>
+PortraitSetVisible(libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_CenterLeft), PlayerGroupAll(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6320</span>
+PortraitSetVisible(libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_CenterLeft), PlayerGroupAll(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L661</span>
+PortraitSetVisible(gv_cinematicWindow, PlayerGroupAll(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1126</span>
+PortraitSetVisible(libNtve_gf_CinematicPortrait(<span class="hljs-number">4</span>), PlayerGroupAll(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1207</span>
+PortraitSetVisible(gv_cinematicWindow, PlayerGroupAll(), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1275</span>
+PortraitSetVisible(gv_cinematicWindow, PlayerGroupAll(), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1428</span>
+PortraitSetVisible(gv_cinematicWindow, PlayerGroupAll(), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1435</span>
+PortraitSetVisible(gv_portrait_Adjutant, PlayerGroupAll(), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1637</span>
+PortraitSetVisible(gv_portrait_Adjutant, PlayerGroupAll(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1723</span>
+PortraitSetVisible(libNtve_gf_CinematicPortrait(<span class="hljs-number">4</span>), PlayerGroupAll(), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2008</span>
+PortraitSetVisible(libNtve_gf_CinematicPortrait(<span class="hljs-number">4</span>), PlayerGroupAll(), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2707</span>
+PortraitSetVisible(libNtve_gf_CinematicPortrait(<span class="hljs-number">4</span>), PlayerGroupAll(), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6182</span>
+PortraitSetVisible(libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_CenterLeft), PlayerGroupAll(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7138</span>
+PortraitSetVisible(PortraitLastCreated(), PlayerGroupAll(), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7157</span>
+PortraitSetVisible(PortraitLastCreated(), PlayerGroupAll(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5465</span>
+PortraitSetVisible(libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_BottomLeft), PlayerGroupAll(), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5503</span>
+PortraitSetVisible(libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_BottomLeft), PlayerGroupAll(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5668</span>
+PortraitSetVisible(libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_BottomLeft), PlayerGroupAll(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6725</span>
+PortraitSetVisible(gv_victoryPortrait, PlayerGroupAll(), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="campaignsswarmstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmstorysc2campaign">#</a> campaigns/swarmstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstory.sc2campaign/base.sc2data/TriggerLibs/SwarmCampaignLib.galaxy#L879">SwarmCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L879</span>
+PortraitSetVisible(libSwaC_gv_zS_SendTransmissionCampaignPortrait, PlayerGroupAll(), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1009</span>
+PortraitSetVisible(lp_portrait, PlayerGroupAll(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1021</span>
+PortraitSetVisible(lp_portrait, PlayerGroupAll(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1566</span>
+PortraitSetVisible(libSwaC_gv_zS_PlanetPortrait, PlayerGroupAll(), <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1605</span>
+PortraitSetVisible(libSwaC_gv_zS_PlanetPortrait, PlayerGroupAll(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignMissionLib.galaxy#L2026">VoidCampaignMissionLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2026</span>
+PortraitSetVisible(libVCMI_gv_pM_PlanetPortrait, PlayerGroupAll(), <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2812</span>
+PortraitSetVisible(libVCMI_gv_pM_SendTransmissionCampaignPortrait, PlayerGroupAll(), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2930</span>
+PortraitSetVisible(lp_portrait, PlayerGroupAll(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2949</span>
+PortraitSetVisible(lp_portrait, PlayerGroupAll(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="modscoresc2mod"><a class="markdownIt-Anchor" href="#modscoresc2mod">#</a> mods/core.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/core.sc2mod/base.sc2data/TriggerLibs/NativeLib.galaxy#L4101">NativeLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4101</span>
+PortraitSetVisible(libNtve_gv_cinematicPortraits[lv_index], PlayerGroupAll(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4109</span>
+PortraitSetVisible(libNtve_gv_cinematicPortraits[libNtve_ge_CinematicPortraitIndex_CinematicPortraitBottomLeft], lp_players, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4113</span>
+PortraitSetVisible(libNtve_gv_cinematicPortraits[libNtve_ge_CinematicPortraitIndex_CinematicPortraitBottomRight], lp_players, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4117</span>
+PortraitSetVisible(libNtve_gv_cinematicPortraits[libNtve_ge_CinematicPortraitIndex_CinematicPortraitCenterLeft], lp_players, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4121</span>
+PortraitSetVisible(libNtve_gv_cinematicPortraits[libNtve_ge_CinematicPortraitIndex_CinematicPortraitCenterRight], lp_players, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4125</span>
+PortraitSetVisible(libNtve_gv_cinematicPortraits[libNtve_ge_CinematicPortraitIndex_CinematicPortraitTopLeft], lp_players, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4129</span>
+PortraitSetVisible(libNtve_gv_cinematicPortraits[libNtve_ge_CinematicPortraitIndex_CinematicPortraitTopRight], lp_players, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4152</span>
+PortraitSetVisible(libNtve_gv_cinematicPortraits[lv_index], PlayerGroupAll(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3400</span>
+PortraitSetVisible(libNtve_gv_cinematicPortraits[lv_index], PlayerGroupAll(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3408</span>
+PortraitSetVisible(libNtve_gv_cinematicPortraits[libNtve_ge_CinematicPortraitIndex_CinematicPortraitBottomLeft], lp_players, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3412</span>
+PortraitSetVisible(libNtve_gv_cinematicPortraits[libNtve_ge_CinematicPortraitIndex_CinematicPortraitBottomRight], lp_players, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3416</span>
+PortraitSetVisible(libNtve_gv_cinematicPortraits[libNtve_ge_CinematicPortraitIndex_CinematicPortraitCenterLeft], lp_players, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3420</span>
+PortraitSetVisible(libNtve_gv_cinematicPortraits[libNtve_ge_CinematicPortraitIndex_CinematicPortraitCenterRight], lp_players, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3424</span>
+PortraitSetVisible(libNtve_gv_cinematicPortraits[libNtve_ge_CinematicPortraitIndex_CinematicPortraitTopLeft], lp_players, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3428</span>
+PortraitSetVisible(libNtve_gv_cinematicPortraits[libNtve_ge_CinematicPortraitIndex_CinematicPortraitTopRight], lp_players, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3451</span>
+PortraitSetVisible(libNtve_gv_cinematicPortraits[lv_index], PlayerGroupAll(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="modsheroesdatastormmod"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/HeroesLib.galaxy#L3601">HeroesLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3601</span>
+PortraitSetVisible(libCore_gv_zS_SendTransmissionCampaignPortrait, PlayerGroupAll(), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3712</span>
+PortraitSetVisible(lp_portrait, PlayerGroupAll(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3723</span>
+PortraitSetVisible(lp_portrait, PlayerGroupAll(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3801</span>
+PortraitSetVisible(libCore_gv_zS_SendTransmissionCampaignPortrait, PlayerGroupSingle(lp_player), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3916</span>
+PortraitSetVisible(lp_portrait, PlayerGroupSingle(lp_player), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3927</span>
+PortraitSetVisible(lp_portrait, PlayerGroupSingle(lp_player), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="modsmissionpacksnovacampaignsc2mod"><a class="markdownIt-Anchor" href="#modsmissionpacksnovacampaignsc2mod">#</a> mods/missionpacks/novacampaign.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/novacampaign.sc2mod/base.sc2data/LibNCMI.galaxy#L2706">LibNCMI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2706</span>
+PortraitSetVisible(libNCMI_gv_NM_PlanetPortrait, PlayerGroupAll(), <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

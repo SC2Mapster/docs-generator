@@ -1,0 +1,283 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Beacon Is Set / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Beacon Is Set"/>
+                <meta property="og:description" content="Is the specified beacon currently enabled.
+
+Returns: bool"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="beacon-is-set"><a class="markdownIt-Anchor" href="#beacon-is-set">#</a> Beacon Is Set</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Flags</em> — <code>Native</code> | <code>Function</code></p>
+</blockquote>
+<p>Is the specified beacon currently enabled.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> — Player</li>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-ai-beacon-type">AIBeaconType</a> ]</em> — Beacon</li>
+</ul>
+<p>Returns — <code>bool</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">bool</span> <span class="hljs-title">PlayerBeaconIsSet</span><span class="hljs-params">(<span class="hljs-keyword">int</span> inPlayer, <span class="hljs-keyword">int</span> inBeacon)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#ai-advanced-beacons-functions">AI Advanced / Beacons / Functions</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/player-beacon-is-auto-cast">Beacon Is Auto Cast</a></strong> — ( PlayerBeaconIsAutoCast )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/player-beacon-is-from-user">Beacon Is From User</a></strong> — ( PlayerBeaconIsFromUser )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/player-beacon-is-set">Beacon Is Set</a></strong> — ( PlayerBeaconIsSet )</li>
+<li><em><strong>[F]</strong></em> — <code>point</code> — <strong><a href="/galaxy/reference/player-beacon-get-target-point">Beacon Get Target Point</a></strong> — ( PlayerBeaconGetTargetPoint )</li>
+<li><em><strong>[F]</strong></em> — <code>unit</code> — <strong><a href="/galaxy/reference/player-beacon-get-target-unit">Beacon Get Target Unit</a></strong> — ( PlayerBeaconGetTargetUnit )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/player-beacon-get-num-allies">Beacon Get Num Allies</a></strong> — ( PlayerBeaconGetNumAllies )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/player-beacon-get-ally-player-id">Beacon Get Ally PlayerId</a></strong> — ( PlayerBeaconGetAllyPlayerId )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/player-beacon-requested-minerals">Beacon Num Minerals Requested</a></strong> — ( PlayerBeaconRequestedMinerals )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/player-beacon-requested-vespene">Beacon Num Vespene Requested</a></strong> — ( PlayerBeaconRequestedVespene )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="modscoresc2mod"><a class="markdownIt-Anchor" href="#modscoresc2mod">#</a> mods/core.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/core.sc2mod/base.sc2data/TriggerLibs/MeleeHighAI.galaxy#L180">MeleeHighAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L180</span>
+PlayerBeaconIsSet(player, c_beaconScout)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L182</span>
+PlayerBeaconIsSet(player, c_beaconScout)
+</code></pre>
+<h4 id="modscoresc2mod-2"><a class="markdownIt-Anchor" href="#modscoresc2mod-2">#</a> mods/core.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/core.sc2mod/base.sc2data/TriggerLibs/MeleeLowAI.galaxy#L145">MeleeLowAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L145</span>
+PlayerBeaconIsSet(player, c_beaconScout)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L416</span>
+PlayerBeaconIsSet(player, c_beaconDetect)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L558</span>
+PlayerBeaconIsSet(player, c_beaconDetect)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L700</span>
+PlayerBeaconIsSet(player, c_beaconDetect)
+</code></pre>
+<h4 id="modscoresc2mod-3"><a class="markdownIt-Anchor" href="#modscoresc2mod-3">#</a> mods/core.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/core.sc2mod/base.sc2data/TriggerLibs/MeleeWaveAI.galaxy#L125">MeleeWaveAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L125</span>
+PlayerBeaconIsSet(player, c_beaconArmy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L159</span>
+PlayerBeaconIsSet(player, c_beaconArmy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L203</span>
+PlayerBeaconIsSet(player, c_beaconArmy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L287</span>
+PlayerBeaconIsSet(player, c_beaconArmy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L372</span>
+PlayerBeaconIsSet(player, c_beaconArmy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L635</span>
+PlayerBeaconIsSet(player, c_beaconArmy)
+</code></pre>
+<h4 id="modscoresc2mod-4"><a class="markdownIt-Anchor" href="#modscoresc2mod-4">#</a> mods/core.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/core.sc2mod/base.sc2data/TriggerLibs/SharedAI.galaxy#L12">SharedAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L12</span>
+PlayerBeaconIsSet(player, c_beaconDetect)
+</code></pre>
+<h4 id="modscoresc2mod-5"><a class="markdownIt-Anchor" href="#modscoresc2mod-5">#</a> mods/core.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/core.sc2mod/base.sc2data/TriggerLibs/Tactical/TactTerrAI.galaxy#L1067">TactTerrAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1067</span>
+PlayerBeaconIsSet(player, c_beaconDetect)
+</code></pre>
+<h4 id="modscorestormmod"><a class="markdownIt-Anchor" href="#modscorestormmod">#</a> mods/core.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/core.stormmod/base.stormdata/TriggerLibs/SharedAI.galaxy#L12">SharedAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L12</span>
+PlayerBeaconIsSet(player, c_beaconDetect)
+</code></pre>
+<h4 id="modslibertysc2mod"><a class="markdownIt-Anchor" href="#modslibertysc2mod">#</a> mods/liberty.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/liberty.sc2mod/base.sc2data/TriggerLibs/Protoss/Protoss.galaxy#L133">Protoss.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L133</span>
+PlayerBeaconIsSet(player, c_beaconScout)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L139</span>
+PlayerBeaconIsSet(player, c_beaconScout)
+</code></pre>
+<h4 id="modslibertysc2mod-2"><a class="markdownIt-Anchor" href="#modslibertysc2mod-2">#</a> mods/liberty.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/liberty.sc2mod/base.sc2data/TriggerLibs/Terran/Terran.galaxy#L152">Terran.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L152</span>
+PlayerBeaconIsSet(player, c_beaconScout)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L158</span>
+PlayerBeaconIsSet(player, c_beaconScout)
+</code></pre>
+<h4 id="modslibertysc2mod-3"><a class="markdownIt-Anchor" href="#modslibertysc2mod-3">#</a> mods/liberty.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/liberty.sc2mod/base.sc2data/TriggerLibs/Zerg/Zerg.galaxy#L161">Zerg.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L161</span>
+PlayerBeaconIsSet(player, c_beaconScout)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L167</span>
+PlayerBeaconIsSet(player, c_beaconScout)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/TriggerLibs/Tactical/TactTerrAI.galaxy#L1047">TactTerrAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1047</span>
+PlayerBeaconIsSet(player, c_beaconDetect)
+</code></pre>
+<h4 id="modsswarmsc2mod"><a class="markdownIt-Anchor" href="#modsswarmsc2mod">#</a> mods/swarm.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/swarm.sc2mod/base.sc2data/TriggerLibs/Protoss/Protoss.galaxy#L158">Protoss.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L158</span>
+PlayerBeaconIsSet(player, c_beaconScout)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L164</span>
+PlayerBeaconIsSet(player, c_beaconScout)
+</code></pre>
+<h4 id="modsswarmsc2mod-2"><a class="markdownIt-Anchor" href="#modsswarmsc2mod-2">#</a> mods/swarm.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/swarm.sc2mod/base.sc2data/TriggerLibs/Terran/Terran.galaxy#L158">Terran.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L158</span>
+PlayerBeaconIsSet(player, c_beaconScout)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L164</span>
+PlayerBeaconIsSet(player, c_beaconScout)
+</code></pre>
+<h4 id="modsswarmsc2mod-3"><a class="markdownIt-Anchor" href="#modsswarmsc2mod-3">#</a> mods/swarm.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/swarm.sc2mod/base.sc2data/TriggerLibs/Zerg/Zerg.galaxy#L167">Zerg.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L167</span>
+PlayerBeaconIsSet(player, c_beaconScout)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L173</span>
+PlayerBeaconIsSet(player, c_beaconScout)
+</code></pre>
+<h4 id="modsvoidsc2mod"><a class="markdownIt-Anchor" href="#modsvoidsc2mod">#</a> mods/void.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/void.sc2mod/base.sc2data/TriggerLibs/MeleeHighAI.galaxy#L180">MeleeHighAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L180</span>
+PlayerBeaconIsSet(player, c_beaconScout)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L182</span>
+PlayerBeaconIsSet(player, c_beaconScout)
+</code></pre>
+<h4 id="modsvoidsc2mod-2"><a class="markdownIt-Anchor" href="#modsvoidsc2mod-2">#</a> mods/void.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/void.sc2mod/base.sc2data/TriggerLibs/Protoss/Protoss.galaxy#L167">Protoss.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L167</span>
+PlayerBeaconIsSet(player, c_beaconScout)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L173</span>
+PlayerBeaconIsSet(player, c_beaconScout)
+</code></pre>
+<h4 id="modsvoidsc2mod-3"><a class="markdownIt-Anchor" href="#modsvoidsc2mod-3">#</a> mods/void.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/void.sc2mod/base.sc2data/TriggerLibs/Terran/Terran.galaxy#L164">Terran.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L164</span>
+PlayerBeaconIsSet(player, c_beaconScout)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L170</span>
+PlayerBeaconIsSet(player, c_beaconScout)
+</code></pre>
+<h4 id="modsvoidsc2mod-4"><a class="markdownIt-Anchor" href="#modsvoidsc2mod-4">#</a> mods/void.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/void.sc2mod/base.sc2data/TriggerLibs/Zerg/Zerg.galaxy#L173">Zerg.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L173</span>
+PlayerBeaconIsSet(player, c_beaconScout)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L179</span>
+PlayerBeaconIsSet(player, c_beaconScout)
+</code></pre>
+<h4 id="modswarcoopwarclassicsystemsc2mod"><a class="markdownIt-Anchor" href="#modswarcoopwarclassicsystemsc2mod">#</a> mods/warcoop/warclassicsystem.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/warcoop/warclassicsystem.sc2mod/base.sc2data/TriggerLibs/Tactical/TacticalAIWar3.galaxy#L323">TacticalAIWar3.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L323</span>
+PlayerBeaconIsSet(player, c_beaconDetect)
+</code></pre>
+<h4 id="modswarcoopwarmeleeaisc2mod"><a class="markdownIt-Anchor" href="#modswarcoopwarmeleeaisc2mod">#</a> mods/warcoop/warmeleeai.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/warcoop/warmeleeai.sc2mod/base.sc2data/TriggerLibs/MeleeSC.galaxy#L158">MeleeSC.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L158</span>
+PlayerBeaconIsSet(player, c_beaconScout)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L164</span>
+PlayerBeaconIsSet(player, c_beaconScout)
+</code></pre>
+<h4 id="modswarcoopwarmeleeaisc2mod-2"><a class="markdownIt-Anchor" href="#modswarcoopwarmeleeaisc2mod-2">#</a> mods/warcoop/warmeleeai.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/warcoop/warmeleeai.sc2mod/base.sc2data/TriggerLibs/MeleeWaveAI.galaxy#L232">MeleeWaveAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L232</span>
+PlayerBeaconIsSet(player, c_beaconArmy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L255</span>
+PlayerBeaconIsSet(player, c_beaconArmy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L296</span>
+PlayerBeaconIsSet(player, c_beaconArmy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L376</span>
+PlayerBeaconIsSet(player, c_beaconArmy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L720</span>
+PlayerBeaconIsSet(player, c_beaconArmy)
+</code></pre>
+<h4 id="modswarcoopwarmeleeaisc2mod-3"><a class="markdownIt-Anchor" href="#modswarcoopwarmeleeaisc2mod-3">#</a> mods/warcoop/warmeleeai.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/warcoop/warmeleeai.sc2mod/base.sc2data/TriggerLibs/Orc/Orc.galaxy#L556">Orc.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L556</span>
+PlayerBeaconIsSet(player, c_beaconScout)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L561</span>
+PlayerBeaconIsSet(player, c_beaconScout)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

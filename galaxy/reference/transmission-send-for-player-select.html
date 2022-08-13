@@ -1,0 +1,245 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Send Transmission For Player / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Send Transmission For Player"/>
+                <meta property="og:description" content="Sends a transmission with sound and an optional portrait actor to the specified players from a source unit or model.  Use &quot;Last Sent Transmission&quot; to refer to this transmission after it has begun.
+
+Returns: transmission [ transmission ]"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="send-transmission-for-player"><a class="markdownIt-Anchor" href="#send-transmission-for-player">#</a> Send Transmission For Player</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Send transmission  to <strong>Players</strong> from <strong>Source</strong> playing <strong>Sound</strong> with name <strong>Speaker</strong> and message <strong>Subtitle</strong> using <strong>Target</strong> with <strong>portraitActor</strong> playing <strong>PortraitAnim|Anim</strong> (<strong>DurationType</strong> <strong>Duration</strong> seconds, <strong>WaitUntilDone|Wait/Don’t Wait</strong> until it finishes, owning player <strong>player</strong>)<br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Sends a transmission with sound and an optional portrait actor to the specified players from a source unit or model.  Use <em>“Last Sent Transmission”</em> to refer to this transmission after it has begun.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>playergroup</code> — Players</li>
+<li><code>transmissionsource</code> — Source</li>
+<li><code>int</code> <em>[ portrait ]</em> — Portrait</li>
+<li><code>string</code> — Portrait Actor</li>
+<li><code>string</code> <em>[ modelanim ]</em> — Portrait Anim</li>
+<li><code>soundlink</code> — Sound</li>
+<li><code>text</code> — Name</li>
+<li><code>text</code> — Message</li>
+<li><code>fixed</code> — Duration</li>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-transmission-duration-type">TransmissionDurationType</a> ]</em> — DurationType</li>
+<li><code>bool</code> <em>[ preset::<a href="/galaxy/reference/preset-trigger-wait-option">Trigger_Wait_Option</a> ]</em> — WaitUntilDone</li>
+<li><code>int</code> — Player</li>
+<li><code>bool</code> — Is Select</li>
+</ul>
+<p>Returns — <code>int</code> <em>[ transmission ]</em></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">int</span> <span class="hljs-title">TransmissionSendForPlayerSelect</span><span class="hljs-params">(
+	playergroup Players,
+	transmissionsource Source,
+	<span class="hljs-keyword">int</span> Target,
+	<span class="hljs-built_in">string</span> portraitActor,
+	<span class="hljs-built_in">string</span> PortraitAnim,
+	soundlink inSound,
+	text Speaker,
+	text Subtitle,
+	fixed Duration,
+	<span class="hljs-keyword">int</span> DurationType,
+	<span class="hljs-keyword">bool</span> WaitUntilDone,
+	<span class="hljs-keyword">int</span> player,
+	<span class="hljs-keyword">bool</span> isSelect,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#transmission-basics">Transmission / Basics</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ transmission ]</em> — <strong><a href="/galaxy/reference/transmission-send-for-player">Send Transmission For Player (deprecated)</a></strong> — ( TransmissionSendForPlayer )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ transmission ]</em> — <strong><a href="/galaxy/reference/transmission-send-for-player-select">Send Transmission For Player</a></strong> — ( TransmissionSendForPlayerSelect )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-send-transmission-simple">Send Transmission (Simple)</a></strong> — ( libNtve_gf_SendTransmissionSimple )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ transmission ]</em> — <strong><a href="/galaxy/reference/transmission-last-sent">Last Sent Transmission</a></strong> — ( TransmissionLastSent )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/transmission-player-has-active-transmission">Player Has Active Transmission</a></strong> — ( TransmissionPlayerHasActiveTransmission )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/transmission-wait">Wait For Transmission</a></strong> — ( TransmissionWait )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/transmission-clear">Stop Transmission</a></strong> — ( TransmissionClear )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/transmission-clear-all">Stop All Transmissions</a></strong> — ( TransmissionClearAll )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/transmission-clear-group">Stop Group Transmissions</a></strong> — ( TransmissionClearGroup )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/transmission-is-complete">Transmission Is Complete</a></strong> — ( TransmissionIsComplete )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/transmission-set-option">Turn Transmission Option On/Off</a></strong> — ( TransmissionSetOption )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-op-transmission-comment-sound">Transmission Comment (Sound)</a></strong> — (  )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-op-transmission-comment-conversation">Transmission Comment (Conversation)</a></strong> — (  )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="modsheroesbrawlmodsarenamodemodspunisherarenastormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsarenamodemodspunisherarenastormmod">#</a> mods/heroesbrawlmods/arenamodemods/punisherarena.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/arenamodemods/punisherarena.stormmod/base.stormdata/LibAMPU.galaxy#L1584">LibAMPU.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1584</span>
+TransmissionSendForPlayerSelect(libGame_gf_PlayersOnTeamHeroes(lp_team, <span class="hljs-literal">false</span>), TransmissionSource(), c_invalidPortraitId, <span class="hljs-string">""</span>, <span class="hljs-string">"Talk"</span>, SoundLink(ConversationDataGetSound(<span class="hljs-string">"CreepVO|Line00308"</span>, <span class="hljs-literal">false</span>), c_soundIndexAny), null, null, <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>, c_maxPlayers, <span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodscoopdeadmansstandstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodscoopdeadmansstandstormmod">#</a> mods/heroesbrawlmods/brawlmapmods/coop/deadmansstand.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/coop/deadmansstand.stormmod/base.stormdata/LibPEB1.galaxy#L4096">LibPEB1.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4096</span>
+TransmissionSendForPlayerSelect(PlayerGroupAll(), TransmissionSource(), c_invalidPortraitId, <span class="hljs-string">""</span>, <span class="hljs-string">"Talk"</span>, SoundLinkNoIndex(<span class="hljs-string">"DeadmanPVEVO_MiraHan_104"</span>), null, null, <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>, c_maxPlayers, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4099</span>
+TransmissionSendForPlayerSelect(PlayerGroupAll(), TransmissionSource(), c_invalidPortraitId, <span class="hljs-string">""</span>, <span class="hljs-string">"Talk"</span>, SoundLinkNoIndex(<span class="hljs-string">"DeadmanPVEVO_MiraHan_105"</span>), null, null, <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>, c_maxPlayers, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4102</span>
+TransmissionSendForPlayerSelect(PlayerGroupAll(), TransmissionSource(), c_invalidPortraitId, <span class="hljs-string">""</span>, <span class="hljs-string">"Talk"</span>, SoundLinkNoIndex(<span class="hljs-string">"DeadmanPVEVO_MiraHan_106"</span>), null, null, <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>, c_maxPlayers, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4105</span>
+TransmissionSendForPlayerSelect(PlayerGroupAll(), TransmissionSource(), c_invalidPortraitId, <span class="hljs-string">""</span>, <span class="hljs-string">"Talk"</span>, SoundLinkNoIndex(<span class="hljs-string">"DeadmanPVEVO_MiraHan_107"</span>), null, null, <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>, c_maxPlayers, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4108</span>
+TransmissionSendForPlayerSelect(PlayerGroupAll(), TransmissionSource(), c_invalidPortraitId, <span class="hljs-string">""</span>, <span class="hljs-string">"Talk"</span>, SoundLinkNoIndex(<span class="hljs-string">"DeadmanPVEVO_MiraHan_108"</span>), null, null, <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>, c_maxPlayers, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4111</span>
+TransmissionSendForPlayerSelect(PlayerGroupAll(), TransmissionSource(), c_invalidPortraitId, <span class="hljs-string">""</span>, <span class="hljs-string">"Talk"</span>, SoundLinkNoIndex(<span class="hljs-string">"DeadmanPVEVO_MiraHan_109"</span>), null, null, <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>, c_maxPlayers, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4114</span>
+TransmissionSendForPlayerSelect(PlayerGroupAll(), TransmissionSource(), c_invalidPortraitId, <span class="hljs-string">""</span>, <span class="hljs-string">"Talk"</span>, SoundLinkNoIndex(<span class="hljs-string">"DeadmanPVEVO_MiraHan_110"</span>), null, null, <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>, c_maxPlayers, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4117</span>
+TransmissionSendForPlayerSelect(PlayerGroupAll(), TransmissionSource(), c_invalidPortraitId, <span class="hljs-string">""</span>, <span class="hljs-string">"Talk"</span>, SoundLinkNoIndex(<span class="hljs-string">"DeadmanPVEVO_MiraHan_111"</span>), null, null, <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>, c_maxPlayers, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4120</span>
+TransmissionSendForPlayerSelect(PlayerGroupAll(), TransmissionSource(), c_invalidPortraitId, <span class="hljs-string">""</span>, <span class="hljs-string">"Talk"</span>, SoundLinkNoIndex(<span class="hljs-string">"DeadmanPVEVO_MiraHan_113"</span>), null, null, <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>, c_maxPlayers, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4123</span>
+TransmissionSendForPlayerSelect(PlayerGroupAll(), TransmissionSource(), c_invalidPortraitId, <span class="hljs-string">""</span>, <span class="hljs-string">"Talk"</span>, SoundLinkNoIndex(<span class="hljs-string">"DeadmanPVEVO_MiraHan_116"</span>), null, null, <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>, c_maxPlayers, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2219</span>
+TransmissionSendForPlayerSelect(PlayerGroupAll(), TransmissionSource(), c_invalidPortraitId, <span class="hljs-string">""</span>, <span class="hljs-string">"Talk"</span>, SoundLinkNoIndex(<span class="hljs-string">"AdjutantPVEVO_Adjutant_084"</span>), null, null, <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>, c_maxPlayers, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2222</span>
+TransmissionSendForPlayerSelect(PlayerGroupAll(), TransmissionSource(), c_invalidPortraitId, <span class="hljs-string">""</span>, <span class="hljs-string">"Talk"</span>, SoundLinkNoIndex(<span class="hljs-string">"AdjutantPVEVO_Adjutant_085"</span>), null, null, <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>, c_maxPlayers, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2225</span>
+TransmissionSendForPlayerSelect(PlayerGroupAll(), TransmissionSource(), c_invalidPortraitId, <span class="hljs-string">""</span>, <span class="hljs-string">"Talk"</span>, SoundLinkNoIndex(<span class="hljs-string">"AdjutantPVEVO_Adjutant_086"</span>), null, null, <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>, c_maxPlayers, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2228</span>
+TransmissionSendForPlayerSelect(PlayerGroupAll(), TransmissionSource(), c_invalidPortraitId, <span class="hljs-string">""</span>, <span class="hljs-string">"Talk"</span>, SoundLinkNoIndex(<span class="hljs-string">"AdjutantPVEVO_Adjutant_087"</span>), null, null, <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>, c_maxPlayers, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2231</span>
+TransmissionSendForPlayerSelect(PlayerGroupAll(), TransmissionSource(), c_invalidPortraitId, <span class="hljs-string">""</span>, <span class="hljs-string">"Talk"</span>, SoundLinkNoIndex(<span class="hljs-string">"AdjutantPVEVO_Adjutant_088"</span>), null, null, <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>, c_maxPlayers, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2234</span>
+TransmissionSendForPlayerSelect(PlayerGroupAll(), TransmissionSource(), c_invalidPortraitId, <span class="hljs-string">""</span>, <span class="hljs-string">"Talk"</span>, SoundLinkNoIndex(<span class="hljs-string">"AdjutantPVEVO_Adjutant_089"</span>), null, null, <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>, c_maxPlayers, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2237</span>
+TransmissionSendForPlayerSelect(PlayerGroupAll(), TransmissionSource(), c_invalidPortraitId, <span class="hljs-string">""</span>, <span class="hljs-string">"Talk"</span>, SoundLinkNoIndex(<span class="hljs-string">"AdjutantPVEVO_Adjutant_091"</span>), null, null, <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>, c_maxPlayers, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2240</span>
+TransmissionSendForPlayerSelect(PlayerGroupAll(), TransmissionSource(), c_invalidPortraitId, <span class="hljs-string">""</span>, <span class="hljs-string">"Talk"</span>, SoundLinkNoIndex(<span class="hljs-string">"AdjutantPVEVO_Adjutant_092"</span>), null, null, <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>, c_maxPlayers, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2243</span>
+TransmissionSendForPlayerSelect(PlayerGroupAll(), TransmissionSource(), c_invalidPortraitId, <span class="hljs-string">""</span>, <span class="hljs-string">"Talk"</span>, SoundLinkNoIndex(<span class="hljs-string">"AdjutantPVEVO_Adjutant_093"</span>), null, null, <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>, c_maxPlayers, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2246</span>
+TransmissionSendForPlayerSelect(PlayerGroupAll(), TransmissionSource(), c_invalidPortraitId, <span class="hljs-string">""</span>, <span class="hljs-string">"Talk"</span>, SoundLinkNoIndex(<span class="hljs-string">"AdjutantPVEVO_Adjutant_105"</span>), null, null, <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>, c_maxPlayers, <span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="modsheroesdatastormmod"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/GameDataHelperLib.galaxy#L16028">GameDataHelperLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L16028</span>
+TransmissionSendForPlayerSelect(PlayerGroupSingle(UnitGetOwner(lv_cargoUnit)), TransmissionSourceFromUnit(libGame_gv_players[UnitGetOwner(lv_cargoUnit)].lv_activeVehicle, <span class="hljs-literal">false</span>, <span class="hljs-literal">true</span>, <span class="hljs-string">""</span>), PortraitGetGame(), <span class="hljs-string">""</span>, <span class="hljs-string">"Stand"</span>, null, StringExternal(<span class="hljs-string">"Param/Value/lib_GDHL_4FE2EF61"</span>), StringToText(<span class="hljs-string">""</span>), <span class="hljs-number">60.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">false</span>, c_maxPlayers, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L16032</span>
+TransmissionSendForPlayerSelect(PlayerGroupSingle(UnitGetOwner(lv_cargoUnit)), TransmissionSourceFromUnit(libGame_gv_players[UnitGetOwner(lv_cargoUnit)].lv_heroUnit, <span class="hljs-literal">false</span>, <span class="hljs-literal">true</span>, <span class="hljs-string">""</span>), PortraitGetGame(), <span class="hljs-string">""</span>, <span class="hljs-string">"Stand"</span>, null, StringExternal(<span class="hljs-string">"Param/Value/lib_GDHL_8F93019A"</span>), StringToText(<span class="hljs-string">""</span>), <span class="hljs-number">60.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">false</span>, c_maxPlayers, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19144</span>
+TransmissionSendForPlayerSelect(PlayerGroupSingle(lv_rexxarPlayer), TransmissionSourceFromUnit(libGame_gv_players[lv_rexxarPlayer].lv_heroUnit, <span class="hljs-literal">false</span>, <span class="hljs-literal">true</span>, <span class="hljs-string">""</span>), PortraitGetGame(), <span class="hljs-string">""</span>, <span class="hljs-string">"Talk"</span>, SoundLink(<span class="hljs-string">"RexxarBase_Misha_FocusUnit"</span>, c_soundIndexAny), StringToText(<span class="hljs-string">""</span>), StringToText(<span class="hljs-string">""</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">false</span>, lv_rexxarPlayer, <span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="modsheroesdatastormmod-2"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-2">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/HeroesLib.galaxy#L4866">HeroesLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4866</span>
+TransmissionSendForPlayerSelect(PlayerGroupAll(), TransmissionSourceFromMovie(libStEx_gv_tradeShowMovieLink, <span class="hljs-literal">true</span>), libNtve_gf_FullscreenPortrait(), <span class="hljs-string">""</span>, <span class="hljs-string">"Talk"</span>, null, null, null, <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>, c_maxPlayers, <span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodsbraxisholdoutstormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodsbraxisholdoutstormmod">#</a> mods/heroesmapmods/battlegroundmapmods/braxisholdout.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/braxisholdout.stormmod/base.stormdata/LibSCHO.galaxy#L2722">LibSCHO.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2722</span>
+TransmissionSendForPlayerSelect(libGame_gf_PlayersOnTeamHeroes(lv_teamIndex, <span class="hljs-literal">false</span>), TransmissionSource(), c_invalidPortraitId, <span class="hljs-string">""</span>, <span class="hljs-string">"Talk"</span>, SoundLinkNoIndex(ConversationDataGetSound(<span class="hljs-string">"HoldoutVO|Line00032"</span>, <span class="hljs-literal">false</span>)), null, null, <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">false</span>, c_maxPlayers, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2725</span>
+TransmissionSendForPlayerSelect(libGame_gf_PlayersOnTeamHeroes(lv_teamIndex, <span class="hljs-literal">false</span>), TransmissionSource(), c_invalidPortraitId, <span class="hljs-string">""</span>, <span class="hljs-string">"Talk"</span>, SoundLinkNoIndex(ConversationDataGetSound(<span class="hljs-string">"HoldoutVO|Line00033"</span>, <span class="hljs-literal">false</span>)), null, null, <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">false</span>, c_maxPlayers, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2728</span>
+TransmissionSendForPlayerSelect(libGame_gf_PlayersOnTeamHeroes(lv_teamIndex, <span class="hljs-literal">false</span>), TransmissionSource(), c_invalidPortraitId, <span class="hljs-string">""</span>, <span class="hljs-string">"Talk"</span>, SoundLinkNoIndex(ConversationDataGetSound(<span class="hljs-string">"HoldoutVO|Line00034"</span>, <span class="hljs-literal">false</span>)), null, null, <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">false</span>, c_maxPlayers, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2731</span>
+TransmissionSendForPlayerSelect(libGame_gf_PlayersOnTeamHeroes(lv_teamIndex, <span class="hljs-literal">false</span>), TransmissionSource(), c_invalidPortraitId, <span class="hljs-string">""</span>, <span class="hljs-string">"Talk"</span>, SoundLinkNoIndex(ConversationDataGetSound(<span class="hljs-string">"HoldoutVO|Line00035"</span>, <span class="hljs-literal">false</span>)), null, null, <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">false</span>, c_maxPlayers, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2734</span>
+TransmissionSendForPlayerSelect(libGame_gf_PlayersOnTeamHeroes(lv_teamIndex, <span class="hljs-literal">false</span>), TransmissionSource(), c_invalidPortraitId, <span class="hljs-string">""</span>, <span class="hljs-string">"Talk"</span>, SoundLinkNoIndex(ConversationDataGetSound(<span class="hljs-string">"HoldoutVO|Line00036"</span>, <span class="hljs-literal">false</span>)), null, null, <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">false</span>, c_maxPlayers, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2737</span>
+TransmissionSendForPlayerSelect(libGame_gf_PlayersOnTeamHeroes(lv_teamIndex, <span class="hljs-literal">false</span>), TransmissionSource(), c_invalidPortraitId, <span class="hljs-string">""</span>, <span class="hljs-string">"Talk"</span>, SoundLinkNoIndex(ConversationDataGetSound(<span class="hljs-string">"HoldoutVO|Line00037"</span>, <span class="hljs-literal">false</span>)), null, null, <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">false</span>, c_maxPlayers, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2740</span>
+TransmissionSendForPlayerSelect(libGame_gf_PlayersOnTeamHeroes(lv_teamIndex, <span class="hljs-literal">false</span>), TransmissionSource(), c_invalidPortraitId, <span class="hljs-string">""</span>, <span class="hljs-string">"Talk"</span>, SoundLinkNoIndex(ConversationDataGetSound(<span class="hljs-string">"HoldoutVO|Line00038"</span>, <span class="hljs-literal">false</span>)), null, null, <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">false</span>, c_maxPlayers, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2743</span>
+TransmissionSendForPlayerSelect(libGame_gf_PlayersOnTeamHeroes(lv_teamIndex, <span class="hljs-literal">false</span>), TransmissionSource(), c_invalidPortraitId, <span class="hljs-string">""</span>, <span class="hljs-string">"Talk"</span>, SoundLinkNoIndex(ConversationDataGetSound(<span class="hljs-string">"HoldoutVO|Line00039"</span>, <span class="hljs-literal">false</span>)), null, null, <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">false</span>, c_maxPlayers, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2746</span>
+TransmissionSendForPlayerSelect(libGame_gf_PlayersOnTeamHeroes(lv_teamIndex, <span class="hljs-literal">false</span>), TransmissionSource(), c_invalidPortraitId, <span class="hljs-string">""</span>, <span class="hljs-string">"Talk"</span>, SoundLinkNoIndex(ConversationDataGetSound(<span class="hljs-string">"HoldoutVO|Line00053"</span>, <span class="hljs-literal">false</span>)), null, null, <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">false</span>, c_maxPlayers, <span class="hljs-literal">false</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

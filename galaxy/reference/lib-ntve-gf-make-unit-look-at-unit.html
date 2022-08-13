@@ -1,0 +1,261 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Make Unit Look At Unit / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Make Unit Look At Unit"/>
+                <meta property="og:description" content="Makes the specified unit look at the specified other unit&#39;s attach point, using preset settings defined by the specified look at type."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="make-unit-look-at-unit"><a class="markdownIt-Anchor" href="#make-unit-look-at-unit">#</a> Make Unit Look At Unit</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Make unit <strong>unit</strong> look at the <strong>attachPoint|Attach</strong> attach point of <strong>lookAtTargetUnit|Unit</strong> using look at type <strong>type</strong><br>
+<em>Flags</em> — <code>Action</code></p>
+</blockquote>
+<p>Makes the specified unit look at the specified other unit’s attach point, using preset settings defined by the specified look at type.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>unit</code> — Unit</li>
+<li><code>string</code> <em>[ preset::<a href="/galaxy/reference/preset-look-at-type">LookAtType</a> ]</em> — Type</li>
+<li><code>unit</code> — Look At Target Unit</li>
+<li><code>string</code> <em>[ preset::<a href="/galaxy/reference/preset-attach-points">AttachPoints</a> ]</em> — Attach Point</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">libNtve_gf_MakeUnitLookAtUnit</span><span class="hljs-params">(
+	unit lp_unit,
+	<span class="hljs-built_in">string</span> lp_type,
+	unit lp_lookAtTargetUnit,
+	<span class="hljs-built_in">string</span> lp_attachPoint,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#actor-look-at">Actor / Look At</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>actor</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-look-at-target-from-point-with-zoffset">Look At Target From Point With Z Offset</a></strong> — ( libNtve_gf_LookAtTargetFromPointWithZOffset )</li>
+<li><em><strong>[F]</strong></em> — <code>actor</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-look-at-target-from-unit-attach-point">Look At Target From Unit Attach Point</a></strong> — ( libNtve_gf_LookAtTargetFromUnitAttachPoint )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-create-look-at-target-at-point">Create Look At Target At Point</a></strong> — ( libNtve_gf_CreateLookAtTargetAtPoint )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-create-look-at-target-at-unit-attach-point">Create Look At Target At Unit Attach Point</a></strong> — ( libNtve_gf_CreateLookAtTargetAtUnitAttachPoint )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/actor-look-at-start">Make Actor Look At Actor (Custom)</a></strong> — ( ActorLookAtStart )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/actor-look-at-stop">Make Actor Stop Looking (Custom)</a></strong> — ( ActorLookAtStop )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/actor-look-at-type-start">Make Actor Look At Actor</a></strong> — ( ActorLookAtTypeStart )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/actor-look-at-type-stop">Make Actor Stop Looking</a></strong> — ( ActorLookAtTypeStop )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-simple-look-at-start">Make Unit Look At Actor</a></strong> — ( libNtve_gf_SimpleLookAtStart )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-make-unit-look-at-point">Make Unit Look At Point</a></strong> — ( libNtve_gf_MakeUnitLookAtPoint )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-make-unit-look-at-unit">Make Unit Look At Unit</a></strong> — ( libNtve_gf_MakeUnitLookAtUnit )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-simple-look-at-stop">Make Unit Stop Looking</a></strong> — ( libNtve_gf_SimpleLookAtStop )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/tstory01.sc2map/MapScript.galaxy#L3520">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3520</span>
+libNtve_gf_MakeUnitLookAtUnit(lp_unit, lp_type, lp_lookAtTargetUnit, lp_attachPoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3520</span>
+libNtve_gf_MakeUnitLookAtUnit(lp_unit, lp_type, lp_lookAtTargetUnit, lp_attachPoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L619</span>
+libNtve_gf_MakeUnitLookAtUnit(lib281DEC45_gf_CharacterUnit(<span class="hljs-string">"Zagara"</span>), <span class="hljs-string">"SlowHeadOnlySubtle"</span>, lib281DEC45_gf_CharacterUnit(<span class="hljs-string">"Kerrigan"</span>), <span class="hljs-string">"Ref_Head"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L853</span>
+libNtve_gf_MakeUnitLookAtUnit(lib281DEC45_gf_CharacterUnit(<span class="hljs-string">"Kerrigan"</span>), <span class="hljs-string">"InstantHeadOnly"</span>, lib281DEC45_gf_CharacterUnit(<span class="hljs-string">"Zerg Adjutant"</span>), <span class="hljs-string">"Ref_Head"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L878</span>
+libNtve_gf_MakeUnitLookAtUnit(lib281DEC45_gf_CharacterUnit(<span class="hljs-string">"Zerg Adjutant"</span>), <span class="hljs-string">"InstantEyesOnly"</span>, lib281DEC45_gf_CharacterUnit(<span class="hljs-string">"Kerrigan"</span>), <span class="hljs-string">"Ref_Head"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L927</span>
+libNtve_gf_MakeUnitLookAtUnit(lib281DEC45_gf_CharacterUnit(<span class="hljs-string">"Kerrigan"</span>), <span class="hljs-string">"InstantHeadOnly"</span>, lib281DEC45_gf_CharacterUnit(<span class="hljs-string">"Zerg Adjutant"</span>), <span class="hljs-string">"Ref_Head"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L952</span>
+libNtve_gf_MakeUnitLookAtUnit(lib281DEC45_gf_CharacterUnit(<span class="hljs-string">"Zerg Adjutant"</span>), <span class="hljs-string">"InstantEyesOnly"</span>, lib281DEC45_gf_CharacterUnit(<span class="hljs-string">"Kerrigan"</span>), <span class="hljs-string">"Ref_Head"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L612</span>
+libNtve_gf_MakeUnitLookAtUnit(lib281DEC45_gf_CharacterUnit(<span class="hljs-string">"Kerrigan"</span>), <span class="hljs-string">"InstantHeadOnly"</span>, lib281DEC45_gf_CharacterUnit(<span class="hljs-string">"Stukov"</span>), <span class="hljs-string">"Ref_Head"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L613</span>
+libNtve_gf_MakeUnitLookAtUnit(lib281DEC45_gf_CharacterUnit(<span class="hljs-string">"Stukov"</span>), <span class="hljs-string">"InstantHeadOnly"</span>, lib281DEC45_gf_CharacterUnit(<span class="hljs-string">"Kerrigan"</span>), <span class="hljs-string">"Ref_Head"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L877</span>
+libNtve_gf_MakeUnitLookAtUnit(lib281DEC45_gf_CharacterUnit(<span class="hljs-string">"Zagara"</span>), <span class="hljs-string">"InstantHeadOnly"</span>, lib281DEC45_gf_CharacterUnit(<span class="hljs-string">"Kerrigan"</span>), <span class="hljs-string">"Ref_Head"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L878</span>
+libNtve_gf_MakeUnitLookAtUnit(lib281DEC45_gf_CharacterUnit(<span class="hljs-string">"Kerrigan"</span>), <span class="hljs-string">"InstantHeadOnly"</span>, lib281DEC45_gf_CharacterUnit(<span class="hljs-string">"Zagara"</span>), <span class="hljs-string">"Ref_Head"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L903</span>
+libNtve_gf_MakeUnitLookAtUnit(lib281DEC45_gf_CharacterUnit(<span class="hljs-string">"Zerg Adjutant"</span>), <span class="hljs-string">"InstantEyesOnly"</span>, lib281DEC45_gf_CharacterUnit(<span class="hljs-string">"Kerrigan"</span>), <span class="hljs-string">"Ref_Head"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L508</span>
+libNtve_gf_MakeUnitLookAtUnit(lib281DEC45_gf_CharacterUnit(<span class="hljs-string">"Zagara"</span>), <span class="hljs-string">"InstantHeadOnly"</span>, lib281DEC45_gf_CharacterUnit(<span class="hljs-string">"Kerrigan"</span>), <span class="hljs-string">"Ref_Head"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L581</span>
+libNtve_gf_MakeUnitLookAtUnit(lib281DEC45_gf_CharacterUnit(<span class="hljs-string">"Kerrigan"</span>), <span class="hljs-string">"SlowHeadOnly"</span>, lib281DEC45_gf_CharacterUnit(<span class="hljs-string">"Zerg Adjutant"</span>), <span class="hljs-string">"Ref_Head"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L586</span>
+libNtve_gf_MakeUnitLookAtUnit(lib281DEC45_gf_CharacterUnit(<span class="hljs-string">"Kerrigan"</span>), <span class="hljs-string">"InstantHeadOnly"</span>, lib281DEC45_gf_CharacterUnit(<span class="hljs-string">"Zerg Adjutant"</span>), <span class="hljs-string">"Ref_Head"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8592</span>
+libNtve_gf_MakeUnitLookAtUnit(gv_zurvan, <span class="hljs-string">"MedStanding"</span>, lv_helperUnit, <span class="hljs-string">"Ref_Overhead"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8593</span>
+libNtve_gf_MakeUnitLookAtUnit(gv_zurvan, <span class="hljs-string">"Turret_Left"</span>, gv_zurvan, <span class="hljs-string">"Ref_Hardpoint 03"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8594</span>
+libNtve_gf_MakeUnitLookAtUnit(gv_zurvan, <span class="hljs-string">"Turret_Right"</span>, gv_zurvan, <span class="hljs-string">"Ref_Hardpoint 03"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L619</span>
+libNtve_gf_MakeUnitLookAtUnit(lib281DEC45_gf_CharacterUnit(<span class="hljs-string">"Zagara"</span>), <span class="hljs-string">"SlowHeadOnlySubtle"</span>, lib281DEC45_gf_CharacterUnit(<span class="hljs-string">"Kerrigan"</span>), <span class="hljs-string">"Ref_Head"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L853</span>
+libNtve_gf_MakeUnitLookAtUnit(lib281DEC45_gf_CharacterUnit(<span class="hljs-string">"Kerrigan"</span>), <span class="hljs-string">"InstantHeadOnly"</span>, lib281DEC45_gf_CharacterUnit(<span class="hljs-string">"Zerg Adjutant"</span>), <span class="hljs-string">"Ref_Head"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L878</span>
+libNtve_gf_MakeUnitLookAtUnit(lib281DEC45_gf_CharacterUnit(<span class="hljs-string">"Zerg Adjutant"</span>), <span class="hljs-string">"InstantEyesOnly"</span>, lib281DEC45_gf_CharacterUnit(<span class="hljs-string">"Kerrigan"</span>), <span class="hljs-string">"Ref_Head"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L927</span>
+libNtve_gf_MakeUnitLookAtUnit(lib281DEC45_gf_CharacterUnit(<span class="hljs-string">"Kerrigan"</span>), <span class="hljs-string">"InstantHeadOnly"</span>, lib281DEC45_gf_CharacterUnit(<span class="hljs-string">"Zerg Adjutant"</span>), <span class="hljs-string">"Ref_Head"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L952</span>
+libNtve_gf_MakeUnitLookAtUnit(lib281DEC45_gf_CharacterUnit(<span class="hljs-string">"Zerg Adjutant"</span>), <span class="hljs-string">"InstantEyesOnly"</span>, lib281DEC45_gf_CharacterUnit(<span class="hljs-string">"Kerrigan"</span>), <span class="hljs-string">"Ref_Head"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L612</span>
+libNtve_gf_MakeUnitLookAtUnit(lib281DEC45_gf_CharacterUnit(<span class="hljs-string">"Kerrigan"</span>), <span class="hljs-string">"InstantHeadOnly"</span>, lib281DEC45_gf_CharacterUnit(<span class="hljs-string">"Stukov"</span>), <span class="hljs-string">"Ref_Head"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L613</span>
+libNtve_gf_MakeUnitLookAtUnit(lib281DEC45_gf_CharacterUnit(<span class="hljs-string">"Stukov"</span>), <span class="hljs-string">"InstantHeadOnly"</span>, lib281DEC45_gf_CharacterUnit(<span class="hljs-string">"Kerrigan"</span>), <span class="hljs-string">"Ref_Head"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L877</span>
+libNtve_gf_MakeUnitLookAtUnit(lib281DEC45_gf_CharacterUnit(<span class="hljs-string">"Zagara"</span>), <span class="hljs-string">"InstantHeadOnly"</span>, lib281DEC45_gf_CharacterUnit(<span class="hljs-string">"Kerrigan"</span>), <span class="hljs-string">"Ref_Head"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L878</span>
+libNtve_gf_MakeUnitLookAtUnit(lib281DEC45_gf_CharacterUnit(<span class="hljs-string">"Kerrigan"</span>), <span class="hljs-string">"InstantHeadOnly"</span>, lib281DEC45_gf_CharacterUnit(<span class="hljs-string">"Zagara"</span>), <span class="hljs-string">"Ref_Head"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L903</span>
+libNtve_gf_MakeUnitLookAtUnit(lib281DEC45_gf_CharacterUnit(<span class="hljs-string">"Zerg Adjutant"</span>), <span class="hljs-string">"InstantEyesOnly"</span>, lib281DEC45_gf_CharacterUnit(<span class="hljs-string">"Kerrigan"</span>), <span class="hljs-string">"Ref_Head"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L508</span>
+libNtve_gf_MakeUnitLookAtUnit(lib281DEC45_gf_CharacterUnit(<span class="hljs-string">"Zagara"</span>), <span class="hljs-string">"InstantHeadOnly"</span>, lib281DEC45_gf_CharacterUnit(<span class="hljs-string">"Kerrigan"</span>), <span class="hljs-string">"Ref_Head"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L581</span>
+libNtve_gf_MakeUnitLookAtUnit(lib281DEC45_gf_CharacterUnit(<span class="hljs-string">"Kerrigan"</span>), <span class="hljs-string">"SlowHeadOnly"</span>, lib281DEC45_gf_CharacterUnit(<span class="hljs-string">"Zerg Adjutant"</span>), <span class="hljs-string">"Ref_Head"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L586</span>
+libNtve_gf_MakeUnitLookAtUnit(lib281DEC45_gf_CharacterUnit(<span class="hljs-string">"Kerrigan"</span>), <span class="hljs-string">"InstantHeadOnly"</span>, lib281DEC45_gf_CharacterUnit(<span class="hljs-string">"Zerg Adjutant"</span>), <span class="hljs-string">"Ref_Head"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8592</span>
+libNtve_gf_MakeUnitLookAtUnit(gv_zurvan, <span class="hljs-string">"MedStanding"</span>, lv_helperUnit, <span class="hljs-string">"Ref_Overhead"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8593</span>
+libNtve_gf_MakeUnitLookAtUnit(gv_zurvan, <span class="hljs-string">"Turret_Left"</span>, gv_zurvan, <span class="hljs-string">"Ref_Hardpoint 03"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8594</span>
+libNtve_gf_MakeUnitLookAtUnit(gv_zurvan, <span class="hljs-string">"Turret_Right"</span>, gv_zurvan, <span class="hljs-string">"Ref_Hardpoint 03"</span>)
+</code></pre>
+<h4 id="campaignsswarmstoryutilsc2mod"><a class="markdownIt-Anchor" href="#campaignsswarmstoryutilsc2mod">#</a> campaigns/swarmstoryutil.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstoryutil.sc2mod/base.sc2data/Lib281DEC45.galaxy#L4151">Lib281DEC45.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4151</span>
+libNtve_gf_MakeUnitLookAtUnit(lib281DEC45_gf_CharacterUnit(lp_lookingCharacter), <span class="hljs-string">"InstantEyesOnly"</span>, lib281DEC45_gf_CharacterUnit(lv_targetCharacter), <span class="hljs-string">"Ref_Head"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4154</span>
+libNtve_gf_MakeUnitLookAtUnit(lib281DEC45_gf_CharacterUnit(lp_lookingCharacter), <span class="hljs-string">"InstantHeadOnlySubtle"</span>, lib281DEC45_gf_CharacterUnit(lv_targetCharacter), <span class="hljs-string">"Ref_Head"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4157</span>
+libNtve_gf_MakeUnitLookAtUnit(lib281DEC45_gf_CharacterUnit(lp_lookingCharacter), <span class="hljs-string">"InstantHeadOnly"</span>, lib281DEC45_gf_CharacterUnit(lv_targetCharacter), <span class="hljs-string">"Ref_Head"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4228</span>
+libNtve_gf_MakeUnitLookAtUnit(lib281DEC45_gf_CharacterUnit(<span class="hljs-string">"Kerrigan"</span>), <span class="hljs-string">"Turret_Left"</span>, lib281DEC45_gf_CharacterUnit(<span class="hljs-string">"Kerrigan"</span>), <span class="hljs-string">"Ref_Hardpoint"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12317</span>
+libNtve_gf_MakeUnitLookAtUnit(lib281DEC45_gf_CharacterUnit(<span class="hljs-string">"Evolution Master"</span>), <span class="hljs-string">"InstantHeadOnly"</span>, lib281DEC45_gf_CharacterUnit(<span class="hljs-string">"Kerrigan"</span>), <span class="hljs-string">"Ref_Head"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12318</span>
+libNtve_gf_MakeUnitLookAtUnit(lib281DEC45_gf_CharacterUnit(<span class="hljs-string">"Kerrigan"</span>), <span class="hljs-string">"InstantHeadOnlySubtle"</span>, lib281DEC45_gf_CharacterUnit(<span class="hljs-string">"Evolution Master"</span>), <span class="hljs-string">"Ref_Head"</span>)
+</code></pre>
+<h4 id="campaignsvoidsc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidsc2campaign">#</a> campaigns/void.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/void.sc2campaign/base.sc2maps/maps/campaign/void/sc2epilogue01.sc2map/MapScript.galaxy#L6474">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L6474</span>
+libNtve_gf_MakeUnitLookAtUnit(gv_narud, <span class="hljs-string">"SlowStanding"</span>, EventUnitTargetUnit(), <span class="hljs-string">"Ref_Center"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6479</span>
+libNtve_gf_MakeUnitLookAtUnit(gv_narud, <span class="hljs-string">"SlowStanding"</span>, EventUnitTargetUnit(), <span class="hljs-string">"Ref_Center"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6474</span>
+libNtve_gf_MakeUnitLookAtUnit(gv_narud, <span class="hljs-string">"SlowStanding"</span>, EventUnitTargetUnit(), <span class="hljs-string">"Ref_Center"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6479</span>
+libNtve_gf_MakeUnitLookAtUnit(gv_narud, <span class="hljs-string">"SlowStanding"</span>, EventUnitTargetUnit(), <span class="hljs-string">"Ref_Center"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8262</span>
+libNtve_gf_MakeUnitLookAtUnit(libStEx_gv_hERO_PlayerUnit, <span class="hljs-string">"SlowStanding"</span>, libStEx_gv_hERO_FriendlyUther, <span class="hljs-string">"Ref_Head"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8262</span>
+libNtve_gf_MakeUnitLookAtUnit(libStEx_gv_hERO_PlayerUnit, <span class="hljs-string">"SlowStanding"</span>, libStEx_gv_hERO_FriendlyUther, <span class="hljs-string">"Ref_Head"</span>)
+</code></pre>
+<h4 id="modsheroesdatastormmod"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/GameDataHelperLib.galaxy#L16350">GameDataHelperLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L16350</span>
+libNtve_gf_MakeUnitLookAtUnit(lv_medic, <span class="hljs-string">"RobotArmsOnly"</span>, lv_target, <span class="hljs-string">"Ref_Center"</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

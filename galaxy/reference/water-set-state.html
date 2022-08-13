@@ -1,0 +1,308 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Set Water State / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Set Water State"/>
+                <meta property="og:description" content="Changes the water state on a map.  This causes a water template to shift between its different pre-determined settings."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="set-water-state"><a class="markdownIt-Anchor" href="#set-water-state">#</a> Set Water State</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Change water to <strong>waterState|State</strong> over <strong>duration</strong> seconds, using a <strong>blendType|Type</strong> blend curve<br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Changes the water state on a map.  This causes a water template to shift between its different pre-determined settings.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>string</code> <em>[ water ]</em> — Water State</li>
+<li><code>fixed</code> — Duration</li>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-water-blend-type">WaterBlendType</a> ]</em> — Blend Type</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">WaterSetState</span><span class="hljs-params">(
+	<span class="hljs-built_in">string</span> inWater,
+	fixed inDuration,
+	<span class="hljs-keyword">int</span> inMorphType,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#environment-terrain-and-water">Environment / Terrain And Water</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/environment-show">Show/Hide Environment</a></strong> — ( EnvironmentShow )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/world-height">Height At Point</a></strong> — ( WorldHeight )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> <em>[ gamelink::TerrainTex ]</em> — <strong><a href="/galaxy/reference/terrain-texture">Terrain Texture At Point</a></strong> — ( TerrainTexture )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/cliff-level">Cliff Level Of Point (Integer)</a></strong> — ( CliffLevel )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/point-pathing-cliff-level">Cliff Level Of Point (Real)</a></strong> — ( PointPathingCliffLevel )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/cross-cliff">Line Crosses Cliff</a></strong> — ( CrossCliff )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/has-custom-cell-attribute">Terrain Has Custom Attribute</a></strong> — ( HasCustomCellAttribute )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/terrain-show-region">Show/Hide Terrain</a></strong> — ( TerrainShowRegion )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/water-set-state">Set Water State</a></strong> — ( WaterSetState )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/water-pause">Pause/Unpause Water Transition</a></strong> — ( WaterPause )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/ttosh01.sc2map/MapScript.galaxy#L641">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L641</span>
+WaterSetState(<span class="hljs-string">"Template 1|[Default]"</span>, <span class="hljs-number">4.0</span>, c_wtcLinear)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2790</span>
+WaterSetState(<span class="hljs-string">"Template 1|Alternate Setting 1"</span>, <span class="hljs-number">15.0</span>, c_wtcLinear)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2871</span>
+WaterSetState(<span class="hljs-string">"Template 1|Alternate Setting 2"</span>, <span class="hljs-number">4.0</span>, c_wtcLinear)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2913</span>
+WaterSetState(<span class="hljs-string">"Template 1|[Default]"</span>, <span class="hljs-number">10.0</span>, c_wtcLinear)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4857</span>
+WaterSetState(<span class="hljs-string">"Template 1|Alternate Setting 1"</span>, (SoundLengthSync(SoundLink(<span class="hljs-string">"TTosh01BriefingTosh00001"</span>, <span class="hljs-number">0</span>)) + <span class="hljs-number">0.0</span>), c_wtcLinear)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4862</span>
+WaterSetState(<span class="hljs-string">"Template 1|Alternate Setting 2"</span>, <span class="hljs-number">6.0</span>, c_wtcLinear)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4889</span>
+WaterSetState(<span class="hljs-string">"Template 1|[Default]"</span>, <span class="hljs-number">1.0</span>, c_wtcLinear)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5035</span>
+WaterSetState(<span class="hljs-string">"Template 1|[Default]"</span>, <span class="hljs-number">1.0</span>, c_wtcLinear)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5240</span>
+WaterSetState(<span class="hljs-string">"Template 1|Alternate Setting 2"</span>, <span class="hljs-number">6.0</span>, c_wtcLinear)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7778</span>
+WaterSetState(<span class="hljs-string">"Template 1|Lava 2"</span>, gv__4TimeLimit, c_wtcLinear)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11676</span>
+WaterSetState(<span class="hljs-string">"Template 2|[Default]"</span>, <span class="hljs-number">0.0</span>, c_wtcLinear)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11677</span>
+WaterSetState(<span class="hljs-string">"Template 2|Cine4 Lava"</span>, <span class="hljs-number">90.0</span>, c_wtcLinear)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12023</span>
+WaterSetState(<span class="hljs-string">"Template 1|[Default]"</span>, <span class="hljs-number">0.0</span>, c_wtcLinear)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12125</span>
+WaterSetState(<span class="hljs-string">"Template 1|Cinematic Lava"</span>, <span class="hljs-number">30.0</span>, c_wtcLinear)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12141</span>
+WaterSetState(<span class="hljs-string">"Template 1|Cinematic Lava"</span>, <span class="hljs-number">3.0</span>, c_wtcLinear)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L641</span>
+WaterSetState(<span class="hljs-string">"Template 1|[Default]"</span>, <span class="hljs-number">4.0</span>, c_wtcLinear)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2790</span>
+WaterSetState(<span class="hljs-string">"Template 1|Alternate Setting 1"</span>, <span class="hljs-number">15.0</span>, c_wtcLinear)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2871</span>
+WaterSetState(<span class="hljs-string">"Template 1|Alternate Setting 2"</span>, <span class="hljs-number">4.0</span>, c_wtcLinear)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2913</span>
+WaterSetState(<span class="hljs-string">"Template 1|[Default]"</span>, <span class="hljs-number">10.0</span>, c_wtcLinear)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4857</span>
+WaterSetState(<span class="hljs-string">"Template 1|Alternate Setting 1"</span>, (SoundLengthSync(SoundLink(<span class="hljs-string">"TTosh01BriefingTosh00001"</span>, <span class="hljs-number">0</span>)) + <span class="hljs-number">0.0</span>), c_wtcLinear)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4862</span>
+WaterSetState(<span class="hljs-string">"Template 1|Alternate Setting 2"</span>, <span class="hljs-number">6.0</span>, c_wtcLinear)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4889</span>
+WaterSetState(<span class="hljs-string">"Template 1|[Default]"</span>, <span class="hljs-number">1.0</span>, c_wtcLinear)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5035</span>
+WaterSetState(<span class="hljs-string">"Template 1|[Default]"</span>, <span class="hljs-number">1.0</span>, c_wtcLinear)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5240</span>
+WaterSetState(<span class="hljs-string">"Template 1|Alternate Setting 2"</span>, <span class="hljs-number">6.0</span>, c_wtcLinear)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7778</span>
+WaterSetState(<span class="hljs-string">"Template 1|Lava 2"</span>, gv__4TimeLimit, c_wtcLinear)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11676</span>
+WaterSetState(<span class="hljs-string">"Template 2|[Default]"</span>, <span class="hljs-number">0.0</span>, c_wtcLinear)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11677</span>
+WaterSetState(<span class="hljs-string">"Template 2|Cine4 Lava"</span>, <span class="hljs-number">90.0</span>, c_wtcLinear)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12023</span>
+WaterSetState(<span class="hljs-string">"Template 1|[Default]"</span>, <span class="hljs-number">0.0</span>, c_wtcLinear)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12125</span>
+WaterSetState(<span class="hljs-string">"Template 1|Cinematic Lava"</span>, <span class="hljs-number">30.0</span>, c_wtcLinear)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12141</span>
+WaterSetState(<span class="hljs-string">"Template 1|Cinematic Lava"</span>, <span class="hljs-number">3.0</span>, c_wtcLinear)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1643</span>
+WaterSetState(<span class="hljs-string">"VespeneLavaWater|[Default]"</span>, gv_coreOn_DURATION, c_wtcLinear)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1713</span>
+WaterSetState(<span class="hljs-string">"VespeneLavaWater|Alternate Setting"</span>, lv_waterTransitionTime, c_wtcLinear)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1716</span>
+WaterSetState(<span class="hljs-string">"VespeneLavaWater|Alternate Setting 2"</span>, lv_waterTransitionTime, c_wtcLinear)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1739</span>
+WaterSetState(<span class="hljs-string">"VespeneLavaWater|Alternate Setting 3"</span>, lv_waterTransitionTime, c_wtcLinear)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3346</span>
+WaterSetState(<span class="hljs-string">"VespeneLavaWater|Alternate Setting 2"</span>, <span class="hljs-number">2.7</span>, c_wtcExponential)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3349</span>
+WaterSetState(<span class="hljs-string">"VespeneLavaWater|Alternate Setting"</span>, <span class="hljs-number">0.0</span>, c_wtcExponential)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3357</span>
+WaterSetState(<span class="hljs-string">"VespeneLavaWater|Alternate Setting 3"</span>, <span class="hljs-number">3.0</span>, c_wtcExponential)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3496</span>
+WaterSetState(<span class="hljs-string">"VespeneLavaWater|[Default]"</span>, <span class="hljs-number">0.0</span>, c_wtcLinear)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3820</span>
+WaterSetState(<span class="hljs-string">"ZerusPool|Alternate Setting"</span>, <span class="hljs-number">2.0</span>, c_wtcSquareRoot)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3823</span>
+WaterSetState(<span class="hljs-string">"Xil|Alternate Setting"</span>, <span class="hljs-number">2.0</span>, c_wtcLinear)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3826</span>
+WaterSetState(<span class="hljs-string">"ZhakulDas|Alternate Setting"</span>, <span class="hljs-number">2.0</span>, c_wtcLinear)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L420</span>
+WaterSetState(<span class="hljs-string">"Template 1|Alternate Setting 2"</span>, lp_duration, c_wtcLinear)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L435</span>
+WaterSetState(<span class="hljs-string">"Template 1|[Default]"</span>, lp_duration, c_wtcLinear)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1728</span>
+WaterSetState(<span class="hljs-string">"Template 1|Alternate Setting 1"</span>, lv_duration, c_wtcLinear)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4291</span>
+WaterSetState(<span class="hljs-string">"Template 1|Alternate Setting 1"</span>, <span class="hljs-number">6.0</span>, c_wtcLinear)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4298</span>
+WaterSetState(<span class="hljs-string">"Template 1|Alternate Setting 2"</span>, <span class="hljs-number">4.0</span>, c_wtcLinear)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3231</span>
+WaterSetState(<span class="hljs-string">"PortZion|Alternate Setting"</span>, <span class="hljs-number">10.0</span>, c_wtcLinear)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3363</span>
+WaterSetState(<span class="hljs-string">"PortZion|Alternate Setting 2"</span>, <span class="hljs-number">0.0</span>, c_wtcLinear)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L420</span>
+WaterSetState(<span class="hljs-string">"Template 1|Alternate Setting 2"</span>, lp_duration, c_wtcLinear)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L435</span>
+WaterSetState(<span class="hljs-string">"Template 1|[Default]"</span>, lp_duration, c_wtcLinear)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1728</span>
+WaterSetState(<span class="hljs-string">"Template 1|Alternate Setting 1"</span>, lv_duration, c_wtcLinear)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4291</span>
+WaterSetState(<span class="hljs-string">"Template 1|Alternate Setting 1"</span>, <span class="hljs-number">6.0</span>, c_wtcLinear)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4298</span>
+WaterSetState(<span class="hljs-string">"Template 1|Alternate Setting 2"</span>, <span class="hljs-number">4.0</span>, c_wtcLinear)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3231</span>
+WaterSetState(<span class="hljs-string">"PortZion|Alternate Setting"</span>, <span class="hljs-number">10.0</span>, c_wtcLinear)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3363</span>
+WaterSetState(<span class="hljs-string">"PortZion|Alternate Setting 2"</span>, <span class="hljs-number">0.0</span>, c_wtcLinear)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3820</span>
+WaterSetState(<span class="hljs-string">"ZerusPool|Alternate Setting"</span>, <span class="hljs-number">2.0</span>, c_wtcSquareRoot)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3823</span>
+WaterSetState(<span class="hljs-string">"Xil|Alternate Setting"</span>, <span class="hljs-number">2.0</span>, c_wtcLinear)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3826</span>
+WaterSetState(<span class="hljs-string">"ZhakulDas|Alternate Setting"</span>, <span class="hljs-number">2.0</span>, c_wtcLinear)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1643</span>
+WaterSetState(<span class="hljs-string">"VespeneLavaWater|[Default]"</span>, gv_coreOn_DURATION, c_wtcLinear)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1713</span>
+WaterSetState(<span class="hljs-string">"VespeneLavaWater|Alternate Setting"</span>, lv_waterTransitionTime, c_wtcLinear)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1716</span>
+WaterSetState(<span class="hljs-string">"VespeneLavaWater|Alternate Setting 2"</span>, lv_waterTransitionTime, c_wtcLinear)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1739</span>
+WaterSetState(<span class="hljs-string">"VespeneLavaWater|Alternate Setting 3"</span>, lv_waterTransitionTime, c_wtcLinear)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3346</span>
+WaterSetState(<span class="hljs-string">"VespeneLavaWater|Alternate Setting 2"</span>, <span class="hljs-number">2.7</span>, c_wtcExponential)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3349</span>
+WaterSetState(<span class="hljs-string">"VespeneLavaWater|Alternate Setting"</span>, <span class="hljs-number">0.0</span>, c_wtcExponential)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3357</span>
+WaterSetState(<span class="hljs-string">"VespeneLavaWater|Alternate Setting 3"</span>, <span class="hljs-number">3.0</span>, c_wtcExponential)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3496</span>
+WaterSetState(<span class="hljs-string">"VespeneLavaWater|[Default]"</span>, <span class="hljs-number">0.0</span>, c_wtcLinear)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

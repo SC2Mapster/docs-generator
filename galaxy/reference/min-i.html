@@ -1,0 +1,443 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Minimum (Integer) / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Minimum (Integer)"/>
+                <meta property="og:description" content="Returns the lowest of the two integer values specified.
+
+Returns: int"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="minimum-integer"><a class="markdownIt-Anchor" href="#minimum-integer">#</a> Minimum (Integer)</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Min(<strong>value1</strong>, <strong>value2</strong>)<br>
+<em>Flags</em> — <code>Native</code> | <code>Function</code></p>
+</blockquote>
+<p>Returns the lowest of the two integer values specified.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> — Value 1</li>
+<li><code>int</code> — Value 2</li>
+</ul>
+<p>Returns — <code>int</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">int</span> <span class="hljs-title">MinI</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x1, <span class="hljs-keyword">int</span> x2)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#math-conditionals">Math / Conditionals</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/min-i">Minimum (Integer)</a></strong> — ( MinI )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/min-f">Minimum (Real)</a></strong> — ( MinF )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/max-i">Maximum (Integer)</a></strong> — ( MaxI )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/max-f">Maximum (Real)</a></strong> — ( MaxF )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/thanson01.sc2map/MapScript.galaxy#L3785">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3785</span>
+MinI((gv_colonistsSaved + <span class="hljs-number">1</span>), <span class="hljs-number">50</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L290</span>
+MinI(PlayerGetPropertyInt(lv_owner, c_playerPropSuppliesMade), PlayerGetPropertyInt(lv_owner, c_playerPropSuppliesLimit))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2298</span>
+MinI(gv_trainsDestroyed, <span class="hljs-number">7</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3191</span>
+MinI(lv_lingerTime, lv_arrivalTime)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1808</span>
+MinI(lv_desiredCasts, libNtve_gf_DifficultyValueInt(<span class="hljs-number">5</span>, <span class="hljs-number">5</span>, <span class="hljs-number">8</span>, <span class="hljs-number">9</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1881</span>
+MinI(lv_desiredCasts, <span class="hljs-number">4</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3785</span>
+MinI((gv_colonistsSaved + <span class="hljs-number">1</span>), <span class="hljs-number">50</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L290</span>
+MinI(PlayerGetPropertyInt(lv_owner, c_playerPropSuppliesMade), PlayerGetPropertyInt(lv_owner, c_playerPropSuppliesLimit))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2298</span>
+MinI(gv_trainsDestroyed, <span class="hljs-number">7</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3191</span>
+MinI(lv_lingerTime, lv_arrivalTime)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1808</span>
+MinI(lv_desiredCasts, libNtve_gf_DifficultyValueInt(<span class="hljs-number">5</span>, <span class="hljs-number">5</span>, <span class="hljs-number">8</span>, <span class="hljs-number">9</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1881</span>
+MinI(lv_desiredCasts, <span class="hljs-number">4</span>)
+</code></pre>
+<h4 id="campaignslibertystorysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertystorysc2campaign">#</a> campaigns/libertystory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/libertystory.sc2campaign/base.sc2data/TriggerLibs/CampaignLib.galaxy#L5586">CampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L5586</span>
+MinI(libCamp_gf_StoryResearchPointCap(libCamp_ge_StoryResearchCategory_ResearchCategoryProtoss), libCamp_gf_StoryResearchPoints(libCamp_ge_StoryResearchCategory_ResearchCategoryProtoss))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5587</span>
+MinI(libCamp_gf_StoryResearchPointCap(libCamp_ge_StoryResearchCategory_ResearchCategoryZerg), libCamp_gf_StoryResearchPoints(libCamp_ge_StoryResearchCategory_ResearchCategoryZerg))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13649</span>
+MinI((libCamp_gv_tSX_DebugResearchLevel[(libCamp_ge_StoryResearchCategory_ResearchCategoryProtoss)] + <span class="hljs-number">1</span>), <span class="hljs-number">35</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13667</span>
+MinI((libCamp_gv_tSX_DebugResearchLevel[(libCamp_ge_StoryResearchCategory_ResearchCategoryZerg)] + <span class="hljs-number">1</span>), <span class="hljs-number">35</span>)
+</code></pre>
+<h4 id="campaignsswarmsc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmsc2campaign">#</a> campaigns/swarm.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarm.sc2campaign/base.sc2maps/maps/campaign/swarm/zlab01.sc2map/MapScript.galaxy#L9429">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L9429</span>
+MinI(lv_zerglings, <span class="hljs-number">6</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7628</span>
+MinI(gv_structuresDestroyedS1Stat, gv_structuresDestroyedS1Max)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L115</span>
+MinI(libSwaC_gf_StoryKerriganLevel(), <span class="hljs-number">70</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L146</span>
+MinI(libSwaC_gf_StoryKerriganLevel(), <span class="hljs-number">70</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L122</span>
+MinI(libSwaC_gf_StoryKerriganLevel(), <span class="hljs-number">70</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3480</span>
+MinI(gv_hunterBanelingCollected, gv_hunterBanelingCollectRequired)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2168</span>
+MinI((<span class="hljs-number">15</span> - lv_roachCount), <span class="hljs-number">5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2178</span>
+MinI((<span class="hljs-number">15</span> - lv_roachCount), <span class="hljs-number">5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3480</span>
+MinI(gv_hunterBanelingCollected, gv_hunterBanelingCollectRequired)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2168</span>
+MinI((<span class="hljs-number">15</span> - lv_roachCount), <span class="hljs-number">5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2178</span>
+MinI((<span class="hljs-number">15</span> - lv_roachCount), <span class="hljs-number">5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9429</span>
+MinI(lv_zerglings, <span class="hljs-number">6</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7628</span>
+MinI(gv_structuresDestroyedS1Stat, gv_structuresDestroyedS1Max)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L115</span>
+MinI(libSwaC_gf_StoryKerriganLevel(), <span class="hljs-number">70</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L146</span>
+MinI(libSwaC_gf_StoryKerriganLevel(), <span class="hljs-number">70</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L122</span>
+MinI(libSwaC_gf_StoryKerriganLevel(), <span class="hljs-number">70</span>)
+</code></pre>
+<h4 id="campaignsswarmstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmstorysc2campaign">#</a> campaigns/swarmstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstory.sc2campaign/base.sc2data/TriggerLibs/SwarmCampaignLib.galaxy#L12287">SwarmCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L12287</span>
+MinI(libSwaC_gv_zS_KerriganActualLevel, <span class="hljs-number">10</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12288</span>
+MinI(libSwaC_gv_zS_KerriganActualLevel, <span class="hljs-number">20</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12289</span>
+MinI(libSwaC_gv_zS_KerriganActualLevel, <span class="hljs-number">30</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12290</span>
+MinI(libSwaC_gv_zS_KerriganActualLevel, <span class="hljs-number">40</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12291</span>
+MinI(libSwaC_gv_zS_KerriganActualLevel, <span class="hljs-number">50</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12292</span>
+MinI(libSwaC_gv_zS_KerriganActualLevel, <span class="hljs-number">60</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12293</span>
+MinI(libSwaC_gv_zS_KerriganActualLevel, <span class="hljs-number">70</span>)
+</code></pre>
+<h4 id="campaignsvoidsc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidsc2campaign">#</a> campaigns/void.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/void.sc2campaign/base.sc2maps/maps/campaign/void/pshakuras01.sc2map/MapScript.galaxy#L904">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L904</span>
+MinI((lv_zerglingCap - UnitGroupCount(lv_zerglingGroup, c_unitCountAlive)), <span class="hljs-number">3</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L904</span>
+MinI((lv_zerglingCap - UnitGroupCount(lv_zerglingGroup, c_unitCountAlive)), <span class="hljs-number">3</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L362</span>
+MinI(gv_heroMaxLevel_C, gv_heroCurrentLevel)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L413</span>
+MinI(gv_heroMaxLevel_C, gv_heroCurrentLevel)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L456</span>
+MinI(gv_heroMaxLevel_C, gv_heroCurrentLevel)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L673</span>
+MinI(<span class="hljs-number">30</span>, lp_level)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L362</span>
+MinI(gv_heroMaxLevel_C, gv_heroCurrentLevel)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L413</span>
+MinI(gv_heroMaxLevel_C, gv_heroCurrentLevel)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L456</span>
+MinI(gv_heroMaxLevel_C, gv_heroCurrentLevel)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L673</span>
+MinI(<span class="hljs-number">30</span>, lp_level)
+</code></pre>
+<h4 id="modsheroesbrawlmodsarenamodemodsarenamodestormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsarenamodemodsarenamodestormmod">#</a> mods/heroesbrawlmods/arenamodemods/arenamode.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/arenamodemods/arenamode.stormmod/base.stormdata/LibAREN.galaxy#L329">LibAREN.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L329</span>
+MinI(libAREN_gv_aRM_MechanicsCountToPick_C, libAREN_gv_aRM_MechanicsCount)
+</code></pre>
+<h4 id="modsheroesbrawlmodsarenamodemodsgardenarenastormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsarenamodemodsgardenarenastormmod">#</a> mods/heroesbrawlmods/arenamodemods/gardenarena.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/arenamodemods/gardenarena.stormmod/base.stormdata/LibAMGT.galaxy#L645">LibAMGT.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L645</span>
+MinI(lv_dropIndex, lv_dropIndexMax)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L831</span>
+MinI(lv_dropIndex, lv_dropIndexMax)
+</code></pre>
+<h4 id="modsheroesbrawlmodsarenamodemodspunisherarenastormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsarenamodemodspunisherarenastormmod">#</a> mods/heroesbrawlmods/arenamodemods/punisherarena.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/arenamodemods/punisherarena.stormmod/base.stormdata/LibAMPU.galaxy#L250">LibAMPU.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L250</span>
+MinI(lp_score, libAMPU_gv_aRMPunisherSkullRequired_C)
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodsblackheartsrevengestormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodsblackheartsrevengestormmod">#</a> mods/heroesbrawlmods/brawlmapmods/blackheartsrevenge.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/blackheartsrevenge.stormmod/base.stormdata/LibMDoE.galaxy#L1672">LibMDoE.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1672</span>
+MinI(FixedToInt((libAtDe_gv_attackDefend.lv_score[lp_itTeam] + <span class="hljs-number">1</span>)), <span class="hljs-number">5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2810</span>
+MinI(libMDoE_gf_DoESGetCannonballCountOnHero(lv_handInPlayer, lv_handInHeroUnit), (libMDoE_gv_mDoE_CannonballTurnInCost[lv_handInTeam] - libMDoE_gv_mDoE_CannonballTurnedIn[lv_handInTeam]))
+</code></pre>
+<h4 id="modsheroesdatastormmod"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/GameLib.galaxy#L1634">GameLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1634</span>
+MinI(libGame_gv_deathRecap_DeathData[lp_deadPlayer].lv_highestDamagersCount, libGame_gv_deathRecap_MaxMaxDamagers_C)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1663</span>
+MinI(libGame_gv_deathRecap_DeathData[lp_deadPlayer].lv_highestDamagers[lp_maxDamagerIndex].lv_maxDamageAbilCount, libGame_gv_deathRecap_MaxMaxDamageAbils_C)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8898</span>
+MinI(lv_closestIndex, lv_secondaryIndex)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11106</span>
+MinI(lp_scalingTicks, libMapM_gv_jungleCreepCamps[lp_camp].lv_defenderNumberOfRanks)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11107</span>
+MinI(lp_scalingTicks, libMapM_gv_jungleCreepCamps[lp_camp].lv_mercNumberOfRanks)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L17947</span>
+MinI(lv_minPingIndex, lv_pingIndex)
+</code></pre>
+<h4 id="modsheroesdatastormmod-2"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-2">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/MapMechanicsLib.galaxy#L201">MapMechanicsLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L201</span>
+MinI((CatalogFieldValueCount(c_gameCatalogBehavior, <span class="hljs-string">"MercSiegeTrooperDefenderScaling"</span>, <span class="hljs-string">"VeterancyLevelArray"</span>, c_playerAny) - <span class="hljs-number">1</span>), libCore_gv_dataScalingMaxScalingTicks)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L202</span>
+MinI((CatalogFieldValueCount(c_gameCatalogBehavior, <span class="hljs-string">"MercSiegeTrooperLanerScaling"</span>, <span class="hljs-string">"VeterancyLevelArray"</span>, c_playerAny) - <span class="hljs-number">1</span>), libCore_gv_dataScalingMaxScalingTicks)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L233</span>
+MinI((CatalogFieldValueCount(c_gameCatalogBehavior, <span class="hljs-string">"MercSummonerDefenderScaling"</span>, <span class="hljs-string">"VeterancyLevelArray"</span>, c_playerAny) - <span class="hljs-number">1</span>), libCore_gv_dataScalingMaxScalingTicks)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L234</span>
+MinI((CatalogFieldValueCount(c_gameCatalogBehavior, <span class="hljs-string">"MercSummonerDefenderMinionScaling"</span>, <span class="hljs-string">"VeterancyLevelArray"</span>, c_playerAny) - <span class="hljs-number">1</span>), libCore_gv_dataScalingMaxScalingTicks)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L235</span>
+MinI((CatalogFieldValueCount(c_gameCatalogBehavior, <span class="hljs-string">"MercSummonerLanerScaling"</span>, <span class="hljs-string">"VeterancyLevelArray"</span>, c_playerAny) - <span class="hljs-number">1</span>), libCore_gv_dataScalingMaxScalingTicks)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L270</span>
+MinI((CatalogFieldValueCount(c_gameCatalogBehavior, <span class="hljs-string">"TerranHellbatDefenderScaling"</span>, <span class="hljs-string">"VeterancyLevelArray"</span>, c_playerAny) - <span class="hljs-number">1</span>), libCore_gv_dataScalingMaxScalingTicks)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L271</span>
+MinI((CatalogFieldValueCount(c_gameCatalogBehavior, <span class="hljs-string">"TerranHellbatScaling"</span>, <span class="hljs-string">"VeterancyLevelArray"</span>, c_playerAny) - <span class="hljs-number">1</span>), libCore_gv_dataScalingMaxScalingTicks)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L301</span>
+MinI((CatalogFieldValueCount(c_gameCatalogBehavior, <span class="hljs-string">"MercGoblinSapperDefenderScaling"</span>, <span class="hljs-string">"VeterancyLevelArray"</span>, c_playerAny) - <span class="hljs-number">1</span>), libCore_gv_dataScalingMaxScalingTicks)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L302</span>
+MinI((CatalogFieldValueCount(c_gameCatalogBehavior, <span class="hljs-string">"MercGoblinSapperLanerScaling"</span>, <span class="hljs-string">"VeterancyLevelArray"</span>, c_playerAny) - <span class="hljs-number">1</span>), libCore_gv_dataScalingMaxScalingTicks)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L317</span>
+MinI((CatalogFieldValueCount(c_gameCatalogBehavior, lp_scalingBehavior, <span class="hljs-string">"VeterancyLevelArray"</span>, c_playerAny) - <span class="hljs-number">1</span>), libCore_gv_dataScalingMaxScalingTicks)
+</code></pre>
+<h4 id="modsheroesdatastormmod-3"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-3">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/SupportLib.galaxy#L1752">SupportLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1752</span>
+MinI((lv_tokensToAdd + lv_currentTokenCount), lv_tokenHardCap)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8103</span>
+MinI(<span class="hljs-number">30</span>, StringToInt(StringWord(EventChatMessage(<span class="hljs-literal">false</span>), <span class="hljs-number">3</span>)))
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodsalteracpassstormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodsalteracpassstormmod">#</a> mods/heroesmapmods/battlegroundmapmods/alteracpass.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/alteracpass.stormmod/base.stormdata/LibMMAP.galaxy#L242">LibMMAP.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L242</span>
+MinI((((FixedToInt(TimerGetElapsed(libGame_gv_gameTimer))/<span class="hljs-number">60</span>)*<span class="hljs-number">2</span>)), <span class="hljs-number">60</span>)
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodsblackheartsbaystormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodsblackheartsbaystormmod">#</a> mods/heroesmapmods/battlegroundmapmods/blackheartsbay.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/blackheartsbay.stormmod/base.stormdata/LibBBAY.galaxy#L1473">LibBBAY.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1473</span>
+MinI((UnitBehaviorCount(lv_collectingUnit, <span class="hljs-string">"MapMechanicStack"</span>) + <span class="hljs-number">1</span>), <span class="hljs-number">100</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1548</span>
+MinI(libBBAY_gf_MMBBCannonballsHeroCannonballsCount(lv_handInPlayer, lv_handInHeroUnit), (libBBAY_gf_MMBBCannonballsPirateShipCost(lv_handInTeam) - libBBAY_gv_mMBBCannonballsBallsSubmitted[lv_handInTeam]))
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodshauntedminesstormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodshauntedminesstormmod">#</a> mods/heroesmapmods/battlegroundmapmods/hauntedmines.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/hauntedmines.stormmod/base.stormdata/LibMHtM.galaxy#L519">LibMHtM.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L519</span>
+MinI(lv_dropIndex, lv_dropIndexMax)
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodstombofthespiderqueenstormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodstombofthespiderqueenstormmod">#</a> mods/heroesmapmods/battlegroundmapmods/tombofthespiderqueen.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/tombofthespiderqueen.stormmod/base.stormdata/LibMSOC.galaxy#L1818">LibMSOC.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1818</span>
+MinI(lv_count, (<span class="hljs-number">100</span> - libMSOC_gf_MMTombSpiderQueenGetGemsHeldforUnit(lv_collectingUnit)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1975</span>
+MinI(lv_ownCount, (libMSOC_gv_mMTombSpiderQueenActivationAmountRequired[lv_channelingTeam] - libMSOC_gv_mMTombSpiderQueenSoulsTotal[lv_channelingTeam]))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2031</span>
+MinI(libMSOC_gv_mMTombSpiderQueenActivationAmountRequired[lv_channelingTeam], libMSOC_gv_mMTombSpiderQueenActivationAmountCap_C)
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodswarcraftdatastormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodswarcraftdatastormmod">#</a> mods/heroesmapmods/battlegroundmapmods/warcraftdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/warcraftdata.stormmod/base.stormdata/Lib7EB401DE.galaxy#L78">Lib7EB401DE.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L78</span>
+MinI((CatalogFieldValueCount(c_gameCatalogBehavior, <span class="hljs-string">"TerranHellbatDefenderScaling"</span>, <span class="hljs-string">"VeterancyLevelArray"</span>, c_playerAny) - <span class="hljs-number">1</span>), libCore_gv_dataScalingMaxScalingTicks)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L79</span>
+MinI((CatalogFieldValueCount(c_gameCatalogBehavior, <span class="hljs-string">"TerranHellbatScaling"</span>, <span class="hljs-string">"VeterancyLevelArray"</span>, c_playerAny) - <span class="hljs-number">1</span>), libCore_gv_dataScalingMaxScalingTicks)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOMI.galaxy#L4929">LibCOMI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4929</span>
+MinI((lv_supply * lv_stacksPerSupply), lv_maxCount)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6670</span>
+MinI(lp_artifactNumber, libCOMI_gv_cM_ZeratulProphecyArtifactFinalUniqueNumber)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L22720</span>
+MinI((lv_bunkerdepotcargocapacity / lv_troopercargosize), lv_bunkerdepotcargomaxcount)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod-2"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod-2">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOMU.galaxy#L815">LibCOMU.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L815</span>
+MinI(FixedToInt(lv_newSupply), <span class="hljs-number">10</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1166</span>
+MinI(PlayerGetPropertyInt(lv_microPlayer, c_playerPropVespene), <span class="hljs-number">5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1167</span>
+MinI(PlayerGetPropertyInt(lv_microPlayer, c_playerPropMinerals), <span class="hljs-number">10</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1171</span>
+MinI(PlayerGetPropertyInt(lv_microPlayer, c_playerPropMinerals), <span class="hljs-number">10</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1189</span>
+MinI(PlayerGetPropertyInt(lv_microPlayer, c_playerPropMinerals), MaxI(AbsI(FixedToInt(lv_orderCost)), <span class="hljs-number">1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1190</span>
+MinI(PlayerGetPropertyInt(lv_microPlayer, c_playerPropVespene), MaxI(AbsI(FixedToInt(lv_orderCost)), <span class="hljs-number">1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1191</span>
+MinI(FixedToInt(lv_orderCost), <span class="hljs-number">-1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1192</span>
+MinI(FixedToInt(lv_orderCost), <span class="hljs-number">-1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1196</span>
+MinI(FixedToInt(lv_orderCost), <span class="hljs-number">-1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1197</span>
+MinI(PlayerGetPropertyInt(lv_microPlayer, c_playerPropMinerals), MaxI(AbsI(FixedToInt(lv_orderCost)), <span class="hljs-number">1</span>))
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod-3"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod-3">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOOC.galaxy#L1320">LibCOOC.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1320</span>
+MinI(lp_level, libCOOC_gv_cCC_PLAYERLEVELMAX)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1997</span>
+MinI(lp_level, libCOOC_gv_cCC_PLAYERLEVELMAX)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod-4"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod-4">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOUI.galaxy#L7194">LibCOUI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L7194</span>
+MinI(libCOUI_gv_cU_MasteryCategoryPointsLeft[libCOOC_gf_CC_PlayerMasteryCategory(libCOUI_gv_cU_MasteryUpgrades[lv_itemIndex][EventPlayer()])][EventPlayer()], <span class="hljs-number">10</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8137</span>
+MinI(lv_damageBarWidth, <span class="hljs-number">244</span>)
+</code></pre>
+<h4 id="modswarcoopwarclassicsystemsc2mod"><a class="markdownIt-Anchor" href="#modswarcoopwarclassicsystemsc2mod">#</a> mods/warcoop/warclassicsystem.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/warcoop/warclassicsystem.sc2mod/base.sc2data/TriggerLibs/WarClassicTactical.galaxy#L99">WarClassicTactical.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L99</span>
+MinI((CatalogFieldValueCount(c_gameCatalogAbil, lp_abil, <span class="hljs-string">"Range"</span>, lp_owner)<span class="hljs-number">-1</span>), lp_level)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

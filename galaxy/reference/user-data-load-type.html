@@ -1,0 +1,193 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Load User Data Type / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Load User Data Type"/>
+                <meta property="og:description" content="Loads all modified values for all instances of the given type."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="load-user-data-type"><a class="markdownIt-Anchor" href="#load-user-data-type">#</a> Load User Data Type</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Load user data for <strong>userType</strong> from bank <strong>bank</strong> section <strong>section</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Loads all modified values for all instances of the given type.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>string</code> <em>[ gamelink::User ]</em> — User Type</li>
+<li><code>bank</code> — Bank</li>
+<li><code>string</code> — Section</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">UserDataLoadType</span><span class="hljs-params">(
+	<span class="hljs-built_in">string</span> inType,
+	bank inBank,
+	<span class="hljs-built_in">string</span> inSection,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#user-data-save-load">User Data / Save/Load</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/user-data-save-instance">Save User Data Instance</a></strong> — ( UserDataSaveInstance )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/user-data-load-instance">Load User Data Instance</a></strong> — ( UserDataLoadInstance )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/user-data-save-type">Save User Data Type</a></strong> — ( UserDataSaveType )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/user-data-load-type">Load User Data Type</a></strong> — ( UserDataLoadType )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignsswarmstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmstorysc2campaign">#</a> campaigns/swarmstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstory.sc2campaign/base.sc2data/TriggerLibs/SwarmCampaignLib.galaxy#L12400">SwarmCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L12400</span>
+UserDataLoadType(<span class="hljs-string">"KerriganAbility"</span>, lp_bank, lp_sectionTech)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13165</span>
+UserDataLoadType(<span class="hljs-string">"Scenes"</span>, lp_sourceBank, lv__SectionName)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13167</span>
+UserDataLoadType(<span class="hljs-string">"WriterStates"</span>, lp_sourceBank, lv__SectionName)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13169</span>
+UserDataLoadType(<span class="hljs-string">"StoryStates"</span>, lp_sourceBank, lv__SectionName)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13189</span>
+UserDataLoadType(<span class="hljs-string">"CampaignTips"</span>, lp_sourceBank, lv__SectionName)
+</code></pre>
+<h4 id="campaignsswarmstoryutilsc2mod"><a class="markdownIt-Anchor" href="#campaignsswarmstoryutilsc2mod">#</a> campaigns/swarmstoryutil.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstoryutil.sc2mod/base.sc2data/Lib281DEC45.galaxy#L506">Lib281DEC45.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L506</span>
+UserDataLoadType(<span class="hljs-string">"ScriptedScenes"</span>, lv_statisticsBank, <span class="hljs-string">"StoryScenes"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L643</span>
+UserDataLoadType(<span class="hljs-string">"WriterStates"</span>, libSwaC_gf_StoryBank(), (<span class="hljs-string">"WriterStateSnapshot"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7583</span>
+UserDataLoadType(<span class="hljs-string">"Character"</span>, BankLastCreated(), <span class="hljs-string">"Characters"</span>)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignLib.galaxy#L4400">VoidCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4400</span>
+UserDataLoadType(<span class="hljs-string">"SpearofAdunUpgrade"</span>, lp_bank, lp_section)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5833</span>
+UserDataLoadType(<span class="hljs-string">"CampaignPerk"</span>, lp_bank, lp_section)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7139</span>
+UserDataLoadType(<span class="hljs-string">"Scenes"</span>, lp_sourceBank, lv__SectionName)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7141</span>
+UserDataLoadType(<span class="hljs-string">"WriterStates"</span>, lp_sourceBank, lv__SectionName)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7143</span>
+UserDataLoadType(<span class="hljs-string">"StoryStates"</span>, lp_sourceBank, lv__SectionName)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7180</span>
+UserDataLoadType(<span class="hljs-string">"CampaignTips"</span>, lp_sourceBank, lv__SectionName)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign-2"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign-2">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignStoryLib.galaxy#L4616">VoidCampaignStoryLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4616</span>
+UserDataLoadType(<span class="hljs-string">"Clickable"</span>, BankLastCreated(), <span class="hljs-string">"Characters"</span>)
+</code></pre>
+<h4 id="modsmissionpackscampaigncommonsc2mod"><a class="markdownIt-Anchor" href="#modsmissionpackscampaigncommonsc2mod">#</a> mods/missionpacks/campaigncommon.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/campaigncommon.sc2mod/base.sc2data/LibComC.galaxy#L2769">LibComC.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2769</span>
+UserDataLoadType(<span class="hljs-string">"CampaignPerk"</span>, lp_bank, lp_section)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3275</span>
+UserDataLoadType(<span class="hljs-string">"Scenes"</span>, lp_sourceBank, lv__SectionName)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3277</span>
+UserDataLoadType(<span class="hljs-string">"WriterStates"</span>, lp_sourceBank, lv__SectionName)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3279</span>
+UserDataLoadType(<span class="hljs-string">"StoryStates"</span>, lp_sourceBank, lv__SectionName)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3291</span>
+UserDataLoadType(<span class="hljs-string">"CampaignTips"</span>, lp_sourceBank, lv__SectionName)
+</code></pre>
+<h4 id="modsmissionpacksnovacampaignsc2mod"><a class="markdownIt-Anchor" href="#modsmissionpacksnovacampaignsc2mod">#</a> mods/missionpacks/novacampaign.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/novacampaign.sc2mod/base.sc2data/LibNCST.galaxy#L3961">LibNCST.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3961</span>
+UserDataLoadType(<span class="hljs-string">"Clickable"</span>, BankLastCreated(), <span class="hljs-string">"Characters"</span>)
+</code></pre>
+<h4 id="modsmissionpacksnovacampaignsc2mod-2"><a class="markdownIt-Anchor" href="#modsmissionpacksnovacampaignsc2mod-2">#</a> mods/missionpacks/novacampaign.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/novacampaign.sc2mod/base.sc2data/LibNovC.galaxy#L1723">LibNovC.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1723</span>
+UserDataLoadType(<span class="hljs-string">"CampaignTechItem"</span>, lp_bank, lp_section)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3943</span>
+UserDataLoadType(<span class="hljs-string">"CharacterStatus"</span>, lv_sourceBank, lv__SectionName)
+</code></pre>
+<h4 id="modsvoidprologuesc2mod"><a class="markdownIt-Anchor" href="#modsvoidprologuesc2mod">#</a> mods/voidprologue.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/voidprologue.sc2mod/base.sc2data/LibA3DDD02B.galaxy#L6303">LibA3DDD02B.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L6303</span>
+UserDataLoadType(<span class="hljs-string">"WriterStates"</span>, lp_sourceBank, lv__SectionName)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6315</span>
+UserDataLoadType(<span class="hljs-string">"CampaignTips"</span>, lp_sourceBank, lv__SectionName)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

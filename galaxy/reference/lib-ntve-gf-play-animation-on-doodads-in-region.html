@@ -1,0 +1,415 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Play Animation On Doodads In Region / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Play Animation On Doodads In Region"/>
+                <meta property="og:description" content="Plays an animation with a chosen name (Identifier) on all of the doodads of the specified type in a region.  The Identifier is used to clear the animation or otherwise modify it after it starts playing."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="play-animation-on-doodads-in-region"><a class="markdownIt-Anchor" href="#play-animation-on-doodads-in-region">#</a> Play Animation On Doodads In Region</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Play <strong>animation</strong> animation on <strong>doodadType</strong> doodads in the region <strong>target</strong> as <strong>identifier</strong>, using <strong>flags|Options</strong> options and <strong>blendTime</strong> blend time<br>
+<em>Flags</em> — <code>Action</code></p>
+</blockquote>
+<p>Plays an animation with a chosen name (Identifier) on all of the doodads of the specified type in a region.  The Identifier is used to clear the animation or otherwise modify it after it starts playing.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>region</code> — Target</li>
+<li><code>string</code> <em>[ gamelink::Actor ]</em> — Doodad Type</li>
+<li><code>string</code> — Identifier</li>
+<li><code>string</code> <em>[ modelanim ]</em> — Animation</li>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-animation-flag">AnimationFlag</a> ]</em> — Flags</li>
+<li><code>fixed</code> — Blend Time</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">libNtve_gf_PlayAnimationOnDoodadsInRegion</span><span class="hljs-params">(
+	region lp_target,
+	<span class="hljs-built_in">string</span> lp_doodadType,
+	<span class="hljs-built_in">string</span> lp_identifier,
+	<span class="hljs-built_in">string</span> lp_animation,
+	<span class="hljs-keyword">int</span> lp_flags,
+	fixed lp_blendTime,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#animation-basic">Animation / Basic</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-play-animation">Play Animation</a></strong> — ( libNtve_gf_PlayAnimation )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-play-animation-on-doodads-in-region">Play Animation On Doodads In Region</a></strong> — ( libNtve_gf_PlayAnimationOnDoodadsInRegion )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-kill-doodads-in-region">Kill Doodads In Region</a></strong> — ( libNtve_gf_KillDoodadsInRegion )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-clear-animation">Clear Animation</a></strong> — ( libNtve_gf_ClearAnimation )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-clear-animation-on-doodads-in-region">Clear Animation On Doodads In Region</a></strong> — ( libNtve_gf_ClearAnimationOnDoodadsInRegion )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-turn-animation-properties-on">Turn Animation Properties On</a></strong> — ( libNtve_gf_TurnAnimationPropertiesOn )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-turn-animation-properties-on-with-blend-in-out">Turn Animation Properties On With Blend In/Out</a></strong> — ( libNtve_gf_TurnAnimationPropertiesOnWithBlendInOut )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-turn-animation-properties-off">Turn Animation Properties Off</a></strong> — ( libNtve_gf_TurnAnimationPropertiesOff )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-turn-all-animation-properties-off">Turn All Animation Properties Off</a></strong> — ( libNtve_gf_TurnAllAnimationPropertiesOff )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/tarcade.sc2map/MapScript.galaxy#L8605">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L8605</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionFromId(<span class="hljs-number">1</span>), null, c_animNameDefault, <span class="hljs-string">"Stand"</span>, c_animFlagPlayForever, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8655</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionFromId(<span class="hljs-number">1</span>), null, c_animNameDefault, <span class="hljs-string">"Death"</span>, c_animFlagPlayForever, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8696</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionFromId(<span class="hljs-number">1</span>), null, c_animNameDefault, <span class="hljs-string">"Stand"</span>, c_animFlagPlayForever, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4104</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionEntireMap(), <span class="hljs-string">"Sunrays"</span>, c_animNameDefault, <span class="hljs-string">"Death"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4113</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionEntireMap(), <span class="hljs-string">"Sunrays"</span>, c_animNameDefault, <span class="hljs-string">"Death"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2405</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionFromId(<span class="hljs-number">9</span>), <span class="hljs-string">"FogGrey"</span>, c_animNameDefault, <span class="hljs-string">"Death"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2414</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionFromId(<span class="hljs-number">10</span>), <span class="hljs-string">"FogGrey"</span>, c_animNameDefault, <span class="hljs-string">"Death"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2423</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionFromId(<span class="hljs-number">28</span>), <span class="hljs-string">"FogGrey"</span>, c_animNameDefault, <span class="hljs-string">"Death"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2431</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionFromId(<span class="hljs-number">11</span>), <span class="hljs-string">"FogGrey"</span>, c_animNameDefault, <span class="hljs-string">"Death"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2440</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionFromId(<span class="hljs-number">12</span>), <span class="hljs-string">"FogGrey"</span>, c_animNameDefault, <span class="hljs-string">"Death"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2449</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionFromId(<span class="hljs-number">39</span>), <span class="hljs-string">"FogGrey"</span>, c_animNameDefault, <span class="hljs-string">"Death"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2458</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionFromId(<span class="hljs-number">1</span>), <span class="hljs-string">"FogGrey"</span>, c_animNameDefault, <span class="hljs-string">"Death"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2467</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionFromId(<span class="hljs-number">22</span>), <span class="hljs-string">"FogGrey"</span>, c_animNameDefault, <span class="hljs-string">"Death"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2476</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionFromId(<span class="hljs-number">13</span>), <span class="hljs-string">"FogGrey"</span>, c_animNameDefault, <span class="hljs-string">"Death"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2485</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionFromId(<span class="hljs-number">21</span>), <span class="hljs-string">"FogGrey"</span>, c_animNameDefault, <span class="hljs-string">"Death"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6536</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionFromId(<span class="hljs-number">10</span>), <span class="hljs-string">"TerrainObjectPurifierBlastMarkDoodad"</span>, c_animNameDefault, <span class="hljs-string">"Stand"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1130</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionPlayableMap(), <span class="hljs-string">"HavenTree"</span>, c_animNameDefault, <span class="hljs-string">"Stand Work"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1131</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionPlayableMap(), <span class="hljs-string">"CreepCloud"</span>, c_animNameDefault, <span class="hljs-string">"Dead"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1132</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionPlayableMap(), <span class="hljs-string">"CreepSporeEmitter"</span>, c_animNameDefault, <span class="hljs-string">"Stand"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1302</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(gv_infestationRegion[lv_colonyIndex], <span class="hljs-string">"CreepCloud"</span>, c_animNameDefault, <span class="hljs-string">"Stand"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1566</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(gv_infestationRegion[lv_colonyIndex], <span class="hljs-string">"CreepCloud"</span>, c_animNameDefault, <span class="hljs-string">"Stand"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1683</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(gv_infestationRegion[lv_colonyIndex], <span class="hljs-string">"CreepCloud"</span>, c_animNameDefault, <span class="hljs-string">"Dead"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2590</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionFromId(<span class="hljs-number">32</span>), <span class="hljs-string">"CreepCloud"</span>, c_animNameDefault, <span class="hljs-string">"Dead"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2662</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionFromId(<span class="hljs-number">31</span>), <span class="hljs-string">"CreepCloud"</span>, c_animNameDefault, <span class="hljs-string">"Dead"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2734</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionFromId(<span class="hljs-number">15</span>), <span class="hljs-string">"CreepCloud"</span>, c_animNameDefault, <span class="hljs-string">"Dead"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4524</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionFromId(<span class="hljs-number">9</span>), <span class="hljs-string">"CreepCloud"</span>, c_animNameDefault, <span class="hljs-string">"Stand"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2899</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionCircle(gv_chargers[lv_i].lv_position, <span class="hljs-number">1.0</span>), <span class="hljs-string">"TarsonisCharger"</span>, c_animNameDefault, <span class="hljs-string">"Spell"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2906</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionCircle(gv_chargers[lv_i].lv_position, <span class="hljs-number">1.0</span>), <span class="hljs-string">"TarsonisCharger"</span>, c_animNameDefault, <span class="hljs-string">"Stand Work"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2939</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionCircle(gv_trainStations[lv_currentTrainStationLocal].lv_position, <span class="hljs-number">2.0</span>), <span class="hljs-string">"TarsonisStation"</span>, c_animNameDefault, <span class="hljs-string">"Stand Work Start"</span>, <span class="hljs-number">0</span>, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2941</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionCircle(gv_trainStations[lv_currentTrainStationLocal].lv_position, <span class="hljs-number">2.0</span>), <span class="hljs-string">"TarsonisStation"</span>, c_animNameDefault, <span class="hljs-string">"Stand Work"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2968</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionCircle(gv_trainStations[lv_currentTrainStationLocal].lv_position, <span class="hljs-number">2.0</span>), <span class="hljs-string">"TarsonisStation"</span>, c_animNameDefault, <span class="hljs-string">"Stand Work End"</span>, <span class="hljs-number">0</span>, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2970</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionCircle(gv_trainStations[lv_currentTrainStationLocal].lv_position, <span class="hljs-number">2.0</span>), <span class="hljs-string">"TarsonisStation"</span>, c_animNameDefault, <span class="hljs-string">"Stand"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3047</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionCircle(gv_chargers[lv_i].lv_position, <span class="hljs-number">1.0</span>), <span class="hljs-string">"TarsonisCharger"</span>, c_animNameDefault, <span class="hljs-string">"Stand Work"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3051</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionCircle(gv_chargers[lv_i].lv_position, <span class="hljs-number">1.0</span>), <span class="hljs-string">"TarsonisCharger"</span>, c_animNameDefault, <span class="hljs-string">"Stand"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3057</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionCircle(gv_chargers[lv_i].lv_position, <span class="hljs-number">1.0</span>), <span class="hljs-string">"TarsonisCharger"</span>, c_animNameDefault, <span class="hljs-string">"Stand Work"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3061</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionCircle(gv_chargers[lv_i].lv_position, <span class="hljs-number">1.0</span>), <span class="hljs-string">"TarsonisCharger"</span>, c_animNameDefault, <span class="hljs-string">"Stand"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L708</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionPlayableMap(), <span class="hljs-string">"PortZionCrusherDoodad"</span>, c_animNameDefault, <span class="hljs-string">"Stand Work"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L709</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionEntireMap(), <span class="hljs-string">"PortZionScrapElevatorLeft"</span>, c_animNameDefault, <span class="hljs-string">"Morph"</span>, c_animFlagNonLooping, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L710</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionEntireMap(), <span class="hljs-string">"PortZionScrapElevatorRight"</span>, c_animNameDefault, <span class="hljs-string">"Morph"</span>, c_animFlagNonLooping, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1285</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionFromId(<span class="hljs-number">23</span>), <span class="hljs-string">"SuperCrane"</span>, c_animNameDefault, <span class="hljs-string">"Spell"</span>, c_animFlagNonLooping, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1288</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionFromId(<span class="hljs-number">23</span>), <span class="hljs-string">"SuperCrane"</span>, c_animNameDefault, <span class="hljs-string">"Spell 01"</span>, c_animFlagNonLooping, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1296</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionFromId(<span class="hljs-number">54</span>), <span class="hljs-string">"SuperCrane"</span>, c_animNameDefault, <span class="hljs-string">"Spell"</span>, c_animFlagNonLooping, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1299</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionFromId(<span class="hljs-number">54</span>), <span class="hljs-string">"SuperCrane"</span>, c_animNameDefault, <span class="hljs-string">"Spell 01"</span>, c_animFlagNonLooping, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1307</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionFromId(<span class="hljs-number">22</span>), <span class="hljs-string">"SuperCrane"</span>, c_animNameDefault, <span class="hljs-string">"Spell"</span>, c_animFlagNonLooping, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1310</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionFromId(<span class="hljs-number">22</span>), <span class="hljs-string">"SuperCrane"</span>, c_animNameDefault, <span class="hljs-string">"Spell 01"</span>, c_animFlagNonLooping, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1318</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionFromId(<span class="hljs-number">17</span>), <span class="hljs-string">"SuperCrane"</span>, c_animNameDefault, <span class="hljs-string">"Spell"</span>, c_animFlagNonLooping, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1831</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionFromId(<span class="hljs-number">18</span>), <span class="hljs-string">"BattlecruiserLokiDock"</span>, c_animNameDefault, <span class="hljs-string">"Stand Work End"</span>, c_animFlagNonLooping, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1239</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionFromId(<span class="hljs-number">48</span>), <span class="hljs-string">"AnimalCorpse"</span>, c_animNameDefault, <span class="hljs-string">"Death"</span>, c_animFlagPlayForever | c_animFlagNonLooping, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1519</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionFromId(<span class="hljs-number">47</span>), <span class="hljs-string">"AnimalCorpse"</span>, c_animNameDefault, <span class="hljs-string">"Death"</span>, c_animFlagPlayForever | c_animFlagNonLooping, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1551</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionFromId(<span class="hljs-number">43</span>), <span class="hljs-string">"AnimalCorpse"</span>, c_animNameDefault, <span class="hljs-string">"Death"</span>, c_animFlagPlayForever | c_animFlagNonLooping, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1583</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionFromId(<span class="hljs-number">44</span>), <span class="hljs-string">"AnimalCorpse"</span>, c_animNameDefault, <span class="hljs-string">"Death"</span>, c_animFlagPlayForever | c_animFlagNonLooping, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1615</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionFromId(<span class="hljs-number">45</span>), <span class="hljs-string">"AnimalCorpse"</span>, c_animNameDefault, <span class="hljs-string">"Death"</span>, c_animFlagPlayForever | c_animFlagNonLooping, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1647</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionFromId(<span class="hljs-number">46</span>), <span class="hljs-string">"AnimalCorpse"</span>, c_animNameDefault, <span class="hljs-string">"Death"</span>, c_animFlagPlayForever | c_animFlagNonLooping, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2695</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionFromId(<span class="hljs-number">49</span>), <span class="hljs-string">"AnimalCorpse"</span>, c_animNameDefault, <span class="hljs-string">"Death"</span>, c_animFlagPlayForever | c_animFlagNonLooping, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2727</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionFromId(<span class="hljs-number">3</span>), <span class="hljs-string">"AnimalCorpse"</span>, c_animNameDefault, <span class="hljs-string">"Death"</span>, c_animFlagPlayForever | c_animFlagNonLooping, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3013</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionFromId(<span class="hljs-number">92</span>), <span class="hljs-string">"BullhornLights"</span>, c_animNameDefault, <span class="hljs-string">"Stand Work"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3015</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionFromId(<span class="hljs-number">92</span>), <span class="hljs-string">"BullhornLights"</span>, c_animNameDefault, <span class="hljs-string">"Stand"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L561</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionFromId(<span class="hljs-number">18</span>), <span class="hljs-string">"TRaynor02Crane"</span>, c_animNameDefault, <span class="hljs-string">"Stand 02"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L631</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionEntireMap(), <span class="hljs-string">"TRaynor02MineLift"</span>, c_animNameDefault, <span class="hljs-string">"Stand Work"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3119</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionEntireMap(), <span class="hljs-string">"TRaynor02MineLift"</span>, c_animNameDefault, <span class="hljs-string">"Stand Work End"</span>, c_animFlagPlayForever | c_animFlagNonLooping, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3121</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionEntireMap(), <span class="hljs-string">"TRaynor02MineLift"</span>, c_animNameDefault, <span class="hljs-string">"Stand"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4775</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionEntireMap(), <span class="hljs-string">"TRaynor02MineLift"</span>, c_animNameDefault, <span class="hljs-string">"Stand Work End"</span>, c_animFlagPlayForever | c_animFlagNonLooping, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4777</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionEntireMap(), <span class="hljs-string">"TRaynor02MineLift"</span>, c_animNameDefault, <span class="hljs-string">"Stand"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4837</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionEntireMap(), <span class="hljs-string">"TRaynor02MineLift"</span>, c_animNameDefault, <span class="hljs-string">"Stand"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5017</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionEntireMap(), <span class="hljs-string">"TRaynor02MineLift"</span>, c_animNameDefault, <span class="hljs-string">"Stand Work Start"</span>, c_animFlagPlayForever | c_animFlagNonLooping, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5019</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionEntireMap(), <span class="hljs-string">"TRaynor02MineLift"</span>, c_animNameDefault, <span class="hljs-string">"Stand Work"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1449</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionPlayableMap(), <span class="hljs-string">"RainEmitterMedium"</span>, c_animNameDefault, <span class="hljs-string">"Death"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4685</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionEntireMap(), <span class="hljs-string">"RainEmitterMedium"</span>, c_animNameDefault, <span class="hljs-string">"Death"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4818</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionEntireMap(), <span class="hljs-string">"RainEmitterMedium"</span>, c_animNameDefault, <span class="hljs-string">"Stand"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5083</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionPlayableMap(), <span class="hljs-string">"RainEmitterMedium"</span>, c_animNameDefault, <span class="hljs-string">"Death"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L407</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionEntireMap(), <span class="hljs-string">"CharAshWeather"</span>, c_animNameDefault, <span class="hljs-string">"Death"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2793</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionEntireMap(), <span class="hljs-string">"TTosh01FlameGeyser"</span>, <span class="hljs-string">"StandWork"</span>, <span class="hljs-string">"Stand Work"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2874</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionEntireMap(), <span class="hljs-string">"CharAshWeather"</span>, c_animNameDefault, <span class="hljs-string">"Stand"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2915</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionEntireMap(), <span class="hljs-string">"CharAshWeather"</span>, c_animNameDefault, <span class="hljs-string">"Death"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L866</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionEntireMap(), <span class="hljs-string">"RainSprinkle"</span>, c_animNameDefault, <span class="hljs-string">"Death"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1339</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionEntireMap(), <span class="hljs-string">"RainSprinkle"</span>, c_animNameDefault, <span class="hljs-string">"Stand"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1159</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionEntireMap(), <span class="hljs-string">"NewFolsomPrisonTower"</span>, c_animNameDefault, <span class="hljs-string">"Stand"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1161</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionFromId(<span class="hljs-number">56</span>), <span class="hljs-string">"NewFolsomPrisonTower"</span>, c_animNameDefault, <span class="hljs-string">"Stand"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L545</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionEntireMap(), <span class="hljs-string">"MonlythLightBridge"</span>, c_animNameDefault, <span class="hljs-string">"Stand Work"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1910</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionFromId(<span class="hljs-number">66</span>), <span class="hljs-string">"ArtifactShrine"</span>, c_animNameDefault, <span class="hljs-string">"Stand Work Start"</span>, c_animFlagPlayForever | c_animFlagNonLooping, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1912</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionFromId(<span class="hljs-number">66</span>), <span class="hljs-string">"ArtifactShrine"</span>, c_animNameDefault, <span class="hljs-string">"Stand Work"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2073</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionFromId(<span class="hljs-number">66</span>), <span class="hljs-string">"ArtifactShrine"</span>, c_animNameDefault, <span class="hljs-string">"Stand Work End A"</span>, c_animFlagPlayForever | c_animFlagNonLooping, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2075</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionFromId(<span class="hljs-number">66</span>), <span class="hljs-string">"ArtifactShrine"</span>, c_animNameDefault, <span class="hljs-string">"Stand A"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2105</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionFromId(<span class="hljs-number">66</span>), <span class="hljs-string">"ArtifactShrine"</span>, c_animNameDefault, <span class="hljs-string">"Stand Work End B"</span>, c_animFlagPlayForever | c_animFlagNonLooping, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2107</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionFromId(<span class="hljs-number">66</span>), <span class="hljs-string">"ArtifactShrine"</span>, c_animNameDefault, <span class="hljs-string">"Stand B"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5046</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionFromId(<span class="hljs-number">66</span>), <span class="hljs-string">"ArtifactShrine"</span>, c_animNameDefault, <span class="hljs-string">"Stand A"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7933</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionCircle(gv__4LavaDoodadPositions[autoDFEF9D84_var], <span class="hljs-number">2.0</span>), <span class="hljs-string">"TTosh01FlameGeyser"</span>, c_animNameDefault, <span class="hljs-string">"Stand Work"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7934</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionCircle(gv__4LavaDoodadPositions[autoDFEF9D84_var], <span class="hljs-number">2.0</span>), <span class="hljs-string">"Spires"</span>, c_animNameDefault, <span class="hljs-string">"Death"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8421</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionCircle(UnitGetPosition(lv_unit), <span class="hljs-number">6.0</span>), <span class="hljs-string">"Spires"</span>, c_animNameDefault, <span class="hljs-string">"Death"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7152</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(gv_ground0, <span class="hljs-string">"TerrainObjectBraxisAlphaReactorDoodad"</span>, c_animNameDefault, <span class="hljs-string">"Dead"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7153</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(gv_ground0, <span class="hljs-string">"TOSpacePlatformDestLarge"</span>, c_animNameDefault, <span class="hljs-string">"Dead"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7154</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(gv_ground0, <span class="hljs-string">"TOSpacePlatformDestMedium"</span>, c_animNameDefault, <span class="hljs-string">"Dead"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7155</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(gv_ground0, <span class="hljs-string">"TOSpacePlatformDestSmall"</span>, c_animNameDefault, <span class="hljs-string">"Dead"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7156</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(gv_ground1, <span class="hljs-string">"TOSpacePlatformDestLarge"</span>, c_animNameDefault, <span class="hljs-string">"Dead"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7157</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(gv_ground1, <span class="hljs-string">"TOSpacePlatformDestMedium"</span>, c_animNameDefault, <span class="hljs-string">"Dead"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7158</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(gv_ground1, <span class="hljs-string">"TOSpacePlatformDestSmall"</span>, c_animNameDefault, <span class="hljs-string">"Dead"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7159</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(gv_ground2, <span class="hljs-string">"TOSpacePlatformDestLarge"</span>, c_animNameDefault, <span class="hljs-string">"Dead"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7160</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(gv_ground2, <span class="hljs-string">"TOSpacePlatformDestMedium"</span>, c_animNameDefault, <span class="hljs-string">"Dead"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7161</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(gv_ground2, <span class="hljs-string">"TOSpacePlatformDestSmall"</span>, c_animNameDefault, <span class="hljs-string">"Dead"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L923</span>
+libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionEntireMap(), <span class="hljs-string">"CharRibs"</span>, c_animNameDefault, <span class="hljs-string">"Stand"</span>, c_animFlagPlayForever, c_animTimeDefault)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

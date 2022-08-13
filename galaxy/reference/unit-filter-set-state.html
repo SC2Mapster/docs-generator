@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Set State Of Unit Filter / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Set State Of Unit Filter"/>
+                <meta property="og:description" content="Sets a state on the specified unit filter."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="set-state-of-unit-filter"><a class="markdownIt-Anchor" href="#set-state-of-unit-filter">#</a> Set State Of Unit Filter</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Set <strong>type</strong> units to be <strong>state</strong> in <strong>filter|Unit Filter</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Sets a state on the specified unit filter.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>unitfilter</code> — Filter</li>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-unit-filter-type">UnitFilterType</a> ]</em> — Type</li>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-unit-filter-state">UnitFilterState</a> ]</em> — State</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">UnitFilterSetState</span><span class="hljs-params">(
+	unitfilter inFilter,
+	<span class="hljs-keyword">int</span> inType,
+	<span class="hljs-keyword">int</span> inState,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#unit-filters">Unit / Filters</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/unit-filter-match">Unit Filter Match</a></strong> — ( UnitFilterMatch )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-filter-set-state">Set State Of Unit Filter</a></strong> — ( UnitFilterSetState )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-unit-filter-state">UnitFilterState</a> ]</em> — <strong><a href="/galaxy/reference/unit-filter-get-state">State Of Unit Filter</a></strong> — ( UnitFilterGetState )</li>
+<li><em><strong>[F]</strong></em> — <code>unitfilter</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-convert-target-filter-string-to-unit-filter">Convert Target Filter String To Unit Filter</a></strong> — ( libNtve_gf_ConvertTargetFilterStringToUnitFilter )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="modscoresc2mod"><a class="markdownIt-Anchor" href="#modscoresc2mod">#</a> mods/core.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/core.sc2mod/base.sc2data/TriggerLibs/NativeLib.galaxy#L5715">NativeLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L5715</span>
+UnitFilterSetState(lv_unitFilter, lv_filterType, lv_filterState)
+</code></pre>
+<h4 id="modscoresc2mod-2"><a class="markdownIt-Anchor" href="#modscoresc2mod-2">#</a> mods/core.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/core.sc2mod/base.sc2data/TriggerLibs/Tactical/TactProtAI.galaxy#L67">TactProtAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L67</span>
+UnitFilterSetState(filterUnit, c_targetFilterUncommandable,             c_unitFilterExcluded)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L68</span>
+UnitFilterSetState(filterUnit, c_targetFilterWorker,                    c_unitFilterExcluded)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L69</span>
+UnitFilterSetState(filterUnit, c_targetFilterUnderConstruction,         c_unitFilterExcluded)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L70</span>
+UnitFilterSetState(filterUnit, c_targetFilterStructure,                 c_unitFilterExcluded)
+</code></pre>
+<h4 id="modscoresc2mod-3"><a class="markdownIt-Anchor" href="#modscoresc2mod-3">#</a> mods/core.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/core.sc2mod/base.sc2data/TriggerLibs/Tactical/TactTerrAI.galaxy#L230">TactTerrAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L230</span>
+UnitFilterSetState(filterUnit, c_targetFilterPsionic, c_unitFilterRequired)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L235</span>
+UnitFilterSetState(filterUnit, c_targetFilterPsionic, c_unitFilterExcluded)
+</code></pre>
+<h4 id="modscorestormmod"><a class="markdownIt-Anchor" href="#modscorestormmod">#</a> mods/core.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/core.stormmod/base.stormdata/TriggerLibs/NativeLib.galaxy#L4865">NativeLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4865</span>
+UnitFilterSetState(lv_unitFilter, lv_filterType, lv_filterState)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/TriggerLibs/Tactical/TactProtAI.galaxy#L68">TactProtAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L68</span>
+UnitFilterSetState(filterUnit, c_targetFilterUncommandable,             c_unitFilterExcluded)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L69</span>
+UnitFilterSetState(filterUnit, c_targetFilterWorker,                    c_unitFilterExcluded)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L70</span>
+UnitFilterSetState(filterUnit, c_targetFilterUnderConstruction,         c_unitFilterExcluded)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L71</span>
+UnitFilterSetState(filterUnit, c_targetFilterStructure,                 c_unitFilterExcluded)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

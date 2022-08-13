@@ -1,0 +1,145 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Player Upgrade Changed / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Player Upgrade Changed"/>
+                <meta property="og:description" content="This event fires when the specified upgrade for the specified player change levels.  Use &quot;Triggering Player&quot; to get the player.  Use &quot;Triggering Upgrade&quot; to get the upgrade that changed. Use &quot;Trigger Upgrade Level Delta&quot; to get the upgrade that changed."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="player-upgrade-changed"><a class="markdownIt-Anchor" href="#player-upgrade-changed">#</a> Player Upgrade Changed</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Player <strong>p</strong> upgrade changes<br>
+<em>Flags</em> — <code>Native</code> | <code>Event</code></p>
+</blockquote>
+<p>This event fires when the specified upgrade for the specified player change levels.  Use <em>“Triggering Player”</em> to get the player.  Use <em>“Triggering Upgrade”</em> to get the upgrade that changed. Use <em>“Trigger Upgrade Level Delta”</em> to get the upgrade that changed.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> — Player</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">TriggerAddEventUpgradeLevelChanged</span><span class="hljs-params">(
+	trigger inTrigger,
+	<span class="hljs-keyword">int</span> player,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#tech-tree-upgrades">Tech Tree / Upgrades</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>string</code> <em>[ gamelink::Upgrade ]</em> — <strong><a href="/galaxy/reference/event-upgrade-name">Triggering Upgrade</a></strong> — ( EventUpgradeName )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/event-upgrade-level-delta">Trigger Upgrade Level Delta</a></strong> — ( EventUpgradeLevelDelta )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-upgrade-level-changed">Player Upgrade Changed</a></strong> — ( TriggerAddEventUpgradeLevelChanged )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="modsstarcoopstarcoopsc2mod"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOMI.galaxy#L15854">LibCOMI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L15854</span>
+TriggerAddEventUpgradeLevelChanged(libCOMI_gt_CM_Alarak_Upgrade, c_playerAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19846</span>
+TriggerAddEventUpgradeLevelChanged(libCOMI_gt_CM_Horner_MTO_Upgrade, c_playerAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L20819</span>
+TriggerAddEventUpgradeLevelChanged(libCOMI_gt_CM_KaraxRepairBeamLimit, c_playerAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L22087</span>
+TriggerAddEventUpgradeLevelChanged(libCOMI_gt_CM_Mengsk_PropagandaUpgraded, c_playerAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L24014</span>
+TriggerAddEventUpgradeLevelChanged(libCOMI_gt_CM_Stetmann_Set, c_playerAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L27084</span>
+TriggerAddEventUpgradeLevelChanged(libCOMI_gt_CM_ZeratulProphecyEventArtifactUsed, c_playerAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L28435</span>
+TriggerAddEventUpgradeLevelChanged(libCOMI_gt_CM_Zeratul_ArtifactRush, c_playerAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L28582</span>
+TriggerAddEventUpgradeLevelChanged(libCOMI_gt_CM_ZeratulArtifactUpgrades, c_playerAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L32744</span>
+TriggerAddEventUpgradeLevelChanged(libCOMI_gt_CM_ArtifactTransmission_Upgraded, c_playerAny)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod-2"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod-2">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOMU.galaxy#L10707">LibCOMU.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L10707</span>
+TriggerAddEventUpgradeLevelChanged(libCOMU_gt_CT_UpgradeChanged, c_playerAny)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod-3"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod-3">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOOC.galaxy#L6404">LibCOOC.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L6404</span>
+TriggerAddEventUpgradeLevelChanged(libCOOC_gt_CC_PrestigeUpgradeSupplement, c_playerAny)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod-4"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod-4">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOUI.galaxy#L9463">LibCOUI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L9463</span>
+TriggerAddEventUpgradeLevelChanged(libCOUI_gt_CU_ZeratulArtifactUpgraded, c_playerAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9529</span>
+TriggerAddEventUpgradeLevelChanged(libCOUI_gt_CU_StetelliteMaxChargesChanged, c_playerAny)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

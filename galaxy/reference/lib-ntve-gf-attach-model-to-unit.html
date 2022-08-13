@@ -1,0 +1,418 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Attach Model To Unit / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Attach Model To Unit"/>
+                <meta property="og:description" content="Creates a generic actor with the specified model attached to a unit at the specified attach point. Use &quot;Last Created Actor&quot; to get the actor.
+
+Returns: actor"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="attach-model-to-unit"><a class="markdownIt-Anchor" href="#attach-model-to-unit">#</a> Attach Model To Unit</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Attach <strong>model</strong> to <strong>attachPoint|Attach Point</strong> on <strong>unit</strong><br>
+<em>Flags</em> — <code>Action</code></p>
+</blockquote>
+<p>Creates a generic actor with the specified model attached to a unit at the specified attach point. Use <em>“Last Created Actor”</em> to get the actor.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>unit</code> — Unit</li>
+<li><code>string</code> <em>[ gamelink::Model ]</em> — Model</li>
+<li><code>string</code> <em>[ preset::<a href="/galaxy/reference/preset-attach-points">AttachPoints</a> ]</em> — AttachPoint</li>
+</ul>
+<p>Returns — <code>actor</code></p>
+<pre class="hljs"><code><span class="hljs-function">actor <span class="hljs-title">libNtve_gf_AttachModelToUnit</span><span class="hljs-params">(
+	unit lp_unit,
+	<span class="hljs-built_in">string</span> lp_model,
+	<span class="hljs-built_in">string</span> lp_attachPoint,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#actor-create-actors">Actor / Create Actors</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>actor</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-attach-model-to-unit">Attach Model To Unit</a></strong> — ( libNtve_gf_AttachModelToUnit )</li>
+<li><em><strong>[F]</strong></em> — <code>actor</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-attach-model-to-unit-inherit-visibility">Attach Model To Unit (Inherit Visibility)</a></strong> — ( libNtve_gf_AttachModelToUnitInheritVisibility )</li>
+<li><em><strong>[F]</strong></em> — <code>actor</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-attach-model-to-actor2">Attach Model To Actor</a></strong> — ( libNtve_gf_AttachModelToActor2 )</li>
+<li><em><strong>[F]</strong></em> — <code>actorscope</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-actor-scope-last-created">Last Created Actor Scope</a></strong> — ( libNtve_gf_ActorScopeLastCreated )</li>
+<li><em><strong>[F]</strong></em> — <code>actorscope</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-actor-scope-last-created-send">Last Created Actor Scope by Message</a></strong> — ( libNtve_gf_ActorScopeLastCreatedSend )</li>
+<li><em><strong>[F]</strong></em> — <code>actor</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-actor-last-created">Last Created Actor</a></strong> — ( libNtve_gf_ActorLastCreated )</li>
+<li><em><strong>[F]</strong></em> — <code>actor</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-actor-last-created-send">Last Created Actor by Message</a></strong> — ( libNtve_gf_ActorLastCreatedSend )</li>
+<li><em><strong>[F]</strong></em> — <code>actor</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-attach-actor-to-unit">Attach Actor To Unit</a></strong> — ( libNtve_gf_AttachActorToUnit )</li>
+<li><em><strong>[F]</strong></em> — <code>actor</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-attach-actor-to-actor">Attach Actor To Actor</a></strong> — ( libNtve_gf_AttachActorToActor )</li>
+<li><em><strong>[F]</strong></em> — <code>actorscope</code> — <strong><a href="/galaxy/reference/actor-scope-create">Create Actor Scope</a></strong> — ( ActorScopeCreate )</li>
+<li><em><strong>[F]</strong></em> — <code>actor</code> — <strong><a href="/galaxy/reference/actor-create">Create Actor</a></strong> — ( ActorCreate )</li>
+<li><em><strong>[F]</strong></em> — <code>actor</code> — <strong><a href="/galaxy/reference/actor-region-create">Create Actor Region</a></strong> — ( ActorRegionCreate )</li>
+<li><em><strong>[F]</strong></em> — <code>actor</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-create-actor-at-point">Create Actor At Point</a></strong> — ( libNtve_gf_CreateActorAtPoint )</li>
+<li><em><strong>[F]</strong></em> — <code>actor</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-create-model-at-point">Create Model At Point</a></strong> — ( libNtve_gf_CreateModelAtPoint )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-create-model-with-point-facing">Create Model With Point Facing</a></strong> — ( libNtve_gf_CreateModelWithPointFacing )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/actor-scope-move-to">Actor Scope Move To</a></strong> — ( ActorScopeMoveTo )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/tarcade.sc2map/MapScript.galaxy#L7883">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L7883</span>
+libNtve_gf_AttachModelToUnit(gv_viking, <span class="hljs-string">"VikingMercenaryFighterReentry"</span>, <span class="hljs-string">"Ref_Origin"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1935</span>
+libNtve_gf_AttachModelToUnit(gv_firstSightInfestedStructure, <span class="hljs-string">"BriefingUnitSelectRed"</span>, <span class="hljs-string">"Ref_Origin"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3581</span>
+libNtve_gf_AttachModelToUnit(gv_pickedInfestedUnit, <span class="hljs-string">"BriefingUnitSelectRed"</span>, <span class="hljs-string">"Ref_Origin"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1163</span>
+libNtve_gf_AttachModelToUnit(gv_purifier, <span class="hljs-string">"MothershipTeleportIn"</span>, <span class="hljs-string">"Ref_Center"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1169</span>
+libNtve_gf_AttachModelToUnit(gv_purifier, <span class="hljs-string">"MothershipTeleportOut"</span>, <span class="hljs-string">"Ref_Center"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L703</span>
+libNtve_gf_AttachModelToUnit(lv_sPEAKER, <span class="hljs-string">"TalkIcon"</span>, <span class="hljs-string">"Ref_Origin"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L712</span>
+libNtve_gf_AttachModelToUnit(lv_sPEAKER, <span class="hljs-string">"TalkIcon"</span>, <span class="hljs-string">"Ref_Origin"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L721</span>
+libNtve_gf_AttachModelToUnit(lv_sPEAKER, <span class="hljs-string">"TalkIcon"</span>, <span class="hljs-string">"Ref_Origin"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4342</span>
+libNtve_gf_AttachModelToUnit(UnitFromId(<span class="hljs-number">1048</span>), <span class="hljs-string">"BriefingUnitSelectLargeRed"</span>, <span class="hljs-string">"Ref_Center"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4545</span>
+libNtve_gf_AttachModelToUnit(lv_virophage, <span class="hljs-string">"BriefingUnitSelectLargeRed"</span>, <span class="hljs-string">"Ref_Center"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4557</span>
+libNtve_gf_AttachModelToUnit(lv_broodLord1, <span class="hljs-string">"BriefingUnitSelectLargeRed"</span>, <span class="hljs-string">"Ref_Center"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4560</span>
+libNtve_gf_AttachModelToUnit(lv_broodLord2, <span class="hljs-string">"BriefingUnitSelectLargeRed"</span>, <span class="hljs-string">"Ref_Center"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1748</span>
+libNtve_gf_AttachModelToUnit(lv_nearbyDetector, <span class="hljs-string">"BriefingUnitSelectRed"</span>, <span class="hljs-string">"Ref_Center"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2863</span>
+libNtve_gf_AttachModelToUnit(EventUnitCargo(), <span class="hljs-string">"BriefingUnitSelect"</span>, <span class="hljs-string">"Ref_Center"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2944</span>
+libNtve_gf_AttachModelToUnit(gv_statueBullhorns[<span class="hljs-number">1</span>], <span class="hljs-string">"TalkIcon"</span>, <span class="hljs-string">"Ref_Overhead"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2995</span>
+libNtve_gf_AttachModelToUnit(gv_statueBullhorns[<span class="hljs-number">2</span>], <span class="hljs-string">"TalkIcon"</span>, <span class="hljs-string">"Ref_Overhead"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3046</span>
+libNtve_gf_AttachModelToUnit(gv_statueBullhorns[<span class="hljs-number">3</span>], <span class="hljs-string">"TalkIcon"</span>, <span class="hljs-string">"Ref_Overhead"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3097</span>
+libNtve_gf_AttachModelToUnit(gv_statueBullhorns[<span class="hljs-number">4</span>], <span class="hljs-string">"TalkIcon"</span>, <span class="hljs-string">"Ref_Overhead"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3148</span>
+libNtve_gf_AttachModelToUnit(gv_statueBullhorns[<span class="hljs-number">5</span>], <span class="hljs-string">"TalkIcon"</span>, <span class="hljs-string">"Ref_Overhead"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3199</span>
+libNtve_gf_AttachModelToUnit(gv_statueBullhorns[<span class="hljs-number">6</span>], <span class="hljs-string">"TalkIcon"</span>, <span class="hljs-string">"Ref_Overhead"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4764</span>
+libNtve_gf_AttachModelToUnit(lv_chosenUnit_Local, <span class="hljs-string">"TalkIcon"</span>, <span class="hljs-string">"Ref_Overhead"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6619</span>
+libNtve_gf_AttachModelToUnit(UnitFromId(<span class="hljs-number">162</span>), <span class="hljs-string">"BriefingUnitSelectRed"</span>, <span class="hljs-string">"Ref_Hardpoint"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6680</span>
+libNtve_gf_AttachModelToUnit(UnitFromId(<span class="hljs-number">196</span>), <span class="hljs-string">"TalkIcon"</span>, <span class="hljs-string">"Origin"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6741</span>
+libNtve_gf_AttachModelToUnit(UnitFromId(<span class="hljs-number">1212</span>), <span class="hljs-string">"TalkIcon"</span>, <span class="hljs-string">"Origin"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6971</span>
+libNtve_gf_AttachModelToUnit(UnitFromId(<span class="hljs-number">1212</span>), <span class="hljs-string">"TalkIcon"</span>, <span class="hljs-string">"Origin"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7159</span>
+libNtve_gf_AttachModelToUnit(UnitFromId(<span class="hljs-number">756</span>), <span class="hljs-string">"TalkIcon"</span>, <span class="hljs-string">"Origin"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12109</span>
+libNtve_gf_AttachModelToUnit(UnitFromId(<span class="hljs-number">2898</span>), <span class="hljs-string">"BriefingUnitSelectRed"</span>, <span class="hljs-string">"Ref_Head"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1080</span>
+libNtve_gf_AttachModelToUnit(UnitFromId(<span class="hljs-number">59</span>), <span class="hljs-string">"BriefingUnitSelectRedSmall"</span>, <span class="hljs-string">"Ref_Center"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1082</span>
+libNtve_gf_AttachModelToUnit(UnitFromId(<span class="hljs-number">238</span>), <span class="hljs-string">"BriefingUnitSelectRedSmall"</span>, <span class="hljs-string">"Ref_Center"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1084</span>
+libNtve_gf_AttachModelToUnit(UnitFromId(<span class="hljs-number">2671</span>), <span class="hljs-string">"BriefingUnitSelectRedSmall"</span>, <span class="hljs-string">"Ref_Center"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3167</span>
+libNtve_gf_AttachModelToUnit(gv_holoboards[<span class="hljs-number">2</span>], <span class="hljs-string">"BriefingUnitSelectRed"</span>, <span class="hljs-string">"Ref_Center"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3209</span>
+libNtve_gf_AttachModelToUnit(gv_holoboards[<span class="hljs-number">3</span>], <span class="hljs-string">"BriefingUnitSelectRed"</span>, <span class="hljs-string">"Ref_Center"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3251</span>
+libNtve_gf_AttachModelToUnit(gv_holoboards[<span class="hljs-number">4</span>], <span class="hljs-string">"BriefingUnitSelectRed"</span>, <span class="hljs-string">"Ref_Center"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3293</span>
+libNtve_gf_AttachModelToUnit(gv_holoboards[<span class="hljs-number">5</span>], <span class="hljs-string">"BriefingUnitSelectRed"</span>, <span class="hljs-string">"Ref_Center"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3335</span>
+libNtve_gf_AttachModelToUnit(gv_holoboards[<span class="hljs-number">6</span>], <span class="hljs-string">"BriefingUnitSelectRed"</span>, <span class="hljs-string">"Ref_Center"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4355</span>
+libNtve_gf_AttachModelToUnit(UnitFromId(<span class="hljs-number">158</span>), <span class="hljs-string">"BriefingUnitSelectLargeRed"</span>, <span class="hljs-string">"Ref_Center"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4839</span>
+libNtve_gf_AttachModelToUnit(lv_crosshairUnit, <span class="hljs-string">"BriefingUnitSelectLargeRed"</span>, <span class="hljs-string">"Head"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L908</span>
+libNtve_gf_AttachModelToUnit(UnitFromId(<span class="hljs-number">106</span>), <span class="hljs-string">"BriefingUnitSelectLarge"</span>, <span class="hljs-string">"Ref_Target"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L919</span>
+libNtve_gf_AttachModelToUnit(UnitFromId(<span class="hljs-number">18</span>), <span class="hljs-string">"BriefingUnitSelectLarge"</span>, <span class="hljs-string">"Ref_Target"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2046</span>
+libNtve_gf_AttachModelToUnit(lv_marineTalker, <span class="hljs-string">"TalkIcon"</span>, <span class="hljs-string">"Ref_Origin"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2104</span>
+libNtve_gf_AttachModelToUnit(lv_colonist, <span class="hljs-string">"TalkIcon"</span>, <span class="hljs-string">"Ref_Origin"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2160</span>
+libNtve_gf_AttachModelToUnit(lv_colonist, <span class="hljs-string">"TalkIcon"</span>, <span class="hljs-string">"Ref_Origin"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2216</span>
+libNtve_gf_AttachModelToUnit(lv_colonist, <span class="hljs-string">"TalkIcon"</span>, <span class="hljs-string">"Ref_Origin"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2272</span>
+libNtve_gf_AttachModelToUnit(lv_colonist, <span class="hljs-string">"TalkIcon"</span>, <span class="hljs-string">"Ref_Origin"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2328</span>
+libNtve_gf_AttachModelToUnit(lv_colonist, <span class="hljs-string">"TalkIcon"</span>, <span class="hljs-string">"Ref_Origin"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2384</span>
+libNtve_gf_AttachModelToUnit(lv_colonist, <span class="hljs-string">"TalkIcon"</span>, <span class="hljs-string">"Ref_Origin"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2440</span>
+libNtve_gf_AttachModelToUnit(lv_colonist, <span class="hljs-string">"TalkIcon"</span>, <span class="hljs-string">"Ref_Origin"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L631</span>
+libNtve_gf_AttachModelToUnit(UnitFromId(<span class="hljs-number">258</span>), <span class="hljs-string">"ArtifactPiece1"</span>, <span class="hljs-string">"Hardpoint"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4752</span>
+libNtve_gf_AttachModelToUnit(UnitLastCreated(), <span class="hljs-string">"ArtifactPiece1"</span>, <span class="hljs-string">"Hardpoint"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4992</span>
+libNtve_gf_AttachModelToUnit(UnitFromId(<span class="hljs-number">291</span>), <span class="hljs-string">"BriefingUnitSelect"</span>, <span class="hljs-string">"Center"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4994</span>
+libNtve_gf_AttachModelToUnit(UnitFromId(<span class="hljs-number">298</span>), <span class="hljs-string">"BriefingUnitSelect"</span>, <span class="hljs-string">"Center"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1701</span>
+libNtve_gf_AttachModelToUnit(gv_brutalisk, <span class="hljs-string">"BriefingUnitSelectLargeRed"</span>, <span class="hljs-string">"Ref_Origin"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2167</span>
+libNtve_gf_AttachModelToUnit(lv_firstSCVGoingHome, <span class="hljs-string">"TalkIcon"</span>, <span class="hljs-string">"Ref_Origin"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5129</span>
+libNtve_gf_AttachModelToUnit(UnitFromId(<span class="hljs-number">922</span>), <span class="hljs-string">"BriefingUnitSelectLargeRed"</span>, <span class="hljs-string">"Ref_Center"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1458</span>
+libNtve_gf_AttachModelToUnit(gv_p1GateControl, <span class="hljs-string">"BriefingUnitSelectLargeRed"</span>, <span class="hljs-string">"Ref_Origin"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2158</span>
+libNtve_gf_AttachModelToUnit(gv_p1MineralDepot, <span class="hljs-string">"BriefingUnitSelectLargeRed"</span>, <span class="hljs-string">"Ref_Center"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3061</span>
+libNtve_gf_AttachModelToUnit(UnitFromId(<span class="hljs-number">455</span>), <span class="hljs-string">"BriefingUnitSelectRed"</span>, <span class="hljs-string">"Ref_Origin"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3607</span>
+libNtve_gf_AttachModelToUnit(gv_p2TerrazineDepot, <span class="hljs-string">"BriefingUnitSelectLargeRed"</span>, <span class="hljs-string">"Ref_Center"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4604</span>
+libNtve_gf_AttachModelToUnit(gv_p3PsiIndoctrinator, <span class="hljs-string">"BriefingUnitSelectLargeRed"</span>, <span class="hljs-string">"Ref_Center"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5636</span>
+libNtve_gf_AttachModelToUnit(UnitFromId(<span class="hljs-number">235</span>), <span class="hljs-string">"BriefingUnitSelectLargeRed"</span>, <span class="hljs-string">"Ref_Center"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5668</span>
+libNtve_gf_AttachModelToUnit(UnitFromId(<span class="hljs-number">96</span>), <span class="hljs-string">"BriefingUnitSelectLargeRed"</span>, <span class="hljs-string">"Ref_Target"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5697</span>
+libNtve_gf_AttachModelToUnit(UnitFromId(<span class="hljs-number">269</span>), <span class="hljs-string">"BriefingUnitSelectLargeRed"</span>, <span class="hljs-string">"Ref_Center"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4177</span>
+libNtve_gf_AttachModelToUnit(UnitGroupLoopCurrent(), <span class="hljs-string">"BriefingUnitSelectRed"</span>, <span class="hljs-string">"Center"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5745</span>
+libNtve_gf_AttachModelToUnit(UnitGroupLoopCurrent(), <span class="hljs-string">"BriefingUnitSelect"</span>, <span class="hljs-string">"Center"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6553</span>
+libNtve_gf_AttachModelToUnit(UnitGroupLoopCurrent(), <span class="hljs-string">"BriefingUnitSelect"</span>, <span class="hljs-string">"Origin"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6961</span>
+libNtve_gf_AttachModelToUnit(UnitGroupLoopCurrent(), <span class="hljs-string">"BriefingUnitSelect"</span>, <span class="hljs-string">"Origin"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3920</span>
+libNtve_gf_AttachModelToUnit(UnitFromId(<span class="hljs-number">139</span>), <span class="hljs-string">"BriefingUnitSelect"</span>, <span class="hljs-string">"Ref_Center"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3969</span>
+libNtve_gf_AttachModelToUnit(UnitFromId(<span class="hljs-number">109</span>), <span class="hljs-string">"BriefingUnitSelect"</span>, <span class="hljs-string">"Ref_Center"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4018</span>
+libNtve_gf_AttachModelToUnit(UnitFromId(<span class="hljs-number">126</span>), <span class="hljs-string">"BriefingUnitSelect"</span>, <span class="hljs-string">"Ref_Center"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5723</span>
+libNtve_gf_AttachModelToUnit(UnitLastCreated(), <span class="hljs-string">"ArtifactPiece3"</span>, <span class="hljs-string">"Ref_Hardpoint"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2097</span>
+libNtve_gf_AttachModelToUnit(UnitFromId(<span class="hljs-number">12</span>), <span class="hljs-string">"BriefingUnitSelectLargeRed"</span>, <span class="hljs-string">"Ref_Center"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2127</span>
+libNtve_gf_AttachModelToUnit(UnitFromId(<span class="hljs-number">65</span>), <span class="hljs-string">"BriefingUnitSelectLargeRed"</span>, <span class="hljs-string">"Ref_Center"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2157</span>
+libNtve_gf_AttachModelToUnit(UnitFromId(<span class="hljs-number">84</span>), <span class="hljs-string">"BriefingUnitSelectLargeRed"</span>, <span class="hljs-string">"Ref_Center"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2305</span>
+libNtve_gf_AttachModelToUnit(gv_baseNydus, <span class="hljs-string">"BriefingUnitSelectRed"</span>, <span class="hljs-string">"Ref_Center"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2341</span>
+libNtve_gf_AttachModelToUnit(gv_baseNydus, <span class="hljs-string">"BriefingUnitSelectRed"</span>, <span class="hljs-string">"Ref_Center"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3151</span>
+libNtve_gf_AttachModelToUnit(gv_uNITIntroSpeaker, <span class="hljs-string">"TalkIcon"</span>, <span class="hljs-string">"Origin"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3171</span>
+libNtve_gf_AttachModelToUnit(gv_uNITSite1Speaker, <span class="hljs-string">"TalkIcon"</span>, <span class="hljs-string">"Origin"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3236</span>
+libNtve_gf_AttachModelToUnit(gv_uNITSite1Speaker, <span class="hljs-string">"TalkIcon"</span>, <span class="hljs-string">"Origin"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3356</span>
+libNtve_gf_AttachModelToUnit(gv_uNITWallSpeaker, <span class="hljs-string">"TalkIcon"</span>, <span class="hljs-string">"Origin"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3476</span>
+libNtve_gf_AttachModelToUnit(gv_uNITSite2Speaker, <span class="hljs-string">"TalkIcon"</span>, <span class="hljs-string">"Origin"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L931</span>
+libNtve_gf_AttachModelToUnit(UnitFromId(<span class="hljs-number">23</span>), <span class="hljs-string">"BriefingUnitSelect"</span>, <span class="hljs-string">"Origin"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L933</span>
+libNtve_gf_AttachModelToUnit(UnitFromId(<span class="hljs-number">159</span>), <span class="hljs-string">"BriefingUnitSelect"</span>, <span class="hljs-string">"Origin"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L935</span>
+libNtve_gf_AttachModelToUnit(UnitFromId(<span class="hljs-number">361</span>), <span class="hljs-string">"BriefingUnitSelect"</span>, <span class="hljs-string">"Origin"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2050</span>
+libNtve_gf_AttachModelToUnit(gv_uNIT_RipFieldGenerator01, <span class="hljs-string">"BriefingUnitSelectRed"</span>, <span class="hljs-string">"Ref_Center"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2090</span>
+libNtve_gf_AttachModelToUnit(gv_uNIT_RipFieldGenerator02[<span class="hljs-number">1</span>], <span class="hljs-string">"BriefingUnitSelectRed"</span>, <span class="hljs-string">"Ref_Center"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2130</span>
+libNtve_gf_AttachModelToUnit(gv_uNIT_RipFieldGenerator02[<span class="hljs-number">2</span>], <span class="hljs-string">"BriefingUnitSelectRed"</span>, <span class="hljs-string">"Ref_Center"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2170</span>
+libNtve_gf_AttachModelToUnit(gv_uNIT_RipFieldGenerator02[<span class="hljs-number">3</span>], <span class="hljs-string">"BriefingUnitSelectRed"</span>, <span class="hljs-string">"Ref_Center"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2218</span>
+libNtve_gf_AttachModelToUnit(gv_uNIT_RipFieldGenerator03[lv_generatorIndex], <span class="hljs-string">"BriefingUnitSelectRed"</span>, <span class="hljs-string">"Ref_Center"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4314</span>
+libNtve_gf_AttachModelToUnit(gv_uNITVault, <span class="hljs-string">"BriefingUnitSelectLargeRed"</span>, <span class="hljs-string">"Ref_Center"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4419</span>
+libNtve_gf_AttachModelToUnit(gv_uNITPrison[lv_iNT], <span class="hljs-string">"BriefingUnitSelectLargeRed"</span>, <span class="hljs-string">"Ref_Origin"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7771</span>
+libNtve_gf_AttachModelToUnit(gv_nydusOBJ01, <span class="hljs-string">"BriefingUnitSelectRed"</span>, <span class="hljs-string">"Head"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7773</span>
+libNtve_gf_AttachModelToUnit(gv_nydusOBJ02, <span class="hljs-string">"BriefingUnitSelectRed"</span>, <span class="hljs-string">"Head"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7775</span>
+libNtve_gf_AttachModelToUnit(gv_nydusOBJ03, <span class="hljs-string">"BriefingUnitSelectRed"</span>, <span class="hljs-string">"Head"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7925</span>
+libNtve_gf_AttachModelToUnit(gv_nydusOBJ01, <span class="hljs-string">"BriefingUnitSelectRed"</span>, <span class="hljs-string">"Head"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7927</span>
+libNtve_gf_AttachModelToUnit(gv_nydusOBJ02, <span class="hljs-string">"BriefingUnitSelectRed"</span>, <span class="hljs-string">"Head"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7929</span>
+libNtve_gf_AttachModelToUnit(gv_nydusOBJ03, <span class="hljs-string">"BriefingUnitSelectRed"</span>, <span class="hljs-string">"Head"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1697</span>
+libNtve_gf_AttachModelToUnit(gv_tHEONERAYNOR, <span class="hljs-string">"TalkIcon"</span>, <span class="hljs-string">"Origin"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1996</span>
+libNtve_gf_AttachModelToUnit(gv_tHEONETYCHUS, <span class="hljs-string">"TalkIcon"</span>, <span class="hljs-string">"Origin"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2327</span>
+libNtve_gf_AttachModelToUnit(gv_tHEONESWANN, <span class="hljs-string">"TalkIcon"</span>, <span class="hljs-string">"Origin"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4110</span>
+libNtve_gf_AttachModelToUnit(UnitFromId(<span class="hljs-number">29</span>), <span class="hljs-string">"BriefingUnitSelectLargeRed"</span>, <span class="hljs-string">"Origin"</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

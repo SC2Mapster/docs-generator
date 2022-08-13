@@ -1,0 +1,362 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Declare Next Town / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Declare Next Town"/>
+                <meta property="og:description" content="Create a new town for player at the specified point."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="declare-next-town"><a class="markdownIt-Anchor" href="#declare-next-town">#</a> Declare Next Town</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Create a new town for player <strong>player</strong> at point <strong>center|center</strong><br>
+<em>Flags</em> — <code>Action</code></p>
+</blockquote>
+<p>Create a new town for player at the specified point.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> — Player</li>
+<li><code>point</code> — Center</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">libNtve_gf_DeclareNextTown</span><span class="hljs-params">(
+	<span class="hljs-keyword">int</span> lp_player,
+	point lp_center,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#ai-advanced-towns-actions">AI Advanced / Towns / Actions</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-declare-next-town">Declare Next Town</a></strong> — ( libNtve_gf_DeclareNextTown )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-declare-town">Declare Town Specific Slot</a></strong> — ( AIDeclareTown )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-set-main-town">Set Main Town</a></strong> — ( AISetMainTown )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-harvest">Enable Harvesting</a></strong> — ( AIHarvest )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-harvest-rate">Set Harvest Rate</a></strong> — ( AIHarvestRate )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-set-gas-peon-count-override">Set Gas Peon Count Override</a></strong> — ( AISetGasPeonCountOverride )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/thanson02.sc2map/MapScript.galaxy#L2889">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2889</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_03_INFESTED_REFUGEES, UnitGetPosition(UnitFromId(<span class="hljs-number">118</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2890</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_03_INFESTED_REFUGEES, UnitGetPosition(UnitFromId(<span class="hljs-number">31</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2891</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_03_INFESTED_REFUGEES, UnitGetPosition(UnitFromId(<span class="hljs-number">38</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2892</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_03_INFESTED_REFUGEES, UnitGetPosition(UnitFromId(<span class="hljs-number">29</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2893</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_03_INFESTED_REFUGEES, UnitGetPosition(UnitFromId(<span class="hljs-number">35</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2894</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_03_INFESTED_REFUGEES, UnitGetPosition(UnitFromId(<span class="hljs-number">30</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2895</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_03_INFESTED_REFUGEES, UnitGetPosition(UnitFromId(<span class="hljs-number">36</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4082</span>
+libNtve_gf_DeclareNextTown(gv_p02_DOMINION_INFANTRY, UnitGetPosition(UnitFromId(<span class="hljs-number">570</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1656</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER02_PROTOSS, PointFromId(<span class="hljs-number">354</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1761</span>
+libNtve_gf_DeclareNextTown(gv_p02_ZERG_LOW_GROUND_AI, PointFromId(<span class="hljs-number">296</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1762</span>
+libNtve_gf_DeclareNextTown(gv_p02_ZERG_LOW_GROUND_AI, PointFromId(<span class="hljs-number">693</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2889</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_03_INFESTED_REFUGEES, UnitGetPosition(UnitFromId(<span class="hljs-number">118</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2890</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_03_INFESTED_REFUGEES, UnitGetPosition(UnitFromId(<span class="hljs-number">31</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2891</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_03_INFESTED_REFUGEES, UnitGetPosition(UnitFromId(<span class="hljs-number">38</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2892</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_03_INFESTED_REFUGEES, UnitGetPosition(UnitFromId(<span class="hljs-number">29</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2893</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_03_INFESTED_REFUGEES, UnitGetPosition(UnitFromId(<span class="hljs-number">35</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2894</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_03_INFESTED_REFUGEES, UnitGetPosition(UnitFromId(<span class="hljs-number">30</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2895</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_03_INFESTED_REFUGEES, UnitGetPosition(UnitFromId(<span class="hljs-number">36</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4082</span>
+libNtve_gf_DeclareNextTown(gv_p02_DOMINION_INFANTRY, UnitGetPosition(UnitFromId(<span class="hljs-number">570</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1656</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER02_PROTOSS, PointFromId(<span class="hljs-number">354</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1761</span>
+libNtve_gf_DeclareNextTown(gv_p02_ZERG_LOW_GROUND_AI, PointFromId(<span class="hljs-number">296</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1762</span>
+libNtve_gf_DeclareNextTown(gv_p02_ZERG_LOW_GROUND_AI, PointFromId(<span class="hljs-number">693</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3256</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_02_PROTOSS_BULLIES, PointFromId(<span class="hljs-number">942</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3257</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_02_PROTOSS_BULLIES, PointFromId(<span class="hljs-number">947</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3258</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_02_PROTOSS_BULLIES, PointFromId(<span class="hljs-number">1297</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3259</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_02_PROTOSS_BULLIES, PointFromId(<span class="hljs-number">1298</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3260</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_02_PROTOSS_BULLIES, PointFromId(<span class="hljs-number">1650</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3261</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_02_PROTOSS_BULLIES, PointFromId(<span class="hljs-number">1681</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3262</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_04_INFESTED_BULLIES, PointFromId(<span class="hljs-number">1200</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3263</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_04_INFESTED_BULLIES, PointFromId(<span class="hljs-number">835</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3264</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_04_INFESTED_BULLIES, PointFromId(<span class="hljs-number">1146</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3267</span>
+libNtve_gf_DeclareNextTown(UnitGetOwner(gv_voidShards[lv_i]), UnitGetPosition(gv_voidShards[lv_i]))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3975</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_02_TALDARIM, PointFromId(<span class="hljs-number">34</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4547</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_05_VOIDFORCES, UnitGetPosition(autoA50712A6_var))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4554</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_06_VOIDFORCES, UnitGetPosition(autoFEECDEF9_var))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4561</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_07_VOIDFORCES, UnitGetPosition(auto2905E312_var))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3256</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_02_PROTOSS_BULLIES, PointFromId(<span class="hljs-number">942</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3257</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_02_PROTOSS_BULLIES, PointFromId(<span class="hljs-number">947</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3258</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_02_PROTOSS_BULLIES, PointFromId(<span class="hljs-number">1297</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3259</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_02_PROTOSS_BULLIES, PointFromId(<span class="hljs-number">1298</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3260</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_02_PROTOSS_BULLIES, PointFromId(<span class="hljs-number">1650</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3261</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_02_PROTOSS_BULLIES, PointFromId(<span class="hljs-number">1681</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3262</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_04_INFESTED_BULLIES, PointFromId(<span class="hljs-number">1200</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3263</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_04_INFESTED_BULLIES, PointFromId(<span class="hljs-number">835</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3264</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_04_INFESTED_BULLIES, PointFromId(<span class="hljs-number">1146</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3267</span>
+libNtve_gf_DeclareNextTown(UnitGetOwner(gv_voidShards[lv_i]), UnitGetPosition(gv_voidShards[lv_i]))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3975</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_02_TALDARIM, PointFromId(<span class="hljs-number">34</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4547</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_05_VOIDFORCES, UnitGetPosition(autoA50712A6_var))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4554</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_06_VOIDFORCES, UnitGetPosition(autoFEECDEF9_var))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4561</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_07_VOIDFORCES, UnitGetPosition(auto2905E312_var))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7411</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_03_FERALZERG_MIDDLEBULLIES, PointFromId(<span class="hljs-number">470</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7412</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_03_FERALZERG_MIDDLEBULLIES, PointFromId(<span class="hljs-number">1878</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7413</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_03_FERALZERG_MIDDLEBULLIES, PointFromId(<span class="hljs-number">1879</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7414</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_03_FERALZERG_MIDDLEBULLIES, PointFromId(<span class="hljs-number">1898</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7415</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_04_FERALZERG_RIGHTBULLIES, PointFromId(<span class="hljs-number">159</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7416</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_04_FERALZERG_RIGHTBULLIES, PointFromId(<span class="hljs-number">1866</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7417</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_04_FERALZERG_RIGHTBULLIES, PointFromId(<span class="hljs-number">1867</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7418</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_05_FERALZERG_LEFTBULLIES, PointFromId(<span class="hljs-number">581</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4733</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_05_TALDARIM, UnitGetPosition(UnitGroupLoopCurrent()))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1360</span>
+libNtve_gf_DeclareNextTown(lp_player, RegionGetCenter(lp_bullyRebuildRegion))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3471</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_02_DOMINION, RegionGetCenter(RegionFromId(<span class="hljs-number">3</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3472</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_02_DOMINION, RegionGetCenter(RegionFromId(<span class="hljs-number">4</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3473</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_02_DOMINION, RegionGetCenter(RegionFromId(<span class="hljs-number">5</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3482</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_02_DOMINION4, RegionGetCenter(RegionFromId(<span class="hljs-number">1</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3483</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_02_DOMINION4, RegionGetCenter(RegionFromId(<span class="hljs-number">2</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3485</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_02_DOMINION5, RegionGetCenter(RegionFromId(<span class="hljs-number">6</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3486</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_02_DOMINION5, RegionGetCenter(RegionFromId(<span class="hljs-number">7</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4517</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_06_DEFENDERSNORTH, PointFromId(<span class="hljs-number">647084373</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7411</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_03_FERALZERG_MIDDLEBULLIES, PointFromId(<span class="hljs-number">470</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7412</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_03_FERALZERG_MIDDLEBULLIES, PointFromId(<span class="hljs-number">1878</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7413</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_03_FERALZERG_MIDDLEBULLIES, PointFromId(<span class="hljs-number">1879</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7414</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_03_FERALZERG_MIDDLEBULLIES, PointFromId(<span class="hljs-number">1898</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7415</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_04_FERALZERG_RIGHTBULLIES, PointFromId(<span class="hljs-number">159</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7416</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_04_FERALZERG_RIGHTBULLIES, PointFromId(<span class="hljs-number">1866</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7417</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_04_FERALZERG_RIGHTBULLIES, PointFromId(<span class="hljs-number">1867</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7418</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_05_FERALZERG_LEFTBULLIES, PointFromId(<span class="hljs-number">581</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4733</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_05_TALDARIM, UnitGetPosition(UnitGroupLoopCurrent()))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1360</span>
+libNtve_gf_DeclareNextTown(lp_player, RegionGetCenter(lp_bullyRebuildRegion))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3471</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_02_DOMINION, RegionGetCenter(RegionFromId(<span class="hljs-number">3</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3472</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_02_DOMINION, RegionGetCenter(RegionFromId(<span class="hljs-number">4</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3473</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_02_DOMINION, RegionGetCenter(RegionFromId(<span class="hljs-number">5</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3482</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_02_DOMINION4, RegionGetCenter(RegionFromId(<span class="hljs-number">1</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3483</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_02_DOMINION4, RegionGetCenter(RegionFromId(<span class="hljs-number">2</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3485</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_02_DOMINION5, RegionGetCenter(RegionFromId(<span class="hljs-number">6</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3486</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_02_DOMINION5, RegionGetCenter(RegionFromId(<span class="hljs-number">7</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4517</span>
+libNtve_gf_DeclareNextTown(gv_pLAYER_06_DEFENDERSNORTH, PointFromId(<span class="hljs-number">647084373</span>))
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

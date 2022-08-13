@@ -1,0 +1,201 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Add To Achievement Term Quantity / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Add To Achievement Term Quantity"/>
+                <meta property="og:description" content="This feature only works on Blizzard-signed maps."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="add-to-achievement-term-quantity"><a class="markdownIt-Anchor" href="#add-to-achievement-term-quantity">#</a> Add To Achievement Term Quantity</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Adds to achievement term <strong>term</strong> quantity with <strong>quantity</strong> for player <strong>player</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code> | <code>Restricted</code></p>
+</blockquote>
+<p>This feature only works on Blizzard-signed maps.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> — Player</li>
+<li><code>string</code> <em>[ gamelink::AchievementTerm ]</em> — Term</li>
+<li><code>int</code> — Quantity</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">AchievementTermQuantityAdd</span><span class="hljs-params">(
+	<span class="hljs-keyword">int</span> player,
+	<span class="hljs-built_in">string</span> term,
+	<span class="hljs-keyword">int</span> quantity,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#game-achievements">Game / Achievements</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/achievement-award">Award Achievement</a></strong> — ( AchievementAward )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/achievement-term-quantity-set">Set Achievement Term Quantity</a></strong> — ( AchievementTermQuantitySet )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/achievement-term-quantity-add">Add To Achievement Term Quantity</a></strong> — ( AchievementTermQuantityAdd )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/achievement-erase">Erase Achievement</a></strong> — ( AchievementErase )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/achievements-disable">Disable Achievements</a></strong> — ( AchievementsDisable )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/achievements-disabled">Achievements Are Disabled</a></strong> — ( AchievementsDisabled )</li>
+<li><em><strong>[F]</strong></em> — <code>text</code> — <strong><a href="/galaxy/reference/achievement-percent-text">Get Achievement Percent Text</a></strong> — ( AchievementPercentText )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/achievement-panel-set-category">Set Achievement Panel Category</a></strong> — ( AchievementPanelSetCategory )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignsvoidstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignLib.galaxy#L10276">VoidCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L10276</span>
+AchievementTermQuantityAdd(<span class="hljs-number">1</span>, <span class="hljs-string">"SOA_ShieldOvercharge"</span>, (FixedToInt(libVoiC_gv_pC_AchievementShieldAbsorbTotal) - FixedToInt(libVoiC_gv_pC_AchievementShieldAbsorbLast)))
+</code></pre>
+<h4 id="modsnovastoryassetssc2mod"><a class="markdownIt-Anchor" href="#modsnovastoryassetssc2mod">#</a> mods/novastoryassets.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/novastoryassets.sc2mod/base2.sc2maps/maps/campaign/nova/nova06.sc2map/MapScript.galaxy#L4767">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4767</span>
+AchievementTermQuantityAdd(gv_pLAYER_01_USER, <span class="hljs-string">"Nova06_2"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3206</span>
+AchievementTermQuantityAdd(gv_pLAYER_01_USER, <span class="hljs-string">"Nova08_2"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3244</span>
+AchievementTermQuantityAdd(gv_pLAYER_01_USER, <span class="hljs-string">"Nova08_3"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3286</span>
+AchievementTermQuantityAdd(gv_pLAYER_01_USER, <span class="hljs-string">"Nova08_Mastery"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4767</span>
+AchievementTermQuantityAdd(gv_pLAYER_01_USER, <span class="hljs-string">"Nova06_2"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3206</span>
+AchievementTermQuantityAdd(gv_pLAYER_01_USER, <span class="hljs-string">"Nova08_2"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3244</span>
+AchievementTermQuantityAdd(gv_pLAYER_01_USER, <span class="hljs-string">"Nova08_3"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3286</span>
+AchievementTermQuantityAdd(gv_pLAYER_01_USER, <span class="hljs-string">"Nova08_Mastery"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOMI.galaxy#L5580">LibCOMI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L5580</span>
+AchievementTermQuantityAdd(UnitGetOwner(lp_trooper), <span class="hljs-string">"CommanderMengskWeaponPickup"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L16802</span>
+AchievementTermQuantityAdd(lv_dehakaPlayer, <span class="hljs-string">"CommanderDehakaSupply"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L16805</span>
+AchievementTermQuantityAdd(lv_dehakaPlayer, <span class="hljs-string">"CommanderDehakaSupply"</span>, (CatalogFieldValueGetAsInt(c_gameCatalogUnit, UnitGetType(lv_targetUnit), <span class="hljs-string">"Food"</span>, EventPlayerEffectUsedUnitOwner(c_effectPlayerTarget)) * <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L16807</span>
+AchievementTermQuantityAdd(lv_dehakaPlayer, <span class="hljs-string">"CommanderDehakaDamage"</span>, FixedToInt(lv_targetLife))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L21539</span>
+AchievementTermQuantityAdd(lv_killingplayer, <span class="hljs-string">"CommanderMengskTopBarKills"</span>, RoundI(EventUnitDamageAmount()))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L23639</span>
+AchievementTermQuantityAdd(lv_ownercaster, <span class="hljs-string">"CommanderStetmannStetzone"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L26144</span>
+AchievementTermQuantityAdd(lv_player, <span class="hljs-string">"CommanderTychusUltimateTychus"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L26149</span>
+AchievementTermQuantityAdd(lv_player, <span class="hljs-string">"CommanderTychusUltimateReaper"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L26154</span>
+AchievementTermQuantityAdd(lv_player, <span class="hljs-string">"CommanderTychusUltimateWarhound"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L26159</span>
+AchievementTermQuantityAdd(lv_player, <span class="hljs-string">"CommanderTychusUltimateFirebat"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod-2"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod-2">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOOC.galaxy#L1916">LibCOOC.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1916</span>
+AchievementTermQuantityAdd(lp_player, <span class="hljs-string">"CommanderRecruitXPBonus25"</span>, lv_objectiveXPGained)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1917</span>
+AchievementTermQuantityAdd(lp_player, <span class="hljs-string">"CommanderRecruitXPBonus50"</span>, lv_objectiveXPGained)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1918</span>
+AchievementTermQuantityAdd(lp_player, <span class="hljs-string">"CommanderRecruitXPBonus100"</span>, lv_objectiveXPGained)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1920</span>
+AchievementTermQuantityAdd(lp_player, <span class="hljs-string">"CommanderSoldierXPBonus25"</span>, lv_objectiveXPGained)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1921</span>
+AchievementTermQuantityAdd(lp_player, <span class="hljs-string">"CommanderSoldierXPBonus50"</span>, lv_objectiveXPGained)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1922</span>
+AchievementTermQuantityAdd(lp_player, <span class="hljs-string">"CommanderSoldierXPBonus100"</span>, lv_objectiveXPGained)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1926</span>
+AchievementTermQuantityAdd(lp_player, <span class="hljs-string">"CommanderVeteranXPBonus25"</span>, lv_objectiveXPGained)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1927</span>
+AchievementTermQuantityAdd(lp_player, <span class="hljs-string">"CommanderVeteranXPBonus50"</span>, lv_objectiveXPGained)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1928</span>
+AchievementTermQuantityAdd(lp_player, <span class="hljs-string">"CommanderVeteranXPBonus100"</span>, lv_objectiveXPGained)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1932</span>
+AchievementTermQuantityAdd(lp_player, <span class="hljs-string">"CommanderCommanderXPBonus25"</span>, lv_objectiveXPGained)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,164 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Set Production Cap For Player / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Set Production Cap For Player"/>
+                <meta property="og:description" content="Use -1 to remove the cap of the production."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="set-production-cap-for-player"><a class="markdownIt-Anchor" href="#set-production-cap-for-player">#</a> Set Production Cap For Player</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Limit player <strong>p</strong>  to only be able to produce <strong>cap</strong> <strong>production</strong> in <strong>cat</strong> category<br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Use -1 to remove the cap of the production.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> — Player</li>
+<li><code>string</code> <em>[ anygamelink ]</em> — Production</li>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-tech-tree-category">TechTreeCategory</a> ]</em> — Category</li>
+<li><code>int</code> — Cap</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">TechTreeSetProduceCap</span><span class="hljs-params">(
+	<span class="hljs-keyword">int</span> p,
+	<span class="hljs-built_in">string</span> production,
+	<span class="hljs-keyword">int</span> cat,
+	<span class="hljs-keyword">int</span> cap,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#tech-tree-individual-restrictions">Tech Tree / Individual Restrictions</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/tech-tree-specific-requirement-enabled">Specific Requirements Are Enabled For Player</a></strong> — ( TechTreeSpecificRequirementEnabled )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/tech-tree-specific-requirement-enable">Enable/Disable SpecificTech Tree Requirements</a></strong> — ( TechTreeSpecificRequirementEnable )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/tech-tree-behavior-allow">Allow/Disallow Behavior For Player</a></strong> — ( TechTreeBehaviorAllow )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/tech-tree-ability-allow">Allow/Disallow Ability For Player</a></strong> — ( TechTreeAbilityAllow )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/tech-tree-unit-allow">Allow/Disallow Unit For Player</a></strong> — ( TechTreeUnitAllow )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/tech-tree-upgrade-allow">Allow/Disallow Upgrade For Player</a></strong> — ( TechTreeUpgradeAllow )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/tech-tree-ability-is-allowed">Ability Is Allowed For Player</a></strong> — ( TechTreeAbilityIsAllowed )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/tech-tree-behavior-is-allowed">Behavior Is Allowed For Player</a></strong> — ( TechTreeBehaviorIsAllowed )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/tech-tree-unit-is-allowed">Unit Is Allowed For Player</a></strong> — ( TechTreeUnitIsAllowed )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/tech-tree-upgrade-is-allowed">Upgrade Is Allowed For Player</a></strong> — ( TechTreeUpgradeIsAllowed )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/tech-tree-upgrade-add-level">Add Upgrade Level For Player</a></strong> — ( TechTreeUpgradeAddLevel )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-set-upgrade-level-for-player">Set Upgrade Level For Player</a></strong> — ( libNtve_gf_SetUpgradeLevelForPlayer )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/tech-tree-set-produce-cap">Set Production Cap For Player</a></strong> — ( TechTreeSetProduceCap )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/tech-tree-get-produce-cap">Production Cap For Player</a></strong> — ( TechTreeGetProduceCap )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="modsstarcoopstarcoopsc2mod"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOMI.galaxy#L6106">LibCOMI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L6106</span>
+TechTreeSetProduceCap(lp_player, <span class="hljs-string">"Alias_TychusUniqueUnit"</span>, c_techCatUnit, libCOMI_gv_cM_Tychus_MaxHeroCount)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6107</span>
+TechTreeSetProduceCap(lp_player, <span class="hljs-string">"TychusCoop"</span>, c_techCatUnit, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6108</span>
+TechTreeSetProduceCap(lp_player, <span class="hljs-string">"TychusReaper"</span>, c_techCatUnit, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6109</span>
+TechTreeSetProduceCap(lp_player, <span class="hljs-string">"TychusWarhound"</span>, c_techCatUnit, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6110</span>
+TechTreeSetProduceCap(lp_player, <span class="hljs-string">"TychusFirebat"</span>, c_techCatUnit, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6111</span>
+TechTreeSetProduceCap(lp_player, <span class="hljs-string">"TychusHERC"</span>, c_techCatUnit, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6112</span>
+TechTreeSetProduceCap(lp_player, <span class="hljs-string">"TychusMarauder"</span>, c_techCatUnit, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6113</span>
+TechTreeSetProduceCap(lp_player, <span class="hljs-string">"TychusGhost"</span>, c_techCatUnit, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6114</span>
+TechTreeSetProduceCap(lp_player, <span class="hljs-string">"TychusSpectre"</span>, c_techCatUnit, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6115</span>
+TechTreeSetProduceCap(lp_player, <span class="hljs-string">"TychusMedic"</span>, c_techCatUnit, <span class="hljs-number">1</span>)
+</code></pre>
+<h4 id="modswarcoopwarclassicsc2mod"><a class="markdownIt-Anchor" href="#modswarcoopwarclassicsc2mod">#</a> mods/warcoop/warclassic.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/warcoop/warclassic.sc2mod/base.sc2data/TriggerLibs/WarClassic.galaxy#L1140">WarClassic.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1140</span>
+TechTreeSetProduceCap(lv_p, <span class="hljs-string">"uske"</span>, c_techCatUnit, libGAw3_gv_bj_MAX_SKELETONS)
+</code></pre>
+<h4 id="modswarcoopwarclassicsystemsc2mod"><a class="markdownIt-Anchor" href="#modswarcoopwarclassicsystemsc2mod">#</a> mods/warcoop/warclassicsystem.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/warcoop/warclassicsystem.sc2mod/base.sc2data/TriggerLibs/WarClassicSystem.galaxy#L259">WarClassicSystem.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L259</span>
+TechTreeSetProduceCap(lv_p, UserDataGetGameLink(<span class="hljs-string">"MeleeSetting_HeroLimit"</span>, lv_itLimitInstance, <span class="hljs-string">"Hero"</span>, <span class="hljs-number">1</span>), c_techCatUnit, UserDataGetInt(<span class="hljs-string">"MeleeSetting_HeroLimit"</span>, lv_itLimitInstance, <span class="hljs-string">"Limit"</span>, <span class="hljs-number">1</span>))
+</code></pre>
+<h4 id="modswarcoopwarcoopdatasc2mod"><a class="markdownIt-Anchor" href="#modswarcoopwarcoopdatasc2mod">#</a> mods/warcoop/warcoopdata.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/warcoop/warcoopdata.sc2mod/base.sc2data/TriggerLibs/WarCoopData.galaxy#L2073">WarCoopData.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2073</span>
+TechTreeSetProduceCap(lp_player, <span class="hljs-string">"_CoopHero"</span>, c_techCatUnit, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2074</span>
+TechTreeSetProduceCap(lp_player, <span class="hljs-string">"TALT"</span>, c_techCatUnit, <span class="hljs-number">1</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

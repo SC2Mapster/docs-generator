@@ -1,0 +1,224 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Use Model Camera / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Use Model Camera"/>
+                <meta property="og:description" content="Uses the camera setting that is specific to a unit.  This is primarily for model assets which have a built in camera, such as Portraits."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="use-model-camera"><a class="markdownIt-Anchor" href="#use-model-camera">#</a> Use Model Camera</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Use model camera <strong>name|Camera Name</strong> from <strong>u</strong> for player <strong>player</strong>, applying over <strong>duration</strong> seconds<br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Uses the camera setting that is specific to a unit.  This is primarily for model assets which have a built in camera, such as Portraits.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> — Player</li>
+<li><code>unit</code> — Unit</li>
+<li><code>string</code> <em>[ modelcamera ]</em> — Name</li>
+<li><code>fixed</code> — Duration</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">CameraUseModel</span><span class="hljs-params">(
+	<span class="hljs-keyword">int</span> player,
+	unit u,
+	<span class="hljs-built_in">string</span> name,
+	fixed duration,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#camera-model-cameras">Camera / Model Cameras</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/camera-use-model">Use Model Camera</a></strong> — ( CameraUseModel )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/camera-set-channel">Set Camera Channel</a></strong> — ( CameraSetChannel )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/camera-clear-channel">Clear Camera Channel</a></strong> — ( CameraClearChannel )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/tstory01.sc2map/MapScript.galaxy#L8625">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L8625</span>
+CameraUseModel(lv_player, gf_RoomUnit(lp_room), <span class="hljs-string">"Default"</span>, lp_duration)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9463</span>
+CameraUseModel(lv_indexPlayer, lp_room, lp_zoomCamera, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9503</span>
+CameraUseModel(lv_indexPlayer, gf_RoomUnit(lp_room), lp_zoomBackCamera, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9996</span>
+CameraUseModel(<span class="hljs-number">1</span>, gf_RoomUnit(ge_RoomID_RoomArmory), lp_camera, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11227</span>
+CameraUseModel(<span class="hljs-number">1</span>, lp_cameraObject, lv_cameraName, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13332</span>
+CameraUseModel(<span class="hljs-number">1</span>, gf_BriefingScreen(lp_room, ge_BriefingScreen_Main), lv_cameraName, (lp_duration * <span class="hljs-number">1.0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L18118</span>
+CameraUseModel(<span class="hljs-number">1</span>, gv_marSaraTychusCameras, <span class="hljs-string">"Pan to Character Medium"</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L34859</span>
+CameraUseModel(<span class="hljs-number">1</span>, UnitFromId(<span class="hljs-number">1068</span>), <span class="hljs-string">"SM_HyperionBridgeTRaynor03BriefingCamera"</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8625</span>
+CameraUseModel(lv_player, gf_RoomUnit(lp_room), <span class="hljs-string">"Default"</span>, lp_duration)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9463</span>
+CameraUseModel(lv_indexPlayer, lp_room, lp_zoomCamera, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9503</span>
+CameraUseModel(lv_indexPlayer, gf_RoomUnit(lp_room), lp_zoomBackCamera, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9996</span>
+CameraUseModel(<span class="hljs-number">1</span>, gf_RoomUnit(ge_RoomID_RoomArmory), lp_camera, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11227</span>
+CameraUseModel(<span class="hljs-number">1</span>, lp_cameraObject, lv_cameraName, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13332</span>
+CameraUseModel(<span class="hljs-number">1</span>, gf_BriefingScreen(lp_room, ge_BriefingScreen_Main), lv_cameraName, (lp_duration * <span class="hljs-number">1.0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L18118</span>
+CameraUseModel(<span class="hljs-number">1</span>, gv_marSaraTychusCameras, <span class="hljs-string">"Pan to Character Medium"</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L34859</span>
+CameraUseModel(<span class="hljs-number">1</span>, UnitFromId(<span class="hljs-number">1068</span>), <span class="hljs-string">"SM_HyperionBridgeTRaynor03BriefingCamera"</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L466</span>
+CameraUseModel(<span class="hljs-number">1</span>, gv_uNITSETLeviathan00, <span class="hljs-string">"Camera_Main"</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L469</span>
+CameraUseModel(<span class="hljs-number">1</span>, gv_uNITSETLeviathan00, <span class="hljs-string">"Camera_Far"</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L454</span>
+CameraUseModel(<span class="hljs-number">1</span>, gv_uNITSETLeviathan00, <span class="hljs-string">"Camera_Far"</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L457</span>
+CameraUseModel(<span class="hljs-number">1</span>, gv_uNITSETLeviathan00, <span class="hljs-string">"Camera_Main"</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L400</span>
+CameraUseModel(<span class="hljs-number">1</span>, gv_uNITSETLeviathan00, <span class="hljs-string">"Camera_Far"</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L451</span>
+CameraUseModel(<span class="hljs-number">1</span>, gv_uNITSETLeviathan00, <span class="hljs-string">"Camera_Far"</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L480</span>
+CameraUseModel(<span class="hljs-number">1</span>, gv_uNITSETLeviathan00, <span class="hljs-string">"Camera_Far"</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L374</span>
+CameraUseModel(<span class="hljs-number">1</span>, gv_uNITSETLeviathan00, <span class="hljs-string">"Camera_Far"</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L416</span>
+CameraUseModel(<span class="hljs-number">1</span>, gv_uNITSETLeviathan00, <span class="hljs-string">"Camera_Far"</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L466</span>
+CameraUseModel(<span class="hljs-number">1</span>, gv_uNITSETLeviathan00, <span class="hljs-string">"Camera_Main"</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L469</span>
+CameraUseModel(<span class="hljs-number">1</span>, gv_uNITSETLeviathan00, <span class="hljs-string">"Camera_Far"</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L454</span>
+CameraUseModel(<span class="hljs-number">1</span>, gv_uNITSETLeviathan00, <span class="hljs-string">"Camera_Far"</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L457</span>
+CameraUseModel(<span class="hljs-number">1</span>, gv_uNITSETLeviathan00, <span class="hljs-string">"Camera_Main"</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L400</span>
+CameraUseModel(<span class="hljs-number">1</span>, gv_uNITSETLeviathan00, <span class="hljs-string">"Camera_Far"</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L451</span>
+CameraUseModel(<span class="hljs-number">1</span>, gv_uNITSETLeviathan00, <span class="hljs-string">"Camera_Far"</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L480</span>
+CameraUseModel(<span class="hljs-number">1</span>, gv_uNITSETLeviathan00, <span class="hljs-string">"Camera_Far"</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L374</span>
+CameraUseModel(<span class="hljs-number">1</span>, gv_uNITSETLeviathan00, <span class="hljs-string">"Camera_Far"</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L416</span>
+CameraUseModel(<span class="hljs-number">1</span>, gv_uNITSETLeviathan00, <span class="hljs-string">"Camera_Far"</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<h4 id="campaignsswarmstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmstorysc2campaign">#</a> campaigns/swarmstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstory.sc2campaign/base.sc2data/TriggerLibs/SwarmCampaignLib.galaxy#L7447">SwarmCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L7447</span>
+CameraUseModel(<span class="hljs-number">1</span>, libSwaC_gv_zS_ArmyCustomEggRoom, libSwaC_gf_ZS_EggRoomCamera(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8554</span>
+CameraUseModel(<span class="hljs-number">1</span>, libSwaC_gv_zS_ArmyCustomEggRoom, libSwaC_gf_ZS_ArmyCustomCategoryEggCamera(libSwaC_gv_zS_ArmyCustomCategoryCurrent), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8922</span>
+CameraUseModel(<span class="hljs-number">1</span>, libSwaC_gv_zS_ArmyCustomEvolutionSet, lv_camera, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11858</span>
+CameraUseModel(<span class="hljs-number">1</span>, libSwaC_gv_zS_KerriganUIBackground, <span class="hljs-string">"Star2Camera003"</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L20165</span>
+CameraUseModel(<span class="hljs-number">1</span>, libSwaC_gv_zS_ArmyCustomEggRoom, libSwaC_gf_ZS_EggRoomCamera(), <span class="hljs-number">0.0</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

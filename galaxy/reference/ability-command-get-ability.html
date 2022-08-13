@@ -1,0 +1,313 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Ability Of Ability Command / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Ability Of Ability Command"/>
+                <meta property="og:description" content="Returns the ability being used for an ability command.  An ability command is the combination of an ability and an index for a command within that ability.
+
+Returns: gamelink [ gamelink::Abil ]"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="ability-of-ability-command"><a class="markdownIt-Anchor" href="#ability-of-ability-command">#</a> Ability Of Ability Command</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Ability of <strong>abilityCommand</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Function</code></p>
+</blockquote>
+<p>Returns the ability being used for an ability command.  An ability command is the combination of an ability and an index for a command within that ability.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>abilcmd</code> — Ability Command</li>
+</ul>
+<p>Returns — <code>string</code> <em>[ gamelink::Abil ]</em></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-built_in">string</span> <span class="hljs-title">AbilityCommandGetAbility</span><span class="hljs-params">(abilcmd inAbilCmd)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#order-ability-commands">Order / Ability Commands</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>abilcmd</code> — <strong><a href="/galaxy/reference/ability-command">Ability Command</a></strong> — ( AbilityCommand )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> <em>[ gamelink::Abil ]</em> — <strong><a href="/galaxy/reference/ability-command-get-ability">Ability Of Ability Command</a></strong> — ( AbilityCommandGetAbility )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/ability-command-get-command">Index Of Ability Command</a></strong> — ( AbilityCommandGetCommand )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-ability-command-action-type">AbilityCommandActionType</a> ]</em> — <strong><a href="/galaxy/reference/ability-command-get-action">Action Type For Ability Command</a></strong> — ( AbilityCommandGetAction )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2data/TriggerLibs/Tactical/TactCampAI.galaxy#L125">TactCampAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L125</span>
+AbilityCommandGetAbility(curAbilCmd)
+</code></pre>
+<h4 id="campaignslibertysc2campaign-2"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign-2">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/tstory01.sc2map/MapScript.galaxy#L3678">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3678</span>
+AbilityCommandGetAbility(OrderGetAbilityCommand(lv_order))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3678</span>
+AbilityCommandGetAbility(OrderGetAbilityCommand(lv_order))
+</code></pre>
+<h4 id="campaignsswarmsc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmsc2campaign">#</a> campaigns/swarm.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarm.sc2campaign/base.sc2data/TriggerLibs/Tactical/TactCampAI.galaxy#L125">TactCampAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L125</span>
+AbilityCommandGetAbility(curAbilCmd)
+</code></pre>
+<h4 id="campaignsswarmsc2campaign-2"><a class="markdownIt-Anchor" href="#campaignsswarmsc2campaign-2">#</a> campaigns/swarm.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarm.sc2campaign/base.sc2maps/maps/campaign/swarm/zzerus01.sc2map/MapScript.galaxy#L1625">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1625</span>
+AbilityCommandGetAbility(OrderGetAbilityCommand(UnitOrder(lp_harvester, lv_index)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1625</span>
+AbilityCommandGetAbility(OrderGetAbilityCommand(UnitOrder(lp_harvester, lv_index)))
+</code></pre>
+<h4 id="campaignsswarmstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmstorysc2campaign">#</a> campaigns/swarmstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstory.sc2campaign/base.sc2data/TriggerLibs/SwarmCampaignLib.galaxy#L4662">SwarmCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4662</span>
+AbilityCommandGetAbility(lp_abilityCommand)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignLib.galaxy#L5589">VoidCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L5589</span>
+AbilityCommandGetAbility(UserDataGetAbilCmd(<span class="hljs-string">"CampaignPerk"</span>, lp_ability, <span class="hljs-string">"AbilityCommand"</span>, <span class="hljs-number">1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5719</span>
+AbilityCommandGetAbility(UserDataGetAbilCmd(<span class="hljs-string">"CampaignPerk"</span>, lp_campaignPerk, <span class="hljs-string">"AbilityCommand"</span>, <span class="hljs-number">1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8162</span>
+AbilityCommandGetAbility(AbilityCommand(<span class="hljs-string">"Blink"</span>, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8163</span>
+AbilityCommandGetAbility(AbilityCommand(<span class="hljs-string">"TimeWarp"</span>, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10900</span>
+AbilityCommandGetAbility(EventUnitAbility())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10900</span>
+AbilityCommandGetAbility(EventUnitAbility())
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign-2"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign-2">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignUILib.galaxy#L4974">VoidCampaignUILib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4974</span>
+AbilityCommandGetAbility(lv_indexCommand)
+</code></pre>
+<h4 id="modscoresc2mod"><a class="markdownIt-Anchor" href="#modscoresc2mod">#</a> mods/core.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/core.sc2mod/base.sc2data/TriggerLibs/NativeLib.galaxy#L5412">NativeLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L5412</span>
+AbilityCommandGetAbility(lp_key)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5430</span>
+AbilityCommandGetAbility(lp_abilcmd)
+</code></pre>
+<h4 id="modscoresc2mod-2"><a class="markdownIt-Anchor" href="#modscoresc2mod-2">#</a> mods/core.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/core.sc2mod/base.sc2data/TriggerLibs/Tactical/TactTerrAI.galaxy#L161">TactTerrAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L161</span>
+AbilityCommandGetAbility(curAbilCmd)
+</code></pre>
+<h4 id="modscoresc2mod-3"><a class="markdownIt-Anchor" href="#modscoresc2mod-3">#</a> mods/core.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/core.sc2mod/base.sc2data/TriggerLibs/Tactical/TacticalAI.galaxy#L277">TacticalAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L277</span>
+AbilityCommandGetAbility(OrderGetAbilityCommand(o))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L284</span>
+AbilityCommandGetAbility(OrderGetAbilityCommand(o))
+</code></pre>
+<h4 id="modsheroesdatastormmod"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/GameDataHelperLib.galaxy#L26096">GameDataHelperLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L26096</span>
+AbilityCommandGetAbility(AbilityCommand(<span class="hljs-string">"BarbarianShotofFury"</span>, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L26096</span>
+AbilityCommandGetAbility(EventUnitAbility())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L26100</span>
+AbilityCommandGetAbility(AbilityCommand(<span class="hljs-string">"BarbarianAncientSpear"</span>, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L26100</span>
+AbilityCommandGetAbility(EventUnitAbility())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L26104</span>
+AbilityCommandGetAbility(AbilityCommand(<span class="hljs-string">"L90ETCPowerslide"</span>, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L26104</span>
+AbilityCommandGetAbility(EventUnitAbility())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L26119</span>
+AbilityCommandGetAbility(EventUnitAbility())
+</code></pre>
+<h4 id="modsheroesdatastormmod-2"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-2">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/GameLib.galaxy#L1970">GameLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1970</span>
+AbilityCommandGetAbility(TechTreeUnitProducedAbilCmd(lv_effectingUnitType, <span class="hljs-number">0</span>))
+</code></pre>
+<h4 id="modsheroesdatastormmod-3"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-3">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/SupportLib.galaxy#L4499">SupportLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4499</span>
+AbilityCommandGetAbility(EventUnitAbility())
+</code></pre>
+<h4 id="modsheromodsdvastormmod"><a class="markdownIt-Anchor" href="#modsheromodsdvastormmod">#</a> mods/heromods/dva.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heromods/dva.stormmod/base.stormdata/LibHDVA.galaxy#L1425">LibHDVA.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1425</span>
+AbilityCommandGetAbility(OrderGetAbilityCommand(UnitOrder(lv_dVaUnit, <span class="hljs-number">0</span>)))
+</code></pre>
+<h4 id="modsnovastoryassetssc2mod"><a class="markdownIt-Anchor" href="#modsnovastoryassetssc2mod">#</a> mods/novastoryassets.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/novastoryassets.sc2mod/base3.sc2maps/maps/campaign/nova/nova09.sc2map/MapScript.galaxy#L549">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L549</span>
+AbilityCommandGetAbility(OrderGetAbilityCommand(UnitOrder(gv_xanthos, <span class="hljs-number">0</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L619</span>
+AbilityCommandGetAbility(OrderGetAbilityCommand(UnitOrder(gv_xanthos, <span class="hljs-number">0</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L549</span>
+AbilityCommandGetAbility(OrderGetAbilityCommand(UnitOrder(gv_xanthos, <span class="hljs-number">0</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L619</span>
+AbilityCommandGetAbility(OrderGetAbilityCommand(UnitOrder(gv_xanthos, <span class="hljs-number">0</span>)))
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOMI.galaxy#L3563">LibCOMI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3563</span>
+AbilityCommandGetAbility(lp_abilityCommand)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4749</span>
+AbilityCommandGetAbility(lp_cmd)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6028</span>
+AbilityCommandGetAbility(lv_cmd)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L17039</span>
+AbilityCommandGetAbility(EventUnitAbility())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L17874</span>
+AbilityCommandGetAbility(OrderGetAbilityCommand(EventUnitOrder()))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L28816</span>
+AbilityCommandGetAbility(lv_cmd)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L28853</span>
+AbilityCommandGetAbility(lv_cmd)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L28890</span>
+AbilityCommandGetAbility(lv_cmd)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L31785</span>
+AbilityCommandGetAbility(EventUnitAbility())
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod-2"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod-2">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOMU.galaxy#L1150">LibCOMU.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1150</span>
+AbilityCommandGetAbility(OrderGetAbilityCommand(lp_order))
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod-3"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod-3">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOOC.galaxy#L3374">LibCOOC.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3374</span>
+AbilityCommandGetAbility(UserDataGetAbilCmd(<span class="hljs-string">"CampaignPerk"</span>, lp_perk, <span class="hljs-string">"AbilityCommand"</span>, lv_indexTech))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4271</span>
+AbilityCommandGetAbility(StringToAbilCmd(libCOOC_gf_CC_CatalogGetFieldArrayValue(lp_catalog, lp_entry, lv_aField, lv_index, lp_player)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4280</span>
+AbilityCommandGetAbility(StringToAbilCmd(libCOOC_gf_CC_CatalogGetFieldArrayValue(lp_catalog, lp_entry, lv_aField, lv_index, lp_player)))
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod-4"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod-4">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/TriggerLibs/Tactical/TactCampAI.galaxy#L475">TactCampAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L475</span>
+AbilityCommandGetAbility(curAbilCmd)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1543</span>
+AbilityCommandGetAbility(curAbilCmd)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod-5"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod-5">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/TriggerLibs/Tactical/TactProtAI.galaxy#L1319">TactProtAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1319</span>
+AbilityCommandGetAbility(curAbilCmd)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod-6"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod-6">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/TriggerLibs/Tactical/TactTerrAI.galaxy#L164">TactTerrAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L164</span>
+AbilityCommandGetAbility(curAbilCmd)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod-7"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod-7">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/TriggerLibs/Tactical/TacticalAI.galaxy#L277">TacticalAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L277</span>
+AbilityCommandGetAbility(OrderGetAbilityCommand(o))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L284</span>
+AbilityCommandGetAbility(OrderGetAbilityCommand(o))
+</code></pre>
+<h4 id="modsvoidprologuesc2mod"><a class="markdownIt-Anchor" href="#modsvoidprologuesc2mod">#</a> mods/voidprologue.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/voidprologue.sc2mod/base.sc2data/LibA3DDD02B.galaxy#L3527">LibA3DDD02B.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3527</span>
+AbilityCommandGetAbility(lp_abilityCommand)
+</code></pre>
+<h4 id="modswarcooplegendsjainaproudmooresc2mod"><a class="markdownIt-Anchor" href="#modswarcooplegendsjainaproudmooresc2mod">#</a> mods/warcoop/legends/jainaproudmoore.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/warcoop/legends/jainaproudmoore.sc2mod/base.sc2data/LibLJai.galaxy#L29">LibLJai.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L29</span>
+AbilityCommandGetAbility(EventUnitAbility())
+</code></pre>
+<h4 id="modswarcoopwarclassicsystemsc2mod"><a class="markdownIt-Anchor" href="#modswarcoopwarclassicsystemsc2mod">#</a> mods/warcoop/warclassicsystem.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/warcoop/warclassicsystem.sc2mod/base.sc2data/TriggerLibs/WarClassicSystem.galaxy#L1533">WarClassicSystem.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1533</span>
+AbilityCommandGetAbility(OrderGetAbilityCommand(UnitOrder(lv_u, <span class="hljs-number">0</span>)))
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

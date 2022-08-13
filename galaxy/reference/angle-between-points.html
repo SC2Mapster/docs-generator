@@ -1,0 +1,405 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Angle Between Points / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Angle Between Points"/>
+                <meta property="og:description" content="Returns the angle from point 1 to point 2 as a real value, in degrees.
+
+Returns: fixed"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="angle-between-points"><a class="markdownIt-Anchor" href="#angle-between-points">#</a> Angle Between Points</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Angle from <strong>p1|Point</strong> to <strong>p2|Point</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Function</code></p>
+</blockquote>
+<p>Returns the angle from point 1 to point 2 as a real value, in degrees.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>point</code> — Point 1</li>
+<li><code>point</code> — Point 2</li>
+</ul>
+<p>Returns — <code>fixed</code></p>
+<pre class="hljs"><code><span class="hljs-function">native fixed <span class="hljs-title">AngleBetweenPoints</span><span class="hljs-params">(point p1, point p2)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#point-measurements">Point / Measurements</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/point-get-x">X Of Point</a></strong> — ( PointGetX )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/point-get-y">Y Of Point</a></strong> — ( PointGetY )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/point-get-facing">Facing Angle Of Point</a></strong> — ( PointGetFacing )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/point-get-height">Height Of Point</a></strong> — ( PointGetHeight )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/angle-between-points">Angle Between Points</a></strong> — ( AngleBetweenPoints )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/distance-between-points">Distance Between Points</a></strong> — ( DistanceBetweenPoints )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/distance-squared-between-points">Distance Squared Between Points</a></strong> — ( DistanceSquaredBetweenPoints )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/region-contains-point">Point Is In Region</a></strong> — ( RegionContainsPoint )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/tarcade.sc2map/MapScript.galaxy#L1798">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1798</span>
+AngleBetweenPoints(gv_terraTronPosition, lv_initialOffsetPoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3104</span>
+AngleBetweenPoints(lv_posCur, lv_posNext)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4935</span>
+AngleBetweenPoints(lv_posInterceptor, lv_posViking)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6325</span>
+AngleBetweenPoints(lv_posCurrent, UnitGetPosition(gv_viking))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6338</span>
+AngleBetweenPoints(UnitGetPosition(lv_plane), UnitGetPosition(gv_viking))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6429</span>
+AngleBetweenPoints(lv_posCurrent, lv_posFinish)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6439</span>
+AngleBetweenPoints(UnitGetPosition(lv_plane), UnitGetPosition(gv_viking))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6535</span>
+AngleBetweenPoints(UnitGetPosition(lv_plane), UnitGetPosition(gv_viking))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6548</span>
+AngleBetweenPoints(lv_posCurrent, lv_posFinish)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6558</span>
+AngleBetweenPoints(UnitGetPosition(lv_plane), UnitGetPosition(gv_viking))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3733</span>
+AngleBetweenPoints(UnitGetPosition(EventUnit()), UnitGetPosition(gv_activeCivilianShip))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4532</span>
+AngleBetweenPoints(PointFromId(<span class="hljs-number">644</span>), PointFromId(<span class="hljs-number">4173</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4535</span>
+AngleBetweenPoints(PointFromId(<span class="hljs-number">645</span>), PointFromId(<span class="hljs-number">565</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L379</span>
+AngleBetweenPoints(lv_currentPoint, gv_trainPath[(lv_currentTarget - <span class="hljs-number">1</span>)])
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L390</span>
+AngleBetweenPoints(gv_trainPath[lv_currentTarget], gv_trainPath[(lv_currentTarget - <span class="hljs-number">1</span>)])
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L397</span>
+AngleBetweenPoints(lv_currentPoint, gv_trainPath[lv_currentTarget])
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L577</span>
+AngleBetweenPoints(lv_currentPoint, gv_trainPath[(lv_currentTarget - <span class="hljs-number">1</span>)])
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L588</span>
+AngleBetweenPoints(gv_trainPath[lv_currentTarget], gv_trainPath[(lv_currentTarget - <span class="hljs-number">1</span>)])
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2155</span>
+AngleBetweenPoints(UnitGetPosition(auto499A4BF2_var), gv_trainPath[FixedToInt(UnitGetCustomValue(auto499A4BF2_var, <span class="hljs-number">0</span>))])
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5912</span>
+AngleBetweenPoints(UnitGetPosition(auto9586D451_var), UnitGetPosition(lv_crate))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5940</span>
+AngleBetweenPoints(UnitGetPosition(auto9C174672_var), UnitGetPosition(lv_crate))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2557</span>
+AngleBetweenPoints(UnitGetPosition(EventUnitDamageSourceUnit()), UnitGetPosition(lv_scientist))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2560</span>
+AngleBetweenPoints(UnitGetPosition(EventUnit()), UnitGetPosition(lv_scientist))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2616</span>
+AngleBetweenPoints(UnitGetPosition(lv_scientist), UnitGetPosition(UnitGroupUnit(lv_intruderGroup, <span class="hljs-number">1</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2672</span>
+AngleBetweenPoints(UnitGetPosition(lv_scientist), UnitGetPosition(UnitGroupUnit(lv_brutaliskGroup, <span class="hljs-number">1</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2728</span>
+AngleBetweenPoints(UnitGetPosition(lv_scientist), UnitGetPosition(UnitGroupUnit(lv_hybridGroup, <span class="hljs-number">1</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3713</span>
+AngleBetweenPoints(lp_sourceCenter, lv_sourceAfterScaled)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L771</span>
+AngleBetweenPoints(PointFromId(<span class="hljs-number">1140</span>), UnitGetPosition(autoA878FA45_var))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2357</span>
+AngleBetweenPoints(lv_a, lv_b)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L596</span>
+AngleBetweenPoints(UnitGetPosition(lp_activatedunit), lv_rallypoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8319</span>
+AngleBetweenPoints(UnitGetPosition(auto8DBA43E6_var), lv_rallypoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10595</span>
+AngleBetweenPoints(UnitGetPosition(UnitLastCreated()), PointFromId(<span class="hljs-number">2223</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5617</span>
+AngleBetweenPoints(UnitGetPosition(gv_artifact), UnitGetPosition(autoE89A9445_var))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2778</span>
+AngleBetweenPoints(PointWithOffset(UnitGetPosition(gv_tHEONEZERATUL), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1.5</span>), UnitGetPosition(auto45ED8A27_var))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2786</span>
+AngleBetweenPoints(PointWithOffset(UnitGetPosition(gv_tHEONEZERATUL), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1.5</span>), UnitGetPosition(auto11B330CC_var))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3617</span>
+AngleBetweenPoints(PointWithOffset(PointFromId(<span class="hljs-number">548</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1.5</span>), UnitGetPosition(auto4DA823A6_var))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3625</span>
+AngleBetweenPoints(PointWithOffset(PointFromId(<span class="hljs-number">548</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1.5</span>), UnitGetPosition(autoE853CE9F_var))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6358</span>
+AngleBetweenPoints(PointWithOffset(UnitGetPosition(gv_tHEONEZERATUL), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1.5</span>), UnitGetPosition(auto3847C7E3_var))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6366</span>
+AngleBetweenPoints(PointWithOffset(UnitGetPosition(gv_tHEONEZERATUL), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1.5</span>), UnitGetPosition(auto190E44E5_var))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6376</span>
+AngleBetweenPoints(PointWithOffset(PointFromId(<span class="hljs-number">664</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1.5</span>), UnitGetPosition(autoE8B100A8_var))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6384</span>
+AngleBetweenPoints(PointWithOffset(PointFromId(<span class="hljs-number">664</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1.5</span>), UnitGetPosition(autoCE0E774C_var))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7522</span>
+AngleBetweenPoints(UnitGetPosition(gv_tHEONEZERATUL), UnitGetPosition(lv_unit))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9088</span>
+AngleBetweenPoints(PointFromId(<span class="hljs-number">189</span>), PointFromId(<span class="hljs-number">1712</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1798</span>
+AngleBetweenPoints(gv_terraTronPosition, lv_initialOffsetPoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3104</span>
+AngleBetweenPoints(lv_posCur, lv_posNext)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4935</span>
+AngleBetweenPoints(lv_posInterceptor, lv_posViking)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6325</span>
+AngleBetweenPoints(lv_posCurrent, UnitGetPosition(gv_viking))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6338</span>
+AngleBetweenPoints(UnitGetPosition(lv_plane), UnitGetPosition(gv_viking))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6429</span>
+AngleBetweenPoints(lv_posCurrent, lv_posFinish)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6439</span>
+AngleBetweenPoints(UnitGetPosition(lv_plane), UnitGetPosition(gv_viking))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6535</span>
+AngleBetweenPoints(UnitGetPosition(lv_plane), UnitGetPosition(gv_viking))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6548</span>
+AngleBetweenPoints(lv_posCurrent, lv_posFinish)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6558</span>
+AngleBetweenPoints(UnitGetPosition(lv_plane), UnitGetPosition(gv_viking))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3733</span>
+AngleBetweenPoints(UnitGetPosition(EventUnit()), UnitGetPosition(gv_activeCivilianShip))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4532</span>
+AngleBetweenPoints(PointFromId(<span class="hljs-number">644</span>), PointFromId(<span class="hljs-number">4173</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4535</span>
+AngleBetweenPoints(PointFromId(<span class="hljs-number">645</span>), PointFromId(<span class="hljs-number">565</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L379</span>
+AngleBetweenPoints(lv_currentPoint, gv_trainPath[(lv_currentTarget - <span class="hljs-number">1</span>)])
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L390</span>
+AngleBetweenPoints(gv_trainPath[lv_currentTarget], gv_trainPath[(lv_currentTarget - <span class="hljs-number">1</span>)])
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L397</span>
+AngleBetweenPoints(lv_currentPoint, gv_trainPath[lv_currentTarget])
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L577</span>
+AngleBetweenPoints(lv_currentPoint, gv_trainPath[(lv_currentTarget - <span class="hljs-number">1</span>)])
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L588</span>
+AngleBetweenPoints(gv_trainPath[lv_currentTarget], gv_trainPath[(lv_currentTarget - <span class="hljs-number">1</span>)])
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2155</span>
+AngleBetweenPoints(UnitGetPosition(auto499A4BF2_var), gv_trainPath[FixedToInt(UnitGetCustomValue(auto499A4BF2_var, <span class="hljs-number">0</span>))])
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5912</span>
+AngleBetweenPoints(UnitGetPosition(auto9586D451_var), UnitGetPosition(lv_crate))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5940</span>
+AngleBetweenPoints(UnitGetPosition(auto9C174672_var), UnitGetPosition(lv_crate))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2557</span>
+AngleBetweenPoints(UnitGetPosition(EventUnitDamageSourceUnit()), UnitGetPosition(lv_scientist))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2560</span>
+AngleBetweenPoints(UnitGetPosition(EventUnit()), UnitGetPosition(lv_scientist))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2616</span>
+AngleBetweenPoints(UnitGetPosition(lv_scientist), UnitGetPosition(UnitGroupUnit(lv_intruderGroup, <span class="hljs-number">1</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2672</span>
+AngleBetweenPoints(UnitGetPosition(lv_scientist), UnitGetPosition(UnitGroupUnit(lv_brutaliskGroup, <span class="hljs-number">1</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2728</span>
+AngleBetweenPoints(UnitGetPosition(lv_scientist), UnitGetPosition(UnitGroupUnit(lv_hybridGroup, <span class="hljs-number">1</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3713</span>
+AngleBetweenPoints(lp_sourceCenter, lv_sourceAfterScaled)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L771</span>
+AngleBetweenPoints(PointFromId(<span class="hljs-number">1140</span>), UnitGetPosition(autoA878FA45_var))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2357</span>
+AngleBetweenPoints(lv_a, lv_b)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L596</span>
+AngleBetweenPoints(UnitGetPosition(lp_activatedunit), lv_rallypoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8319</span>
+AngleBetweenPoints(UnitGetPosition(auto8DBA43E6_var), lv_rallypoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10595</span>
+AngleBetweenPoints(UnitGetPosition(UnitLastCreated()), PointFromId(<span class="hljs-number">2223</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5617</span>
+AngleBetweenPoints(UnitGetPosition(gv_artifact), UnitGetPosition(autoE89A9445_var))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2778</span>
+AngleBetweenPoints(PointWithOffset(UnitGetPosition(gv_tHEONEZERATUL), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1.5</span>), UnitGetPosition(auto45ED8A27_var))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2786</span>
+AngleBetweenPoints(PointWithOffset(UnitGetPosition(gv_tHEONEZERATUL), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1.5</span>), UnitGetPosition(auto11B330CC_var))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3617</span>
+AngleBetweenPoints(PointWithOffset(PointFromId(<span class="hljs-number">548</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1.5</span>), UnitGetPosition(auto4DA823A6_var))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3625</span>
+AngleBetweenPoints(PointWithOffset(PointFromId(<span class="hljs-number">548</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1.5</span>), UnitGetPosition(autoE853CE9F_var))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6358</span>
+AngleBetweenPoints(PointWithOffset(UnitGetPosition(gv_tHEONEZERATUL), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1.5</span>), UnitGetPosition(auto3847C7E3_var))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6366</span>
+AngleBetweenPoints(PointWithOffset(UnitGetPosition(gv_tHEONEZERATUL), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1.5</span>), UnitGetPosition(auto190E44E5_var))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6376</span>
+AngleBetweenPoints(PointWithOffset(PointFromId(<span class="hljs-number">664</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1.5</span>), UnitGetPosition(autoE8B100A8_var))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6384</span>
+AngleBetweenPoints(PointWithOffset(PointFromId(<span class="hljs-number">664</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1.5</span>), UnitGetPosition(autoCE0E774C_var))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7522</span>
+AngleBetweenPoints(UnitGetPosition(gv_tHEONEZERATUL), UnitGetPosition(lv_unit))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9088</span>
+AngleBetweenPoints(PointFromId(<span class="hljs-number">189</span>), PointFromId(<span class="hljs-number">1712</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L674</span>
+AngleBetweenPoints(RegionGetCenter(lp_region), UnitGetPosition(UnitLastCreated()))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L688</span>
+AngleBetweenPoints(RegionGetCenter(lp_region), UnitGetPosition(UnitLastCreated()))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L512</span>
+AngleBetweenPoints(UnitGroupCenterOfGroup(lv_enemies), UnitGetPosition(lp_diamondback))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L514</span>
+AngleBetweenPoints(UnitGroupCenterOfGroup(lv_enemies), UnitGetPosition(lp_diamondback))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L515</span>
+AngleBetweenPoints(UnitGroupCenterOfGroup(lv_enemies), UnitGetPosition(lp_diamondback))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L974</span>
+AngleBetweenPoints(libNtve_gf_CenterOfUnitGroup(lp_unitgroup), lp_endpoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9352</span>
+AngleBetweenPoints(RegionGetCenter(RegionFromId(<span class="hljs-number">56</span>)), PointFromId(<span class="hljs-number">446</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1326</span>
+AngleBetweenPoints(gv_hybridCellLocation[auto0CF21101_var], gv_hybridReleaseLocation[auto0CF21101_var])
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L533</span>
+AngleBetweenPoints(UnitGetPosition(lv_hybrid), UnitGetPosition(auto0A92F2EA_var))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1586</span>
+AngleBetweenPoints(UnitGetPosition(gv_kerrigan), UnitGetPosition(gv_kerrigan22))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1614</span>
+AngleBetweenPoints(UnitGetPosition(gv_kerrigan2), UnitGetPosition(gv_kerrigan22))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1642</span>
+AngleBetweenPoints(UnitGetPosition(gv_kerrigan22), UnitGetPosition(gv_kerrigan))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1643</span>
+AngleBetweenPoints(UnitGetPosition(gv_kerrigan22), UnitGetPosition(gv_kerrigan2))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1834</span>
+AngleBetweenPoints(UnitGetPosition(gv_kerrigan), UnitGetPosition(gv_kerrigan22))
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

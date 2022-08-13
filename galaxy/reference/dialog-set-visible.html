@@ -1,0 +1,406 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Show/Hide Dialog / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Show/Hide Dialog"/>
+                <meta property="og:description" content="Shows or hides the specified dialog. A dialog needs to be shown in order to be seen."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="showhide-dialog"><a class="markdownIt-Anchor" href="#showhide-dialog">#</a> Show/Hide Dialog</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — <strong>visible|Show/Hide</strong> <strong>dialog</strong> for <strong>players</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Shows or hides the specified dialog. A dialog needs to be shown in order to be seen.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> <em>[ dialog ]</em> — Dialog</li>
+<li><code>playergroup</code> — Players</li>
+<li><code>bool</code> <em>[ preset::<a href="/galaxy/reference/preset-show-hide-option">ShowHideOption</a> ]</em> — Visible</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">DialogSetVisible</span><span class="hljs-params">(
+	<span class="hljs-keyword">int</span> dialog,
+	playergroup players,
+	<span class="hljs-keyword">bool</span> isVisible,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#dialog-dialogs">Dialog / Dialogs</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ dialog ]</em> — <strong><a href="/galaxy/reference/dialog-create">Create Dialog</a></strong> — ( DialogCreate )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/dialog-set-visible">Show/Hide Dialog</a></strong> — ( DialogSetVisible )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/dialog-set-title">Set Dialog Title</a></strong> — ( DialogSetTitle )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ dialog ]</em> — <strong><a href="/galaxy/reference/dialog-last-created">Last Created Dialog</a></strong> — ( DialogLastCreated )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/dialog-is-visible">Dialog Is Visible</a></strong> — ( DialogIsVisible )</li>
+<li><em><strong>[F]</strong></em> — <code>text</code> — <strong><a href="/galaxy/reference/dialog-get-title">Dialog Title</a></strong> — ( DialogGetTitle )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/challenges/advancedcommand.sc2map/MapScript.galaxy#L648">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L648</span>
+DialogSetVisible(gv_savedUnitsDialog, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1009</span>
+DialogSetVisible(gv_savedUnitsDialog, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1667</span>
+DialogSetVisible(lv_racingStartDIALOG, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1672</span>
+DialogSetVisible(lv_racingStartDIALOG, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L971</span>
+DialogSetVisible(lv_racingStartDIALOG, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L976</span>
+DialogSetVisible(lv_racingStartDIALOG, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1008</span>
+DialogSetVisible(lv_racingStartDIALOG, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1013</span>
+DialogSetVisible(lv_racingStartDIALOG, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1268</span>
+DialogSetVisible(gv_savedUnitsDialog, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L439</span>
+DialogSetVisible(DialogLastCreated(), PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L536</span>
+DialogSetVisible(lv_racingStartDIALOG, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L544</span>
+DialogSetVisible(lv_racingStartDIALOG, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L798</span>
+DialogSetVisible(lv_racingStartDIALOG, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L806</span>
+DialogSetVisible(lv_racingStartDIALOG, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1515</span>
+DialogSetVisible(lv_racingStartDIALOG, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1520</span>
+DialogSetVisible(lv_racingStartDIALOG, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1576</span>
+DialogSetVisible(lv_racingStartDIALOG, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1581</span>
+DialogSetVisible(lv_racingStartDIALOG, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3206</span>
+DialogSetVisible(DialogLastCreated(), PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3238</span>
+DialogSetVisible(DialogLastCreated(), PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3301</span>
+DialogSetVisible(gv_controlTipDialog, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3319</span>
+DialogSetVisible(gv_controlTipDialog, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3329</span>
+DialogSetVisible(gv_controlTipDialog, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3538</span>
+DialogSetVisible(DialogLastCreated(), PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3553</span>
+DialogSetVisible(DialogLastCreated(), PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3610</span>
+DialogSetVisible(gv_bossHPBarDlg, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3611</span>
+DialogSetVisible(gv_bossHPBarLabelDlg, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3658</span>
+DialogSetVisible(gv_unitHPBarDlg, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3040</span>
+DialogSetVisible(gv_buttonComputer01SecurityCam, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3160</span>
+DialogSetVisible(gv_buttonComputer01DeactivateLeftFloorGuns, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3165</span>
+DialogSetVisible(gv_buttonComputer01DeactivateRightFloorGuns, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3689</span>
+DialogSetVisible(gv_buttonComputer01SecurityCam, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3741</span>
+DialogSetVisible(gv_buttonComputer01SecurityCam, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3779</span>
+DialogSetVisible(gv_buttonComputer01SecurityCam, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3817</span>
+DialogSetVisible(gv_buttonComputer01SecurityCam, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4029</span>
+DialogSetVisible(DialogLastCreated(), PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4049</span>
+DialogSetVisible(DialogLastCreated(), PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4069</span>
+DialogSetVisible(DialogLastCreated(), PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2331</span>
+DialogSetVisible(DialogLastCreated(), PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2621</span>
+DialogSetVisible(gv_tBDWindowDialog, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3329</span>
+DialogSetVisible(gv_newItems[lp_newItemIndex].lv_dialog, PlayerGroupAll(), lp_hideShow)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3473</span>
+DialogSetVisible(gv_fullscreenImageDialog, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3482</span>
+DialogSetVisible(gv_fullscreenImageDialog, PlayerGroupAll(), lp_showHide)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3955</span>
+DialogSetVisible(gv_armoryGradientDialog, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4788</span>
+DialogSetVisible(gv_roomCheatDialog, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4793</span>
+DialogSetVisible(gv_roomCheatDialog, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4864</span>
+DialogSetVisible(gv_roomCameraDialog, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4869</span>
+DialogSetVisible(gv_roomCameraDialog, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L663</span>
+DialogSetVisible(gv_mainDialog, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L664</span>
+DialogSetVisible(gv_tutorialDialog, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L795</span>
+DialogSetVisible(gv_replay_Transmission_Dialog_Main, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L803</span>
+DialogSetVisible(gv_tutorialDialog, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L804</span>
+DialogSetVisible(gv_replay_Transmission_Dialog_Tutorial, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L811</span>
+DialogSetVisible(gv_replay_Transmission_Dialog_Tutorial, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L813</span>
+DialogSetVisible(gv_replay_Transmission_Dialog_Main, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1208</span>
+DialogSetVisible(gv_mainDialog, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1209</span>
+DialogSetVisible(gv_tutorialDialog, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1258</span>
+DialogSetVisible(gv_replay_Transmission_Dialog_Tutorial, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3206</span>
+DialogSetVisible(DialogLastCreated(), PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3238</span>
+DialogSetVisible(DialogLastCreated(), PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3301</span>
+DialogSetVisible(gv_controlTipDialog, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3319</span>
+DialogSetVisible(gv_controlTipDialog, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3329</span>
+DialogSetVisible(gv_controlTipDialog, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3538</span>
+DialogSetVisible(DialogLastCreated(), PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3553</span>
+DialogSetVisible(DialogLastCreated(), PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3610</span>
+DialogSetVisible(gv_bossHPBarDlg, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3611</span>
+DialogSetVisible(gv_bossHPBarLabelDlg, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3658</span>
+DialogSetVisible(gv_unitHPBarDlg, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3040</span>
+DialogSetVisible(gv_buttonComputer01SecurityCam, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3160</span>
+DialogSetVisible(gv_buttonComputer01DeactivateLeftFloorGuns, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3165</span>
+DialogSetVisible(gv_buttonComputer01DeactivateRightFloorGuns, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3689</span>
+DialogSetVisible(gv_buttonComputer01SecurityCam, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3741</span>
+DialogSetVisible(gv_buttonComputer01SecurityCam, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3779</span>
+DialogSetVisible(gv_buttonComputer01SecurityCam, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3817</span>
+DialogSetVisible(gv_buttonComputer01SecurityCam, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4029</span>
+DialogSetVisible(DialogLastCreated(), PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4049</span>
+DialogSetVisible(DialogLastCreated(), PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4069</span>
+DialogSetVisible(DialogLastCreated(), PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2331</span>
+DialogSetVisible(DialogLastCreated(), PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2621</span>
+DialogSetVisible(gv_tBDWindowDialog, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3329</span>
+DialogSetVisible(gv_newItems[lp_newItemIndex].lv_dialog, PlayerGroupAll(), lp_hideShow)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3473</span>
+DialogSetVisible(gv_fullscreenImageDialog, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3482</span>
+DialogSetVisible(gv_fullscreenImageDialog, PlayerGroupAll(), lp_showHide)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3955</span>
+DialogSetVisible(gv_armoryGradientDialog, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4788</span>
+DialogSetVisible(gv_roomCheatDialog, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4793</span>
+DialogSetVisible(gv_roomCheatDialog, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4864</span>
+DialogSetVisible(gv_roomCameraDialog, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4869</span>
+DialogSetVisible(gv_roomCameraDialog, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L663</span>
+DialogSetVisible(gv_mainDialog, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L664</span>
+DialogSetVisible(gv_tutorialDialog, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L795</span>
+DialogSetVisible(gv_replay_Transmission_Dialog_Main, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L803</span>
+DialogSetVisible(gv_tutorialDialog, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L804</span>
+DialogSetVisible(gv_replay_Transmission_Dialog_Tutorial, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L811</span>
+DialogSetVisible(gv_replay_Transmission_Dialog_Tutorial, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L813</span>
+DialogSetVisible(gv_replay_Transmission_Dialog_Main, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1208</span>
+DialogSetVisible(gv_mainDialog, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1209</span>
+DialogSetVisible(gv_tutorialDialog, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1258</span>
+DialogSetVisible(gv_replay_Transmission_Dialog_Tutorial, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L648</span>
+DialogSetVisible(gv_savedUnitsDialog, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1009</span>
+DialogSetVisible(gv_savedUnitsDialog, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

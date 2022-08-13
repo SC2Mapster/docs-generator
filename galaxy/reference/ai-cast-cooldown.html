@@ -1,0 +1,222 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>AICastCooldown / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: AICastCooldown"/>
+                <meta property="og:description" content="native int AICastCooldown(unit u, order o, marker m, bool retreat, int timerIdx, fixed cooldown);"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="aicastcooldown"><a class="markdownIt-Anchor" href="#aicastcooldown">#</a> AICastCooldown</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Flags</em> — <code>Native</code></p>
+</blockquote>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>unit</code> — u</li>
+<li><code>order</code> — o</li>
+<li><code>marker</code> — m</li>
+<li><code>bool</code> — retreat</li>
+<li><code>int</code> — timerIdx</li>
+<li><code>fixed</code> — cooldown</li>
+</ul>
+<p>Returns — <code>int</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">int</span> <span class="hljs-title">AICastCooldown</span><span class="hljs-params">(
+	unit u,
+	order o,
+	marker m,
+	<span class="hljs-keyword">bool</span> retreat,
+	<span class="hljs-keyword">int</span> timerIdx,
+	fixed cooldown,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#unclassified">Unclassified</a></p>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2data/TriggerLibs/Tactical/TactCampAI.galaxy#L185">TactCampAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L185</span>
+AICastCooldown(aiUnit, ord, c_noMarker, c_castHold, c_mineCooldown, cooldown)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L289</span>
+AICastCooldown(aiUnit, ord, mark, c_castHold, c_lokiYamatoCooldown, cooldown)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L185</span>
+AICastCooldown(aiUnit, ord, c_noMarker, c_castHold, c_mineCooldown, cooldown)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L289</span>
+AICastCooldown(aiUnit, ord, mark, c_castHold, c_lokiYamatoCooldown, cooldown)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L185</span>
+AICastCooldown(aiUnit, ord, c_noMarker, c_castHold, c_mineCooldown, cooldown)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L960</span>
+AICastCooldown(aiUnit, ord, mark, c_castRetreat, c_EnsnareCooldown, cooldown)
+</code></pre>
+<h4 id="modscoresc2mod"><a class="markdownIt-Anchor" href="#modscoresc2mod">#</a> mods/core.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/core.sc2mod/base.sc2data/TriggerLibs/Tactical/TactProtAI.galaxy#L660">TactProtAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L660</span>
+AICastCooldown(aiUnit, ord, c_noMarker, c_castHold, c_timeWarpCooldown, <span class="hljs-number">5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L721</span>
+AICastCooldown(aiUnit, ord, c_noMarker, c_castHold, c_timeWarpCooldown, <span class="hljs-number">5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1353</span>
+AICastCooldown(aiUnit, ord, c_noMarker, c_castHold, c_oracleRevelationCooldown, <span class="hljs-number">5.0</span>)
+</code></pre>
+<h4 id="modscoresc2mod-2"><a class="markdownIt-Anchor" href="#modscoresc2mod-2">#</a> mods/core.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/core.sc2mod/base.sc2data/TriggerLibs/Tactical/TactTerrAI.galaxy#L332">TactTerrAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L332</span>
+AICastCooldown(aiUnit, ord, mark, c_castHold, c_snipeCooldown, cooldown)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L349</span>
+AICastCooldown(aiUnit, ord, mark, c_castHold, c_snipeCooldown, cooldown)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L594</span>
+AICastCooldown(aiUnit, ord, mark, c_castHold, c_yamatoCooldown, cooldown)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1382</span>
+AICastCooldown(aiUnit, ord, c_noMarker, c_castRetreat, c_autoTurretCooldown, cooldown)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1427</span>
+AICastCooldown(aiUnit, ord, mark, c_castRetreat, c_hsMissileCooldown, cooldown)
+</code></pre>
+<h4 id="modscoresc2mod-3"><a class="markdownIt-Anchor" href="#modscoresc2mod-3">#</a> mods/core.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/core.sc2mod/base.sc2data/TriggerLibs/Tactical/TactZergAI.galaxy#L704">TactZergAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L704</span>
+AICastCooldown(aiUnit, ord, mark, c_castHold, c_fungalGrowthCooldown, cooldown)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L729</span>
+AICastCooldown(aiUnit, ord, c_noMarker, c_castRetreat, c_infestedTerransCooldown, cooldown)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/TriggerLibs/Tactical/TactCampAI.galaxy#L127">TactCampAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L127</span>
+AICastCooldown(aiUnit, ord, mark, c_castRetreat, c_DarkSwarmCooldown, cooldown)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L316</span>
+AICastCooldown(aiUnit, ord, mark, c_castRetreat, c_SpawnBroodlingsCooldown, cooldown)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L336</span>
+AICastCooldown(aiUnit, ord, mark, c_castRetreat, c_EnsnareCooldown, cooldown)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L535</span>
+AICastCooldown(aiUnit, ord, c_noMarker, c_castHold, c_mineCooldown, cooldown)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L645</span>
+AICastCooldown(aiUnit, ord, mark, c_castHold, c_lokiYamatoCooldown, cooldown)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1344</span>
+AICastCooldown(aiUnit, ord, c_noMarker, c_castHold, c_HybridGravitonPrison, cooldown)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1439</span>
+AICastCooldown(aiUnit, ord, c_noMarker, c_castHold, c_HybridPhaseShift, cooldown)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1722</span>
+AICastCooldown(aiUnit, ord, mark, c_castRetreat, c_scienceVesselDMatrixCooldown, cooldown)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1735</span>
+AICastCooldown(aiUnit, ord, c_noMarker, c_castRetreat, c_scienceVesselIrradiateCooldown, cooldown)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod-2"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod-2">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/TriggerLibs/Tactical/TactTerrAI.galaxy#L316">TactTerrAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L316</span>
+AICastCooldown(aiUnit, ord, mark, c_castHold, c_snipeCooldown, cooldown)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L331</span>
+AICastCooldown(aiUnit, ord, mark, c_castHold, c_snipeCooldown, cooldown)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L572</span>
+AICastCooldown(aiUnit, ord, mark, c_castHold, c_yamatoCooldown, cooldown)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1352</span>
+AICastCooldown(aiUnit, ord, c_noMarker, c_castRetreat, c_autoTurretCooldown, cooldown)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1380</span>
+AICastCooldown(aiUnit, ord, mark, c_castRetreat, c_hsMissileCooldown, cooldown)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod-3"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod-3">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/TriggerLibs/Tactical/TactZergAI.galaxy#L518">TactZergAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L518</span>
+AICastCooldown(aiUnit, ord, mark, c_castHold, c_ParasiticBombCoolDown, cooldown)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L536</span>
+AICastCooldown(aiUnit, ord, c_noMarker, c_castHold, c_DisablingCloudCoolDown, cooldown)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L555</span>
+AICastCooldown(aiUnit, ord, mark, c_castHold, c_AbductCoolDown, cooldown)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L573</span>
+AICastCooldown(aiUnit, ord, c_noMarker, c_castHold, c_ViperConsumptionCoolDown, cooldown)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L916</span>
+AICastCooldown(aiUnit, ord, mark, c_castHold, c_fungalGrowthCooldown, cooldown)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L942</span>
+AICastCooldown(aiUnit, ord, c_noMarker, c_castRetreat, c_infestedTerransCooldown, cooldown)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

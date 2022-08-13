@@ -1,0 +1,402 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Point From Name / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Point From Name"/>
+                <meta property="og:description" content="Returns a pre-placed point with the given name.
+
+Returns: point"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="point-from-name"><a class="markdownIt-Anchor" href="#point-from-name">#</a> Point From Name</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Point named <strong>name</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Function</code></p>
+</blockquote>
+<p>Returns a pre-placed point with the given name.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>string</code> — Name</li>
+</ul>
+<p>Returns — <code>point</code></p>
+<pre class="hljs"><code><span class="hljs-function">native point <span class="hljs-title">PointFromName</span><span class="hljs-params">(<span class="hljs-built_in">string</span> name)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#point-creation-and-modification">Point / Creation And Modification</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>point</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-point-from-xyz">Point From XYZ</a></strong> — ( libNtve_gf_PointFromXYZ )</li>
+<li><em><strong>[F]</strong></em> — <code>point</code> — <strong><a href="/galaxy/reference/point">Point From XY</a></strong> — ( Point )</li>
+<li><em><strong>[F]</strong></em> — <code>point</code> — <strong><a href="/galaxy/reference/point-from-name">Point From Name</a></strong> — ( PointFromName )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/point-set">Move Point</a></strong> — ( PointSet )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/point-set-facing">Make Point Face Angle</a></strong> — ( PointSetFacing )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/point-set-height">Set Point Height</a></strong> — ( PointSetHeight )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignsswarmsc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmsc2campaign">#</a> campaigns/swarm.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarm.sc2campaign/base.sc2maps/maps/campaign/voidprologue/voidprologue02.sc2map/MapScript.galaxy#L1855">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1855</span>
+PointFromName((<span class="hljs-string">"Bonus Objective - Impact "</span> + IntToString(lv_bonusIndex)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1993</span>
+PointFromName((<span class="hljs-string">"Bonus Objective - Impact "</span> + IntToString(lv_bonusIndex)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3663</span>
+PointFromName((<span class="hljs-string">"Cinematic Outro Stalker "</span> + IntToString(lv_stalkerIndex)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L644</span>
+PointFromName(lv_currentPointName)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L644</span>
+PointFromName(lv_currentPointName)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5810</span>
+PointFromName((<span class="hljs-string">"Void Seeker Path 0"</span> + IntToString(lv_pathIndex)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5003</span>
+PointFromName((<span class="hljs-string">"Earthquake Debris "</span> + IntToString(lv_debrisIndex)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5667</span>
+PointFromName((<span class="hljs-string">"S3 - Shadow Spawns 4-"</span> + IntToString(lv_i)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5673</span>
+PointFromName((<span class="hljs-string">"S3 - Shadow Spawns 4-"</span> + IntToString(lv_i)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5678</span>
+PointFromName((<span class="hljs-string">"S3 - Shadow Spawns 4-"</span> + IntToString(lv_i)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5685</span>
+PointFromName((<span class="hljs-string">"S3 - Shadow Spawns 4-"</span> + IntToString(lv_i)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6018</span>
+PointFromName((<span class="hljs-string">"S3 - Shadow Spawns 5-"</span> + IntToString(lv_i)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6023</span>
+PointFromName((<span class="hljs-string">"S3 - Shadow Spawns 5-"</span> + IntToString(lv_i)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6084</span>
+PointFromName((<span class="hljs-string">"S3 - Shadow Spawns 6-"</span> + IntToString(lv_i)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6090</span>
+PointFromName((<span class="hljs-string">"S3 - Shadow Spawns 6-"</span> + IntToString(lv_i)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6096</span>
+PointFromName((<span class="hljs-string">"S3 - Shadow Spawns 6-"</span> + IntToString(lv_i)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L644</span>
+PointFromName(lv_currentPointName)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L644</span>
+PointFromName(lv_currentPointName)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5810</span>
+PointFromName((<span class="hljs-string">"Void Seeker Path 0"</span> + IntToString(lv_pathIndex)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1855</span>
+PointFromName((<span class="hljs-string">"Bonus Objective - Impact "</span> + IntToString(lv_bonusIndex)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1993</span>
+PointFromName((<span class="hljs-string">"Bonus Objective - Impact "</span> + IntToString(lv_bonusIndex)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3663</span>
+PointFromName((<span class="hljs-string">"Cinematic Outro Stalker "</span> + IntToString(lv_stalkerIndex)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5003</span>
+PointFromName((<span class="hljs-string">"Earthquake Debris "</span> + IntToString(lv_debrisIndex)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5667</span>
+PointFromName((<span class="hljs-string">"S3 - Shadow Spawns 4-"</span> + IntToString(lv_i)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5673</span>
+PointFromName((<span class="hljs-string">"S3 - Shadow Spawns 4-"</span> + IntToString(lv_i)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5678</span>
+PointFromName((<span class="hljs-string">"S3 - Shadow Spawns 4-"</span> + IntToString(lv_i)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5685</span>
+PointFromName((<span class="hljs-string">"S3 - Shadow Spawns 4-"</span> + IntToString(lv_i)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6018</span>
+PointFromName((<span class="hljs-string">"S3 - Shadow Spawns 5-"</span> + IntToString(lv_i)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6023</span>
+PointFromName((<span class="hljs-string">"S3 - Shadow Spawns 5-"</span> + IntToString(lv_i)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6084</span>
+PointFromName((<span class="hljs-string">"S3 - Shadow Spawns 6-"</span> + IntToString(lv_i)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6090</span>
+PointFromName((<span class="hljs-string">"S3 - Shadow Spawns 6-"</span> + IntToString(lv_i)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6096</span>
+PointFromName((<span class="hljs-string">"S3 - Shadow Spawns 6-"</span> + IntToString(lv_i)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L14397</span>
+PointFromName((<span class="hljs-string">"ZergAttackMarine"</span> + IntToString(lv_i)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19106</span>
+PointFromName((<span class="hljs-string">"Protoss IdleZerg"</span> + IntToString(lv_i)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19113</span>
+PointFromName((<span class="hljs-string">"Protoss IdleZerg"</span> + IntToString(lv_i)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19125</span>
+PointFromName((<span class="hljs-string">"Egg"</span> + IntToString(lv_i)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6620</span>
+PointFromName((<span class="hljs-string">"Intro Stalker "</span> + IntToString(autoE8580AB4_var)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7029</span>
+PointFromName((<span class="hljs-string">"Mid Stalker "</span> + IntToString(auto70C5AE3A_var)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7030</span>
+PointFromName((<span class="hljs-string">"Mid Stalker "</span> + IntToString(auto70C5AE3A_var)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7148</span>
+PointFromName((<span class="hljs-string">"Mid Stalker "</span> + IntToString(auto531E0750_var)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7149</span>
+PointFromName((<span class="hljs-string">"Mid Stalker "</span> + IntToString(auto531E0750_var)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7404</span>
+PointFromName((<span class="hljs-string">"Mid Upper Stalker "</span> + IntToString(lv_i)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7411</span>
+PointFromName((<span class="hljs-string">"Mid Upper Zealot "</span> + IntToString(lv_i)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7627</span>
+PointFromName((<span class="hljs-string">"Final Stalker "</span> + IntToString(lv_i)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7695</span>
+PointFromName((<span class="hljs-string">"Debris Zealot "</span> + IntToString(autoBDE3F8BE_var)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7695</span>
+PointFromName((<span class="hljs-string">"Debris Zealot "</span> + IntToString(autoBDE3F8BE_var)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6969</span>
+PointFromName((<span class="hljs-string">"Victory Zealot "</span> + IntToString(lv_i)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6975</span>
+PointFromName((<span class="hljs-string">"Victory Stalker "</span> + IntToString(lv_i)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6981</span>
+PointFromName((<span class="hljs-string">"Victory Immortal "</span> + IntToString(lv_i)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6987</span>
+PointFromName((<span class="hljs-string">"Victory Colossus "</span> + IntToString(lv_i)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4551</span>
+PointFromName((<span class="hljs-string">"Victory Blocker "</span> + IntToString(lv_i)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4555</span>
+PointFromName((<span class="hljs-string">"Victory Zealot "</span> + IntToString(lv_i)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L582</span>
+PointFromName((<span class="hljs-string">"Static Cloud "</span> + IntToString(lp_index)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3267</span>
+PointFromName((<span class="hljs-string">"Final Overseer "</span> + IntToString(lv_currentPoint)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3268</span>
+PointFromName((<span class="hljs-string">"Final Overseer "</span> + IntToString(lv_currentPoint)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3310</span>
+PointFromName((<span class="hljs-string">"Final Overseer "</span> + IntToString(lv_currentPoint)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3311</span>
+PointFromName((<span class="hljs-string">"Final Overseer "</span> + IntToString(lv_currentPoint)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7033</span>
+PointFromName((<span class="hljs-string">"Energy Cloud Path "</span> + IntToString(lv_i)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7067</span>
+PointFromName((<span class="hljs-string">"Static Cloud "</span> + IntToString(lv_i)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7074</span>
+PointFromName((<span class="hljs-string">"Static Cloud "</span> + IntToString(lv_i)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7081</span>
+PointFromName((<span class="hljs-string">"Static Cloud "</span> + IntToString(lv_i)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10570</span>
+PointFromName((<span class="hljs-string">"Dark Templar Intro Spawn "</span> + IntToString(lv_i)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5266</span>
+PointFromName((<span class="hljs-string">"Victory - Orbital Strike 0"</span> + IntToString(lv_pointIndex)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5269</span>
+PointFromName((<span class="hljs-string">"Victory - Orbital Strike "</span> + IntToString(lv_pointIndex)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5313</span>
+PointFromName((<span class="hljs-string">"Victory - Amon Beam 0"</span> + IntToString(lv_iter)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5316</span>
+PointFromName((<span class="hljs-string">"Victory - Amon Beam "</span> + IntToString(lv_iter)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1262</span>
+PointFromName((<span class="hljs-string">"Prism Deploy "</span> + IntToString(auto2E61EF9C_var)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3112</span>
+PointFromName((<span class="hljs-string">"P"</span> + IntToString(autoB04DA6FA_var) + <span class="hljs-string">" Spawn"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6600</span>
+PointFromName((<span class="hljs-string">"Intro Zealot "</span> + IntToString(lv_iter)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6605</span>
+PointFromName((<span class="hljs-string">"Intro Stalker "</span> + IntToString(lv_iter)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6610</span>
+PointFromName((<span class="hljs-string">"Intro Immortal "</span> + IntToString(lv_iter)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1046</span>
+PointFromName((<span class="hljs-string">"Raynor Base "</span> + IntToString(lp_base) + <span class="hljs-string">" Stabilizer "</span> + IntToString(lp_stabilizer) + <span class="hljs-string">" Patrol "</span> + IntToString(lp_patrol) + <span class="hljs-string">" "</span> + IntToString(<span class="hljs-number">1</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1059</span>
+PointFromName((<span class="hljs-string">"Raynor Base "</span> + IntToString(lp_base) + <span class="hljs-string">" Stabilizer "</span> + IntToString(lp_stabilizer) + <span class="hljs-string">" Patrol "</span> + IntToString(lp_patrol) + <span class="hljs-string">" "</span> + IntToString(<span class="hljs-number">2</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1072</span>
+PointFromName((<span class="hljs-string">"Raynor Base "</span> + IntToString(lp_base) + <span class="hljs-string">" Stabilizer "</span> + IntToString(lp_stabilizer) + <span class="hljs-string">" Patrol "</span> + IntToString(lp_patrol) + <span class="hljs-string">" "</span> + IntToString(<span class="hljs-number">3</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1085</span>
+PointFromName((<span class="hljs-string">"Raynor Base "</span> + IntToString(lp_base) + <span class="hljs-string">" Stabilizer "</span> + IntToString(lp_stabilizer) + <span class="hljs-string">" Patrol "</span> + IntToString(lp_patrol) + <span class="hljs-string">" "</span> + IntToString(<span class="hljs-number">2</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1099</span>
+PointFromName((<span class="hljs-string">"Raynor Base "</span> + IntToString(lp_base) + <span class="hljs-string">" Stabilizer "</span> + IntToString(lp_stabilizer) + <span class="hljs-string">" Patrol "</span> + IntToString(lp_patrol) + <span class="hljs-string">" "</span> + IntToString(<span class="hljs-number">1</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1816</span>
+PointFromName((<span class="hljs-string">"Hull Breach "</span> + IntToString(lv_index)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2335</span>
+PointFromName((<span class="hljs-string">"Dropship Entry "</span> + IntToString(lv_index)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2336</span>
+PointFromName((<span class="hljs-string">"Dropship Exit "</span> + IntToString(lv_index)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2341</span>
+PointFromName((<span class="hljs-string">"Hull Breach "</span> + IntToString(lv_index)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2343</span>
+PointFromName((<span class="hljs-string">"Reinforcement Supply "</span> + IntToString(lv_index) + <span class="hljs-string">" 1"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L503</span>
+PointFromName((<span class="hljs-string">"Raynor Waypoint "</span> + IntToString(lv_waypointIndex)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L509</span>
+PointFromName((<span class="hljs-string">"Valerian Waypoint "</span> + IntToString(lv_waypointIndex)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L515</span>
+PointFromName((<span class="hljs-string">"Raynor Waypoint "</span> + IntToString(lv_waypointIndex)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L521</span>
+PointFromName((<span class="hljs-string">"Valerian Waypoint "</span> + IntToString(lv_waypointIndex)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L527</span>
+PointFromName((<span class="hljs-string">"Raynor Waypoint "</span> + IntToString(lv_waypointIndex)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L533</span>
+PointFromName((<span class="hljs-string">"Valerian Waypoint "</span> + IntToString(lv_waypointIndex)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L658</span>
+PointFromName((<span class="hljs-string">"Glacius Assault Waypoint "</span> + IntToString(lp_region)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L662</span>
+PointFromName((<span class="hljs-string">"Glacius Assault Waypoint "</span> + IntToString(lp_region)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L671</span>
+PointFromName((<span class="hljs-string">"Glacius Assault Destination "</span> + IntToString(lp_region)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L688</span>
+PointFromName((<span class="hljs-string">"Glacius Assault Destination "</span> + IntToString(lp_region)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L701</span>
+PointFromName((<span class="hljs-string">"Glacius Assault Warp "</span> + IntToString(lp_region)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L704</span>
+PointFromName((<span class="hljs-string">"Glacius Assault Warp "</span> + IntToString(lp_region)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1366</span>
+PointFromName((<span class="hljs-string">"Planet Cracker Line "</span> + IntToString(gv_displacementBeamPathCurrent)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1522</span>
+PointFromName((<span class="hljs-string">"Planet Cracker Line "</span> + IntToString(lv_beamPathIndex)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1523</span>
+PointFromName((<span class="hljs-string">"Planet Cracker Line "</span> + IntToString(lv_beamPathIndex)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2880</span>
+PointFromName((<span class="hljs-string">"Glacius Assault Spawn "</span> + IntToString(lv_unitIndex)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L447</span>
+PointFromName((<span class="hljs-string">"RobotLine_"</span> + lv_waypointIndexString))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L479</span>
+PointFromName((<span class="hljs-string">"RobotLine_"</span> + IntToString(lv_i)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L480</span>
+PointFromName((<span class="hljs-string">"RobotLine_"</span> + IntToString(lv_i)))
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

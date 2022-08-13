@@ -1,0 +1,333 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Get Building Count In Town / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Get Building Count In Town"/>
+                <meta property="og:description" content="Returns the number of buildings of the specified type in the specified town for a player.
+
+Returns: int"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="get-building-count-in-town"><a class="markdownIt-Anchor" href="#get-building-count-in-town">#</a> Get Building Count In Town</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Returns the number of buildings of type <strong>unit</strong> in <strong>town</strong> for player <strong>player</strong> using mask <strong>countMask|TechTreeCountType</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Function</code></p>
+</blockquote>
+<p>Returns the number of buildings of the specified type in the specified town for a player.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> — Player</li>
+<li><code>int</code> — Town</li>
+<li><code>string</code> <em>[ gamelink::Unit ]</em> — Unit</li>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-tech-tree-count-type">TechTreeCountType</a> ]</em> — Count Mask</li>
+</ul>
+<p>Returns — <code>int</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">int</span> <span class="hljs-title">AIGetBuildingCountInTown</span><span class="hljs-params">(
+	<span class="hljs-keyword">int</span> player,
+	<span class="hljs-keyword">int</span> town,
+	<span class="hljs-built_in">string</span> aliasUnitType,
+	<span class="hljs-keyword">int</span> countMask,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#ai-advanced-towns-functions">AI Advanced / Towns / Functions</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/ai-get-town-state">Get Town State</a></strong> — ( AIGetTownState )</li>
+<li><em><strong>[F]</strong></em> — <code>point</code> — <strong><a href="/galaxy/reference/ai-get-town-location">Get Town Location</a></strong> — ( AIGetTownLocation )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/ai-get-closest-town">Get Closest Town</a></strong> — ( AIGetClosestTown )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/ai-get-next-unused-town-slot">Get Next Unused Town Slot</a></strong> — ( AIGetNextUnusedTownSlot )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/ai-get-building-count-in-town">Get Building Count In Town</a></strong> — ( AIGetBuildingCountInTown )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/ai-is-town-harvest-running">Is Town Harvesting</a></strong> — ( AIIsTownHarvestRunning )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/ai-get-cur-peon-count">Get Current Harvest Peon Count</a></strong> — ( AIGetCurPeonCount )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/ai-get-min-peon-count">Get Min Desired Harvest Peon Count</a></strong> — ( AIGetMinPeonCount )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/ai-get-max-peon-count">Get Max Desired Harvest Peon Count</a></strong> — ( AIGetMaxPeonCount )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/ai-get-mineral-amount-left">Get Mineral Amount Left</a></strong> — ( AIGetMineralAmountLeft )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/ai-get-gas-amount-left">Get Gas Amount Left</a></strong> — ( AIGetGasAmountLeft )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/ai-get-mineral-num-spots">Get Num Mineral Spots</a></strong> — ( AIGetMineralNumSpots )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/ai-get-raw-gas-num-spots">Get Num RawGas Spots</a></strong> — ( AIGetRawGasNumSpots )</li>
+<li><em><strong>[F]</strong></em> — <code>point</code> — <strong><a href="/galaxy/reference/ai-get-gather-location">Get Offense Gather Location</a></strong> — ( AIGetGatherLocation )</li>
+<li><em><strong>[F]</strong></em> — <code>point</code> — <strong><a href="/galaxy/reference/ai-get-gather-def-location">Get Defense Gather Location</a></strong> — ( AIGetGatherDefLocation )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/ai-expand">Expand</a></strong> — ( AIExpand )</li>
+<li><em><strong>[F]</strong></em> — <code>unitgroup</code> — <strong><a href="/galaxy/reference/ai-get-town-threats">Get Town Threats</a></strong> — ( AIGetTownThreats )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="modscoresc2mod"><a class="markdownIt-Anchor" href="#modscoresc2mod">#</a> mods/core.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/core.sc2mod/base.sc2data/TriggerLibs/MeleeLowAI.galaxy#L477">MeleeLowAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L477</span>
+AIGetBuildingCountInTown(player, town, c_TB_CommandCenter_Alias, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L481</span>
+AIGetBuildingCountInTown(player, town, c_TB_MissileTurret, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L485</span>
+AIGetBuildingCountInTown(player, town, c_TB_Bunker, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L620</span>
+AIGetBuildingCountInTown(player, town, c_ZB_Hatchery_Alias, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L626</span>
+AIGetBuildingCountInTown(player, town, c_ZB_SporeCrawler, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L630</span>
+AIGetBuildingCountInTown(player, town, c_ZB_SpineCrawler, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L761</span>
+AIGetBuildingCountInTown(player, town, c_PB_Nexus, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L766</span>
+AIGetBuildingCountInTown(player, town, c_PB_Pylon, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L772</span>
+AIGetBuildingCountInTown(player, town, c_PB_PhotonCannon, c_techCountCompleteOnly)
+</code></pre>
+<h4 id="modslibertysc2mod"><a class="markdownIt-Anchor" href="#modslibertysc2mod">#</a> mods/liberty.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/liberty.sc2mod/base.sc2data/TriggerLibs/Protoss/ProtossChIn.galaxy#L2085">ProtossChIn.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2085</span>
+AIGetBuildingCountInTown(player, c_townMain, c_PB_Pylon, c_techCountQueuedOrBetter)
+</code></pre>
+<h4 id="modslibertysc2mod-2"><a class="markdownIt-Anchor" href="#modslibertysc2mod-2">#</a> mods/liberty.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/liberty.sc2mod/base.sc2data/TriggerLibs/Protoss/ProtossHdVH.galaxy#L2084">ProtossHdVH.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2084</span>
+AIGetBuildingCountInTown(player, c_townMain, c_PB_Pylon, c_techCountQueuedOrBetter)
+</code></pre>
+<h4 id="modslibertysc2mod-3"><a class="markdownIt-Anchor" href="#modslibertysc2mod-3">#</a> mods/liberty.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/liberty.sc2mod/base.sc2data/TriggerLibs/Protoss/ProtossHigh.galaxy#L1007">ProtossHigh.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1007</span>
+AIGetBuildingCountInTown(player, mainTown, c_PB_Pylon, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1015</span>
+AIGetBuildingCountInTown(player, mainTown, c_PB_PhotonCannon, c_techCountInProgressOrBetter)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1071</span>
+AIGetBuildingCountInTown(player, town, c_PB_Nexus, c_techCountInProgressOrBetter)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1076</span>
+AIGetBuildingCountInTown(player, town, c_PB_Pylon, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1083</span>
+AIGetBuildingCountInTown(player, town, c_PB_PhotonCannon, c_techCountInProgressOrBetter)
+</code></pre>
+<h4 id="modslibertysc2mod-4"><a class="markdownIt-Anchor" href="#modslibertysc2mod-4">#</a> mods/liberty.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/liberty.sc2mod/base.sc2data/TriggerLibs/Protoss/ProtossVyHd.galaxy#L2115">ProtossVyHd.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2115</span>
+AIGetBuildingCountInTown(player, c_townMain, c_PB_Pylon, c_techCountQueuedOrBetter)
+</code></pre>
+<h4 id="modslibertysc2mod-5"><a class="markdownIt-Anchor" href="#modslibertysc2mod-5">#</a> mods/liberty.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/liberty.sc2mod/base.sc2data/TriggerLibs/Terran/TerranHigh.galaxy#L1098">TerranHigh.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1098</span>
+AIGetBuildingCountInTown(player, mainTown, c_TB_MissileTurret, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1113</span>
+AIGetBuildingCountInTown(player, mainTown, c_TB_CommandCenter, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1152</span>
+AIGetBuildingCountInTown(player, town, c_TB_CommandCenter, c_techCountCompleteOnly)
+</code></pre>
+<h4 id="modslibertysc2mod-6"><a class="markdownIt-Anchor" href="#modslibertysc2mod-6">#</a> mods/liberty.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/liberty.sc2mod/base.sc2data/TriggerLibs/Zerg/ZergHigh.galaxy#L1027">ZergHigh.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1027</span>
+AIGetBuildingCountInTown(player, mainTown, c_ZB_Hatchery_Alias, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1041</span>
+AIGetBuildingCountInTown(player, mainTown, c_ZB_SpineCrawler, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1048</span>
+AIGetBuildingCountInTown(player, mainTown, c_ZB_SporeCrawler, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1082</span>
+AIGetBuildingCountInTown(player, town, c_ZB_Hatchery_Alias, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1105</span>
+AIGetBuildingCountInTown(player, town, c_ZB_SpineCrawler, c_techCountCompleteOnly)
+</code></pre>
+<h4 id="modsswarmsc2mod"><a class="markdownIt-Anchor" href="#modsswarmsc2mod">#</a> mods/swarm.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/swarm.sc2mod/base.sc2data/TriggerLibs/Protoss/ProtossChIn.galaxy#L2085">ProtossChIn.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2085</span>
+AIGetBuildingCountInTown(player, c_townMain, c_PB_Pylon, c_techCountQueuedOrBetter)
+</code></pre>
+<h4 id="modsswarmsc2mod-2"><a class="markdownIt-Anchor" href="#modsswarmsc2mod-2">#</a> mods/swarm.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/swarm.sc2mod/base.sc2data/TriggerLibs/Protoss/ProtossHdVH.galaxy#L2084">ProtossHdVH.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2084</span>
+AIGetBuildingCountInTown(player, c_townMain, c_PB_Pylon, c_techCountQueuedOrBetter)
+</code></pre>
+<h4 id="modsswarmsc2mod-3"><a class="markdownIt-Anchor" href="#modsswarmsc2mod-3">#</a> mods/swarm.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/swarm.sc2mod/base.sc2data/TriggerLibs/Protoss/ProtossHigh.galaxy#L1002">ProtossHigh.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1002</span>
+AIGetBuildingCountInTown(player, mainTown, c_PB_Pylon, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1010</span>
+AIGetBuildingCountInTown(player, mainTown, c_PB_PhotonCannon, c_techCountInProgressOrBetter)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1066</span>
+AIGetBuildingCountInTown(player, town, c_PB_Nexus, c_techCountInProgressOrBetter)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1071</span>
+AIGetBuildingCountInTown(player, town, c_PB_Pylon, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1078</span>
+AIGetBuildingCountInTown(player, town, c_PB_PhotonCannon, c_techCountInProgressOrBetter)
+</code></pre>
+<h4 id="modsswarmsc2mod-4"><a class="markdownIt-Anchor" href="#modsswarmsc2mod-4">#</a> mods/swarm.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/swarm.sc2mod/base.sc2data/TriggerLibs/Protoss/ProtossVyHd.galaxy#L2115">ProtossVyHd.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2115</span>
+AIGetBuildingCountInTown(player, c_townMain, c_PB_Pylon, c_techCountQueuedOrBetter)
+</code></pre>
+<h4 id="modsswarmsc2mod-5"><a class="markdownIt-Anchor" href="#modsswarmsc2mod-5">#</a> mods/swarm.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/swarm.sc2mod/base.sc2data/TriggerLibs/Terran/TerranHigh.galaxy#L1089">TerranHigh.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1089</span>
+AIGetBuildingCountInTown(player, mainTown, c_TB_MissileTurret, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1104</span>
+AIGetBuildingCountInTown(player, mainTown, c_TB_CommandCenter, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1143</span>
+AIGetBuildingCountInTown(player, town, c_TB_CommandCenter, c_techCountCompleteOnly)
+</code></pre>
+<h4 id="modsswarmsc2mod-6"><a class="markdownIt-Anchor" href="#modsswarmsc2mod-6">#</a> mods/swarm.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/swarm.sc2mod/base.sc2data/TriggerLibs/Zerg/ZergHigh.galaxy#L1045">ZergHigh.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1045</span>
+AIGetBuildingCountInTown(player, mainTown, c_ZB_Hatchery_Alias, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1059</span>
+AIGetBuildingCountInTown(player, mainTown, c_ZB_SpineCrawler, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1066</span>
+AIGetBuildingCountInTown(player, mainTown, c_ZB_SporeCrawler, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1100</span>
+AIGetBuildingCountInTown(player, town, c_ZB_Hatchery_Alias, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1123</span>
+AIGetBuildingCountInTown(player, town, c_ZB_SpineCrawler, c_techCountCompleteOnly)
+</code></pre>
+<h4 id="modsvoidsc2mod"><a class="markdownIt-Anchor" href="#modsvoidsc2mod">#</a> mods/void.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/void.sc2mod/base.sc2data/TriggerLibs/Protoss/ProtossChIn.galaxy#L2611">ProtossChIn.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2611</span>
+AIGetBuildingCountInTown(player, c_townMain, c_PB_Pylon, c_techCountQueuedOrBetter)
+</code></pre>
+<h4 id="modsvoidsc2mod-2"><a class="markdownIt-Anchor" href="#modsvoidsc2mod-2">#</a> mods/void.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/void.sc2mod/base.sc2data/TriggerLibs/Protoss/ProtossHdVH.galaxy#L2613">ProtossHdVH.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2613</span>
+AIGetBuildingCountInTown(player, c_townMain, c_PB_Pylon, c_techCountQueuedOrBetter)
+</code></pre>
+<h4 id="modsvoidsc2mod-3"><a class="markdownIt-Anchor" href="#modsvoidsc2mod-3">#</a> mods/void.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/void.sc2mod/base.sc2data/TriggerLibs/Protoss/ProtossHigh.galaxy#L1039">ProtossHigh.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1039</span>
+AIGetBuildingCountInTown(player, mainTown, c_PB_Pylon, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1047</span>
+AIGetBuildingCountInTown(player, mainTown, c_PB_PhotonCannon, c_techCountInProgressOrBetter)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1103</span>
+AIGetBuildingCountInTown(player, town, c_PB_Nexus, c_techCountInProgressOrBetter)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1108</span>
+AIGetBuildingCountInTown(player, town, c_PB_Pylon, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1115</span>
+AIGetBuildingCountInTown(player, town, c_PB_PhotonCannon, c_techCountInProgressOrBetter)
+</code></pre>
+<h4 id="modsvoidsc2mod-4"><a class="markdownIt-Anchor" href="#modsvoidsc2mod-4">#</a> mods/void.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/void.sc2mod/base.sc2data/TriggerLibs/Protoss/ProtossVyHd.galaxy#L2644">ProtossVyHd.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2644</span>
+AIGetBuildingCountInTown(player, c_townMain, c_PB_Pylon, c_techCountQueuedOrBetter)
+</code></pre>
+<h4 id="modsvoidsc2mod-5"><a class="markdownIt-Anchor" href="#modsvoidsc2mod-5">#</a> mods/void.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/void.sc2mod/base.sc2data/TriggerLibs/Terran/TerranHigh.galaxy#L1103">TerranHigh.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1103</span>
+AIGetBuildingCountInTown(player, mainTown, c_TB_MissileTurret, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1118</span>
+AIGetBuildingCountInTown(player, mainTown, c_TB_CommandCenter, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1157</span>
+AIGetBuildingCountInTown(player, town, c_TB_CommandCenter, c_techCountCompleteOnly)
+</code></pre>
+<h4 id="modsvoidsc2mod-6"><a class="markdownIt-Anchor" href="#modsvoidsc2mod-6">#</a> mods/void.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/void.sc2mod/base.sc2data/TriggerLibs/Zerg/ZergHigh.galaxy#L1055">ZergHigh.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1055</span>
+AIGetBuildingCountInTown(player, mainTown, c_ZB_Hatchery_Alias, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1069</span>
+AIGetBuildingCountInTown(player, mainTown, c_ZB_SpineCrawler, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1076</span>
+AIGetBuildingCountInTown(player, mainTown, c_ZB_SporeCrawler, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1110</span>
+AIGetBuildingCountInTown(player, town, c_ZB_Hatchery_Alias, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1133</span>
+AIGetBuildingCountInTown(player, town, c_ZB_SpineCrawler, c_techCountCompleteOnly)
+</code></pre>
+<h4 id="modswarcoopwarmeleeaisc2mod"><a class="markdownIt-Anchor" href="#modswarcoopwarmeleeaisc2mod">#</a> mods/warcoop/warmeleeai.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/warcoop/warmeleeai.sc2mod/base.sc2data/TriggerLibs/Common_ai.galaxy#L29">Common_ai.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L29</span>
+AIGetBuildingCountInTown(player, townid, unitid,mask)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,413 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Create Cargo Units / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Create Cargo Units"/>
+                <meta property="og:description" content="Creates cargo units inside a unit&#39;s cargo bay.  Use the &quot;Last Created Cargo Unit&quot; and &quot;Last Created Cargo Units&quot; functions to refer to the created units."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="create-cargo-units"><a class="markdownIt-Anchor" href="#create-cargo-units">#</a> Create Cargo Units</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Create <strong>inCount</strong> <strong>inId</strong> as cargo in <strong>inUnit</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Creates cargo units inside a unit’s cargo bay.  Use the <em>“Last Created Cargo Unit”</em> and <em>“Last Created Cargo Units”</em> functions to refer to the created units.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>unit</code> — Unit</li>
+<li><code>string</code> <em>[ gamelink::Unit ]</em> — Type</li>
+<li><code>int</code> — Count</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">UnitCargoCreate</span><span class="hljs-params">(
+	unit inUnit,
+	<span class="hljs-built_in">string</span> inId,
+	<span class="hljs-keyword">int</span> inCount,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#unit-cargo">Unit / Cargo</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-put-in-transport">Put Unit InTransport</a></strong> — ( UnitPutInTransport )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-cargo-create">Create Cargo Units</a></strong> — ( UnitCargoCreate )</li>
+<li><em><strong>[F]</strong></em> — <code>unit</code> — <strong><a href="/galaxy/reference/unit-cargo-last-created">Last Created Cargo Unit</a></strong> — ( UnitCargoLastCreated )</li>
+<li><em><strong>[F]</strong></em> — <code>unitgroup</code> — <strong><a href="/galaxy/reference/unit-cargo-last-created-group">Last Created Cargo Units</a></strong> — ( UnitCargoLastCreatedGroup )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-unit-is-inside-transport">Unit Is Cargo</a></strong> — ( libNtve_gf_UnitIsInsideTransport )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-unit-is-inside-unit-transport">Unit Is Inside Unit Transport</a></strong> — ( libNtve_gf_UnitIsInsideUnitTransport )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-unit-is-inside-player-transport">Unit Is Inside Player Transport</a></strong> — ( libNtve_gf_UnitIsInsidePlayerTransport )</li>
+<li><em><strong>[F]</strong></em> — <code>unit</code> — <strong><a href="/galaxy/reference/unit-cargo">Cargo Unit In Transport</a></strong> — ( UnitCargo )</li>
+<li><em><strong>[F]</strong></em> — <code>unitgroup</code> — <strong><a href="/galaxy/reference/unit-cargo-group">Cargo Units In Transport</a></strong> — ( UnitCargoGroup )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/unit-cargo-value">Transport Property Of Unit</a></strong> — ( UnitCargoValue )</li>
+<li><em><strong>[F]</strong></em> — <code>unit</code> — <strong><a href="/galaxy/reference/unit-transport">Transport Of Unit</a></strong> — ( UnitTransport )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-unit-cargo">Unit Loads/Unloads Cargo</a></strong> — ( TriggerAddEventUnitCargo )</li>
+<li><em><strong>[F]</strong></em> — <code>unit</code> — <strong><a href="/galaxy/reference/event-unit-cargo">Triggering Cargo Unit</a></strong> — ( EventUnitCargo )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/challenges/economy.sc2map/MapScript.galaxy#L1556">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1556</span>
+UnitCargoCreate(UnitLastCreated(), <span class="hljs-string">"Marine"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1558</span>
+UnitCargoCreate(UnitLastCreated(), <span class="hljs-string">"Marine"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1560</span>
+UnitCargoCreate(UnitLastCreated(), <span class="hljs-string">"Marine"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1562</span>
+UnitCargoCreate(UnitLastCreated(), <span class="hljs-string">"Marine"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L319</span>
+UnitCargoCreate(lv_randomHut, <span class="hljs-string">"Civilian"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L322</span>
+UnitCargoCreate(lv_randomHut, <span class="hljs-string">"CivilianFemale"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L997</span>
+UnitCargoCreate(UnitFromId(<span class="hljs-number">290</span>), <span class="hljs-string">"Firebat"</span>, <span class="hljs-number">2</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L999</span>
+UnitCargoCreate(UnitFromId(<span class="hljs-number">290</span>), <span class="hljs-string">"Medic"</span>, <span class="hljs-number">2</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L631</span>
+UnitCargoCreate(lv_overlord, <span class="hljs-string">"Drone"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L565</span>
+UnitCargoCreate(UnitFromId(<span class="hljs-number">271</span>), <span class="hljs-string">"SCV"</span>, <span class="hljs-number">5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L567</span>
+UnitCargoCreate(UnitFromId(<span class="hljs-number">1056</span>), <span class="hljs-string">"Marine"</span>, <span class="hljs-number">5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L573</span>
+UnitCargoCreate(auto4801D79A_var, <span class="hljs-string">"Marine"</span>, <span class="hljs-number">4</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L580</span>
+UnitCargoCreate(auto8FA23EE3_var, <span class="hljs-string">"WarPig"</span>, <span class="hljs-number">4</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1552</span>
+UnitCargoCreate(lv_medivac, <span class="hljs-string">"Vulture"</span>, <span class="hljs-number">4</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L459</span>
+UnitCargoCreate(UnitFromId(<span class="hljs-number">80</span>), <span class="hljs-string">"Marine"</span>, libNtve_gf_DifficultyValueInt(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">4</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L460</span>
+UnitCargoCreate(UnitFromId(<span class="hljs-number">175</span>), <span class="hljs-string">"Marine"</span>, libNtve_gf_DifficultyValueInt(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">4</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L461</span>
+UnitCargoCreate(UnitFromId(<span class="hljs-number">7</span>), <span class="hljs-string">"Marine"</span>, libNtve_gf_DifficultyValueInt(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">4</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L462</span>
+UnitCargoCreate(UnitFromId(<span class="hljs-number">433</span>), <span class="hljs-string">"Marine"</span>, libNtve_gf_DifficultyValueInt(<span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L463</span>
+UnitCargoCreate(UnitFromId(<span class="hljs-number">433</span>), <span class="hljs-string">"Marauder"</span>, libNtve_gf_DifficultyValueInt(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L464</span>
+UnitCargoCreate(UnitFromId(<span class="hljs-number">218</span>), <span class="hljs-string">"Marauder"</span>, libNtve_gf_DifficultyValueInt(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">2</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L465</span>
+UnitCargoCreate(UnitFromId(<span class="hljs-number">694</span>), <span class="hljs-string">"Marine"</span>, <span class="hljs-number">4</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L466</span>
+UnitCargoCreate(UnitFromId(<span class="hljs-number">1007</span>), <span class="hljs-string">"Marine"</span>, libNtve_gf_DifficultyValueInt(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">4</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5564</span>
+UnitCargoCreate(UnitLastCreated(), <span class="hljs-string">"SCV"</span>, <span class="hljs-number">5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L327</span>
+UnitCargoCreate(lp_bunker, lp_type, lp_qty)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L414</span>
+UnitCargoCreate(lv_dropship, lp_type1, lp_qty1)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L418</span>
+UnitCargoCreate(lv_dropship, lp_type2, lp_qty2)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6126</span>
+UnitCargoCreate(lv_coCe, <span class="hljs-string">"SCV"</span>, <span class="hljs-number">5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7097</span>
+UnitCargoCreate(UnitLastCreated(), <span class="hljs-string">"Marine"</span>, <span class="hljs-number">2</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7098</span>
+UnitCargoCreate(UnitLastCreated(), <span class="hljs-string">"Marauder"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5450</span>
+UnitCargoCreate(gv_dropshipComputer05, <span class="hljs-string">"Marine"</span>, <span class="hljs-number">8</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5453</span>
+UnitCargoCreate(gv_dropshipComputer05, <span class="hljs-string">"Marauder"</span>, <span class="hljs-number">3</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5456</span>
+UnitCargoCreate(gv_dropshipComputer05, <span class="hljs-string">"Firebat"</span>, <span class="hljs-number">4</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5459</span>
+UnitCargoCreate(gv_dropshipComputer05, <span class="hljs-string">"Marine"</span>, <span class="hljs-number">3</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5460</span>
+UnitCargoCreate(gv_dropshipComputer05, <span class="hljs-string">"Medic"</span>, <span class="hljs-number">3</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11291</span>
+UnitCargoCreate(gv_introDropship, <span class="hljs-string">"Marine"</span>, <span class="hljs-number">5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11293</span>
+UnitCargoCreate(gv_introDropship, <span class="hljs-string">"Medic"</span>, <span class="hljs-number">2</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11295</span>
+UnitCargoCreate(UnitLastCreated(), <span class="hljs-string">"Raynor"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4945</span>
+UnitCargoCreate(gv_introDropship, <span class="hljs-string">"Raynor01"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4948</span>
+UnitCargoCreate(gv_introDropship, <span class="hljs-string">"Marine"</span>, <span class="hljs-number">5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L690</span>
+UnitCargoCreate(UnitFromId(<span class="hljs-number">5</span>), <span class="hljs-string">"Marine"</span>, libNtve_gf_DifficultyValueInt(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">6</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1063</span>
+UnitCargoCreate(gv_supplyDropship, <span class="hljs-string">"SCV"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1257</span>
+UnitCargoCreate(gv_sCVDropship, <span class="hljs-string">"SCV"</span>, <span class="hljs-number">8</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2040</span>
+UnitCargoCreate(lv_dropship, <span class="hljs-string">"SCV"</span>, <span class="hljs-number">6</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L792</span>
+UnitCargoCreate(UnitFromId(<span class="hljs-number">6</span>), <span class="hljs-string">"Marine"</span>, <span class="hljs-number">4</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L793</span>
+UnitCargoCreate(UnitFromId(<span class="hljs-number">7</span>), <span class="hljs-string">"Marine"</span>, <span class="hljs-number">4</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L929</span>
+UnitCargoCreate(auto4E511087_var, <span class="hljs-string">"Marine"</span>, libNtve_gf_DifficultyValueInt(<span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">4</span>, <span class="hljs-number">6</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L638</span>
+UnitCargoCreate(UnitFromId(<span class="hljs-number">141</span>), <span class="hljs-string">"Marine"</span>, <span class="hljs-number">4</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L662</span>
+UnitCargoCreate(UnitFromId(<span class="hljs-number">575</span>), <span class="hljs-string">"Marine"</span>, libNtve_gf_DifficultyValueInt(<span class="hljs-number">3</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">2</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L663</span>
+UnitCargoCreate(UnitFromId(<span class="hljs-number">575</span>), <span class="hljs-string">"Marauder"</span>, libNtve_gf_DifficultyValueInt(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L664</span>
+UnitCargoCreate(UnitFromId(<span class="hljs-number">82</span>), <span class="hljs-string">"Marine"</span>, libNtve_gf_DifficultyValueInt(<span class="hljs-number">2</span>, <span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">2</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L665</span>
+UnitCargoCreate(UnitFromId(<span class="hljs-number">82</span>), <span class="hljs-string">"Marauder"</span>, libNtve_gf_DifficultyValueInt(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L681</span>
+UnitCargoCreate(UnitFromId(<span class="hljs-number">212</span>), <span class="hljs-string">"Marine"</span>, <span class="hljs-number">4</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2702</span>
+UnitCargoCreate(UnitLastCreated(), <span class="hljs-string">"Reaper"</span>, <span class="hljs-number">4</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2703</span>
+UnitCargoCreate(UnitLastCreated(), <span class="hljs-string">"SiegeTank"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2710</span>
+UnitCargoCreate(UnitLastCreated(), <span class="hljs-string">"Reaper"</span>, <span class="hljs-number">4</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2711</span>
+UnitCargoCreate(UnitLastCreated(), <span class="hljs-string">"SiegeTank"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1534</span>
+UnitCargoCreate(lv_swannDropship, <span class="hljs-string">"Marauder"</span>, libNtve_gf_DifficultyValueInt(<span class="hljs-number">4</span>, <span class="hljs-number">4</span>, <span class="hljs-number">4</span>, <span class="hljs-number">3</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L555</span>
+UnitCargoCreate(UnitFromId(<span class="hljs-number">317</span>), <span class="hljs-string">"Marauder"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L556</span>
+UnitCargoCreate(UnitFromId(<span class="hljs-number">317</span>), <span class="hljs-string">"Marine"</span>, <span class="hljs-number">4</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L557</span>
+UnitCargoCreate(UnitFromId(<span class="hljs-number">317</span>), <span class="hljs-string">"Medic"</span>, <span class="hljs-number">2</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1022</span>
+UnitCargoCreate(UnitLastCreated(), <span class="hljs-string">"SiegeTank"</span>, <span class="hljs-number">2</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2702</span>
+UnitCargoCreate(EventUnitProgressUnit(), <span class="hljs-string">"Zealot"</span>, libNtve_gf_DifficultyValueInt(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2703</span>
+UnitCargoCreate(EventUnitProgressUnit(), <span class="hljs-string">"Archon"</span>, libNtve_gf_DifficultyValueInt(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2706</span>
+UnitCargoCreate(EventUnitProgressUnit(), <span class="hljs-string">"Stalker"</span>, libNtve_gf_DifficultyValueInt(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2713</span>
+UnitCargoCreate(EventUnitProgressUnit(), <span class="hljs-string">"Zealot"</span>, libNtve_gf_DifficultyValueInt(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2716</span>
+UnitCargoCreate(EventUnitProgressUnit(), <span class="hljs-string">"Stalker"</span>, libNtve_gf_DifficultyValueInt(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2723</span>
+UnitCargoCreate(EventUnitProgressUnit(), <span class="hljs-string">"Zealot"</span>, libNtve_gf_DifficultyValueInt(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1054</span>
+UnitCargoCreate(gv_medivac01, <span class="hljs-string">"Marine"</span>, <span class="hljs-number">2</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1065</span>
+UnitCargoCreate(gv_medivac02, <span class="hljs-string">"Marine"</span>, <span class="hljs-number">2</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3690</span>
+UnitCargoCreate(UnitLastCreated(), <span class="hljs-string">"SCV"</span>, <span class="hljs-number">8</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3706</span>
+UnitCargoCreate(gv_midCineDropship, <span class="hljs-string">"Marine"</span>, <span class="hljs-number">4</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3708</span>
+UnitCargoCreate(gv_midCineDropship, <span class="hljs-string">"Marauder"</span>, <span class="hljs-number">2</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4030</span>
+UnitCargoCreate(lv_dropship, <span class="hljs-string">"Marine"</span>, <span class="hljs-number">8</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5122</span>
+UnitCargoCreate(UnitLastCreated(), <span class="hljs-string">"SCV"</span>, <span class="hljs-number">5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1005</span>
+UnitCargoCreate(autoA4354CDE_var, <span class="hljs-string">"Marine"</span>, <span class="hljs-number">4</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6931</span>
+UnitCargoCreate(UnitLastCreated(), <span class="hljs-string">"Marine"</span>, <span class="hljs-number">8</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4315</span>
+UnitCargoCreate(UnitLastCreated(), <span class="hljs-string">"InfestedCivilian"</span>, libNtve_gf_DifficultyValueInt(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4318</span>
+UnitCargoCreate(UnitLastCreated(), <span class="hljs-string">"Zergling"</span>, libNtve_gf_DifficultyValueInt(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">2</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4321</span>
+UnitCargoCreate(UnitLastCreated(), <span class="hljs-string">"InfestedCivilian"</span>, libNtve_gf_DifficultyValueInt(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4322</span>
+UnitCargoCreate(UnitLastCreated(), <span class="hljs-string">"InfestedTerranCampaign"</span>, libNtve_gf_DifficultyValueInt(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3523</span>
+UnitCargoCreate(UnitLastCreated(), <span class="hljs-string">"Roach"</span>, libNtve_gf_DifficultyValueInt(<span class="hljs-number">2</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3531</span>
+UnitCargoCreate(UnitLastCreated(), <span class="hljs-string">"Roach"</span>, libNtve_gf_DifficultyValueInt(<span class="hljs-number">2</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6222</span>
+UnitCargoCreate(gv_introVoidSeeker, <span class="hljs-string">"Probe"</span>, <span class="hljs-number">6</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L479</span>
+UnitCargoCreate(UnitFromId(<span class="hljs-number">685</span>), <span class="hljs-string">"Zeratul"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L319</span>
+UnitCargoCreate(lv_randomHut, <span class="hljs-string">"Civilian"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L322</span>
+UnitCargoCreate(lv_randomHut, <span class="hljs-string">"CivilianFemale"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L997</span>
+UnitCargoCreate(UnitFromId(<span class="hljs-number">290</span>), <span class="hljs-string">"Firebat"</span>, <span class="hljs-number">2</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L999</span>
+UnitCargoCreate(UnitFromId(<span class="hljs-number">290</span>), <span class="hljs-string">"Medic"</span>, <span class="hljs-number">2</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L631</span>
+UnitCargoCreate(lv_overlord, <span class="hljs-string">"Drone"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L565</span>
+UnitCargoCreate(UnitFromId(<span class="hljs-number">271</span>), <span class="hljs-string">"SCV"</span>, <span class="hljs-number">5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L567</span>
+UnitCargoCreate(UnitFromId(<span class="hljs-number">1056</span>), <span class="hljs-string">"Marine"</span>, <span class="hljs-number">5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L573</span>
+UnitCargoCreate(auto4801D79A_var, <span class="hljs-string">"Marine"</span>, <span class="hljs-number">4</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L580</span>
+UnitCargoCreate(auto8FA23EE3_var, <span class="hljs-string">"WarPig"</span>, <span class="hljs-number">4</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1552</span>
+UnitCargoCreate(lv_medivac, <span class="hljs-string">"Vulture"</span>, <span class="hljs-number">4</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L459</span>
+UnitCargoCreate(UnitFromId(<span class="hljs-number">80</span>), <span class="hljs-string">"Marine"</span>, libNtve_gf_DifficultyValueInt(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">4</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L460</span>
+UnitCargoCreate(UnitFromId(<span class="hljs-number">175</span>), <span class="hljs-string">"Marine"</span>, libNtve_gf_DifficultyValueInt(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">4</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L461</span>
+UnitCargoCreate(UnitFromId(<span class="hljs-number">7</span>), <span class="hljs-string">"Marine"</span>, libNtve_gf_DifficultyValueInt(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">4</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L462</span>
+UnitCargoCreate(UnitFromId(<span class="hljs-number">433</span>), <span class="hljs-string">"Marine"</span>, libNtve_gf_DifficultyValueInt(<span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L463</span>
+UnitCargoCreate(UnitFromId(<span class="hljs-number">433</span>), <span class="hljs-string">"Marauder"</span>, libNtve_gf_DifficultyValueInt(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L464</span>
+UnitCargoCreate(UnitFromId(<span class="hljs-number">218</span>), <span class="hljs-string">"Marauder"</span>, libNtve_gf_DifficultyValueInt(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">2</span>))
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

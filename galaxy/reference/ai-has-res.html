@@ -1,0 +1,477 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Player Has Resources / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Player Has Resources"/>
+                <meta property="og:description" content="Returns whether a player has at least the specified amounts of Minerals and Gas.
+
+Returns: bool"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="player-has-resources"><a class="markdownIt-Anchor" href="#player-has-resources">#</a> Player Has Resources</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Player <strong>player</strong> has at least <strong>minerals|# Minerals</strong> and at least <strong>gas|# Gas</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Function</code></p>
+</blockquote>
+<p>Returns whether a player has at least the specified amounts of Minerals and Gas.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> — Player</li>
+<li><code>int</code> — Minerals</li>
+<li><code>int</code> — Gas</li>
+</ul>
+<p>Returns — <code>bool</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">bool</span> <span class="hljs-title">AIHasRes</span><span class="hljs-params">(<span class="hljs-keyword">int</span> player, <span class="hljs-keyword">int</span> minerals, <span class="hljs-keyword">int</span> gas)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#ai-advanced-construction-functions">AI Advanced / Construction / Functions</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-ai-get-default-build-flags">Get Default Build Flags</a></strong> — (  )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/ai-has-res">Player Has Resources</a></strong> — ( AIHasRes )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/ai-tech-count">Tech Count</a></strong> — ( AITechCount )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/ai-known-unit-count">Known Unit Count</a></strong> — ( AIKnownUnitCount )</li>
+<li><em><strong>[F]</strong></em> — <code>point</code> — <strong><a href="/galaxy/reference/ai-get-building-placement">Get AI Suggested Build Loc</a></strong> — ( AIGetBuildingPlacement )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="modscoresc2mod"><a class="markdownIt-Anchor" href="#modscoresc2mod">#</a> mods/core.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/core.sc2mod/base.sc2data/TriggerLibs/MeleeHighAI.galaxy#L339">MeleeHighAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L339</span>
+AIHasRes(player,<span class="hljs-number">200</span>,<span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L349</span>
+AIHasRes(player,<span class="hljs-number">400</span>,<span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L376</span>
+AIHasRes(player,<span class="hljs-number">300</span>,<span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L386</span>
+AIHasRes(player,<span class="hljs-number">500</span>,<span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L413</span>
+AIHasRes(player,<span class="hljs-number">300</span>,<span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L423</span>
+AIHasRes(player,<span class="hljs-number">500</span>,<span class="hljs-number">0</span>)
+</code></pre>
+<h4 id="modscoresc2mod-2"><a class="markdownIt-Anchor" href="#modscoresc2mod-2">#</a> mods/core.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/core.sc2mod/base.sc2data/TriggerLibs/MeleeLowAI.galaxy#L445">MeleeLowAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L445</span>
+AIHasRes(player,<span class="hljs-number">300</span>,<span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L455</span>
+AIHasRes(player,<span class="hljs-number">500</span>,<span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L587</span>
+AIHasRes(player,<span class="hljs-number">200</span>,<span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L597</span>
+AIHasRes(player,<span class="hljs-number">400</span>,<span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L729</span>
+AIHasRes(player,<span class="hljs-number">300</span>,<span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L739</span>
+AIHasRes(player,<span class="hljs-number">500</span>,<span class="hljs-number">0</span>)
+</code></pre>
+<h4 id="modslibertysc2mod"><a class="markdownIt-Anchor" href="#modslibertysc2mod">#</a> mods/liberty.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/liberty.sc2mod/base.sc2data/TriggerLibs/Protoss/ProtossChIn.galaxy#L2191">ProtossChIn.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2191</span>
+AIHasRes(player,<span class="hljs-number">700</span>,<span class="hljs-number">500</span>)
+</code></pre>
+<h4 id="modslibertysc2mod-2"><a class="markdownIt-Anchor" href="#modslibertysc2mod-2">#</a> mods/liberty.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/liberty.sc2mod/base.sc2data/TriggerLibs/Protoss/ProtossHdVH.galaxy#L2187">ProtossHdVH.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2187</span>
+AIHasRes(player,<span class="hljs-number">700</span>,<span class="hljs-number">500</span>)
+</code></pre>
+<h4 id="modslibertysc2mod-3"><a class="markdownIt-Anchor" href="#modslibertysc2mod-3">#</a> mods/liberty.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/liberty.sc2mod/base.sc2data/TriggerLibs/Protoss/ProtossHigh.galaxy#L946">ProtossHigh.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L946</span>
+AIHasRes(player,<span class="hljs-number">700</span>,<span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L949</span>
+AIHasRes(player,<span class="hljs-number">700</span>,<span class="hljs-number">600</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L960</span>
+AIHasRes(player,<span class="hljs-number">400</span>,<span class="hljs-number">200</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1030</span>
+AIHasRes(player,<span class="hljs-number">1200</span>,<span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1097</span>
+AIHasRes(player,<span class="hljs-number">1200</span>,<span class="hljs-number">0</span>)
+</code></pre>
+<h4 id="modslibertysc2mod-4"><a class="markdownIt-Anchor" href="#modslibertysc2mod-4">#</a> mods/liberty.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/liberty.sc2mod/base.sc2data/TriggerLibs/Protoss/ProtossVyHd.galaxy#L2218">ProtossVyHd.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2218</span>
+AIHasRes(player,<span class="hljs-number">700</span>,<span class="hljs-number">500</span>)
+</code></pre>
+<h4 id="modslibertysc2mod-5"><a class="markdownIt-Anchor" href="#modslibertysc2mod-5">#</a> mods/liberty.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/liberty.sc2mod/base.sc2data/TriggerLibs/Terran/TerranChIn.galaxy#L2669">TerranChIn.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2669</span>
+AIHasRes(player,<span class="hljs-number">700</span>,<span class="hljs-number">500</span>)
+</code></pre>
+<h4 id="modslibertysc2mod-6"><a class="markdownIt-Anchor" href="#modslibertysc2mod-6">#</a> mods/liberty.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/liberty.sc2mod/base.sc2data/TriggerLibs/Terran/TerranHdVH.galaxy#L2668">TerranHdVH.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2668</span>
+AIHasRes(player,<span class="hljs-number">700</span>,<span class="hljs-number">500</span>)
+</code></pre>
+<h4 id="modslibertysc2mod-7"><a class="markdownIt-Anchor" href="#modslibertysc2mod-7">#</a> mods/liberty.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/liberty.sc2mod/base.sc2data/TriggerLibs/Terran/TerranHigh.galaxy#L1032">TerranHigh.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1032</span>
+AIHasRes(player,<span class="hljs-number">700</span>,<span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1035</span>
+AIHasRes(player,<span class="hljs-number">700</span>,<span class="hljs-number">600</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1046</span>
+AIHasRes(player,<span class="hljs-number">400</span>,<span class="hljs-number">200</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1093</span>
+AIHasRes(player,<span class="hljs-number">1200</span>,<span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1174</span>
+AIHasRes(player,<span class="hljs-number">1200</span>,<span class="hljs-number">0</span>)
+</code></pre>
+<h4 id="modslibertysc2mod-8"><a class="markdownIt-Anchor" href="#modslibertysc2mod-8">#</a> mods/liberty.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/liberty.sc2mod/base.sc2data/TriggerLibs/Terran/TerranVyHd.galaxy#L2701">TerranVyHd.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2701</span>
+AIHasRes(player,<span class="hljs-number">700</span>,<span class="hljs-number">500</span>)
+</code></pre>
+<h4 id="modslibertysc2mod-9"><a class="markdownIt-Anchor" href="#modslibertysc2mod-9">#</a> mods/liberty.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/liberty.sc2mod/base.sc2data/TriggerLibs/Zerg/ZergChIn.galaxy#L1979">ZergChIn.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1979</span>
+AIHasRes(player,<span class="hljs-number">500</span>,<span class="hljs-number">400</span>)
+</code></pre>
+<h4 id="modslibertysc2mod-10"><a class="markdownIt-Anchor" href="#modslibertysc2mod-10">#</a> mods/liberty.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/liberty.sc2mod/base.sc2data/TriggerLibs/Zerg/ZergHdVH.galaxy#L1978">ZergHdVH.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1978</span>
+AIHasRes(player,<span class="hljs-number">500</span>,<span class="hljs-number">400</span>)
+</code></pre>
+<h4 id="modslibertysc2mod-11"><a class="markdownIt-Anchor" href="#modslibertysc2mod-11">#</a> mods/liberty.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/liberty.sc2mod/base.sc2data/TriggerLibs/Zerg/ZergHigh.galaxy#L970">ZergHigh.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L970</span>
+AIHasRes(player,<span class="hljs-number">400</span>,<span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L976</span>
+AIHasRes(player,<span class="hljs-number">1600</span>,<span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L984</span>
+AIHasRes(player,<span class="hljs-number">400</span>,<span class="hljs-number">200</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1036</span>
+AIHasRes(player,<span class="hljs-number">1200</span>,<span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1094</span>
+AIHasRes(player,<span class="hljs-number">2000</span>,<span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1097</span>
+AIHasRes(player,<span class="hljs-number">1200</span>,<span class="hljs-number">0</span>)
+</code></pre>
+<h4 id="modslibertysc2mod-12"><a class="markdownIt-Anchor" href="#modslibertysc2mod-12">#</a> mods/liberty.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/liberty.sc2mod/base.sc2data/TriggerLibs/Zerg/ZergVyHd.galaxy#L2008">ZergVyHd.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2008</span>
+AIHasRes(player,<span class="hljs-number">500</span>,<span class="hljs-number">400</span>)
+</code></pre>
+<h4 id="modsswarmsc2mod"><a class="markdownIt-Anchor" href="#modsswarmsc2mod">#</a> mods/swarm.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/swarm.sc2mod/base.sc2data/TriggerLibs/Protoss/ProtossChIn.galaxy#L2191">ProtossChIn.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2191</span>
+AIHasRes(player,<span class="hljs-number">700</span>,<span class="hljs-number">500</span>)
+</code></pre>
+<h4 id="modsswarmsc2mod-2"><a class="markdownIt-Anchor" href="#modsswarmsc2mod-2">#</a> mods/swarm.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/swarm.sc2mod/base.sc2data/TriggerLibs/Protoss/ProtossHdVH.galaxy#L2187">ProtossHdVH.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2187</span>
+AIHasRes(player,<span class="hljs-number">700</span>,<span class="hljs-number">500</span>)
+</code></pre>
+<h4 id="modsswarmsc2mod-3"><a class="markdownIt-Anchor" href="#modsswarmsc2mod-3">#</a> mods/swarm.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/swarm.sc2mod/base.sc2data/TriggerLibs/Protoss/ProtossHigh.galaxy#L941">ProtossHigh.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L941</span>
+AIHasRes(player,<span class="hljs-number">700</span>,<span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L944</span>
+AIHasRes(player,<span class="hljs-number">700</span>,<span class="hljs-number">600</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L955</span>
+AIHasRes(player,<span class="hljs-number">400</span>,<span class="hljs-number">200</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1025</span>
+AIHasRes(player,<span class="hljs-number">1200</span>,<span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1092</span>
+AIHasRes(player,<span class="hljs-number">1200</span>,<span class="hljs-number">0</span>)
+</code></pre>
+<h4 id="modsswarmsc2mod-4"><a class="markdownIt-Anchor" href="#modsswarmsc2mod-4">#</a> mods/swarm.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/swarm.sc2mod/base.sc2data/TriggerLibs/Protoss/ProtossVyHd.galaxy#L2218">ProtossVyHd.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2218</span>
+AIHasRes(player,<span class="hljs-number">700</span>,<span class="hljs-number">500</span>)
+</code></pre>
+<h4 id="modsswarmsc2mod-5"><a class="markdownIt-Anchor" href="#modsswarmsc2mod-5">#</a> mods/swarm.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/swarm.sc2mod/base.sc2data/TriggerLibs/Terran/TerranChIn.galaxy#L2664">TerranChIn.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2664</span>
+AIHasRes(player,<span class="hljs-number">700</span>,<span class="hljs-number">500</span>)
+</code></pre>
+<h4 id="modsswarmsc2mod-6"><a class="markdownIt-Anchor" href="#modsswarmsc2mod-6">#</a> mods/swarm.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/swarm.sc2mod/base.sc2data/TriggerLibs/Terran/TerranHdVH.galaxy#L2660">TerranHdVH.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2660</span>
+AIHasRes(player,<span class="hljs-number">700</span>,<span class="hljs-number">500</span>)
+</code></pre>
+<h4 id="modsswarmsc2mod-7"><a class="markdownIt-Anchor" href="#modsswarmsc2mod-7">#</a> mods/swarm.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/swarm.sc2mod/base.sc2data/TriggerLibs/Terran/TerranHigh.galaxy#L1023">TerranHigh.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1023</span>
+AIHasRes(player,<span class="hljs-number">700</span>,<span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1026</span>
+AIHasRes(player,<span class="hljs-number">700</span>,<span class="hljs-number">600</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1037</span>
+AIHasRes(player,<span class="hljs-number">400</span>,<span class="hljs-number">200</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1084</span>
+AIHasRes(player,<span class="hljs-number">1200</span>,<span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1165</span>
+AIHasRes(player,<span class="hljs-number">1200</span>,<span class="hljs-number">0</span>)
+</code></pre>
+<h4 id="modsswarmsc2mod-8"><a class="markdownIt-Anchor" href="#modsswarmsc2mod-8">#</a> mods/swarm.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/swarm.sc2mod/base.sc2data/TriggerLibs/Terran/TerranVyHd.galaxy#L2693">TerranVyHd.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2693</span>
+AIHasRes(player,<span class="hljs-number">700</span>,<span class="hljs-number">500</span>)
+</code></pre>
+<h4 id="modsswarmsc2mod-9"><a class="markdownIt-Anchor" href="#modsswarmsc2mod-9">#</a> mods/swarm.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/swarm.sc2mod/base.sc2data/TriggerLibs/Zerg/ZergChIn.galaxy#L2044">ZergChIn.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2044</span>
+AIHasRes(player,<span class="hljs-number">500</span>,<span class="hljs-number">400</span>)
+</code></pre>
+<h4 id="modsswarmsc2mod-10"><a class="markdownIt-Anchor" href="#modsswarmsc2mod-10">#</a> mods/swarm.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/swarm.sc2mod/base.sc2data/TriggerLibs/Zerg/ZergHdVH.galaxy#L2043">ZergHdVH.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2043</span>
+AIHasRes(player,<span class="hljs-number">500</span>,<span class="hljs-number">400</span>)
+</code></pre>
+<h4 id="modsswarmsc2mod-11"><a class="markdownIt-Anchor" href="#modsswarmsc2mod-11">#</a> mods/swarm.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/swarm.sc2mod/base.sc2data/TriggerLibs/Zerg/ZergHigh.galaxy#L988">ZergHigh.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L988</span>
+AIHasRes(player,<span class="hljs-number">400</span>,<span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L994</span>
+AIHasRes(player,<span class="hljs-number">1600</span>,<span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1002</span>
+AIHasRes(player,<span class="hljs-number">400</span>,<span class="hljs-number">200</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1054</span>
+AIHasRes(player,<span class="hljs-number">1200</span>,<span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1112</span>
+AIHasRes(player,<span class="hljs-number">2000</span>,<span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1115</span>
+AIHasRes(player,<span class="hljs-number">1200</span>,<span class="hljs-number">0</span>)
+</code></pre>
+<h4 id="modsswarmsc2mod-12"><a class="markdownIt-Anchor" href="#modsswarmsc2mod-12">#</a> mods/swarm.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/swarm.sc2mod/base.sc2data/TriggerLibs/Zerg/ZergVyHd.galaxy#L2074">ZergVyHd.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2074</span>
+AIHasRes(player,<span class="hljs-number">500</span>,<span class="hljs-number">400</span>)
+</code></pre>
+<h4 id="modsvoidsc2mod"><a class="markdownIt-Anchor" href="#modsvoidsc2mod">#</a> mods/void.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/void.sc2mod/base.sc2data/TriggerLibs/MeleeHighAI.galaxy#L339">MeleeHighAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L339</span>
+AIHasRes(player,<span class="hljs-number">200</span>,<span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L349</span>
+AIHasRes(player,<span class="hljs-number">400</span>,<span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L376</span>
+AIHasRes(player,<span class="hljs-number">300</span>,<span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L386</span>
+AIHasRes(player,<span class="hljs-number">500</span>,<span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L413</span>
+AIHasRes(player,<span class="hljs-number">300</span>,<span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L423</span>
+AIHasRes(player,<span class="hljs-number">500</span>,<span class="hljs-number">0</span>)
+</code></pre>
+<h4 id="modsvoidsc2mod-2"><a class="markdownIt-Anchor" href="#modsvoidsc2mod-2">#</a> mods/void.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/void.sc2mod/base.sc2data/TriggerLibs/Protoss/ProtossChIn.galaxy#L2717">ProtossChIn.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2717</span>
+AIHasRes(player,<span class="hljs-number">700</span>,<span class="hljs-number">500</span>)
+</code></pre>
+<h4 id="modsvoidsc2mod-3"><a class="markdownIt-Anchor" href="#modsvoidsc2mod-3">#</a> mods/void.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/void.sc2mod/base.sc2data/TriggerLibs/Protoss/ProtossHdVH.galaxy#L2716">ProtossHdVH.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2716</span>
+AIHasRes(player,<span class="hljs-number">700</span>,<span class="hljs-number">500</span>)
+</code></pre>
+<h4 id="modsvoidsc2mod-4"><a class="markdownIt-Anchor" href="#modsvoidsc2mod-4">#</a> mods/void.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/void.sc2mod/base.sc2data/TriggerLibs/Protoss/ProtossHigh.galaxy#L978">ProtossHigh.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L978</span>
+AIHasRes(player,<span class="hljs-number">700</span>,<span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L981</span>
+AIHasRes(player,<span class="hljs-number">700</span>,<span class="hljs-number">600</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L992</span>
+AIHasRes(player,<span class="hljs-number">400</span>,<span class="hljs-number">200</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1062</span>
+AIHasRes(player,<span class="hljs-number">1200</span>,<span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1129</span>
+AIHasRes(player,<span class="hljs-number">1200</span>,<span class="hljs-number">0</span>)
+</code></pre>
+<h4 id="modsvoidsc2mod-5"><a class="markdownIt-Anchor" href="#modsvoidsc2mod-5">#</a> mods/void.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/void.sc2mod/base.sc2data/TriggerLibs/Protoss/ProtossVyHd.galaxy#L2747">ProtossVyHd.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2747</span>
+AIHasRes(player,<span class="hljs-number">700</span>,<span class="hljs-number">500</span>)
+</code></pre>
+<h4 id="modsvoidsc2mod-6"><a class="markdownIt-Anchor" href="#modsvoidsc2mod-6">#</a> mods/void.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/void.sc2mod/base.sc2data/TriggerLibs/Terran/TerranChIn.galaxy#L2927">TerranChIn.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2927</span>
+AIHasRes(player,<span class="hljs-number">700</span>,<span class="hljs-number">500</span>)
+</code></pre>
+<h4 id="modsvoidsc2mod-7"><a class="markdownIt-Anchor" href="#modsvoidsc2mod-7">#</a> mods/void.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/void.sc2mod/base.sc2data/TriggerLibs/Terran/TerranHdVH.galaxy#L2929">TerranHdVH.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2929</span>
+AIHasRes(player,<span class="hljs-number">700</span>,<span class="hljs-number">500</span>)
+</code></pre>
+<h4 id="modsvoidsc2mod-8"><a class="markdownIt-Anchor" href="#modsvoidsc2mod-8">#</a> mods/void.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/void.sc2mod/base.sc2data/TriggerLibs/Terran/TerranHigh.galaxy#L1037">TerranHigh.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1037</span>
+AIHasRes(player,<span class="hljs-number">700</span>,<span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1040</span>
+AIHasRes(player,<span class="hljs-number">700</span>,<span class="hljs-number">600</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1051</span>
+AIHasRes(player,<span class="hljs-number">400</span>,<span class="hljs-number">200</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1098</span>
+AIHasRes(player,<span class="hljs-number">1200</span>,<span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1179</span>
+AIHasRes(player,<span class="hljs-number">1200</span>,<span class="hljs-number">0</span>)
+</code></pre>
+<h4 id="modsvoidsc2mod-9"><a class="markdownIt-Anchor" href="#modsvoidsc2mod-9">#</a> mods/void.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/void.sc2mod/base.sc2data/TriggerLibs/Terran/TerranVyHd.galaxy#L2959">TerranVyHd.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2959</span>
+AIHasRes(player,<span class="hljs-number">700</span>,<span class="hljs-number">500</span>)
+</code></pre>
+<h4 id="modsvoidsc2mod-10"><a class="markdownIt-Anchor" href="#modsvoidsc2mod-10">#</a> mods/void.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/void.sc2mod/base.sc2data/TriggerLibs/Zerg/ZergChIn.galaxy#L142">ZergChIn.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L142</span>
+AIHasRes(player,<span class="hljs-number">350</span>,<span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L193</span>
+AIHasRes(player,<span class="hljs-number">350</span>,<span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L251</span>
+AIHasRes(player,<span class="hljs-number">350</span>,<span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L309</span>
+AIHasRes(player,<span class="hljs-number">350</span>,<span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L369</span>
+AIHasRes(player,<span class="hljs-number">350</span>,<span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2363</span>
+AIHasRes(player,<span class="hljs-number">500</span>,<span class="hljs-number">400</span>)
+</code></pre>
+<h4 id="modsvoidsc2mod-11"><a class="markdownIt-Anchor" href="#modsvoidsc2mod-11">#</a> mods/void.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/void.sc2mod/base.sc2data/TriggerLibs/Zerg/ZergHdVH.galaxy#L142">ZergHdVH.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L142</span>
+AIHasRes(player,<span class="hljs-number">350</span>,<span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L193</span>
+AIHasRes(player,<span class="hljs-number">350</span>,<span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L251</span>
+AIHasRes(player,<span class="hljs-number">350</span>,<span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L309</span>
+AIHasRes(player,<span class="hljs-number">350</span>,<span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L369</span>
+AIHasRes(player,<span class="hljs-number">350</span>,<span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2362</span>
+AIHasRes(player,<span class="hljs-number">500</span>,<span class="hljs-number">400</span>)
+</code></pre>
+<h4 id="modsvoidsc2mod-12"><a class="markdownIt-Anchor" href="#modsvoidsc2mod-12">#</a> mods/void.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/void.sc2mod/base.sc2data/TriggerLibs/Zerg/ZergHigh.galaxy#L998">ZergHigh.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L998</span>
+AIHasRes(player,<span class="hljs-number">400</span>,<span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1004</span>
+AIHasRes(player,<span class="hljs-number">1600</span>,<span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1012</span>
+AIHasRes(player,<span class="hljs-number">400</span>,<span class="hljs-number">200</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1064</span>
+AIHasRes(player,<span class="hljs-number">1200</span>,<span class="hljs-number">0</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

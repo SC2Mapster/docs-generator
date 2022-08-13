@@ -1,0 +1,399 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Set Playable Map Area / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Set Playable Map Area"/>
+                <meta property="og:description" content="Sets the playable map area, which is the area within which units are generally confined.  The edges of the specified region will be rounded to the nearest even-numbered cell edge.  Camera bounds will be automatically adjusted to accomodate the new playable map area.  Use the &quot;Set Camera Bounds&quot; action to change the camera bounds."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="set-playable-map-area"><a class="markdownIt-Anchor" href="#set-playable-map-area">#</a> Set Playable Map Area</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Set the playable map area to <strong>region</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Sets the playable map area, which is the area within which units are generally confined.  The edges of the specified region will be rounded to the nearest even-numbered cell edge.  Camera bounds will be automatically adjusted to accomodate the new playable map area.  Use the <em>“Set Camera Bounds”</em> action to change the camera bounds.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>region</code> — Region</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">RegionPlayableMapSet</span><span class="hljs-params">(region r)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#region-useful-regions">Region / Useful Regions</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>region</code> — <strong><a href="/galaxy/reference/region-empty">Empty Region</a></strong> — ( RegionEmpty )</li>
+<li><em><strong>[F]</strong></em> — <code>region</code> — <strong><a href="/galaxy/reference/region-entire-map">Entire Map</a></strong> — ( RegionEntireMap )</li>
+<li><em><strong>[F]</strong></em> — <code>region</code> — <strong><a href="/galaxy/reference/region-playable-map">Playable Map Area</a></strong> — ( RegionPlayableMap )</li>
+<li><em><strong>[F]</strong></em> — <code>region</code> — <strong><a href="/galaxy/reference/region-from-name">Region From Name</a></strong> — ( RegionFromName )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/region-playable-map-set">Set Playable Map Area</a></strong> — ( RegionPlayableMapSet )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/challenges/protosscombat.sc2map/MapScript.galaxy#L904">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L904</span>
+RegionPlayableMapSet(gv_playableArea)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L989</span>
+RegionPlayableMapSet(gv_playableArea)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1043</span>
+RegionPlayableMapSet(RegionFromId(<span class="hljs-number">24</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1065</span>
+RegionPlayableMapSet(RegionFromId(<span class="hljs-number">26</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1085</span>
+RegionPlayableMapSet(RegionFromId(<span class="hljs-number">27</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1151</span>
+RegionPlayableMapSet(gv_playableArea)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1212</span>
+RegionPlayableMapSet(RegionFromId(<span class="hljs-number">24</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1234</span>
+RegionPlayableMapSet(RegionFromId(<span class="hljs-number">26</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1265</span>
+RegionPlayableMapSet(RegionFromId(<span class="hljs-number">27</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1331</span>
+RegionPlayableMapSet(gv_playableArea)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L774</span>
+RegionPlayableMapSet(RegionPlayableMap())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L852</span>
+RegionPlayableMapSet(gv_playableArea)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L937</span>
+RegionPlayableMapSet(gv_playableArea)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L994</span>
+RegionPlayableMapSet(RegionFromId(<span class="hljs-number">21</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1015</span>
+RegionPlayableMapSet(RegionFromId(<span class="hljs-number">22</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1036</span>
+RegionPlayableMapSet(RegionFromId(<span class="hljs-number">23</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1101</span>
+RegionPlayableMapSet(gv_playableArea)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1162</span>
+RegionPlayableMapSet(RegionFromId(<span class="hljs-number">21</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1183</span>
+RegionPlayableMapSet(RegionFromId(<span class="hljs-number">22</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1203</span>
+RegionPlayableMapSet(RegionFromId(<span class="hljs-number">23</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L911</span>
+RegionPlayableMapSet(gv_playableArea)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1002</span>
+RegionPlayableMapSet(gv_playableArea)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1062</span>
+RegionPlayableMapSet(RegionFromId(<span class="hljs-number">21</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1083</span>
+RegionPlayableMapSet(RegionFromId(<span class="hljs-number">22</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1103</span>
+RegionPlayableMapSet(RegionFromId(<span class="hljs-number">23</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1172</span>
+RegionPlayableMapSet(gv_playableArea)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1232</span>
+RegionPlayableMapSet(RegionFromId(<span class="hljs-number">21</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1253</span>
+RegionPlayableMapSet(RegionFromId(<span class="hljs-number">22</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1273</span>
+RegionPlayableMapSet(RegionFromId(<span class="hljs-number">23</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1342</span>
+RegionPlayableMapSet(gv_playableArea)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1133</span>
+RegionPlayableMapSet(RegionFromId(<span class="hljs-number">1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3960</span>
+RegionPlayableMapSet(RegionEntireMap())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4673</span>
+RegionPlayableMapSet(RegionFromId(<span class="hljs-number">1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L740</span>
+RegionPlayableMapSet(RegionFromId(<span class="hljs-number">30</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5556</span>
+RegionPlayableMapSet(RegionEntireMap())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6132</span>
+RegionPlayableMapSet(RegionFromId(<span class="hljs-number">31</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6423</span>
+RegionPlayableMapSet(RegionFromId(<span class="hljs-number">32</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6562</span>
+RegionPlayableMapSet(RegionEntireMap())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L567</span>
+RegionPlayableMapSet(RegionFromId(<span class="hljs-number">17</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3301</span>
+RegionPlayableMapSet(RegionEntireMap())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3641</span>
+RegionPlayableMapSet(RegionFromId(<span class="hljs-number">7</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L655</span>
+RegionPlayableMapSet(RegionFromId(<span class="hljs-number">2</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4520</span>
+RegionPlayableMapSet(gv_mapAreaNormal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5226</span>
+RegionPlayableMapSet(gv_mapAreaNormal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6077</span>
+RegionPlayableMapSet(gv_mapAreaNormal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1321</span>
+RegionPlayableMapSet(RegionFromId(<span class="hljs-number">10</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3622</span>
+RegionPlayableMapSet(RegionEntireMap())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3683</span>
+RegionPlayableMapSet(RegionFromId(<span class="hljs-number">13</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5553</span>
+RegionPlayableMapSet(RegionEntireMap())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5616</span>
+RegionPlayableMapSet(RegionFromId(<span class="hljs-number">14</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7491</span>
+RegionPlayableMapSet(RegionEntireMap())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7557</span>
+RegionPlayableMapSet(RegionFromId(<span class="hljs-number">34</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9416</span>
+RegionPlayableMapSet(RegionEntireMap())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9693</span>
+RegionPlayableMapSet(RegionFromId(<span class="hljs-number">127</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9769</span>
+RegionPlayableMapSet(RegionEntireMap())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L589</span>
+RegionPlayableMapSet(RegionFromId(<span class="hljs-number">41</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4351</span>
+RegionPlayableMapSet(RegionFromId(<span class="hljs-number">11</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4730</span>
+RegionPlayableMapSet(RegionFromId(<span class="hljs-number">11</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1133</span>
+RegionPlayableMapSet(RegionFromId(<span class="hljs-number">1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3960</span>
+RegionPlayableMapSet(RegionEntireMap())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4673</span>
+RegionPlayableMapSet(RegionFromId(<span class="hljs-number">1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L740</span>
+RegionPlayableMapSet(RegionFromId(<span class="hljs-number">30</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5556</span>
+RegionPlayableMapSet(RegionEntireMap())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6132</span>
+RegionPlayableMapSet(RegionFromId(<span class="hljs-number">31</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6423</span>
+RegionPlayableMapSet(RegionFromId(<span class="hljs-number">32</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6562</span>
+RegionPlayableMapSet(RegionEntireMap())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L567</span>
+RegionPlayableMapSet(RegionFromId(<span class="hljs-number">17</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3301</span>
+RegionPlayableMapSet(RegionEntireMap())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3641</span>
+RegionPlayableMapSet(RegionFromId(<span class="hljs-number">7</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L655</span>
+RegionPlayableMapSet(RegionFromId(<span class="hljs-number">2</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4520</span>
+RegionPlayableMapSet(gv_mapAreaNormal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5226</span>
+RegionPlayableMapSet(gv_mapAreaNormal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6077</span>
+RegionPlayableMapSet(gv_mapAreaNormal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1321</span>
+RegionPlayableMapSet(RegionFromId(<span class="hljs-number">10</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3622</span>
+RegionPlayableMapSet(RegionEntireMap())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3683</span>
+RegionPlayableMapSet(RegionFromId(<span class="hljs-number">13</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5553</span>
+RegionPlayableMapSet(RegionEntireMap())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5616</span>
+RegionPlayableMapSet(RegionFromId(<span class="hljs-number">14</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7491</span>
+RegionPlayableMapSet(RegionEntireMap())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7557</span>
+RegionPlayableMapSet(RegionFromId(<span class="hljs-number">34</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9416</span>
+RegionPlayableMapSet(RegionEntireMap())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9693</span>
+RegionPlayableMapSet(RegionFromId(<span class="hljs-number">127</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9769</span>
+RegionPlayableMapSet(RegionEntireMap())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L589</span>
+RegionPlayableMapSet(RegionFromId(<span class="hljs-number">41</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4351</span>
+RegionPlayableMapSet(RegionFromId(<span class="hljs-number">11</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4730</span>
+RegionPlayableMapSet(RegionFromId(<span class="hljs-number">11</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L904</span>
+RegionPlayableMapSet(gv_playableArea)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L989</span>
+RegionPlayableMapSet(gv_playableArea)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1043</span>
+RegionPlayableMapSet(RegionFromId(<span class="hljs-number">24</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1065</span>
+RegionPlayableMapSet(RegionFromId(<span class="hljs-number">26</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1085</span>
+RegionPlayableMapSet(RegionFromId(<span class="hljs-number">27</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1151</span>
+RegionPlayableMapSet(gv_playableArea)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1212</span>
+RegionPlayableMapSet(RegionFromId(<span class="hljs-number">24</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1234</span>
+RegionPlayableMapSet(RegionFromId(<span class="hljs-number">26</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1265</span>
+RegionPlayableMapSet(RegionFromId(<span class="hljs-number">27</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1331</span>
+RegionPlayableMapSet(gv_playableArea)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L774</span>
+RegionPlayableMapSet(RegionPlayableMap())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L852</span>
+RegionPlayableMapSet(gv_playableArea)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L937</span>
+RegionPlayableMapSet(gv_playableArea)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L994</span>
+RegionPlayableMapSet(RegionFromId(<span class="hljs-number">21</span>))
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

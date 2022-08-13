@@ -1,0 +1,278 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Create Cutscene at Position / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Create Cutscene at Position"/>
+                <meta property="og:description" content="Cutscenes are built using the Cutscene Editor and saved to .SC2Cutscene files.  They can describe a complicated cinematic or a simple conversation.  This action allows you to play a cutscene at a specific position and facing.  If you want the defaults, use Create Cutscene.&lt;n/&gt;&lt;n/&gt;WARNING: The Sound action Play Sound Scene File also accepts .SC2Cutscene files, but old-style scene files are not compatible with this action. 
+
+Returns: preset [ preset::Cutscene ]"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="create-cutscene-at-position"><a class="markdownIt-Anchor" href="#create-cutscene-at-position">#</a> Create Cutscene at Position</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Create cutscene <strong>inFilePath|Cutscene</strong> at <strong>pos</strong> facing <strong>inFacing|Facing</strong> or players <strong>players|Player Group</strong> with autoplaying <strong>inAutoPlay</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Cutscenes are built using the Cutscene Editor and saved to .SC2Cutscene files.  They can describe a complicated cinematic or a simple conversation.  This action allows you to play a cutscene at a specific position and facing.  If you want the defaults, use Create Cutscene.<n/><n/>WARNING: The Sound action Play Sound Scene File also accepts .SC2Cutscene files, but old-style scene files are not compatible with this action.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>string</code> <em>[ filepath ]</em> — File Path</li>
+<li><code>point</code> — Position</li>
+<li><code>fixed</code> — Facing</li>
+<li><code>playergroup</code> — Players</li>
+<li><code>bool</code> — AutoPlay</li>
+</ul>
+<p>Returns — <code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-cutscene">Cutscene</a> ]</em></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">int</span> <span class="hljs-title">CutsceneCreateNew</span><span class="hljs-params">(
+	<span class="hljs-built_in">string</span> inFilePath,
+	point pos,
+	fixed inFacing,
+	playergroup players,
+	<span class="hljs-keyword">bool</span> inAutoPlay,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#cutscene-cutscenes">Cutscene / Cutscenes</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-cutscene">Cutscene</a> ]</em> — <strong><a href="/galaxy/reference/cutscene-create-no-position">Create Cutscene</a></strong> — ( CutsceneCreateNoPosition )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-cutscene">Cutscene</a> ]</em> — <strong><a href="/galaxy/reference/cutscene-create-new">Create Cutscene at Position</a></strong> — ( CutsceneCreateNew )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/cutscene-go-to-next-bookmark">Go To Next Cutscene Bookmark</a></strong> — ( CutsceneGoToNextBookmark )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-cutscene-end-scene-fired">Cutscene EndScene Fired</a></strong> — ( TriggerAddEventCutsceneEndSceneFired )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-cutscene">Cutscene</a> ]</em> — <strong><a href="/galaxy/reference/cutscene-create-deprecated">Create Cutscene</a></strong> — ( CutsceneCreate )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-cutscene">Cutscene</a> ]</em> — <strong><a href="/galaxy/reference/cutscene-last-created">Last Created Cutscene</a></strong> — ( CutsceneLastCreated )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/cutscene-play">Play Cutscene</a></strong> — ( CutscenePlay )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/cutscene-pause">Pause Cutscene</a></strong> — ( CutscenePause )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/cutscene-stop">Stop Cutscene</a></strong> — ( CutsceneStop )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/cutscene-set-time">Set Cutscene Time</a></strong> — ( CutsceneSetTime )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/cutscene-go-to-bookmark">Go To Cutscene Bookmark</a></strong> — ( CutsceneGoToBookmark )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/cutscene-show">Show/Hide Cutscene</a></strong> — ( CutsceneShow )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/cutscene-play-cutscene-range-over-time">Play Cutscene Range Over Time</a></strong> — ( CutscenePlayCutsceneRangeOverTime )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/cutscene-fade">Cutscene Fade</a></strong> — ( CutsceneFade )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-cutscene">Cutscene</a> ]</em> — <strong><a href="/galaxy/reference/cutscene-get-trigger-control">Dialog Item Cutscene</a></strong> — ( CutsceneGetTriggerControl )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-cutscene-bookmark-fired">Cutscene Bookmark Fired</a></strong> — ( TriggerAddEventCutsceneBookmarkFired )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-cutscene">Cutscene</a> ]</em> — <strong><a href="/galaxy/reference/event-cutscene-id">Triggering Cutscene</a></strong> — ( EventCutsceneId )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> — <strong><a href="/galaxy/reference/event-cutscene-bookmark">Triggering Cutscene Bookmark</a></strong> — ( EventCutsceneBookmark )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/wait-for-cutscene-to-end">Wait For Cutscene To End</a></strong> — ( WaitForCutsceneToEnd )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignsswarmsc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmsc2campaign">#</a> campaigns/swarm.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarm.sc2campaign/base.sc2maps/maps/campaign/swarm/zchar02.sc2map/MapScript.galaxy#L1000">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1000</span>
+CutsceneCreateNew(<span class="hljs-string">"Cutscenes\\ZChar02CruiserLaunch.SC2Cutscene"</span>, libNtve_gf_PointFromXYZ(<span class="hljs-number">168.29</span>, <span class="hljs-number">65.25</span>, <span class="hljs-number">10.02</span>), <span class="hljs-number">0.0</span>, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1000</span>
+CutsceneCreateNew(<span class="hljs-string">"Cutscenes\\ZChar02CruiserLaunch.SC2Cutscene"</span>, libNtve_gf_PointFromXYZ(<span class="hljs-number">168.29</span>, <span class="hljs-number">65.25</span>, <span class="hljs-number">10.02</span>), <span class="hljs-number">0.0</span>, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="campaignsswarmstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmstorysc2campaign">#</a> campaigns/swarmstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstory.sc2campaign/base.sc2data/TriggerLibs/SwarmCampaignLib.galaxy#L6698">SwarmCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L6698</span>
+CutsceneCreateNew(lp_file, lp_position, <span class="hljs-number">0.0</span>, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8177</span>
+CutsceneCreateNew(<span class="hljs-string">"Cutscenes\\StorymodeSet_EggRoom.SC2Cutscene"</span>, UnitGetPosition(libSwaC_gv_zS_ArmyCustomEggRoom), <span class="hljs-number">0.0</span>, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8198</span>
+CutsceneCreateNew(<span class="hljs-string">"Cutscenes\\StorymodeSet_EggRoom.SC2Cutscene"</span>, Point(<span class="hljs-number">50.0</span>, <span class="hljs-number">50.0</span>), <span class="hljs-number">0.0</span>, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8216</span>
+CutsceneCreateNew(<span class="hljs-string">"Cutscenes\\StorymodeSet_EggRoom.SC2Cutscene"</span>, Point(<span class="hljs-number">50.0</span>, <span class="hljs-number">50.0</span>), <span class="hljs-number">0.0</span>, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9274</span>
+CutsceneCreateNew(<span class="hljs-string">"Cutscenes\\Z_UI_SplitScreen.SC2Cutscene"</span>, libNtve_gf_PointWithZOffset(libSwaC_gv_center, libSwaC_gv_zSC_ARMYEVOLUTIONSETHEIGHT), <span class="hljs-number">0.0</span>, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9304</span>
+CutsceneCreateNew(<span class="hljs-string">"Cutscenes\\Z_UI_SplitScreenVictory.SC2Cutscene"</span>, libNtve_gf_PointWithZOffset(libSwaC_gv_center, libSwaC_gv_zSC_ARMYEVOLUTIONSETHEIGHT), <span class="hljs-number">0.0</span>, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L23541</span>
+CutsceneCreateNew(lv_file, lv_position, <span class="hljs-number">0.0</span>, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="campaignsswarmstoryutilsc2mod"><a class="markdownIt-Anchor" href="#campaignsswarmstoryutilsc2mod">#</a> campaigns/swarmstoryutil.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstoryutil.sc2mod/base.sc2data/Lib281DEC45.galaxy#L2852">Lib281DEC45.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2852</span>
+CutsceneCreateNew(lib281DEC45_gf_ZSS_SetLightingCutsceneFile(), lib281DEC45_gv_zSS_ConversationCutscenePosition, <span class="hljs-number">0.0</span>, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2870</span>
+CutsceneCreateNew(lib281DEC45_gf_ZSS_SetLightingCutsceneFile(), lib281DEC45_gv_zSS_ConversationCutscenePosition, <span class="hljs-number">0.0</span>, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3632</span>
+CutsceneCreateNew(UserDataGetString(<span class="hljs-string">"AmbientScenes"</span>,lv_sceneinstance,<span class="hljs-string">"CutsceneFile"</span>,<span class="hljs-number">1</span>), lib281DEC45_gv_zSS_ConversationCutscenePosition, <span class="hljs-number">0.0</span>, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3911</span>
+CutsceneCreateNew(<span class="hljs-string">"Cutscenes\\Conversations_EggRoom.SC2Cutscene"</span>, lib281DEC45_gv_zSS_EggRoomCutscenePosition, <span class="hljs-number">0.0</span>, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3916</span>
+CutsceneCreateNew(<span class="hljs-string">"Cutscenes\\Conversations_Char.SC2Cutscene"</span>, lib281DEC45_gv_zSS_ConversationCutscenePosition, <span class="hljs-number">0.0</span>, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3919</span>
+CutsceneCreateNew(<span class="hljs-string">"Cutscenes\\Conversations_Ice.SC2Cutscene"</span>, lib281DEC45_gv_zSS_ConversationCutscenePosition, <span class="hljs-number">0.0</span>, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3922</span>
+CutsceneCreateNew(<span class="hljs-string">"Cutscenes\\Conversations_Zerus.SC2Cutscene"</span>, lib281DEC45_gv_zSS_ConversationCutscenePosition, <span class="hljs-number">0.0</span>, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3926</span>
+CutsceneCreateNew(<span class="hljs-string">"Cutscenes\\Conversations_HybridB.SC2Cutscene"</span>, lib281DEC45_gv_zSS_ConversationCutscenePosition, <span class="hljs-number">0.0</span>, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3929</span>
+CutsceneCreateNew(<span class="hljs-string">"Cutscenes\\Conversations_Hybrid.SC2Cutscene"</span>, lib281DEC45_gv_zSS_ConversationCutscenePosition, <span class="hljs-number">0.0</span>, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3934</span>
+CutsceneCreateNew(<span class="hljs-string">"Cutscenes\\Conversations_Korhal.SC2Cutscene"</span>, lib281DEC45_gv_zSS_ConversationCutscenePosition, <span class="hljs-number">0.0</span>, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignLib.galaxy#L4052">VoidCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4052</span>
+CutsceneCreateNew(lp_file, lp_position, <span class="hljs-number">0.0</span>, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10036</span>
+CutsceneCreateNew(lv_file, lv_position, <span class="hljs-number">0.0</span>, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign-2"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign-2">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignStoryLib.galaxy#L1328">VoidCampaignStoryLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1328</span>
+CutsceneCreateNew(libVCST_gf_PS_SetLightingCutsceneFile(), libVCST_gv_pS_ConversationCutscenePosition, <span class="hljs-number">0.0</span>, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1345</span>
+CutsceneCreateNew(libVCST_gf_PS_SetLightingCutsceneFile(), libVCST_gv_pS_ConversationCutscenePosition, <span class="hljs-number">0.0</span>, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1907</span>
+CutsceneCreateNew(libVCST_gv_pS_RoomUISceneFiles[(libVCST_gf_CurrentRoom())], libVCST_gf_StoryModeDefaultPosition(), <span class="hljs-number">0.0</span>, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2543</span>
+CutsceneCreateNew(lv_backgroundCutscene, libVCST_gf_StoryModeDefaultPosition(), <span class="hljs-number">0.0</span>, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2916</span>
+CutsceneCreateNew(UserDataGetString(<span class="hljs-string">"AmbientEvents"</span>,lp_ambientEvent,<span class="hljs-string">"CutsceneFile"</span>,<span class="hljs-number">1</span>), libVCST_gv_pS_ConversationCutscenePosition, <span class="hljs-number">0.0</span>, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3331</span>
+CutsceneCreateNew(libVCST_gv_pS_RoomConvoSceneFiles[(libVCST_gv_pS_CurrentRoom)], libVCST_gv_pS_ConversationCutscenePosition, <span class="hljs-number">0.0</span>, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4552</span>
+CutsceneCreateNew(lp_cutscene, Point(<span class="hljs-number">64.0</span>, <span class="hljs-number">64.0</span>), <span class="hljs-number">0.0</span>, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign-3"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign-3">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignUILib.galaxy#L661">VoidCampaignUILib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L661</span>
+CutsceneCreateNew(<span class="hljs-string">"Cutscenes\\UI_ArmyUnits.SC2Cutscene"</span>, libNtve_gf_PointFromXYZ(<span class="hljs-number">16.0</span>, <span class="hljs-number">16.0</span>, <span class="hljs-number">8.0</span>), <span class="hljs-number">0.0</span>, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2292</span>
+CutsceneCreateNew(<span class="hljs-string">"Cutscenes\\UI_ShipUpgrade.SC2Cutscene"</span>, libNtve_gf_PointFromXYZ(<span class="hljs-number">16.0</span>, <span class="hljs-number">16.0</span>, <span class="hljs-number">8.0</span>), <span class="hljs-number">0.0</span>, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7350</span>
+CutsceneCreateNew(<span class="hljs-string">"Cutscenes\\UI_MissionLaunch.SC2Cutscene"</span>, libNtve_gf_PointFromXYZ(<span class="hljs-number">16.0</span>, <span class="hljs-number">16.0</span>, <span class="hljs-number">32.0</span>), <span class="hljs-number">0.0</span>, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8616</span>
+CutsceneCreateNew(<span class="hljs-string">"Cutscenes\\UI_Starmap.SC2Cutscene"</span>, libNtve_gf_PointFromXYZ(<span class="hljs-number">16.0</span>, <span class="hljs-number">16.0</span>, <span class="hljs-number">32.0</span>), <span class="hljs-number">0.0</span>, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodsbattlefieldofeternitystormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodsbattlefieldofeternitystormmod">#</a> mods/heroesmapmods/battlegroundmapmods/battlefieldofeternity.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/battlefieldofeternity.stormmod/base.stormdata/LibMLBD.galaxy#L140">LibMLBD.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L140</span>
+CutsceneCreateNew(<span class="hljs-string">"Cutscenes\\Storm_HvH_CS_EventStart.StormCutscene"</span>, libMLBD_gv_mMBOEBossSpawnLocationCenter, <span class="hljs-number">0.0</span>, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L146</span>
+CutsceneCreateNew(<span class="hljs-string">"Cutscenes\\Storm_HvH_CS_EventMid.StormCutscene"</span>, libMLBD_gv_mMBOEBossSpawnLocationCenter, <span class="hljs-number">0.0</span>, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L152</span>
+CutsceneCreateNew(<span class="hljs-string">"Cutscenes\\Storm_HvH_CS_EventEndHeaven.StormCutscene"</span>, lp_point, <span class="hljs-number">45.0</span>, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L158</span>
+CutsceneCreateNew(<span class="hljs-string">"Cutscenes\\Storm_HvH_CS_EventEndHell.StormCutscene"</span>, lp_point, <span class="hljs-number">315.0</span>, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="modsmissionpackscampaigncommonsc2mod"><a class="markdownIt-Anchor" href="#modsmissionpackscampaigncommonsc2mod">#</a> mods/missionpacks/campaigncommon.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/campaigncommon.sc2mod/base.sc2data/LibComC.galaxy#L1694">LibComC.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1694</span>
+CutsceneCreateNew(lp_file, lp_position, <span class="hljs-number">0.0</span>, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="modsmissionpacksnovacampaignsc2mod"><a class="markdownIt-Anchor" href="#modsmissionpacksnovacampaignsc2mod">#</a> mods/missionpacks/novacampaign.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/novacampaign.sc2mod/base.sc2data/LibNCST.galaxy#L1214">LibNCST.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1214</span>
+CutsceneCreateNew(libNCST_gf_NS_SetLightingCutsceneFile(), libNCST_gv_nS_ConversationCutscenePosition, <span class="hljs-number">0.0</span>, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1230</span>
+CutsceneCreateNew(libNCST_gf_NS_SetLightingCutsceneFile(), libNCST_gv_nS_ConversationCutscenePosition, <span class="hljs-number">0.0</span>, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1713</span>
+CutsceneCreateNew(libNCST_gv_nS_RoomUISceneFiles[(libNCST_gf_CurrentRoom())], libNCST_gf_StoryModeDefaultPosition(), <span class="hljs-number">0.0</span>, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2186</span>
+CutsceneCreateNew(lv_backgroundCutscene, libNCST_gf_StoryModeDefaultPosition(), <span class="hljs-number">0.0</span>, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2564</span>
+CutsceneCreateNew(UserDataGetString(<span class="hljs-string">"AmbientEvents"</span>,lp_ambientEvent,<span class="hljs-string">"CutsceneFile"</span>,<span class="hljs-number">1</span>), libNCST_gv_nS_ConversationCutscenePosition, <span class="hljs-number">0.0</span>, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2888</span>
+CutsceneCreateNew(libNCST_gv_nS_RoomConvoSceneFiles[(libNCST_gv_nS_CurrentRoom)], libNCST_gv_nS_ConversationCutscenePosition, <span class="hljs-number">0.0</span>, PlayerGroupAll(), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3899</span>
+CutsceneCreateNew(lp_cutscene, Point(<span class="hljs-number">64.0</span>, <span class="hljs-number">64.0</span>), <span class="hljs-number">0.0</span>, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="modsvoidprologuesc2mod"><a class="markdownIt-Anchor" href="#modsvoidprologuesc2mod">#</a> mods/voidprologue.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/voidprologue.sc2mod/base.sc2data/LibA3DDD02B.galaxy#L5033">LibA3DDD02B.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L5033</span>
+CutsceneCreateNew(lp_file, lp_position, <span class="hljs-number">0.0</span>, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

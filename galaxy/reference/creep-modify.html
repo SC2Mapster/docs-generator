@@ -1,0 +1,410 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Modify Creep / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Modify Creep"/>
+                <meta property="og:description" content="Add or remove creep around a point.  This creep can be normal creep that will receed without a nearby generator, or permanent creep which will remain until removed with a trigger."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="modify-creep"><a class="markdownIt-Anchor" href="#modify-creep">#</a> Modify Creep</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — <strong>add|Add/Remove</strong> <strong>permanent|Normal/Permanent</strong> creep at <strong>position</strong>, with radius <strong>radius</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Add or remove creep around a point.  This creep can be normal creep that will receed without a nearby generator, or permanent creep which will remain until removed with a trigger.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>point</code> — Position</li>
+<li><code>fixed</code> — Radius</li>
+<li><code>bool</code> <em>[ preset::<a href="/galaxy/reference/preset-add-remove-option">AddRemoveOption</a> ]</em> — Add</li>
+<li><code>bool</code> <em>[ preset::<a href="/galaxy/reference/preset-creep-permanent-option">CreepPermanentOption</a> ]</em> — Permanent</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">CreepModify</span><span class="hljs-params">(
+	point inPos,
+	fixed inRadius,
+	<span class="hljs-keyword">bool</span> inAdd,
+	<span class="hljs-keyword">bool</span> inPermanent,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#environment-creep-and-power">Environment / Creep And Power</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/creep-set-speed">Set Creep Speed</a></strong> — ( CreepSetSpeed )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/creep-modify">Modify Creep</a></strong> — ( CreepModify )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/creep-is-present">Creep Is Present</a></strong> — ( CreepIsPresent )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/creep-adjacent">Creep Adjacent</a></strong> — ( CreepAdjacent )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/power-level-deprecated">FunctionDef/Name/lib_Ntve_00000250</a></strong> — ( PowerLevel )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/power-level">Power Level</a></strong> — ( PowerLevel )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/power-is-provided-by-deprecated">FunctionDef/Name/lib_Ntve_00000251</a></strong> — ( PowerIsProvidedBy )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/power-is-provided-by">Power Is Provided By</a></strong> — ( PowerIsProvidedBy )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/challenges/advancedcommand.sc2map/MapScript.galaxy#L692">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L692</span>
+CreepModify(UnitGetPosition(UnitLastCreated()), <span class="hljs-number">10.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L570</span>
+CreepModify(RegionGetCenter(RegionFromId(<span class="hljs-number">11</span>)), <span class="hljs-number">10.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L571</span>
+CreepModify(RegionGetCenter(RegionFromId(<span class="hljs-number">12</span>)), <span class="hljs-number">10.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L572</span>
+CreepModify(RegionGetCenter(RegionFromId(<span class="hljs-number">16</span>)), <span class="hljs-number">10.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L573</span>
+CreepModify(RegionGetCenter(RegionFromId(<span class="hljs-number">19</span>)), <span class="hljs-number">10.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L574</span>
+CreepModify(RegionGetCenter(RegionFromId(<span class="hljs-number">45</span>)), <span class="hljs-number">10.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L575</span>
+CreepModify(RegionGetCenter(RegionFromId(<span class="hljs-number">47</span>)), <span class="hljs-number">10.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L576</span>
+CreepModify(RegionGetCenter(RegionFromId(<span class="hljs-number">48</span>)), <span class="hljs-number">10.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L630</span>
+CreepModify(RegionGetCenter(RegionFromId(<span class="hljs-number">18</span>)), <span class="hljs-number">15.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L631</span>
+CreepModify(RegionGetCenter(RegionFromId(<span class="hljs-number">19</span>)), <span class="hljs-number">15.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L632</span>
+CreepModify(RegionGetCenter(RegionFromId(<span class="hljs-number">25</span>)), <span class="hljs-number">15.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L633</span>
+CreepModify(RegionGetCenter(RegionFromId(<span class="hljs-number">13</span>)), <span class="hljs-number">6.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L634</span>
+CreepModify(RegionGetCenter(RegionFromId(<span class="hljs-number">14</span>)), <span class="hljs-number">6.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L635</span>
+CreepModify(RegionGetCenter(RegionFromId(<span class="hljs-number">15</span>)), <span class="hljs-number">6.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L381</span>
+CreepModify(RegionGetCenter(lp_area), <span class="hljs-number">10.0</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4686</span>
+CreepModify(PointFromId(<span class="hljs-number">261</span>), <span class="hljs-number">50.0</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5134</span>
+CreepModify(PointFromId(<span class="hljs-number">511</span>), <span class="hljs-number">8.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5135</span>
+CreepModify(PointFromId(<span class="hljs-number">668</span>), <span class="hljs-number">8.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5136</span>
+CreepModify(PointFromId(<span class="hljs-number">684</span>), <span class="hljs-number">8.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5137</span>
+CreepModify(PointFromId(<span class="hljs-number">673</span>), <span class="hljs-number">8.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5138</span>
+CreepModify(PointFromId(<span class="hljs-number">701</span>), <span class="hljs-number">8.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4702</span>
+CreepModify(PointFromId(<span class="hljs-number">1907</span>), <span class="hljs-number">32.0</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4703</span>
+CreepModify(PointFromId(<span class="hljs-number">1907</span>), <span class="hljs-number">32.0</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1105</span>
+CreepModify(PointFromId(<span class="hljs-number">8</span>), <span class="hljs-number">10.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1106</span>
+CreepModify(PointFromId(<span class="hljs-number">9</span>), <span class="hljs-number">10.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1107</span>
+CreepModify(PointFromId(<span class="hljs-number">122</span>), <span class="hljs-number">10.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1108</span>
+CreepModify(PointFromId(<span class="hljs-number">124</span>), <span class="hljs-number">10.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1109</span>
+CreepModify(PointFromId(<span class="hljs-number">125</span>), <span class="hljs-number">10.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1110</span>
+CreepModify(PointFromId(<span class="hljs-number">127</span>), <span class="hljs-number">10.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1111</span>
+CreepModify(PointFromId(<span class="hljs-number">128</span>), <span class="hljs-number">10.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1112</span>
+CreepModify(PointFromId(<span class="hljs-number">129</span>), <span class="hljs-number">10.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1113</span>
+CreepModify(PointFromId(<span class="hljs-number">132</span>), <span class="hljs-number">10.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1114</span>
+CreepModify(PointFromId(<span class="hljs-number">134</span>), <span class="hljs-number">10.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L416</span>
+CreepModify(RegionGetCenter(RegionFromId(<span class="hljs-number">18</span>)), <span class="hljs-number">2.0</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L423</span>
+CreepModify(RegionGetCenter(RegionFromId(<span class="hljs-number">19</span>)), <span class="hljs-number">3.0</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L430</span>
+CreepModify(RegionGetCenter(RegionFromId(<span class="hljs-number">17</span>)), <span class="hljs-number">4.0</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L437</span>
+CreepModify(RegionGetCenter(RegionFromId(<span class="hljs-number">20</span>)), <span class="hljs-number">8.0</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L823</span>
+CreepModify(PointFromId(<span class="hljs-number">1767</span>), <span class="hljs-number">10.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L824</span>
+CreepModify(PointFromId(<span class="hljs-number">1870</span>), <span class="hljs-number">10.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L825</span>
+CreepModify(PointFromId(<span class="hljs-number">1889</span>), <span class="hljs-number">10.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L826</span>
+CreepModify(PointFromId(<span class="hljs-number">1890</span>), <span class="hljs-number">10.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L827</span>
+CreepModify(PointFromId(<span class="hljs-number">1891</span>), <span class="hljs-number">10.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L828</span>
+CreepModify(PointFromId(<span class="hljs-number">1892</span>), <span class="hljs-number">10.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L843</span>
+CreepModify(UnitGetPosition(auto0098B004_var), <span class="hljs-number">10.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L934</span>
+CreepModify(PointFromId(<span class="hljs-number">215</span>), <span class="hljs-number">10.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L935</span>
+CreepModify(PointFromId(<span class="hljs-number">216</span>), <span class="hljs-number">10.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L936</span>
+CreepModify(PointFromId(<span class="hljs-number">217</span>), <span class="hljs-number">10.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L937</span>
+CreepModify(PointFromId(<span class="hljs-number">349</span>), <span class="hljs-number">10.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L938</span>
+CreepModify(PointFromId(<span class="hljs-number">350</span>), <span class="hljs-number">10.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L939</span>
+CreepModify(PointFromId(<span class="hljs-number">351</span>), <span class="hljs-number">10.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L940</span>
+CreepModify(PointFromId(<span class="hljs-number">352</span>), <span class="hljs-number">10.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L941</span>
+CreepModify(PointFromId(<span class="hljs-number">353</span>), <span class="hljs-number">10.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L942</span>
+CreepModify(PointFromId(<span class="hljs-number">355</span>), <span class="hljs-number">10.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L995</span>
+CreepModify(PointFromId(<span class="hljs-number">55</span>), <span class="hljs-number">10.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8892</span>
+CreepModify(PointFromId(<span class="hljs-number">1708</span>), <span class="hljs-number">15.0</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9341</span>
+CreepModify(PointFromId(<span class="hljs-number">1642</span>), <span class="hljs-number">15.0</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9342</span>
+CreepModify(PointFromId(<span class="hljs-number">1643</span>), <span class="hljs-number">15.0</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9343</span>
+CreepModify(PointFromId(<span class="hljs-number">1644</span>), <span class="hljs-number">15.0</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4442</span>
+CreepModify(RegionGetCenter(RegionFromId(<span class="hljs-number">20</span>)), <span class="hljs-number">25.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4804</span>
+CreepModify(UnitGetPosition(UnitFromId(<span class="hljs-number">912</span>)), <span class="hljs-number">8.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4805</span>
+CreepModify(UnitGetPosition(UnitFromId(<span class="hljs-number">929</span>)), <span class="hljs-number">25.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5244</span>
+CreepModify(PointFromId(<span class="hljs-number">230</span>), <span class="hljs-number">25.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5245</span>
+CreepModify(PointFromId(<span class="hljs-number">230</span>), <span class="hljs-number">5.0</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5316</span>
+CreepModify(RegionGetCenter(RegionFromId(<span class="hljs-number">20</span>)), <span class="hljs-number">25.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L561</span>
+CreepModify(PointFromId(<span class="hljs-number">5</span>), <span class="hljs-number">10.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L562</span>
+CreepModify(PointFromId(<span class="hljs-number">7</span>), <span class="hljs-number">10.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L563</span>
+CreepModify(PointFromId(<span class="hljs-number">94</span>), <span class="hljs-number">10.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L564</span>
+CreepModify(PointFromId(<span class="hljs-number">116</span>), <span class="hljs-number">10.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L565</span>
+CreepModify(PointFromId(<span class="hljs-number">133</span>), <span class="hljs-number">10.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L566</span>
+CreepModify(PointFromId(<span class="hljs-number">169</span>), <span class="hljs-number">10.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L567</span>
+CreepModify(PointFromId(<span class="hljs-number">176</span>), <span class="hljs-number">10.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L568</span>
+CreepModify(PointFromId(<span class="hljs-number">187</span>), <span class="hljs-number">10.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L569</span>
+CreepModify(PointFromId(<span class="hljs-number">188</span>), <span class="hljs-number">10.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L570</span>
+CreepModify(PointFromId(<span class="hljs-number">189</span>), <span class="hljs-number">10.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L381</span>
+CreepModify(RegionGetCenter(lp_area), <span class="hljs-number">10.0</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4686</span>
+CreepModify(PointFromId(<span class="hljs-number">261</span>), <span class="hljs-number">50.0</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5134</span>
+CreepModify(PointFromId(<span class="hljs-number">511</span>), <span class="hljs-number">8.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5135</span>
+CreepModify(PointFromId(<span class="hljs-number">668</span>), <span class="hljs-number">8.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5136</span>
+CreepModify(PointFromId(<span class="hljs-number">684</span>), <span class="hljs-number">8.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5137</span>
+CreepModify(PointFromId(<span class="hljs-number">673</span>), <span class="hljs-number">8.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5138</span>
+CreepModify(PointFromId(<span class="hljs-number">701</span>), <span class="hljs-number">8.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4702</span>
+CreepModify(PointFromId(<span class="hljs-number">1907</span>), <span class="hljs-number">32.0</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4703</span>
+CreepModify(PointFromId(<span class="hljs-number">1907</span>), <span class="hljs-number">32.0</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1105</span>
+CreepModify(PointFromId(<span class="hljs-number">8</span>), <span class="hljs-number">10.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1106</span>
+CreepModify(PointFromId(<span class="hljs-number">9</span>), <span class="hljs-number">10.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1107</span>
+CreepModify(PointFromId(<span class="hljs-number">122</span>), <span class="hljs-number">10.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1108</span>
+CreepModify(PointFromId(<span class="hljs-number">124</span>), <span class="hljs-number">10.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1109</span>
+CreepModify(PointFromId(<span class="hljs-number">125</span>), <span class="hljs-number">10.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1110</span>
+CreepModify(PointFromId(<span class="hljs-number">127</span>), <span class="hljs-number">10.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1111</span>
+CreepModify(PointFromId(<span class="hljs-number">128</span>), <span class="hljs-number">10.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1112</span>
+CreepModify(PointFromId(<span class="hljs-number">129</span>), <span class="hljs-number">10.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1113</span>
+CreepModify(PointFromId(<span class="hljs-number">132</span>), <span class="hljs-number">10.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1114</span>
+CreepModify(PointFromId(<span class="hljs-number">134</span>), <span class="hljs-number">10.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L416</span>
+CreepModify(RegionGetCenter(RegionFromId(<span class="hljs-number">18</span>)), <span class="hljs-number">2.0</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L423</span>
+CreepModify(RegionGetCenter(RegionFromId(<span class="hljs-number">19</span>)), <span class="hljs-number">3.0</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L430</span>
+CreepModify(RegionGetCenter(RegionFromId(<span class="hljs-number">17</span>)), <span class="hljs-number">4.0</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L437</span>
+CreepModify(RegionGetCenter(RegionFromId(<span class="hljs-number">20</span>)), <span class="hljs-number">8.0</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L823</span>
+CreepModify(PointFromId(<span class="hljs-number">1767</span>), <span class="hljs-number">10.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L824</span>
+CreepModify(PointFromId(<span class="hljs-number">1870</span>), <span class="hljs-number">10.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L825</span>
+CreepModify(PointFromId(<span class="hljs-number">1889</span>), <span class="hljs-number">10.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

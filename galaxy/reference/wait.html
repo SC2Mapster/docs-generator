@@ -1,0 +1,400 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Wait / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Wait"/>
+                <meta property="og:description" content="Pauses a trigger for a specified amount of time.  Real time is normal time.  Game time can pass faster or slower depending on the game speed.  AI time passes at the same rate as game time, but can be paused or unpaused while real time and game time are still running.  It is useful to pause the AI time while a player is watching a cinematic, so timed attack waves will wait until the player is finished with the cinematic before resuming their countdowns."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="wait"><a class="markdownIt-Anchor" href="#wait">#</a> Wait</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Wait <strong>t</strong> <strong>timeType|Real/Game/AI Time</strong> seconds<br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Pauses a trigger for a specified amount of time.  Real time is normal time.  Game time can pass faster or slower depending on the game speed.  AI time passes at the same rate as game time, but can be paused or unpaused while real time and game time are still running.  It is useful to pause the AI time while a player is watching a cinematic, so timed attack waves will wait until the player is finished with the cinematic before resuming their countdowns.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>fixed</code> — Time</li>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-time-type">TimeType</a> ]</em> — Time Type</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">Wait</span><span class="hljs-params">(fixed inSecs, <span class="hljs-keyword">int</span> inTimeType)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#general-waits">General / Waits</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/wait">Wait</a></strong> — ( Wait )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-wait-for-condition">Wait For Condition</a></strong> — (  )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-wait-for-condition-with-maximum-duration">Wait For Condition With Maximum Duration</a></strong> — (  )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-wait-for-timer">Wait For Timer</a></strong> — ( libNtve_gf_WaitForTimer )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-critical-section">Critical Section</a></strong> — (  )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/challenges/advancedcommand.sc2map/MapScript.galaxy#L530">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L530</span>
+Wait(<span class="hljs-number">3.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L540</span>
+Wait(<span class="hljs-number">3.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L550</span>
+Wait(<span class="hljs-number">3.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L584</span>
+Wait(<span class="hljs-number">0.5</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L589</span>
+Wait(<span class="hljs-number">1.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L818</span>
+Wait(<span class="hljs-number">0.5</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L827</span>
+Wait(<span class="hljs-number">130.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L833</span>
+Wait(<span class="hljs-number">0.7</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L837</span>
+Wait(<span class="hljs-number">0.3</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L845</span>
+Wait(<span class="hljs-number">0.7</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L209</span>
+Wait(<span class="hljs-number">3.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L407</span>
+Wait(<span class="hljs-number">3.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1032</span>
+Wait(<span class="hljs-number">0.5</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1049</span>
+Wait(<span class="hljs-number">1.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1060</span>
+Wait(<span class="hljs-number">0.5</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1062</span>
+Wait(<span class="hljs-number">2.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1069</span>
+Wait(<span class="hljs-number">1.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1080</span>
+Wait(<span class="hljs-number">0.5</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1082</span>
+Wait(<span class="hljs-number">2.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1089</span>
+Wait(<span class="hljs-number">1.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L162</span>
+Wait(<span class="hljs-number">8.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L200</span>
+Wait(<span class="hljs-number">0.5</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L219</span>
+Wait(<span class="hljs-number">0.5</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L603</span>
+Wait(<span class="hljs-number">3.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L613</span>
+Wait(<span class="hljs-number">3.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L623</span>
+Wait(<span class="hljs-number">3.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L653</span>
+Wait(<span class="hljs-number">0.5</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L661</span>
+Wait(<span class="hljs-number">1.0</span>, c_timeReal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L891</span>
+Wait(<span class="hljs-number">0.5</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L896</span>
+Wait(<span class="hljs-number">4.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L442</span>
+Wait(<span class="hljs-number">3.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L514</span>
+Wait(<span class="hljs-number">0.5</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L523</span>
+Wait(<span class="hljs-number">1.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L542</span>
+Wait(<span class="hljs-number">2.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L545</span>
+Wait(<span class="hljs-number">10.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L627</span>
+Wait(<span class="hljs-number">0.1</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L719</span>
+Wait(<span class="hljs-number">190.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L722</span>
+Wait(<span class="hljs-number">10.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L725</span>
+Wait(<span class="hljs-number">140.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L732</span>
+Wait(<span class="hljs-number">120.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L496</span>
+Wait(<span class="hljs-number">0.25</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L500</span>
+Wait(<span class="hljs-number">0.25</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L542</span>
+Wait(<span class="hljs-number">7.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L565</span>
+Wait(<span class="hljs-number">51.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L569</span>
+Wait(<span class="hljs-number">27.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L573</span>
+Wait(<span class="hljs-number">16.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L577</span>
+Wait(<span class="hljs-number">41.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L636</span>
+Wait(<span class="hljs-number">2.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L752</span>
+Wait(<span class="hljs-number">0.25</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L756</span>
+Wait(<span class="hljs-number">0.25</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L199</span>
+Wait(<span class="hljs-number">3.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L292</span>
+Wait(<span class="hljs-number">0.0625</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L371</span>
+Wait(<span class="hljs-number">3.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L982</span>
+Wait(<span class="hljs-number">0.5</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L999</span>
+Wait(<span class="hljs-number">1.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1010</span>
+Wait(<span class="hljs-number">0.5</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1012</span>
+Wait(<span class="hljs-number">2.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1019</span>
+Wait(<span class="hljs-number">1.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1031</span>
+Wait(<span class="hljs-number">0.5</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1033</span>
+Wait(<span class="hljs-number">2.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L524</span>
+Wait(<span class="hljs-number">3.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L534</span>
+Wait(<span class="hljs-number">3.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L544</span>
+Wait(<span class="hljs-number">3.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L575</span>
+Wait(<span class="hljs-number">0.5</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L581</span>
+Wait(<span class="hljs-number">1.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L804</span>
+Wait(<span class="hljs-number">0.5</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L814</span>
+Wait(<span class="hljs-number">190.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L820</span>
+Wait(<span class="hljs-number">0.7</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L824</span>
+Wait(<span class="hljs-number">0.3</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L832</span>
+Wait(<span class="hljs-number">0.7</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L204</span>
+Wait(<span class="hljs-number">3.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L417</span>
+Wait(<span class="hljs-number">3.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1052</span>
+Wait(<span class="hljs-number">0.5</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1067</span>
+Wait(<span class="hljs-number">1.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1078</span>
+Wait(<span class="hljs-number">0.5</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1080</span>
+Wait(<span class="hljs-number">2.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1087</span>
+Wait(<span class="hljs-number">1.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1098</span>
+Wait(<span class="hljs-number">0.5</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1100</span>
+Wait(<span class="hljs-number">2.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1107</span>
+Wait(<span class="hljs-number">1.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L521</span>
+Wait(<span class="hljs-number">3.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L531</span>
+Wait(<span class="hljs-number">3.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L541</span>
+Wait(<span class="hljs-number">3.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L572</span>
+Wait(<span class="hljs-number">0.5</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L577</span>
+Wait(<span class="hljs-number">1.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L787</span>
+Wait(<span class="hljs-number">0.5</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L795</span>
+Wait(<span class="hljs-number">280.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L801</span>
+Wait(<span class="hljs-number">0.7</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L805</span>
+Wait(<span class="hljs-number">0.3</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L813</span>
+Wait(<span class="hljs-number">0.7</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L599</span>
+Wait(<span class="hljs-number">0.5</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L637</span>
+Wait(<span class="hljs-number">2.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L655</span>
+Wait(<span class="hljs-number">2.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L662</span>
+Wait(<span class="hljs-number">0.0125</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L746</span>
+Wait(<span class="hljs-number">2.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L789</span>
+Wait(<span class="hljs-number">0.25</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L823</span>
+Wait(<span class="hljs-number">0.5</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L848</span>
+Wait(<span class="hljs-number">0.5</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L850</span>
+Wait(<span class="hljs-number">0.5</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L870</span>
+Wait(<span class="hljs-number">7.0</span>, c_timeGame)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

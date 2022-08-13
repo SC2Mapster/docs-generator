@@ -1,0 +1,404 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Convert Circle To Region / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Convert Circle To Region"/>
+                <meta property="og:description" content="Returns a circular region from a center point and a radius.
+
+Returns: region"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="convert-circle-to-region"><a class="markdownIt-Anchor" href="#convert-circle-to-region">#</a> Convert Circle To Region</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Region(<strong>c</strong>, <strong>r</strong>)<br>
+<em>Flags</em> — <code>Native</code> | <code>Function</code></p>
+</blockquote>
+<p>Returns a circular region from a center point and a radius.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>point</code> — Center</li>
+<li><code>fixed</code> — Radius</li>
+</ul>
+<p>Returns — <code>region</code></p>
+<pre class="hljs"><code><span class="hljs-function">native region <span class="hljs-title">RegionCircle</span><span class="hljs-params">(point center, fixed radius)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#region-creation">Region / Creation</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>region</code> — <strong><a href="/galaxy/reference/region-circle">Convert Circle To Region</a></strong> — ( RegionCircle )</li>
+<li><em><strong>[F]</strong></em> — <code>region</code> — <strong><a href="/galaxy/reference/region-rect">Convert Rectangle To Region</a></strong> — ( RegionRect )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/region-add-circle">Add Circle To Region</a></strong> — ( RegionAddCircle )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/region-add-rect">Add Rectangle To Region</a></strong> — ( RegionAddRect )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/region-add-region">Add Region To Region</a></strong> — ( RegionAddRegion )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2data/TriggerLibs/Tactical/TactCampAI.galaxy#L83">TactCampAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L83</span>
+RegionCircle(loc, barrageRadius)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L527</span>
+RegionCircle(UnitGetPosition(aiUnit), AIEffectFixed(player, c_EF_HybridStunArea, c_fieldAreaRadius0))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L715</span>
+RegionCircle(UnitGetPosition(aiUnit), psiShockRange)
+</code></pre>
+<h4 id="campaignslibertysc2campaign-2"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign-2">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/challenges/advancedcommand.sc2map/MapScript.galaxy#L522">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L522</span>
+RegionCircle(gv_multiKillLastKillPosition, lv_range)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L595</span>
+RegionCircle(gv_multiKillLastKillPosition, lv_range)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L817</span>
+RegionCircle(RegionGetCenter(RegionFromId(<span class="hljs-number">4</span>)), <span class="hljs-number">7.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2077</span>
+RegionCircle(PointFromId(<span class="hljs-number">105</span>), <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L511</span>
+RegionCircle(gv_multiKillLastKillPosition, lv_range)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L508</span>
+RegionCircle(gv_multiKillLastKillPosition, lv_range)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7255</span>
+RegionCircle(lv_center, <span class="hljs-number">3.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7350</span>
+RegionCircle(UnitGetPosition(gv_viking), <span class="hljs-number">1.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L372</span>
+RegionCircle(lp_param_SpoogeTarget, <span class="hljs-number">3.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L447</span>
+RegionCircle(lp_target, <span class="hljs-number">1.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1132</span>
+RegionCircle(PointFromId(<span class="hljs-number">2079</span>), <span class="hljs-number">12.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1391</span>
+RegionCircle(RegionGetCenter(RegionFromId(<span class="hljs-number">14</span>)), <span class="hljs-number">6.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1409</span>
+RegionCircle(PointFromId(<span class="hljs-number">2425</span>), <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1525</span>
+RegionCircle(UnitGetPosition(auto338F5CC8_var), <span class="hljs-number">12.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2846</span>
+RegionCircle(UnitGetPosition(UnitFromId(<span class="hljs-number">2010</span>)), <span class="hljs-number">8.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2884</span>
+RegionCircle(UnitGetPosition(UnitFromId(<span class="hljs-number">397</span>)), <span class="hljs-number">8.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2922</span>
+RegionCircle(UnitGetPosition(UnitFromId(<span class="hljs-number">612</span>)), <span class="hljs-number">8.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3518</span>
+RegionCircle(lv_point, <span class="hljs-number">3.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L786</span>
+RegionCircle(PointFromId(<span class="hljs-number">19</span>), <span class="hljs-number">16.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L787</span>
+RegionCircle(PointFromId(<span class="hljs-number">73</span>), <span class="hljs-number">16.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L788</span>
+RegionCircle(PointFromId(<span class="hljs-number">74</span>), <span class="hljs-number">16.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L789</span>
+RegionCircle(PointFromId(<span class="hljs-number">669</span>), <span class="hljs-number">12.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L790</span>
+RegionCircle(PointFromId(<span class="hljs-number">707</span>), <span class="hljs-number">12.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L910</span>
+RegionCircle(PointFromId(<span class="hljs-number">228</span>), <span class="hljs-number">10.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L910</span>
+RegionCircle(PointFromId(<span class="hljs-number">317</span>), <span class="hljs-number">10.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1277</span>
+RegionCircle(UnitGetPosition(gv_infestor1), <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1285</span>
+RegionCircle(UnitGetPosition(gv_infestor2), <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1416</span>
+RegionCircle(UnitGetPosition(auto7ECFBFDB_var), <span class="hljs-number">14.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L804</span>
+RegionCircle(RegionGetCenter(RegionFromId(<span class="hljs-number">9</span>)), <span class="hljs-number">10.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L806</span>
+RegionCircle(RegionGetCenter(RegionFromId(<span class="hljs-number">11</span>)), <span class="hljs-number">10.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L808</span>
+RegionCircle(RegionGetCenter(RegionFromId(<span class="hljs-number">12</span>)), <span class="hljs-number">10.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L810</span>
+RegionCircle(RegionGetCenter(RegionFromId(<span class="hljs-number">8</span>)), <span class="hljs-number">10.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1012</span>
+RegionCircle(UnitGetPosition(UnitFromId(<span class="hljs-number">2466</span>)), <span class="hljs-number">5.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1018</span>
+RegionCircle(UnitGetPosition(UnitFromId(<span class="hljs-number">2915</span>)), <span class="hljs-number">5.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1024</span>
+RegionCircle(UnitGetPosition(UnitFromId(<span class="hljs-number">2819</span>)), <span class="hljs-number">5.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1162</span>
+RegionCircle(UnitGetPosition(gv_purifier), <span class="hljs-number">6.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1787</span>
+RegionCircle(UnitGetPosition(UnitFromId(<span class="hljs-number">765</span>)), <span class="hljs-number">12.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1798</span>
+RegionCircle(UnitGetPosition(UnitFromId(<span class="hljs-number">765</span>)), <span class="hljs-number">12.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L335</span>
+RegionCircle(UnitGetPosition(gv_infestationVirophageUnit[lp_colonyIndex]), <span class="hljs-number">5.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L785</span>
+RegionCircle(RegionGetCenter(gv_infestationRegion[lv_colonyIndex]), lv_sPAWN_RADIUS)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L836</span>
+RegionCircle(RegionGetCenter(lp_locale), <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1676</span>
+RegionCircle(RegionGetCenter(gv_infestationRegion[lv_colonyIndex]), lv_radius)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3343</span>
+RegionCircle(UnitGetPosition(auto42F1D01E_var), <span class="hljs-number">5.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4607</span>
+RegionCircle(PointFromId(<span class="hljs-number">33</span>), <span class="hljs-number">8.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L431</span>
+RegionCircle(UnitGetPosition(lp_diamondback), <span class="hljs-number">4.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2075</span>
+RegionCircle(gv_trainList[lv_trainIndex].lv_escorts[<span class="hljs-number">1</span>].lv_waitPosition, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2148</span>
+RegionCircle(gv_trainPath[FixedToInt(UnitGetCustomValue(auto499A4BF2_var, <span class="hljs-number">0</span>))], <span class="hljs-number">0.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2300</span>
+RegionCircle(UnitGetPosition(gv_trainList[lv_trainIndex].lv_trainCars[RandomInt(<span class="hljs-number">1</span>, gv_trainList[lv_trainIndex].lv_lastCar)]), <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2305</span>
+RegionCircle(UnitGetPosition(gv_trainList[lv_trainIndex].lv_trainCars[RandomInt(<span class="hljs-number">1</span>, gv_trainList[lv_trainIndex].lv_lastCar)]), <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2312</span>
+RegionCircle(UnitGetPosition(gv_trainList[lv_trainIndex].lv_trainCars[lv_trainMidPoint]), <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2454</span>
+RegionCircle(PointFromId(<span class="hljs-number">491</span>), <span class="hljs-number">1.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2455</span>
+RegionCircle(PointFromId(<span class="hljs-number">502</span>), <span class="hljs-number">1.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2456</span>
+RegionCircle(PointFromId(<span class="hljs-number">297</span>), <span class="hljs-number">1.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2565</span>
+RegionCircle(lv_exitPoint, <span class="hljs-number">1.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L277</span>
+RegionCircle(lp_scrapPosition, lp_distance)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L360</span>
+RegionCircle(lp_nukeTarget, <span class="hljs-number">5.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L364</span>
+RegionCircle(lp_nukeTarget, <span class="hljs-number">8.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L998</span>
+RegionCircle(PointFromId(<span class="hljs-number">51</span>), <span class="hljs-number">6.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1240</span>
+RegionCircle(UnitGetPosition(UnitFromId(<span class="hljs-number">893</span>)), <span class="hljs-number">8.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1241</span>
+RegionCircle(UnitGetPosition(UnitFromId(<span class="hljs-number">767</span>)), <span class="hljs-number">8.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1242</span>
+RegionCircle(UnitGetPosition(UnitFromId(<span class="hljs-number">894</span>)), <span class="hljs-number">8.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3755</span>
+RegionCircle(UnitGetPosition(UnitFromId(<span class="hljs-number">327</span>)), <span class="hljs-number">3.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3804</span>
+RegionCircle(RegionGetCenter(RegionFromId(<span class="hljs-number">20</span>)), <span class="hljs-number">5.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3805</span>
+RegionCircle(RegionGetCenter(RegionFromId(<span class="hljs-number">21</span>)), <span class="hljs-number">5.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L838</span>
+RegionCircle(UnitGetPosition(EventUnitTarget()), <span class="hljs-number">20.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L897</span>
+RegionCircle(UnitGetPosition(EventUnitTarget()), <span class="hljs-number">20.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L949</span>
+RegionCircle(UnitGetPosition(EventUnitTarget()), <span class="hljs-number">20.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1718</span>
+RegionCircle(UnitGetPosition(gv_odin), <span class="hljs-number">2.75</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1733</span>
+RegionCircle(UnitGetPosition(autoDCA2395B_var), <span class="hljs-number">10.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1747</span>
+RegionCircle(UnitGetPosition(lv_nearbyDetector), <span class="hljs-number">4.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3635</span>
+RegionCircle(UnitGetPosition(gv_odin), <span class="hljs-number">6.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5155</span>
+RegionCircle(UnitGetPosition(gv_briefingTychus), <span class="hljs-number">3.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L470</span>
+RegionCircle(UnitGetPosition(lp_unit), <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L503</span>
+RegionCircle(UnitGetPosition(lp_unit), <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1357</span>
+RegionCircle(UnitGetPosition(EventUnit()), <span class="hljs-number">12.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1366</span>
+RegionCircle(UnitGetPosition(EventUnit()), <span class="hljs-number">50.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2120</span>
+RegionCircle(UnitGetPosition(gv_odin), <span class="hljs-number">10.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2132</span>
+RegionCircle(UnitGetPosition(gv_odin), <span class="hljs-number">2.75</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2142</span>
+RegionCircle(UnitGetPosition(gv_odin), <span class="hljs-number">2.75</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2246</span>
+RegionCircle(UnitGetPosition(gv_secretDocuments), <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2448</span>
+RegionCircle(RegionGetCenter(RegionFromId(<span class="hljs-number">9</span>)), <span class="hljs-number">20.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2449</span>
+RegionCircle(RegionGetCenter(RegionFromId(<span class="hljs-number">9</span>)), <span class="hljs-number">20.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2547</span>
+RegionCircle(UnitGetPosition(EventUnit()), <span class="hljs-number">4.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2613</span>
+RegionCircle(UnitGetPosition(lv_scientist), <span class="hljs-number">4.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2669</span>
+RegionCircle(UnitGetPosition(lv_scientist), <span class="hljs-number">5.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2725</span>
+RegionCircle(UnitGetPosition(lv_scientist), <span class="hljs-number">6.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9752</span>
+RegionCircle(UnitGetPosition(lv_egg), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10019</span>
+RegionCircle(UnitGetPosition(lv_hybridLocal), <span class="hljs-number">4.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10070</span>
+RegionCircle(UnitGetPosition(lv_hybridLocal), <span class="hljs-number">4.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10121</span>
+RegionCircle(UnitGetPosition(lv_hybridLocal), <span class="hljs-number">4.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12535</span>
+RegionCircle(UnitGetPosition(lv_scientist), <span class="hljs-number">6.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L890</span>
+RegionCircle(PointFromId(<span class="hljs-number">632</span>), <span class="hljs-number">3.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L936</span>
+RegionCircle(PointFromId(<span class="hljs-number">672</span>), <span class="hljs-number">3.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1803</span>
+RegionCircle(PointFromId(<span class="hljs-number">113</span>), <span class="hljs-number">10.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3592</span>
+RegionCircle(UnitGetPosition(lv_hOLOBOARD), <span class="hljs-number">5.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3659</span>
+RegionCircle(UnitGetPosition(lv_hOLOBOARD), <span class="hljs-number">8.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3782</span>
+RegionCircle(UnitGetPosition(gv_holoboards[<span class="hljs-number">6</span>]), <span class="hljs-number">6.0</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

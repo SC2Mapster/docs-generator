@@ -1,0 +1,405 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Sound Duration / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Sound Duration"/>
+                <meta property="og:description" content="Returns the duration of the sound.
+
+Returns: fixed"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="sound-duration"><a class="markdownIt-Anchor" href="#sound-duration">#</a> Sound Duration</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Duration of <strong>sound</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Function</code></p>
+</blockquote>
+<p>Returns the duration of the sound.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>soundlink</code> — Sound</li>
+</ul>
+<p>Returns — <code>fixed</code></p>
+<pre class="hljs"><code><span class="hljs-function">native fixed <span class="hljs-title">SoundLengthSync</span><span class="hljs-params">(soundlink info)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#sound-sound-properties">Sound / Sound Properties</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/sound-link-asset">Sound Asset Index</a></strong> — ( SoundLinkAsset )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> <em>[ gamelink::Sound ]</em> — <strong><a href="/galaxy/reference/sound-link-id">Sound ID</a></strong> — ( SoundLinkId )</li>
+<li><em><strong>[F]</strong></em> — <code>soundlink</code> — <strong><a href="/galaxy/reference/sound-link">Sound Link</a></strong> — ( SoundLink )</li>
+<li><em><strong>[F]</strong></em> — <code>text</code> — <strong><a href="/galaxy/reference/sound-subtitle-text">Sound Subtitle Text</a></strong> — ( SoundSubtitleText )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> <em>[ gamelink::Model ]</em> — <strong><a href="/galaxy/reference/sound-portrait-model">Sound Portrait Model</a></strong> — ( SoundPortraitModel )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/sound-length-sync">Sound Duration</a></strong> — ( SoundLengthSync )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-preload-sound-length">Mark Sound For Duration Preload</a></strong> — (  )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-length-query">Query Sound Duration</a></strong> — ( SoundLengthQuery )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-length-query-wait">Wait For Sound Durations</a></strong> — ( SoundLengthQueryWait )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/challenges/advancedcommand.sc2map/MapScript.galaxy#L1361">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1361</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"ChallengescombinedExecutor00034"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1370</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"ChallengescombinedExecutor00048"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1397</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"ChallengescombinedExecutor00035"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1397</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"ChallengescombinedExecutor00036"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2863</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"ChallengescombinedExecutor00015"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2877</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"ChallengescombinedExecutor00018"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2879</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"ChallengescombinedExecutor00018"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2881</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"ChallengescombinedExecutor00018"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2883</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"ChallengescombinedExecutor00019"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2911</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"ChallengescombinedExecutor00016"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2911</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"ChallengescombinedExecutor00017"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1696</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"ChallengescombinedExecutor00012"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1709</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"ChallengescombinedExecutor00013"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1719</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"ChallengescombinedExecutor00014"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1656</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"ChallengescombinedAdjutant00038"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1656</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"ChallengescombinedAdjutant00039"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1662</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"ChallengescombinedAdjutant00040"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2073</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"ChallengescombinedAdjutant00031"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2073</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"ChallengescombinedAdjutant00033"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2380</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"ChallengescombinedAdjutant00031"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2380</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"ChallengescombinedAdjutant00033"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2708</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"ChallengescombinedAdjutant00026"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2718</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"ChallengescombinedAdjutant00029"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2745</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"ChallengescombinedAdjutant00027"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2745</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"ChallengescombinedAdjutant00028"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1397</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"ChallengescombinedAdjutant00006"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1397</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"ChallengescombinedAdjutant00007"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1397</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"ChallengescombinedAdjutant00008"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2863</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"ChallengescombinedQueen00021"</span>, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2863</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"ChallengescombinedQueen00022"</span>, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2872</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"ChallengescombinedQueen00024"</span>, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2899</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"ChallengescombinedQueen00023"</span>, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1339</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"ChallengescombinedQueen00009"</span>, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1339</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"ChallengescombinedQueen00010"</span>, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1339</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"ChallengescombinedQueen00011"</span>, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5940</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"THanson01BriefingHanson00011"</span>, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5943</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"THanson01BriefingHanson00010"</span>, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5944</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"THanson01BriefingHanson00010"</span>, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6038</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"THanson01BriefingHanson00011"</span>, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6040</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"THanson01BriefingHanson00012"</span>, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6041</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"THanson01BriefingHanson00011"</span>, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6042</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"THanson01BriefingHanson00012"</span>, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6151</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"THanson01BriefingHanson00012"</span>, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6163</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"THanson01BriefingHanson00005"</span>, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6164</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"THanson01BriefingRaynor00004"</span>, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4764</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"THanson02BriefingRaynor00002"</span>, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4764</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"THanson02BriefingHanson00010"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4769</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"THanson02BriefingRaynor00002"</span>, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4772</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"THanson02BriefingHanson00010"</span>, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4773</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"THanson02BriefingRaynor00002"</span>, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4774</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"THanson02BriefingHanson00010"</span>, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4797</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"THanson02BriefingRaynor00011"</span>, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4797</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"THanson02BriefingRaynor00006"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4802</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"THanson02BriefingRaynor00011"</span>, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4805</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"THanson02BriefingRaynor00006"</span>, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1299</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"THanson03AHorner00003"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1299</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"UI_TerranKlaxonAlert"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1399</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"THanson03AHanson00009"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1399</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"UI_TerranKlaxonAlert"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1509</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"THanson03AHorner00008"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1509</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"UI_TerranKlaxonAlert"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1623</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"THanson03ARaynor00005"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1623</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"UI_TerranKlaxonAlert"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1730</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"THanson03ARaynor00006"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1730</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"UI_TerranKlaxonAlert"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4014</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"THanson03BBriefingRaynor00002"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4014</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"THanson03BBriefingRaynor00010"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4018</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"THanson03BBriefingRaynor00002"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4022</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"THanson03BBriefingRaynor00010"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4023</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"THanson03BBriefingTychus00004"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4023</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"THanson03BBriefingRaynor00006"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4026</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"THanson03BBriefingRaynor00003"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4037</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"THanson03BBriefingTychus00004"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4040</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"THanson03BBriefingRaynor00006"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4041</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"THanson03BBriefingRaynor00002"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5635</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"THorner01BriefingRaynor00018"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5638</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"THorner01BriefingRaynor00018"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5640</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"THorner01BriefingHorner00002"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5643</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"THorner01BriefingHorner00004"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5644</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"THorner01BriefingRaynor00018"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5645</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"THorner01BriefingHorner00002"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5645</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"THorner01BriefingHorner00004"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5719</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"THorner01BriefingHorner00006"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5722</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"THorner01BriefingHorner00006"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5724</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"THorner01BriefingRaynor00007"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3930</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"IncomingTransmission"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5138</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"THorner02BriefingHorner00001"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5141</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"THorner02BriefingHorner00011"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5144</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"THorner02BriefingRaynor00018"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5147</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"THorner02BriefingRaynor00002"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5148</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"THorner02BriefingHorner00001"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5149</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"THorner02BriefingHorner00011"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5150</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"THorner02BriefingRaynor00018"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5151</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"THorner02BriefingRaynor00002"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5241</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"THorner02BriefingHan00005"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3469</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"TUIWarningPing"</span>, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5127</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"THorner03BriefingHorner00001"</span>, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5128</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"THorner03BriefingHorner00001"</span>, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5186</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"THorner03BriefingHorner00012"</span>, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5188</span>
+SoundLengthSync(SoundLink(<span class="hljs-string">"THorner03BriefingRaynor00013"</span>, <span class="hljs-number">0</span>))
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,418 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Set Achievement Term Quantity / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Set Achievement Term Quantity"/>
+                <meta property="og:description" content="This feature only works on Blizzard-signed maps."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="set-achievement-term-quantity"><a class="markdownIt-Anchor" href="#set-achievement-term-quantity">#</a> Set Achievement Term Quantity</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Set achievement term <strong>term</strong> quantity to <strong>quantity</strong> for player <strong>player</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code> | <code>Restricted</code></p>
+</blockquote>
+<p>This feature only works on Blizzard-signed maps.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> — Player</li>
+<li><code>string</code> <em>[ gamelink::AchievementTerm ]</em> — Term</li>
+<li><code>int</code> — Quantity</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">AchievementTermQuantitySet</span><span class="hljs-params">(
+	<span class="hljs-keyword">int</span> player,
+	<span class="hljs-built_in">string</span> term,
+	<span class="hljs-keyword">int</span> quantity,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#game-achievements">Game / Achievements</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/achievement-award">Award Achievement</a></strong> — ( AchievementAward )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/achievement-term-quantity-set">Set Achievement Term Quantity</a></strong> — ( AchievementTermQuantitySet )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/achievement-term-quantity-add">Add To Achievement Term Quantity</a></strong> — ( AchievementTermQuantityAdd )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/achievement-erase">Erase Achievement</a></strong> — ( AchievementErase )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/achievements-disable">Disable Achievements</a></strong> — ( AchievementsDisable )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/achievements-disabled">Achievements Are Disabled</a></strong> — ( AchievementsDisabled )</li>
+<li><em><strong>[F]</strong></em> — <code>text</code> — <strong><a href="/galaxy/reference/achievement-percent-text">Get Achievement Percent Text</a></strong> — ( AchievementPercentText )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/achievement-panel-set-category">Set Achievement Panel Category</a></strong> — ( AchievementPanelSetCategory )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/thanson03a.sc2map/MapScript.galaxy#L5201">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L5201</span>
+AchievementTermQuantitySet(gv_pLAYER01_USER, <span class="hljs-string">"Anniversary_THanson03A"</span>, gv_vikingKills)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3417</span>
+AchievementTermQuantitySet(gv_p01_USER, <span class="hljs-string">"Anniversary_THanson03B"</span>, gv_vikingStructureKills)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4532</span>
+AchievementTermQuantitySet(gv_p01_USER, <span class="hljs-string">"Anniversary_THorner_04"</span>, gv_achievementUnitsKilledDuringSneakAttack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8146</span>
+AchievementTermQuantitySet(gv_p01_USER, <span class="hljs-string">"Anniversary_THorner05S"</span>, gv_achievementWeaponKillls)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6555</span>
+AchievementTermQuantitySet(<span class="hljs-number">1</span>, <span class="hljs-string">"TStory01_9_Horner"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6559</span>
+AchievementTermQuantitySet(<span class="hljs-number">1</span>, <span class="hljs-string">"TStory01_9_Tychus"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6563</span>
+AchievementTermQuantitySet(<span class="hljs-number">1</span>, <span class="hljs-string">"TStory01_9_Swann"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6567</span>
+AchievementTermQuantitySet(<span class="hljs-number">1</span>, <span class="hljs-string">"TStory01_9_Hanson"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6571</span>
+AchievementTermQuantitySet(<span class="hljs-number">1</span>, <span class="hljs-string">"TStory01_9_Tosh"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6575</span>
+AchievementTermQuantitySet(<span class="hljs-number">1</span>, <span class="hljs-string">"TStory01_9_Warfield"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L14305</span>
+AchievementTermQuantitySet(<span class="hljs-number">1</span>, <span class="hljs-string">"TStory01_10"</span>, lv_count)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4409</span>
+AchievementTermQuantitySet(gv_p1_USER, <span class="hljs-string">"Anniversary_TTosh03A"</span>, gv_enemiesKilledByNukes)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4903</span>
+AchievementTermQuantitySet(gv_pLAYER01_USER, <span class="hljs-string">"Anniversary_TTosh03B"</span>, gv_spectreKillsByReapers)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8605</span>
+AchievementTermQuantitySet(gv_p1_USER, <span class="hljs-string">"Anniversary_TValerian02A"</span>, gv_flamingBettyKills)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5164</span>
+AchievementTermQuantitySet(gv_p1_USER, <span class="hljs-string">"Anniversary_TZeratul02"</span>, gv_darkTemplarKills)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5201</span>
+AchievementTermQuantitySet(gv_pLAYER01_USER, <span class="hljs-string">"Anniversary_THanson03A"</span>, gv_vikingKills)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3417</span>
+AchievementTermQuantitySet(gv_p01_USER, <span class="hljs-string">"Anniversary_THanson03B"</span>, gv_vikingStructureKills)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4532</span>
+AchievementTermQuantitySet(gv_p01_USER, <span class="hljs-string">"Anniversary_THorner_04"</span>, gv_achievementUnitsKilledDuringSneakAttack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8146</span>
+AchievementTermQuantitySet(gv_p01_USER, <span class="hljs-string">"Anniversary_THorner05S"</span>, gv_achievementWeaponKillls)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6555</span>
+AchievementTermQuantitySet(<span class="hljs-number">1</span>, <span class="hljs-string">"TStory01_9_Horner"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6559</span>
+AchievementTermQuantitySet(<span class="hljs-number">1</span>, <span class="hljs-string">"TStory01_9_Tychus"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6563</span>
+AchievementTermQuantitySet(<span class="hljs-number">1</span>, <span class="hljs-string">"TStory01_9_Swann"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6567</span>
+AchievementTermQuantitySet(<span class="hljs-number">1</span>, <span class="hljs-string">"TStory01_9_Hanson"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6571</span>
+AchievementTermQuantitySet(<span class="hljs-number">1</span>, <span class="hljs-string">"TStory01_9_Tosh"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6575</span>
+AchievementTermQuantitySet(<span class="hljs-number">1</span>, <span class="hljs-string">"TStory01_9_Warfield"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L14305</span>
+AchievementTermQuantitySet(<span class="hljs-number">1</span>, <span class="hljs-string">"TStory01_10"</span>, lv_count)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4409</span>
+AchievementTermQuantitySet(gv_p1_USER, <span class="hljs-string">"Anniversary_TTosh03A"</span>, gv_enemiesKilledByNukes)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4903</span>
+AchievementTermQuantitySet(gv_pLAYER01_USER, <span class="hljs-string">"Anniversary_TTosh03B"</span>, gv_spectreKillsByReapers)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8605</span>
+AchievementTermQuantitySet(gv_p1_USER, <span class="hljs-string">"Anniversary_TValerian02A"</span>, gv_flamingBettyKills)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5164</span>
+AchievementTermQuantitySet(gv_p1_USER, <span class="hljs-string">"Anniversary_TZeratul02"</span>, gv_darkTemplarKills)
+</code></pre>
+<h4 id="campaignslibertystorysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertystorysc2campaign">#</a> campaigns/libertystory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/libertystory.sc2campaign/base.sc2data/TriggerLibs/CampaignLib.galaxy#L2282">CampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2282</span>
+AchievementTermQuantitySet(<span class="hljs-number">1</span>, <span class="hljs-string">"WingsofLibertyHard5"</span>, lv_count)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2283</span>
+AchievementTermQuantitySet(<span class="hljs-number">1</span>, <span class="hljs-string">"WingsofLibertyHard10"</span>, lv_count)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2284</span>
+AchievementTermQuantitySet(<span class="hljs-number">1</span>, <span class="hljs-string">"WingsofLibertyHard15"</span>, lv_count)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2285</span>
+AchievementTermQuantitySet(<span class="hljs-number">1</span>, <span class="hljs-string">"WingsofLibertyHard20"</span>, lv_count)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2286</span>
+AchievementTermQuantitySet(<span class="hljs-number">1</span>, <span class="hljs-string">"WingsofLibertyHard25"</span>, lv_count)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2288</span>
+AchievementTermQuantitySet(<span class="hljs-number">1</span>, <span class="hljs-string">"WingsofLibertyBrutal5"</span>, lv_count)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2289</span>
+AchievementTermQuantitySet(<span class="hljs-number">1</span>, <span class="hljs-string">"WingsofLibertyBrutal10"</span>, lv_count)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2290</span>
+AchievementTermQuantitySet(<span class="hljs-number">1</span>, <span class="hljs-string">"WingsofLibertyBrutal15"</span>, lv_count)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2291</span>
+AchievementTermQuantitySet(<span class="hljs-number">1</span>, <span class="hljs-string">"WingsofLibertyBrutal20"</span>, lv_count)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2292</span>
+AchievementTermQuantitySet(<span class="hljs-number">1</span>, <span class="hljs-string">"WingsofLibertyBrutal25"</span>, lv_count)
+</code></pre>
+<h4 id="campaignsswarmsc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmsc2campaign">#</a> campaigns/swarm.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarm.sc2campaign/base.sc2maps/maps/campaign/swarm/zchar01.sc2map/MapScript.galaxy#L5119">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L5119</span>
+AchievementTermQuantitySet(gv_pLAYER_01_USER, <span class="hljs-string">"Anniversary_ZChar01"</span>, gv_banelingKills)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7212</span>
+AchievementTermQuantitySet(<span class="hljs-number">1</span>, <span class="hljs-string">"ZKaldir03_2"</span>, PlayerGetPropertyInt(EventPlayer(), c_playerPropCustomCollected))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7295</span>
+AchievementTermQuantitySet(gv_pLAYER_01_USER, <span class="hljs-string">"Mastery_Kaldir3"</span>, gv_ursadonKills)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5560</span>
+AchievementTermQuantitySet(gv_pLAYER_01_USER, <span class="hljs-string">"Anniversary_ZHybrid01"</span>, gv_achievementMaxDomiantedTerran)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4744</span>
+AchievementTermQuantitySet(gv_pLAYER_01_USER, <span class="hljs-string">"Anniversary_ZHybrid02"</span>, gv_achievementBrutaliskKills)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3992</span>
+AchievementTermQuantitySet(gv_pLAYER_01_USER, <span class="hljs-string">"Anniversary_ZKorhal01"</span>, gv_anniversaryAchievementTermDominionStructuresDestroyed)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7563</span>
+AchievementTermQuantitySet(gv_pLAYER_01_USER, <span class="hljs-string">"Anniversary_ZLab03"</span>, gv_creepTumorsConstucted)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7021</span>
+AchievementTermQuantitySet(gv_p01_USER, <span class="hljs-string">"Anniversary_ZSpace02"</span>, gv_achievementParasiticDominatedKills)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L115</span>
+AchievementTermQuantitySet(<span class="hljs-number">1</span>, <span class="hljs-string">"KerriganPower70"</span>, MinI(libSwaC_gf_StoryKerriganLevel(), <span class="hljs-number">70</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L146</span>
+AchievementTermQuantitySet(<span class="hljs-number">1</span>, <span class="hljs-string">"KerriganPower70"</span>, MinI(libSwaC_gf_StoryKerriganLevel(), <span class="hljs-number">70</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L153</span>
+AchievementTermQuantitySet(<span class="hljs-number">1</span>, UserDataGetGameLink(<span class="hljs-string">"Maps"</span>, libSwaC_gf_ZS_MapUserDataInstance(lv_indexMission), <span class="hljs-string">"CompletionAchievementTerms"</span>, <span class="hljs-number">2</span>), <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L158</span>
+AchievementTermQuantitySet(<span class="hljs-number">1</span>, UserDataGetGameLink(<span class="hljs-string">"Maps"</span>, libSwaC_gf_ZS_MapUserDataInstance(lv_indexMission), <span class="hljs-string">"CompletionAchievementTerms"</span>, <span class="hljs-number">3</span>), <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L163</span>
+AchievementTermQuantitySet(<span class="hljs-number">1</span>, UserDataGetGameLink(<span class="hljs-string">"Maps"</span>, libSwaC_gf_ZS_MapUserDataInstance(lv_indexMission), <span class="hljs-string">"CompletionAchievementTerms"</span>, <span class="hljs-number">4</span>), <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L122</span>
+AchievementTermQuantitySet(<span class="hljs-number">1</span>, <span class="hljs-string">"KerriganPower70"</span>, MinI(libSwaC_gf_StoryKerriganLevel(), <span class="hljs-number">70</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L455</span>
+AchievementTermQuantitySet(<span class="hljs-number">1</span>, <span class="hljs-string">"ZStoryConversation_VoidSeeker"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1944</span>
+AchievementTermQuantitySet(gv_pLAYER_01_USER, <span class="hljs-string">"Anniversary_ZZerus01"</span>, gv_achievementLargestMutaliskForce)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6216</span>
+AchievementTermQuantitySet(gv_pLAYER_01_USER, <span class="hljs-string">"Anniversary_ZZerus01"</span>, gv_achievementLargestMutaliskForce)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5119</span>
+AchievementTermQuantitySet(gv_pLAYER_01_USER, <span class="hljs-string">"Anniversary_ZChar01"</span>, gv_banelingKills)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7212</span>
+AchievementTermQuantitySet(<span class="hljs-number">1</span>, <span class="hljs-string">"ZKaldir03_2"</span>, PlayerGetPropertyInt(EventPlayer(), c_playerPropCustomCollected))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7295</span>
+AchievementTermQuantitySet(gv_pLAYER_01_USER, <span class="hljs-string">"Mastery_Kaldir3"</span>, gv_ursadonKills)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5560</span>
+AchievementTermQuantitySet(gv_pLAYER_01_USER, <span class="hljs-string">"Anniversary_ZHybrid01"</span>, gv_achievementMaxDomiantedTerran)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4744</span>
+AchievementTermQuantitySet(gv_pLAYER_01_USER, <span class="hljs-string">"Anniversary_ZHybrid02"</span>, gv_achievementBrutaliskKills)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3992</span>
+AchievementTermQuantitySet(gv_pLAYER_01_USER, <span class="hljs-string">"Anniversary_ZKorhal01"</span>, gv_anniversaryAchievementTermDominionStructuresDestroyed)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7563</span>
+AchievementTermQuantitySet(gv_pLAYER_01_USER, <span class="hljs-string">"Anniversary_ZLab03"</span>, gv_creepTumorsConstucted)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7021</span>
+AchievementTermQuantitySet(gv_p01_USER, <span class="hljs-string">"Anniversary_ZSpace02"</span>, gv_achievementParasiticDominatedKills)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L115</span>
+AchievementTermQuantitySet(<span class="hljs-number">1</span>, <span class="hljs-string">"KerriganPower70"</span>, MinI(libSwaC_gf_StoryKerriganLevel(), <span class="hljs-number">70</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L146</span>
+AchievementTermQuantitySet(<span class="hljs-number">1</span>, <span class="hljs-string">"KerriganPower70"</span>, MinI(libSwaC_gf_StoryKerriganLevel(), <span class="hljs-number">70</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L153</span>
+AchievementTermQuantitySet(<span class="hljs-number">1</span>, UserDataGetGameLink(<span class="hljs-string">"Maps"</span>, libSwaC_gf_ZS_MapUserDataInstance(lv_indexMission), <span class="hljs-string">"CompletionAchievementTerms"</span>, <span class="hljs-number">2</span>), <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L158</span>
+AchievementTermQuantitySet(<span class="hljs-number">1</span>, UserDataGetGameLink(<span class="hljs-string">"Maps"</span>, libSwaC_gf_ZS_MapUserDataInstance(lv_indexMission), <span class="hljs-string">"CompletionAchievementTerms"</span>, <span class="hljs-number">3</span>), <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L163</span>
+AchievementTermQuantitySet(<span class="hljs-number">1</span>, UserDataGetGameLink(<span class="hljs-string">"Maps"</span>, libSwaC_gf_ZS_MapUserDataInstance(lv_indexMission), <span class="hljs-string">"CompletionAchievementTerms"</span>, <span class="hljs-number">4</span>), <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L122</span>
+AchievementTermQuantitySet(<span class="hljs-number">1</span>, <span class="hljs-string">"KerriganPower70"</span>, MinI(libSwaC_gf_StoryKerriganLevel(), <span class="hljs-number">70</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L455</span>
+AchievementTermQuantitySet(<span class="hljs-number">1</span>, <span class="hljs-string">"ZStoryConversation_VoidSeeker"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1944</span>
+AchievementTermQuantitySet(gv_pLAYER_01_USER, <span class="hljs-string">"Anniversary_ZZerus01"</span>, gv_achievementLargestMutaliskForce)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6216</span>
+AchievementTermQuantitySet(gv_pLAYER_01_USER, <span class="hljs-string">"Anniversary_ZZerus01"</span>, gv_achievementLargestMutaliskForce)
+</code></pre>
+<h4 id="campaignsswarmstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmstorysc2campaign">#</a> campaigns/swarmstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstory.sc2campaign/base.sc2data/TriggerLibs/SwarmCampaignLib.galaxy#L8776">SwarmCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L8776</span>
+AchievementTermQuantitySet(<span class="hljs-number">1</span>, UserDataGetGameLink(<span class="hljs-string">"TechUnit"</span>, libSwaC_gf_ZS_TechUnitOfArmyCategory(libSwaC_gv_zS_ArmyCustomCategoryCurrent), <span class="hljs-string">"AchievementTermUpgrade"</span>, <span class="hljs-number">1</span>), <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12287</span>
+AchievementTermQuantitySet(<span class="hljs-number">1</span>, <span class="hljs-string">"KerriganPower10"</span>, MinI(libSwaC_gv_zS_KerriganActualLevel, <span class="hljs-number">10</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12288</span>
+AchievementTermQuantitySet(<span class="hljs-number">1</span>, <span class="hljs-string">"KerriganPower20"</span>, MinI(libSwaC_gv_zS_KerriganActualLevel, <span class="hljs-number">20</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12289</span>
+AchievementTermQuantitySet(<span class="hljs-number">1</span>, <span class="hljs-string">"KerriganPower30"</span>, MinI(libSwaC_gv_zS_KerriganActualLevel, <span class="hljs-number">30</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12290</span>
+AchievementTermQuantitySet(<span class="hljs-number">1</span>, <span class="hljs-string">"KerriganPower40"</span>, MinI(libSwaC_gv_zS_KerriganActualLevel, <span class="hljs-number">40</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12291</span>
+AchievementTermQuantitySet(<span class="hljs-number">1</span>, <span class="hljs-string">"KerriganPower50"</span>, MinI(libSwaC_gv_zS_KerriganActualLevel, <span class="hljs-number">50</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12292</span>
+AchievementTermQuantitySet(<span class="hljs-number">1</span>, <span class="hljs-string">"KerriganPower60"</span>, MinI(libSwaC_gv_zS_KerriganActualLevel, <span class="hljs-number">60</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12293</span>
+AchievementTermQuantitySet(<span class="hljs-number">1</span>, <span class="hljs-string">"KerriganPower70"</span>, MinI(libSwaC_gv_zS_KerriganActualLevel, <span class="hljs-number">70</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L14194</span>
+AchievementTermQuantitySet(<span class="hljs-number">1</span>, UserDataGetGameLink(<span class="hljs-string">"TechUnit"</span>, libSwaC_gf_ZS_TechUnitOfArmyCategory(libSwaC_gf_MissionArmyCategoryUnlocked(lp_mission)), <span class="hljs-string">"AchievementTermEvolve"</span>, <span class="hljs-number">1</span>), <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L14459</span>
+AchievementTermQuantitySet(<span class="hljs-number">1</span>, UserDataGetGameLink(<span class="hljs-string">"Maps"</span>, libSwaC_gf_ZS_MapUserDataInstance(libSwaC_gf_CurrentMap()), <span class="hljs-string">"CompletionAchievementTerms"</span>, <span class="hljs-number">1</span>), <span class="hljs-number">1</span>)
+</code></pre>
+<h4 id="campaignsswarmstoryutilsc2mod"><a class="markdownIt-Anchor" href="#campaignsswarmstoryutilsc2mod">#</a> campaigns/swarmstoryutil.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstoryutil.sc2mod/base.sc2data/Lib281DEC45.galaxy#L3981">Lib281DEC45.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3981</span>
+AchievementTermQuantitySet(<span class="hljs-number">1</span>, <span class="hljs-string">"ZStory_Rally_Zagara"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3986</span>
+AchievementTermQuantitySet(<span class="hljs-number">1</span>, <span class="hljs-string">"ZStoryConversation_Abathur_NewLook"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3989</span>
+AchievementTermQuantitySet(<span class="hljs-number">1</span>, <span class="hljs-string">"ZStory_Rally_Abathur"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3994</span>
+AchievementTermQuantitySet(<span class="hljs-number">1</span>, <span class="hljs-string">"ZStoryConversation_Izsha_NewLook"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3997</span>
+AchievementTermQuantitySet(<span class="hljs-number">1</span>, <span class="hljs-string">"ZStory_Rally_Izsha"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4001</span>
+AchievementTermQuantitySet(<span class="hljs-number">1</span>, <span class="hljs-string">"ZStoryConversation_AncientOne"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4003</span>
+AchievementTermQuantitySet(<span class="hljs-number">1</span>, <span class="hljs-string">"ZStoryConversation_Zurvan_NewLook"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4011</span>
+AchievementTermQuantitySet(<span class="hljs-number">1</span>, <span class="hljs-string">"ZStory_Rally_Stukov"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4016</span>
+AchievementTermQuantitySet(<span class="hljs-number">1</span>, <span class="hljs-string">"ZStory_Rally_Dehaka"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4020</span>
+AchievementTermQuantitySet(<span class="hljs-number">1</span>, <span class="hljs-string">"ZStoryConversation_WarfieldFortress"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<h4 id="campaignsvoidsc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidsc2campaign">#</a> campaigns/void.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/void.sc2campaign/base.sc2maps/maps/campaign/void/paiur02.sc2map/MapScript.galaxy#L4494">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4494</span>
+AchievementTermQuantitySet(gv_pLAYER_01_USER, <span class="hljs-string">"Anniversary_PAiur02"</span>, gv_anniversaryAchievementTermNerazimPylonsFound)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4501</span>
+AchievementTermQuantitySet(gv_pLAYER_01_USER, <span class="hljs-string">"Anniversary_PAiur02"</span>, gv_anniversaryAchievementTermNerazimPylonsFound)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4571</span>
+AchievementTermQuantitySet(gv_pLAYER_01_USER, <span class="hljs-string">"Anniversary_PAiur02"</span>, gv_anniversaryAchievementTermNerazimPylonsFound)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4578</span>
+AchievementTermQuantitySet(gv_pLAYER_01_USER, <span class="hljs-string">"Anniversary_PAiur02"</span>, gv_anniversaryAchievementTermNerazimPylonsFound)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4648</span>
+AchievementTermQuantitySet(gv_pLAYER_01_USER, <span class="hljs-string">"Anniversary_PAiur02"</span>, gv_anniversaryAchievementTermNerazimPylonsFound)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4655</span>
+AchievementTermQuantitySet(gv_pLAYER_01_USER, <span class="hljs-string">"Anniversary_PAiur02"</span>, gv_anniversaryAchievementTermNerazimPylonsFound)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

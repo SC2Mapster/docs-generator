@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Remove Cutscene Filter / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Remove Cutscene Filter"/>
+                <meta property="og:description" content="Removes the filter for a cutscene.  Any nodes with a non-empty filter property that does not match this value will be filtered out of your cutscene."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="remove-cutscene-filter"><a class="markdownIt-Anchor" href="#remove-cutscene-filter">#</a> Remove Cutscene Filter</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Remove the filter <strong>inFilter</strong> from <strong>inCutscene</strong>.<br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Removes the filter for a cutscene.  Any nodes with a non-empty filter property that does not match this value will be filtered out of your cutscene.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-cutscene">Cutscene</a> ]</em> — Cutscene</li>
+<li><code>string</code> — Filter</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">CutsceneRemoveFilter</span><span class="hljs-params">(
+	<span class="hljs-keyword">int</span> inCutscene,
+	<span class="hljs-built_in">string</span> inFilter,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#cutscene-cutscenes-filters">Cutscene / Cutscenes / Filters</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/cutscene-set-global-filter">Set Global Cutscene Filter</a></strong> — ( CutsceneSetGlobalFilter )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/cutscene-set-filter">Set Cutscene Filter</a></strong> — ( CutsceneSetFilter )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/cutscene-add-global-filter">Add Global Cutscene Filter</a></strong> — ( CutsceneAddGlobalFilter )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/cutscene-add-filter">Add Cutscene Filter</a></strong> — ( CutsceneAddFilter )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/cutscene-remove-global-filter">Remove Global Cutscene Filter</a></strong> — ( CutsceneRemoveGlobalFilter )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/cutscene-remove-filter">Remove Cutscene Filter</a></strong> — ( CutsceneRemoveFilter )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/cutscene-clear-global-filters">Clear Global Cutscene Filters</a></strong> — ( CutsceneClearGlobalFilters )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/cutscene-clear-filters">Clear Cutscene Filter</a></strong> — ( CutsceneClearFilters )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignsvoidstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignStoryLib.galaxy#L2417">VoidCampaignStoryLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2417</span>
+CutsceneRemoveFilter(libVCST_gv_pS_RoomUICutscene, <span class="hljs-string">"DTLeaderSpecial"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2420</span>
+CutsceneRemoveFilter(libVCST_gv_pS_RoomUICutscene, libVCST_gf_PS_ClickableSceneNameToken(lv_indexClickable))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2608</span>
+CutsceneRemoveFilter(libVCST_gv_pS_ActiveBackground, <span class="hljs-string">"UIView"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2622</span>
+CutsceneRemoveFilter(libVCST_gv_pS_ActiveBackground, <span class="hljs-string">"ConversationView"</span>)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign-2"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign-2">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignUILib.galaxy#L8461">VoidCampaignUILib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L8461</span>
+CutsceneRemoveFilter(libVCUI_gv_pU_SoABackgroundCutscene, (<span class="hljs-string">"UIHighlightT"</span> + IntToString(lv_groupIndex)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8468</span>
+CutsceneRemoveFilter(libVCUI_gv_pU_SoABackgroundCutscene, (<span class="hljs-string">"UIHighlightT"</span> + IntToString(lv_groupIndex)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8945</span>
+CutsceneRemoveFilter(libVCUI_gv_pU_StarmapCutscene, (<span class="hljs-string">"Starmap"</span> + libVoiC_gf_PC_LocationCutsceneFilter(libVCUI_gv_pU_StarmapLocations[<span class="hljs-number">2</span>])))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8949</span>
+CutsceneRemoveFilter(libVCUI_gv_pU_StarmapCutscene, (<span class="hljs-string">"Starmap"</span> + libVoiC_gf_PC_LocationCutsceneFilter(libVCUI_gv_pU_StarmapLocations[<span class="hljs-number">1</span>])))
+</code></pre>
+<h4 id="modsmissionpacksnovacampaignsc2mod"><a class="markdownIt-Anchor" href="#modsmissionpacksnovacampaignsc2mod">#</a> mods/missionpacks/novacampaign.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/novacampaign.sc2mod/base.sc2data/LibNCST.galaxy#L2085">LibNCST.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2085</span>
+CutsceneRemoveFilter(libNCST_gv_nS_RoomUICutscene, libNCST_gf_NS_ClickableSceneNameToken(lv_indexClickable))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2245</span>
+CutsceneRemoveFilter(libNCST_gv_NS_ActiveBackground, <span class="hljs-string">"UIView"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2258</span>
+CutsceneRemoveFilter(libNCST_gv_NS_ActiveBackground, <span class="hljs-string">"ConversationView"</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

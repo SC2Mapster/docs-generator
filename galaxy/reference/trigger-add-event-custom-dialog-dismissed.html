@@ -1,0 +1,206 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Custom Dialog Dismissed / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Custom Dialog Dismissed"/>
+                <meta property="og:description" content="This event fires when a player selects an option on the Custom Dialog.  Use &quot;Custom Dialog Result&quot; to get the option the player selected.  Use &quot;Triggering Player&quot; to get the player."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="custom-dialog-dismissed"><a class="markdownIt-Anchor" href="#custom-dialog-dismissed">#</a> Custom Dialog Dismissed</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Player <strong>player</strong> dismissed the custom dialog with result <strong>player2</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Event</code></p>
+</blockquote>
+<p>This event fires when a player selects an option on the Custom Dialog.  Use <em>“Custom Dialog Result”</em> to get the option the player selected.  Use <em>“Triggering Player”</em> to get the player.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> — Player</li>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-custom-dialog-result">CustomDialogResult</a> ]</em> — Result</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">TriggerAddEventCustomDialogDismissed</span><span class="hljs-params">(
+	trigger t,
+	<span class="hljs-keyword">int</span> player,
+	<span class="hljs-keyword">int</span> result,
+)</span></span>;
+</code></pre>
+<h3 id="event-parameters"><a class="markdownIt-Anchor" href="#event-parameters">#</a> Event parameters</h3>
+<ul>
+<li><a href="/galaxy/reference/event-game-user">Triggering Game User</a> — EventGameUser</li>
+<li><a href="/galaxy/reference/event-player">Triggering Player</a> — EventPlayer</li>
+<li><a href="/galaxy/reference/event-custom-dialog-result">Custom Dialog Result</a> — EventCustomDialogResult</li>
+</ul>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#ui-custom-dialog">UI / Custom Dialog</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-custom-dialog-dismissed">Custom Dialog Dismissed</a></strong> — ( TriggerAddEventCustomDialogDismissed )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-custom-dialog-result">CustomDialogResult</a> ]</em> — <strong><a href="/galaxy/reference/event-custom-dialog-result">Custom Dialog Result</a></strong> — ( EventCustomDialogResult )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ui-show-custom-dialog">Display Custom Dialog</a></strong> — ( UIShowCustomDialog )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/tarcade.sc2map/MapScript.galaxy#L8398">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L8398</span>
+TriggerAddEventCustomDialogDismissed(gt_QuitQueryYetClicked, c_playerAny, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8419</span>
+TriggerAddEventCustomDialogDismissed(gt_QuitQueryNoClicked, c_playerAny, <span class="hljs-number">2</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L15367</span>
+TriggerAddEventCustomDialogDismissed(gt_QueryDialogDismissed, c_playerAny, libNtve_ge_CustomDialogResult_c_customDialogResultAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L24600</span>
+TriggerAddEventCustomDialogDismissed(gt_MarSaraBriefcaseLeaveUIYesNo, c_playerAny, libNtve_ge_CustomDialogResult_c_customDialogResultAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L24981</span>
+TriggerAddEventCustomDialogDismissed(gt_LabResearchCreditsNoticeClose, c_playerAny, libNtve_ge_CustomDialogResult_c_customDialogResultAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L25393</span>
+TriggerAddEventCustomDialogDismissed(gt_PlanetPanelCustomDialogDismissed, c_playerAny, libNtve_ge_CustomDialogResult_c_customDialogResultAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8398</span>
+TriggerAddEventCustomDialogDismissed(gt_QuitQueryYetClicked, c_playerAny, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8419</span>
+TriggerAddEventCustomDialogDismissed(gt_QuitQueryNoClicked, c_playerAny, <span class="hljs-number">2</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L15367</span>
+TriggerAddEventCustomDialogDismissed(gt_QueryDialogDismissed, c_playerAny, libNtve_ge_CustomDialogResult_c_customDialogResultAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L24600</span>
+TriggerAddEventCustomDialogDismissed(gt_MarSaraBriefcaseLeaveUIYesNo, c_playerAny, libNtve_ge_CustomDialogResult_c_customDialogResultAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L24981</span>
+TriggerAddEventCustomDialogDismissed(gt_LabResearchCreditsNoticeClose, c_playerAny, libNtve_ge_CustomDialogResult_c_customDialogResultAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L25393</span>
+TriggerAddEventCustomDialogDismissed(gt_PlanetPanelCustomDialogDismissed, c_playerAny, libNtve_ge_CustomDialogResult_c_customDialogResultAny)
+</code></pre>
+<h4 id="campaignsswarmstoryutilsc2mod"><a class="markdownIt-Anchor" href="#campaignsswarmstoryutilsc2mod">#</a> campaigns/swarmstoryutil.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstoryutil.sc2mod/base.sc2data/Lib281DEC45.galaxy#L6459">Lib281DEC45.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L6459</span>
+TriggerAddEventCustomDialogDismissed(lib281DEC45_gt_ZSS_UITravelCustomDialogDismiss, c_playerAny, libNtve_ge_CustomDialogResult_c_customDialogResultYes)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6762</span>
+TriggerAddEventCustomDialogDismissed(lib281DEC45_gt_ZSS_UIMissionQuitOKClicked, c_playerAny, libNtve_ge_CustomDialogResult_c_customDialogResultYes)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6781</span>
+TriggerAddEventCustomDialogDismissed(lib281DEC45_gt_ZSS_UIMissionQuitCancelClicked, c_playerAny, libNtve_ge_CustomDialogResult_c_customDialogResultNo)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8014</span>
+TriggerAddEventCustomDialogDismissed(lib281DEC45_gt_ZSS_DebugStoryCustomDialogDismiss, c_playerAny, libNtve_ge_CustomDialogResult_c_customDialogResultYes)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignUILib.galaxy#L7247">VoidCampaignUILib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L7247</span>
+TriggerAddEventCustomDialogDismissed(libVCUI_gt_PU_MissionTerranQuitOKClicked, c_playerAny, libNtve_ge_CustomDialogResult_c_customDialogResultYes)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7268</span>
+TriggerAddEventCustomDialogDismissed(libVCUI_gt_PU_MissionTerranQuitCancelClicked, c_playerAny, libNtve_ge_CustomDialogResult_c_customDialogResultNo)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7787</span>
+TriggerAddEventCustomDialogDismissed(libVCUI_gt_PU_MissionQuitOKClicked, c_playerAny, libNtve_ge_CustomDialogResult_c_customDialogResultYes)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7810</span>
+TriggerAddEventCustomDialogDismissed(libVCUI_gt_PU_MissionQuitCancelClicked, c_playerAny, libNtve_ge_CustomDialogResult_c_customDialogResultNo)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8788</span>
+TriggerAddEventCustomDialogDismissed(libVCUI_gt_PU_StarmapCustomDialogDismiss, c_playerAny, libNtve_ge_CustomDialogResult_c_customDialogResultYes)
+</code></pre>
+<h4 id="modsheroesdatastormmod"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/StartingExperienceLib.galaxy#L5446">StartingExperienceLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L5446</span>
+TriggerAddEventCustomDialogDismissed(libStEx_gt_QueryDialogChoiceMade, c_playerAny, libNtve_ge_CustomDialogResult_c_customDialogResultAny)
+</code></pre>
+<h4 id="modsmissionpacksnovacampaignsc2mod"><a class="markdownIt-Anchor" href="#modsmissionpacksnovacampaignsc2mod">#</a> mods/missionpacks/novacampaign.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/novacampaign.sc2mod/base.sc2data/LibNCUI.galaxy#L5661">LibNCUI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L5661</span>
+TriggerAddEventCustomDialogDismissed(libNCUI_gt_NU_MissionQuitOKClicked, c_playerAny, libNtve_ge_CustomDialogResult_c_customDialogResultYes)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5683</span>
+TriggerAddEventCustomDialogDismissed(libNCUI_gt_NU_MissionQuitCancelClicked, c_playerAny, libNtve_ge_CustomDialogResult_c_customDialogResultNo)
+</code></pre>
+<h4 id="modsmissionpacksnovacampaignsc2mod-2"><a class="markdownIt-Anchor" href="#modsmissionpacksnovacampaignsc2mod-2">#</a> mods/missionpacks/novacampaign.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/novacampaign.sc2mod/base.sc2data/LibNovC.galaxy#L2487">LibNovC.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2487</span>
+TriggerAddEventCustomDialogDismissed(libNovC_gt_QuitDemo, c_playerAny, libNtve_ge_CustomDialogResult_c_customDialogResultAny)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOOC.galaxy#L6467">LibCOOC.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L6467</span>
+TriggerAddEventCustomDialogDismissed(libCOOC_gt_CC_DevStartupDevForceQuit, c_playerAny, libNtve_ge_CustomDialogResult_c_customDialogResultAny)
+</code></pre>
+<h4 id="modsvoidprologuesc2mod"><a class="markdownIt-Anchor" href="#modsvoidprologuesc2mod">#</a> mods/voidprologue.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/voidprologue.sc2mod/base.sc2data/LibA3DDD02B.galaxy#L9149">LibA3DDD02B.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L9149</span>
+TriggerAddEventCustomDialogDismissed(libA3DDD02B_gt_PP_MissionLaunchQuitOKClicked, c_playerAny, libNtve_ge_CustomDialogResult_c_customDialogResultYes)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9170</span>
+TriggerAddEventCustomDialogDismissed(libA3DDD02B_gt_PP_MissionLaunchQuitCanceledClicked, c_playerAny, libNtve_ge_CustomDialogResult_c_customDialogResultNo)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

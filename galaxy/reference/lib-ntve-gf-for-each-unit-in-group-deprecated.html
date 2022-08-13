@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>For Each Unit In Unit Group Deprecated / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: For Each Unit In Unit Group Deprecated"/>
+                <meta property="og:description" content="Runs the contained actions once for each unit in the unit group."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="for-each-unit-in-unit-group-deprecated"><a class="markdownIt-Anchor" href="#for-each-unit-in-unit-group-deprecated">#</a> For Each Unit In Unit Group Deprecated</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — For each unit <strong>var</strong> in <strong>group</strong> do (Actions)<br>
+<em>Flags</em> — <code>SubFunctions</code> | <code>Action</code></p>
+</blockquote>
+<p>Runs the contained actions once for each unit in the unit group.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>anyvariable</code> — Unit</li>
+<li><code>unitgroup</code> — Unit Group</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code>#AUTOVAR(g, unitgroup) = #PARAM(group);
+#AUTOVAR(u) = <span class="hljs-number">1</span>;
+<span class="hljs-keyword">for</span> ( ; #AUTOVAR(u) &lt;= UnitGroupCount(#AUTOVAR(g), c_unitCountAll) ; #AUTOVAR(u) += BoolToInt(#PARAM(var) == UnitGroupUnit(#AUTOVAR(g), #AUTOVAR(u))) ) {
+    #PARAM(var) = UnitGroupUnit(#AUTOVAR(g), #AUTOVAR(u));
+    #SUBFUNCS(actions)
+}
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#unit-group-loops">Unit Group / Loops</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-pick-each-unit-in-group">Pick Each Unit In Unit Group</a></strong> — (  )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-pick-each-unit-in-group-deprecated">Pick Each Unit In Unit Group Deprecated</a></strong> — (  )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-for-each-unit-in-group">For Each Unit In Unit Group</a></strong> — (  )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-for-each-unit-in-group-deprecated">For Each Unit In Unit Group Deprecated</a></strong> — (  )</li>
+<li><em><strong>[F]</strong></em> — <code>unit</code> — <strong><a href="/galaxy/reference/lib-ntve-op-unit-group-loop-current">Picked Unit</a></strong> — (  )</li>
+<li><em><strong>[F]</strong></em> — <code>unit</code> — <strong><a href="/galaxy/reference/unit-group-loop-current-deprecated">Picked Unit Deprecated</a></strong> — ( UnitGroupLoopCurrentDeprecated )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<p>— None found —</p>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

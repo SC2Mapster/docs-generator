@@ -1,0 +1,414 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Allow/Disallow Ability For Player / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Allow/Disallow Ability For Player"/>
+                <meta property="og:description" content="Allows or disallows an ability to be used by the specified player.  This is only useful if tech restrictions have been enabled using &quot;Enable/Disable Tech Tree Restrictions&quot;.  If the ability has a tech requirement, the requirement must still be met for the player to use the ability."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="allowdisallow-ability-for-player"><a class="markdownIt-Anchor" href="#allowdisallow-ability-for-player">#</a> Allow/Disallow Ability For Player</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — <strong>allow|Allow/Disallow</strong> the <strong>abilCmd</strong> ability for player <strong>p</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Allows or disallows an ability to be used by the specified player.  This is only useful if tech restrictions have been enabled using <em>“Enable/Disable Tech Tree Restrictions”</em>.  If the ability has a tech requirement, the requirement must still be met for the player to use the ability.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> — Player</li>
+<li><code>abilcmd</code> — Ability Command</li>
+<li><code>bool</code> <em>[ preset::<a href="/galaxy/reference/preset-allow-disallow-option">AllowDisallowOption</a> ]</em> — Allow</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">TechTreeAbilityAllow</span><span class="hljs-params">(
+	<span class="hljs-keyword">int</span> player,
+	abilcmd inAbilCmd,
+	<span class="hljs-keyword">bool</span> allow,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#tech-tree-individual-restrictions">Tech Tree / Individual Restrictions</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/tech-tree-specific-requirement-enabled">Specific Requirements Are Enabled For Player</a></strong> — ( TechTreeSpecificRequirementEnabled )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/tech-tree-specific-requirement-enable">Enable/Disable SpecificTech Tree Requirements</a></strong> — ( TechTreeSpecificRequirementEnable )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/tech-tree-behavior-allow">Allow/Disallow Behavior For Player</a></strong> — ( TechTreeBehaviorAllow )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/tech-tree-ability-allow">Allow/Disallow Ability For Player</a></strong> — ( TechTreeAbilityAllow )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/tech-tree-unit-allow">Allow/Disallow Unit For Player</a></strong> — ( TechTreeUnitAllow )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/tech-tree-upgrade-allow">Allow/Disallow Upgrade For Player</a></strong> — ( TechTreeUpgradeAllow )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/tech-tree-ability-is-allowed">Ability Is Allowed For Player</a></strong> — ( TechTreeAbilityIsAllowed )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/tech-tree-behavior-is-allowed">Behavior Is Allowed For Player</a></strong> — ( TechTreeBehaviorIsAllowed )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/tech-tree-unit-is-allowed">Unit Is Allowed For Player</a></strong> — ( TechTreeUnitIsAllowed )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/tech-tree-upgrade-is-allowed">Upgrade Is Allowed For Player</a></strong> — ( TechTreeUpgradeIsAllowed )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/tech-tree-upgrade-add-level">Add Upgrade Level For Player</a></strong> — ( TechTreeUpgradeAddLevel )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-set-upgrade-level-for-player">Set Upgrade Level For Player</a></strong> — ( libNtve_gf_SetUpgradeLevelForPlayer )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/tech-tree-set-produce-cap">Set Production Cap For Player</a></strong> — ( TechTreeSetProduceCap )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/tech-tree-get-produce-cap">Production Cap For Player</a></strong> — ( TechTreeGetProduceCap )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/challenges/advancedcommand.sc2map/MapScript.galaxy#L213">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L213</span>
+TechTreeAbilityAllow(gv_pLAYER_USER, AbilityCommand(<span class="hljs-string">"TemplarArchivesResearch"</span>, <span class="hljs-number">4</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L214</span>
+TechTreeAbilityAllow(gv_pLAYER_USER, AbilityCommand(<span class="hljs-string">"TwilightCouncilResearch"</span>, <span class="hljs-number">1</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L215</span>
+TechTreeAbilityAllow(gv_pLAYER_USER, AbilityCommand(<span class="hljs-string">"TwilightCouncilResearch"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L216</span>
+TechTreeAbilityAllow(gv_pLAYER_USER, AbilityCommand(<span class="hljs-string">"MorphBackToGateway"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L217</span>
+TechTreeAbilityAllow(gv_pLAYER_USER, AbilityCommand(<span class="hljs-string">"WarpGateTrain"</span>, <span class="hljs-number">4</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L218</span>
+TechTreeAbilityAllow(gv_pLAYER_USER, AbilityCommand(<span class="hljs-string">"WarpGateTrain"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L219</span>
+TechTreeAbilityAllow(gv_pLAYER_USER, AbilityCommand(<span class="hljs-string">"WarpGateTrain"</span>, <span class="hljs-number">1</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L220</span>
+TechTreeAbilityAllow(gv_pLAYER_USER, AbilityCommand(<span class="hljs-string">"WarpGateTrain"</span>, <span class="hljs-number">2</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L221</span>
+TechTreeAbilityAllow(gv_pLAYER_USER, AbilityCommand(<span class="hljs-string">"WarpGateTrain"</span>, <span class="hljs-number">5</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L222</span>
+TechTreeAbilityAllow(gv_pLAYER_USER, AbilityCommand(<span class="hljs-string">"WarpGateTrain"</span>, <span class="hljs-number">3</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L534</span>
+TechTreeAbilityAllow(gv_pLAYER_USER, AbilityCommand(<span class="hljs-string">"ForceField"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L535</span>
+TechTreeAbilityAllow(gv_pLAYER_USER, AbilityCommand(<span class="hljs-string">"TemporalRift"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L540</span>
+TechTreeAbilityAllow(gv_pLAYER_USER, AbilityCommand(<span class="hljs-string">"HallucinationArchon"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L541</span>
+TechTreeAbilityAllow(gv_pLAYER_USER, AbilityCommand(<span class="hljs-string">"HallucinationColossus"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L542</span>
+TechTreeAbilityAllow(gv_pLAYER_USER, AbilityCommand(<span class="hljs-string">"HallucinationHighTemplar"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L543</span>
+TechTreeAbilityAllow(gv_pLAYER_USER, AbilityCommand(<span class="hljs-string">"HallucinationImmortal"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L544</span>
+TechTreeAbilityAllow(gv_pLAYER_USER, AbilityCommand(<span class="hljs-string">"HallucinationPhoenix"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L545</span>
+TechTreeAbilityAllow(gv_pLAYER_USER, AbilityCommand(<span class="hljs-string">"HallucinationProbe"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L546</span>
+TechTreeAbilityAllow(gv_pLAYER_USER, AbilityCommand(<span class="hljs-string">"HallucinationStalker"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L547</span>
+TechTreeAbilityAllow(gv_pLAYER_USER, AbilityCommand(<span class="hljs-string">"HallucinationVoidRay"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L299</span>
+TechTreeAbilityAllow(gv_pLAYER_COMPUTER1, AbilityCommand(<span class="hljs-string">"Snipe"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L300</span>
+TechTreeAbilityAllow(gv_pLAYER_USER, AbilityCommand(<span class="hljs-string">"PsiStorm"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L301</span>
+TechTreeAbilityAllow(gv_pLAYER_USER, AbilityCommand(<span class="hljs-string">"ArchonWarp"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L302</span>
+TechTreeAbilityAllow(gv_pLAYER_USER, AbilityCommand(<span class="hljs-string">"ArchonWarp"</span>, <span class="hljs-number">1</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L303</span>
+TechTreeAbilityAllow(gv_pLAYER_USER, AbilityCommand(<span class="hljs-string">"ForceField"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L304</span>
+TechTreeAbilityAllow(gv_pLAYER_USER, AbilityCommand(<span class="hljs-string">"HallucinationArchon"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L305</span>
+TechTreeAbilityAllow(gv_pLAYER_USER, AbilityCommand(<span class="hljs-string">"HallucinationColossus"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L306</span>
+TechTreeAbilityAllow(gv_pLAYER_USER, AbilityCommand(<span class="hljs-string">"HallucinationHighTemplar"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L307</span>
+TechTreeAbilityAllow(gv_pLAYER_USER, AbilityCommand(<span class="hljs-string">"HallucinationImmortal"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L308</span>
+TechTreeAbilityAllow(gv_pLAYER_USER, AbilityCommand(<span class="hljs-string">"HallucinationPhoenix"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L232</span>
+TechTreeAbilityAllow(gv_pLAYER_USER, AbilityCommand(<span class="hljs-string">"ScannerSweep"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L233</span>
+TechTreeAbilityAllow(gv_pLAYER_USER, AbilityCommand(<span class="hljs-string">"TerranBuild"</span>, <span class="hljs-number">1</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L234</span>
+TechTreeAbilityAllow(gv_pLAYER_USER, AbilityCommand(<span class="hljs-string">"TerranBuild"</span>, <span class="hljs-number">2</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L235</span>
+TechTreeAbilityAllow(gv_pLAYER_USER, AbilityCommand(<span class="hljs-string">"TerranBuild"</span>, <span class="hljs-number">3</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L236</span>
+TechTreeAbilityAllow(gv_pLAYER_USER, AbilityCommand(<span class="hljs-string">"TerranBuild"</span>, <span class="hljs-number">6</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L237</span>
+TechTreeAbilityAllow(gv_pLAYER_USER, AbilityCommand(<span class="hljs-string">"BarracksAddOns"</span>, <span class="hljs-number">1</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L238</span>
+TechTreeAbilityAllow(gv_pLAYER_USER, AbilityCommand(<span class="hljs-string">"BarracksAddOns"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L239</span>
+TechTreeAbilityAllow(gv_pLAYER_USER, AbilityCommand(<span class="hljs-string">"TerranBuild"</span>, <span class="hljs-number">4</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L240</span>
+TechTreeAbilityAllow(gv_pLAYER_USER, AbilityCommand(<span class="hljs-string">"TerranBuild"</span>, <span class="hljs-number">5</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L241</span>
+TechTreeAbilityAllow(gv_pLAYER_USER, AbilityCommand(<span class="hljs-string">"TerranBuild"</span>, <span class="hljs-number">11</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L495</span>
+TechTreeAbilityAllow(gv_pLAYER_USER, AbilityCommand(<span class="hljs-string">"Stimpack"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L496</span>
+TechTreeAbilityAllow(gv_pLAYER_USER, AbilityCommand(<span class="hljs-string">"SiegeMode"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L497</span>
+TechTreeAbilityAllow(gv_pLAYER_USER, AbilityCommand(<span class="hljs-string">"Unsiege"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L503</span>
+TechTreeAbilityAllow(gv_pLAYER_USER, AbilityCommand(<span class="hljs-string">"MedivacTransport"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L964</span>
+TechTreeAbilityAllow(gv_pLAYER_USER, AbilityCommand(<span class="hljs-string">"MedivacTransport"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L986</span>
+TechTreeAbilityAllow(gv_pLAYER_USER, AbilityCommand(<span class="hljs-string">"MedivacTransport"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1132</span>
+TechTreeAbilityAllow(gv_pLAYER_USER, AbilityCommand(<span class="hljs-string">"MedivacTransport"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1154</span>
+TechTreeAbilityAllow(gv_pLAYER_USER, AbilityCommand(<span class="hljs-string">"MedivacTransport"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1302</span>
+TechTreeAbilityAllow(gv_pLAYER_USER, AbilityCommand(<span class="hljs-string">"MedivacTransport"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1325</span>
+TechTreeAbilityAllow(gv_pLAYER_USER, AbilityCommand(<span class="hljs-string">"MedivacTransport"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L208</span>
+TechTreeAbilityAllow(gv_pLAYER_USER, AbilityCommand(<span class="hljs-string">"CommandCenterLiftOff"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L209</span>
+TechTreeAbilityAllow(gv_pLAYER_USER, AbilityCommand(<span class="hljs-string">"OrbitalLiftOff"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L210</span>
+TechTreeAbilityAllow(gv_pLAYER_USER, AbilityCommand(<span class="hljs-string">"CalldownMULE"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L211</span>
+TechTreeAbilityAllow(gv_pLAYER_USER, AbilityCommand(<span class="hljs-string">"SupplyDrop"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L212</span>
+TechTreeAbilityAllow(gv_pLAYER_USER, AbilityCommand(<span class="hljs-string">"BansheeCloak"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L541</span>
+TechTreeAbilityAllow(gv_pLAYER_COMPUTER1, AbilityCommand(<span class="hljs-string">"TemporalRift"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L543</span>
+TechTreeAbilityAllow(gv_pLAYER_USER, AbilityCommand(<span class="hljs-string">"BurrowUltraliskDown"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L544</span>
+TechTreeAbilityAllow(gv_pLAYER_USER, AbilityCommand(<span class="hljs-string">"BurrowZerglingDown"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L545</span>
+TechTreeAbilityAllow(gv_pLAYER_USER, AbilityCommand(<span class="hljs-string">"BurrowRoachDown"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L546</span>
+TechTreeAbilityAllow(gv_pLAYER_USER, AbilityCommand(<span class="hljs-string">"BurrowInfestorDown"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L547</span>
+TechTreeAbilityAllow(gv_pLAYER_USER, AbilityCommand(<span class="hljs-string">"BurrowHydraliskDown"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L548</span>
+TechTreeAbilityAllow(gv_pLAYER_USER, AbilityCommand(<span class="hljs-string">"BurrowBanelingDown"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L549</span>
+TechTreeAbilityAllow(gv_pLAYER_USER, AbilityCommand(<span class="hljs-string">"NeuralParasite"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L550</span>
+TechTreeAbilityAllow(gv_pLAYER_USER, AbilityCommand(<span class="hljs-string">"UpgradeToGreaterSpire"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L551</span>
+TechTreeAbilityAllow(gv_pLAYER_USER, AbilityCommand(<span class="hljs-string">"MorphToBroodLord"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L208</span>
+TechTreeAbilityAllow(gv_pLAYER_COMPUTER1, AbilityCommand(<span class="hljs-string">"ArchonWarp"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L209</span>
+TechTreeAbilityAllow(gv_pLAYER_COMPUTER1, AbilityCommand(<span class="hljs-string">"PsiStorm"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L210</span>
+TechTreeAbilityAllow(gv_pLAYER_COMPUTER1, AbilityCommand(<span class="hljs-string">"Mergeable"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L213</span>
+TechTreeAbilityAllow(gv_pLAYER_COMPUTER1, AbilityCommand(<span class="hljs-string">"Yamato"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L217</span>
+TechTreeAbilityAllow(gv_pLAYER_USER, AbilityCommand(<span class="hljs-string">"Yamato"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L221</span>
+TechTreeAbilityAllow(gv_pLAYER_USER, AbilityCommand(<span class="hljs-string">"evolutionchamberresearch"</span>, <span class="hljs-number">10</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L222</span>
+TechTreeAbilityAllow(gv_pLAYER_USER, AbilityCommand(<span class="hljs-string">"BurrowInfestorDown"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L223</span>
+TechTreeAbilityAllow(gv_pLAYER_USER, AbilityCommand(<span class="hljs-string">"NeuralParasite"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L225</span>
+TechTreeAbilityAllow(gv_pLAYER_USER, AbilityCommand(<span class="hljs-string">"InfestedTerrans"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L226</span>
+TechTreeAbilityAllow(gv_pLAYER_USER, AbilityCommand(<span class="hljs-string">"BurrowInfestorUp"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L515</span>
+TechTreeAbilityAllow(gv_pLAYER_06_INFESTORS, AbilityCommand(<span class="hljs-string">"NeuralParasite"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L482</span>
+TechTreeAbilityAllow(gv_pLAYER06_TERRORFLEET, AbilityCommand(<span class="hljs-string">"GravitonBeam"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L906</span>
+TechTreeAbilityAllow(gv_p02_ZERG_EAST, AbilityCommand(<span class="hljs-string">"BurrowInfestedCivilianDown"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L907</span>
+TechTreeAbilityAllow(gv_p03_VIROPHAGE, AbilityCommand(<span class="hljs-string">"BurrowInfestedCivilianDown"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L908</span>
+TechTreeAbilityAllow(gv_p04_ZERG_NORTH, AbilityCommand(<span class="hljs-string">"BurrowInfestedCivilianDown"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L909</span>
+TechTreeAbilityAllow(gv_p07_ZERG_INFESTED, AbilityCommand(<span class="hljs-string">"BurrowInfestedCivilianDown"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L910</span>
+TechTreeAbilityAllow(gv_p08_ZERG_SOUTH, AbilityCommand(<span class="hljs-string">"BurrowInfestedCivilianDown"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L911</span>
+TechTreeAbilityAllow(gv_p02_ZERG_EAST, AbilityCommand(<span class="hljs-string">"BurrowInfestedTerranCampaignDown"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L912</span>
+TechTreeAbilityAllow(gv_p03_VIROPHAGE, AbilityCommand(<span class="hljs-string">"BurrowInfestedTerranCampaignDown"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L913</span>
+TechTreeAbilityAllow(gv_p04_ZERG_NORTH, AbilityCommand(<span class="hljs-string">"BurrowInfestedTerranCampaignDown"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L914</span>
+TechTreeAbilityAllow(gv_p07_ZERG_INFESTED, AbilityCommand(<span class="hljs-string">"BurrowInfestedTerranCampaignDown"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L915</span>
+TechTreeAbilityAllow(gv_p08_ZERG_SOUTH, AbilityCommand(<span class="hljs-string">"BurrowInfestedTerranCampaignDown"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L328</span>
+TechTreeAbilityAllow(gv_p01_USER, AbilityCommand(<span class="hljs-string">"WraithCloak"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L329</span>
+TechTreeAbilityAllow(gv_p01_USER, AbilityCommand(<span class="hljs-string">"WraithCloak"</span>, <span class="hljs-number">1</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L800</span>
+TechTreeAbilityAllow(gv_p01_USER, AbilityCommand(<span class="hljs-string">"OdinNuclearStrike"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1141</span>
+TechTreeAbilityAllow(auto8ADC11E5_var, AbilityCommand(<span class="hljs-string">"BansheeCloak"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1421</span>
+TechTreeAbilityAllow(gv_p01_USER, AbilityCommand(<span class="hljs-string">"TossGrenade"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1496</span>
+TechTreeAbilityAllow(gv_p01_USER, AbilityCommand(<span class="hljs-string">"ExperimentalPlasmaGun"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1572</span>
+TechTreeAbilityAllow(gv_p01_USER, AbilityCommand(<span class="hljs-string">"TheMorosDevice"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L511</span>
+TechTreeAbilityAllow(gv_pLAYER01_USER, AbilityCommand(<span class="hljs-string">"TerranBuild"</span>, <span class="hljs-number">4</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L512</span>
+TechTreeAbilityAllow(gv_pLAYER01_USER, AbilityCommand(<span class="hljs-string">"TerranBuild"</span>, <span class="hljs-number">5</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L515</span>
+TechTreeAbilityAllow(gv_pLAYER01_USER, AbilityCommand(<span class="hljs-string">"TerranBuild"</span>, <span class="hljs-number">5</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L517</span>
+TechTreeAbilityAllow(gv_pLAYER01_USER, AbilityCommand(<span class="hljs-string">"TerranBuild"</span>, <span class="hljs-number">6</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L518</span>
+TechTreeAbilityAllow(gv_pLAYER01_USER, AbilityCommand(<span class="hljs-string">"BarracksReactorMorph"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L318</span>
+TechTreeAbilityAllow(gv_p01_USER, AbilityCommand(<span class="hljs-string">"D8Charge"</span>, <span class="hljs-number">0</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

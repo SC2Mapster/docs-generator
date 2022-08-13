@@ -1,0 +1,419 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Send Transmission (Simple) / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Send Transmission (Simple)"/>
+                <meta property="og:description" content="Sends a transmission with sound to all players from a source unit or model.  Uses speaker and subtitle data from conversation data.  Use &quot;Last Sent Transmission&quot; to refer to this transmission after it has begun."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="send-transmission-simple"><a class="markdownIt-Anchor" href="#send-transmission-simple">#</a> Send Transmission (Simple)</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Send transmission <strong>Sound</strong> from <strong>Source</strong> using <strong>Target</strong> (<strong>DurationType</strong> <strong>Duration</strong> seconds, <strong>WaitUntilDone</strong> until it finishes)<br>
+<em>Flags</em> — <code>Action</code></p>
+</blockquote>
+<p>Sends a transmission with sound to all players from a source unit or model.  Uses speaker and subtitle data from conversation data.  Use <em>“Last Sent Transmission”</em> to refer to this transmission after it has begun.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>transmissionsource</code> — Source</li>
+<li><code>int</code> <em>[ portrait ]</em> — Portrait</li>
+<li><code>soundlink</code> — Sound</li>
+<li><code>fixed</code> — Duration</li>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-transmission-duration-type">TransmissionDurationType</a> ]</em> — DurationType</li>
+<li><code>bool</code> <em>[ preset::<a href="/galaxy/reference/preset-trigger-wait-option">Trigger_Wait_Option</a> ]</em> — WaitUntilDone</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">libNtve_gf_SendTransmissionSimple</span><span class="hljs-params">(
+	transmissionsource lp_Source,
+	<span class="hljs-keyword">int</span> lp_Target,
+	soundlink lp_Sound,
+	fixed lp_Duration,
+	<span class="hljs-keyword">int</span> lp_DurationType,
+	<span class="hljs-keyword">bool</span> lp_WaitUntilDone,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#transmission-basics">Transmission / Basics</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ transmission ]</em> — <strong><a href="/galaxy/reference/transmission-send-for-player">Send Transmission For Player (deprecated)</a></strong> — ( TransmissionSendForPlayer )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ transmission ]</em> — <strong><a href="/galaxy/reference/transmission-send-for-player-select">Send Transmission For Player</a></strong> — ( TransmissionSendForPlayerSelect )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-send-transmission-simple">Send Transmission (Simple)</a></strong> — ( libNtve_gf_SendTransmissionSimple )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ transmission ]</em> — <strong><a href="/galaxy/reference/transmission-last-sent">Last Sent Transmission</a></strong> — ( TransmissionLastSent )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/transmission-player-has-active-transmission">Player Has Active Transmission</a></strong> — ( TransmissionPlayerHasActiveTransmission )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/transmission-wait">Wait For Transmission</a></strong> — ( TransmissionWait )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/transmission-clear">Stop Transmission</a></strong> — ( TransmissionClear )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/transmission-clear-all">Stop All Transmissions</a></strong> — ( TransmissionClearAll )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/transmission-clear-group">Stop Group Transmissions</a></strong> — ( TransmissionClearGroup )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/transmission-is-complete">Transmission Is Complete</a></strong> — ( TransmissionIsComplete )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/transmission-set-option">Turn Transmission Option On/Off</a></strong> — ( TransmissionSetOption )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-op-transmission-comment-sound">Transmission Comment (Sound)</a></strong> — (  )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-op-transmission-comment-conversation">Transmission Comment (Conversation)</a></strong> — (  )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/challenges/advancedcommand.sc2map/MapScript.galaxy#L1363">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1363</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_BottomLeft), SoundLink(<span class="hljs-string">"ChallengescombinedExecutor00034"</span>, <span class="hljs-number">-1</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1366</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_BottomLeft), SoundLink(<span class="hljs-string">"ChallengescombinedExecutor00035"</span>, <span class="hljs-number">-1</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1368</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_BottomLeft), SoundLink(<span class="hljs-string">"ChallengescombinedExecutor00036"</span>, <span class="hljs-number">-1</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1372</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_BottomLeft), SoundLink(<span class="hljs-string">"ChallengescombinedExecutor00048"</span>, <span class="hljs-number">-1</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2868</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_BottomLeft), SoundLink(<span class="hljs-string">"ChallengescombinedExecutor00015"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2871</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_BottomLeft), SoundLink(<span class="hljs-string">"ChallengescombinedExecutor00016"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2873</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_BottomLeft), SoundLink(<span class="hljs-string">"ChallengescombinedExecutor00017"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2876</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_BottomLeft), SoundLink(<span class="hljs-string">"ChallengescombinedExecutor00018"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2885</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_BottomLeft), SoundLink(<span class="hljs-string">"ChallengescombinedExecutor00019"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1698</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_BottomLeft), SoundLink(<span class="hljs-string">"ChallengescombinedExecutor00012"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1712</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_BottomLeft), SoundLink(<span class="hljs-string">"ChallengescombinedExecutor00013"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1721</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_BottomLeft), SoundLink(<span class="hljs-string">"ChallengescombinedExecutor00014"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1658</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_BottomLeft), SoundLink(<span class="hljs-string">"ChallengescombinedAdjutant00038"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1660</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_BottomLeft), SoundLink(<span class="hljs-string">"ChallengescombinedAdjutant00039"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1664</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_BottomLeft), SoundLink(<span class="hljs-string">"ChallengescombinedAdjutant00040"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1670</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_BottomLeft), SoundLink(<span class="hljs-string">"ChallengescombinedAdjutant00041"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2075</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), libNtve_gf_CinematicPortrait(<span class="hljs-number">2</span>), SoundLink(<span class="hljs-string">"ChallengescombinedAdjutant00031"</span>, <span class="hljs-number">-1</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2081</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), libNtve_gf_CinematicPortrait(<span class="hljs-number">2</span>), SoundLink(<span class="hljs-string">"ChallengescombinedAdjutant00033"</span>, <span class="hljs-number">-1</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2382</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), libNtve_gf_CinematicPortrait(<span class="hljs-number">2</span>), SoundLink(<span class="hljs-string">"ChallengescombinedAdjutant00031"</span>, <span class="hljs-number">-1</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2391</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), libNtve_gf_CinematicPortrait(<span class="hljs-number">2</span>), SoundLink(<span class="hljs-string">"ChallengescombinedAdjutant00033"</span>, <span class="hljs-number">-1</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2710</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_BottomLeft), SoundLink(<span class="hljs-string">"ChallengescombinedAdjutant00026"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2714</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_BottomLeft), SoundLink(<span class="hljs-string">"ChallengescombinedAdjutant00027"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2716</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_BottomLeft), SoundLink(<span class="hljs-string">"ChallengescombinedAdjutant00028"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2720</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_BottomLeft), SoundLink(<span class="hljs-string">"ChallengescombinedAdjutant00029"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1396</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_BottomLeft), SoundLink(<span class="hljs-string">"ChallengescombinedAdjutant00005"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1399</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_BottomLeft), SoundLink(<span class="hljs-string">"ChallengescombinedAdjutant00006"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1401</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_BottomLeft), SoundLink(<span class="hljs-string">"ChallengescombinedAdjutant00007"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1403</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_BottomLeft), SoundLink(<span class="hljs-string">"ChallengescombinedAdjutant00008"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1405</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_BottomLeft), SoundLink(<span class="hljs-string">"ChallengescombinedAdjutant00101"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2865</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), libNtve_gf_CinematicPortrait(<span class="hljs-number">2</span>), SoundLink(<span class="hljs-string">"ChallengescombinedQueen00021"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2867</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), libNtve_gf_CinematicPortrait(<span class="hljs-number">2</span>), SoundLink(<span class="hljs-string">"ChallengescombinedQueen00022"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2870</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), libNtve_gf_CinematicPortrait(<span class="hljs-number">2</span>), SoundLink(<span class="hljs-string">"ChallengescombinedQueen00023"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2874</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), libNtve_gf_CinematicPortrait(<span class="hljs-number">2</span>), SoundLink(<span class="hljs-string">"ChallengescombinedQueen00024"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1341</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_BottomLeft), SoundLink(<span class="hljs-string">"ChallengescombinedQueen00009"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1343</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_BottomLeft), SoundLink(<span class="hljs-string">"ChallengescombinedQueen00010"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1345</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_BottomLeft), SoundLink(<span class="hljs-string">"ChallengescombinedQueen00011"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L679</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromUnit(lp_currentStatue, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>), c_invalidPortraitId, SoundLink(<span class="hljs-string">"THorner04Arcturus00025"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L690</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromUnit(lp_currentStatue, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>), c_invalidPortraitId, SoundLink(<span class="hljs-string">"THorner04Arcturus00001"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L701</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromUnit(lp_currentStatue, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>), c_invalidPortraitId, SoundLink(<span class="hljs-string">"THorner04Arcturus00032"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L712</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromUnit(lp_currentStatue, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>), c_invalidPortraitId, SoundLink(<span class="hljs-string">"THorner04Arcturus00033"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L723</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromUnit(lp_currentStatue, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>), c_invalidPortraitId, SoundLink(<span class="hljs-string">"THorner04Arcturus00026"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4898</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromUnit(UnitFromId(<span class="hljs-number">1095</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>), c_invalidPortraitId, SoundLink(<span class="hljs-string">"THorner04CivilianFemale1Brunette00051"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4938</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromUnit(UnitFromId(<span class="hljs-number">1087</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>), c_invalidPortraitId, SoundLink(<span class="hljs-string">"THorner04Civilian6WhiteBald00052"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4978</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromUnit(UnitFromId(<span class="hljs-number">1227</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>), c_invalidPortraitId, SoundLink(<span class="hljs-string">"THorner04Civilian9Black00055"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5018</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromUnit(UnitFromId(<span class="hljs-number">1104</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>), c_invalidPortraitId, SoundLink(<span class="hljs-string">"THorner04CivilianFemale400053"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5058</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromUnit(UnitFromId(<span class="hljs-number">1120</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>), c_invalidPortraitId, SoundLink(<span class="hljs-string">"THorner04Civilian2WhitewMohawk00054"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6745</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_BottomLeft), SoundLink(<span class="hljs-string">"THorner05SFirebat00022"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6789</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_BottomLeft), SoundLink(<span class="hljs-string">"THorner05SRaynor00024"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6838</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_BottomLeft), SoundLink(<span class="hljs-string">"THorner05SAdjutant00040"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6883</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_BottomLeft), SoundLink(<span class="hljs-string">"THorner05SRaynor00078"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6975</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_BottomLeft), SoundLink(<span class="hljs-string">"THorner05SFirebat00034"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7251</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_BottomLeft), SoundLink(<span class="hljs-string">"THorner05SRaynor00029"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7433</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_BottomLeft), SoundLink(<span class="hljs-string">"THorner05SRaynor00035"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7659</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_BottomLeft), SoundLink(<span class="hljs-string">"THorner05SRaynor00037"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7698</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_BottomLeft), SoundLink(<span class="hljs-string">"THorner05SHorner00038"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7826</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_BottomLeft), SoundLink(<span class="hljs-string">"THorner05SRaynor00039"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L977</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), c_invalidPortraitId, SoundLink(<span class="hljs-string">"TRaynor01CivilianFemale500033"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1406</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), c_invalidPortraitId, SoundLink(<span class="hljs-string">"TRaynor01Civilian200049"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L28663</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromUnit(gf_ActorUnit(ge_ActorID_ActorRaynor), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>), c_invalidPortraitId, SoundLink(<span class="hljs-string">"TRaynor01BriefingRaynor00006"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L28668</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), lv_portaitRight, SoundLink(<span class="hljs-string">"TRaynor01BriefingAdjutant00010"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L28669</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), lv_portaitRight, SoundLink(<span class="hljs-string">"TRaynor01BriefingAdjutant00011"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L28670</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromUnit(gf_ActorUnit(ge_ActorID_ActorRaynor), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>), lv_portaitLeft, SoundLink(<span class="hljs-string">"TRaynor01BriefingRaynor00012"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L28672</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), lv_portaitRight, SoundLink(<span class="hljs-string">"TRaynor01BriefingAdjutant00013"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L28674</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromUnit(gf_ActorUnit(ge_ActorID_ActorRaynor), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>), lv_portaitLeft, SoundLink(<span class="hljs-string">"TRaynor01BriefingRaynor00014"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L28678</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromUnit(gf_ActorUnit(ge_ActorID_ActorRaynor), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">""</span>), c_invalidPortraitId, SoundLink(<span class="hljs-string">"TRaynor01BriefingRaynor00015"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L28799</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromUnit(gf_ActorUnit(ge_ActorID_ActorRaynor), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>), c_invalidPortraitId, SoundLink(<span class="hljs-string">"TRaynor02BriefingRaynor00001"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L28801</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromUnit(gf_ActorUnit(ge_ActorID_ActorTychus), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>), c_invalidPortraitId, SoundLink(<span class="hljs-string">"TRaynor02BriefingTychus00002"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L28809</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromUnit(gf_ActorUnit(ge_ActorID_ActorTychus), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>), c_invalidPortraitId, SoundLink(<span class="hljs-string">"TRaynor02BriefingTychus00003"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1431</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), gv_cinematicWindow, SoundLink(<span class="hljs-string">"TutorialAdjutant00060"</span>, <span class="hljs-number">-1</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1433</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), gv_cinematicWindow, SoundLink(<span class="hljs-string">"TutorialAdjutant00068"</span>, <span class="hljs-number">-1</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1474</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), gv_cinematicWindow, SoundLink(<span class="hljs-string">"TutorialAdjutant00165"</span>, <span class="hljs-number">-1</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1513</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), gv_cinematicWindow, SoundLink(<span class="hljs-string">"TutorialAdjutant00166"</span>, <span class="hljs-number">-1</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1587</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), gv_cinematicWindow, SoundLink(<span class="hljs-string">"TutorialAdjutant00092"</span>, <span class="hljs-number">-1</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1761</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), libNtve_gf_CinematicPortrait(<span class="hljs-number">4</span>), SoundLink(<span class="hljs-string">"TutorialAdjutant00001"</span>, <span class="hljs-number">-1</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1764</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), libNtve_gf_CinematicPortrait(<span class="hljs-number">4</span>), SoundLink(<span class="hljs-string">"TutorialAdjutant00067"</span>, <span class="hljs-number">-1</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1767</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), libNtve_gf_CinematicPortrait(<span class="hljs-number">4</span>), SoundLink(<span class="hljs-string">"TutorialAdjutant00072"</span>, <span class="hljs-number">-1</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1777</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), libNtve_gf_CinematicPortrait(<span class="hljs-number">4</span>), SoundLink(<span class="hljs-string">"TutorialAdjutant00002"</span>, <span class="hljs-number">-1</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1803</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), libNtve_gf_CinematicPortrait(<span class="hljs-number">4</span>), SoundLink(<span class="hljs-string">"TutorialAdjutant00004"</span>, <span class="hljs-number">-1</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L679</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromUnit(lp_currentStatue, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>), c_invalidPortraitId, SoundLink(<span class="hljs-string">"THorner04Arcturus00025"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L690</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromUnit(lp_currentStatue, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>), c_invalidPortraitId, SoundLink(<span class="hljs-string">"THorner04Arcturus00001"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L701</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromUnit(lp_currentStatue, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>), c_invalidPortraitId, SoundLink(<span class="hljs-string">"THorner04Arcturus00032"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L712</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromUnit(lp_currentStatue, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>), c_invalidPortraitId, SoundLink(<span class="hljs-string">"THorner04Arcturus00033"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L723</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromUnit(lp_currentStatue, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>), c_invalidPortraitId, SoundLink(<span class="hljs-string">"THorner04Arcturus00026"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4898</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromUnit(UnitFromId(<span class="hljs-number">1095</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>), c_invalidPortraitId, SoundLink(<span class="hljs-string">"THorner04CivilianFemale1Brunette00051"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4938</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromUnit(UnitFromId(<span class="hljs-number">1087</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>), c_invalidPortraitId, SoundLink(<span class="hljs-string">"THorner04Civilian6WhiteBald00052"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4978</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromUnit(UnitFromId(<span class="hljs-number">1227</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>), c_invalidPortraitId, SoundLink(<span class="hljs-string">"THorner04Civilian9Black00055"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5018</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromUnit(UnitFromId(<span class="hljs-number">1104</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>), c_invalidPortraitId, SoundLink(<span class="hljs-string">"THorner04CivilianFemale400053"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5058</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromUnit(UnitFromId(<span class="hljs-number">1120</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>), c_invalidPortraitId, SoundLink(<span class="hljs-string">"THorner04Civilian2WhitewMohawk00054"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6745</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_BottomLeft), SoundLink(<span class="hljs-string">"THorner05SFirebat00022"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6789</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_BottomLeft), SoundLink(<span class="hljs-string">"THorner05SRaynor00024"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6838</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_BottomLeft), SoundLink(<span class="hljs-string">"THorner05SAdjutant00040"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6883</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_BottomLeft), SoundLink(<span class="hljs-string">"THorner05SRaynor00078"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6975</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_BottomLeft), SoundLink(<span class="hljs-string">"THorner05SFirebat00034"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7251</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_BottomLeft), SoundLink(<span class="hljs-string">"THorner05SRaynor00029"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7433</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_BottomLeft), SoundLink(<span class="hljs-string">"THorner05SRaynor00035"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7659</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_BottomLeft), SoundLink(<span class="hljs-string">"THorner05SRaynor00037"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7698</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_BottomLeft), SoundLink(<span class="hljs-string">"THorner05SHorner00038"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7826</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_BottomLeft), SoundLink(<span class="hljs-string">"THorner05SRaynor00039"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L977</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), c_invalidPortraitId, SoundLink(<span class="hljs-string">"TRaynor01CivilianFemale500033"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1406</span>
+libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(null), c_invalidPortraitId, SoundLink(<span class="hljs-string">"TRaynor01Civilian200049"</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

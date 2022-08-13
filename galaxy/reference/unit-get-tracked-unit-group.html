@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Unit Tracked Group / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Unit Tracked Group"/>
+                <meta property="og:description" content="Returns the tracked unit group of a unit given a unit tracker behavior
+
+Returns: unitgroup"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="unit-tracked-group"><a class="markdownIt-Anchor" href="#unit-tracked-group">#</a> Unit Tracked Group</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Tracked Unit Group of <strong>inUnit</strong> for behavior <strong>inConjoinedBehavior</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Function</code></p>
+</blockquote>
+<p>Returns the tracked unit group of a unit given a unit tracker behavior</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>unit</code> — Tracker Unit</li>
+<li><code>string</code> <em>[ gamelink::Behavior ]</em> — Unit Tracker Behavior</li>
+</ul>
+<p>Returns — <code>unitgroup</code></p>
+<pre class="hljs"><code><span class="hljs-function">native unitgroup <span class="hljs-title">UnitGetTrackedUnitGroup</span><span class="hljs-params">(
+	unit inUnit,
+	<span class="hljs-built_in">string</span> inConjoinedBehavior,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#behavior-unit-tracker">Behavior / Unit Tracker</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>unitgroup</code> — <strong><a href="/galaxy/reference/unit-get-tracked-unit-group">Unit Tracked Group</a></strong> — ( UnitGetTrackedUnitGroup )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/behavior-add-to-shared-tracked-unit-list">Add Unit To Shared Tracked Unit List</a></strong> — ( BehaviorAddToSharedTrackedUnitList )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="modsheroesdatastormmod"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/GameDataHelperLib.galaxy#L15829">GameDataHelperLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L15829</span>
+UnitGetTrackedUnitGroup(lv_dropship, <span class="hljs-string">"MedicMedivacBeaconTrackerBehavior"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L15893</span>
+UnitGetTrackedUnitGroup(lv_dropship, <span class="hljs-string">"MedicMedivacBeaconTrackerBehavior"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L15964</span>
+UnitGetTrackedUnitGroup(lv_dropship, <span class="hljs-string">"MedicMedivacBeaconTrackerBehavior"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L15965</span>
+UnitGetTrackedUnitGroup(lv_dropship, <span class="hljs-string">"MedicMedivacBeaconTrackerBehavior"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L18234</span>
+UnitGetTrackedUnitGroup(EventPlayerEffectUsedUnit(c_effectUnitCaster), <span class="hljs-string">"RaynorRaynorsRaidersUnitTracker"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L18296</span>
+UnitGetTrackedUnitGroup(lv_unit, <span class="hljs-string">"RaynorRaynorsRaidersUnitTracker"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L18348</span>
+UnitGetTrackedUnitGroup(lv_unit, <span class="hljs-string">"RaynorRaynorsRaidersUnitTracker"</span>)
+</code></pre>
+<h4 id="modsheromodsanastormmod"><a class="markdownIt-Anchor" href="#modsheromodsanastormmod">#</a> mods/heromods/ana.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heromods/ana.stormmod/base.stormdata/LibHANA.galaxy#L593">LibHANA.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L593</span>
+UnitGetTrackedUnitGroup(lv_anaUnit, <span class="hljs-string">"AnaHealingDartConcentratedDosesPlayerTracker"</span>)
+</code></pre>
+<h4 id="modsheromodsimperiusstormmod"><a class="markdownIt-Anchor" href="#modsheromodsimperiusstormmod">#</a> mods/heromods/imperius.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heromods/imperius.stormmod/base.stormdata/LibHIMP.galaxy#L182">LibHIMP.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L182</span>
+UnitGetTrackedUnitGroup(lv_imperiusUnit, <span class="hljs-string">"ImperiusCelestialChargeUnitTracker"</span>)
+</code></pre>
+<h4 id="modsheromodsjunkratstormmod"><a class="markdownIt-Anchor" href="#modsheromodsjunkratstormmod">#</a> mods/heromods/junkrat.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heromods/junkrat.stormmod/base.stormdata/LibHJUN.galaxy#L233">LibHJUN.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L233</span>
+UnitGetTrackedUnitGroup(lv_junkrat, <span class="hljs-string">"JunkratSteelTrapUnitTracker"</span>)
+</code></pre>
+<h4 id="modswarcoopwarclassicsystemsc2mod"><a class="markdownIt-Anchor" href="#modswarcoopwarclassicsystemsc2mod">#</a> mods/warcoop/warclassicsystem.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/warcoop/warclassicsystem.sc2mod/base.sc2data/TriggerLibs/WarClassicSystem.galaxy#L1352">WarClassicSystem.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1352</span>
+UnitGetTrackedUnitGroup(lv_u, lv_itBehavior)
+</code></pre>
+<h4 id="modswarcoopwarclassicsystemsc2mod-2"><a class="markdownIt-Anchor" href="#modswarcoopwarclassicsystemsc2mod-2">#</a> mods/warcoop/warclassicsystem.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/warcoop/warclassicsystem.sc2mod/base.sc2data/TriggerLibs/WarClassicTactical.galaxy#L413">WarClassicTactical.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L413</span>
+UnitGetTrackedUnitGroup(lp_aIUnit, (((lp_abil) + <span class="hljs-string">"@UniqueSummonTracker"</span>)))
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

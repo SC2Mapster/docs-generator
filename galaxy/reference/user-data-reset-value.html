@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Reset User Data Value / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Reset User Data Value"/>
+                <meta property="og:description" content="Resets the given value to the default defined in the Data module."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="reset-user-data-value"><a class="markdownIt-Anchor" href="#reset-user-data-value">#</a> Reset User Data Value</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Reset user data (<strong>userType</strong>, <strong>instance</strong>, <strong>field</strong>, <strong>index</strong>)<br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Resets the given value to the default defined in the Data module.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>string</code> <em>[ gamelink::User ]</em> — User Type</li>
+<li><code>string</code> <em>[ userinstance ]</em> — Instance</li>
+<li><code>string</code> <em>[ userfield ]</em> — Field</li>
+<li><code>int</code> — Index</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">UserDataResetValue</span><span class="hljs-params">(
+	<span class="hljs-built_in">string</span> inType,
+	<span class="hljs-built_in">string</span> inInstance,
+	<span class="hljs-built_in">string</span> inField,
+	<span class="hljs-keyword">int</span> inIndex,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#user-data-utility">User Data / Utility</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/user-data-reset-value">Reset User Data Value</a></strong> — ( UserDataResetValue )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/user-data-reset-instance">Reset User Data Instance</a></strong> — ( UserDataResetInstance )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/user-data-reset-type">Reset User Data Type</a></strong> — ( UserDataResetType )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/user-data-reset-all">Reset All User Data</a></strong> — ( UserDataResetAll )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> <em>[ gamelink::User ]</em> — <strong><a href="/galaxy/reference/user-data-type-from-reference">User Type From Reference</a></strong> — ( UserDataTypeFromReference )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> <em>[ userinstance ]</em> — <strong><a href="/galaxy/reference/user-data-instance-from-reference">User Instance From Reference</a></strong> — ( UserDataInstanceFromReference )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignsswarmstoryutilsc2mod"><a class="markdownIt-Anchor" href="#campaignsswarmstoryutilsc2mod">#</a> campaigns/swarmstoryutil.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstoryutil.sc2mod/base.sc2data/Lib281DEC45.galaxy#L5792">Lib281DEC45.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L5792</span>
+UserDataResetValue(<span class="hljs-string">"Character"</span>, lv_indexCharacter, <span class="hljs-string">"Unlocked"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignStoryLib.galaxy#L5108">VoidCampaignStoryLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L5108</span>
+UserDataResetValue(<span class="hljs-string">"Clickable"</span>, lv_indexClickable, <span class="hljs-string">"Unlocked"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<h4 id="modsmissionpacksnovacampaignsc2mod"><a class="markdownIt-Anchor" href="#modsmissionpacksnovacampaignsc2mod">#</a> mods/missionpacks/novacampaign.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/novacampaign.sc2mod/base.sc2data/LibNCST.galaxy#L4467">LibNCST.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4467</span>
+UserDataResetValue(<span class="hljs-string">"Clickable"</span>, lv_indexClickable, <span class="hljs-string">"Unlocked"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

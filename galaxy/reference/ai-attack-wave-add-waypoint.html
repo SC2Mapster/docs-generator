@@ -1,0 +1,426 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Add Attack Wave Waypoint / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Add Attack Wave Waypoint"/>
+                <meta property="og:description" content="Adds a waypoint to the next attack wave for a player.  In Force Transport Mode, the wave units will attempt to load up in transports before approaching this waypoint and will not regroup.  If there are not enough transports available for all of the units, the stranded units will be dropped from the wave."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="add-attack-wave-waypoint"><a class="markdownIt-Anchor" href="#add-attack-wave-waypoint">#</a> Add Attack Wave Waypoint</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Add an attack wave waypoint at <strong>waypoint|Point</strong> for player <strong>player</strong> using <strong>useTransport|Force Transport Mode/Normal Mode</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Adds a waypoint to the next attack wave for a player.  In Force Transport Mode, the wave units will attempt to load up in transports before approaching this waypoint and will not regroup.  If there are not enough transports available for all of the units, the stranded units will be dropped from the wave.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> — Attacker</li>
+<li><code>point</code> — Waypoint</li>
+<li><code>bool</code> <em>[ preset::<a href="/galaxy/reference/preset-force-use-transport">ForceUseTransport</a> ]</em> — Use Transport</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">AIAttackWaveAddWaypoint</span><span class="hljs-params">(
+	<span class="hljs-keyword">int</span> player,
+	point waypoint,
+	<span class="hljs-keyword">bool</span> useTransport,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#ai-attack-waves-actions">AI / AttackWaves / Actions</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-attack-wave-use-unit">Add Unit To Attack Wave</a></strong> — ( AIAttackWaveUseUnit )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-attack-wave-use-group">Add Unit Group To Attack Wave</a></strong> — ( AIAttackWaveUseGroup )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-attack-wave-add-escort-unit">Add Escort Unit To Attack Wave</a></strong> — ( AIAttackWaveAddEscortUnit )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-attack-wave-add-escort-type">Add Escort UnitType To Attack Wave</a></strong> — ( AIAttackWaveAddEscortType )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-attack-wave-add-waypoint">Add Attack Wave Waypoint</a></strong> — ( AIAttackWaveAddWaypoint )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-attack-wave-send">Send Attack Wave</a></strong> — ( AIAttackWaveSend )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-attack-wave-cancel">Cancel Attack Wave</a></strong> — ( AIAttackWaveCancel )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-attack-wave-set-gather-point">Set Attack Wave Gather Point</a></strong> — ( AIAttackWaveSetGatherPoint )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-attack-wave-set-target-player">Set Target Player For Attack Waves</a></strong> — ( AIAttackWaveSetTargetPlayer )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-attack-wave-set-target-unit">Set Target Unit For Attack Waves</a></strong> — ( AIAttackWaveSetTargetUnit )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-attack-wave-set-target-unit-group">Set Target UnitGroup For Attack Waves</a></strong> — ( AIAttackWaveSetTargetUnitGroup )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-attack-wave-set-target-unit-point">Set Target UnitArea For Attack Waves</a></strong> — ( AIAttackWaveSetTargetUnitPoint )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-attack-wave-set-target-point">Set Target Point For Attack Waves</a></strong> — ( AIAttackWaveSetTargetPoint )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-attack-wave-set-target-merge">Set Target Merge For Attack Waves</a></strong> — ( AIAttackWaveSetTargetMerge )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-attack-wave-set-target-patrol">Set Target Patrol For Attack Waves</a></strong> — ( AIAttackWaveSetTargetPatrol )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-attack-wave-set-target-escort">Set Target Escort For Attack Waves</a></strong> — ( AIAttackWaveSetTargetEscort )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-attack-wave-set-target-escort-nl">Set Target Escort For Attack Waves, No Leashing</a></strong> — ( AIAttackWaveSetTargetEscortNL )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-attack-wave-set-target-gather-d">Set Target Gather Defense For Attack Waves</a></strong> — ( AIAttackWaveSetTargetGatherD )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-attack-wave-set-target-gather-o">Set Target Gather Offense For Attack Waves</a></strong> — ( AIAttackWaveSetTargetGatherO )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-attack-wave-set-target-melee">Set Target Melee For Attack Waves</a></strong> — ( AIAttackWaveSetTargetMelee )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-attack-wave-set-target-melee-harass">Set Target Melee Harass For Attack Waves</a></strong> — ( AIAttackWaveSetTargetMeleeHarass )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-attack-wave-set-target-region">Set Target Region For Attack/Defense Waves</a></strong> — ( AIAttackWaveSetTargetRegion )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-attack-wave-add-units4">Add Attack Wave Unit Types (Liberty)</a></strong> — ( AIAttackWaveAddUnits4 )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-attack-wave-add-units3">Add Attack Wave Unit Types (Swarm)</a></strong> — ( AIAttackWaveAddUnits3 )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-attack-wave-set-keep-alive">Set Attack Wave Keep Alive</a></strong> — ( AIAttackWaveSetKeepAlive )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-attack-wave-set-gather-early-no-replace">Set Attack Wave Gather Early No Replace</a></strong> — ( AIAttackWaveSetGatherEarlyNoReplace )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/thanson02.sc2map/MapScript.galaxy#L385">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L385</span>
+AIAttackWaveAddWaypoint(gv_pLAYER_03_INFESTED_REFUGEES, PointFromId(<span class="hljs-number">237</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L386</span>
+AIAttackWaveAddWaypoint(gv_pLAYER_03_INFESTED_REFUGEES, PointFromId(<span class="hljs-number">457</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L396</span>
+AIAttackWaveAddWaypoint(gv_pLAYER_03_INFESTED_REFUGEES, PointFromId(<span class="hljs-number">1109</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L439</span>
+AIAttackWaveAddWaypoint(gv_pLAYER_03_INFESTED_REFUGEES, PointFromId(<span class="hljs-number">859</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L409</span>
+AIAttackWaveAddWaypoint(gv_currentWaveAttacker, PointFromId(<span class="hljs-number">1966</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L410</span>
+AIAttackWaveAddWaypoint(gv_currentWaveAttacker, PointFromId(<span class="hljs-number">356</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L415</span>
+AIAttackWaveAddWaypoint(gv_currentWaveAttacker, PointFromId(<span class="hljs-number">1967</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L419</span>
+AIAttackWaveAddWaypoint(gv_currentWaveAttacker, PointFromId(<span class="hljs-number">24</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L420</span>
+AIAttackWaveAddWaypoint(gv_currentWaveAttacker, PointFromId(<span class="hljs-number">1967</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3191</span>
+AIAttackWaveAddWaypoint(gv_p04_ZERG_NORTH, PointFromId(<span class="hljs-number">591</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3195</span>
+AIAttackWaveAddWaypoint(gv_p08_ZERG_SOUTH, PointFromId(<span class="hljs-number">1117</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3201</span>
+AIAttackWaveAddWaypoint(gv_p08_ZERG_SOUTH, PointFromId(<span class="hljs-number">1117</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3206</span>
+AIAttackWaveAddWaypoint(gv_p02_ZERG_EAST, PointFromId(<span class="hljs-number">76</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3213</span>
+AIAttackWaveAddWaypoint(gv_p04_ZERG_NORTH, PointFromId(<span class="hljs-number">1117</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3218</span>
+AIAttackWaveAddWaypoint(gv_p08_ZERG_SOUTH, PointFromId(<span class="hljs-number">591</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3224</span>
+AIAttackWaveAddWaypoint(gv_p04_ZERG_NORTH, PointFromId(<span class="hljs-number">76</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3231</span>
+AIAttackWaveAddWaypoint(gv_p08_ZERG_SOUTH, PointFromId(<span class="hljs-number">1117</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3236</span>
+AIAttackWaveAddWaypoint(gv_p04_ZERG_NORTH, PointFromId(<span class="hljs-number">76</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3242</span>
+AIAttackWaveAddWaypoint(gv_p02_ZERG_EAST, PointFromId(<span class="hljs-number">591</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L488</span>
+AIAttackWaveAddWaypoint(gv_pLAYER_02_DOMINION, PointFromId(<span class="hljs-number">1789</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L489</span>
+AIAttackWaveAddWaypoint(gv_pLAYER_02_DOMINION, PointFromId(<span class="hljs-number">1790</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L490</span>
+AIAttackWaveAddWaypoint(gv_pLAYER_02_DOMINION, PointFromId(<span class="hljs-number">1791</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L491</span>
+AIAttackWaveAddWaypoint(gv_pLAYER_02_DOMINION, PointFromId(<span class="hljs-number">1792</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L492</span>
+AIAttackWaveAddWaypoint(gv_pLAYER_02_DOMINION, PointFromId(<span class="hljs-number">1793</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L493</span>
+AIAttackWaveAddWaypoint(gv_pLAYER_02_DOMINION, PointFromId(<span class="hljs-number">1794</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L494</span>
+AIAttackWaveAddWaypoint(gv_pLAYER_02_DOMINION, PointFromId(<span class="hljs-number">1795</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L495</span>
+AIAttackWaveAddWaypoint(gv_pLAYER_02_DOMINION, PointFromId(<span class="hljs-number">1796</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L503</span>
+AIAttackWaveAddWaypoint(gv_pLAYER_02_DOMINION, PointFromId(<span class="hljs-number">1784</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L504</span>
+AIAttackWaveAddWaypoint(gv_pLAYER_02_DOMINION, PointFromId(<span class="hljs-number">1785</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L376</span>
+AIAttackWaveAddWaypoint(gv_p02_ORLAN_ENEMY, PointFromId(<span class="hljs-number">191</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L379</span>
+AIAttackWaveAddWaypoint(gv_p02_ORLAN_ENEMY, PointFromId(<span class="hljs-number">211</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L387</span>
+AIAttackWaveAddWaypoint(gv_p02_ORLAN_ENEMY, PointFromId(<span class="hljs-number">191</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L390</span>
+AIAttackWaveAddWaypoint(gv_p02_ORLAN_ENEMY, PointFromId(<span class="hljs-number">212</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3425</span>
+AIAttackWaveAddWaypoint(gv_p02_ORLAN_ENEMY, PointFromId(<span class="hljs-number">211</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3430</span>
+AIAttackWaveAddWaypoint(gv_p02_ORLAN_ENEMY, PointFromId(<span class="hljs-number">211</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3435</span>
+AIAttackWaveAddWaypoint(gv_p02_ORLAN_ENEMY, PointFromId(<span class="hljs-number">212</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L277</span>
+AIAttackWaveAddWaypoint(lp_p, PointFromId(<span class="hljs-number">211</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L280</span>
+AIAttackWaveAddWaypoint(lp_p, PointFromId(<span class="hljs-number">206</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1680</span>
+AIAttackWaveAddWaypoint(gv_p02_TYCHUS, PointFromId(<span class="hljs-number">651</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2195</span>
+AIAttackWaveAddWaypoint(gv_p08_DOMINION_INFANTRY_B, PointFromId(<span class="hljs-number">68</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2450</span>
+AIAttackWaveAddWaypoint(gv_p05_DOMINION_FACTORY, PointFromId(<span class="hljs-number">562</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2612</span>
+AIAttackWaveAddWaypoint(gv_p06_DOMINION_STARPORT_A, PointFromId(<span class="hljs-number">2200</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2618</span>
+AIAttackWaveAddWaypoint(gv_p06_DOMINION_STARPORT_A, PointFromId(<span class="hljs-number">2200</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2958</span>
+AIAttackWaveAddWaypoint(gv_p07_DOMINION_STARPORT_B, PointFromId(<span class="hljs-number">572</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2964</span>
+AIAttackWaveAddWaypoint(gv_p07_DOMINION_STARPORT_B, PointFromId(<span class="hljs-number">667</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2967</span>
+AIAttackWaveAddWaypoint(gv_p07_DOMINION_STARPORT_B, PointFromId(<span class="hljs-number">572</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3754</span>
+AIAttackWaveAddWaypoint(gv_p08_DOMINION, PointFromId(<span class="hljs-number">1414</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3755</span>
+AIAttackWaveAddWaypoint(gv_p08_DOMINION, PointFromId(<span class="hljs-number">1413</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3756</span>
+AIAttackWaveAddWaypoint(gv_p08_DOMINION, PointFromId(<span class="hljs-number">1415</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3852</span>
+AIAttackWaveAddWaypoint(gv_p08_DOMINION, PointFromId(<span class="hljs-number">1416</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3853</span>
+AIAttackWaveAddWaypoint(gv_p08_DOMINION, PointFromId(<span class="hljs-number">1418</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3854</span>
+AIAttackWaveAddWaypoint(gv_p08_DOMINION, PointFromId(<span class="hljs-number">1417</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3998</span>
+AIAttackWaveAddWaypoint(gv_p08_DOMINION, PointFromId(<span class="hljs-number">1419</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3999</span>
+AIAttackWaveAddWaypoint(gv_p08_DOMINION, PointFromId(<span class="hljs-number">1516</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4000</span>
+AIAttackWaveAddWaypoint(gv_p08_DOMINION, PointFromId(<span class="hljs-number">1517</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4181</span>
+AIAttackWaveAddWaypoint(gv_p05_DOMINION_RAIDER, PointFromId(<span class="hljs-number">302</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2658</span>
+AIAttackWaveAddWaypoint(gv_pLAYER_02_DOMINION, PointFromId(<span class="hljs-number">406</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2659</span>
+AIAttackWaveAddWaypoint(gv_pLAYER_02_DOMINION, PointFromId(<span class="hljs-number">1142</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2660</span>
+AIAttackWaveAddWaypoint(gv_pLAYER_02_DOMINION, PointFromId(<span class="hljs-number">1143</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2573</span>
+AIAttackWaveAddWaypoint(gv_pLAYER02_ZERG, PointFromId(<span class="hljs-number">378</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2577</span>
+AIAttackWaveAddWaypoint(gv_pLAYER02_ZERG, PointFromId(<span class="hljs-number">378</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2581</span>
+AIAttackWaveAddWaypoint(gv_pLAYER02_ZERG, PointFromId(<span class="hljs-number">378</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2586</span>
+AIAttackWaveAddWaypoint(gv_pLAYER02_ZERG, PointFromId(<span class="hljs-number">378</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2593</span>
+AIAttackWaveAddWaypoint(gv_pLAYER02_ZERG, PointFromId(<span class="hljs-number">378</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2596</span>
+AIAttackWaveAddWaypoint(gv_pLAYER02_ZERG, PointFromId(<span class="hljs-number">378</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2632</span>
+AIAttackWaveAddWaypoint(gv_pLAYER03_ZERG, PointFromId(<span class="hljs-number">362</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2633</span>
+AIAttackWaveAddWaypoint(gv_pLAYER03_ZERG, PointFromId(<span class="hljs-number">363</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2637</span>
+AIAttackWaveAddWaypoint(gv_pLAYER03_ZERG, PointFromId(<span class="hljs-number">361</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2638</span>
+AIAttackWaveAddWaypoint(gv_pLAYER03_ZERG, PointFromId(<span class="hljs-number">363</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L818</span>
+AIAttackWaveAddWaypoint(gv_p02_ZERG, PointFromId(<span class="hljs-number">557</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L835</span>
+AIAttackWaveAddWaypoint(gv_p02_ZERG, PointFromId(<span class="hljs-number">557</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L839</span>
+AIAttackWaveAddWaypoint(gv_p02_ZERG, PointFromId(<span class="hljs-number">555</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L208</span>
+AIAttackWaveAddWaypoint(gv_p4_PROTOSS_WEST_ESCORTS, PointFromId(<span class="hljs-number">2076</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L212</span>
+AIAttackWaveAddWaypoint(gv_p4_PROTOSS_WEST_ESCORTS, PointFromId(<span class="hljs-number">2077</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L216</span>
+AIAttackWaveAddWaypoint(gv_p4_PROTOSS_WEST_ESCORTS, PointFromId(<span class="hljs-number">2079</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L220</span>
+AIAttackWaveAddWaypoint(gv_p4_PROTOSS_WEST_ESCORTS, PointFromId(<span class="hljs-number">2080</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L221</span>
+AIAttackWaveAddWaypoint(gv_p4_PROTOSS_WEST_ESCORTS, PointFromId(<span class="hljs-number">2078</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3067</span>
+AIAttackWaveAddWaypoint(gv_p2_PROTOSS_EAST_ATTACKERS, PointFromId(<span class="hljs-number">3014</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3072</span>
+AIAttackWaveAddWaypoint(gv_p2_PROTOSS_EAST_ATTACKERS, PointFromId(<span class="hljs-number">3014</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3079</span>
+AIAttackWaveAddWaypoint(gv_p2_PROTOSS_EAST_ATTACKERS, PointFromId(<span class="hljs-number">3014</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3087</span>
+AIAttackWaveAddWaypoint(gv_p2_PROTOSS_EAST_ATTACKERS, PointFromId(<span class="hljs-number">3014</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3088</span>
+AIAttackWaveAddWaypoint(gv_p2_PROTOSS_EAST_ATTACKERS, PointFromId(<span class="hljs-number">3017</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L437</span>
+AIAttackWaveAddWaypoint(lp_ally, gv_waypoints[lv_index], <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L444</span>
+AIAttackWaveAddWaypoint(lp_ally, gv_waypoints[lv_index], <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L238</span>
+AIAttackWaveAddWaypoint(gv_p2_ZERG, PointFromId(<span class="hljs-number">230</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L239</span>
+AIAttackWaveAddWaypoint(gv_p2_ZERG, PointFromId(<span class="hljs-number">246</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L240</span>
+AIAttackWaveAddWaypoint(gv_p2_ZERG, PointFromId(<span class="hljs-number">248</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L241</span>
+AIAttackWaveAddWaypoint(gv_p2_ZERG, PointFromId(<span class="hljs-number">250</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2362</span>
+AIAttackWaveAddWaypoint(gv_p2_ZERG, PointFromId(<span class="hljs-number">246</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2366</span>
+AIAttackWaveAddWaypoint(gv_p2_ZERG, PointFromId(<span class="hljs-number">248</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2369</span>
+AIAttackWaveAddWaypoint(gv_p2_ZERG, PointFromId(<span class="hljs-number">250</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3322</span>
+AIAttackWaveAddWaypoint(gv_p2_ZERG, PointFromId(<span class="hljs-number">1840</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3354</span>
+AIAttackWaveAddWaypoint(gv_p2_ZERG, PointFromId(<span class="hljs-number">2106</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3369</span>
+AIAttackWaveAddWaypoint(gv_p2_ZERG, PointFromId(<span class="hljs-number">2106</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3200</span>
+AIAttackWaveAddWaypoint(lv_attacker, lv_waypoint, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L476</span>
+AIAttackWaveAddWaypoint(lp_player, PointFromId(<span class="hljs-number">119</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L477</span>
+AIAttackWaveAddWaypoint(lp_player, PointFromId(<span class="hljs-number">401</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L478</span>
+AIAttackWaveAddWaypoint(lp_player, PointFromId(<span class="hljs-number">402</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4772</span>
+AIAttackWaveAddWaypoint(gv_p05_ZERG_BASE, PointFromId(<span class="hljs-number">870</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4777</span>
+AIAttackWaveAddWaypoint(gv_p05_ZERG_BASE, PointFromId(<span class="hljs-number">620</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

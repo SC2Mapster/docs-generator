@@ -1,0 +1,202 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Alliance Aspect / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Alliance Aspect"/>
+                <meta property="og:description" content="Returns true of the source player is treating the target player with the specified alliance aspect.  To check if two players are mutually treating each other with a given alliance aspect, use this function again with the players in reverse order.
+
+Returns: bool"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="alliance-aspect"><a class="markdownIt-Anchor" href="#alliance-aspect">#</a> Alliance Aspect</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Player <strong>inSourcePlayer</strong> is giving player <strong>inTargetPlayer</strong> <strong>inAllianceId</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Function</code></p>
+</blockquote>
+<p>Returns true of the source player is treating the target player with the specified alliance aspect.  To check if two players are mutually treating each other with a given alliance aspect, use this function again with the players in reverse order.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> — Source Player</li>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-alliance-aspect">AllianceAspect</a> ]</em> — Alliance Aspect</li>
+<li><code>int</code> — Target Player</li>
+</ul>
+<p>Returns — <code>bool</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">bool</span> <span class="hljs-title">PlayerGetAlliance</span><span class="hljs-params">(
+	<span class="hljs-keyword">int</span> inSourcePlayer,
+	<span class="hljs-keyword">int</span> inAllianceId,
+	<span class="hljs-keyword">int</span> inTargetPlayer,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#player-alliances">Player / Alliances</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-player-alliance-change">Player Changes Alliances</a></strong> — ( TriggerAddEventPlayerAllianceChange )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-set-alliance">Set Alliance</a></strong> — ( libNtve_gf_SetAlliance )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-set-alliance-one-way">Set Alliance (One-Way)</a></strong> — ( libNtve_gf_SetAllianceOneWay )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/player-set-alliance">Set Alliance Aspect</a></strong> — ( PlayerSetAlliance )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-set-player-group-alliance">Set Alliance For Player Group</a></strong> — ( libNtve_gf_SetPlayerGroupAlliance )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-set-alliance-between-two-player-groups">Set Alliance Between Two Player Groups</a></strong> — ( libNtve_gf_SetAllianceBetweenTwoPlayerGroups )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-set-alliance-aspect-for-player-group">Set Alliance Aspect For Player Group</a></strong> — ( libNtve_gf_SetAllianceAspectForPlayerGroup )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/player-get-alliance">Alliance Aspect</a></strong> — ( PlayerGetAlliance )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-player-is-enemy">Get Relationship Between Players</a></strong> — ( libNtve_gf_PlayerIsEnemy )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/thanson03b.sc2map/MapScript.galaxy#L2433">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2433</span>
+PlayerGetAlliance(UnitGetOwner(EventUnit()), c_allianceIdPassive, gv_p01_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2433</span>
+PlayerGetAlliance(UnitGetOwner(EventUnit()), c_allianceIdPassive, gv_p01_USER)
+</code></pre>
+<h4 id="modscoresc2mod"><a class="markdownIt-Anchor" href="#modscoresc2mod">#</a> mods/core.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/core.sc2mod/base.sc2data/TriggerLibs/NativeLib.galaxy#L3828">NativeLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3828</span>
+PlayerGetAlliance(lp_sourcePlayer, c_allianceIdPassive, lp_targetPlayer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3828</span>
+PlayerGetAlliance(lp_sourcePlayer, c_allianceIdChat, lp_targetPlayer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3831</span>
+PlayerGetAlliance(lp_sourcePlayer, c_allianceIdPassive, lp_targetPlayer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3831</span>
+PlayerGetAlliance(lp_sourcePlayer, c_allianceIdChat, lp_targetPlayer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3831</span>
+PlayerGetAlliance(lp_targetPlayer, c_allianceIdPassive, lp_sourcePlayer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3831</span>
+PlayerGetAlliance(lp_targetPlayer, c_allianceIdChat, lp_sourcePlayer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3834</span>
+PlayerGetAlliance(lp_sourcePlayer, c_allianceIdPassive, lp_targetPlayer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3834</span>
+PlayerGetAlliance(lp_sourcePlayer, c_allianceIdChat, lp_targetPlayer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3837</span>
+PlayerGetAlliance(lp_sourcePlayer, c_allianceIdPassive, lp_targetPlayer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3837</span>
+PlayerGetAlliance(lp_sourcePlayer, c_allianceIdChat, lp_targetPlayer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3182</span>
+PlayerGetAlliance(lp_sourcePlayer, c_allianceIdPassive, lp_targetPlayer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3182</span>
+PlayerGetAlliance(lp_sourcePlayer, c_allianceIdChat, lp_targetPlayer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3185</span>
+PlayerGetAlliance(lp_sourcePlayer, c_allianceIdPassive, lp_targetPlayer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3185</span>
+PlayerGetAlliance(lp_sourcePlayer, c_allianceIdChat, lp_targetPlayer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3185</span>
+PlayerGetAlliance(lp_targetPlayer, c_allianceIdPassive, lp_sourcePlayer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3185</span>
+PlayerGetAlliance(lp_targetPlayer, c_allianceIdChat, lp_sourcePlayer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3188</span>
+PlayerGetAlliance(lp_sourcePlayer, c_allianceIdPassive, lp_targetPlayer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3188</span>
+PlayerGetAlliance(lp_sourcePlayer, c_allianceIdChat, lp_targetPlayer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3191</span>
+PlayerGetAlliance(lp_sourcePlayer, c_allianceIdPassive, lp_targetPlayer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3191</span>
+PlayerGetAlliance(lp_sourcePlayer, c_allianceIdChat, lp_targetPlayer)
+</code></pre>
+<h4 id="modsheroesdatastormmod"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/UILib.galaxy#L7456">UILib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L7456</span>
+PlayerGetAlliance(lp_pingingPlayer, c_allianceIdChat, UnitGetOwner(lp_targetUnit))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L15671</span>
+PlayerGetAlliance(lv_clickingPlayerID, c_allianceIdChat, lv_targetPlayerID)
+</code></pre>
+<h4 id="modsmissionpacksnovacampaignsc2mod"><a class="markdownIt-Anchor" href="#modsmissionpacksnovacampaignsc2mod">#</a> mods/missionpacks/novacampaign.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/novacampaign.sc2mod/base.sc2data/LibNCUI.galaxy#L6591">LibNCUI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L6591</span>
+PlayerGetAlliance(UnitGetOwner(libNCUI_gv_NU_BB_Boss), c_allianceIdPassive, <span class="hljs-number">1</span>)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOMI.galaxy#L8402">LibCOMI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L8402</span>
+PlayerGetAlliance(lv_aIPlayer, c_allianceIdVision, lv_humanPlayer)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod-2"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod-2">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOMU.galaxy#L6187">LibCOMU.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L6187</span>
+PlayerGetAlliance(lv_indexPlayer, c_allianceIdVision, lv_humanPlayer)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

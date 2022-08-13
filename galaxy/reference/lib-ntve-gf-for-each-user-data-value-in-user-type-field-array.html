@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>For Each User Data Value In User Type Field Array / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: For Each User Data Value In User Type Field Array"/>
+                <meta property="og:description" content="Runs the contained actions once for each instance in the User Type."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="for-each-user-data-value-in-user-type-field-array"><a class="markdownIt-Anchor" href="#for-each-user-data-value-in-user-type-field-array">#</a> For Each User Data Value In User Type Field Array</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — For each value <strong>value</strong> of type <strong>userDataType</strong> in array <strong>instance</strong>, <strong>field</strong> of <strong>userType</strong>,  do (Actions)<br>
+<em>Flags</em> — <code>SubFunctions</code> | <code>Action</code></p>
+</blockquote>
+<p>Runs the contained actions once for each instance in the User Type.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>string</code> <em>[ gamelink::User ]</em> — User Type</li>
+<li><code>string</code> <em>[ userinstance ]</em> — Instance</li>
+<li><code>string</code> <em>[ userfield ]</em> — Field</li>
+<li><code>anyvariable</code> — Value</li>
+<li><code>anyvariable</code> — Variable</li>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-user-data-type-function-ref-get">UserDataTypeFunctionRefGet</a> ]</em> — User Data Type</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code>#AUTOVAR(userType, <span class="hljs-built_in">string</span>) = #PARAM(userType);
+#AUTOVAR(instance, <span class="hljs-built_in">string</span>) = #PARAM(instance);
+#AUTOVAR(field, <span class="hljs-built_in">string</span>) = #PARAM(field);
+#AUTOVAR(i) = <span class="hljs-number">1</span>;
+<span class="hljs-keyword">for</span> ( ; #AUTOVAR(i) &lt;= UserDataFieldValueCount(#AUTOVAR(userType),#AUTOVAR(field)) ; #AUTOVAR(i) += <span class="hljs-number">1</span> ) {
+    #PARAM(value) = #PARAM(userDataType)(#AUTOVAR(userType),#AUTOVAR(instance),#AUTOVAR(field), #AUTOVAR(i));
+    #SUBFUNCS(actions)
+}
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#user-data-loops">User Data / Loops</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-for-each-user-data-instance-in-user-type">For Each User Data Instance In User Type</a></strong> — (  )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-for-each-user-data-value-in-user-type-field-array">For Each User Data Value In User Type Field Array</a></strong> — (  )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<p>— None found —</p>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

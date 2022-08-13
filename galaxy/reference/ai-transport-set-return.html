@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Transport Set Return / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Transport Set Return"/>
+                <meta property="og:description" content="Set the return location for a player&#39;s transports when they are done unloading / idle."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="transport-set-return"><a class="markdownIt-Anchor" href="#transport-set-return">#</a> Transport Set Return</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Set point <strong>location</strong> as the return location for player <strong>player</strong>’s transports when they are done unloading / idle<br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Set the return location for a player’s transports when they are done unloading / idle.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> — Player</li>
+<li><code>point</code> — Location</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">AITransportSetReturn</span><span class="hljs-params">(<span class="hljs-keyword">int</span> player, point center)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#ai-advanced-transports-actions">AI Advanced / Transports / Actions</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-transport-set-return">Transport Set Return</a></strong> — ( AITransportSetReturn )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-transport-set-panic">Transport Set Panic</a></strong> — ( AITransportSetPanic )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-transport-disable-auto-pickup">Transport Disable AutoPickup</a></strong> — ( AITransportDisableAutoPickup )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="modscoresc2mod"><a class="markdownIt-Anchor" href="#modscoresc2mod">#</a> mods/core.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/core.sc2mod/base.sc2data/TriggerLibs/BaseAI.galaxy#L192">BaseAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L192</span>
+AITransportSetReturn(player, targDPoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L302</span>
+AITransportSetReturn(player, PlayerStartLocation(player))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L227</span>
+AITransportSetReturn(player, targDPoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L348</span>
+AITransportSetReturn(player, PlayerStartLocation(player))
+</code></pre>
+<h4 id="modswarcoopwarcoopdatasc2mod"><a class="markdownIt-Anchor" href="#modswarcoopwarcoopdatasc2mod">#</a> mods/warcoop/warcoopdata.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/warcoop/warcoopdata.sc2mod/base.sc2data/TriggerLibs/WarCoopData.galaxy#L2971">WarCoopData.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2971</span>
+AITransportSetReturn(lv_player, lp_returnLocation)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

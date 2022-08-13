@@ -1,0 +1,226 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Catalog Field Value Modify / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Catalog Field Value Modify"/>
+                <meta property="og:description" content="Modifies the value of a field for an entry.  To find the name of a field path, open the data editor and turn on View Raw Data.  For example, if you wanted to set the unit for the first index of a train ability, your field path string would be &quot;InfoArray[0].Unit&quot;.
+
+Returns: bool"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="catalog-field-value-modify"><a class="markdownIt-Anchor" href="#catalog-field-value-modify">#</a> Catalog Field Value Modify</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Modify value of <strong>catalog</strong> <strong>entry</strong> <strong>fieldPath</strong> for player <strong>player</strong> using <strong>operation</strong> and <strong>value</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Modifies the value of a field for an entry.  To find the name of a field path, open the data editor and turn on View Raw Data.  For example, if you wanted to set the unit for the first index of a train ability, your field path string would be <em>“InfoArray[0].Unit”</em>.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-catalog-type">CatalogType</a> ]</em> — Catalog</li>
+<li><code>string</code> <em>[ catalogentry ]</em> — Entry</li>
+<li><code>string</code> <em>[ catalogfieldpath ]</em> — Field Path</li>
+<li><code>int</code> — Player</li>
+<li><code>string</code> — Value</li>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-upgrade-operation">UpgradeOperation</a> ]</em> — Operation</li>
+</ul>
+<p>Returns — <code>bool</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">bool</span> <span class="hljs-title">CatalogFieldValueModify</span><span class="hljs-params">(
+	<span class="hljs-keyword">int</span> catalog,
+	<span class="hljs-built_in">string</span> entry,
+	<span class="hljs-built_in">string</span> fieldPath,
+	<span class="hljs-keyword">int</span> player,
+	<span class="hljs-built_in">string</span> value,
+	<span class="hljs-keyword">int</span> operation,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#catalog-support">Catalog / Support</a></p>
+<ul>
+<li><em><strong>[P]</strong></em> — <strong><a href="/galaxy/reference/preset-upgrade-operation">Upgrade Operation</a></strong></li>
+<li><em><strong>[P]</strong></em> — <strong><a href="/galaxy/reference/preset-no-game-link">No Game Link</a></strong></li>
+<li><em><strong>[P]</strong></em> — <strong><a href="/galaxy/reference/preset-no-alert">No Alert</a></strong></li>
+<li><em><strong>[P]</strong></em> — <strong><a href="/galaxy/reference/preset-cost-type">Cost Type</a></strong></li>
+<li><em><strong>[P]</strong></em> — <strong><a href="/galaxy/reference/preset-catalog-type">Catalog Type</a></strong></li>
+<li><em><strong>[P]</strong></em> — <strong><a href="/galaxy/reference/preset-any-game-link">Any Game Link</a></strong></li>
+<li><em><strong>[P]</strong></em> — <strong><a href="/galaxy/reference/preset-field-type-category">Field Type Category</a></strong></li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/catalog-field-value-set">Catalog Field Value Set</a></strong> — ( CatalogFieldValueSet )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-catalog-field-value-set-as-real">Catalog Field Value Set As Real</a></strong> — ( libNtve_gf_CatalogFieldValueSetAsReal )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/catalog-field-value-modify">Catalog Field Value Modify</a></strong> — ( CatalogFieldValueModify )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-catalog-field-value-modify-based-on-default-value">Catalog Field Value Modify (Based On Default Value)</a></strong> — ( libNtve_gf_CatalogFieldValueModifyBasedOnDefaultValue )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/catalog-reference-set">Catalog Reference Set</a></strong> — ( CatalogReferenceSet )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-catalog-reference-set-as-real">Catalog Reference Set As Real</a></strong> — ( libNtve_gf_CatalogReferenceSetAsReal )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/catalog-reference-modify">Catalog Reference Modify</a></strong> — ( CatalogReferenceModify )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-catalog-reference-modify-based-on-default-value">Catalog Reference Modify (Based On Default Value)</a></strong> — ( libNtve_gf_CatalogReferenceModifyBasedOnDefaultValue )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/catalog-link-replace">Catalog Link Replace</a></strong> — ( CatalogLinkReplace )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> — <strong><a href="/galaxy/reference/catalog-link-replacement">Catalog Link Replacement</a></strong> — ( CatalogLinkReplacement )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="modsheroesstormmod"><a class="markdownIt-Anchor" href="#modsheroesstormmod">#</a> mods/heroes.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroes.stormmod/base.stormmaps/maps/heroes/singleplayermaps/startingexperience/tutorialveteran.stormmap/MapScript.galaxy#L1493">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1493</span>
+CatalogFieldValueModify(c_gameCatalogAbil, <span class="hljs-string">"UtherHolyLight"</span>, <span class="hljs-string">"Cost["</span> + IntToString(<span class="hljs-number">0</span>) + <span class="hljs-string">"].Cooldown.TimeUse"</span>, libStEx_gv_pLAYER_02_UTHER, <span class="hljs-string">"4"</span>, c_upgradeOperationAdd)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5290</span>
+CatalogFieldValueModify(c_gameCatalogAbil, <span class="hljs-string">"UtherHolyLight"</span>, <span class="hljs-string">"Cost["</span> + IntToString(<span class="hljs-number">0</span>) + <span class="hljs-string">"].Cooldown.TimeUse"</span>, libStEx_gv_pLAYER_02_UTHER, <span class="hljs-string">"4"</span>, c_upgradeOperationSubtract)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5596</span>
+CatalogFieldValueModify(c_gameCatalogAbil, <span class="hljs-string">"UtherHolyLight"</span>, <span class="hljs-string">"Cost["</span> + IntToString(<span class="hljs-number">0</span>) + <span class="hljs-string">"].Cooldown.TimeUse"</span>, libStEx_gv_pLAYER_02_UTHER, <span class="hljs-string">"4"</span>, c_upgradeOperationAdd)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1493</span>
+CatalogFieldValueModify(c_gameCatalogAbil, <span class="hljs-string">"UtherHolyLight"</span>, <span class="hljs-string">"Cost["</span> + IntToString(<span class="hljs-number">0</span>) + <span class="hljs-string">"].Cooldown.TimeUse"</span>, libStEx_gv_pLAYER_02_UTHER, <span class="hljs-string">"4"</span>, c_upgradeOperationAdd)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5290</span>
+CatalogFieldValueModify(c_gameCatalogAbil, <span class="hljs-string">"UtherHolyLight"</span>, <span class="hljs-string">"Cost["</span> + IntToString(<span class="hljs-number">0</span>) + <span class="hljs-string">"].Cooldown.TimeUse"</span>, libStEx_gv_pLAYER_02_UTHER, <span class="hljs-string">"4"</span>, c_upgradeOperationSubtract)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5596</span>
+CatalogFieldValueModify(c_gameCatalogAbil, <span class="hljs-string">"UtherHolyLight"</span>, <span class="hljs-string">"Cost["</span> + IntToString(<span class="hljs-number">0</span>) + <span class="hljs-string">"].Cooldown.TimeUse"</span>, libStEx_gv_pLAYER_02_UTHER, <span class="hljs-string">"4"</span>, c_upgradeOperationAdd)
+</code></pre>
+<h4 id="modsheroesdatastormmod"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/GameDataHelperLib.galaxy#L6023">GameDataHelperLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L6023</span>
+CatalogFieldValueModify(c_gameCatalogActor, <span class="hljs-string">"AbathurSymbiote"</span>, <span class="hljs-string">"MinimapUnitStatusFrame"</span>, lv_abathurPlayer, <span class="hljs-string">"Abathur/AbathurSymbioteMinimapIconHero"</span>, c_upgradeOperationSet)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6026</span>
+CatalogFieldValueModify(c_gameCatalogActor, <span class="hljs-string">"AbathurSymbiote"</span>, <span class="hljs-string">"MinimapUnitStatusFrame"</span>, lv_abathurPlayer, <span class="hljs-string">"Abathur/AbathurSymbioteMinimapIconTownHall"</span>, c_upgradeOperationSet)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6029</span>
+CatalogFieldValueModify(c_gameCatalogActor, <span class="hljs-string">"AbathurSymbiote"</span>, <span class="hljs-string">"MinimapUnitStatusFrame"</span>, lv_abathurPlayer, <span class="hljs-string">"Abathur/AbathurSymbioteMinimapIconCore"</span>, c_upgradeOperationSet)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6032</span>
+CatalogFieldValueModify(c_gameCatalogActor, <span class="hljs-string">"AbathurSymbiote"</span>, <span class="hljs-string">"MinimapUnitStatusFrame"</span>, lv_abathurPlayer, <span class="hljs-string">"Abathur/AbathurSymbioteMinimapIconStructure"</span>, c_upgradeOperationSet)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6035</span>
+CatalogFieldValueModify(c_gameCatalogActor, <span class="hljs-string">"AbathurSymbiote"</span>, <span class="hljs-string">"MinimapUnitStatusFrame"</span>, lv_abathurPlayer, <span class="hljs-string">"Abathur/AbathurSymbioteMinimapIconMonstrosity"</span>, c_upgradeOperationSet)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6038</span>
+CatalogFieldValueModify(c_gameCatalogActor, <span class="hljs-string">"AbathurSymbiote"</span>, <span class="hljs-string">"MinimapUnitStatusFrame"</span>, lv_abathurPlayer, <span class="hljs-string">"Abathur/AbathurSymbioteMinimapIconMerc"</span>, c_upgradeOperationSet)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6041</span>
+CatalogFieldValueModify(c_gameCatalogActor, <span class="hljs-string">"AbathurSymbiote"</span>, <span class="hljs-string">"MinimapUnitStatusFrame"</span>, lv_abathurPlayer, <span class="hljs-string">"Abathur/AbathurSymbioteMinimapIconMinion"</span>, c_upgradeOperationSet)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6045</span>
+CatalogFieldValueModify(c_gameCatalogActor, <span class="hljs-string">"AbathurSymbiote"</span>, <span class="hljs-string">"MinimapUnitStatusFrame"</span>, lv_abathurPlayer, <span class="hljs-string">""</span>, c_upgradeOperationSet)
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodswarheadjunctionstormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodswarheadjunctionstormmod">#</a> mods/heroesmapmods/battlegroundmapmods/warheadjunction.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/warheadjunction.stormmod/base.stormdata/LibMSC2.galaxy#L1725">LibMSC2.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1725</span>
+CatalogFieldValueModify(c_gameCatalogEffect, <span class="hljs-string">"NukeOuterImpactDamage"</span>, <span class="hljs-string">"Amount"</span>, lv_playerIndex, <span class="hljs-string">"70"</span>, c_upgradeOperationAdd)
+</code></pre>
+<h4 id="modsnovastoryassetssc2mod"><a class="markdownIt-Anchor" href="#modsnovastoryassetssc2mod">#</a> mods/novastoryassets.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/novastoryassets.sc2mod/base3.sc2maps/maps/campaign/nova/nova09.sc2map/MapScript.galaxy#L1507">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1507</span>
+CatalogFieldValueModify(c_gameCatalogAbil, <span class="hljs-string">"BarracksTrain"</span>, <span class="hljs-string">"InfoArray["</span> + IntToString(lv_i) + <span class="hljs-string">"].Time"</span>, PlayerGroupLoopCurrent(), <span class="hljs-string">"25"</span>, c_upgradeOperationSet)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1508</span>
+CatalogFieldValueModify(c_gameCatalogAbil, <span class="hljs-string">"FactoryTrain"</span>, <span class="hljs-string">"InfoArray["</span> + IntToString(lv_i) + <span class="hljs-string">"].Time"</span>, PlayerGroupLoopCurrent(), <span class="hljs-string">"25"</span>, c_upgradeOperationSet)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1509</span>
+CatalogFieldValueModify(c_gameCatalogAbil, <span class="hljs-string">"StarportTrain"</span>, <span class="hljs-string">"InfoArray["</span> + IntToString(lv_i) + <span class="hljs-string">"].Time"</span>, PlayerGroupLoopCurrent(), <span class="hljs-string">"30"</span>, c_upgradeOperationSet)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1507</span>
+CatalogFieldValueModify(c_gameCatalogAbil, <span class="hljs-string">"BarracksTrain"</span>, <span class="hljs-string">"InfoArray["</span> + IntToString(lv_i) + <span class="hljs-string">"].Time"</span>, PlayerGroupLoopCurrent(), <span class="hljs-string">"25"</span>, c_upgradeOperationSet)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1508</span>
+CatalogFieldValueModify(c_gameCatalogAbil, <span class="hljs-string">"FactoryTrain"</span>, <span class="hljs-string">"InfoArray["</span> + IntToString(lv_i) + <span class="hljs-string">"].Time"</span>, PlayerGroupLoopCurrent(), <span class="hljs-string">"25"</span>, c_upgradeOperationSet)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1509</span>
+CatalogFieldValueModify(c_gameCatalogAbil, <span class="hljs-string">"StarportTrain"</span>, <span class="hljs-string">"InfoArray["</span> + IntToString(lv_i) + <span class="hljs-string">"].Time"</span>, PlayerGroupLoopCurrent(), <span class="hljs-string">"30"</span>, c_upgradeOperationSet)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOMI.galaxy#L3512">LibCOMI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3512</span>
+CatalogFieldValueModify(lp_catalog, lp_entry, lp_fieldPath, lp_player, FixedToString(lv_changed, c_fixedPrecisionAny), c_upgradeOperationAdd)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4898</span>
+CatalogFieldValueModify(c_gameCatalogBehavior, libCOMI_gv_cM_Fenix_ChampionAvengingProtocolBehaviors[lp_group], <span class="hljs-string">"Modification.MoveSpeedMultiplier"</span>, lp_player, FixedToString((<span class="hljs-number">1.0</span> + (libCOMI_gv_cM_Fenix_ChampionAvengingProtocolBuffStacks[lp_group] * lv_moveSpeedHastePerStack)), c_fixedPrecisionAny), c_upgradeOperationSet)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4899</span>
+CatalogFieldValueModify(c_gameCatalogBehavior, libCOMI_gv_cM_Fenix_ChampionAvengingProtocolBehaviors[lp_group], <span class="hljs-string">"Modification.AttackSpeedMultiplier"</span>, lp_player, FixedToString((<span class="hljs-number">1.0</span> + (libCOMI_gv_cM_Fenix_ChampionAvengingProtocolBuffStacks[lp_group] * lv_attackSpeedHastePerStack)), c_fixedPrecisionAny), c_upgradeOperationSet)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5054</span>
+CatalogFieldValueModify(c_gameCatalogEffect, <span class="hljs-string">"HornerMSOHealthDisplayDummy"</span>, <span class="hljs-string">"Amount"</span>, lp_player, FixedToString(lv_factionBonusLifeMulti, <span class="hljs-number">2</span>), c_upgradeOperationSet)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5066</span>
+CatalogFieldValueModify(c_gameCatalogEffect, <span class="hljs-string">"HornerMSOAttackSpeedDisplayDummy"</span>, <span class="hljs-string">"Amount"</span>, lp_player, FixedToString(lv_factionBonusAtkSpeedMulti, c_fixedPrecisionAny), c_upgradeOperationSet)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5195</span>
+CatalogFieldValueModify(c_gameCatalogUnit, lv_entry, <span class="hljs-string">"LifeRegenRateCreep"</span>, lv_itPlayer, FixedToString(lv_liferegenrate, c_fixedPrecisionAny), c_upgradeOperationAdd)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5196</span>
+CatalogFieldValueModify(c_gameCatalogUnit, lv_entry, <span class="hljs-string">"AttackSpeedMultiplierCreep"</span>, lv_itPlayer, FixedToString(lv_attackspeedmultiplier, c_fixedPrecisionAny), c_upgradeOperationAdd)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L15161</span>
+CatalogFieldValueModify(c_gameCatalogEffect, <span class="hljs-string">"BrutalizeDamage"</span>, <span class="hljs-string">"Amount"</span>, libCOOC_gf_CC_PlayerOfCommanderInGroupFirst(<span class="hljs-string">"ZergAbathur"</span>, libCOOC_gf_CC_PlayersOfCommander(<span class="hljs-string">"ZergAbathur"</span>)), <span class="hljs-string">"3"</span>, c_upgradeOperationAdd)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L15162</span>
+CatalogFieldValueModify(c_gameCatalogWeapon, <span class="hljs-string">"Brutalize"</span>, <span class="hljs-string">"Level"</span>, libCOOC_gf_CC_PlayerOfCommanderInGroupFirst(<span class="hljs-string">"ZergAbathur"</span>, libCOOC_gf_CC_PlayersOfCommander(<span class="hljs-string">"ZergAbathur"</span>)), <span class="hljs-string">"1"</span>, c_upgradeOperationAdd)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L16957</span>
+CatalogFieldValueModify(c_gameCatalogBehavior, <span class="hljs-string">"DehakaConsumeEffectAir"</span>, <span class="hljs-string">"Duration"</span>, EventPlayer(), FixedToString(lv_durationModifier, <span class="hljs-number">2</span>), c_upgradeOperationMultiply)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

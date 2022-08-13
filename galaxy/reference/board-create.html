@@ -1,0 +1,183 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Create Leaderboard / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Create Leaderboard"/>
+                <meta property="og:description" content="Creates a leaderboard with a specified amount of rows and columns.  Use &quot;Last Created Leaderboard&quot; to get the leaderboard created by this action.
+
+Returns: preset [ preset::Board ]"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="create-leaderboard"><a class="markdownIt-Anchor" href="#create-leaderboard">#</a> Create Leaderboard</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Create a leaderboard with <strong>columns</strong> columns and <strong>rows</strong> rows, with the name <strong>name|Text</strong>, and using <strong>color</strong> color.<br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Creates a leaderboard with a specified amount of rows and columns.  Use <em>“Last Created Leaderboard”</em> to get the leaderboard created by this action.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> — Columns</li>
+<li><code>int</code> — Rows</li>
+<li><code>text</code> — Name</li>
+<li><code>color</code> — Color</li>
+</ul>
+<p>Returns — <code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-board">Board</a> ]</em></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">int</span> <span class="hljs-title">BoardCreate</span><span class="hljs-params">(
+	<span class="hljs-keyword">int</span> inCols,
+	<span class="hljs-keyword">int</span> inRows,
+	text inName,
+	color inColor,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#leaderboard-leaderboards">Leaderboard / Leaderboards</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-board">Board</a> ]</em> — <strong><a href="/galaxy/reference/board-create">Create Leaderboard</a></strong> — ( BoardCreate )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-board">Board</a> ]</em> — <strong><a href="/galaxy/reference/board-last-created">Last Created Leaderboard</a></strong> — ( BoardLastCreated )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/board-set-name">Set Leaderboard Name</a></strong> — ( BoardSetName )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/board-set-anchor">Anchor Leaderboard</a></strong> — ( BoardSetAnchor )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/board-set-position">Move Leaderboard</a></strong> — ( BoardSetPosition )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/board-reset-position">Reset Leaderboard Position</a></strong> — ( BoardResetPosition )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-show-hide-leaderboard">Show/Hide Leaderboard</a></strong> — ( libNtve_gf_ShowHideLeaderboard )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/board-show-all">Show/Hide All Leaderboards</a></strong> — ( BoardShowAll )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/board-destroy">Destroy Leaderboard</a></strong> — ( BoardDestroy )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/challenges/rushdefense.sc2map/MapScript.galaxy#L1053">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1053</span>
+BoardCreate(<span class="hljs-number">2</span>, <span class="hljs-number">2</span>, StringExternal(<span class="hljs-string">"Param/Value/5A8FB6AE"</span>), Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1108</span>
+BoardCreate(<span class="hljs-number">2</span>, <span class="hljs-number">2</span>, StringExternal(<span class="hljs-string">"Param/Value/E5825392"</span>), Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1355</span>
+BoardCreate(<span class="hljs-number">1</span>, <span class="hljs-number">4</span>, StringToText(<span class="hljs-string">""</span>), Color(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2651</span>
+BoardCreate(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>, StringToText(<span class="hljs-string">""</span>), Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1331</span>
+BoardCreate(<span class="hljs-number">3</span>, <span class="hljs-number">1</span>, StringToText(<span class="hljs-string">""</span>), Color(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1028</span>
+BoardCreate(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, StringToText(<span class="hljs-string">""</span>), Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4083</span>
+BoardCreate(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, StringToText(<span class="hljs-string">""</span>), Color(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1186</span>
+BoardCreate(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, StringExternal(<span class="hljs-string">"Param/Value/21DB17A4"</span>), Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L784</span>
+BoardCreate(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, StringToText(<span class="hljs-string">""</span>), Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1355</span>
+BoardCreate(<span class="hljs-number">1</span>, <span class="hljs-number">4</span>, StringToText(<span class="hljs-string">""</span>), Color(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2651</span>
+BoardCreate(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>, StringToText(<span class="hljs-string">""</span>), Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1331</span>
+BoardCreate(<span class="hljs-number">3</span>, <span class="hljs-number">1</span>, StringToText(<span class="hljs-string">""</span>), Color(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1028</span>
+BoardCreate(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, StringToText(<span class="hljs-string">""</span>), Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4083</span>
+BoardCreate(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, StringToText(<span class="hljs-string">""</span>), Color(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1186</span>
+BoardCreate(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, StringExternal(<span class="hljs-string">"Param/Value/21DB17A4"</span>), Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L784</span>
+BoardCreate(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, StringToText(<span class="hljs-string">""</span>), Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1053</span>
+BoardCreate(<span class="hljs-number">2</span>, <span class="hljs-number">2</span>, StringExternal(<span class="hljs-string">"Param/Value/5A8FB6AE"</span>), Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1108</span>
+BoardCreate(<span class="hljs-number">2</span>, <span class="hljs-number">2</span>, StringExternal(<span class="hljs-string">"Param/Value/E5825392"</span>), Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>))
+</code></pre>
+<h4 id="modschallengessc2mod"><a class="markdownIt-Anchor" href="#modschallengessc2mod">#</a> mods/challenges.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/challenges.sc2mod/base.sc2data/LibChal.galaxy#L255">LibChal.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L255</span>
+BoardCreate(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, StringToText(<span class="hljs-string">""</span>), Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L263</span>
+BoardCreate(<span class="hljs-number">1</span>, <span class="hljs-number">4</span>, StringToText(<span class="hljs-string">""</span>), Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>))
+</code></pre>
+<h4 id="modsnovastoryassetssc2mod"><a class="markdownIt-Anchor" href="#modsnovastoryassetssc2mod">#</a> mods/novastoryassets.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/novastoryassets.sc2mod/base3.sc2maps/maps/campaign/nova/nova08.sc2map/MapScript.galaxy#L2534">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2534</span>
+BoardCreate(<span class="hljs-number">2</span>, <span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/BE3694D1"</span>), Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2534</span>
+BoardCreate(<span class="hljs-number">2</span>, <span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/BE3694D1"</span>), Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>))
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

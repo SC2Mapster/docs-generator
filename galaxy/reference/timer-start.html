@@ -1,0 +1,415 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Start Timer / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Start Timer"/>
+                <meta property="og:description" content="Starts a timer, which will automatically count down from the given duration as the game runs.  A repeating timer will restart itself whenever it expires (reaches 0 remaining time)."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="start-timer"><a class="markdownIt-Anchor" href="#start-timer">#</a> Start Timer</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Start <strong>t</strong> as a <strong>r|One Shot/Repeating</strong> timer that will expire in <strong>dur|Time</strong> <strong>timeType|Real/Game/AI Time</strong> seconds<br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Starts a timer, which will automatically count down from the given duration as the game runs.  A repeating timer will restart itself whenever it expires (reaches 0 remaining time).</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>timer</code> — Timer</li>
+<li><code>fixed</code> — Duration</li>
+<li><code>bool</code> <em>[ preset::<a href="/galaxy/reference/preset-timer-periodic-option">Timer_Periodic_Option</a> ]</em> — Repeating</li>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-time-type">TimeType</a> ]</em> — Time Type</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">TimerStart</span><span class="hljs-params">(
+	timer t,
+	fixed duration,
+	<span class="hljs-keyword">bool</span> periodic,
+	<span class="hljs-keyword">int</span> timeType,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#timer-timers">Timer / Timers</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/set-score-timer">Set Score Timer</a></strong> — ( SetScoreTimer )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-time-elapsed">Time Elapsed</a></strong> — ( TriggerAddEventTimeElapsed )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-time-periodic">Periodic Event</a></strong> — ( TriggerAddEventTimePeriodic )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/timer-start">Start Timer</a></strong> — ( TimerStart )</li>
+<li><em><strong>[F]</strong></em> — <code>timer</code> — <strong><a href="/galaxy/reference/timer-last-started">Last Started Timer</a></strong> — ( TimerLastStarted )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/timer-restart">Restart Timer</a></strong> — ( TimerRestart )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/timer-pause">Pause/Unpause Timer</a></strong> — ( TimerPause )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-stop-timer">Stop Timer</a></strong> — ( libNtve_gf_StopTimer )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/timer-is-paused">Timer Is Paused</a></strong> — ( TimerIsPaused )</li>
+<li><em><strong>[F]</strong></em> — <code>timer</code> — <strong><a href="/galaxy/reference/timer-create">New Timer</a></strong> — ( TimerCreate )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/timer-get-duration">Duration Of Timer</a></strong> — ( TimerGetDuration )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-timer">Timer Expires</a></strong> — ( TriggerAddEventTimer )</li>
+<li><em><strong>[F]</strong></em> — <code>timer</code> — <strong><a href="/galaxy/reference/event-timer">Triggering Timer</a></strong> — ( EventTimer )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/challenges/advancedcommand.sc2map/MapScript.galaxy#L823">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L823</span>
+TimerStart(gv_mainTimer, <span class="hljs-number">150.0</span>, <span class="hljs-literal">false</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2190</span>
+TimerStart(gv_textTimer, <span class="hljs-number">8.0</span>, <span class="hljs-literal">false</span>, c_timeReal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2197</span>
+TimerStart(gv_textTimer, <span class="hljs-number">8.0</span>, <span class="hljs-literal">false</span>, c_timeReal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2205</span>
+TimerStart(gv_textTimer, <span class="hljs-number">0.0</span>, <span class="hljs-literal">false</span>, c_timeReal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L158</span>
+TimerStart(gv_mainTimer, lp_mTimeInbetweenWave, <span class="hljs-literal">false</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L536</span>
+TimerStart(gv_mainTimer, gv_mainTimerAmount, <span class="hljs-literal">false</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L818</span>
+TimerStart(gv_chokeGhosttimeout, <span class="hljs-number">180.0</span>, <span class="hljs-literal">false</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1754</span>
+TimerStart(gv_mainTimer, gv_mainTimerAmount, <span class="hljs-literal">false</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L477</span>
+TimerStart(gv_prepTimer, <span class="hljs-number">57.0</span>, <span class="hljs-literal">false</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L713</span>
+TimerStart(gv_prepTimer, <span class="hljs-number">80.0</span>, <span class="hljs-literal">false</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2012</span>
+TimerStart(gv_textTimer, <span class="hljs-number">8.0</span>, <span class="hljs-literal">false</span>, c_timeReal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2019</span>
+TimerStart(gv_textTimer, <span class="hljs-number">8.0</span>, <span class="hljs-literal">false</span>, c_timeReal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2051</span>
+TimerStart(gv_textTimer, <span class="hljs-number">0.0</span>, <span class="hljs-literal">false</span>, c_timeReal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L809</span>
+TimerStart(gv_mainTimer, <span class="hljs-number">210.0</span>, <span class="hljs-literal">false</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2100</span>
+TimerStart(gv_textTimer, <span class="hljs-number">8.0</span>, <span class="hljs-literal">false</span>, c_timeReal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2107</span>
+TimerStart(gv_textTimer, <span class="hljs-number">8.0</span>, <span class="hljs-literal">false</span>, c_timeReal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2142</span>
+TimerStart(gv_textTimer, <span class="hljs-number">0.0</span>, <span class="hljs-literal">false</span>, c_timeReal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L792</span>
+TimerStart(gv_mainTimer, <span class="hljs-number">300.0</span>, <span class="hljs-literal">false</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L604</span>
+TimerStart(gv_powerupPickupTimer, <span class="hljs-number">0.0625</span>, <span class="hljs-literal">true</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2380</span>
+TimerStart(gv_missileSpinnerFireTimer, <span class="hljs-number">0.5</span>, <span class="hljs-literal">false</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5871</span>
+TimerStart(gv_missileSpinnerFireTimer, lv_timeIntervalBetweenVolleys, <span class="hljs-literal">false</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8144</span>
+TimerStart(gv_unitHPBarFadeTimer, <span class="hljs-number">5.0</span>, <span class="hljs-literal">false</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5062</span>
+TimerStart(lv_Timer, <span class="hljs-number">7.0</span>, <span class="hljs-literal">false</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L794</span>
+TimerStart(gv_transitionToNight, <span class="hljs-number">80.0</span>, <span class="hljs-literal">false</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L795</span>
+TimerStart(gv_mainTimer, <span class="hljs-number">120.0</span>, <span class="hljs-literal">false</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L798</span>
+TimerStart(gv_transitionToNight, <span class="hljs-number">50.0</span>, <span class="hljs-literal">false</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L799</span>
+TimerStart(gv_mainTimer, <span class="hljs-number">90.0</span>, <span class="hljs-literal">false</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1052</span>
+TimerStart(gv_transitionToNight, (gv_dAY_DURATION - <span class="hljs-number">40.0</span>), <span class="hljs-literal">false</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1053</span>
+TimerStart(gv_mainTimer, gv_dAY_DURATION, <span class="hljs-literal">false</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1071</span>
+TimerStart(gv_transitionToDay, (gv_nIGHT_DURATION - <span class="hljs-number">40.0</span>), <span class="hljs-literal">false</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1072</span>
+TimerStart(gv_mainTimer, gv_nIGHT_DURATION, <span class="hljs-literal">false</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1293</span>
+TimerStart(gv_poweringUpTime, gv_pOWER_UP_TIME, <span class="hljs-literal">false</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1393</span>
+TimerStart(gv_poweringUpTime, gv_pOWER_UP_TIME, <span class="hljs-literal">false</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1503</span>
+TimerStart(gv_poweringUpTime, gv_pOWER_UP_TIME, <span class="hljs-literal">false</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1617</span>
+TimerStart(gv_poweringUpTime, gv_pOWER_UP_TIME, <span class="hljs-literal">false</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1724</span>
+TimerStart(gv_poweringUpTime, gv_pOWER_UP_TIME, <span class="hljs-literal">false</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L555</span>
+TimerStart(lv_timeoutTimer, lp_timeout, <span class="hljs-literal">false</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L656</span>
+TimerStart(lv_timeoutTimer, lp_timeout, <span class="hljs-literal">false</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L677</span>
+TimerStart(lv_timeoutTimer, lp_timeout, <span class="hljs-literal">false</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L759</span>
+TimerStart(gv_eggData[lv_eggIndex].lv_timer, lp_spawnPeriod, <span class="hljs-literal">true</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1175</span>
+TimerStart(gv_aberrationStartTimer, libNtve_gf_DifficultyValueFixed(<span class="hljs-number">600.0</span>, <span class="hljs-number">600.0</span>, <span class="hljs-number">500.0</span>, <span class="hljs-number">400.0</span>), <span class="hljs-literal">false</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1467</span>
+TimerStart(lv_infestationTimer, c_timerDurationInfinite, <span class="hljs-literal">false</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1966</span>
+TimerStart(gv_eggData[ge_SpawnType_stAberration].lv_timer, gv_eggData[ge_SpawnType_stAberration].lv_spawnPeriod, <span class="hljs-literal">false</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1991</span>
+TimerStart(gv_eggData[ge_SpawnType_stInfestedMarine].lv_timer, gv_eggData[ge_SpawnType_stInfestedMarine].lv_spawnPeriod, <span class="hljs-literal">false</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2015</span>
+TimerStart(gv_eggData[ge_SpawnType_stInfestedColonist].lv_timer, gv_eggData[ge_SpawnType_stInfestedColonist].lv_spawnPeriod, <span class="hljs-literal">false</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2140</span>
+TimerStart(gv_aberrationWarningCooldown, <span class="hljs-number">60.0</span>, <span class="hljs-literal">false</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1779</span>
+TimerStart(gv_nextTrainTimer, (gv_trainWaveWait - <span class="hljs-number">30.0</span>), <span class="hljs-literal">false</span>, c_timeAI)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1784</span>
+TimerStart(gv_nextTrainTimer, gv_trainWaveWait, <span class="hljs-literal">false</span>, c_timeAI)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1783</span>
+TimerStart(lv_timeout, <span class="hljs-number">6.0</span>, <span class="hljs-literal">false</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1218</span>
+TimerStart(gv_distractionTimer, <span class="hljs-number">5.0</span>, <span class="hljs-literal">false</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1240</span>
+TimerStart(gv_achievementHardTimer, <span class="hljs-number">1200.0</span>, <span class="hljs-literal">false</span>, c_timeAI)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1275</span>
+TimerStart(gv_distractionTimer, gv_distractionTime, <span class="hljs-literal">false</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1281</span>
+TimerStart(gv__90SecondWarning, (gv_distractionTime - <span class="hljs-number">90.0</span>), <span class="hljs-literal">false</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1282</span>
+TimerStart(gv__30SecondWarning, (gv_distractionTime - <span class="hljs-number">30.0</span>), <span class="hljs-literal">false</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2617</span>
+TimerStart(gv_distractionTimer, <span class="hljs-number">3.0</span>, <span class="hljs-literal">false</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L782</span>
+TimerStart(gv_achievementHardTimer, <span class="hljs-number">600.0</span>, <span class="hljs-literal">false</span>, c_timeAI)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1084</span>
+TimerStart(gv_dropPodExpansion1, <span class="hljs-number">10.0</span>, <span class="hljs-literal">false</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1088</span>
+TimerStart(gv_dropPodExpansion1, <span class="hljs-number">90.0</span>, <span class="hljs-literal">true</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1090</span>
+TimerStart(gv_dropPodExpansion2, <span class="hljs-number">10.0</span>, <span class="hljs-literal">false</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1094</span>
+TimerStart(gv_dropPodExpansion2, <span class="hljs-number">90.0</span>, <span class="hljs-literal">true</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1096</span>
+TimerStart(gv_dropPodExpansion3, <span class="hljs-number">10.0</span>, <span class="hljs-literal">false</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1100</span>
+TimerStart(gv_dropPodExpansion3, <span class="hljs-number">90.0</span>, <span class="hljs-literal">true</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1102</span>
+TimerStart(gv_dropPodExpansion4, <span class="hljs-number">90.0</span>, <span class="hljs-literal">true</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2439</span>
+TimerStart(gv_zergFirstAttackWaveTimer, libNtve_gf_DifficultyValueFixed(<span class="hljs-number">150.0</span>, <span class="hljs-number">70.0</span>, <span class="hljs-number">70.0</span>, <span class="hljs-number">70.0</span>), <span class="hljs-literal">false</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2440</span>
+TimerStart(gv_evacuationTimer, (gv_sURVIVETIME * <span class="hljs-number">60.0</span>), <span class="hljs-literal">false</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2441</span>
+TimerStart(gv_tenMinuteWarning, ((gv_sURVIVETIME - <span class="hljs-number">10.0</span>) * <span class="hljs-number">60.0</span>), <span class="hljs-literal">false</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L20971</span>
+TimerStart(gv_bGActors[lv_bGActorID].lv_timer, gv_bGActors[lv_bGActorID].lv_nodes[lv_currentNodeID].lv_stayDuration, <span class="hljs-literal">false</span>, c_timeReal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L20982</span>
+TimerStart(gv_bGActors[lv_bGActorID].lv_timer, gv_bGActors[lv_bGActorID].lv_nodes[lv_currentNodeID].lv_stayDuration, <span class="hljs-literal">false</span>, c_timeReal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2029</span>
+TimerStart(gv_sCVLossTimer, <span class="hljs-number">8.0</span>, <span class="hljs-literal">false</span>, c_timeAI)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2714</span>
+TimerStart(gv_warning01Timer, (<span class="hljs-number">60.0</span> - <span class="hljs-number">30.0</span>), <span class="hljs-literal">false</span>, c_timeAI)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2715</span>
+TimerStart(gv_warning02Timer, (<span class="hljs-number">60.0</span> - <span class="hljs-number">10.0</span>), <span class="hljs-literal">false</span>, c_timeAI)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2716</span>
+TimerStart(gv_lavaTimer, <span class="hljs-number">60.0</span>, <span class="hljs-literal">false</span>, c_timeAI)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2878</span>
+TimerStart(gv_lavaTimer, <span class="hljs-number">15.0</span>, <span class="hljs-literal">false</span>, c_timeAI)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2920</span>
+TimerStart(gv_warning01Timer, (gv_lavaInterval - <span class="hljs-number">30.0</span>), <span class="hljs-literal">false</span>, c_timeAI)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2921</span>
+TimerStart(gv_warning02Timer, (gv_lavaInterval - <span class="hljs-number">10.0</span>), <span class="hljs-literal">false</span>, c_timeAI)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2922</span>
+TimerStart(gv_lavaTimer, gv_lavaInterval, <span class="hljs-literal">false</span>, c_timeAI)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L995</span>
+TimerStart(gv_protossAggroTimer, <span class="hljs-number">180.0</span>, <span class="hljs-literal">false</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1093</span>
+TimerStart(gv_achievementHardTimer, <span class="hljs-number">1500.0</span>, <span class="hljs-literal">false</span>, c_timeAI)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3216</span>
+TimerStart(gv_maraudersComeOnline, <span class="hljs-number">60.0</span>, <span class="hljs-literal">false</span>, c_timeAI)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4164</span>
+TimerStart(lv_indicatorTimeout, <span class="hljs-number">10.0</span>, <span class="hljs-literal">false</span>, c_timeAI)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1880</span>
+TimerStart(gv_p1NighthawkTimer, <span class="hljs-number">6.5</span>, <span class="hljs-literal">false</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1186</span>
+TimerStart(gv_timer_Opening, <span class="hljs-number">15.0</span>, <span class="hljs-literal">false</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1187</span>
+TimerStart(gv_timer_Legs, <span class="hljs-number">60.0</span>, <span class="hljs-literal">false</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L728</span>
+TimerStart(gv_achievementHardTimer, <span class="hljs-number">900.0</span>, <span class="hljs-literal">false</span>, c_timeAI)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1850</span>
+TimerStart(gv_guardianTimer, c_timerDurationInfinite, <span class="hljs-literal">false</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2288</span>
+TimerStart(lv_expirationTimer, <span class="hljs-number">10.0</span>, <span class="hljs-literal">false</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3257</span>
+TimerStart(gv_zergSpeedBumpTimer, libNtve_gf_DifficultyValueFixed(<span class="hljs-number">2700.0</span>, <span class="hljs-number">1800.0</span>, <span class="hljs-number">1440.0</span>, <span class="hljs-number">1260.0</span>), <span class="hljs-literal">false</span>, c_timeAI)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3258</span>
+TimerStart(gv_zergSpeedBumpTimerShorter, (TimerGetRemaining(gv_zergSpeedBumpTimer) - <span class="hljs-number">60.0</span>), <span class="hljs-literal">false</span>, c_timeAI)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2288</span>
+TimerStart(gv_laserSoundDelayTimer, <span class="hljs-number">3.0</span>, <span class="hljs-literal">false</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L829</span>
+TimerStart(lv_periodTimer, lv_period, <span class="hljs-literal">false</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1403</span>
+TimerStart(lv_recycleDelay, <span class="hljs-number">25.0</span>, <span class="hljs-literal">false</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2449</span>
+TimerStart(gv_kerriganSearchTimer, gv_kerriganSearchTime, <span class="hljs-literal">false</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2574</span>
+TimerStart(gv_kerriganSearchTimer, gv_kerriganSearchTime, <span class="hljs-literal">false</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2612</span>
+TimerStart(gv_kerriganSearchTimer, gv_kerriganSearchTime, <span class="hljs-literal">false</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2734</span>
+TimerStart(gv_kerrigansETATIMER, lv_eTA, <span class="hljs-literal">false</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L759</span>
+TimerStart(gv_wall_of_Fire_Lighting, <span class="hljs-number">300.0</span>, <span class="hljs-literal">false</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L937</span>
+TimerStart(gv_photonActortimeout, <span class="hljs-number">120.0</span>, <span class="hljs-literal">false</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L983</span>
+TimerStart(gv_yamatoButtonFlashtimeout, <span class="hljs-number">30.0</span>, <span class="hljs-literal">false</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1135</span>
+TimerStart(gv_warpPrismTimer, <span class="hljs-number">280.0</span>, <span class="hljs-literal">true</span>, c_timeAI)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2453</span>
+TimerStart(gv_tIMERVortexCooldown, <span class="hljs-number">40.0</span>, <span class="hljs-literal">false</span>, c_timeGame)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

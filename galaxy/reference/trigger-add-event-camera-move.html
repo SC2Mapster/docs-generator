@@ -1,0 +1,181 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Camera Moves / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Camera Moves"/>
+                <meta property="og:description" content="This event fires when the specified player moves the camera.  Use &quot;Camera Move Reason&quot; to get the way in which the camera was moved."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="camera-moves"><a class="markdownIt-Anchor" href="#camera-moves">#</a> Camera Moves</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Player <strong>player</strong> moves the camera for <strong>reason</strong> Reason<br>
+<em>Flags</em> — <code>Native</code> | <code>Event</code></p>
+</blockquote>
+<p>This event fires when the specified player moves the camera.  Use <em>“Camera Move Reason”</em> to get the way in which the camera was moved.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> — Player</li>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-camera-move-reason">CameraMoveReason</a> ]</em> — Reason</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">TriggerAddEventCameraMove</span><span class="hljs-params">(
+	trigger t,
+	<span class="hljs-keyword">int</span> player,
+	<span class="hljs-keyword">int</span> reason,
+)</span></span>;
+</code></pre>
+<h3 id="event-parameters"><a class="markdownIt-Anchor" href="#event-parameters">#</a> Event parameters</h3>
+<ul>
+<li><a href="/galaxy/reference/event-camera-move-reason">Camera Move Reason</a> — EventCameraMoveReason</li>
+</ul>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#camera-utility">Camera / Utility</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-camera-move">Camera Moves</a></strong> — ( TriggerAddEventCameraMove )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-camera-move-reason">CameraMoveReason</a> ]</em> — <strong><a href="/galaxy/reference/event-camera-move-reason">Camera Move Reason</a></strong> — ( EventCameraMoveReason )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/camera-set-value">Apply Camera Property</a></strong> — ( CameraSetValue )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/camera-info-get-value">Camera Object Property</a></strong> — ( CameraInfoGetValue )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/camera-info-set-value">Set Camera Object Property</a></strong> — ( CameraInfoSetValue )</li>
+<li><em><strong>[F]</strong></em> — <code>point</code> — <strong><a href="/galaxy/reference/camera-info-get-target">Camera Object Target</a></strong> — ( CameraInfoGetTarget )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/camera-info-set-target">Set Camera Object Target</a></strong> — ( CameraInfoSetTarget )</li>
+<li><em><strong>[F]</strong></em> — <code>camerainfo</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-copy-of-camera-object">Copy Of Camera Object</a></strong> — ( libNtve_gf_CopyOfCameraObject )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/ttutorial01.sc2map/MapScript.galaxy#L2618">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2618</span>
+TriggerAddEventCameraMove(gt_ObjectiveCamera02Complete, gv_p01_USER, c_cameraMoveReasonMinimap)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2618</span>
+TriggerAddEventCameraMove(gt_ObjectiveCamera02Complete, gv_p01_USER, c_cameraMoveReasonMinimap)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4757</span>
+TriggerAddEventCameraMove(gt_BasicPanCameraArrowHelper, gv_p01_USER, c_cameraMoveReasonAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4790</span>
+TriggerAddEventCameraMove(gt_BasicPanCameraComplete, gv_p01_USER, c_cameraMoveReasonAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4973</span>
+TriggerAddEventCameraMove(gt_BasicMinimapCameraReset, gv_p01_USER, c_cameraMoveReasonAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5006</span>
+TriggerAddEventCameraMove(gt_BasicMinimapComplete, gv_p01_USER, c_cameraMoveReasonMinimap)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4757</span>
+TriggerAddEventCameraMove(gt_BasicPanCameraArrowHelper, gv_p01_USER, c_cameraMoveReasonAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4790</span>
+TriggerAddEventCameraMove(gt_BasicPanCameraComplete, gv_p01_USER, c_cameraMoveReasonAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4973</span>
+TriggerAddEventCameraMove(gt_BasicMinimapCameraReset, gv_p01_USER, c_cameraMoveReasonAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5006</span>
+TriggerAddEventCameraMove(gt_BasicMinimapComplete, gv_p01_USER, c_cameraMoveReasonMinimap)
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodshauntedminesstormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodshauntedminesstormmod">#</a> mods/heroesmapmods/battlegroundmapmods/hauntedmines.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/hauntedmines.stormmod/base.stormdata/LibMHtM.galaxy#L2270">LibMHtM.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2270</span>
+TriggerAddEventCameraMove(libMHtM_gt_MMHMPlayerMovesCamera, <span class="hljs-number">1</span>, c_cameraMoveReasonAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2271</span>
+TriggerAddEventCameraMove(libMHtM_gt_MMHMPlayerMovesCamera, <span class="hljs-number">2</span>, c_cameraMoveReasonAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2272</span>
+TriggerAddEventCameraMove(libMHtM_gt_MMHMPlayerMovesCamera, <span class="hljs-number">3</span>, c_cameraMoveReasonAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2273</span>
+TriggerAddEventCameraMove(libMHtM_gt_MMHMPlayerMovesCamera, <span class="hljs-number">4</span>, c_cameraMoveReasonAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2274</span>
+TriggerAddEventCameraMove(libMHtM_gt_MMHMPlayerMovesCamera, <span class="hljs-number">5</span>, c_cameraMoveReasonAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2275</span>
+TriggerAddEventCameraMove(libMHtM_gt_MMHMPlayerMovesCamera, <span class="hljs-number">6</span>, c_cameraMoveReasonAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2276</span>
+TriggerAddEventCameraMove(libMHtM_gt_MMHMPlayerMovesCamera, <span class="hljs-number">7</span>, c_cameraMoveReasonAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2277</span>
+TriggerAddEventCameraMove(libMHtM_gt_MMHMPlayerMovesCamera, <span class="hljs-number">8</span>, c_cameraMoveReasonAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2278</span>
+TriggerAddEventCameraMove(libMHtM_gt_MMHMPlayerMovesCamera, <span class="hljs-number">9</span>, c_cameraMoveReasonAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2279</span>
+TriggerAddEventCameraMove(libMHtM_gt_MMHMPlayerMovesCamera, <span class="hljs-number">10</span>, c_cameraMoveReasonAny)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOUI.galaxy#L9685">LibCOUI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L9685</span>
+TriggerAddEventCameraMove(libCOUI_gt_CU_MinimapAllyViewUpdateP1, <span class="hljs-number">1</span>, c_cameraMoveReasonAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9706</span>
+TriggerAddEventCameraMove(libCOUI_gt_CU_MinimapAllyViewUpdateP2, <span class="hljs-number">2</span>, c_cameraMoveReasonAny)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

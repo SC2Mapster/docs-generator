@@ -1,0 +1,406 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Sound Link / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Sound Link"/>
+                <meta property="og:description" content="Returns a Sound Link for a given sound ID and asset index.  Sound Links are used to refer to specific sounds.  Sound links are comprised of a sound ID (to identify the sound data entry) and an asset index (to identify the asset within that data entry).
+
+Returns: soundlink"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="sound-link"><a class="markdownIt-Anchor" href="#sound-link">#</a> Sound Link</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Sound link from sound ID <strong>soundId</strong> at index <strong>soundIndex</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Function</code></p>
+</blockquote>
+<p>Returns a Sound Link for a given sound ID and asset index.  Sound Links are used to refer to specific sounds.  Sound links are comprised of a sound ID (to identify the sound data entry) and an asset index (to identify the asset within that data entry).</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>string</code> <em>[ gamelink::Sound ]</em> — Sound ID</li>
+<li><code>int</code> — Asset Index</li>
+</ul>
+<p>Returns — <code>soundlink</code></p>
+<pre class="hljs"><code><span class="hljs-function">native soundlink <span class="hljs-title">SoundLink</span><span class="hljs-params">(<span class="hljs-built_in">string</span> soundId, <span class="hljs-keyword">int</span> soundIndex)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#sound-sound-properties">Sound / Sound Properties</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/sound-link-asset">Sound Asset Index</a></strong> — ( SoundLinkAsset )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> <em>[ gamelink::Sound ]</em> — <strong><a href="/galaxy/reference/sound-link-id">Sound ID</a></strong> — ( SoundLinkId )</li>
+<li><em><strong>[F]</strong></em> — <code>soundlink</code> — <strong><a href="/galaxy/reference/sound-link">Sound Link</a></strong> — ( SoundLink )</li>
+<li><em><strong>[F]</strong></em> — <code>text</code> — <strong><a href="/galaxy/reference/sound-subtitle-text">Sound Subtitle Text</a></strong> — ( SoundSubtitleText )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> <em>[ gamelink::Model ]</em> — <strong><a href="/galaxy/reference/sound-portrait-model">Sound Portrait Model</a></strong> — ( SoundPortraitModel )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/sound-length-sync">Sound Duration</a></strong> — ( SoundLengthSync )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-preload-sound-length">Mark Sound For Duration Preload</a></strong> — (  )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-length-query">Query Sound Duration</a></strong> — ( SoundLengthQuery )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-length-query-wait">Wait For Sound Durations</a></strong> — ( SoundLengthQueryWait )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/challenges/advancedcommand.sc2map/MapScript.galaxy#L1361">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1361</span>
+SoundLink(<span class="hljs-string">"ChallengescombinedExecutor00034"</span>, <span class="hljs-number">-1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1363</span>
+SoundLink(<span class="hljs-string">"ChallengescombinedExecutor00034"</span>, <span class="hljs-number">-1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1366</span>
+SoundLink(<span class="hljs-string">"ChallengescombinedExecutor00035"</span>, <span class="hljs-number">-1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1368</span>
+SoundLink(<span class="hljs-string">"ChallengescombinedExecutor00036"</span>, <span class="hljs-number">-1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1370</span>
+SoundLink(<span class="hljs-string">"ChallengescombinedExecutor00048"</span>, <span class="hljs-number">-1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1372</span>
+SoundLink(<span class="hljs-string">"ChallengescombinedExecutor00048"</span>, <span class="hljs-number">-1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1397</span>
+SoundLink(<span class="hljs-string">"ChallengescombinedExecutor00035"</span>, <span class="hljs-number">-1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1397</span>
+SoundLink(<span class="hljs-string">"ChallengescombinedExecutor00036"</span>, <span class="hljs-number">-1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1670</span>
+SoundLink(<span class="hljs-string">"TUIWarningPing"</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2863</span>
+SoundLink(<span class="hljs-string">"ChallengescombinedExecutor00015"</span>, <span class="hljs-number">-1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2868</span>
+SoundLink(<span class="hljs-string">"ChallengescombinedExecutor00015"</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2871</span>
+SoundLink(<span class="hljs-string">"ChallengescombinedExecutor00016"</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2873</span>
+SoundLink(<span class="hljs-string">"ChallengescombinedExecutor00017"</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2876</span>
+SoundLink(<span class="hljs-string">"ChallengescombinedExecutor00018"</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2877</span>
+SoundLink(<span class="hljs-string">"ChallengescombinedExecutor00018"</span>, <span class="hljs-number">-1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2879</span>
+SoundLink(<span class="hljs-string">"ChallengescombinedExecutor00018"</span>, <span class="hljs-number">-1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2881</span>
+SoundLink(<span class="hljs-string">"ChallengescombinedExecutor00018"</span>, <span class="hljs-number">-1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2883</span>
+SoundLink(<span class="hljs-string">"ChallengescombinedExecutor00019"</span>, <span class="hljs-number">-1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L974</span>
+SoundLink(<span class="hljs-string">"TUIWarningPing"</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1011</span>
+SoundLink(<span class="hljs-string">"TUIWarningPing"</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1138</span>
+SoundLink(<span class="hljs-string">"UI_ChallengeCountdown"</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1696</span>
+SoundLink(<span class="hljs-string">"ChallengescombinedExecutor00012"</span>, <span class="hljs-number">-1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1698</span>
+SoundLink(<span class="hljs-string">"ChallengescombinedExecutor00012"</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1709</span>
+SoundLink(<span class="hljs-string">"ChallengescombinedExecutor00013"</span>, <span class="hljs-number">-1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1712</span>
+SoundLink(<span class="hljs-string">"ChallengescombinedExecutor00013"</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1719</span>
+SoundLink(<span class="hljs-string">"ChallengescombinedExecutor00014"</span>, <span class="hljs-number">-1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1721</span>
+SoundLink(<span class="hljs-string">"ChallengescombinedExecutor00014"</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1656</span>
+SoundLink(<span class="hljs-string">"ChallengescombinedAdjutant00038"</span>, <span class="hljs-number">-1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1656</span>
+SoundLink(<span class="hljs-string">"ChallengescombinedAdjutant00039"</span>, <span class="hljs-number">-1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1658</span>
+SoundLink(<span class="hljs-string">"ChallengescombinedAdjutant00038"</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1660</span>
+SoundLink(<span class="hljs-string">"ChallengescombinedAdjutant00039"</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1662</span>
+SoundLink(<span class="hljs-string">"ChallengescombinedAdjutant00040"</span>, <span class="hljs-number">-1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1664</span>
+SoundLink(<span class="hljs-string">"ChallengescombinedAdjutant00040"</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1670</span>
+SoundLink(<span class="hljs-string">"ChallengescombinedAdjutant00041"</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L539</span>
+SoundLink(<span class="hljs-string">"TUIWarningPing"</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L632</span>
+SoundLink(<span class="hljs-string">"UI_ObjectiveComplete"</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L801</span>
+SoundLink(<span class="hljs-string">"TUIWarningPing"</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L981</span>
+SoundLink(<span class="hljs-string">"UI_ObjectiveComplete"</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2073</span>
+SoundLink(<span class="hljs-string">"ChallengescombinedAdjutant00031"</span>, <span class="hljs-number">-1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2073</span>
+SoundLink(<span class="hljs-string">"ChallengescombinedAdjutant00033"</span>, <span class="hljs-number">-1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2075</span>
+SoundLink(<span class="hljs-string">"ChallengescombinedAdjutant00031"</span>, <span class="hljs-number">-1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2081</span>
+SoundLink(<span class="hljs-string">"ChallengescombinedAdjutant00033"</span>, <span class="hljs-number">-1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2380</span>
+SoundLink(<span class="hljs-string">"ChallengescombinedAdjutant00031"</span>, <span class="hljs-number">-1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2380</span>
+SoundLink(<span class="hljs-string">"ChallengescombinedAdjutant00033"</span>, <span class="hljs-number">-1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1518</span>
+SoundLink(<span class="hljs-string">"TUIWarningPing"</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2708</span>
+SoundLink(<span class="hljs-string">"ChallengescombinedAdjutant00026"</span>, <span class="hljs-number">-1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2710</span>
+SoundLink(<span class="hljs-string">"ChallengescombinedAdjutant00026"</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2714</span>
+SoundLink(<span class="hljs-string">"ChallengescombinedAdjutant00027"</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2716</span>
+SoundLink(<span class="hljs-string">"ChallengescombinedAdjutant00028"</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2718</span>
+SoundLink(<span class="hljs-string">"ChallengescombinedAdjutant00029"</span>, <span class="hljs-number">-1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2720</span>
+SoundLink(<span class="hljs-string">"ChallengescombinedAdjutant00029"</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2745</span>
+SoundLink(<span class="hljs-string">"ChallengescombinedAdjutant00027"</span>, <span class="hljs-number">-1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2745</span>
+SoundLink(<span class="hljs-string">"ChallengescombinedAdjutant00028"</span>, <span class="hljs-number">-1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1396</span>
+SoundLink(<span class="hljs-string">"ChallengescombinedAdjutant00005"</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1397</span>
+SoundLink(<span class="hljs-string">"ChallengescombinedAdjutant00006"</span>, <span class="hljs-number">-1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1397</span>
+SoundLink(<span class="hljs-string">"ChallengescombinedAdjutant00007"</span>, <span class="hljs-number">-1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1397</span>
+SoundLink(<span class="hljs-string">"ChallengescombinedAdjutant00008"</span>, <span class="hljs-number">-1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1399</span>
+SoundLink(<span class="hljs-string">"ChallengescombinedAdjutant00006"</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1401</span>
+SoundLink(<span class="hljs-string">"ChallengescombinedAdjutant00007"</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1403</span>
+SoundLink(<span class="hljs-string">"ChallengescombinedAdjutant00008"</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1405</span>
+SoundLink(<span class="hljs-string">"ChallengescombinedAdjutant00101"</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1579</span>
+SoundLink(<span class="hljs-string">"TUIWarningPing"</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2863</span>
+SoundLink(<span class="hljs-string">"ChallengescombinedQueen00021"</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2863</span>
+SoundLink(<span class="hljs-string">"ChallengescombinedQueen00022"</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2865</span>
+SoundLink(<span class="hljs-string">"ChallengescombinedQueen00021"</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2867</span>
+SoundLink(<span class="hljs-string">"ChallengescombinedQueen00022"</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2870</span>
+SoundLink(<span class="hljs-string">"ChallengescombinedQueen00023"</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2872</span>
+SoundLink(<span class="hljs-string">"ChallengescombinedQueen00024"</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2874</span>
+SoundLink(<span class="hljs-string">"ChallengescombinedQueen00024"</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2899</span>
+SoundLink(<span class="hljs-string">"ChallengescombinedQueen00023"</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1339</span>
+SoundLink(<span class="hljs-string">"ChallengescombinedQueen00009"</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1339</span>
+SoundLink(<span class="hljs-string">"ChallengescombinedQueen00010"</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1339</span>
+SoundLink(<span class="hljs-string">"ChallengescombinedQueen00011"</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1341</span>
+SoundLink(<span class="hljs-string">"ChallengescombinedQueen00009"</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1343</span>
+SoundLink(<span class="hljs-string">"ChallengescombinedQueen00010"</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1345</span>
+SoundLink(<span class="hljs-string">"ChallengescombinedQueen00011"</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L656</span>
+SoundLink(<span class="hljs-string">"LostViking_Thrust"</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1062</span>
+SoundLink(<span class="hljs-string">"Mutalisk_Attack"</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1064</span>
+SoundLink(<span class="hljs-string">"Mutalisk_Attack"</span>, <span class="hljs-number">2</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1066</span>
+SoundLink(<span class="hljs-string">"Mutalisk_Attack"</span>, <span class="hljs-number">8</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1068</span>
+SoundLink(<span class="hljs-string">"Mutalisk_Attack"</span>, <span class="hljs-number">5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2306</span>
+SoundLink(<span class="hljs-string">"SS_TerraTronBeamChargeUp"</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2333</span>
+SoundLink(<span class="hljs-string">"SS_TerraTronBeamChargeUp"</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3199</span>
+SoundLink(<span class="hljs-string">"UI_TerranKlaxonAlert"</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4708</span>
+SoundLink(<span class="hljs-string">"LostViking_CarrierBirth"</span>, <span class="hljs-number">-1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5224</span>
+SoundLink(<span class="hljs-string">"Ultralisk_Roar"</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L966</span>
+SoundLink(<span class="hljs-string">"THanson01Swann00046"</span>, <span class="hljs-number">-1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1569</span>
+SoundLink(<span class="hljs-string">"THanson01Hanson00001"</span>, <span class="hljs-number">-1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1793</span>
+SoundLink(<span class="hljs-string">"THanson01Raynor00006"</span>, <span class="hljs-number">-1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2008</span>
+SoundLink(<span class="hljs-string">"THanson01Hanson00071"</span>, <span class="hljs-number">-1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2014</span>
+SoundLink(<span class="hljs-string">"THanson01Hanson00035"</span>, <span class="hljs-number">-1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2018</span>
+SoundLink(<span class="hljs-string">"THanson01Hanson00029"</span>, <span class="hljs-number">-1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2063</span>
+SoundLink(<span class="hljs-string">"THanson01Hanson00082"</span>, <span class="hljs-number">-1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2067</span>
+SoundLink(<span class="hljs-string">"THanson01Hanson00004"</span>, <span class="hljs-number">-1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2071</span>
+SoundLink(<span class="hljs-string">"THanson01Hanson00029"</span>, <span class="hljs-number">-1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2115</span>
+SoundLink(<span class="hljs-string">"THanson01Hanson00034"</span>, <span class="hljs-number">-1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L335</span>
+SoundLink(<span class="hljs-string">"NydusWorm_Unload"</span>, <span class="hljs-number">-1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L338</span>
+SoundLink(<span class="hljs-string">"NydusWorm_Unload"</span>, <span class="hljs-number">-1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2092</span>
+SoundLink(<span class="hljs-string">"THanson02Tychus00003"</span>, <span class="hljs-number">-1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2106</span>
+SoundLink(<span class="hljs-string">"THanson02Tychus00004"</span>, <span class="hljs-number">-1</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

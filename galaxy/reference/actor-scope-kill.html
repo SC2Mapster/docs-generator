@@ -1,0 +1,237 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Kill Actor Scope / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Kill Actor Scope"/>
+                <meta property="og:description" content="Kills an actor scope along with all of the actors in that scope.  An actor scope is a container for a set of actors."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="kill-actor-scope"><a class="markdownIt-Anchor" href="#kill-actor-scope">#</a> Kill Actor Scope</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Kill actor scope <strong>actorScope</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Kills an actor scope along with all of the actors in that scope.  An actor scope is a container for a set of actors.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>actorscope</code> — Actor Scope</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">ActorScopeKill</span><span class="hljs-params">(actorscope as)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#actor-destroy-actors">Actor / Destroy Actors</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/actor-scope-kill">Kill Actor Scope</a></strong> — ( ActorScopeKill )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/actor-world-particle-fxdestroy">Kill All Particles</a></strong> — ( ActorWorldParticleFXDestroy )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-kill-model">Kill Model</a></strong> — ( libNtve_gf_KillModel )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/actor-scope-orphan">Orphan Actor Scope</a></strong> — ( ActorScopeOrphan )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-remove-doodadsin-region">Remove Doodads in Region</a></strong> — ( libNtve_gf_RemoveDoodadsinRegion )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-remove-death-modelsin-region">Remove Death Models in Region</a></strong> — ( libNtve_gf_RemoveDeathModelsinRegion )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-remove-death-modelsin-region-immediately">Remove Death Models in Region Immediately</a></strong> — ( libNtve_gf_RemoveDeathModelsinRegionImmediately )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/traynor01.sc2map/MapScript.galaxy#L788">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L788</span>
+ActorScopeKill(libNtve_gf_ActorScopeLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L788</span>
+ActorScopeKill(libNtve_gf_ActorScopeLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1853</span>
+ActorScopeKill(ActorScopeFromActor(gv_kerriganSoundRegionActor))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1919</span>
+ActorScopeKill(ActorScopeFromActor(gv_narudSoundRegionActor))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L538</span>
+ActorScopeKill(ActorScopeFromActor(lv_actorRegion))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1853</span>
+ActorScopeKill(ActorScopeFromActor(gv_kerriganSoundRegionActor))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1919</span>
+ActorScopeKill(ActorScopeFromActor(gv_narudSoundRegionActor))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L538</span>
+ActorScopeKill(ActorScopeFromActor(lv_actorRegion))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L521</span>
+ActorScopeKill(ActorScopeFromActor(lv_actorRegion))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L521</span>
+ActorScopeKill(ActorScopeFromActor(lv_actorRegion))
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignMissionLib.galaxy#L3688">VoidCampaignMissionLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3688</span>
+ActorScopeKill(ActorScopeFromActor(lv_actorRegion))
+</code></pre>
+<h4 id="modscoresc2mod"><a class="markdownIt-Anchor" href="#modscoresc2mod">#</a> mods/core.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/core.sc2mod/base.sc2data/TriggerLibs/NativeLib.galaxy#L1151">NativeLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1151</span>
+ActorScopeKill(ActorScopeFromActor(lv_actorRegion))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1166</span>
+ActorScopeKill(ActorScopeFromActor(lv_actorRegion))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1180</span>
+ActorScopeKill(ActorScopeFromActor(lv_actorRegion))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1286</span>
+ActorScopeKill(ActorScopeFromActor(lv_actorRegion))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1497</span>
+ActorScopeKill(ActorScopeFromActor(lv_actorRegion))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1523</span>
+ActorScopeKill(ActorScopeFromActor(lv_actorRegion))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1046</span>
+ActorScopeKill(ActorScopeFromActor(lv_actorRegion))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1062</span>
+ActorScopeKill(ActorScopeFromActor(lv_actorRegion))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1076</span>
+ActorScopeKill(ActorScopeFromActor(lv_actorRegion))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1182</span>
+ActorScopeKill(ActorScopeFromActor(lv_actorRegion))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1306</span>
+ActorScopeKill(ActorScopeFromActor(lv_actorRegion))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1332</span>
+ActorScopeKill(ActorScopeFromActor(lv_actorRegion))
+</code></pre>
+<h4 id="modsheroesstormmod"><a class="markdownIt-Anchor" href="#modsheroesstormmod">#</a> mods/heroes.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroes.stormmod/base.stormmaps/maps/heroes/singleplayermaps/%2810%29trymemode.stormmap/MapScript.galaxy#L1196">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1196</span>
+ActorScopeKill(gv_buildingScopes[lv_itScope])
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L929</span>
+ActorScopeKill(ActorScopeFromActor(lv_actorRegion))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1196</span>
+ActorScopeKill(gv_buildingScopes[lv_itScope])
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L929</span>
+ActorScopeKill(ActorScopeFromActor(lv_actorRegion))
+</code></pre>
+<h4 id="modsheroesbrawlmodsarenamodemodsarenamodestormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsarenamodemodsarenamodestormmod">#</a> mods/heroesbrawlmods/arenamodemods/arenamode.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/arenamodemods/arenamode.stormmod/base.stormdata/LibAREN.galaxy#L1303">LibAREN.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1303</span>
+ActorScopeKill(ActorScopeFromActor(lv_actorRegion))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2521</span>
+ActorScopeKill(ActorScopeFromActor(lv_actorRegion))
+</code></pre>
+<h4 id="modsheroesbrawlmodsarenamodemodsgardenarenastormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsarenamodemodsgardenarenastormmod">#</a> mods/heroesbrawlmods/arenamodemods/gardenarena.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/arenamodemods/gardenarena.stormmod/base.stormdata/LibAMGT.galaxy#L189">LibAMGT.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L189</span>
+ActorScopeKill(ActorScopeFromActor(lv_actorRegion))
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodscoopescapefrombraxisstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodscoopescapefrombraxisstormmod">#</a> mods/heroesbrawlmods/brawlmapmods/coop/escapefrombraxis.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/coop/escapefrombraxis.stormmod/base.stormdata/LibPEB1.galaxy#L2158">LibPEB1.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2158</span>
+ActorScopeKill(ActorScopeFromActor(lv_actorRegion))
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodscooppvemodstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodscooppvemodstormmod">#</a> mods/heroesbrawlmods/brawlmapmods/coop/pvemod.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/coop/pvemod.stormmod/base.stormdata/LibPVEM.galaxy#L1499">LibPVEM.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1499</span>
+ActorScopeKill(ActorScopeFromActor(lv_actorRegion))
+</code></pre>
+<h4 id="modsheroesdatastormmod"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/HeroesLib.galaxy#L2932">HeroesLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2932</span>
+ActorScopeKill(ActorScopeFromActor(lv_actorRegion))
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodstowersofdoomstormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodstowersofdoomstormmod">#</a> mods/heroesmapmods/battlegroundmapmods/towersofdoom.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/towersofdoom.stormmod/base.stormdata/LibMTOD.galaxy#L690">LibMTOD.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L690</span>
+ActorScopeKill(ActorScopeFromActor(lv_actorRegion))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L853</span>
+ActorScopeKill(ActorScopeFromActor(lv_actorRegion))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1965</span>
+ActorScopeKill(ActorScopeFromActor(lv_actorRegion))
+</code></pre>
+<h4 id="modsmissionpacksnovacampaignsc2mod"><a class="markdownIt-Anchor" href="#modsmissionpacksnovacampaignsc2mod">#</a> mods/missionpacks/novacampaign.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/novacampaign.sc2mod/base.sc2data/LibNCMI.galaxy#L3825">LibNCMI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3825</span>
+ActorScopeKill(ActorScopeFromActor(lv_actorRegion))
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOMI.galaxy#L11577">LibCOMI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L11577</span>
+ActorScopeKill(ActorScopeFromActor(lv_actorRegion))
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,144 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Stop Sound Channel / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Stop Sound Channel"/>
+                <meta property="og:description" content="Stops all sounds in a sound channel for the specified players."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="stop-sound-channel"><a class="markdownIt-Anchor" href="#stop-sound-channel">#</a> Stop Sound Channel</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Stop <strong>channel</strong> channel for <strong>players</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Stops all sounds in a sound channel for the specified players.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>playergroup</code> — Players</li>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-sound-channel">SoundChannel</a> ]</em> — Channel</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">SoundChannelStop</span><span class="hljs-params">(
+	playergroup players,
+	<span class="hljs-keyword">int</span> channel,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#sound-sound-channels">Sound / Sound Channels</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-channel-mute">Mute/Unmute Sound Channel</a></strong> — ( SoundChannelMute )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-channel-pause">Pause Sound Channel</a></strong> — ( SoundChannelPause )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-channel-stop">Stop Sound Channel</a></strong> — ( SoundChannelStop )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-channel-set-volume">Set Sound Channel Volume</a></strong> — ( SoundChannelSetVolume )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-set-all-sound-channel-volumes">Set All Sound Channel Volumes</a></strong> — ( libNtve_gf_SetAllSoundChannelVolumes )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-channel-dspinsert">Insert Sound Channel Digital Effect</a></strong> — ( SoundChannelDSPInsert )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-channel-dspremove">Remove Sound Channel Digital Effect</a></strong> — ( SoundChannelDSPRemove )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignsswarmsc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmsc2campaign">#</a> campaigns/swarm.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarm.sc2campaign/base.sc2maps/maps/campaign/swarm/zkorhal01.sc2map/MapScript.galaxy#L6327">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L6327</span>
+SoundChannelStop(PlayerGroupAll(), c_soundCategoryCombat)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9892</span>
+SoundChannelStop(PlayerGroupAll(), c_soundCategoryMusic)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6327</span>
+SoundChannelStop(PlayerGroupAll(), c_soundCategoryCombat)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9892</span>
+SoundChannelStop(PlayerGroupAll(), c_soundCategoryMusic)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9772</span>
+SoundChannelStop(PlayerGroupAll(), c_soundCategoryOther)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7782</span>
+SoundChannelStop(PlayerGroupAll(), c_soundCategoryOther)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9772</span>
+SoundChannelStop(PlayerGroupAll(), c_soundCategoryOther)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7782</span>
+SoundChannelStop(PlayerGroupAll(), c_soundCategoryOther)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignMissionLib.galaxy#L1468">VoidCampaignMissionLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1468</span>
+SoundChannelStop(PlayerGroupAll(), c_soundCategoryUI)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOMI.galaxy#L18521">LibCOMI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L18521</span>
+SoundChannelStop(PlayerGroupSingle(lv_player), c_soundCategoryVoice)
+</code></pre>
+<h4 id="modsvoidprologuesc2mod"><a class="markdownIt-Anchor" href="#modsvoidprologuesc2mod">#</a> mods/voidprologue.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/voidprologue.sc2mod/base.sc2data/LibA3DDD02B.galaxy#L9458">LibA3DDD02B.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L9458</span>
+SoundChannelStop(PlayerGroupAll(), c_soundCategoryUI)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

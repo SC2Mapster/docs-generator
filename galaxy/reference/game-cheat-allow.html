@@ -1,0 +1,411 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Allow Cheat / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Allow Cheat"/>
+                <meta property="og:description" content="native void GameCheatAllow(int cheat, bool allow);"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="allow-cheat"><a class="markdownIt-Anchor" href="#allow-cheat">#</a> Allow Cheat</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — <strong>allow|Allow/Disallow</strong> <strong>cheat</strong> cheat<br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-game-cheat-type">GameCheatType</a> ]</em> — Cheat</li>
+<li><code>bool</code> <em>[ preset::<a href="/galaxy/reference/preset-allow-disallow-option">AllowDisallowOption</a> ]</em> — Allow</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">GameCheatAllow</span><span class="hljs-params">(<span class="hljs-keyword">int</span> cheat, <span class="hljs-keyword">bool</span> allow)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#game-chat-and-console">Game / Chat And Console</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-chat-message">Chat Message</a></strong> — ( TriggerAddEventChatMessage )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-cheat-used">Cheat Used</a></strong> — ( TriggerAddEventCheatUsed )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> — <strong><a href="/galaxy/reference/event-chat-message">Chat String</a></strong> — ( EventChatMessage )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-game-cheat-type">GameCheatType</a> ]</em> — <strong><a href="/galaxy/reference/event-cheat-used">Cheat Type Used</a></strong> — ( EventCheatUsed )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/console-command">Console Command</a></strong> — ( ConsoleCommand )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/game-cheats-enabled">Cheats Enabled</a></strong> — ( GameCheatsEnabled )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/game-cheat-allow">Allow Cheat</a></strong> — ( GameCheatAllow )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/challenges/advancedcommand.sc2map/MapScript.galaxy#L157">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L157</span>
+GameCheatAllow(c_gameCheatVictory, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L482</span>
+GameCheatAllow(c_gameCheatVictory, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L246</span>
+GameCheatAllow(c_gameCheatVictory, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L184</span>
+GameCheatAllow(c_gameCheatVictory, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L303</span>
+GameCheatAllow(c_gameCheatVictory, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L446</span>
+GameCheatAllow(c_gameCheatVictory, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L158</span>
+GameCheatAllow(c_gameCheatVictory, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L492</span>
+GameCheatAllow(c_gameCheatVictory, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L156</span>
+GameCheatAllow(c_gameCheatVictory, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L744</span>
+GameCheatAllow(c_gameCheatVictory, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4059</span>
+GameCheatAllow(c_gameCheatVictory, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3425</span>
+GameCheatAllow(c_gameCheatScene, lv_allowCheat)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3426</span>
+GameCheatAllow(c_gameCheatTV, lv_allowCheat)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3427</span>
+GameCheatAllow(c_gameCheatProgress, lv_allowCheat)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L967</span>
+GameCheatAllow(c_gameCheatVictory, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L968</span>
+GameCheatAllow(c_gameCheatDefeat, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1718</span>
+GameCheatAllow(c_gameCheatVictory, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1719</span>
+GameCheatAllow(c_gameCheatDefeat, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1999</span>
+GameCheatAllow(c_gameCheatVictory, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2000</span>
+GameCheatAllow(c_gameCheatDefeat, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2700</span>
+GameCheatAllow(c_gameCheatVictory, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2701</span>
+GameCheatAllow(c_gameCheatDefeat, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4120</span>
+GameCheatAllow(c_gameCheatVictory, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4121</span>
+GameCheatAllow(c_gameCheatDefeat, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L744</span>
+GameCheatAllow(c_gameCheatVictory, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4059</span>
+GameCheatAllow(c_gameCheatVictory, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3425</span>
+GameCheatAllow(c_gameCheatScene, lv_allowCheat)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3426</span>
+GameCheatAllow(c_gameCheatTV, lv_allowCheat)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3427</span>
+GameCheatAllow(c_gameCheatProgress, lv_allowCheat)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L967</span>
+GameCheatAllow(c_gameCheatVictory, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L968</span>
+GameCheatAllow(c_gameCheatDefeat, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1718</span>
+GameCheatAllow(c_gameCheatVictory, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1719</span>
+GameCheatAllow(c_gameCheatDefeat, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1999</span>
+GameCheatAllow(c_gameCheatVictory, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2000</span>
+GameCheatAllow(c_gameCheatDefeat, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2700</span>
+GameCheatAllow(c_gameCheatVictory, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2701</span>
+GameCheatAllow(c_gameCheatDefeat, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4120</span>
+GameCheatAllow(c_gameCheatVictory, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4121</span>
+GameCheatAllow(c_gameCheatDefeat, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L157</span>
+GameCheatAllow(c_gameCheatVictory, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L184</span>
+GameCheatAllow(c_gameCheatVictory, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L482</span>
+GameCheatAllow(c_gameCheatVictory, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L246</span>
+GameCheatAllow(c_gameCheatVictory, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L303</span>
+GameCheatAllow(c_gameCheatVictory, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L446</span>
+GameCheatAllow(c_gameCheatVictory, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L158</span>
+GameCheatAllow(c_gameCheatVictory, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L492</span>
+GameCheatAllow(c_gameCheatVictory, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L156</span>
+GameCheatAllow(c_gameCheatVictory, <span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="campaignslibertystorysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertystorysc2campaign">#</a> campaigns/libertystory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/libertystory.sc2campaign/base.sc2data/TriggerLibs/CampaignLib.galaxy#L8296">CampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L8296</span>
+GameCheatAllow(c_gameCheatNoVictory, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8297</span>
+GameCheatAllow(c_gameCheatNoDefeat, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10034</span>
+GameCheatAllow(c_gameCheatProgress, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13358</span>
+GameCheatAllow(c_gameCheatProgress, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13359</span>
+GameCheatAllow(c_gameCheatTV, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13360</span>
+GameCheatAllow(c_gameCheatScene, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13385</span>
+GameCheatAllow(c_gameCheatProgress, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13386</span>
+GameCheatAllow(c_gameCheatTV, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13387</span>
+GameCheatAllow(c_gameCheatScene, <span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="campaignsswarmstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmstorysc2campaign">#</a> campaigns/swarmstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstory.sc2campaign/base.sc2data/TriggerLibs/SwarmCampaignLib.galaxy#L12768">SwarmCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L12768</span>
+GameCheatAllow(c_gameCheatProgress, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12771</span>
+GameCheatAllow(c_gameCheatTechTree, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12772</span>
+GameCheatAllow(c_gameCheatTV, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L14150</span>
+GameCheatAllow(c_gameCheatProgress, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L22300</span>
+GameCheatAllow(c_gameCheatCredits, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L22301</span>
+GameCheatAllow(c_gameCheatResearch, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L22302</span>
+GameCheatAllow(c_gameCheatProgress, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L22308</span>
+GameCheatAllow(c_gameCheatCredits, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L22309</span>
+GameCheatAllow(c_gameCheatResearch, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L22310</span>
+GameCheatAllow(c_gameCheatProgress, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="campaignsswarmstoryutilsc2mod"><a class="markdownIt-Anchor" href="#campaignsswarmstoryutilsc2mod">#</a> campaigns/swarmstoryutil.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstoryutil.sc2mod/base.sc2data/Lib281DEC45.galaxy#L3144">Lib281DEC45.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3144</span>
+GameCheatAllow(c_gameCheatProgress, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3145</span>
+GameCheatAllow(c_gameCheatScene, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3146</span>
+GameCheatAllow(c_gameCheatCredits, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3147</span>
+GameCheatAllow(c_gameCheatResearch, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3152</span>
+GameCheatAllow(c_gameCheatProgress, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3153</span>
+GameCheatAllow(c_gameCheatScene, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3154</span>
+GameCheatAllow(c_gameCheatCredits, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3155</span>
+GameCheatAllow(c_gameCheatResearch, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="campaignsvoidsc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidsc2campaign">#</a> campaigns/void.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/void.sc2campaign/base.sc2maps/maps/campaign/sc2tutorial.sc2map/MapScript.galaxy#L2449">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2449</span>
+GameCheatAllow(c_gameCheatVictory, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2450</span>
+GameCheatAllow(c_gameCheatDefeat, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1196</span>
+GameCheatAllow(c_gameCheatProgress, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1197</span>
+GameCheatAllow(c_gameCheatScene, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1198</span>
+GameCheatAllow(c_gameCheatCredits, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1199</span>
+GameCheatAllow(c_gameCheatResearch, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1222</span>
+GameCheatAllow(c_gameCheatProgress, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1223</span>
+GameCheatAllow(c_gameCheatScene, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1224</span>
+GameCheatAllow(c_gameCheatCredits, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1225</span>
+GameCheatAllow(c_gameCheatResearch, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1250</span>
+GameCheatAllow(c_gameCheatProgress, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1251</span>
+GameCheatAllow(c_gameCheatScene, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2449</span>
+GameCheatAllow(c_gameCheatVictory, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2450</span>
+GameCheatAllow(c_gameCheatDefeat, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1196</span>
+GameCheatAllow(c_gameCheatProgress, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1197</span>
+GameCheatAllow(c_gameCheatScene, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1198</span>
+GameCheatAllow(c_gameCheatCredits, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1199</span>
+GameCheatAllow(c_gameCheatResearch, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1222</span>
+GameCheatAllow(c_gameCheatProgress, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1223</span>
+GameCheatAllow(c_gameCheatScene, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1224</span>
+GameCheatAllow(c_gameCheatCredits, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1225</span>
+GameCheatAllow(c_gameCheatResearch, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1250</span>
+GameCheatAllow(c_gameCheatProgress, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1251</span>
+GameCheatAllow(c_gameCheatScene, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignLib.galaxy#L6519">VoidCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L6519</span>
+GameCheatAllow(c_gameCheatProgress, <span class="hljs-literal">false</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

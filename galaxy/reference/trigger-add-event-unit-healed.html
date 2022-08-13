@@ -1,0 +1,251 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Unit is Healed / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Unit is Healed"/>
+                <meta property="og:description" content="This event fires when a unit is healed through effects. Use &quot;Healing Unit&quot; to get the unit casting the heal.  Use &quot;Healing Player&quot; to get the owner of the unit that is dealing damage. Use &quot;Triggering Heal Given&quot; to get the amount healed. Use &quot;Triggering Heal Vital Type&quot; to get the vital type that was healed. Use &quot;Triggering Player&quot; to get the owner of the unit that is healed. Use &quot;Triggering Unit&quot; to get the unit that is healed."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="unit-is-healed"><a class="markdownIt-Anchor" href="#unit-is-healed">#</a> Unit is Healed</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — <strong>u</strong> is healed of <strong>vitalType</strong> (from <strong>healEffect</strong> effects)<br>
+<em>Flags</em> — <code>Native</code> | <code>Event</code></p>
+</blockquote>
+<p>This event fires when a unit is healed through effects. Use <em>“Healing Unit”</em> to get the unit casting the heal.  Use <em>“Healing Player”</em> to get the owner of the unit that is dealing damage. Use <em>“Triggering Heal Given”</em> to get the amount healed. Use <em>“Triggering Heal Vital Type”</em> to get the vital type that was healed. Use <em>“Triggering Player”</em> to get the owner of the unit that is healed. Use <em>“Triggering Unit”</em> to get the unit that is healed.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>unitref</code> <em>[ unit ]</em> — Unit</li>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-unit-vital-type">UnitVitalType</a> ]</em> — Vital Type</li>
+<li><code>string</code> <em>[ gamelink::Effect ]</em> — Heal Effect</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">TriggerAddEventUnitHealed</span><span class="hljs-params">(
+	trigger inTrigger,
+	unitref inUnit,
+	<span class="hljs-keyword">int</span> inHealType,
+	<span class="hljs-built_in">string</span> inEffect,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#unit-combat">Unit / Combat</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/unit-get-damage-dealt-time">Get Unit Damage Dealt Time</a></strong> — ( UnitGetDamageDealtTime )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/unit-get-damage-taken-time">Get Unit Damage Taken Time</a></strong> — ( UnitGetDamageTakenTime )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> <em>[ gamelink::Weapon ]</em> — <strong><a href="/galaxy/reference/event-unit-get-weapon">Weapon Used In Attack</a></strong> — ( EventUnitGetWeapon )</li>
+<li><em><strong>[F]</strong></em> — <code>unit</code> — <strong><a href="/galaxy/reference/event-unit-get-item">Item Used In Attack</a></strong> — ( EventUnitGetItem )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> <em>[ gamelink::Item ]</em> — <strong><a href="/galaxy/reference/event-unit-get-item-type">Item Type Used In Attack</a></strong> — ( EventUnitGetItemType )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-unit-died">Unit Dies</a></strong> — ( TriggerAddEventUnitDied )</li>
+<li><em><strong>[F]</strong></em> — <code>unit</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-killing-unit">Killing Unit</a></strong> — ( libNtve_gf_KillingUnit )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-killing-player">Killing Player</a></strong> — ( libNtve_gf_KillingPlayer )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/event-unit-damage-death-check">Triggering Death Type Check</a></strong> — ( EventUnitDamageDeathCheck )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-unit-removed">Unit Is Being Removed</a></strong> — ( TriggerAddEventUnitRemoved )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-unit-started-attack">Unit Starts Attacking (Deprecated)</a></strong> — ( TriggerAddEventUnitStartedAttack )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-unit-started-attack2">Unit Starts Attacking</a></strong> — ( TriggerAddEventUnitStartedAttack2 )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-unit-attacked">Unit Is Attacked (Deprecated)</a></strong> — ( TriggerAddEventUnitAttacked )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-unit-attacked2">Unit Is Attacked</a></strong> — ( TriggerAddEventUnitAttacked2 )</li>
+<li><em><strong>[F]</strong></em> — <code>unit</code> — <strong><a href="/galaxy/reference/event-unit-target">Attacking Unit</a></strong> — ( EventUnitTarget )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-unit-damage-absorbed">Unit Absorbs Damage</a></strong> — ( TriggerAddEventUnitDamageAbsorbed )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-unit-damaged">Unit Takes Damage</a></strong> — ( TriggerAddEventUnitDamaged )</li>
+<li><em><strong>[F]</strong></em> — <code>unit</code> — <strong><a href="/galaxy/reference/event-unit-damage-source-unit">Damaging Unit</a></strong> — ( EventUnitDamageSourceUnit )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/event-unit-damage-source-player">Damaging Player</a></strong> — ( EventUnitDamageSourcePlayer )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> <em>[ gamelink::Effect ]</em> — <strong><a href="/galaxy/reference/event-unit-damage-effect">Damaging Effect</a></strong> — ( EventUnitDamageEffect )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/event-unit-damage-amount">Triggering Damage Taken</a></strong> — ( EventUnitDamageAmount )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/event-unit-damage-attempted">Triggering Damage Attempted</a></strong> — ( EventUnitDamageAttempted )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/event-unit-damage-attempted-vitals">Triggering Damage Attempted Vitals</a></strong> — ( EventUnitDamageAttemptedVitals )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/event-unit-damage-absorbed">Triggering Damage Absorbed</a></strong> — ( EventUnitDamageAbsorbed )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/event-unit-damage-behavior-shield">Triggering Damage Behavior Shield</a></strong> — ( EventUnitDamageBehaviorShield )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/event-unit-damage-vitals-leeched">Triggering Vitals Leeched</a></strong> — ( EventUnitDamageVitalsLeeched )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/event-unit-damage-kill-xp">Triggering Unit Kill XP</a></strong> — ( EventUnitDamageKillXP )</li>
+<li><em><strong>[F]</strong></em> — <code>point</code> — <strong><a href="/galaxy/reference/event-unit-damage-source-point">Damage Source Position</a></strong> — ( EventUnitDamageSourcePoint )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-unit-healed">Unit is Healed</a></strong> — ( TriggerAddEventUnitHealed )</li>
+<li><em><strong>[F]</strong></em> — <code>unit</code> — <strong><a href="/galaxy/reference/event-unit-heal-launch-unit">Healing Unit</a></strong> — ( EventUnitHealLaunchUnit )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/event-unit-heal-launch-player">Healing Player</a></strong> — ( EventUnitHealLaunchPlayer )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-unit-vital-type">UnitVitalType</a> ]</em> — <strong><a href="/galaxy/reference/event-unit-heal-vital">Triggering Heal Vital Type</a></strong> — ( EventUnitHealVital )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/event-unit-heal-amount">Triggering Heal Given</a></strong> — ( EventUnitHealAmount )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> <em>[ gamelink::Effect ]</em> — <strong><a href="/galaxy/reference/event-unit-heal-effect">Healing Effect</a></strong> — ( EventUnitHealEffect )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-unit-spend-vital">Unit Spends Vital</a></strong> — ( TriggerAddEventUnitSpendVital )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-unit-vital-type">UnitVitalType</a> ]</em> — <strong><a href="/galaxy/reference/event-unit-spent-vital-vital">Triggering Spent Vital Type</a></strong> — ( EventUnitSpentVitalVital )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/event-unit-spent-vital-amount">Triggering Vital Spent</a></strong> — ( EventUnitSpentVitalAmount )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-unit-acquired-target">Unit Acquires Target</a></strong> — ( TriggerAddEventUnitAcquiredTarget )</li>
+<li><em><strong>[F]</strong></em> — <code>unit</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-acquired-target">Acquired Target</a></strong> — ( libNtve_gf_AcquiredTarget )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-unit-revive">Unit Is Revived</a></strong> — ( TriggerAddEventUnitRevive )</li>
+<li><em><strong>[F]</strong></em> — <code>unit</code> — <strong><a href="/galaxy/reference/event-unit-victim-unit">Triggering Victim Unit</a></strong> — ( EventUnitVictimUnit )</li>
+<li><em><strong>[F]</strong></em> — <code>unit</code> — <strong><a href="/galaxy/reference/event-unit-item-used">Triggering Item Used</a></strong> — ( EventUnitItemUsed )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> <em>[ gamelink::Effect ]</em> — <strong><a href="/galaxy/reference/event-unit-effect-used">Triggering Effect Used</a></strong> — ( EventUnitEffectUsed )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignsvoidsc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidsc2campaign">#</a> campaigns/void.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/void.sc2campaign/base.sc2maps/maps/campaign/void/paiur03.sc2map/MapScript.galaxy#L3721">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3721</span>
+TriggerAddEventUnitHealed(gt_ShieldBatteryHealsUnit, null, c_unitVitalShields, <span class="hljs-string">"ShieldBatteryRechargeChanneled"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4280</span>
+TriggerAddEventUnitHealed(gt_StatSentryShieldRestoration, null, c_unitVitalShields, <span class="hljs-string">"VoidSentryShieldRepair"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3721</span>
+TriggerAddEventUnitHealed(gt_ShieldBatteryHealsUnit, null, c_unitVitalShields, <span class="hljs-string">"ShieldBatteryRechargeChanneled"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4280</span>
+TriggerAddEventUnitHealed(gt_StatSentryShieldRestoration, null, c_unitVitalShields, <span class="hljs-string">"VoidSentryShieldRepair"</span>)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignLib.galaxy#L10822">VoidCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L10822</span>
+TriggerAddEventUnitHealed(libVoiC_gt_PC_StatDamageHealed, null, c_unitVitalAny, null)
+</code></pre>
+<h4 id="modsheroesdatastormmod"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/GameDataHelperLib.galaxy#L12435">GameDataHelperLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L12435</span>
+TriggerAddEventUnitHealed(libGDHL_gt_LeoricUndyingHealingDeathTimerReduction, null, c_unitVitalLife, <span class="hljs-string">"LeoricMasteryFealtyUntoDeathRestoreLifeUndying"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12436</span>
+TriggerAddEventUnitHealed(libGDHL_gt_LeoricUndyingHealingDeathTimerReduction, null, c_unitVitalLife, <span class="hljs-string">"LeoricDrainHopeGhostPeriodicHealerBase"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L17716</span>
+TriggerAddEventUnitHealed(libGDHL_gt_HeroNecromancerTrackMortalWoundsDamageReduction, null, c_unitVitalLife, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L24842</span>
+TriggerAddEventUnitHealed(libGDHL_gt_HeroUtherBlessedChampionTargetProc, null, c_unitVitalLife, <span class="hljs-string">"HolyLightCreateHealer"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L24887</span>
+TriggerAddEventUnitHealed(libGDHL_gt_HeroUtherBlessedChampionSelfHealingProc, null, c_unitVitalLife, <span class="hljs-string">"HolyLightCreateSelfHealer"</span>)
+</code></pre>
+<h4 id="modsheroesdatastormmod-2"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-2">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/GameLib.galaxy#L15229">GameLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L15229</span>
+TriggerAddEventUnitHealed(libGame_gt_AddCombatMedicHealing, null, c_unitVitalAny, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L15523</span>
+TriggerAddEventUnitHealed(libGame_gt_ClutchHealerIncrement, null, c_unitVitalAny, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L16879</span>
+TriggerAddEventUnitHealed(libGame_gt_HeroDeathStitchesPatchworkCreationTalentParticipatedInTakedown, null, c_unitVitalAny, null)
+</code></pre>
+<h4 id="modsheroesdatastormmod-3"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-3">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/SupportLib.galaxy#L2604">SupportLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2604</span>
+TriggerAddEventUnitHealed(libSprt_gt_StatTrackingHealingTracking, null, c_unitVitalAny, null)
+</code></pre>
+<h4 id="modsheromodsalexstraszastormmod"><a class="markdownIt-Anchor" href="#modsheromodsalexstraszastormmod">#</a> mods/heromods/alexstrasza.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heromods/alexstrasza.stormmod/base.stormdata/LibHALE.galaxy#L321">LibHALE.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L321</span>
+TriggerAddEventUnitHealed(libHALE_gt_HeroAlexstraszaOverprotective, null, c_unitVitalLife, <span class="hljs-string">"AlexstraszaAbundanceCreateHealer"</span>)
+</code></pre>
+<h4 id="modsheromodsfenixstormmod"><a class="markdownIt-Anchor" href="#modsheromodsfenixstormmod">#</a> mods/heromods/fenix.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heromods/fenix.stormmod/base.stormdata/LibHFEN.galaxy#L132">LibHFEN.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L132</span>
+TriggerAddEventUnitHealed(libHFEN_gt_FenixRapidRechargeShieldHealing, null, c_unitVitalLife, null)
+</code></pre>
+<h4 id="modsheromodsmalthaelstormmod"><a class="markdownIt-Anchor" href="#modsheromodsmalthaelstormmod">#</a> mods/heromods/malthael.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heromods/malthael.stormmod/base.stormdata/LibHMTH.galaxy#L234">LibHMTH.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L234</span>
+TriggerAddEventUnitHealed(libHMTH_gt_HeroMalthaelTouchOfDeathHealingAbsorbedTrackerLifeGained, null, c_unitVitalLife, null)
+</code></pre>
+<h4 id="modsheromodszaryastormmod"><a class="markdownIt-Anchor" href="#modsheromodszaryastormmod">#</a> mods/heromods/zarya.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heromods/zarya.stormmod/base.stormdata/LibHZAR.galaxy#L933">LibHZAR.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L933</span>
+TriggerAddEventUnitHealed(libHZAR_gt_HeroZaryaEnergyMaximumChargeFCT, null, c_unitVitalEnergy, <span class="hljs-string">"ZaryaEnergyMaximumChargeCreateHealer"</span>)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOMI.galaxy#L26239">LibCOMI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L26239</span>
+TriggerAddEventUnitHealed(libCOMI_gt_CM_Tychus_HealAchievement, null, c_unitVitalAny, null)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod-2"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod-2">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOOC.galaxy#L6846">LibCOOC.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L6846</span>
+TriggerAddEventUnitHealed(libCOOC_gt_CC_ScoreRaynorMedicHeal, null, c_unitVitalLife, <span class="hljs-string">"heal"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6928</span>
+TriggerAddEventUnitHealed(libCOOC_gt_CC_ScoreSwannSVHeal, null, c_unitVitalLife, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7221</span>
+TriggerAddEventUnitHealed(libCOOC_gt_CC_ScoreAbathurHealing, null, c_unitVitalAny, <span class="hljs-string">"AbathurMendInitialHealer"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7222</span>
+TriggerAddEventUnitHealed(libCOOC_gt_CC_ScoreAbathurHealing, null, c_unitVitalAny, <span class="hljs-string">"AbathurMendSecondaryHealer"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7223</span>
+TriggerAddEventUnitHealed(libCOOC_gt_CC_ScoreAbathurHealing, null, c_unitVitalAny, <span class="hljs-string">"QueenBurstHeal"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7346</span>
+TriggerAddEventUnitHealed(libCOOC_gt_CC_ScoreAlarakHeal, null, c_unitVitalAny, <span class="hljs-string">"SoulAbsorptionMU"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7391</span>
+TriggerAddEventUnitHealed(libCOOC_gt_CC_ScoreAlarakSacrificeHeal, null, c_unitVitalAny, <span class="hljs-string">"AlarakTheStrongestSurviveStealLife"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7392</span>
+TriggerAddEventUnitHealed(libCOOC_gt_CC_ScoreAlarakSacrificeHeal, null, c_unitVitalAny, <span class="hljs-string">"AlarakTheStrongestSurviveStealShield"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7470</span>
+TriggerAddEventUnitHealed(libCOOC_gt_CC_ScoreNovaHeal, null, c_unitVitalAny, <span class="hljs-string">"HealingDroneHeal"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8159</span>
+TriggerAddEventUnitHealed(libCOOC_gt_CC_ScoreTychusMedicHeal, null, c_unitVitalAny, <span class="hljs-string">"TychusMedicHeal"</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

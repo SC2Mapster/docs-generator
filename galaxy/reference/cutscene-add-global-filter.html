@@ -1,0 +1,217 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Add Global Cutscene Filter / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Add Global Cutscene Filter"/>
+                <meta property="og:description" content="Adds a new filter for all cutscenes.  Any nodes with a non-empty filter property that does not match any filter value will be filtered out of your cutscene.  Newly created cutscenes will use this filter."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="add-global-cutscene-filter"><a class="markdownIt-Anchor" href="#add-global-cutscene-filter">#</a> Add Global Cutscene Filter</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Add the global cutscene filter <strong>inFilter</strong>.<br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Adds a new filter for all cutscenes.  Any nodes with a non-empty filter property that does not match any filter value will be filtered out of your cutscene.  Newly created cutscenes will use this filter.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>string</code> — Filter</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">CutsceneAddGlobalFilter</span><span class="hljs-params">(<span class="hljs-built_in">string</span> inFilter)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#cutscene-cutscenes-filters">Cutscene / Cutscenes / Filters</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/cutscene-set-global-filter">Set Global Cutscene Filter</a></strong> — ( CutsceneSetGlobalFilter )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/cutscene-set-filter">Set Cutscene Filter</a></strong> — ( CutsceneSetFilter )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/cutscene-add-global-filter">Add Global Cutscene Filter</a></strong> — ( CutsceneAddGlobalFilter )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/cutscene-add-filter">Add Cutscene Filter</a></strong> — ( CutsceneAddFilter )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/cutscene-remove-global-filter">Remove Global Cutscene Filter</a></strong> — ( CutsceneRemoveGlobalFilter )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/cutscene-remove-filter">Remove Cutscene Filter</a></strong> — ( CutsceneRemoveFilter )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/cutscene-clear-global-filters">Clear Global Cutscene Filters</a></strong> — ( CutsceneClearGlobalFilters )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/cutscene-clear-filters">Clear Cutscene Filter</a></strong> — ( CutsceneClearFilters )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignsswarmsc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmsc2campaign">#</a> campaigns/swarm.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarm.sc2campaign/base.sc2maps/maps/campaign/swarm/zstorychar.sc2map/MapScript.galaxy#L690">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L690</span>
+CutsceneAddGlobalFilter(<span class="hljs-string">"Zeratul"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L696</span>
+CutsceneAddGlobalFilter(<span class="hljs-string">"Zeratul"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L690</span>
+CutsceneAddGlobalFilter(<span class="hljs-string">"Zeratul"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L696</span>
+CutsceneAddGlobalFilter(<span class="hljs-string">"Zeratul"</span>)
+</code></pre>
+<h4 id="campaignsswarmstoryutilsc2mod"><a class="markdownIt-Anchor" href="#campaignsswarmstoryutilsc2mod">#</a> campaigns/swarmstoryutil.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstoryutil.sc2mod/base.sc2data/Lib281DEC45.galaxy#L372">Lib281DEC45.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L372</span>
+CutsceneAddGlobalFilter(<span class="hljs-string">"Primal"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L375</span>
+CutsceneAddGlobalFilter(<span class="hljs-string">"Ghost"</span>)
+</code></pre>
+<h4 id="campaignsvoidsc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidsc2campaign">#</a> campaigns/void.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/void.sc2campaign/base.sc2maps/maps/campaign/void/pkorhal01.sc2map/MapScript.galaxy#L5560">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L5560</span>
+CutsceneAddGlobalFilter(<span class="hljs-string">"Korhal"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6248</span>
+CutsceneAddGlobalFilter(<span class="hljs-string">"Shakuras"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L552</span>
+CutsceneAddGlobalFilter(<span class="hljs-string">"Ulnar02"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L555</span>
+CutsceneAddGlobalFilter(<span class="hljs-string">"Std"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1016</span>
+CutsceneAddGlobalFilter(<span class="hljs-string">"CapsuleOff"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1022</span>
+CutsceneAddGlobalFilter(<span class="hljs-string">"Capsule"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1130</span>
+CutsceneAddGlobalFilter(<span class="hljs-string">"CoreStage3"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1136</span>
+CutsceneAddGlobalFilter(<span class="hljs-string">"CoreStage2"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1142</span>
+CutsceneAddGlobalFilter(<span class="hljs-string">"CoreStage1"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1650</span>
+CutsceneAddGlobalFilter(<span class="hljs-string">"Pylon"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1653</span>
+CutsceneAddGlobalFilter(<span class="hljs-string">"Special"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2740</span>
+CutsceneAddGlobalFilter(<span class="hljs-string">"Capsule"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5560</span>
+CutsceneAddGlobalFilter(<span class="hljs-string">"Korhal"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6248</span>
+CutsceneAddGlobalFilter(<span class="hljs-string">"Shakuras"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L552</span>
+CutsceneAddGlobalFilter(<span class="hljs-string">"Ulnar02"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L555</span>
+CutsceneAddGlobalFilter(<span class="hljs-string">"Std"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1016</span>
+CutsceneAddGlobalFilter(<span class="hljs-string">"CapsuleOff"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1022</span>
+CutsceneAddGlobalFilter(<span class="hljs-string">"Capsule"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1130</span>
+CutsceneAddGlobalFilter(<span class="hljs-string">"CoreStage3"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1136</span>
+CutsceneAddGlobalFilter(<span class="hljs-string">"CoreStage2"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1142</span>
+CutsceneAddGlobalFilter(<span class="hljs-string">"CoreStage1"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1650</span>
+CutsceneAddGlobalFilter(<span class="hljs-string">"Pylon"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1653</span>
+CutsceneAddGlobalFilter(<span class="hljs-string">"Special"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2740</span>
+CutsceneAddGlobalFilter(<span class="hljs-string">"Capsule"</span>)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignMissionLib.galaxy#L1955">VoidCampaignMissionLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1955</span>
+CutsceneAddGlobalFilter(lv_locationFilter)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign-2"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign-2">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignStoryLib.galaxy#L646">VoidCampaignStoryLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L646</span>
+CutsceneAddGlobalFilter(libVoiC_gf_PC_LocationCutsceneFilter(libVoiC_gf_CurrentLocation()))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1394</span>
+CutsceneAddGlobalFilter(libVoiC_gf_PC_LocationCutsceneFilter(lp_newLocation))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1443</span>
+CutsceneAddGlobalFilter((<span class="hljs-string">"Episode"</span> + IntToString(lv_episodeNumber)))
+</code></pre>
+<h4 id="modsmissionpacksnovacampaignsc2mod"><a class="markdownIt-Anchor" href="#modsmissionpacksnovacampaignsc2mod">#</a> mods/missionpacks/novacampaign.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/novacampaign.sc2mod/base.sc2data/LibNCST.galaxy#L1274">LibNCST.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1274</span>
+CutsceneAddGlobalFilter(libNovC_gf_NC_LocationCutsceneFilter(lp_newLocation))
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

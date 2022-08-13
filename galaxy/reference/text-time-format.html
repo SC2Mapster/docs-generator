@@ -1,0 +1,442 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Convert Time To Text / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Convert Time To Text"/>
+                <meta property="og:description" content="Convert a time value, in seconds, to text using one of various formats
+
+Returns: text"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="convert-time-to-text"><a class="markdownIt-Anchor" href="#convert-time-to-text">#</a> Convert Time To Text</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Text(<strong>seconds</strong> seconds) using <strong>format</strong> format<br>
+<em>Flags</em> — <code>Native</code> | <code>Function</code></p>
+</blockquote>
+<p>Convert a time value, in seconds, to text using one of various formats</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>text</code> — Format</li>
+<li><code>int</code> — Seconds</li>
+</ul>
+<p>Returns — <code>text</code></p>
+<pre class="hljs"><code><span class="hljs-function">native text <span class="hljs-title">TextTimeFormat</span><span class="hljs-params">(text inFormat, <span class="hljs-keyword">int</span> inSecs)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#string-formatting">String / Formatting</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>text</code> — <strong><a href="/galaxy/reference/text-time-format">Convert Time To Text</a></strong> — ( TextTimeFormat )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> — <strong><a href="/galaxy/reference/string-case">Convert String Case</a></strong> — ( StringCase )</li>
+<li><em><strong>[F]</strong></em> — <code>text</code> — <strong><a href="/galaxy/reference/text-case">Convert Text Case</a></strong> — ( TextCase )</li>
+<li><em><strong>[F]</strong></em> — <code>text</code> — <strong><a href="/galaxy/reference/string-external">Convert Game Text</a></strong> — ( StringExternal )</li>
+<li><em><strong>[F]</strong></em> — <code>text</code> — <strong><a href="/galaxy/reference/string-external-hotkey">Convert Game Hotkey</a></strong> — ( StringExternalHotkey )</li>
+<li><em><strong>[F]</strong></em> — <code>text</code> — <strong><a href="/galaxy/reference/string-external-asset">Convert Game Asset</a></strong> — ( StringExternalAsset )</li>
+<li><em><strong>[F]</strong></em> — <code>text</code> — <strong><a href="/galaxy/reference/text-with-color">Text With Color</a></strong> — ( TextWithColor )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/text-expression-set-token">Set Text Expression Token</a></strong> — ( TextExpressionSetToken )</li>
+<li><em><strong>[F]</strong></em> — <code>text</code> — <strong><a href="/galaxy/reference/text-expression-assemble">Text Expression</a></strong> — ( TextExpressionAssemble )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/challenges/economy.sc2map/MapScript.galaxy#L165">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L165</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;min2/&gt;:&lt;sec2/&gt;"</span>), lp_score)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L170</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;min2/&gt;:&lt;sec2/&gt;"</span>), <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L471</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;mintotal/&gt;:&lt;sec2/&gt;"</span>), gv_finalScore)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1317</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;min2/&gt;:&lt;sec2/&gt;"</span>), gv_finalScore)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1323</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;min2/&gt;:&lt;sec2/&gt;"</span>), gv_previousScore)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1334</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;min2/&gt;:&lt;sec2/&gt;"</span>), gv_finalScore)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L165</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;min2/&gt;:&lt;sec2/&gt;"</span>), lp_score)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L170</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;min2/&gt;:&lt;sec2/&gt;"</span>), <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L471</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;mintotal/&gt;:&lt;sec2/&gt;"</span>), gv_finalScore)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1317</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;min2/&gt;:&lt;sec2/&gt;"</span>), gv_finalScore)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1323</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;min2/&gt;:&lt;sec2/&gt;"</span>), gv_previousScore)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1334</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;min2/&gt;:&lt;sec2/&gt;"</span>), gv_finalScore)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5072</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;mintotal/&gt;:&lt;sec2/&gt;"</span>), FixedToInt(TimerGetRemaining(gv_s3EscapeTimer)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5084</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;mintotal/&gt;:&lt;sec2/&gt;"</span>), FixedToInt(TimerGetRemaining(gv_s3EscapeTimer)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2376</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;sectotal/&gt;"</span>), FixedToInt(lv_timetoTarget))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L436</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;sectotal/&gt;"</span>), FixedToInt(lp_channelTimeRemaining))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10376</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;mintotal/&gt;:&lt;sec2/&gt;"</span>), FixedToInt(gv_lowestLockDownTime))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6872</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;mintotal/&gt;:&lt;sec2/&gt;"</span>), FixedToInt(TimerGetElapsed(gv_achievementPrisonDeckTimedRunTimer)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2872</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;mintotal/&gt;:&lt;sec2/&gt;"</span>), FixedToInt(UnitAbilityGetCooldown(gv_chrysalis, <span class="hljs-string">"PrimalSpawning"</span>, <span class="hljs-string">"Abil/PrimalSpawning"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4625</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;mintotal/&gt;:&lt;sec2/&gt;"</span>), FixedToInt(gv_victoryStatTyrannozorLifeTimer))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9037</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;mintotal/&gt;:&lt;sec2/&gt;"</span>), FixedToInt(TimerGetElapsed(gv_yagdraTimer)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9038</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;mintotal/&gt;:&lt;sec2/&gt;"</span>), FixedToInt(TimerGetElapsed(gv_kraithTimer)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9039</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;mintotal/&gt;:&lt;sec2/&gt;"</span>), FixedToInt(TimerGetElapsed(gv_slivanTimer)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9040</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;mintotal/&gt;:&lt;sec2/&gt;"</span>), FixedToInt(TimerGetElapsed(gv_zurvanTimer)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2376</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;sectotal/&gt;"</span>), FixedToInt(lv_timetoTarget))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L436</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;sectotal/&gt;"</span>), FixedToInt(lp_channelTimeRemaining))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10376</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;mintotal/&gt;:&lt;sec2/&gt;"</span>), FixedToInt(gv_lowestLockDownTime))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6872</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;mintotal/&gt;:&lt;sec2/&gt;"</span>), FixedToInt(TimerGetElapsed(gv_achievementPrisonDeckTimedRunTimer)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2872</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;mintotal/&gt;:&lt;sec2/&gt;"</span>), FixedToInt(UnitAbilityGetCooldown(gv_chrysalis, <span class="hljs-string">"PrimalSpawning"</span>, <span class="hljs-string">"Abil/PrimalSpawning"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4625</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;mintotal/&gt;:&lt;sec2/&gt;"</span>), FixedToInt(gv_victoryStatTyrannozorLifeTimer))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9037</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;mintotal/&gt;:&lt;sec2/&gt;"</span>), FixedToInt(TimerGetElapsed(gv_yagdraTimer)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9038</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;mintotal/&gt;:&lt;sec2/&gt;"</span>), FixedToInt(TimerGetElapsed(gv_kraithTimer)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9039</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;mintotal/&gt;:&lt;sec2/&gt;"</span>), FixedToInt(TimerGetElapsed(gv_slivanTimer)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9040</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;mintotal/&gt;:&lt;sec2/&gt;"</span>), FixedToInt(TimerGetElapsed(gv_zurvanTimer)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5072</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;mintotal/&gt;:&lt;sec2/&gt;"</span>), FixedToInt(TimerGetRemaining(gv_s3EscapeTimer)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5084</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;mintotal/&gt;:&lt;sec2/&gt;"</span>), FixedToInt(TimerGetRemaining(gv_s3EscapeTimer)))
+</code></pre>
+<h4 id="campaignsswarmstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmstorysc2campaign">#</a> campaigns/swarmstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstory.sc2campaign/base.sc2data/TriggerLibs/SwarmCampaignLib.galaxy#L462">SwarmCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L462</span>
+TextTimeFormat(StringExternal(<span class="hljs-string">"Param/Value/lib_SwaC_2015A005"</span>), lp_second)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L465</span>
+TextTimeFormat(StringExternal(<span class="hljs-string">"Param/Value/lib_SwaC_BB62DA99"</span>), lp_second)
+</code></pre>
+<h4 id="campaignsvoidsc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidsc2campaign">#</a> campaigns/void.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/void.sc2campaign/base.sc2maps/maps/campaign/void/pkorhal01.sc2map/MapScript.galaxy#L4194">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4194</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;mintotal/&gt;:&lt;sec2/&gt;"</span>), FixedToInt(gv_lowestTimeToImpact))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4194</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;mintotal/&gt;:&lt;sec2/&gt;"</span>), FixedToInt(gv_lowestTimeToImpact))
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignLib.galaxy#L8509">VoidCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L8509</span>
+TextTimeFormat(StringExternal(<span class="hljs-string">"Param/Value/lib_VoiC_A4F1A203"</span>), lp_second)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8512</span>
+TextTimeFormat(StringExternal(<span class="hljs-string">"Param/Value/lib_VoiC_4E67BE7A"</span>), lp_second)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign-2"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign-2">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignUILib.galaxy#L4517">VoidCampaignUILib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4517</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;sectotal/&gt;"</span>), DataTableGetInt(<span class="hljs-literal">true</span>, libVCUI_gf_PU_ProgressBarUnit_DataNameOld(lp_unit, libVCUI_ge_PU_ProgressBarUnitStoredValuesOld_CurValue)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4774</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;mintotal/&gt;:&lt;sec2/&gt;"</span>), lv_curValue)
+</code></pre>
+<h4 id="modsheroesbrawlmodsarenamodemodspunisherarenastormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsarenamodemodspunisherarenastormmod">#</a> mods/heroesbrawlmods/arenamodemods/punisherarena.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/arenamodemods/punisherarena.stormmod/base.stormdata/LibAMPU.galaxy#L2246">LibAMPU.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2246</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;mintotal/&gt;:&lt;sec2/&gt;"</span>), FixedToInt(TimerGetRemaining(lv_spawnTimer)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2309</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;mintotal/&gt;:&lt;sec2/&gt;"</span>), FixedToInt(TimerGetRemaining(lv_respawnTimer)))
+</code></pre>
+<h4 id="modsheroesbrawlmodsarenamodemodstrialgroundsstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsarenamodemodstrialgroundsstormmod">#</a> mods/heroesbrawlmods/arenamodemods/trialgrounds.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/arenamodemods/trialgrounds.stormmod/base.stormdata/LibAMVS.galaxy#L601">LibAMVS.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L601</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;sectotal/&gt;"</span>), FixedToInt(TimerGetRemaining(lp_timer)))
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodsblackheartsrevengestormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodsblackheartsrevengestormmod">#</a> mods/heroesbrawlmods/brawlmapmods/blackheartsrevenge.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/blackheartsrevenge.stormmod/base.stormdata/LibMDoE.galaxy#L848">LibMDoE.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L848</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;sectotal/&gt;"</span>), FixedToInt(TimerGetDuration(lv_cannonActivationWarningTimer)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L850</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;sectotal/&gt;"</span>), FixedToInt(TimerGetDuration(lv_cannonActivationWarningTimer)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L857</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;sectotal/&gt;"</span>), FixedToInt(TimerGetRemaining(lv_cannonActivationWarningTimer)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L859</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;sectotal/&gt;"</span>), FixedToInt(TimerGetRemaining(lv_cannonActivationWarningTimer)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1453</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;min2/&gt;:&lt;sec2/&gt;"</span>), lp_progressUnit)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1459</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;min2/&gt;:&lt;sec2/&gt;"</span>), lp_progressUnit)
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodscoopdeadmansstandstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodscoopdeadmansstandstormmod">#</a> mods/heroesbrawlmods/brawlmapmods/coop/deadmansstand.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/coop/deadmansstand.stormmod/base.stormdata/LibPEB1.galaxy#L3990">LibPEB1.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3990</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;min2/&gt;:&lt;sec2/&gt;"</span>), FixedToInt(TimerGetRemaining(libPEB1_gv_creepCamps[lp_campIndex].lv_respawnTimer)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3994</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;min2/&gt;:&lt;sec2/&gt;"</span>), FixedToInt(TimerGetRemaining(libPEB1_gv_creepCamps[lp_campIndex].lv_respawnTimer)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4212</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;mintotal/&gt;:&lt;sec2/&gt;"</span>), FixedToInt(TimerGetRemaining(lp_timerPanelTimer)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4358</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;mintotal/&gt;:&lt;sec2/&gt;"</span>), FixedToInt(TimerGetRemaining(lp_timerPanelTimer)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12036</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;hour2/&gt;:&lt;min2/&gt;:&lt;sec2/&gt;"</span>), libPEB1_gv_victoryTime)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12164</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;hour2/&gt;:&lt;min2/&gt;:&lt;sec2/&gt;"</span>), FixedToInt(lv_time))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2358</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;mintotal/&gt;:&lt;sec2/&gt;"</span>), FixedToInt(TimerGetRemaining(lp_timerPanelTimer)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11201</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;hour2/&gt;:&lt;min2/&gt;:&lt;sec2/&gt;"</span>), libPEB1_gv_victoryTime)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11290</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;mintotal/&gt;:&lt;sec2/&gt;"</span>), FixedToInt(libPEB1_gv_goldTime_C))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11293</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;mintotal/&gt;:&lt;sec2/&gt;"</span>), FixedToInt((libPEB1_gv_silverTime_C - libPEB1_gv_goldTime_C)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11330</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;mintotal/&gt;:&lt;sec2/&gt;"</span>), CeilingI((libPEB1_gv_goldTime_C - TimerGetElapsed(libGame_gv_gameTimer))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11335</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;mintotal/&gt;:&lt;sec2/&gt;"</span>), <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11339</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;mintotal/&gt;:&lt;sec2/&gt;"</span>), FixedToInt((libPEB1_gv_silverTime_C - libPEB1_gv_goldTime_C)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11344</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;mintotal/&gt;:&lt;sec2/&gt;"</span>), CeilingI((libPEB1_gv_silverTime_C - TimerGetElapsed(libGame_gv_gameTimer))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11348</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;mintotal/&gt;:&lt;sec2/&gt;"</span>), <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11377</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;min2/&gt;:&lt;sec2/&gt;"</span>), FixedToInt(TimerGetElapsed(libGame_gv_gameTimer)))
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodscooppvebrawluimodstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodscooppvebrawluimodstormmod">#</a> mods/heroesbrawlmods/brawlmapmods/coop/pvebrawluimod.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/coop/pvebrawluimod.stormmod/base.stormdata/LibPBUI.galaxy#L448">LibPBUI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L448</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;sectotal/&gt;"</span>), FixedToInt(TimerGetRemaining(libPBUI_gv_curateHeroSelectionSetting.lv_countdownTimer)))
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodscooppvemodstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodscooppvemodstormmod">#</a> mods/heroesbrawlmods/brawlmapmods/coop/pvemod.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/coop/pvemod.stormmod/base.stormdata/LibPVEU.galaxy#L471">LibPVEU.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L471</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;sectotal/&gt;"</span>), FixedToInt(TimerGetRemaining(libPVEU_gv_pvEUICurateHeroSelectionSetting.lv_countdownTimer)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2159</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;min2/&gt;:&lt;sec2/&gt;"</span>), FixedToInt(lv_time))
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodshanamurapayloadpushstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodshanamurapayloadpushstormmod">#</a> mods/heroesbrawlmods/brawlmapmods/hanamurapayloadpush.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/hanamurapayloadpush.stormmod/base.stormdata/LibMHPP.galaxy#L1415">LibMHPP.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1415</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;min2/&gt;:&lt;sec2/&gt;"</span>), FixedToInt(TimerGetRemaining(libGame_gv_openTheGatesTimer)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1418</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;min2/&gt;:&lt;sec2/&gt;"</span>), FixedToInt(TimerGetRemaining(libMHPP_gv_mHPP_DefenseTimeToWinTimer)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1460</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;min2/&gt;:&lt;sec2/&gt;"</span>), FixedToInt(TimerGetRemaining(libMHPP_gv_mHPP_DefenseTimeToWinTimer)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1989</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;mintotal/&gt;:&lt;sec2/&gt;"</span>), FixedToInt(libMHPP_gv_mHPP_CheckPointReachedBonusTime_C))
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodslunarfestivalstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodslunarfestivalstormmod">#</a> mods/heroesbrawlmods/brawlmapmods/lunarfestival.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/lunarfestival.stormmod/base.stormdata/LibLNYF.galaxy#L1736">LibLNYF.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1736</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;min2/&gt;:&lt;sec2/&gt;"</span>), <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1737</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;min2/&gt;:&lt;sec2/&gt;"</span>), <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1882</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;min2/&gt;:&lt;sec2/&gt;"</span>), FixedToInt(TimerGetElapsed(libGame_gv_gameTimer)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1883</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;min2/&gt;:&lt;sec2/&gt;"</span>), FixedToInt(TimerGetElapsed(libGame_gv_gameTimer)))
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodsonelaneonelanemapsharedstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodsonelaneonelanemapsharedstormmod">#</a> mods/heroesbrawlmods/brawlmapmods/onelane/onelanemapshared.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/onelane/onelanemapshared.stormmod/base.stormdata/LibOLMS.galaxy#L50">LibOLMS.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L50</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;min2/&gt;:&lt;sec2/&gt;"</span>), FixedToInt(UnitBehaviorDuration(lp_unit, <span class="hljs-string">"GenerateRegenGlobe"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L53</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;min2/&gt;:&lt;sec2/&gt;"</span>), FixedToInt(UnitBehaviorDuration(lp_unit, <span class="hljs-string">"GenerateRegenGlobe"</span>)))
+</code></pre>
+<h4 id="modsheroesdatastormmod"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/GameLib.galaxy#L11225">GameLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L11225</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;min2/&gt;:&lt;sec2/&gt;"</span>), FixedToInt(TimerGetElapsed(libGame_gv_gameTimer)))
+</code></pre>
+<h4 id="modsheroesdatastormmod-2"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-2">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/MapMechanicsLib.galaxy#L1067">MapMechanicsLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1067</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;mintotal/&gt;:&lt;sec2/&gt;"</span>), FixedToInt(TimerGetRemaining(libMapM_gv_jungleCreepCamps[lp_camp].lv_stateCreepRespawnTimer)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1070</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;mintotal/&gt;:&lt;sec2/&gt;"</span>), FixedToInt(TimerGetRemaining(libMapM_gv_jungleCreepCamps[lp_camp].lv_stateCreepRespawnTimer)))
+</code></pre>
+<h4 id="modsheroesdatastormmod-3"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-3">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/SupportLib.galaxy#L455">SupportLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L455</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;min2/&gt;:&lt;sec2/&gt;"</span>), FixedToInt(libSprt_gv_statTrackingStartTime[lp_reportPlayer]))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L456</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;min2/&gt;:&lt;sec2/&gt;"</span>), FixedToInt(TimerGetElapsed(libGame_gv_gameTimer)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8079</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;min2/&gt;:&lt;sec2/&gt;"</span>), FixedToInt(TimerGetElapsed(libGame_gv_gameTimer)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8101</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;min2/&gt;:&lt;sec2/&gt;"</span>), FixedToInt((lv_newTime * <span class="hljs-number">60.0</span>)))
+</code></pre>
+<h4 id="modsheroesdatastormmod-4"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-4">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/UILib.galaxy#L4705">UILib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4705</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;mintotal/&gt;:&lt;sec2/&gt;"</span>), lp_remainingSeconds)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4711</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;mintotal/&gt;:&lt;sec2/&gt;"</span>), lp_remainingSeconds)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4750</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;mintotal/&gt;:&lt;sec2/&gt;"</span>), lp_remainingSeconds)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4831</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;mintotal/&gt;:&lt;sec2/&gt;"</span>), lp_remainingSeconds)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4875</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;mintotal/&gt;:&lt;sec2/&gt;"</span>), lp_remainingSeconds)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5028</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;mintotal/&gt;:&lt;sec2/&gt;"</span>), lp_remainingSeconds)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5159</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;mintotal/&gt;:&lt;sec2/&gt;"</span>), lp_remainingTime)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5160</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;mintotal/&gt;:&lt;sec2/&gt;"</span>), lp_remainingTime)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5165</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;mintotal/&gt;:&lt;sec2/&gt;"</span>), lp_remainingTime)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5169</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;mintotal/&gt;:&lt;sec2/&gt;"</span>), lp_remainingTime)
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodsalteracpassstormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodsalteracpassstormmod">#</a> mods/heroesmapmods/battlegroundmapmods/alteracpass.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/alteracpass.stormmod/base.stormdata/LibMMAP.galaxy#L1242">LibMMAP.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1242</span>
+TextTimeFormat(StringToText(<span class="hljs-string">"&lt;mintotal/&gt;:&lt;sec2/&gt;"</span>), FixedToInt(TimerGetRemaining(lp_timer)))
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

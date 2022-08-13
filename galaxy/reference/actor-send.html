@@ -1,0 +1,405 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Send Actor Message / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Send Actor Message"/>
+                <meta property="og:description" content="Sends an actor message to an actor.  An actor message will perform an action and/or trigger an event on the actor it is sent to."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="send-actor-message"><a class="markdownIt-Anchor" href="#send-actor-message">#</a> Send Actor Message</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Send message <strong>message</strong> to actor <strong>actor</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Sends an actor message to an actor.  An actor message will perform an action and/or trigger an event on the actor it is sent to.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>actor</code> — Actor</li>
+<li><code>string</code> <em>[ actormsg ]</em> — Message</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">ActorSend</span><span class="hljs-params">(actor a, <span class="hljs-built_in">string</span> msg)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#actor-send-actor-messages">Actor / Send Actor Messages</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/actor-send">Send Actor Message</a></strong> — ( ActorSend )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/actor-send-as-text">Send Actor Message As Text</a></strong> — ( ActorSendAsText )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-send-actor-message-to-unit">Send Actor Message To Unit</a></strong> — ( libNtve_gf_SendActorMessageToUnit )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/actor-scope-send">Send Actor Message To Scope</a></strong> — ( ActorScopeSend )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-actor-region-send-simple">Send Actor Message To Actor Region</a></strong> — ( libNtve_gf_ActorRegionSendSimple )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/actor-region-send">Send Actor Message To Actor Region With Filters</a></strong> — ( ActorRegionSend )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-send-actor-message-to-game-region">Send Actor Message To Game Region</a></strong> — ( libNtve_gf_SendActorMessageToGameRegion )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-send-actor-message-to-game-region-with-filters">Send Actor Message To Game Region With Filters</a></strong> — ( libNtve_gf_SendActorMessageToGameRegionWithFilters )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/actor-send-to">Send Actor Message Via Name</a></strong> — ( ActorSendTo )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/actor-send-to-as-text">Send Actor Message As Text Via Name</a></strong> — ( ActorSendToAsText )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/challenges/economy.sc2map/MapScript.galaxy#L795">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L795</span>
+ActorSend(libNtve_gf_ActorLastCreated(), <span class="hljs-string">"SetOpacity 0.300000"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L803</span>
+ActorSend(libNtve_gf_ActorLastCreated(), <span class="hljs-string">"SetOpacity 0.300000"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L811</span>
+ActorSend(libNtve_gf_ActorLastCreated(), <span class="hljs-string">"SetOpacity 0.300000"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4707</span>
+ActorSend(lv_birth, <span class="hljs-string">"SetTeamColor 0,66,255 0,66,255"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7200</span>
+ActorSend(libNtve_gf_ActorLastCreated(), libNtve_gf_SetScale(<span class="hljs-number">1.0</span>, <span class="hljs-number">1.0</span>, <span class="hljs-number">1.0</span>, <span class="hljs-number">0.0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7201</span>
+ActorSend(libNtve_gf_ActorLastCreated(), libNtve_gf_SetHeight(gv_c_PlaneHeight))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7257</span>
+ActorSend(libNtve_gf_ActorLastCreated(), libNtve_gf_SetHeight(lv_height))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7258</span>
+ActorSend(libNtve_gf_ActorLastCreated(), libNtve_gf_SetScale(<span class="hljs-number">2.0</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">0.0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7263</span>
+ActorSend(libNtve_gf_ActorLastCreated(), libNtve_gf_SetHeight(lv_height))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L817</span>
+ActorSend(gv_planetCrackerHoleAlpha, <span class="hljs-string">"SetVisibility"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L818</span>
+ActorSend(gv_planetCrackerHoleBeta, <span class="hljs-string">"SetVisibility"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L819</span>
+ActorSend(gv_planetCrackerHoleGamma, <span class="hljs-string">"SetVisibility"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L820</span>
+ActorSend(gv_planetCrackerHoleOmega, <span class="hljs-string">"SetVisibility"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L821</span>
+ActorSend(gv_planetCrackerHolePlayerBase, <span class="hljs-string">"SetVisibility"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1322</span>
+ActorSend(gv_planetCrackerHoleAlpha, <span class="hljs-string">"SetVisibility 1"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1323</span>
+ActorSend(gv_planetCrackerHoleAlpha, <span class="hljs-string">"Signal Purified"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1432</span>
+ActorSend(gv_planetCrackerHoleBeta, <span class="hljs-string">"SetVisibility 1"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1433</span>
+ActorSend(gv_planetCrackerHoleBeta, <span class="hljs-string">"Signal Purified"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1546</span>
+ActorSend(gv_planetCrackerHoleGamma, <span class="hljs-string">"SetVisibility 1"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4558</span>
+ActorSend(libNtve_gf_ActorLastCreated(), <span class="hljs-string">"SetScale 0.500000"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4561</span>
+ActorSend(libNtve_gf_ActorLastCreated(), <span class="hljs-string">"SetScale 0.500000"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L347</span>
+ActorSend(lv_actorRegion, <span class="hljs-string">"Destroy"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L955</span>
+ActorSend(ActorFromDoodad(DoodadFromId(<span class="hljs-number">235</span>)), libNtve_gf_ModelSwap(<span class="hljs-string">"HybridHoldingCellDeath"</span>, <span class="hljs-number">0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L956</span>
+ActorSend(ActorFromDoodad(DoodadFromId(<span class="hljs-number">235</span>)), <span class="hljs-string">"AnimPlay '' Death PlayForever"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L966</span>
+ActorSend(gv_outhouse, <span class="hljs-string">"Destroy"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2395</span>
+ActorSend(ActorFromDoodad(DoodadFromId(<span class="hljs-number">2469</span>)), <span class="hljs-string">"AnimBracketStart Rise Stand,Work,Start Stand,Work Stand,Work,End"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2423</span>
+ActorSend(ActorFromDoodad(DoodadFromId(<span class="hljs-number">2467</span>)), <span class="hljs-string">"AnimBracketStart Rise Stand,Work,Start Stand,Work Stand,Work,End"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2451</span>
+ActorSend(ActorFromDoodad(DoodadFromId(<span class="hljs-number">2466</span>)), <span class="hljs-string">"AnimBracketStart Rise Stand,Work,Start Stand,Work Stand,Work,End"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2479</span>
+ActorSend(ActorFromDoodad(DoodadFromId(<span class="hljs-number">1045</span>)), <span class="hljs-string">"AnimBracketStart Rise Stand,Work,Start Stand,Work Stand,Work,End"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2507</span>
+ActorSend(ActorFromDoodad(DoodadFromId(<span class="hljs-number">464</span>)), <span class="hljs-string">"AnimBracketStart Rise Stand,Work,Start Stand,Work Stand,Work,End"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5819</span>
+ActorSend(ActorFromDoodad(DoodadFromId(<span class="hljs-number">2458</span>)), <span class="hljs-string">"AnimBracketStart Work Stand,Work,Start Stand,Work IGNORE"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12015</span>
+ActorSend(ActorFromDoodad(DoodadFromId(<span class="hljs-number">169</span>)), <span class="hljs-string">"AnimBracketStart Rise Stand,Work,Start Stand,Work Stand,Work,End"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4037</span>
+ActorSend(libNtve_gf_ActorLastCreated(), <span class="hljs-string">"SetScale 0.750000"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4047</span>
+ActorSend(libNtve_gf_ActorLastCreated(), <span class="hljs-string">"SetScale 0.750000"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4838</span>
+ActorSend(ActorFrom(<span class="hljs-string">"::global.artifact"</span>), <span class="hljs-string">"SetVisibility 1"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4165</span>
+ActorSend(gv_armoryOutHourse, libNtve_gf_SetFacing(<span class="hljs-number">90.0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4166</span>
+ActorSend(gv_armoryOutHourse, libNtve_gf_SetHeight(<span class="hljs-number">0.4</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4170</span>
+ActorSend(gv_bridgeOutHourse, libNtve_gf_SetFacing(<span class="hljs-number">150.0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4171</span>
+ActorSend(gv_bridgeOutHourse, libNtve_gf_SetHeight(<span class="hljs-number">4.0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8316</span>
+ActorSend(ActorFrom(gv_sOUNDACTOR_Lab_LiquidTanks), <span class="hljs-string">"SoundSetPaused"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8317</span>
+ActorSend(ActorFrom(gv_sOUNDACTOR_Lab_LiquidTanks), <span class="hljs-string">"SoundSetMuted"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8318</span>
+ActorSend(ActorFrom(gv_sOUNDACTOR_Lab_ResearchConsole), <span class="hljs-string">"SoundSetPaused"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8319</span>
+ActorSend(ActorFrom(gv_sOUNDACTOR_Lab_ResearchConsole), <span class="hljs-string">"SoundSetMuted"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8320</span>
+ActorSend(ActorFrom(gv_sOUNDACTOR_Lab_Monitors), <span class="hljs-string">"SoundSetPaused"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8321</span>
+ActorSend(ActorFrom(gv_sOUNDACTOR_Lab_Monitors), <span class="hljs-string">"SoundSetMuted"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L577</span>
+ActorSend(gv_outhouse, <span class="hljs-string">"Destroy"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2220</span>
+ActorSend(ActorFromDoodad(DoodadFromId(<span class="hljs-number">584</span>)), <span class="hljs-string">"Signal DoodadDeath"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3666</span>
+ActorSend(ActorFromDoodad(DoodadFromId(<span class="hljs-number">415</span>)), <span class="hljs-string">"Signal DoodadDeath"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4940</span>
+ActorSend(ActorFromDoodad(DoodadFromId(<span class="hljs-number">256</span>)), <span class="hljs-string">"Signal DoodadDeath"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4179</span>
+ActorSend(gv_com_Actor, <span class="hljs-string">"SetScale 0.600000"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5747</span>
+ActorSend(gv_con_Actor01, <span class="hljs-string">"SetScale 0.600000"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6555</span>
+ActorSend(gv_con_Actor01, <span class="hljs-string">"SetScale 0.600000"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4367</span>
+ActorSend(libNtve_gf_ActorLastCreated(), <span class="hljs-string">"SetScale 0.800000"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3456</span>
+ActorSend(libNtve_gf_ActorLastCreated(), <span class="hljs-string">"SetHeight 3.000000"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L612</span>
+ActorSend(gv_outhouse, <span class="hljs-string">"Destroy"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L762</span>
+ActorSend(lv_crashingDoodad, <span class="hljs-string">"Destroy"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5605</span>
+ActorSend(lv_crashBarracks01, <span class="hljs-string">"Destroy"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5665</span>
+ActorSend(lv_crashBarracks02, <span class="hljs-string">"Destroy"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5725</span>
+ActorSend(lv_crashFactory01, <span class="hljs-string">"Destroy"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5785</span>
+ActorSend(lv_crashFactory02, <span class="hljs-string">"Destroy"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5845</span>
+ActorSend(lv_crashBattlecruiser01, <span class="hljs-string">"Destroy"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5905</span>
+ActorSend(lv_crashBattlecruiser02, <span class="hljs-string">"Destroy"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7972</span>
+ActorSend(gv_fire01, <span class="hljs-string">"Destroy"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7973</span>
+ActorSend(gv_fire02, <span class="hljs-string">"Destroy"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7974</span>
+ActorSend(gv_fire03, <span class="hljs-string">"Destroy"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3664</span>
+ActorSend(ActorFromActor(libNtve_gf_MainActorofUnit(auto47B466D3_var), <span class="hljs-string">"HeroIncap"</span>), <span class="hljs-string">"Destroy"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5596</span>
+ActorSend(ActorFromActor(libNtve_gf_MainActorofUnit(autoB9055DE1_var), <span class="hljs-string">"HeroIncap"</span>), <span class="hljs-string">"Destroy"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7532</span>
+ActorSend(ActorFromActor(libNtve_gf_MainActorofUnit(autoA454EC07_var), <span class="hljs-string">"HeroIncap"</span>), <span class="hljs-string">"Destroy"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9637</span>
+ActorSend(ActorFromActor(libNtve_gf_MainActorofUnit(auto29E3CE04_var), <span class="hljs-string">"HeroIncap"</span>), <span class="hljs-string">"Destroy"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10370</span>
+ActorSend(ActorFromActor(libNtve_gf_MainActorofUnit(autoADE5B514_var), <span class="hljs-string">"HeroIncap"</span>), <span class="hljs-string">"Destroy"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11418</span>
+ActorSend(ActorFromActor(libNtve_gf_MainActorofUnit(auto5E71AC3A_var), <span class="hljs-string">"HeroIncap"</span>), <span class="hljs-string">"Destroy"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1497</span>
+ActorSend(ActorFromDoodad(DoodadFromId(<span class="hljs-number">1069</span>)), <span class="hljs-string">"Signal OneTower"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1565</span>
+ActorSend(ActorFromDoodad(DoodadFromId(<span class="hljs-number">1085</span>)), <span class="hljs-string">"Signal OneTower"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1633</span>
+ActorSend(ActorFromDoodad(DoodadFromId(<span class="hljs-number">554</span>)), <span class="hljs-string">"Signal OneTower"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1701</span>
+ActorSend(ActorFromDoodad(DoodadFromId(<span class="hljs-number">1533</span>)), <span class="hljs-string">"Signal OneTower"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5917</span>
+ActorSend(libNtve_gf_MainActorofUnit(autoB87BBE03_var), <span class="hljs-string">"DestroyParticles"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5918</span>
+ActorSend(libNtve_gf_MainActorofUnit(autoB87BBE03_var), <span class="hljs-string">"DestroyRibbons"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L351</span>
+ActorSend(lv_crashingDoodad, <span class="hljs-string">"Destroy"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L620</span>
+ActorSend(ActorFromDoodad(gv_libraryHybrid), <span class="hljs-string">"AnimBracketStart Work Stand,Work,Start Stand,Work Stand,Work,End"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2798</span>
+ActorSend(libNtve_gf_ActorLastCreated(), <span class="hljs-string">"SetOpacity 0.300000"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2831</span>
+ActorSend(libNtve_gf_ActorLastCreated(), <span class="hljs-string">"SetOpacity 0.300000"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6777</span>
+ActorSend(ActorFromDoodad(DoodadFromId(<span class="hljs-number">120</span>)), <span class="hljs-string">"AnimBracketStart WorkOn Birth Stand,Work Death"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7091</span>
+ActorSend(ActorFromDoodad(gv_libraryHybrid), <span class="hljs-string">"AnimBracketStop Work"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7119</span>
+ActorSend(libNtve_gf_MainActorofUnit(gv_preserverPrison01), <span class="hljs-string">"AnimBracketStart Work Stand,Work,Start Stand,Work Stand,Work,End"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7121</span>
+ActorSend(libNtve_gf_MainActorofUnit(gv_preserverPrison02), <span class="hljs-string">"AnimBracketStart Work Stand,Work,Start Stand,Work Stand,Work,End"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7123</span>
+ActorSend(libNtve_gf_MainActorofUnit(gv_preserverPrison03), <span class="hljs-string">"AnimBracketStart Work Stand,Work,Start Stand,Work Stand,Work,End"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7162</span>
+ActorSend(libNtve_gf_MainActorofUnit(gv_preserverPrison01), <span class="hljs-string">"AnimBracketStop Work"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7164</span>
+ActorSend(libNtve_gf_MainActorofUnit(gv_preserverPrison02), <span class="hljs-string">"AnimBracketStop Work"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L325</span>
+ActorSend(lv_healActor, <span class="hljs-string">"Destroy"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L960</span>
+ActorSend(ActorFromDoodad(DoodadFromId(<span class="hljs-number">482</span>)), <span class="hljs-string">"AnimGroupApply Work Work,Start Work,End"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1021</span>
+ActorSend(ActorFromDoodad(DoodadFromId(<span class="hljs-number">482</span>)), <span class="hljs-string">"AnimGroupRemove Work"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1083</span>
+ActorSend(ActorFromDoodad(DoodadFromId(<span class="hljs-number">482</span>)), <span class="hljs-string">"AnimGroupRemove Work"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1148</span>
+ActorSend(ActorFromDoodad(DoodadFromId(<span class="hljs-number">482</span>)), <span class="hljs-string">"AnimGroupRemove Work"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1210</span>
+ActorSend(ActorFromDoodad(DoodadFromId(<span class="hljs-number">482</span>)), <span class="hljs-string">"AnimGroupRemove Work"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4707</span>
+ActorSend(lv_birth, <span class="hljs-string">"SetTeamColor 0,66,255 0,66,255"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7200</span>
+ActorSend(libNtve_gf_ActorLastCreated(), libNtve_gf_SetScale(<span class="hljs-number">1.0</span>, <span class="hljs-number">1.0</span>, <span class="hljs-number">1.0</span>, <span class="hljs-number">0.0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7201</span>
+ActorSend(libNtve_gf_ActorLastCreated(), libNtve_gf_SetHeight(gv_c_PlaneHeight))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7257</span>
+ActorSend(libNtve_gf_ActorLastCreated(), libNtve_gf_SetHeight(lv_height))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7258</span>
+ActorSend(libNtve_gf_ActorLastCreated(), libNtve_gf_SetScale(<span class="hljs-number">2.0</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">0.0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7263</span>
+ActorSend(libNtve_gf_ActorLastCreated(), libNtve_gf_SetHeight(lv_height))
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

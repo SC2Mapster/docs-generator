@@ -1,0 +1,225 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Set Data Conversation Camera / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Set Data Conversation Camera"/>
+                <meta property="og:description" content="Sets a camera to be used and a trigger to be run when the specified camera state and character state are reached."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="set-data-conversation-camera"><a class="markdownIt-Anchor" href="#set-data-conversation-camera">#</a> Set Data Conversation Camera</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Set conversation <strong>characterStateIndex|Character State</strong> <strong>cameraStateIndex|Camera State</strong> to <strong>camera</strong>, and run <strong>trigger</strong> when applied (<strong>waitOption|Wait/Don’t Wait</strong> until done)<br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Sets a camera to be used and a trigger to be run when the specified camera state and character state are reached.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>string</code> <em>[ convstateindex ]</em> — Camera State Index</li>
+<li><code>string</code> <em>[ convcharacter ]</em> — Character State Index</li>
+<li><code>camerainfo</code> — Camera</li>
+<li><code>trigger</code> — Trigger</li>
+<li><code>bool</code> <em>[ preset::<a href="/galaxy/reference/preset-trigger-wait-option">Trigger_Wait_Option</a> ]</em> — Wait Option</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">ConversationDataRegisterCamera</span><span class="hljs-params">(
+	<span class="hljs-built_in">string</span> camIndex,
+	<span class="hljs-built_in">string</span> charIndex,
+	camerainfo c,
+	trigger t,
+	<span class="hljs-keyword">bool</span> wait,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#conversation-data-conversations">Conversation / Data Conversations</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/conversation-data-state-set-value">Set Data Conversation State</a></strong> — ( ConversationDataStateSetValue )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/conversation-data-register-portrait">Set Data Conversation Portrait</a></strong> — ( ConversationDataRegisterPortrait )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/conversation-data-register-unit">Set Data Conversation Unit</a></strong> — ( ConversationDataRegisterUnit )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/conversation-data-register-camera">Set Data Conversation Camera</a></strong> — ( ConversationDataRegisterCamera )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/conversation-data-run">Run Data Conversation</a></strong> — ( ConversationDataRun )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/conversation-data-stop">Stop Data Conversation</a></strong> — ( ConversationDataStop )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-conversation-state-changed">Data Conversation State Changed</a></strong> — ( TriggerAddEventConversationStateChanged )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> <em>[ convstateindex ]</em> — <strong><a href="/galaxy/reference/event-conversation-state">Triggering Conversation State</a></strong> — ( EventConversationState )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/tstory01.sc2map/MapScript.galaxy#L11649">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L11649</span>
+ConversationDataRegisterCamera(<span class="hljs-string">"Cameras|Master"</span>, null, null, gt_ConvoCameraTriggerMaster, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11650</span>
+ConversationDataRegisterCamera(<span class="hljs-string">"Cameras|CustomCamera01"</span>, null, null, gt_ConvoCameraTriggerCustom, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11651</span>
+ConversationDataRegisterCamera(<span class="hljs-string">"Cameras|RaynorMedium"</span>, null, null, gt_ConvoCameraTriggerRaynorMedium, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11652</span>
+ConversationDataRegisterCamera(<span class="hljs-string">"Cameras|RaynorCloseUp"</span>, null, null, gt_ConvoCameraTriggerRaynorCloseup, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11653</span>
+ConversationDataRegisterCamera(<span class="hljs-string">"Cameras|Speaker2Medium"</span>, null, null, gt_ConvoCameraTriggerCharacter1Medium, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11654</span>
+ConversationDataRegisterCamera(<span class="hljs-string">"Cameras|Speaker2CloseUp"</span>, null, null, gt_ConvoCameraTriggerCharacter1Closeup, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11655</span>
+ConversationDataRegisterCamera(<span class="hljs-string">"Cameras|Speaker3Medium"</span>, null, null, gt_ConvoCameraTriggerCharacter2Medium, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11656</span>
+ConversationDataRegisterCamera(<span class="hljs-string">"Cameras|Speaker3CloseUp"</span>, null, null, gt_ConvoCameraTriggerCharacter2Closeup, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11660</span>
+ConversationDataRegisterCamera(<span class="hljs-string">"Cameras|CloseUp"</span>, lv_characterIndex1, null, gt_ConvoCameraTriggerCharacter1Closeup, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11661</span>
+ConversationDataRegisterCamera(<span class="hljs-string">"Cameras|Medium"</span>, lv_characterIndex1, null, gt_ConvoCameraTriggerCharacter1Medium, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11649</span>
+ConversationDataRegisterCamera(<span class="hljs-string">"Cameras|Master"</span>, null, null, gt_ConvoCameraTriggerMaster, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11650</span>
+ConversationDataRegisterCamera(<span class="hljs-string">"Cameras|CustomCamera01"</span>, null, null, gt_ConvoCameraTriggerCustom, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11651</span>
+ConversationDataRegisterCamera(<span class="hljs-string">"Cameras|RaynorMedium"</span>, null, null, gt_ConvoCameraTriggerRaynorMedium, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11652</span>
+ConversationDataRegisterCamera(<span class="hljs-string">"Cameras|RaynorCloseUp"</span>, null, null, gt_ConvoCameraTriggerRaynorCloseup, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11653</span>
+ConversationDataRegisterCamera(<span class="hljs-string">"Cameras|Speaker2Medium"</span>, null, null, gt_ConvoCameraTriggerCharacter1Medium, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11654</span>
+ConversationDataRegisterCamera(<span class="hljs-string">"Cameras|Speaker2CloseUp"</span>, null, null, gt_ConvoCameraTriggerCharacter1Closeup, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11655</span>
+ConversationDataRegisterCamera(<span class="hljs-string">"Cameras|Speaker3Medium"</span>, null, null, gt_ConvoCameraTriggerCharacter2Medium, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11656</span>
+ConversationDataRegisterCamera(<span class="hljs-string">"Cameras|Speaker3CloseUp"</span>, null, null, gt_ConvoCameraTriggerCharacter2Closeup, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11660</span>
+ConversationDataRegisterCamera(<span class="hljs-string">"Cameras|CloseUp"</span>, lv_characterIndex1, null, gt_ConvoCameraTriggerCharacter1Closeup, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11661</span>
+ConversationDataRegisterCamera(<span class="hljs-string">"Cameras|Medium"</span>, lv_characterIndex1, null, gt_ConvoCameraTriggerCharacter1Medium, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="campaignsswarmstoryutilsc2mod"><a class="markdownIt-Anchor" href="#campaignsswarmstoryutilsc2mod">#</a> campaigns/swarmstoryutil.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstoryutil.sc2mod/base.sc2data/Lib281DEC45.galaxy#L5126">Lib281DEC45.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L5126</span>
+ConversationDataRegisterCamera(<span class="hljs-string">"Cameras|Medium"</span>, lib281DEC45_gv_zSS_Characters[lib281DEC45_gf_ZSS_CharacterIndex(<span class="hljs-string">"Kerrigan"</span>)].lv_conversationLink, null, lib281DEC45_gt_UseKerriganCameraMedium, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5127</span>
+ConversationDataRegisterCamera(<span class="hljs-string">"Cameras|MediumListener"</span>, lib281DEC45_gv_zSS_Characters[lib281DEC45_gf_ZSS_CharacterIndex(<span class="hljs-string">"Kerrigan"</span>)].lv_conversationLink, null, lib281DEC45_gt_UseKerriganCameraMediumListener, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5128</span>
+ConversationDataRegisterCamera(<span class="hljs-string">"Cameras|Far"</span>, lib281DEC45_gv_zSS_Characters[lib281DEC45_gf_ZSS_CharacterIndex(<span class="hljs-string">"Kerrigan"</span>)].lv_conversationLink, null, lib281DEC45_gt_UseKerriganCameraFar, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5129</span>
+ConversationDataRegisterCamera(<span class="hljs-string">"Cameras|FarListener"</span>, lib281DEC45_gv_zSS_Characters[lib281DEC45_gf_ZSS_CharacterIndex(<span class="hljs-string">"Kerrigan"</span>)].lv_conversationLink, null, lib281DEC45_gt_UseKerriganCameraFarListener, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5130</span>
+ConversationDataRegisterCamera(<span class="hljs-string">"Cameras|CloseUp"</span>, lib281DEC45_gv_zSS_Characters[lib281DEC45_gf_ZSS_CharacterIndex(<span class="hljs-string">"Kerrigan"</span>)].lv_conversationLink, null, lib281DEC45_gt_UseKerriganCameraCloseUp, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5131</span>
+ConversationDataRegisterCamera(<span class="hljs-string">"Cameras|CloseUpListener"</span>, lib281DEC45_gv_zSS_Characters[lib281DEC45_gf_ZSS_CharacterIndex(<span class="hljs-string">"Kerrigan"</span>)].lv_conversationLink, null, lib281DEC45_gt_UseKerriganCameraCloseUpListener, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5132</span>
+ConversationDataRegisterCamera(<span class="hljs-string">"Cameras|Shoulder"</span>, lib281DEC45_gv_zSS_Characters[lib281DEC45_gf_ZSS_CharacterIndex(<span class="hljs-string">"Kerrigan"</span>)].lv_conversationLink, null, lib281DEC45_gt_UseKerriganCameraShoulder, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5133</span>
+ConversationDataRegisterCamera(<span class="hljs-string">"Cameras|ReverseShoulder"</span>, lib281DEC45_gv_zSS_Characters[lib281DEC45_gf_ZSS_CharacterIndex(<span class="hljs-string">"Kerrigan"</span>)].lv_conversationLink, null, lib281DEC45_gt_UseKerriganCameraShoulderReverse, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5134</span>
+ConversationDataRegisterCamera(<span class="hljs-string">"Cameras|ExtremeCloseup"</span>, lib281DEC45_gv_zSS_Characters[lib281DEC45_gf_ZSS_CharacterIndex(<span class="hljs-string">"Kerrigan"</span>)].lv_conversationLink, null, lib281DEC45_gt_UseKerriganCameraExtremeCloseup, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5135</span>
+ConversationDataRegisterCamera(<span class="hljs-string">"Cameras|ExtremeCloseupListener"</span>, lib281DEC45_gv_zSS_Characters[lib281DEC45_gf_ZSS_CharacterIndex(<span class="hljs-string">"Kerrigan"</span>)].lv_conversationLink, null, lib281DEC45_gt_UseKerriganCameraCloseUpListener, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignStoryLib.galaxy#L3795">VoidCampaignStoryLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3795</span>
+ConversationDataRegisterCamera(ConversationDataStateIndex(<span class="hljs-string">"Cameras"</span>, lv_index), libVoiC_gf_PC_ClickableConversationLink(lv_indexClickable), null, libVCST_gt_PS_ConversationCameraApply, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign-2"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign-2">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignUILib.galaxy#L3291">VoidCampaignUILib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3291</span>
+ConversationDataRegisterCamera(ConversationDataStateIndex(<span class="hljs-string">"Cameras"</span>, lv_index), <span class="hljs-string">"char_Smith"</span>, null, libVCUI_gt_PU_ArtanisAnim, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3294</span>
+ConversationDataRegisterCamera(ConversationDataStateIndex(<span class="hljs-string">"Cameras"</span>, lv_index), <span class="hljs-string">"char_Artanis"</span>, null, libVCUI_gt_PU_ArtanisAnim, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3295</span>
+ConversationDataRegisterCamera(ConversationDataStateIndex(<span class="hljs-string">"Cameras"</span>, lv_index), <span class="hljs-string">"char_DTLeader"</span>, null, libVCUI_gt_PU_ArtanisAnimStop, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="modsmissionpacksnovacampaignsc2mod"><a class="markdownIt-Anchor" href="#modsmissionpacksnovacampaignsc2mod">#</a> mods/missionpacks/novacampaign.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/novacampaign.sc2mod/base.sc2data/LibNCST.galaxy#L3264">LibNCST.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3264</span>
+ConversationDataRegisterCamera(ConversationDataStateIndex(<span class="hljs-string">"Cameras"</span>, lv_index), libNovC_gf_NC_ClickableConversationLink(lv_indexClickable), null, libNCST_gt_NS_ConversationCameraApply, <span class="hljs-literal">true</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

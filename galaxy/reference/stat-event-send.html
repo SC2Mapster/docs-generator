@@ -1,0 +1,443 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Send Stat Event / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Send Stat Event"/>
+                <meta property="og:description" content="Blizzard only.  Sends the Stat Event to Battle.net.  The Stat Event is destroyed."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="send-stat-event"><a class="markdownIt-Anchor" href="#send-stat-event">#</a> Send Stat Event</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Send Stat Event <strong>statEvent|Stat Event.</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Blizzard only.  Sends the Stat Event to <a href="http://Battle.net">Battle.net</a>.  The Stat Event is destroyed.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-stat-event">StatEvent</a> ]</em> — Stat Event</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">StatEventSend</span><span class="hljs-params">(<span class="hljs-keyword">int</span> statEvent)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#stats">Stats</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-stat-event">StatEvent</a> ]</em> — <strong><a href="/galaxy/reference/stat-event-create">Create Stat Event</a></strong> — ( StatEventCreate )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/stat-event-add-data-string">Add String Data to Stat Event</a></strong> — ( StatEventAddDataString )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/stat-event-add-data-int">Add Integer Data to Stat Event</a></strong> — ( StatEventAddDataInt )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/stat-event-add-data-fixed">Add Real Data to Stat Event</a></strong> — ( StatEventAddDataFixed )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/stat-event-send">Send Stat Event</a></strong> — ( StatEventSend )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-stat-event">StatEvent</a> ]</em> — <strong><a href="/galaxy/reference/stat-event-last-created">Last Created Stat Event</a></strong> — ( StatEventLastCreated )</li>
+<li><em><strong>[P]</strong></em> — <strong><a href="/galaxy/reference/preset-stat-event">Stat Event</a></strong></li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignsvoidstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignLib.galaxy#L8110">VoidCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L8110</span>
+StatEventSend(lp_statEvent)
+</code></pre>
+<h4 id="modsheroesstormmod"><a class="markdownIt-Anchor" href="#modsheroesstormmod">#</a> mods/heroes.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroes.stormmod/base.stormmaps/maps/heroes/singleplayermaps/startingexperience/tutorial01.stormmap/MapScript.galaxy#L1729">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1729</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1872</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2378</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2580</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2807</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3507</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4038</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4414</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4437</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L300</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1194</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1217</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1239</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1642</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2265</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2269</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2273</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2785</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2802</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2819</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1729</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1872</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2378</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2580</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2807</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3507</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4038</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4414</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4437</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L300</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1194</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1217</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1239</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1642</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2265</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2269</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2273</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2785</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2802</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2819</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<h4 id="modsheroesbrawlmodsarenamodemodstemplearenastormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsarenamodemodstemplearenastormmod">#</a> mods/heroesbrawlmods/arenamodemods/templearena.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/arenamodemods/templearena.stormmod/base.stormdata/LibAMCT.galaxy#L245">LibAMCT.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L245</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1991</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2040</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodscoopdeadmansstandstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodscoopdeadmansstandstormmod">#</a> mods/heroesbrawlmods/brawlmapmods/coop/deadmansstand.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/coop/deadmansstand.stormmod/base.stormdata/LibPEB1.galaxy#L10650">LibPEB1.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L10650</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12528</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9751</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11658</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodscooppvebrawlmodstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodscooppvebrawlmodstormmod">#</a> mods/heroesbrawlmods/brawlmapmods/coop/pvebrawlmod.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/coop/pvebrawlmod.stormmod/base.stormdata/LibPVEB.galaxy#L318">LibPVEB.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L318</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodscooppvemodstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodscooppvemodstormmod">#</a> mods/heroesbrawlmods/brawlmapmods/coop/pvemod.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/coop/pvemod.stormmod/base.stormdata/LibPVEM.galaxy#L575">LibPVEM.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L575</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<h4 id="modsheroesdatastormmod"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/GameLib.galaxy#L6161">GameLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L6161</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10483</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10627</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11823</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L16020</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L16674</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L18029</span>
+StatEventSend(lv_stat)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L18182</span>
+StatEventSend(lv_stat)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L18258</span>
+StatEventSend(lv_stat)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L18972</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<h4 id="modsheroesdatastormmod-2"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-2">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/MapMechanicsLib.galaxy#L1743">MapMechanicsLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1743</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3130</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6476</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7499</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<h4 id="modsheroesdatastormmod-3"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-3">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/SupportLib.galaxy#L578">SupportLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L578</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L628</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L655</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L670</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L682</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L716</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L720</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L726</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L734</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L757</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<h4 id="modsheroesdatastormmod-4"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-4">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/UILib.galaxy#L11607">UILib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L11607</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodsbattlefieldofeternitystormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodsbattlefieldofeternitystormmod">#</a> mods/heroesmapmods/battlegroundmapmods/battlefieldofeternity.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/battlefieldofeternity.stormmod/base.stormdata/LibMLBD.galaxy#L214">LibMLBD.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L214</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L594</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodsblackheartsbaystormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodsblackheartsbaystormmod">#</a> mods/heroesmapmods/battlegroundmapmods/blackheartsbay.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/blackheartsbay.stormmod/base.stormdata/LibBBAY.galaxy#L209">LibBBAY.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L209</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodsbraxisholdoutstormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodsbraxisholdoutstormmod">#</a> mods/heroesmapmods/battlegroundmapmods/braxisholdout.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/braxisholdout.stormmod/base.stormdata/LibSCHO.galaxy#L532">LibSCHO.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L532</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodshauntedminesstormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodshauntedminesstormmod">#</a> mods/heroesmapmods/battlegroundmapmods/hauntedmines.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/hauntedmines.stormmod/base.stormdata/LibMHtM.galaxy#L795">LibMHtM.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L795</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodsinfernalshrinesstormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodsinfernalshrinesstormmod">#</a> mods/heroesmapmods/battlegroundmapmods/infernalshrines.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/infernalshrines.stormmod/base.stormdata/LibMSHE.galaxy#L1500">LibMSHE.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1500</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1842</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodsskytemplestormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodsskytemplestormmod">#</a> mods/heroesmapmods/battlegroundmapmods/skytemple.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/skytemple.stormmod/base.stormdata/LibMLCP.galaxy#L572">LibMLCP.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L572</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2817</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3020</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodstombofthespiderqueenstormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodstombofthespiderqueenstormmod">#</a> mods/heroesmapmods/battlegroundmapmods/tombofthespiderqueen.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/tombofthespiderqueen.stormmod/base.stormdata/LibMSOC.galaxy#L2028">LibMSOC.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2028</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodstowersofdoomstormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodstowersofdoomstormmod">#</a> mods/heroesmapmods/battlegroundmapmods/towersofdoom.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/towersofdoom.stormmod/base.stormdata/LibMTOD.galaxy#L162">LibMTOD.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L162</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L180</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L536</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2236</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodsvolskayamechanicsstormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodsvolskayamechanicsstormmod">#</a> mods/heroesmapmods/battlegroundmapmods/volskayamechanics.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/volskayamechanics.stormmod/base.stormdata/LibVLSK.galaxy#L124">LibVLSK.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L124</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L374</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodswarheadjunctionstormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodswarheadjunctionstormmod">#</a> mods/heroesmapmods/battlegroundmapmods/warheadjunction.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/warheadjunction.stormmod/base.stormdata/LibMSC2.galaxy#L379">LibMSC2.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L379</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L668</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1866</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2116</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<h4 id="modsheromodschogallstormmod"><a class="markdownIt-Anchor" href="#modsheromodschogallstormmod">#</a> mods/heromods/chogall.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heromods/chogall.stormmod/base.stormdata/LibHCHO.galaxy#L1586">LibHCHO.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1586</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1710</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1771</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+<h4 id="modsheromodsdvastormmod"><a class="markdownIt-Anchor" href="#modsheromodsdvastormmod">#</a> mods/heromods/dva.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heromods/dva.stormmod/base.stormdata/LibHDVA.galaxy#L236">LibHDVA.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L236</span>
+StatEventSend(StatEventLastCreated())
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

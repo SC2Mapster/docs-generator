@@ -1,0 +1,326 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Create Dialog Item (Image) / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Create Dialog Item (Image)"/>
+                <meta property="og:description" content="Creates an image dialog item, using parameters to set up the essential properties for the image.  The tiled property will only work if the image type is border.
+
+Returns: control [ control ]"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="create-dialog-item-image"><a class="markdownIt-Anchor" href="#create-dialog-item-image">#</a> Create Dialog Item (Image)</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Create an image for dialog <strong>dialog</strong> with the dimensions (<strong>width</strong>, <strong>height</strong>) anchored to <strong>anchor</strong> with an offset of (<strong>offsetX</strong>, <strong>offsetY</strong>) setting the tooltip to <strong>tooltip</strong> using the image <strong>image</strong> as a <strong>imageType</strong> type with tiled set to <strong>tiled</strong> tint color <strong>tintColor</strong> and blend mode <strong>blendMode</strong><br>
+<em>Flags</em> — <code>Action</code></p>
+</blockquote>
+<p>Creates an image dialog item, using parameters to set up the essential properties for the image.  The tiled property will only work if the image type is border.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> <em>[ dialog ]</em> — Dialog</li>
+<li><code>int</code> — Width</li>
+<li><code>int</code> — Height</li>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-anchor">Anchor</a> ]</em> — Anchor</li>
+<li><code>int</code> — Offset X</li>
+<li><code>int</code> — Offset Y</li>
+<li><code>text</code> — Tooltip</li>
+<li><code>string</code> <em>[ filepath ]</em> — Image</li>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-image-type">ImageType</a> ]</em> — Image Type</li>
+<li><code>bool</code> — Tiled</li>
+<li><code>color</code> — Tint Color</li>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-dialog-blend-mode">DialogBlendMode</a> ]</em> — Blend Mode</li>
+</ul>
+<p>Returns — <code>int</code> <em>[ control ]</em></p>
+<pre class="hljs"><code><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">libNtve_gf_CreateDialogItemImage</span><span class="hljs-params">(
+	<span class="hljs-keyword">int</span> lp_dialog,
+	<span class="hljs-keyword">int</span> lp_width,
+	<span class="hljs-keyword">int</span> lp_height,
+	<span class="hljs-keyword">int</span> lp_anchor,
+	<span class="hljs-keyword">int</span> lp_offsetX,
+	<span class="hljs-keyword">int</span> lp_offsetY,
+	text lp_tooltip,
+	<span class="hljs-built_in">string</span> lp_image,
+	<span class="hljs-keyword">int</span> lp_imageType,
+	<span class="hljs-keyword">bool</span> lp_tiled,
+	color lp_tintColor,
+	<span class="hljs-keyword">int</span> lp_blendMode,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#dialog-create-specific-dialog-item-actions">Dialog / Create Specific Dialog Item Actions</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ control ]</em> — <strong><a href="/galaxy/reference/lib-ntve-gf-create-dialog-item-achievement">Create Dialog Item (Achievement)</a></strong> — ( libNtve_gf_CreateDialogItemAchievement )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ control ]</em> — <strong><a href="/galaxy/reference/lib-ntve-gf-create-dialog-item-button">Create Dialog Item (Button)</a></strong> — ( libNtve_gf_CreateDialogItemButton )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ control ]</em> — <strong><a href="/galaxy/reference/lib-ntve-gf-create-dialog-item-check-box">Create Dialog Item (Check Box)</a></strong> — ( libNtve_gf_CreateDialogItemCheckBox )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ control ]</em> — <strong><a href="/galaxy/reference/lib-ntve-gf-create-dialog-item-image">Create Dialog Item (Image)</a></strong> — ( libNtve_gf_CreateDialogItemImage )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ control ]</em> — <strong><a href="/galaxy/reference/lib-ntve-gf-create-dialog-item-label">Create Dialog Item (Label)</a></strong> — ( libNtve_gf_CreateDialogItemLabel )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/ttutorial01.sc2map/MapScript.galaxy#L1251">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1251</span>
+libNtve_gf_CreateDialogItemImage(DialogLastCreated(), <span class="hljs-number">205</span>, <span class="hljs-number">88</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, StringExternal(<span class="hljs-string">"Param/Value/49DA1D63"</span>), <span class="hljs-string">"Assets\\Textures\\ui_chat_frame_terran.dds"</span>, c_triggerImageTypeBorder, <span class="hljs-literal">false</span>, Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), c_triggerBlendModeNormal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1262</span>
+libNtve_gf_CreateDialogItemImage(DialogLastCreated(), <span class="hljs-number">1120</span>, <span class="hljs-number">1200</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, StringExternal(<span class="hljs-string">"Param/Value/3EAA3E58"</span>), <span class="hljs-string">"Assets\\Textures\\ui_tutorial_frame.dds"</span>, c_triggerImageTypeNormal, <span class="hljs-literal">false</span>, Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), c_triggerBlendModeNormal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1263</span>
+libNtve_gf_CreateDialogItemImage(DialogLastCreated(), <span class="hljs-number">205</span>, <span class="hljs-number">88</span>, c_anchorLeft, <span class="hljs-number">125</span>, <span class="hljs-number">85</span>, StringExternal(<span class="hljs-string">"Param/Value/422E7F65"</span>), <span class="hljs-string">"Assets\\Textures\\ui_chat_frame_terran.dds"</span>, c_triggerImageTypeBorder, <span class="hljs-literal">false</span>, Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), c_triggerBlendModeNormal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1251</span>
+libNtve_gf_CreateDialogItemImage(DialogLastCreated(), <span class="hljs-number">205</span>, <span class="hljs-number">88</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, StringExternal(<span class="hljs-string">"Param/Value/49DA1D63"</span>), <span class="hljs-string">"Assets\\Textures\\ui_chat_frame_terran.dds"</span>, c_triggerImageTypeBorder, <span class="hljs-literal">false</span>, Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), c_triggerBlendModeNormal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1262</span>
+libNtve_gf_CreateDialogItemImage(DialogLastCreated(), <span class="hljs-number">1120</span>, <span class="hljs-number">1200</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, StringExternal(<span class="hljs-string">"Param/Value/3EAA3E58"</span>), <span class="hljs-string">"Assets\\Textures\\ui_tutorial_frame.dds"</span>, c_triggerImageTypeNormal, <span class="hljs-literal">false</span>, Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), c_triggerBlendModeNormal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1263</span>
+libNtve_gf_CreateDialogItemImage(DialogLastCreated(), <span class="hljs-number">205</span>, <span class="hljs-number">88</span>, c_anchorLeft, <span class="hljs-number">125</span>, <span class="hljs-number">85</span>, StringExternal(<span class="hljs-string">"Param/Value/422E7F65"</span>), <span class="hljs-string">"Assets\\Textures\\ui_chat_frame_terran.dds"</span>, c_triggerImageTypeBorder, <span class="hljs-literal">false</span>, Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), c_triggerBlendModeNormal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L765</span>
+libNtve_gf_CreateDialogItemImage(DialogLastCreated(), <span class="hljs-number">1600</span>, <span class="hljs-number">1200</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, StringToText(<span class="hljs-string">""</span>), <span class="hljs-string">"Assets\\Textures\\ui_ingame_effects_splash2.dds"</span>, c_triggerImageTypeNormal, <span class="hljs-literal">false</span>, Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), c_triggerBlendModeNormal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L765</span>
+libNtve_gf_CreateDialogItemImage(DialogLastCreated(), <span class="hljs-number">1600</span>, <span class="hljs-number">1200</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, StringToText(<span class="hljs-string">""</span>), <span class="hljs-string">"Assets\\Textures\\ui_ingame_effects_splash2.dds"</span>, c_triggerImageTypeNormal, <span class="hljs-literal">false</span>, Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), c_triggerBlendModeNormal)
+</code></pre>
+<h4 id="campaignsswarmstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmstorysc2campaign">#</a> campaigns/swarmstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstory.sc2campaign/base.sc2data/TriggerLibs/SwarmCampaignLib.galaxy#L1484">SwarmCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1484</span>
+libNtve_gf_CreateDialogItemImage(DialogLastCreated(), <span class="hljs-number">200</span>, <span class="hljs-number">50</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, StringToText(<span class="hljs-string">""</span>), <span class="hljs-string">"Assets\\Textures\\white32.dds"</span>, c_triggerImageTypeNormal, <span class="hljs-literal">true</span>, Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), c_triggerBlendModeNormal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2037</span>
+libNtve_gf_CreateDialogItemImage(DialogLastCreated(), <span class="hljs-number">1600</span>, <span class="hljs-number">1200</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, StringToText(<span class="hljs-string">""</span>), <span class="hljs-string">"Assets\\Textures\\ui_ingame_effects_splash2.dds"</span>, c_triggerImageTypeNormal, <span class="hljs-literal">false</span>, Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), c_triggerBlendModeNormal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11463</span>
+libNtve_gf_CreateDialogItemImage(DialogLastCreated(), <span class="hljs-number">200</span>, <span class="hljs-number">50</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, StringToText(<span class="hljs-string">""</span>), <span class="hljs-string">"Assets\\Textures\\blank.dds"</span>, c_triggerImageTypeNormal, <span class="hljs-literal">true</span>, Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), c_triggerBlendModeNormal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L14615</span>
+libNtve_gf_CreateDialogItemImage(libSwaC_gv_zS_DebugProgressDialog, <span class="hljs-number">32</span>, <span class="hljs-number">32</span>, c_anchorTopLeft, <span class="hljs-number">50</span>, <span class="hljs-number">50</span>, StringToText(<span class="hljs-string">""</span>), <span class="hljs-string">"Assets\\Textures\\ui-editoricon-previewer_timeline_play.dds"</span>, c_triggerImageTypeNormal, <span class="hljs-literal">false</span>, Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), c_triggerBlendModeNormal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L14641</span>
+libNtve_gf_CreateDialogItemImage(DialogLastCreated(), (DialogGetWidth(DialogLastCreated()) - <span class="hljs-number">60</span>), (DialogGetHeight(DialogLastCreated()) - <span class="hljs-number">60</span>), c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, StringToText(<span class="hljs-string">""</span>), <span class="hljs-string">"Assets\\Textures\\white32.dds"</span>, c_triggerImageTypeNormal, <span class="hljs-literal">true</span>, Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), c_triggerBlendModeNormal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L14693</span>
+libNtve_gf_CreateDialogItemImage(DialogLastCreated(), <span class="hljs-number">50</span>, <span class="hljs-number">50</span>, c_anchorTopLeft, <span class="hljs-number">50</span>, <span class="hljs-number">50</span>, StringToText(<span class="hljs-string">""</span>), <span class="hljs-string">"Assets\\Textures\\btn-tips-hyperion.dds"</span>, c_triggerImageTypeNormal, <span class="hljs-literal">false</span>, Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), c_triggerBlendModeNormal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L14709</span>
+libNtve_gf_CreateDialogItemImage(DialogLastCreated(), <span class="hljs-number">50</span>, <span class="hljs-number">50</span>, c_anchorTopLeft, <span class="hljs-number">50</span>, <span class="hljs-number">50</span>, StringToText(<span class="hljs-string">""</span>), <span class="hljs-string">"Assets\\Textures\\btn-tips-hyperion.dds"</span>, c_triggerImageTypeNormal, <span class="hljs-literal">false</span>, Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), c_triggerBlendModeNormal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L14725</span>
+libNtve_gf_CreateDialogItemImage(DialogLastCreated(), <span class="hljs-number">50</span>, <span class="hljs-number">50</span>, c_anchorTopLeft, <span class="hljs-number">50</span>, <span class="hljs-number">50</span>, StringToText(<span class="hljs-string">""</span>), <span class="hljs-string">"Assets\\Textures\\btn-tips-hyperion.dds"</span>, c_triggerImageTypeNormal, <span class="hljs-literal">false</span>, Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), c_triggerBlendModeNormal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L14741</span>
+libNtve_gf_CreateDialogItemImage(DialogLastCreated(), <span class="hljs-number">50</span>, <span class="hljs-number">50</span>, c_anchorTopLeft, <span class="hljs-number">50</span>, <span class="hljs-number">50</span>, StringToText(<span class="hljs-string">""</span>), <span class="hljs-string">"Assets\\Textures\\btn-tips-hyperion.dds"</span>, c_triggerImageTypeNormal, <span class="hljs-literal">false</span>, Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), c_triggerBlendModeNormal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L14757</span>
+libNtve_gf_CreateDialogItemImage(DialogLastCreated(), <span class="hljs-number">50</span>, <span class="hljs-number">50</span>, c_anchorTopLeft, <span class="hljs-number">50</span>, <span class="hljs-number">50</span>, StringToText(<span class="hljs-string">""</span>), <span class="hljs-string">"Assets\\Textures\\btn-tips-hyperion.dds"</span>, c_triggerImageTypeNormal, <span class="hljs-literal">false</span>, Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), c_triggerBlendModeNormal)
+</code></pre>
+<h4 id="campaignsvoidsc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidsc2campaign">#</a> campaigns/void.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/void.sc2campaign/base.sc2maps/maps/campaign/void/pmoebius01.sc2map/MapScript.galaxy#L1355">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1355</span>
+libNtve_gf_CreateDialogItemImage(gv_movingPlatform.lv_dialog, <span class="hljs-number">60</span>, <span class="hljs-number">60</span>, c_anchorTopLeft, <span class="hljs-number">38</span>, <span class="hljs-number">33</span>, StringToText(<span class="hljs-string">""</span>), <span class="hljs-string">"Assets\\Textures\\aicommand_scout1.dds"</span>, c_triggerImageTypeNormal, <span class="hljs-literal">false</span>, Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), c_triggerBlendModeAdd)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1366</span>
+libNtve_gf_CreateDialogItemImage(gv_movingPlatform.lv_dialog, <span class="hljs-number">60</span>, <span class="hljs-number">60</span>, c_anchorTopLeft, <span class="hljs-number">109</span>, <span class="hljs-number">33</span>, StringToText(<span class="hljs-string">""</span>), <span class="hljs-string">"Assets\\Textures\\aicommand_scout1.dds"</span>, c_triggerImageTypeNormal, <span class="hljs-literal">false</span>, Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), c_triggerBlendModeAdd)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1374</span>
+libNtve_gf_CreateDialogItemImage(gv_movingPlatform.lv_dialog, <span class="hljs-number">60</span>, <span class="hljs-number">60</span>, c_anchorTopLeft, <span class="hljs-number">180</span>, <span class="hljs-number">33</span>, StringToText(<span class="hljs-string">""</span>), <span class="hljs-string">"Assets\\Textures\\aicommand_scout1.dds"</span>, c_triggerImageTypeNormal, <span class="hljs-literal">false</span>, Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), c_triggerBlendModeAdd)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1384</span>
+libNtve_gf_CreateDialogItemImage(gv_movingPlatform.lv_dialog, <span class="hljs-number">60</span>, <span class="hljs-number">60</span>, c_anchorTopLeft, <span class="hljs-number">250</span>, <span class="hljs-number">33</span>, StringToText(<span class="hljs-string">""</span>), <span class="hljs-string">"Assets\\Textures\\aicommand_scout1.dds"</span>, c_triggerImageTypeNormal, <span class="hljs-literal">false</span>, Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), c_triggerBlendModeAdd)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1392</span>
+libNtve_gf_CreateDialogItemImage(gv_movingPlatform.lv_dialog, <span class="hljs-number">60</span>, <span class="hljs-number">60</span>, c_anchorTopLeft, <span class="hljs-number">320</span>, <span class="hljs-number">33</span>, StringToText(<span class="hljs-string">""</span>), <span class="hljs-string">"Assets\\Textures\\btn-unit-protoss-probe.dds"</span>, c_triggerImageTypeNormal, <span class="hljs-literal">false</span>, Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), c_triggerBlendModeAdd)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2007</span>
+libNtve_gf_CreateDialogItemImage(gv_movingPlatform.lv_dialog, <span class="hljs-number">60</span>, <span class="hljs-number">60</span>, c_anchorTopRight, <span class="hljs-number">33</span>, <span class="hljs-number">33</span>, StringToText(<span class="hljs-string">""</span>), <span class="hljs-string">"Assets\\Textures\\btn-ability-terran-lockon.dds"</span>, c_triggerImageTypeNormal, <span class="hljs-literal">false</span>, Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), c_triggerBlendModeAdd)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1404</span>
+libNtve_gf_CreateDialogItemImage(gv_zergCounterDialog, <span class="hljs-number">200</span>, <span class="hljs-number">80</span>, c_anchorTopLeft, <span class="hljs-number">50</span>, <span class="hljs-number">50</span>, StringToText(<span class="hljs-string">""</span>), <span class="hljs-string">"Assets\\Textures\\ui_ingame_lotv_timerpanel_frame.dds"</span>, c_triggerImageTypeNineSlice, <span class="hljs-literal">true</span>, Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), c_triggerBlendModeNormal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1355</span>
+libNtve_gf_CreateDialogItemImage(gv_movingPlatform.lv_dialog, <span class="hljs-number">60</span>, <span class="hljs-number">60</span>, c_anchorTopLeft, <span class="hljs-number">38</span>, <span class="hljs-number">33</span>, StringToText(<span class="hljs-string">""</span>), <span class="hljs-string">"Assets\\Textures\\aicommand_scout1.dds"</span>, c_triggerImageTypeNormal, <span class="hljs-literal">false</span>, Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), c_triggerBlendModeAdd)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1366</span>
+libNtve_gf_CreateDialogItemImage(gv_movingPlatform.lv_dialog, <span class="hljs-number">60</span>, <span class="hljs-number">60</span>, c_anchorTopLeft, <span class="hljs-number">109</span>, <span class="hljs-number">33</span>, StringToText(<span class="hljs-string">""</span>), <span class="hljs-string">"Assets\\Textures\\aicommand_scout1.dds"</span>, c_triggerImageTypeNormal, <span class="hljs-literal">false</span>, Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), c_triggerBlendModeAdd)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1374</span>
+libNtve_gf_CreateDialogItemImage(gv_movingPlatform.lv_dialog, <span class="hljs-number">60</span>, <span class="hljs-number">60</span>, c_anchorTopLeft, <span class="hljs-number">180</span>, <span class="hljs-number">33</span>, StringToText(<span class="hljs-string">""</span>), <span class="hljs-string">"Assets\\Textures\\aicommand_scout1.dds"</span>, c_triggerImageTypeNormal, <span class="hljs-literal">false</span>, Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), c_triggerBlendModeAdd)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1384</span>
+libNtve_gf_CreateDialogItemImage(gv_movingPlatform.lv_dialog, <span class="hljs-number">60</span>, <span class="hljs-number">60</span>, c_anchorTopLeft, <span class="hljs-number">250</span>, <span class="hljs-number">33</span>, StringToText(<span class="hljs-string">""</span>), <span class="hljs-string">"Assets\\Textures\\aicommand_scout1.dds"</span>, c_triggerImageTypeNormal, <span class="hljs-literal">false</span>, Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), c_triggerBlendModeAdd)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1392</span>
+libNtve_gf_CreateDialogItemImage(gv_movingPlatform.lv_dialog, <span class="hljs-number">60</span>, <span class="hljs-number">60</span>, c_anchorTopLeft, <span class="hljs-number">320</span>, <span class="hljs-number">33</span>, StringToText(<span class="hljs-string">""</span>), <span class="hljs-string">"Assets\\Textures\\btn-unit-protoss-probe.dds"</span>, c_triggerImageTypeNormal, <span class="hljs-literal">false</span>, Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), c_triggerBlendModeAdd)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2007</span>
+libNtve_gf_CreateDialogItemImage(gv_movingPlatform.lv_dialog, <span class="hljs-number">60</span>, <span class="hljs-number">60</span>, c_anchorTopRight, <span class="hljs-number">33</span>, <span class="hljs-number">33</span>, StringToText(<span class="hljs-string">""</span>), <span class="hljs-string">"Assets\\Textures\\btn-ability-terran-lockon.dds"</span>, c_triggerImageTypeNormal, <span class="hljs-literal">false</span>, Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), c_triggerBlendModeAdd)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1404</span>
+libNtve_gf_CreateDialogItemImage(gv_zergCounterDialog, <span class="hljs-number">200</span>, <span class="hljs-number">80</span>, c_anchorTopLeft, <span class="hljs-number">50</span>, <span class="hljs-number">50</span>, StringToText(<span class="hljs-string">""</span>), <span class="hljs-string">"Assets\\Textures\\ui_ingame_lotv_timerpanel_frame.dds"</span>, c_triggerImageTypeNineSlice, <span class="hljs-literal">true</span>, Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), c_triggerBlendModeNormal)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignLib.galaxy#L140">VoidCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L140</span>
+libNtve_gf_CreateDialogItemImage(DialogLastCreated(), (DialogGetWidth(DialogLastCreated()) - <span class="hljs-number">60</span>), (DialogGetHeight(DialogLastCreated()) - <span class="hljs-number">60</span>), c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, StringToText(<span class="hljs-string">""</span>), <span class="hljs-string">"Assets\\Textures\\white32.dds"</span>, c_triggerImageTypeNormal, <span class="hljs-literal">true</span>, Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), c_triggerBlendModeNormal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L164</span>
+libNtve_gf_CreateDialogItemImage(DialogLastCreated(), <span class="hljs-number">500</span>, <span class="hljs-number">100</span>, c_anchorTopLeft, lv_x, lv_y, StringToText(<span class="hljs-string">""</span>), <span class="hljs-string">"Assets\\Textures\\ui_research_frame_tooltip_protoss.dds"</span>, c_triggerImageTypeHorizontalBorder, <span class="hljs-literal">true</span>, Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), c_triggerBlendModeNormal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L270</span>
+libNtve_gf_CreateDialogItemImage(DialogLastCreated(), <span class="hljs-number">850</span>, <span class="hljs-number">100</span>, c_anchorTopLeft, lv_x, lv_y, StringToText(<span class="hljs-string">""</span>), <span class="hljs-string">"Assets\\Textures\\ui_research_frame_tooltip_protoss.dds"</span>, c_triggerImageTypeHorizontalBorder, <span class="hljs-literal">true</span>, Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), c_triggerBlendModeNormal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L928</span>
+libNtve_gf_CreateDialogItemImage(libVoiC_gv_pC_DebugProgressDialog, <span class="hljs-number">32</span>, <span class="hljs-number">32</span>, c_anchorTopLeft, <span class="hljs-number">50</span>, <span class="hljs-number">50</span>, StringToText(<span class="hljs-string">""</span>), <span class="hljs-string">"Assets\\Textures\\ui_btn_aicommand_commandcard_assault.dds"</span>, c_triggerImageTypeNormal, <span class="hljs-literal">false</span>, Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), c_triggerBlendModeNormal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8375</span>
+libNtve_gf_CreateDialogItemImage(DialogLastCreated(), <span class="hljs-number">200</span>, <span class="hljs-number">50</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, StringToText(<span class="hljs-string">""</span>), <span class="hljs-string">"Assets\\Textures\\white.dds"</span>, c_triggerImageTypeNormal, <span class="hljs-literal">true</span>, Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), c_triggerBlendModeNormal)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign-2"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign-2">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignUILib.galaxy#L4094">VoidCampaignUILib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4094</span>
+libNtve_gf_CreateDialogItemImage(DialogLastCreated(), <span class="hljs-number">1600</span>, <span class="hljs-number">1200</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, StringToText(<span class="hljs-string">""</span>), <span class="hljs-string">"Assets\\Textures\\ui_ingame_effects_splash2.dds"</span>, c_triggerImageTypeNormal, <span class="hljs-literal">false</span>, Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), c_triggerBlendModeNormal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5072</span>
+libNtve_gf_CreateDialogItemImage(DialogLastCreated(), <span class="hljs-number">55</span>, <span class="hljs-number">55</span>, c_anchorLeft, <span class="hljs-number">26</span>, <span class="hljs-number">3</span>, StringToText(<span class="hljs-string">""</span>), lp_abilityIcon, c_triggerImageTypeNormal, <span class="hljs-literal">false</span>, Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), c_triggerBlendModeNormal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5073</span>
+libNtve_gf_CreateDialogItemImage(DialogLastCreated(), lv_startwidth, <span class="hljs-number">47</span>, c_anchorLeft, <span class="hljs-number">79</span>, <span class="hljs-number">3</span>, StringToText(<span class="hljs-string">""</span>), <span class="hljs-string">""</span>, c_triggerImageTypeNormal, <span class="hljs-literal">false</span>, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">62.75</span>, <span class="hljs-number">74.90</span>), c_triggerBlendModeNormal)
+</code></pre>
+<h4 id="modsfrontierssc2mod"><a class="markdownIt-Anchor" href="#modsfrontierssc2mod">#</a> mods/frontiers.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/frontiers.sc2mod/base.sc2data/Lib6CB3363F.galaxy#L434">Lib6CB3363F.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L434</span>
+libNtve_gf_CreateDialogItemImage(lib6CB3363F_gv_fT_DialogAmmo, <span class="hljs-number">72</span>, <span class="hljs-number">72</span>, c_anchorTopLeft, (lv_i * <span class="hljs-number">100</span>), <span class="hljs-number">0</span>, StringToText(<span class="hljs-string">""</span>), <span class="hljs-string">"Assets\\Textures\\blank.dds"</span>, c_triggerImageTypeNormal, <span class="hljs-literal">true</span>, Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), c_triggerBlendModeNormal)
+</code></pre>
+<h4 id="modsmissionpackscampaigncommonsc2mod"><a class="markdownIt-Anchor" href="#modsmissionpackscampaigncommonsc2mod">#</a> mods/missionpacks/campaigncommon.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/campaigncommon.sc2mod/base.sc2data/LibComC.galaxy#L4411">LibComC.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4411</span>
+libNtve_gf_CreateDialogItemImage(DialogLastCreated(), <span class="hljs-number">200</span>, <span class="hljs-number">50</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, StringToText(<span class="hljs-string">""</span>), <span class="hljs-string">"Assets\\Textures\\white.dds"</span>, c_triggerImageTypeNormal, <span class="hljs-literal">true</span>, Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), c_triggerBlendModeNormal)
+</code></pre>
+<h4 id="modsmissionpacksnovacampaignsc2mod"><a class="markdownIt-Anchor" href="#modsmissionpacksnovacampaignsc2mod">#</a> mods/missionpacks/novacampaign.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/novacampaign.sc2mod/base.sc2data/LibNCUI.galaxy#L3587">LibNCUI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3587</span>
+libNtve_gf_CreateDialogItemImage(DialogLastCreated(), <span class="hljs-number">1600</span>, <span class="hljs-number">1200</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, StringToText(<span class="hljs-string">""</span>), <span class="hljs-string">"Assets\\Textures\\ui_ingame_effects_splash2.dds"</span>, c_triggerImageTypeNormal, <span class="hljs-literal">false</span>, Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), c_triggerBlendModeNormal)
+</code></pre>
+<h4 id="modsmissionpacksnovacampaignsc2mod-2"><a class="markdownIt-Anchor" href="#modsmissionpacksnovacampaignsc2mod-2">#</a> mods/missionpacks/novacampaign.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/novacampaign.sc2mod/base.sc2data/LibNovC.galaxy#L245">LibNovC.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L245</span>
+libNtve_gf_CreateDialogItemImage(DialogLastCreated(), (DialogGetWidth(DialogLastCreated()) - <span class="hljs-number">60</span>), (DialogGetHeight(DialogLastCreated()) - <span class="hljs-number">60</span>), c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, StringToText(<span class="hljs-string">""</span>), <span class="hljs-string">"Assets\\Textures\\white32.dds"</span>, c_triggerImageTypeNormal, <span class="hljs-literal">true</span>, Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), c_triggerBlendModeNormal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L282</span>
+libNtve_gf_CreateDialogItemImage(DialogLastCreated(), <span class="hljs-number">1000</span>, <span class="hljs-number">100</span>, c_anchorTopLeft, lv_x, lv_y, StringToText(<span class="hljs-string">""</span>), <span class="hljs-string">"Assets\\Textures\\ui_research_frame_tooltip_protoss.dds"</span>, c_triggerImageTypeHorizontalBorder, <span class="hljs-literal">true</span>, Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), c_triggerBlendModeNormal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L504</span>
+libNtve_gf_CreateDialogItemImage(DialogLastCreated(), (DialogGetWidth(DialogLastCreated()) - <span class="hljs-number">60</span>), (DialogGetHeight(DialogLastCreated()) - <span class="hljs-number">60</span>), c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, StringToText(<span class="hljs-string">""</span>), <span class="hljs-string">"Assets\\Textures\\white32.dds"</span>, c_triggerImageTypeNormal, <span class="hljs-literal">true</span>, Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), c_triggerBlendModeNormal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L523</span>
+libNtve_gf_CreateDialogItemImage(DialogLastCreated(), <span class="hljs-number">1100</span>, <span class="hljs-number">100</span>, c_anchorTopLeft, lv_x, lv_y, StringToText(<span class="hljs-string">""</span>), <span class="hljs-string">"Assets\\Textures\\ui_research_frame_tooltip_protoss.dds"</span>, c_triggerImageTypeHorizontalBorder, <span class="hljs-literal">true</span>, Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), c_triggerBlendModeNormal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L838</span>
+libNtve_gf_CreateDialogItemImage(libNovC_gv_NC_DebugProgressDialog, <span class="hljs-number">32</span>, <span class="hljs-number">32</span>, c_anchorTopLeft, <span class="hljs-number">50</span>, <span class="hljs-number">50</span>, StringToText(<span class="hljs-string">""</span>), <span class="hljs-string">"Assets\\Textures\\ui_btn_aicommand_commandcard_assault.dds"</span>, c_triggerImageTypeNormal, <span class="hljs-literal">false</span>, Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), c_triggerBlendModeNormal)
+</code></pre>
+<h4 id="modsnovastoryassetssc2mod"><a class="markdownIt-Anchor" href="#modsnovastoryassetssc2mod">#</a> mods/novastoryassets.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/novastoryassets.sc2mod/base.sc2maps/maps/campaign/nova/nova01.sc2map/MapScript.galaxy#L7427">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L7427</span>
+libNtve_gf_CreateDialogItemImage(gv_vultureDistanceDialog, <span class="hljs-number">200</span>, <span class="hljs-number">80</span>, c_anchorTopLeft, <span class="hljs-number">50</span>, <span class="hljs-number">50</span>, StringToText(<span class="hljs-string">""</span>), <span class="hljs-string">"Assets\\Textures\\ui_ingame_lotv_timerpanel_frame_terr.dds"</span>, c_triggerImageTypeNineSlice, <span class="hljs-literal">true</span>, Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), c_triggerBlendModeNormal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1322</span>
+libNtve_gf_CreateDialogItemImage(DialogLastCreated(), <span class="hljs-number">68</span>, <span class="hljs-number">68</span>, c_anchorLeft, <span class="hljs-number">40</span>, <span class="hljs-number">2</span>, StringToText(<span class="hljs-string">""</span>), <span class="hljs-string">"Assets\\Textures\\btn-unit-terran-gorgonbattlecruiser.dds"</span>, c_triggerImageTypeNormal, <span class="hljs-literal">false</span>, Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), c_triggerBlendModeNormal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1325</span>
+libNtve_gf_CreateDialogItemImage(DialogLastCreated(), <span class="hljs-number">68</span>, <span class="hljs-number">68</span>, c_anchorLeft, <span class="hljs-number">120</span>, <span class="hljs-number">2</span>, StringToText(<span class="hljs-string">""</span>), <span class="hljs-string">"Assets\\Textures\\btn-unit-terran-gorgonbattlecruiser.dds"</span>, c_triggerImageTypeNormal, <span class="hljs-literal">false</span>, Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), c_triggerBlendModeNormal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1328</span>
+libNtve_gf_CreateDialogItemImage(DialogLastCreated(), <span class="hljs-number">68</span>, <span class="hljs-number">68</span>, c_anchorLeft, <span class="hljs-number">200</span>, <span class="hljs-number">2</span>, StringToText(<span class="hljs-string">""</span>), <span class="hljs-string">"Assets\\Textures\\btn-unit-terran-gorgonbattlecruiser.dds"</span>, c_triggerImageTypeNormal, <span class="hljs-literal">false</span>, Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), c_triggerBlendModeNormal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7427</span>
+libNtve_gf_CreateDialogItemImage(gv_vultureDistanceDialog, <span class="hljs-number">200</span>, <span class="hljs-number">80</span>, c_anchorTopLeft, <span class="hljs-number">50</span>, <span class="hljs-number">50</span>, StringToText(<span class="hljs-string">""</span>), <span class="hljs-string">"Assets\\Textures\\ui_ingame_lotv_timerpanel_frame_terr.dds"</span>, c_triggerImageTypeNineSlice, <span class="hljs-literal">true</span>, Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), c_triggerBlendModeNormal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1322</span>
+libNtve_gf_CreateDialogItemImage(DialogLastCreated(), <span class="hljs-number">68</span>, <span class="hljs-number">68</span>, c_anchorLeft, <span class="hljs-number">40</span>, <span class="hljs-number">2</span>, StringToText(<span class="hljs-string">""</span>), <span class="hljs-string">"Assets\\Textures\\btn-unit-terran-gorgonbattlecruiser.dds"</span>, c_triggerImageTypeNormal, <span class="hljs-literal">false</span>, Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), c_triggerBlendModeNormal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1325</span>
+libNtve_gf_CreateDialogItemImage(DialogLastCreated(), <span class="hljs-number">68</span>, <span class="hljs-number">68</span>, c_anchorLeft, <span class="hljs-number">120</span>, <span class="hljs-number">2</span>, StringToText(<span class="hljs-string">""</span>), <span class="hljs-string">"Assets\\Textures\\btn-unit-terran-gorgonbattlecruiser.dds"</span>, c_triggerImageTypeNormal, <span class="hljs-literal">false</span>, Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), c_triggerBlendModeNormal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1328</span>
+libNtve_gf_CreateDialogItemImage(DialogLastCreated(), <span class="hljs-number">68</span>, <span class="hljs-number">68</span>, c_anchorLeft, <span class="hljs-number">200</span>, <span class="hljs-number">2</span>, StringToText(<span class="hljs-string">""</span>), <span class="hljs-string">"Assets\\Textures\\btn-unit-terran-gorgonbattlecruiser.dds"</span>, c_triggerImageTypeNormal, <span class="hljs-literal">false</span>, Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), c_triggerBlendModeNormal)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOOC.galaxy#L5472">LibCOOC.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L5472</span>
+libNtve_gf_CreateDialogItemImage(DialogLastCreated(), <span class="hljs-number">200</span>, <span class="hljs-number">50</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, StringToText(<span class="hljs-string">""</span>), <span class="hljs-string">"Assets\\Textures\\white.dds"</span>, c_triggerImageTypeNormal, <span class="hljs-literal">true</span>, Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), c_triggerBlendModeNormal)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod-2"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod-2">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOUI.galaxy#L3178">LibCOUI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3178</span>
+libNtve_gf_CreateDialogItemImage(DialogLastCreated(), <span class="hljs-number">1600</span>, <span class="hljs-number">1200</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, StringToText(<span class="hljs-string">""</span>), <span class="hljs-string">"Assets\\Textures\\ui_ingame_effects_splash2.dds"</span>, c_triggerImageTypeNormal, <span class="hljs-literal">false</span>, Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), c_triggerBlendModeNormal)
+</code></pre>
+<h4 id="modsvoidprologuesc2mod"><a class="markdownIt-Anchor" href="#modsvoidprologuesc2mod">#</a> mods/voidprologue.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/voidprologue.sc2mod/base.sc2data/LibA3DDD02B.galaxy#L1170">LibA3DDD02B.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1170</span>
+libNtve_gf_CreateDialogItemImage(DialogLastCreated(), <span class="hljs-number">200</span>, <span class="hljs-number">50</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, StringToText(<span class="hljs-string">""</span>), <span class="hljs-string">"Assets\\Textures\\white32.dds"</span>, c_triggerImageTypeNormal, <span class="hljs-literal">true</span>, Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), c_triggerBlendModeNormal)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

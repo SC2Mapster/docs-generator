@@ -1,0 +1,255 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Point With Z Offset / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Point With Z Offset"/>
+                <meta property="og:description" content="Returns a point with the X and Y position of the specified point, and Z position of the specified Z.
+
+Returns: point"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="point-with-z-offset"><a class="markdownIt-Anchor" href="#point-with-z-offset">#</a> Point With Z Offset</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — <strong>p</strong> offset by <strong>z</strong> height<br>
+<em>Flags</em> — <code>Function</code></p>
+</blockquote>
+<p>Returns a point with the X and Y position of the specified point, and Z position of the specified Z.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>point</code> — Point</li>
+<li><code>fixed</code> — Z</li>
+</ul>
+<p>Returns — <code>point</code></p>
+<pre class="hljs"><code><span class="hljs-function">point <span class="hljs-title">libNtve_gf_PointWithZOffset</span><span class="hljs-params">(point lp_p, fixed lp_z)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#point-offsets">Point / Offsets</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>point</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-point-facing-angle">Point Facing Angle</a></strong> — ( libNtve_gf_PointFacingAngle )</li>
+<li><em><strong>[F]</strong></em> — <code>point</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-point-with-zoffset">Point With Z Offset</a></strong> — ( libNtve_gf_PointWithZOffset )</li>
+<li><em><strong>[F]</strong></em> — <code>point</code> — <strong><a href="/galaxy/reference/point-with-offset">Point With Offset</a></strong> — ( PointWithOffset )</li>
+<li><em><strong>[F]</strong></em> — <code>point</code> — <strong><a href="/galaxy/reference/point-with-offset-polar">Point With Polar Offset</a></strong> — ( PointWithOffsetPolar )</li>
+<li><em><strong>[F]</strong></em> — <code>point</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-point-offset-towards-point">Point Offset Towards Point</a></strong> — ( libNtve_gf_PointOffsetTowardsPoint )</li>
+<li><em><strong>[F]</strong></em> — <code>point</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-random-point-between-points">Random Point Between Points</a></strong> — ( libNtve_gf_RandomPointBetweenPoints )</li>
+<li><em><strong>[F]</strong></em> — <code>point</code> — <strong><a href="/galaxy/reference/point-reflect">Reflected Point</a></strong> — ( PointReflect )</li>
+<li><em><strong>[F]</strong></em> — <code>point</code> — <strong><a href="/galaxy/reference/point-interpolate">Interpolated Point</a></strong> — ( PointInterpolate )</li>
+<li><em><strong>[F]</strong></em> — <code>point</code> — <strong><a href="/galaxy/reference/mid-point">Mid-Point</a></strong> — ( MidPoint )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/tarcade.sc2map/MapScript.galaxy#L4705">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4705</span>
+libNtve_gf_PointWithZOffset(lv_spawnLoc, gv_c_PlaneHeight)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7117</span>
+libNtve_gf_PointWithZOffset(lv_spawnLoc, gv_c_PlaneHeight)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L26409</span>
+libNtve_gf_PointWithZOffset(PointWithOffsetPolar(UnitGetPosition(gf_ActorUnit(ge_ActorID_ActorRaynor)), <span class="hljs-number">0.5</span>, UnitGetFacing(gf_ActorUnit(ge_ActorID_ActorRaynor))), <span class="hljs-number">0.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L26563</span>
+libNtve_gf_PointWithZOffset(UnitGetPosition(gf_ActorUnit(ge_ActorID_ActorTychus)), <span class="hljs-number">0.7</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L26677</span>
+libNtve_gf_PointWithZOffset(PointWithOffsetPolar(UnitGetPosition(gf_ActorUnit(ge_ActorID_ActorTychus)), <span class="hljs-number">0.6</span>, (UnitGetFacing(gf_ActorUnit(ge_ActorID_ActorTychus)) - <span class="hljs-number">15.0</span>)), <span class="hljs-number">0.65</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L28660</span>
+libNtve_gf_PointWithZOffset(PointFromId(<span class="hljs-number">676</span>), <span class="hljs-number">0.8</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L28793</span>
+libNtve_gf_PointWithZOffset(PointFromId(<span class="hljs-number">676</span>), <span class="hljs-number">0.8</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L28804</span>
+libNtve_gf_PointWithZOffset(PointFromId(<span class="hljs-number">676</span>), <span class="hljs-number">0.8</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L28815</span>
+libNtve_gf_PointWithZOffset(PointFromId(<span class="hljs-number">676</span>), <span class="hljs-number">0.8</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L28935</span>
+libNtve_gf_PointWithZOffset(PointFromId(<span class="hljs-number">676</span>), <span class="hljs-number">0.8</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L28951</span>
+libNtve_gf_PointWithZOffset(PointFromId(<span class="hljs-number">676</span>), <span class="hljs-number">0.8</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L28953</span>
+libNtve_gf_PointWithZOffset(PointFromId(<span class="hljs-number">676</span>), <span class="hljs-number">0.8</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4366</span>
+libNtve_gf_PointWithZOffset(UnitGetPosition(UnitFromId(<span class="hljs-number">430</span>)), <span class="hljs-number">0.7</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4705</span>
+libNtve_gf_PointWithZOffset(lv_spawnLoc, gv_c_PlaneHeight)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7117</span>
+libNtve_gf_PointWithZOffset(lv_spawnLoc, gv_c_PlaneHeight)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L26409</span>
+libNtve_gf_PointWithZOffset(PointWithOffsetPolar(UnitGetPosition(gf_ActorUnit(ge_ActorID_ActorRaynor)), <span class="hljs-number">0.5</span>, UnitGetFacing(gf_ActorUnit(ge_ActorID_ActorRaynor))), <span class="hljs-number">0.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L26563</span>
+libNtve_gf_PointWithZOffset(UnitGetPosition(gf_ActorUnit(ge_ActorID_ActorTychus)), <span class="hljs-number">0.7</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L26677</span>
+libNtve_gf_PointWithZOffset(PointWithOffsetPolar(UnitGetPosition(gf_ActorUnit(ge_ActorID_ActorTychus)), <span class="hljs-number">0.6</span>, (UnitGetFacing(gf_ActorUnit(ge_ActorID_ActorTychus)) - <span class="hljs-number">15.0</span>)), <span class="hljs-number">0.65</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L28660</span>
+libNtve_gf_PointWithZOffset(PointFromId(<span class="hljs-number">676</span>), <span class="hljs-number">0.8</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L28793</span>
+libNtve_gf_PointWithZOffset(PointFromId(<span class="hljs-number">676</span>), <span class="hljs-number">0.8</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L28804</span>
+libNtve_gf_PointWithZOffset(PointFromId(<span class="hljs-number">676</span>), <span class="hljs-number">0.8</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L28815</span>
+libNtve_gf_PointWithZOffset(PointFromId(<span class="hljs-number">676</span>), <span class="hljs-number">0.8</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L28935</span>
+libNtve_gf_PointWithZOffset(PointFromId(<span class="hljs-number">676</span>), <span class="hljs-number">0.8</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L28951</span>
+libNtve_gf_PointWithZOffset(PointFromId(<span class="hljs-number">676</span>), <span class="hljs-number">0.8</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L28953</span>
+libNtve_gf_PointWithZOffset(PointFromId(<span class="hljs-number">676</span>), <span class="hljs-number">0.8</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4366</span>
+libNtve_gf_PointWithZOffset(UnitGetPosition(UnitFromId(<span class="hljs-number">430</span>)), <span class="hljs-number">0.7</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3007</span>
+libNtve_gf_PointWithZOffset(UnitGetPosition(gv_objectiveDummyHelper), <span class="hljs-number">2.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5812</span>
+libNtve_gf_PointWithZOffset(PointFromId(<span class="hljs-number">36</span>), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8870</span>
+libNtve_gf_PointWithZOffset(UnitGetPosition(EventUnit()), <span class="hljs-number">12.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9757</span>
+libNtve_gf_PointWithZOffset(PointFromId(<span class="hljs-number">4148</span>), <span class="hljs-number">8.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5812</span>
+libNtve_gf_PointWithZOffset(PointFromId(<span class="hljs-number">36</span>), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8870</span>
+libNtve_gf_PointWithZOffset(UnitGetPosition(EventUnit()), <span class="hljs-number">12.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9757</span>
+libNtve_gf_PointWithZOffset(PointFromId(<span class="hljs-number">4148</span>), <span class="hljs-number">8.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3007</span>
+libNtve_gf_PointWithZOffset(UnitGetPosition(gv_objectiveDummyHelper), <span class="hljs-number">2.5</span>)
+</code></pre>
+<h4 id="campaignsswarmstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmstorysc2campaign">#</a> campaigns/swarmstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstory.sc2campaign/base.sc2data/TriggerLibs/SwarmCampaignLib.galaxy#L9274">SwarmCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L9274</span>
+libNtve_gf_PointWithZOffset(libSwaC_gv_center, libSwaC_gv_zSC_ARMYEVOLUTIONSETHEIGHT)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9304</span>
+libNtve_gf_PointWithZOffset(libSwaC_gv_center, libSwaC_gv_zSC_ARMYEVOLUTIONSETHEIGHT)
+</code></pre>
+<h4 id="campaignsvoidsc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidsc2campaign">#</a> campaigns/void.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/void.sc2campaign/base.sc2maps/maps/campaign/void/pstory01.sc2map/MapScript.galaxy#L1026">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1026</span>
+libNtve_gf_PointWithZOffset(UnitGetAttachmentPoint(gv_uNITWarCouncilSet00, <span class="hljs-string">"Pos_EvolutionMaster"</span>), (PointGetHeight(UnitGetAttachmentPoint(gv_uNITWarCouncilSet00, <span class="hljs-string">"Pos_EvolutionMaster"</span>)) + <span class="hljs-number">0.03</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1026</span>
+libNtve_gf_PointWithZOffset(UnitGetAttachmentPoint(gv_uNITWarCouncilSet00, <span class="hljs-string">"Pos_EvolutionMaster"</span>), (PointGetHeight(UnitGetAttachmentPoint(gv_uNITWarCouncilSet00, <span class="hljs-string">"Pos_EvolutionMaster"</span>)) + <span class="hljs-number">0.03</span>))
+</code></pre>
+<h4 id="modsheroesdatastormmod"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/GameLib.galaxy#L17379">GameLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L17379</span>
+libNtve_gf_PointWithZOffset(lv_deadUnitsOriginalLocation, <span class="hljs-number">2.0</span>)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOMU.galaxy#L12699">LibCOMU.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L12699</span>
+libNtve_gf_PointWithZOffset(UnitGetPosition(lv_chosenTarget), <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12711</span>
+libNtve_gf_PointWithZOffset(UnitGetPosition(lv_chosenTarget), <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12724</span>
+libNtve_gf_PointWithZOffset(lv_pDDTarget, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12728</span>
+libNtve_gf_PointWithZOffset(lv_pDDTarget, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12733</span>
+libNtve_gf_PointWithZOffset(lv_pDDTarget, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12737</span>
+libNtve_gf_PointWithZOffset(lv_pDDTarget, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12741</span>
+libNtve_gf_PointWithZOffset(lv_pDDTarget, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12754</span>
+libNtve_gf_PointWithZOffset(UnitGetPosition(lv_chosenTarget), <span class="hljs-number">2.0</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

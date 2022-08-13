@@ -1,0 +1,403 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Clear Text Messages / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Clear Text Messages"/>
+                <meta property="og:description" content="Clears all text messages currently displayed on the screen."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="clear-text-messages"><a class="markdownIt-Anchor" href="#clear-text-messages">#</a> Clear Text Messages</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Clear <strong>options</strong> for <strong>players</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Clears all text messages currently displayed on the screen.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>playergroup</code> — Players</li>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-clear-message-optioins">ClearMessageOptioins</a> ]</em> — Options</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">UIClearMessages</span><span class="hljs-params">(
+	playergroup players,
+	<span class="hljs-keyword">int</span> messageArea,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#ui-text">UI / Text</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>text</code> — <strong><a href="/galaxy/reference/ui-hot-key-string">Hot Key String</a></strong> — ( UIHotKeyString )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ui-display-message">Text Message</a></strong> — ( UIDisplayMessage )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ui-clear-messages">Clear Text Messages</a></strong> — ( UIClearMessages )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ui-show-cinematic-text">Show Cinematic Text</a></strong> — ( UIShowCinematicText )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ui-hide-cinematic-text">Hide Cinematic Text</a></strong> — ( UIHideCinematicText )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ui-show-text-crawl">Show Text Crawl</a></strong> — ( UIShowTextCrawl )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ui-hide-text-crawl">Hide Text Crawl</a></strong> — ( UIHideTextCrawl )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-ui-error-message">Error Message</a></strong> — ( libNtve_gf_UIErrorMessage )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/challenges/advancedcommand.sc2map/MapScript.galaxy#L413">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L413</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaAll)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L825</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaAll)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2238</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaDirective)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L491</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaAll)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L467</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaAll)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1400</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaDirective)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2173</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaAll)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2448</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaAll)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L773</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaAll)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2069</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaDirective)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L389</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaAll)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L831</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaAll)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2178</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaDirective)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L405</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaAll)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1350</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaDirective)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2445</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaDirective)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3074</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaAll)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11903</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaCinematic)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L35133</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaSubtitle)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1146</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaAll)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4700</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaDirective)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5254</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaDirective)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1350</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaDirective)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2445</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaDirective)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3074</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaAll)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11903</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaCinematic)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L35133</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaSubtitle)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1146</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaAll)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4700</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaDirective)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5254</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaDirective)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L413</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaAll)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L467</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaAll)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L825</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaAll)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2238</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaDirective)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L491</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaAll)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1400</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaDirective)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2173</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaAll)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2448</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaAll)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L773</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaAll)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2069</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaDirective)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L389</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaAll)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L831</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaAll)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2178</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaDirective)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L405</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaAll)
+</code></pre>
+<h4 id="campaignslibertystorysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertystorysc2campaign">#</a> campaigns/libertystory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/libertystory.sc2campaign/base.sc2data/TriggerLibs/CampaignLib.galaxy#L10039">CampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L10039</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaAll)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11665</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaAll)
+</code></pre>
+<h4 id="campaignsswarmsc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmsc2campaign">#</a> campaigns/swarm.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarm.sc2campaign/base.sc2maps/maps/campaign/swarm/zchar03.sc2map/MapScript.galaxy#L1489">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1489</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaDirective)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1599</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaDirective)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6774</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaAll)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2589</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaAll)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4144</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaAll)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5162</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaAll)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6721</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaCinematic)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8643</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaAll)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7118</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaAll)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2001</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaAll)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3164</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaAll)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3262</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaAll)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2001</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaAll)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3164</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaAll)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3262</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaAll)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1489</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaDirective)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1599</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaDirective)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6774</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaAll)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2589</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaAll)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4144</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaAll)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5162</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaAll)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6721</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaCinematic)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8643</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaAll)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7118</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaAll)
+</code></pre>
+<h4 id="campaignsswarmstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmstorysc2campaign">#</a> campaigns/swarmstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstory.sc2campaign/base.sc2data/TriggerLibs/SwarmCampaignLib.galaxy#L1706">SwarmCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1706</span>
+UIClearMessages(PlayerGroupSingle(<span class="hljs-number">1</span>), c_messageAreaDirective)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L14169</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaAll)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L16261</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaAll)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L16519</span>
+UIClearMessages(PlayerGroupSingle(<span class="hljs-number">1</span>), c_messageAreaDirective)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignMissionLib.galaxy#L1460">VoidCampaignMissionLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1460</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaAll)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2127</span>
+UIClearMessages(PlayerGroupSingle(<span class="hljs-number">1</span>), c_messageAreaDirective)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6820</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaAll)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7425</span>
+UIClearMessages(PlayerGroupSingle(<span class="hljs-number">1</span>), c_messageAreaDirective)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign-2"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign-2">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignUILib.galaxy#L5508">VoidCampaignUILib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L5508</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaAll)
+</code></pre>
+<h4 id="modscoresc2mod"><a class="markdownIt-Anchor" href="#modscoresc2mod">#</a> mods/core.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/core.sc2mod/base.sc2data/TriggerLibs/NativeLib.galaxy#L2039">NativeLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2039</span>
+UIClearMessages(lv_validPlayers, c_messageAreaAll)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1729</span>
+UIClearMessages(lv_validPlayers, c_messageAreaAll)
+</code></pre>
+<h4 id="modsheroesstormmod"><a class="markdownIt-Anchor" href="#modsheroesstormmod">#</a> mods/heroes.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroes.stormmod/base.stormmaps/maps/heroes/singleplayermaps/startingexperience/tutorialveteran.stormmap/MapScript.galaxy#L777">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L777</span>
+UIClearMessages(libCore_gv_playerGroupFromPlayer[libStEx_gv_pLAYER_01_USER], c_messageAreaAll)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L777</span>
+UIClearMessages(libCore_gv_playerGroupFromPlayer[libStEx_gv_pLAYER_01_USER], c_messageAreaAll)
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodscooppvebrawlmodstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodscooppvebrawlmodstormmod">#</a> mods/heroesbrawlmods/brawlmapmods/coop/pvebrawlmod.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/coop/pvebrawlmod.stormmod/base.stormdata/LibPVEB.galaxy#L992">LibPVEB.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L992</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaAll)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1058</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaAll)
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodscooppvemodstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodscooppvemodstormmod">#</a> mods/heroesbrawlmods/brawlmapmods/coop/pvemod.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/coop/pvemod.stormmod/base.stormdata/LibPVEU.galaxy#L1446">LibPVEU.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1446</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaAll)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1512</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaAll)
+</code></pre>
+<h4 id="modsmissionpacksnovacampaignsc2mod"><a class="markdownIt-Anchor" href="#modsmissionpacksnovacampaignsc2mod">#</a> mods/missionpacks/novacampaign.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/novacampaign.sc2mod/base.sc2data/LibNCMI.galaxy#L5906">LibNCMI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L5906</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaAll)
+</code></pre>
+<h4 id="modsmissionpacksnovacampaignsc2mod-2"><a class="markdownIt-Anchor" href="#modsmissionpacksnovacampaignsc2mod-2">#</a> mods/missionpacks/novacampaign.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/novacampaign.sc2mod/base.sc2data/LibNCUI.galaxy#L3832">LibNCUI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3832</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaAll)
+</code></pre>
+<h4 id="modsvoidprologuesc2mod"><a class="markdownIt-Anchor" href="#modsvoidprologuesc2mod">#</a> mods/voidprologue.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/voidprologue.sc2mod/base.sc2data/LibA3DDD02B.galaxy#L6989">LibA3DDD02B.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L6989</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaAll)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7809</span>
+UIClearMessages(PlayerGroupAll(), c_messageAreaAll)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

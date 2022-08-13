@@ -1,0 +1,415 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Set Alliance (One-Way) / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Set Alliance (One-Way)"/>
+                <meta property="og:description" content="Sets the alliance settings of one player towards another player, but not vice-versa.  This action will determine how the Source Player treats the Target Player, such as whether or not the Source Player&#39;s units fight the Target Player&#39;s units.  Pushable means that the Target Player&#39;s units are allowed to push the Source Player&#39;s units out of the way if they are trying to path through them."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="set-alliance-one-way"><a class="markdownIt-Anchor" href="#set-alliance-one-way">#</a> Set Alliance (One-Way)</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Make player <strong>sourcePlayer</strong> treat player <strong>targetPlayer</strong> as <strong>alliance</strong><br>
+<em>Flags</em> — <code>Action</code></p>
+</blockquote>
+<p>Sets the alliance settings of one player towards another player, but not vice-versa.  This action will determine how the Source Player treats the Target Player, such as whether or not the Source Player*“s units fight the Target Player&quot;<em>s units.  Pushable means that the Target Player</em>&quot;s units are allowed to push the Source Player”*s units out of the way if they are trying to path through them.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> — Source Player</li>
+<li><code>int</code> — Target Player</li>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-alliance-setting">AllianceSetting</a> ]</em> — Alliance Setting</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">libNtve_gf_SetAllianceOneWay</span><span class="hljs-params">(
+	<span class="hljs-keyword">int</span> lp_sourcePlayer,
+	<span class="hljs-keyword">int</span> lp_targetPlayer,
+	<span class="hljs-keyword">int</span> lp_alliance,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#player-alliances">Player / Alliances</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-player-alliance-change">Player Changes Alliances</a></strong> — ( TriggerAddEventPlayerAllianceChange )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-set-alliance">Set Alliance</a></strong> — ( libNtve_gf_SetAlliance )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-set-alliance-one-way">Set Alliance (One-Way)</a></strong> — ( libNtve_gf_SetAllianceOneWay )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/player-set-alliance">Set Alliance Aspect</a></strong> — ( PlayerSetAlliance )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-set-player-group-alliance">Set Alliance For Player Group</a></strong> — ( libNtve_gf_SetPlayerGroupAlliance )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-set-alliance-between-two-player-groups">Set Alliance Between Two Player Groups</a></strong> — ( libNtve_gf_SetAllianceBetweenTwoPlayerGroups )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-set-alliance-aspect-for-player-group">Set Alliance Aspect For Player Group</a></strong> — ( libNtve_gf_SetAllianceAspectForPlayerGroup )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/player-get-alliance">Alliance Aspect</a></strong> — ( PlayerGetAlliance )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-player-is-enemy">Get Relationship Between Players</a></strong> — ( libNtve_gf_PlayerIsEnemy )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/challenges/rushdefense.sc2map/MapScript.galaxy#L329">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L329</span>
+libNtve_gf_SetAllianceOneWay(gv_p2_ENEMY_ZERG, gv_pLAYER_USER, <span class="hljs-number">6</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L330</span>
+libNtve_gf_SetAllianceOneWay(gv_p3_ENEMY_PROTOSS, gv_pLAYER_USER, <span class="hljs-number">6</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L841</span>
+libNtve_gf_SetAllianceOneWay(gv_p08_DOMINION, gv_p06_CIVILIANS, libNtve_ge_AllianceSetting_Neutral)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L846</span>
+libNtve_gf_SetAllianceOneWay(gv_p07_HORNERBASE, gv_p08_DOMINION, libNtve_ge_AllianceSetting_Neutral)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11871</span>
+libNtve_gf_SetAllianceOneWay(gv_p05_ZERG_LAB_SPECIMENS, gv_p02_DOMINION, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L580</span>
+libNtve_gf_SetAllianceOneWay(gv_p2_RAYNOR_LIGHTBLUE, gv_p1_USER, libNtve_ge_AllianceSetting_AllyWithSharedVisionAndPushable)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L585</span>
+libNtve_gf_SetAllianceOneWay(gv_p8_ALLIED_PINK, gv_p1_USER, libNtve_ge_AllianceSetting_AllyWithSharedVisionAndPushable)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L589</span>
+libNtve_gf_SetAllianceOneWay(gv_p9_ALLIED_GREEN, gv_p1_USER, libNtve_ge_AllianceSetting_AllyWithSharedVisionAndPushable)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L592</span>
+libNtve_gf_SetAllianceOneWay(gv_p11_ALLIED_CELLBLOCK_A, gv_p1_USER, libNtve_ge_AllianceSetting_AllyWithSharedVisionAndPushable)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L594</span>
+libNtve_gf_SetAllianceOneWay(gv_p12_ALLIED_CELLBLOCK_B, gv_p1_USER, libNtve_ge_AllianceSetting_AllyWithSharedVisionAndPushable)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L609</span>
+libNtve_gf_SetAllianceOneWay(gv_p6_DOMINION_ORANGE, gv_p3_DOMINION_RED, libNtve_ge_AllianceSetting_AllyWithSharedVisionAndPushable)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5795</span>
+libNtve_gf_SetAllianceOneWay(gv_p3_ZERG, <span class="hljs-number">0</span>, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4058</span>
+libNtve_gf_SetAllianceOneWay(gv_p2_PROTOSS_STALKER, gv_p1_USER, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4059</span>
+libNtve_gf_SetAllianceOneWay(gv_p3_PROTOSS_ENEMY, gv_p1_USER, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4060</span>
+libNtve_gf_SetAllianceOneWay(gv_p4_PROTOSS_ENEMY, gv_p1_USER, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4061</span>
+libNtve_gf_SetAllianceOneWay(gv_p6_PROTOSS_ENEMY, gv_p1_USER, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4144</span>
+libNtve_gf_SetAllianceOneWay(gv_p2_PROTOSS_STALKER, gv_p1_USER, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4145</span>
+libNtve_gf_SetAllianceOneWay(gv_p3_PROTOSS_ENEMY, gv_p1_USER, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4146</span>
+libNtve_gf_SetAllianceOneWay(gv_p4_PROTOSS_ENEMY, gv_p1_USER, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4147</span>
+libNtve_gf_SetAllianceOneWay(gv_p6_PROTOSS_ENEMY, gv_p1_USER, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L841</span>
+libNtve_gf_SetAllianceOneWay(gv_p08_DOMINION, gv_p06_CIVILIANS, libNtve_ge_AllianceSetting_Neutral)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L846</span>
+libNtve_gf_SetAllianceOneWay(gv_p07_HORNERBASE, gv_p08_DOMINION, libNtve_ge_AllianceSetting_Neutral)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11871</span>
+libNtve_gf_SetAllianceOneWay(gv_p05_ZERG_LAB_SPECIMENS, gv_p02_DOMINION, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L580</span>
+libNtve_gf_SetAllianceOneWay(gv_p2_RAYNOR_LIGHTBLUE, gv_p1_USER, libNtve_ge_AllianceSetting_AllyWithSharedVisionAndPushable)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L585</span>
+libNtve_gf_SetAllianceOneWay(gv_p8_ALLIED_PINK, gv_p1_USER, libNtve_ge_AllianceSetting_AllyWithSharedVisionAndPushable)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L589</span>
+libNtve_gf_SetAllianceOneWay(gv_p9_ALLIED_GREEN, gv_p1_USER, libNtve_ge_AllianceSetting_AllyWithSharedVisionAndPushable)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L592</span>
+libNtve_gf_SetAllianceOneWay(gv_p11_ALLIED_CELLBLOCK_A, gv_p1_USER, libNtve_ge_AllianceSetting_AllyWithSharedVisionAndPushable)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L594</span>
+libNtve_gf_SetAllianceOneWay(gv_p12_ALLIED_CELLBLOCK_B, gv_p1_USER, libNtve_ge_AllianceSetting_AllyWithSharedVisionAndPushable)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L609</span>
+libNtve_gf_SetAllianceOneWay(gv_p6_DOMINION_ORANGE, gv_p3_DOMINION_RED, libNtve_ge_AllianceSetting_AllyWithSharedVisionAndPushable)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5795</span>
+libNtve_gf_SetAllianceOneWay(gv_p3_ZERG, <span class="hljs-number">0</span>, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4058</span>
+libNtve_gf_SetAllianceOneWay(gv_p2_PROTOSS_STALKER, gv_p1_USER, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4059</span>
+libNtve_gf_SetAllianceOneWay(gv_p3_PROTOSS_ENEMY, gv_p1_USER, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4060</span>
+libNtve_gf_SetAllianceOneWay(gv_p4_PROTOSS_ENEMY, gv_p1_USER, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4061</span>
+libNtve_gf_SetAllianceOneWay(gv_p6_PROTOSS_ENEMY, gv_p1_USER, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4144</span>
+libNtve_gf_SetAllianceOneWay(gv_p2_PROTOSS_STALKER, gv_p1_USER, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4145</span>
+libNtve_gf_SetAllianceOneWay(gv_p3_PROTOSS_ENEMY, gv_p1_USER, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4146</span>
+libNtve_gf_SetAllianceOneWay(gv_p4_PROTOSS_ENEMY, gv_p1_USER, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4147</span>
+libNtve_gf_SetAllianceOneWay(gv_p6_PROTOSS_ENEMY, gv_p1_USER, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L329</span>
+libNtve_gf_SetAllianceOneWay(gv_p2_ENEMY_ZERG, gv_pLAYER_USER, <span class="hljs-number">6</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L330</span>
+libNtve_gf_SetAllianceOneWay(gv_p3_ENEMY_PROTOSS, gv_pLAYER_USER, <span class="hljs-number">6</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6149</span>
+libNtve_gf_SetAllianceOneWay(gv_pLAYER_01_USER, gv_pLAYER_02_WARFIELDOutpost, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1078</span>
+libNtve_gf_SetAllianceOneWay(gv_pLAYER_02_DOMINION422, gv_pLAYER_02_DOMINION, libNtve_ge_AllianceSetting_Neutral)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1079</span>
+libNtve_gf_SetAllianceOneWay(gv_pLAYER_02_DOMINION422, gv_pLAYER_02_DOMINION2, libNtve_ge_AllianceSetting_Neutral)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1080</span>
+libNtve_gf_SetAllianceOneWay(gv_pLAYER_02_DOMINION422, gv_pLAYER_02_DOMINION3, libNtve_ge_AllianceSetting_Neutral)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1093</span>
+libNtve_gf_SetAllianceOneWay(autoA7178B81_var, gv_pLAYER_02_DOMINION422, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5644</span>
+libNtve_gf_SetAllianceOneWay(gv_PLAYER_07_DOMINION_GREEN22, gv_PLAYER_03_DOMINION_BLUE, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5687</span>
+libNtve_gf_SetAllianceOneWay(gv_PLAYER_07_DOMINION_GREEN22, gv_PLAYER_03_DOMINION_BLUE, libNtve_ge_AllianceSetting_Neutral)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5696</span>
+libNtve_gf_SetAllianceOneWay(gv_PLAYER_07_DOMINION_GREEN22, gv_PLAYER_03_DOMINION_BLUE, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2018</span>
+libNtve_gf_SetAllianceOneWay(gv_pLAYER_02_DOMINION2, gv_pLAYER_01_USER, libNtve_ge_AllianceSetting_Neutral)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2019</span>
+libNtve_gf_SetAllianceOneWay(gv_pLAYER_02_DOMINION34, gv_pLAYER_01_USER, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2020</span>
+libNtve_gf_SetAllianceOneWay(gv_pLAYER_02_DOMINION35, gv_pLAYER_01_USER, libNtve_ge_AllianceSetting_Neutral)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2021</span>
+libNtve_gf_SetAllianceOneWay(gv_pLAYER_02_DOMINION32, gv_pLAYER_01_USER, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5196</span>
+libNtve_gf_SetAllianceOneWay(gv_pLAYER_01_USER, gv_pLAYER_02_BRAKK, libNtve_ge_AllianceSetting_Ally)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5388</span>
+libNtve_gf_SetAllianceOneWay(gv_pLAYER_01_USER, gv_pLAYER_02_BRAKK, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6149</span>
+libNtve_gf_SetAllianceOneWay(gv_pLAYER_01_USER, gv_pLAYER_02_WARFIELDOutpost, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1078</span>
+libNtve_gf_SetAllianceOneWay(gv_pLAYER_02_DOMINION422, gv_pLAYER_02_DOMINION, libNtve_ge_AllianceSetting_Neutral)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1079</span>
+libNtve_gf_SetAllianceOneWay(gv_pLAYER_02_DOMINION422, gv_pLAYER_02_DOMINION2, libNtve_ge_AllianceSetting_Neutral)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1080</span>
+libNtve_gf_SetAllianceOneWay(gv_pLAYER_02_DOMINION422, gv_pLAYER_02_DOMINION3, libNtve_ge_AllianceSetting_Neutral)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1093</span>
+libNtve_gf_SetAllianceOneWay(autoA7178B81_var, gv_pLAYER_02_DOMINION422, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5644</span>
+libNtve_gf_SetAllianceOneWay(gv_PLAYER_07_DOMINION_GREEN22, gv_PLAYER_03_DOMINION_BLUE, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5687</span>
+libNtve_gf_SetAllianceOneWay(gv_PLAYER_07_DOMINION_GREEN22, gv_PLAYER_03_DOMINION_BLUE, libNtve_ge_AllianceSetting_Neutral)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5696</span>
+libNtve_gf_SetAllianceOneWay(gv_PLAYER_07_DOMINION_GREEN22, gv_PLAYER_03_DOMINION_BLUE, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2018</span>
+libNtve_gf_SetAllianceOneWay(gv_pLAYER_02_DOMINION2, gv_pLAYER_01_USER, libNtve_ge_AllianceSetting_Neutral)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2019</span>
+libNtve_gf_SetAllianceOneWay(gv_pLAYER_02_DOMINION34, gv_pLAYER_01_USER, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2020</span>
+libNtve_gf_SetAllianceOneWay(gv_pLAYER_02_DOMINION35, gv_pLAYER_01_USER, libNtve_ge_AllianceSetting_Neutral)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2021</span>
+libNtve_gf_SetAllianceOneWay(gv_pLAYER_02_DOMINION32, gv_pLAYER_01_USER, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5196</span>
+libNtve_gf_SetAllianceOneWay(gv_pLAYER_01_USER, gv_pLAYER_02_BRAKK, libNtve_ge_AllianceSetting_Ally)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5388</span>
+libNtve_gf_SetAllianceOneWay(gv_pLAYER_01_USER, gv_pLAYER_02_BRAKK, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6591</span>
+libNtve_gf_SetAllianceOneWay(gv_pLAYER_01_USER, gv_pLAYER_02_ZERG, libNtve_ge_AllianceSetting_Neutral)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6691</span>
+libNtve_gf_SetAllianceOneWay(gv_pLAYER_01_USER, gv_pLAYER_02_ZERG, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6865</span>
+libNtve_gf_SetAllianceOneWay(gv_pLAYER_01_USER, gv_pLAYER_02_ZERG, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7506</span>
+libNtve_gf_SetAllianceOneWay(gv_pLAYER_03_DARK_PROTOSS, gv_pLAYER_01_USER, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9862</span>
+libNtve_gf_SetAllianceOneWay(gv_pLAYER_02_PROTOSS_NEUTRAL, gv_pLAYER_05_AMONS_FORCES, libNtve_ge_AllianceSetting_Neutral)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1640</span>
+libNtve_gf_SetAllianceOneWay(gv_pLAYER_01_USER, gv_pLAYER_04_RAYNOR_AI, libNtve_ge_AllianceSetting_AllyWithSharedVisionAndPushable)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1642</span>
+libNtve_gf_SetAllianceOneWay(gv_pLAYER_01_USER, gv_pLAYER_05_RAYNOR_BASE_1, libNtve_ge_AllianceSetting_AllyWithSharedVisionAndPushable)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1644</span>
+libNtve_gf_SetAllianceOneWay(gv_pLAYER_01_USER, gv_pLAYER_06_RAYNOR_BASE_2, libNtve_ge_AllianceSetting_AllyWithSharedVisionAndPushable)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1035</span>
+libNtve_gf_SetAllianceOneWay(gv_pLAYER_02_DOMINION4, gv_pLAYER_02_DOMINION7, libNtve_ge_AllianceSetting_NeutralWithSharedVision)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1036</span>
+libNtve_gf_SetAllianceOneWay(gv_pLAYER_02_DOMINION3, gv_pLAYER_02_DOMINION7, libNtve_ge_AllianceSetting_NeutralWithSharedVision)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6591</span>
+libNtve_gf_SetAllianceOneWay(gv_pLAYER_01_USER, gv_pLAYER_02_ZERG, libNtve_ge_AllianceSetting_Neutral)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6691</span>
+libNtve_gf_SetAllianceOneWay(gv_pLAYER_01_USER, gv_pLAYER_02_ZERG, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6865</span>
+libNtve_gf_SetAllianceOneWay(gv_pLAYER_01_USER, gv_pLAYER_02_ZERG, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7506</span>
+libNtve_gf_SetAllianceOneWay(gv_pLAYER_03_DARK_PROTOSS, gv_pLAYER_01_USER, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9862</span>
+libNtve_gf_SetAllianceOneWay(gv_pLAYER_02_PROTOSS_NEUTRAL, gv_pLAYER_05_AMONS_FORCES, libNtve_ge_AllianceSetting_Neutral)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1640</span>
+libNtve_gf_SetAllianceOneWay(gv_pLAYER_01_USER, gv_pLAYER_04_RAYNOR_AI, libNtve_ge_AllianceSetting_AllyWithSharedVisionAndPushable)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1642</span>
+libNtve_gf_SetAllianceOneWay(gv_pLAYER_01_USER, gv_pLAYER_05_RAYNOR_BASE_1, libNtve_ge_AllianceSetting_AllyWithSharedVisionAndPushable)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1644</span>
+libNtve_gf_SetAllianceOneWay(gv_pLAYER_01_USER, gv_pLAYER_06_RAYNOR_BASE_2, libNtve_ge_AllianceSetting_AllyWithSharedVisionAndPushable)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1035</span>
+libNtve_gf_SetAllianceOneWay(gv_pLAYER_02_DOMINION4, gv_pLAYER_02_DOMINION7, libNtve_ge_AllianceSetting_NeutralWithSharedVision)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1036</span>
+libNtve_gf_SetAllianceOneWay(gv_pLAYER_02_DOMINION3, gv_pLAYER_02_DOMINION7, libNtve_ge_AllianceSetting_NeutralWithSharedVision)
+</code></pre>
+<h4 id="modscoresc2mod"><a class="markdownIt-Anchor" href="#modscoresc2mod">#</a> mods/core.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/core.sc2mod/base.sc2data/TriggerLibs/NativeLib.galaxy#L3671">NativeLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3671</span>
+libNtve_gf_SetAllianceOneWay(lp_sourcePlayer, lp_targetPlayer, lp_alliance)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3672</span>
+libNtve_gf_SetAllianceOneWay(lp_targetPlayer, lp_sourcePlayer, lp_alliance)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3754</span>
+libNtve_gf_SetAllianceOneWay(lv_player1, lv_player2, lp_alliance)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3784</span>
+libNtve_gf_SetAllianceOneWay(lv_player1, lv_player2, lp_alliance)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3098</span>
+libNtve_gf_SetAllianceOneWay(lp_sourcePlayer, lp_targetPlayer, lp_alliance)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3099</span>
+libNtve_gf_SetAllianceOneWay(lp_targetPlayer, lp_sourcePlayer, lp_alliance)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3168</span>
+libNtve_gf_SetAllianceOneWay(lv_player1, lv_player2, lp_alliance)
+</code></pre>
+<h4 id="modsheroesstormmod"><a class="markdownIt-Anchor" href="#modsheroesstormmod">#</a> mods/heroes.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroes.stormmod/base.stormmaps/maps/heroes/singleplayermaps/startingexperience/tutorialveteran.stormmap/MapScript.galaxy#L2208">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2208</span>
+libNtve_gf_SetAllianceOneWay(libCore_gv_cOMPUTER_TeamOrder, auto8EF91213_var, libNtve_ge_AllianceSetting_AllyWithSharedVision)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2232</span>
+libNtve_gf_SetAllianceOneWay(libCore_gv_cOMPUTER_TeamChaos, autoDD36CF4E_var, libNtve_ge_AllianceSetting_AllyWithSharedVision)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2208</span>
+libNtve_gf_SetAllianceOneWay(libCore_gv_cOMPUTER_TeamOrder, auto8EF91213_var, libNtve_ge_AllianceSetting_AllyWithSharedVision)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2232</span>
+libNtve_gf_SetAllianceOneWay(libCore_gv_cOMPUTER_TeamChaos, autoDD36CF4E_var, libNtve_ge_AllianceSetting_AllyWithSharedVision)
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodscoopescapefrombraxisstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodscoopescapefrombraxisstormmod">#</a> mods/heroesbrawlmods/brawlmapmods/coop/escapefrombraxis.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/coop/escapefrombraxis.stormmod/base.stormdata/LibPEB1.galaxy#L3653">LibPEB1.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3653</span>
+libNtve_gf_SetAllianceOneWay(libCore_gv_cOMPUTER_TeamOrder, auto32C22853_var, libNtve_ge_AllianceSetting_AllyWithSharedVision)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,214 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Send Transmission (Deprecated) / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Send Transmission (Deprecated)"/>
+                <meta property="og:description" content="Sends a transmission with sound to the specified players from a source unit or model.  Use &quot;Last Sent Transmission&quot; to refer to this transmission after it has begun.
+
+Returns: transmission [ transmission ]"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="send-transmission-deprecated"><a class="markdownIt-Anchor" href="#send-transmission-deprecated">#</a> Send Transmission (Deprecated)</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Send transmission to <strong>Players</strong> from <strong>Source</strong> playing <strong>Sound</strong> with name <strong>Speaker</strong> and message <strong>Subtitle</strong> using <strong>Target</strong> playing <strong>PortraitAnim|Anim</strong> (<strong>DurationType</strong> <strong>Duration</strong> seconds, <strong>WaitUntilDone|Wait/Don’t Wait</strong> until it finishes)<br>
+<em>Flags</em> — <code>Action</code> | <code>Hidden</code></p>
+</blockquote>
+<p>Sends a transmission with sound to the specified players from a source unit or model.  Use <em>“Last Sent Transmission”</em> to refer to this transmission after it has begun.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>playergroup</code> — Players</li>
+<li><code>transmissionsource</code> — Source</li>
+<li><code>int</code> <em>[ portrait ]</em> — Portrait</li>
+<li><code>string</code> <em>[ modelanim ]</em> — Portrait Anim</li>
+<li><code>soundlink</code> — Sound</li>
+<li><code>text</code> — Name</li>
+<li><code>text</code> — Message</li>
+<li><code>fixed</code> — Duration</li>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-transmission-duration-type">TransmissionDurationType</a> ]</em> — DurationType</li>
+<li><code>bool</code> <em>[ preset::<a href="/galaxy/reference/preset-trigger-wait-option">Trigger_Wait_Option</a> ]</em> — WaitUntilDone</li>
+</ul>
+<p>Returns — <code>int</code> <em>[ transmission ]</em></p>
+<pre class="hljs"><code><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">TransmissionSend</span><span class="hljs-params">(
+	playergroup lp_Players,
+	transmissionsource lp_Source,
+	<span class="hljs-keyword">int</span> lp_Target,
+	<span class="hljs-built_in">string</span> lp_PortraitAnim,
+	soundlink lp_Sound,
+	text lp_Speaker,
+	text lp_Subtitle,
+	fixed lp_Duration,
+	<span class="hljs-keyword">int</span> lp_DurationType,
+	<span class="hljs-keyword">bool</span> lp_WaitUntilDone,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#transmission-deprecated">Transmission / Deprecated</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ transmission ]</em> — <strong><a href="/galaxy/reference/transmission-send-advanced">Send Transmission (Advanced) (Deprecated)</a></strong> — ( TransmissionSendAdvanced )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ transmission ]</em> — <strong><a href="/galaxy/reference/transmission-send">Send Transmission (Deprecated)</a></strong> — ( TransmissionSend )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/tstory01.sc2map/MapScript.galaxy#L3617">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3617</span>
+TransmissionSend(PlayerGroupAll(), TransmissionSourceFromUnit(lp_speaker, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>), PortraitGetGame(), <span class="hljs-string">"Talk"</span>, SoundLink(lp_line, c_soundIndexAny), null, null, <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, lp_waitOption)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3627</span>
+TransmissionSend(PlayerGroupAll(), TransmissionSourceFromUnit(lp_speaker, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>), PortraitGetGame(), <span class="hljs-string">"Talk"</span>, SoundLink(lp_line, c_soundIndexAny), null, null, <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L27667</span>
+TransmissionSend(PlayerGroupAll(), TransmissionSourceFromMovie(<span class="hljs-string">"Assets\\Textures\\sm_terran01raynorintro.ogv"</span>, <span class="hljs-literal">true</span>), libNtve_gf_FullscreenPortrait(), <span class="hljs-string">"Talk"</span>, SoundLink(null, c_soundIndexAny), null, null, <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L27706</span>
+TransmissionSend(PlayerGroupAll(), TransmissionSourceFromMovie(<span class="hljs-string">"LocalizedData\\Movies\\InGame\\SM_Terran04aTychusIntro.ogg"</span>, <span class="hljs-literal">true</span>), libNtve_gf_FullscreenPortrait(), <span class="hljs-string">"Talk"</span>, SoundLink(null, c_soundIndexAny), null, null, <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L27707</span>
+TransmissionSend(PlayerGroupAll(), TransmissionSourceFromMovie(<span class="hljs-string">"LocalizedData\\Movies\\InGame\\SM_Terran04bTychusIntroEnd.ogg"</span>, <span class="hljs-literal">true</span>), libNtve_gf_FullscreenPortrait(), <span class="hljs-string">"Talk"</span>, SoundLink(null, c_soundIndexAny), null, null, <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L27746</span>
+TransmissionSend(PlayerGroupAll(), TransmissionSourceFromMovie(<span class="hljs-string">"Assets\\Textures\\sm_terran05hornerbridgeintro.ogv"</span>, <span class="hljs-literal">true</span>), libNtve_gf_FullscreenPortrait(), <span class="hljs-string">"Talk"</span>, SoundLink(null, c_soundIndexAny), null, null, <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L27785</span>
+TransmissionSend(PlayerGroupAll(), TransmissionSourceFromMovie(<span class="hljs-string">"LocalizedData\\Movies\\InGame\\SM_Terran06ValerianIntro.ogg"</span>, <span class="hljs-literal">true</span>), libNtve_gf_FullscreenPortrait(), <span class="hljs-string">"Talk"</span>, SoundLink(null, c_soundIndexAny), null, null, <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L27824</span>
+TransmissionSend(PlayerGroupAll(), TransmissionSourceFromMovie(<span class="hljs-string">"LocalizedData\\Movies\\InGame\\SM_Terran07BarFight.ogg"</span>, <span class="hljs-literal">true</span>), libNtve_gf_FullscreenPortrait(), <span class="hljs-string">"Talk"</span>, SoundLink(null, c_soundIndexAny), null, null, <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L27863</span>
+TransmissionSend(PlayerGroupAll(), TransmissionSourceFromMovie(<span class="hljs-string">"LocalizedData\\Movies\\InGame\\SM_Terran08DrHansenAend.ogg"</span>, <span class="hljs-literal">true</span>), libNtve_gf_FullscreenPortrait(), <span class="hljs-string">"Talk"</span>, SoundLink(null, c_soundIndexAny), null, null, <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L27902</span>
+TransmissionSend(PlayerGroupAll(), TransmissionSourceFromMovie(<span class="hljs-string">"LocalizedData\\Movies\\InGame\\SM_Terran09ToshAend.ogg"</span>, <span class="hljs-literal">true</span>), libNtve_gf_FullscreenPortrait(), <span class="hljs-string">"Talk"</span>, SoundLink(null, c_soundIndexAny), null, null, <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3617</span>
+TransmissionSend(PlayerGroupAll(), TransmissionSourceFromUnit(lp_speaker, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>), PortraitGetGame(), <span class="hljs-string">"Talk"</span>, SoundLink(lp_line, c_soundIndexAny), null, null, <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, lp_waitOption)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3627</span>
+TransmissionSend(PlayerGroupAll(), TransmissionSourceFromUnit(lp_speaker, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>), PortraitGetGame(), <span class="hljs-string">"Talk"</span>, SoundLink(lp_line, c_soundIndexAny), null, null, <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L27667</span>
+TransmissionSend(PlayerGroupAll(), TransmissionSourceFromMovie(<span class="hljs-string">"Assets\\Textures\\sm_terran01raynorintro.ogv"</span>, <span class="hljs-literal">true</span>), libNtve_gf_FullscreenPortrait(), <span class="hljs-string">"Talk"</span>, SoundLink(null, c_soundIndexAny), null, null, <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L27706</span>
+TransmissionSend(PlayerGroupAll(), TransmissionSourceFromMovie(<span class="hljs-string">"LocalizedData\\Movies\\InGame\\SM_Terran04aTychusIntro.ogg"</span>, <span class="hljs-literal">true</span>), libNtve_gf_FullscreenPortrait(), <span class="hljs-string">"Talk"</span>, SoundLink(null, c_soundIndexAny), null, null, <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L27707</span>
+TransmissionSend(PlayerGroupAll(), TransmissionSourceFromMovie(<span class="hljs-string">"LocalizedData\\Movies\\InGame\\SM_Terran04bTychusIntroEnd.ogg"</span>, <span class="hljs-literal">true</span>), libNtve_gf_FullscreenPortrait(), <span class="hljs-string">"Talk"</span>, SoundLink(null, c_soundIndexAny), null, null, <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L27746</span>
+TransmissionSend(PlayerGroupAll(), TransmissionSourceFromMovie(<span class="hljs-string">"Assets\\Textures\\sm_terran05hornerbridgeintro.ogv"</span>, <span class="hljs-literal">true</span>), libNtve_gf_FullscreenPortrait(), <span class="hljs-string">"Talk"</span>, SoundLink(null, c_soundIndexAny), null, null, <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L27785</span>
+TransmissionSend(PlayerGroupAll(), TransmissionSourceFromMovie(<span class="hljs-string">"LocalizedData\\Movies\\InGame\\SM_Terran06ValerianIntro.ogg"</span>, <span class="hljs-literal">true</span>), libNtve_gf_FullscreenPortrait(), <span class="hljs-string">"Talk"</span>, SoundLink(null, c_soundIndexAny), null, null, <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L27824</span>
+TransmissionSend(PlayerGroupAll(), TransmissionSourceFromMovie(<span class="hljs-string">"LocalizedData\\Movies\\InGame\\SM_Terran07BarFight.ogg"</span>, <span class="hljs-literal">true</span>), libNtve_gf_FullscreenPortrait(), <span class="hljs-string">"Talk"</span>, SoundLink(null, c_soundIndexAny), null, null, <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L27863</span>
+TransmissionSend(PlayerGroupAll(), TransmissionSourceFromMovie(<span class="hljs-string">"LocalizedData\\Movies\\InGame\\SM_Terran08DrHansenAend.ogg"</span>, <span class="hljs-literal">true</span>), libNtve_gf_FullscreenPortrait(), <span class="hljs-string">"Talk"</span>, SoundLink(null, c_soundIndexAny), null, null, <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L27902</span>
+TransmissionSend(PlayerGroupAll(), TransmissionSourceFromMovie(<span class="hljs-string">"LocalizedData\\Movies\\InGame\\SM_Terran09ToshAend.ogg"</span>, <span class="hljs-literal">true</span>), libNtve_gf_FullscreenPortrait(), <span class="hljs-string">"Talk"</span>, SoundLink(null, c_soundIndexAny), null, null, <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="campaignslibertystorysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertystorysc2campaign">#</a> campaigns/libertystory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/libertystory.sc2campaign/base.sc2data/TriggerLibs/CampaignLib.galaxy#L828">CampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L828</span>
+TransmissionSend(PlayerGroupAll(), lv_source, lv_portrait, <span class="hljs-string">"Talk"</span>, lp_sound, null, null, lp_duration, lp_durationType, lp_waitUntilDone)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12909</span>
+TransmissionSend(PlayerGroupAll(), lv_movieSource, libNtve_gf_FullscreenPortrait(), <span class="hljs-string">""</span>, null, null, null, <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="campaignsswarmstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmstorysc2campaign">#</a> campaigns/swarmstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstory.sc2campaign/base.sc2data/TriggerLibs/SwarmCampaignLib.galaxy#L19779">SwarmCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L19779</span>
+TransmissionSend(PlayerGroupAll(), lv_movieSource, libNtve_gf_FullscreenPortrait(), <span class="hljs-string">""</span>, null, null, null, <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignLib.galaxy#L10473">VoidCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L10473</span>
+TransmissionSend(PlayerGroupAll(), lv_movieSource, libNtve_gf_FullscreenPortrait(), <span class="hljs-string">""</span>, null, null, null, <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="modscoresc2mod"><a class="markdownIt-Anchor" href="#modscoresc2mod">#</a> mods/core.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/core.sc2mod/base.sc2data/TriggerLibs/NativeLib.galaxy#L4563">NativeLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4563</span>
+TransmissionSend(PlayerGroupAll(), lp_Source, lp_Target, <span class="hljs-string">"Talk"</span>, lp_Sound, null, null, lp_Duration, lp_DurationType, lp_WaitUntilDone)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3821</span>
+TransmissionSend(PlayerGroupAll(), lp_Source, lp_Target, <span class="hljs-string">"Talk"</span>, lp_Sound, null, null, lp_Duration, lp_DurationType, lp_WaitUntilDone)
+</code></pre>
+<h4 id="modsmissionpackscampaigncommonsc2mod"><a class="markdownIt-Anchor" href="#modsmissionpackscampaigncommonsc2mod">#</a> mods/missionpacks/campaigncommon.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/campaigncommon.sc2mod/base.sc2data/LibComC.galaxy#L4581">LibComC.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4581</span>
+TransmissionSend(PlayerGroupAll(), lv_movieSource, libNtve_gf_FullscreenPortrait(), <span class="hljs-string">""</span>, null, null, null, <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="modsvoidprologuesc2mod"><a class="markdownIt-Anchor" href="#modsvoidprologuesc2mod">#</a> mods/voidprologue.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/voidprologue.sc2mod/base.sc2data/LibA3DDD02B.galaxy#L8841">LibA3DDD02B.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L8841</span>
+TransmissionSend(PlayerGroupAll(), lv_movieSource, libNtve_gf_FullscreenPortrait(), <span class="hljs-string">""</span>, null, null, null, <span class="hljs-number">0.0</span>, c_transmissionDurationAdd, <span class="hljs-literal">true</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

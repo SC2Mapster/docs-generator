@@ -1,0 +1,398 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Clear Action Queue / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Clear Action Queue"/>
+                <meta property="og:description" content="Clears all actions currently in the action queue."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="clear-action-queue"><a class="markdownIt-Anchor" href="#clear-action-queue">#</a> Clear Action Queue</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Clear the action queue (<strong>activeOption|Retain/Clear/Interrupt</strong> the active action)<br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Clears all actions currently in the action queue.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-trigger-queue-active-option">TriggerQueueActiveOption</a> ]</em> — Active Option</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">TriggerQueueClear</span><span class="hljs-params">(<span class="hljs-keyword">int</span> activeOption)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#trigger-action-queue">Trigger / Action Queue</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-action-queue-add">Add Actions To Action Queue</a></strong> — (  )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-queue-pause">Pause/Unpause Action Queue</a></strong> — ( TriggerQueuePause )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-queue-clear">Clear Action Queue</a></strong> — ( TriggerQueueClear )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/trigger-queue-is-empty">Action Queue Is Empty</a></strong> — ( TriggerQueueIsEmpty )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/challenges/advancedcommand.sc2map/MapScript.galaxy#L411">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L411</span>
+TriggerQueueClear(c_triggerQueueKill)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1182</span>
+TriggerQueueClear(c_triggerQueueRetain)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1234</span>
+TriggerQueueClear(c_triggerQueueRetain)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1242</span>
+TriggerQueueClear(c_triggerQueueKill)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L820</span>
+TriggerQueueClear(c_triggerQueueKill)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2584</span>
+TriggerQueueClear(c_triggerQueueRetain)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2651</span>
+TriggerQueueClear(c_triggerQueueRetain)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2716</span>
+TriggerQueueClear(c_triggerQueueRetain)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2742</span>
+TriggerQueueClear(c_triggerQueueRetain)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L489</span>
+TriggerQueueClear(c_triggerQueueKill)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1451</span>
+TriggerQueueClear(c_triggerQueueRetain)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1505</span>
+TriggerQueueClear(c_triggerQueueRetain)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1513</span>
+TriggerQueueClear(c_triggerQueueKill)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L464</span>
+TriggerQueueClear(c_triggerQueueKill)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1331</span>
+TriggerQueueClear(c_triggerQueueRetain)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1370</span>
+TriggerQueueClear(c_triggerQueueRetain)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1420</span>
+TriggerQueueClear(c_triggerQueueRetain)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1612</span>
+TriggerQueueClear(c_triggerQueueRetain)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L768</span>
+TriggerQueueClear(c_triggerQueueKill)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2425</span>
+TriggerQueueClear(c_triggerQueueRetain)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2492</span>
+TriggerQueueClear(c_triggerQueueRetain)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2557</span>
+TriggerQueueClear(c_triggerQueueRetain)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2583</span>
+TriggerQueueClear(c_triggerQueueRetain)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L387</span>
+TriggerQueueClear(c_triggerQueueKill)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1176</span>
+TriggerQueueClear(c_triggerQueueRetain)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1270</span>
+TriggerQueueClear(c_triggerQueueRetain)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1278</span>
+TriggerQueueClear(c_triggerQueueKill)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L826</span>
+TriggerQueueClear(c_triggerQueueKill)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2570</span>
+TriggerQueueClear(c_triggerQueueRetain)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2637</span>
+TriggerQueueClear(c_triggerQueueRetain)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2702</span>
+TriggerQueueClear(c_triggerQueueRetain)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2728</span>
+TriggerQueueClear(c_triggerQueueRetain)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L403</span>
+TriggerQueueClear(c_triggerQueueKill)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1168</span>
+TriggerQueueClear(c_triggerQueueRetain)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1212</span>
+TriggerQueueClear(c_triggerQueueRetain)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1220</span>
+TriggerQueueClear(c_triggerQueueKill)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4850</span>
+TriggerQueueClear(c_triggerQueueRemove)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4895</span>
+TriggerQueueClear(c_triggerQueueRemove)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4933</span>
+TriggerQueueClear(c_triggerQueueRemove)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4973</span>
+TriggerQueueClear(c_triggerQueueRemove)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5016</span>
+TriggerQueueClear(c_triggerQueueRemove)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5598</span>
+TriggerQueueClear(c_triggerQueueRemove)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4372</span>
+TriggerQueueClear(c_triggerQueueRemove)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4701</span>
+TriggerQueueClear(c_triggerQueueRemove)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4742</span>
+TriggerQueueClear(c_triggerQueueRemove)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5350</span>
+TriggerQueueClear(c_triggerQueueRemove)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5384</span>
+TriggerQueueClear(c_triggerQueueRemove)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5921</span>
+TriggerQueueClear(c_triggerQueueRemove)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5962</span>
+TriggerQueueClear(c_triggerQueueRemove)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3609</span>
+TriggerQueueClear(c_triggerQueueRemove)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3897</span>
+TriggerQueueClear(c_triggerQueueRemove)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3913</span>
+TriggerQueueClear(c_triggerQueueRemove)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5021</span>
+TriggerQueueClear(c_triggerQueueRetain)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5103</span>
+TriggerQueueClear(c_triggerQueueRemove)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5136</span>
+TriggerQueueClear(c_triggerQueueRemove)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5590</span>
+TriggerQueueClear(c_triggerQueueRemove)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5608</span>
+TriggerQueueClear(c_triggerQueueRemove)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4593</span>
+TriggerQueueClear(c_triggerQueueRemove)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4628</span>
+TriggerQueueClear(c_triggerQueueRemove)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4661</span>
+TriggerQueueClear(c_triggerQueueRemove)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5072</span>
+TriggerQueueClear(c_triggerQueueRemove)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5110</span>
+TriggerQueueClear(c_triggerQueueRemove)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1102</span>
+TriggerQueueClear(c_triggerQueueRemove)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1140</span>
+TriggerQueueClear(c_triggerQueueRemove)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4526</span>
+TriggerQueueClear(c_triggerQueueRemove)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4566</span>
+TriggerQueueClear(c_triggerQueueRemove)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5064</span>
+TriggerQueueClear(c_triggerQueueRemove)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5091</span>
+TriggerQueueClear(c_triggerQueueRemove)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4657</span>
+TriggerQueueClear(c_triggerQueueRemove)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5907</span>
+TriggerQueueClear(c_triggerQueueRemove)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5947</span>
+TriggerQueueClear(c_triggerQueueRemove)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10310</span>
+TriggerQueueClear(c_triggerQueueRemove)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11092</span>
+TriggerQueueClear(c_triggerQueueRemove)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11108</span>
+TriggerQueueClear(c_triggerQueueRemove)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4200</span>
+TriggerQueueClear(c_triggerQueueRemove)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4239</span>
+TriggerQueueClear(c_triggerQueueRemove)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4594</span>
+TriggerQueueClear(c_triggerQueueRemove)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4236</span>
+TriggerQueueClear(c_triggerQueueRemove)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4642</span>
+TriggerQueueClear(c_triggerQueueRemove)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4325</span>
+TriggerQueueClear(c_triggerQueueRemove)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4592</span>
+TriggerQueueClear(c_triggerQueueRemove)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4608</span>
+TriggerQueueClear(c_triggerQueueRemove)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4412</span>
+TriggerQueueClear(c_triggerQueueRemove)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4736</span>
+TriggerQueueClear(c_triggerQueueRemove)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4767</span>
+TriggerQueueClear(c_triggerQueueRemove)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3599</span>
+TriggerQueueClear(c_triggerQueueRemove)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3632</span>
+TriggerQueueClear(c_triggerQueueRemove)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3930</span>
+TriggerQueueClear(c_triggerQueueRemove)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3949</span>
+TriggerQueueClear(c_triggerQueueRemove)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4619</span>
+TriggerQueueClear(c_triggerQueueRemove)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4661</span>
+TriggerQueueClear(c_triggerQueueRemove)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4995</span>
+TriggerQueueClear(c_triggerQueueRemove)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5014</span>
+TriggerQueueClear(c_triggerQueueRemove)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5186</span>
+TriggerQueueClear(c_triggerQueueRemove)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5019</span>
+TriggerQueueClear(c_triggerQueueRemove)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5085</span>
+TriggerQueueClear(c_triggerQueueRemove)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5543</span>
+TriggerQueueClear(c_triggerQueueRemove)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5580</span>
+TriggerQueueClear(c_triggerQueueRemove)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L660</span>
+TriggerQueueClear(c_triggerQueueRemove)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L749</span>
+TriggerQueueClear(c_triggerQueueRemove)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

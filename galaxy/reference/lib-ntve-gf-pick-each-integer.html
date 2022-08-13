@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Pick Each Integer / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Pick Each Integer"/>
+                <meta property="og:description" content="Picks each integer between the Start and End parameters, and performs the specified actions.  Uses the &quot;Picked Integer&quot; function to refer to the iterator in the action set."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="pick-each-integer"><a class="markdownIt-Anchor" href="#pick-each-integer">#</a> Pick Each Integer</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Pick each integer from <strong>s</strong> to <strong>e</strong>, and do (Actions)<br>
+<em>Flags</em> — <code>SubFunctions</code> | <code>Action</code></p>
+</blockquote>
+<p>Picks each integer between the Start and End parameters, and performs the specified actions.  Uses the <em>“Picked Integer”</em> function to refer to the iterator in the action set.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> — Start</li>
+<li><code>int</code> — End</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code>#INITAUTOVAR(ae,e)
+#AUTOVAR(var) = #PARAM(s);
+<span class="hljs-keyword">for</span> ( ; #AUTOVAR(var) &lt;= #AUTOVAR(ae); #AUTOVAR(var) += <span class="hljs-number">1</span> ) {
+    #SUBFUNCS(actions)
+}
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#general-loops">General / Loops</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-repeat">Repeat</a></strong> — (  )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-repeat-forever">Repeat Forever</a></strong> — (  )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-for-each-integer2">For Each Real</a></strong> — (  )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-for-each-integer2-deprecated">For Each Real Deprecated</a></strong> — (  )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-for-each-integer">For Each Integer</a></strong> — (  )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-for-each-integer-deprecated">For Each Integer Deprecated</a></strong> — (  )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-pick-each-integer">Pick Each Integer</a></strong> — (  )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-pick-each-integer-deprecated">Pick Each Integer Deprecated</a></strong> — (  )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/lib-ntve-op-int-loop-current">Picked Integer</a></strong> — (  )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/int-loop-current-deprecated">Picked Integer Deprecated</a></strong> — ( IntLoopCurrentDeprecated )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-while">While</a></strong> — (  )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-while2">Do - While</a></strong> — (  )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<p>— None found —</p>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

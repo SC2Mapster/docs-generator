@@ -1,0 +1,421 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Play Sound At Point / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Play Sound At Point"/>
+                <meta property="og:description" content="Plays a sound at a point for the specified player group.  Use the &quot;Last Played Sound&quot; function to refer to this sound."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="play-sound-at-point"><a class="markdownIt-Anchor" href="#play-sound-at-point">#</a> Play Sound At Point</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Play <strong>soundLink</strong> owned by player <strong>owningPlayer</strong> for <strong>audibleMask</strong> at <strong>location</strong> with Z offset <strong>height|Z</strong> (at <strong>volume</strong>% volume, skip the first <strong>offset</strong> seconds)<br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Plays a sound at a point for the specified player group.  Use the <em>“Last Played Sound”</em> function to refer to this sound.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>soundlink</code> — Sound Link</li>
+<li><code>int</code> — Owning Player</li>
+<li><code>playergroup</code> — Audible Mask</li>
+<li><code>point</code> — Location</li>
+<li><code>fixed</code> — Height</li>
+<li><code>fixed</code> — Volume</li>
+<li><code>fixed</code> — Offset</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">SoundPlayAtPointForPlayer</span><span class="hljs-params">(
+	soundlink link,
+	<span class="hljs-keyword">int</span> inOwningPlayer,
+	playergroup audibleMask,
+	point inPoint,
+	fixed height,
+	fixed volume,
+	fixed offset,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#sound-sounds">Sound / Sounds</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-play-on-unit-for-player">Play Sound On Unit</a></strong> — ( SoundPlayOnUnitForPlayer )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-play-at-point-for-player">Play Sound At Point</a></strong> — ( SoundPlayAtPointForPlayer )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-play-for-player">Play Sound</a></strong> — ( SoundPlayForPlayer )</li>
+<li><em><strong>[F]</strong></em> — <code>sound</code> — <strong><a href="/galaxy/reference/sound-last-played">Last Played Sound</a></strong> — ( SoundLastPlayed )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-pause">Pause Sound</a></strong> — ( SoundPause )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-stop">Stop Sound</a></strong> — ( SoundStop )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-set-offset">Skip To Sound Offset</a></strong> — ( SoundSetOffset )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-set-position">Move Sound</a></strong> — ( SoundSetPosition )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-wait">Wait For Sound</a></strong> — ( SoundWait )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-set-volume">Set Sound Volume</a></strong> — ( SoundSetVolume )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-stop-all-trigger-sounds">Stop All Trigger Sounds</a></strong> — ( SoundStopAllTriggerSounds )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-stop-all-model-sounds">Stop All Model Sounds</a></strong> — ( SoundStopAllModelSounds )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-set-listener-gender">Set Sound Listener Gender</a></strong> — ( SoundSetListenerGender )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignsswarmsc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmsc2campaign">#</a> campaigns/swarm.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarm.sc2campaign/base.sc2maps/maps/campaign/voidprologue/voidprologue01.sc2map/MapScript.galaxy#L1850">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1850</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"Aberration_Explode"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), RegionGetCenter(RegionFromId(<span class="hljs-number">52</span>)), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1895</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"Aberration_Explode"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), RegionGetCenter(RegionFromId(<span class="hljs-number">52</span>)), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L750</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"VP03_HybridReaver_DropIn"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), lp_spawnPoint, <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L767</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"Titan_LandingThud2"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), lp_spawnPoint, <span class="hljs-number">0.0</span>, <span class="hljs-number">80.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L808</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"VP03_HybridDestroyer_WarpIn"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), lp_spawnPoint, <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1850</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"Aberration_Explode"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), RegionGetCenter(RegionFromId(<span class="hljs-number">52</span>)), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1895</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"Aberration_Explode"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), RegionGetCenter(RegionFromId(<span class="hljs-number">52</span>)), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L750</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"VP03_HybridReaver_DropIn"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), lp_spawnPoint, <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L767</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"Titan_LandingThud2"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), lp_spawnPoint, <span class="hljs-number">0.0</span>, <span class="hljs-number">80.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L808</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"VP03_HybridDestroyer_WarpIn"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), lp_spawnPoint, <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L564</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"Event_Lab01_ZerglingRelease"</span>, <span class="hljs-number">0</span>), c_maxPlayers, PlayerGroupAll(), UnitGetPosition(lp_zergling), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L567</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"Event_Lab01_ZerglingRelease"</span>, <span class="hljs-number">1</span>), c_maxPlayers, PlayerGroupAll(), UnitGetPosition(lp_zergling), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L570</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"Event_Lab01_ZerglingRelease"</span>, <span class="hljs-number">2</span>), c_maxPlayers, PlayerGroupAll(), UnitGetPosition(lp_zergling), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L573</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"Event_Lab01_ZerglingRelease"</span>, <span class="hljs-number">2</span>), c_maxPlayers, PlayerGroupAll(), UnitGetPosition(lp_zergling), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1742</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"Event_Lab01_ZerglingRelease"</span>, <span class="hljs-number">1</span>), c_maxPlayers, PlayerGroupAll(), PointFromId(<span class="hljs-number">2314</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1846</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"Event_Lab01_ZerglingRelease"</span>, <span class="hljs-number">0</span>), c_maxPlayers, PlayerGroupAll(), PointFromId(<span class="hljs-number">2319</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1852</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"Event_Lab01_ZerglingRelease"</span>, <span class="hljs-number">1</span>), c_maxPlayers, PlayerGroupAll(), PointFromId(<span class="hljs-number">2321</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4097</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"Zealot_Death"</span>, <span class="hljs-number">2</span>), c_maxPlayers, PlayerGroupAll(), PointFromId(<span class="hljs-number">2357</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4153</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"Event_Lab01_ZerglingRelease"</span>, <span class="hljs-number">1</span>), c_maxPlayers, PlayerGroupAll(), RegionGetCenter(RegionFromId(<span class="hljs-number">3</span>)), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5173</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"PAiur02_AmonConversion"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), UnitGetPosition(auto9ADD448B_var), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L481</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"Hybrid_WarpIn"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), lv_hybridPoint, <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L486</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"WarpGate_TrainFinish"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), lv_hybridPoint, <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5583</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"NydusSpace_SpellA"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), PointFromId(<span class="hljs-number">2799</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6706</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"PAiur01_Intro_WarpPrism_flyIn_delayed5"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), UnitGetPosition(UnitFromId(<span class="hljs-number">31</span>)), <span class="hljs-number">2.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6711</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"PAiur01_Intro_WarpPrism_flyIn_delayed6"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), UnitGetPosition(UnitFromId(<span class="hljs-number">36</span>)), <span class="hljs-number">2.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6716</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"PAiur01_Intro_WarpPrism_flyIn_delayed7"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), UnitGetPosition(UnitFromId(<span class="hljs-number">42</span>)), <span class="hljs-number">2.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6722</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"Protoss_BuildingWarpStart"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), UnitGetPosition(UnitLastCreated()), <span class="hljs-number">2.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6727</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"Protoss_BuildingWarpStart"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), UnitGetPosition(UnitLastCreated()), <span class="hljs-number">2.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6732</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"Protoss_BuildingWarpStart"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), UnitGetPosition(UnitLastCreated()), <span class="hljs-number">2.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6737</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"Protoss_BuildingWarpStart"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), UnitGetPosition(UnitLastCreated()), <span class="hljs-number">2.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L615</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"NydusWorm_Unload"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), UnitGetPosition(lp_nydusWorm), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L671</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"NydusWorm_Unload"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), UnitGetPosition(lv_nydusWorm), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L681</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"NydusWorm_Unload"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), UnitGetPosition(lv_nydusWorm), <span class="hljs-number">0.0</span>, <span class="hljs-number">120.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L717</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"WarpGate_TrainStart"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), UnitGetPosition(lp_unit), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L726</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"WarpGate_TrainFinish"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), UnitGetPosition(lp_unit), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1917</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"Ultralisk_Roar"</span>, <span class="hljs-number">0</span>), c_maxPlayers, PlayerGroupAll(), PointFromId(<span class="hljs-number">1685</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1928</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"Event_Lab01_ZerglingRelease"</span>, <span class="hljs-number">1</span>), c_maxPlayers, PlayerGroupAll(), PointFromId(<span class="hljs-number">1685</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L512</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"Hybrid_WarpIn"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), lv_hybridPoint, <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L518</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"WarpGate_TrainFinish"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), lv_hybridPoint, <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L712</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"NydusWorm_Birth"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), lp_nydusCreationPoint, <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8201</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"Event_Lab01_ZerglingRelease"</span>, <span class="hljs-number">0</span>), c_maxPlayers, PlayerGroupAll(), RegionGetCenter(RegionFromId(<span class="hljs-number">54</span>)), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6549</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"Event_PAiur06_KeystoneIntro"</span>, <span class="hljs-number">0</span>), c_maxPlayers, PlayerGroupAll(), UnitGetPosition(UnitFromId(<span class="hljs-number">418</span>)), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6596</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"Event_PAiur06_KeystoneIntro"</span>, <span class="hljs-number">0</span>), c_maxPlayers, PlayerGroupAll(), UnitGetPosition(UnitFromId(<span class="hljs-number">418</span>)), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L629</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"Hybrid_WarpIn"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), UnitGetPosition(lv_hybrid), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L641</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"WarpGate_TrainStart"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), UnitGetPosition(lp_unit), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L649</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"WarpGate_TrainFinish"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), UnitGetPosition(lp_unit), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1270</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"NydusWorm_Birth"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), UnitGetPosition(gv_introNydus), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1277</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"NydusWorm_Unload"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), UnitGetPosition(gv_introNydus), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L829</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"Event_Exp3_LassaraWarpInFinish"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), UnitGetPosition(lp_warpOutUnit), <span class="hljs-number">0.0</span>, <span class="hljs-number">50.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L894</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"NydusWorm_Birth"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), lp_nydusSpawnPoint, <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L812</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"WarpGate_TrainStart"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), UnitGetPosition(lp_unit), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L820</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"WarpGate_TrainFinish"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), UnitGetPosition(lp_unit), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5723</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"NydusWorm_Unload"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), UnitGetPosition(lv_victoryNydusWorms[lv_i]), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L460</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"Urun_GravitonBeamStart"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), UnitGetPosition(lp_hybrid), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5355</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"Event_Taldarim01_End_Malash_WarpIn_6Ch"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), PointFromId(<span class="hljs-number">1028</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5356</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"Hybrid_WarpIn"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), PointFromId(<span class="hljs-number">1028</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5357</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"Event_Taldarim01_End_Cine_SlapFx_6Ch"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), PointFromId(<span class="hljs-number">1028</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2537</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"PUlnar02_GateOpenSound"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), UnitGetPosition(UnitFromId(<span class="hljs-number">226</span>)), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3000</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"PUlnar02_GateOpenSound"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), UnitGetPosition(UnitFromId(<span class="hljs-number">522</span>)), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4005</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"PUlnar02_GateOpenSound"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), UnitGetPosition(UnitFromId(<span class="hljs-number">222</span>)), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4737</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"PUlnar02_GateOpenSound"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), UnitGetPosition(UnitFromId(<span class="hljs-number">1082</span>)), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3041</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"NydusSpace_BirthA"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), RegionGetCenter(RegionFromId(<span class="hljs-number">28</span>)), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L481</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"Hybrid_WarpIn"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), lv_hybridPoint, <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L486</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"WarpGate_TrainFinish"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), lv_hybridPoint, <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5583</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"NydusSpace_SpellA"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), PointFromId(<span class="hljs-number">2799</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6706</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"PAiur01_Intro_WarpPrism_flyIn_delayed5"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), UnitGetPosition(UnitFromId(<span class="hljs-number">31</span>)), <span class="hljs-number">2.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6711</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"PAiur01_Intro_WarpPrism_flyIn_delayed6"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), UnitGetPosition(UnitFromId(<span class="hljs-number">36</span>)), <span class="hljs-number">2.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6716</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"PAiur01_Intro_WarpPrism_flyIn_delayed7"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), UnitGetPosition(UnitFromId(<span class="hljs-number">42</span>)), <span class="hljs-number">2.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6722</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"Protoss_BuildingWarpStart"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), UnitGetPosition(UnitLastCreated()), <span class="hljs-number">2.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6727</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"Protoss_BuildingWarpStart"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), UnitGetPosition(UnitLastCreated()), <span class="hljs-number">2.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6732</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"Protoss_BuildingWarpStart"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), UnitGetPosition(UnitLastCreated()), <span class="hljs-number">2.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6737</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"Protoss_BuildingWarpStart"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), UnitGetPosition(UnitLastCreated()), <span class="hljs-number">2.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L564</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"Event_Lab01_ZerglingRelease"</span>, <span class="hljs-number">0</span>), c_maxPlayers, PlayerGroupAll(), UnitGetPosition(lp_zergling), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L567</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"Event_Lab01_ZerglingRelease"</span>, <span class="hljs-number">1</span>), c_maxPlayers, PlayerGroupAll(), UnitGetPosition(lp_zergling), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L570</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"Event_Lab01_ZerglingRelease"</span>, <span class="hljs-number">2</span>), c_maxPlayers, PlayerGroupAll(), UnitGetPosition(lp_zergling), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L573</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"Event_Lab01_ZerglingRelease"</span>, <span class="hljs-number">2</span>), c_maxPlayers, PlayerGroupAll(), UnitGetPosition(lp_zergling), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1742</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"Event_Lab01_ZerglingRelease"</span>, <span class="hljs-number">1</span>), c_maxPlayers, PlayerGroupAll(), PointFromId(<span class="hljs-number">2314</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1846</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"Event_Lab01_ZerglingRelease"</span>, <span class="hljs-number">0</span>), c_maxPlayers, PlayerGroupAll(), PointFromId(<span class="hljs-number">2319</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1852</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"Event_Lab01_ZerglingRelease"</span>, <span class="hljs-number">1</span>), c_maxPlayers, PlayerGroupAll(), PointFromId(<span class="hljs-number">2321</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4097</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"Zealot_Death"</span>, <span class="hljs-number">2</span>), c_maxPlayers, PlayerGroupAll(), PointFromId(<span class="hljs-number">2357</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4153</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"Event_Lab01_ZerglingRelease"</span>, <span class="hljs-number">1</span>), c_maxPlayers, PlayerGroupAll(), RegionGetCenter(RegionFromId(<span class="hljs-number">3</span>)), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5173</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"PAiur02_AmonConversion"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), UnitGetPosition(auto9ADD448B_var), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L615</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"NydusWorm_Unload"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), UnitGetPosition(lp_nydusWorm), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L671</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"NydusWorm_Unload"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), UnitGetPosition(lv_nydusWorm), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L681</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"NydusWorm_Unload"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), UnitGetPosition(lv_nydusWorm), <span class="hljs-number">0.0</span>, <span class="hljs-number">120.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L717</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"WarpGate_TrainStart"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), UnitGetPosition(lp_unit), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L726</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"WarpGate_TrainFinish"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), UnitGetPosition(lp_unit), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1917</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"Ultralisk_Roar"</span>, <span class="hljs-number">0</span>), c_maxPlayers, PlayerGroupAll(), PointFromId(<span class="hljs-number">1685</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1928</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"Event_Lab01_ZerglingRelease"</span>, <span class="hljs-number">1</span>), c_maxPlayers, PlayerGroupAll(), PointFromId(<span class="hljs-number">1685</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L512</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"Hybrid_WarpIn"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), lv_hybridPoint, <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L518</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"WarpGate_TrainFinish"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), lv_hybridPoint, <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L712</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"NydusWorm_Birth"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), lp_nydusCreationPoint, <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8201</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"Event_Lab01_ZerglingRelease"</span>, <span class="hljs-number">0</span>), c_maxPlayers, PlayerGroupAll(), RegionGetCenter(RegionFromId(<span class="hljs-number">54</span>)), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6549</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"Event_PAiur06_KeystoneIntro"</span>, <span class="hljs-number">0</span>), c_maxPlayers, PlayerGroupAll(), UnitGetPosition(UnitFromId(<span class="hljs-number">418</span>)), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6596</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"Event_PAiur06_KeystoneIntro"</span>, <span class="hljs-number">0</span>), c_maxPlayers, PlayerGroupAll(), UnitGetPosition(UnitFromId(<span class="hljs-number">418</span>)), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L629</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"Hybrid_WarpIn"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), UnitGetPosition(lv_hybrid), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L641</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"WarpGate_TrainStart"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), UnitGetPosition(lp_unit), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L649</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"WarpGate_TrainFinish"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), UnitGetPosition(lp_unit), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1270</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"NydusWorm_Birth"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), UnitGetPosition(gv_introNydus), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1277</span>
+SoundPlayAtPointForPlayer(SoundLink(<span class="hljs-string">"NydusWorm_Unload"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), UnitGetPosition(gv_introNydus), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

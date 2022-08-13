@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Restore Unit / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Restore Unit"/>
+                <meta property="og:description" content="Restores a unit contained in the chosen Bank at the specified Key of the specified Section. The unit will be created for the specified Player, at the specified Position, facing a specified Angle.
+
+Returns: unit"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="restore-unit"><a class="markdownIt-Anchor" href="#restore-unit">#</a> Restore Unit</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Restore <strong>key</strong> of section <strong>section</strong> from bank <strong>bank</strong> for player <strong>player</strong> at <strong>position</strong> facing <strong>angle</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Restores a unit contained in the chosen Bank at the specified Key of the specified Section. The unit will be created for the specified Player, at the specified Position, facing a specified Angle.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>bank</code> — Bank</li>
+<li><code>string</code> — Section</li>
+<li><code>string</code> — Key</li>
+<li><code>int</code> — Player</li>
+<li><code>point</code> — Position</li>
+<li><code>fixed</code> — Angle</li>
+</ul>
+<p>Returns — <code>unit</code></p>
+<pre class="hljs"><code><span class="hljs-function">native unit <span class="hljs-title">BankValueGetAsUnit</span><span class="hljs-params">(
+	bank b,
+	<span class="hljs-built_in">string</span> section,
+	<span class="hljs-built_in">string</span> key,
+	<span class="hljs-keyword">int</span> player,
+	point p,
+	fixed facing,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: [Bank / Store &amp; Load](/galaxy/reference#bank-store &amp;-load)</p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/bank-value-set-from-flag">Store Boolean</a></strong> — ( BankValueSetFromFlag )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/bank-value-set-from-int">Store Integer</a></strong> — ( BankValueSetFromInt )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/bank-value-set-from-point">Store Point</a></strong> — ( BankValueSetFromPoint )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/bank-value-set-from-fixed">Store Real</a></strong> — ( BankValueSetFromFixed )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/bank-value-set-from-string">Store String</a></strong> — ( BankValueSetFromString )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/bank-value-set-from-text">Store Text</a></strong> — ( BankValueSetFromText )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/bank-value-set-from-unit">Store Unit</a></strong> — ( BankValueSetFromUnit )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/bank-value-get-as-flag">Load Boolean Value</a></strong> — ( BankValueGetAsFlag )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/bank-value-get-as-int">Load Integer Value</a></strong> — ( BankValueGetAsInt )</li>
+<li><em><strong>[F]</strong></em> — <code>point</code> — <strong><a href="/galaxy/reference/bank-value-get-as-point">Load Point Value</a></strong> — ( BankValueGetAsPoint )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/bank-value-get-as-fixed">Load Real Value</a></strong> — ( BankValueGetAsFixed )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> — <strong><a href="/galaxy/reference/bank-value-get-as-string">Load String Value</a></strong> — ( BankValueGetAsString )</li>
+<li><em><strong>[F]</strong></em> — <code>text</code> — <strong><a href="/galaxy/reference/bank-value-get-as-text">Load Text Value</a></strong> — ( BankValueGetAsText )</li>
+<li><em><strong>[F]</strong></em> — <code>unit</code> — <strong><a href="/galaxy/reference/bank-value-get-as-unit">Restore Unit</a></strong> — ( BankValueGetAsUnit )</li>
+<li><em><strong>[F]</strong></em> — <code>unit</code> — <strong><a href="/galaxy/reference/bank-last-restored-unit">Last Restored Unit</a></strong> — ( BankLastRestoredUnit )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<p>— None found —</p>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

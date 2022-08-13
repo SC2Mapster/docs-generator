@@ -1,0 +1,194 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Wait For Sound Durations / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Wait For Sound Durations"/>
+                <meta property="og:description" content="Waits until all queries sent with &quot;Query Sound Duration&quot; have been received for all players."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="wait-for-sound-durations"><a class="markdownIt-Anchor" href="#wait-for-sound-durations">#</a> Wait For Sound Durations</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Wait until all active sound duration queries have been received<br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Waits until all queries sent with <em>“Query Sound Duration”</em> have been received for all players.</p>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">SoundLengthQueryWait</span><span class="hljs-params">()</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#sound-sound-properties">Sound / Sound Properties</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/sound-link-asset">Sound Asset Index</a></strong> — ( SoundLinkAsset )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> <em>[ gamelink::Sound ]</em> — <strong><a href="/galaxy/reference/sound-link-id">Sound ID</a></strong> — ( SoundLinkId )</li>
+<li><em><strong>[F]</strong></em> — <code>soundlink</code> — <strong><a href="/galaxy/reference/sound-link">Sound Link</a></strong> — ( SoundLink )</li>
+<li><em><strong>[F]</strong></em> — <code>text</code> — <strong><a href="/galaxy/reference/sound-subtitle-text">Sound Subtitle Text</a></strong> — ( SoundSubtitleText )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> <em>[ gamelink::Model ]</em> — <strong><a href="/galaxy/reference/sound-portrait-model">Sound Portrait Model</a></strong> — ( SoundPortraitModel )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/sound-length-sync">Sound Duration</a></strong> — ( SoundLengthSync )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-preload-sound-length">Mark Sound For Duration Preload</a></strong> — (  )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-length-query">Query Sound Duration</a></strong> — ( SoundLengthQuery )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-length-query-wait">Wait For Sound Durations</a></strong> — ( SoundLengthQueryWait )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/tstory01.sc2map/MapScript.galaxy#L7715">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L7715</span>
+SoundLengthQueryWait()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12988</span>
+SoundLengthQueryWait()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13903</span>
+SoundLengthQueryWait()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L26675</span>
+SoundLengthQueryWait()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L33883</span>
+SoundLengthQueryWait()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L34332</span>
+SoundLengthQueryWait()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L34367</span>
+SoundLengthQueryWait()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L34701</span>
+SoundLengthQueryWait()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L35420</span>
+SoundLengthQueryWait()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L35668</span>
+SoundLengthQueryWait()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7715</span>
+SoundLengthQueryWait()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12988</span>
+SoundLengthQueryWait()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13903</span>
+SoundLengthQueryWait()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L26675</span>
+SoundLengthQueryWait()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L33883</span>
+SoundLengthQueryWait()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L34332</span>
+SoundLengthQueryWait()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L34367</span>
+SoundLengthQueryWait()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L34701</span>
+SoundLengthQueryWait()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L35420</span>
+SoundLengthQueryWait()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L35668</span>
+SoundLengthQueryWait()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L607</span>
+SoundLengthQueryWait()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L607</span>
+SoundLengthQueryWait()
+</code></pre>
+<h4 id="campaignsswarmstoryutilsc2mod"><a class="markdownIt-Anchor" href="#campaignsswarmstoryutilsc2mod">#</a> campaigns/swarmstoryutil.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstoryutil.sc2mod/base.sc2data/Lib281DEC45.galaxy#L3706">Lib281DEC45.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3706</span>
+SoundLengthQueryWait()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3861</span>
+SoundLengthQueryWait()
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignStoryLib.galaxy#L3118">VoidCampaignStoryLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3118</span>
+SoundLengthQueryWait()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3217</span>
+SoundLengthQueryWait()
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign-2"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign-2">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignUILib.galaxy#L1723">VoidCampaignUILib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1723</span>
+SoundLengthQueryWait()
+</code></pre>
+<h4 id="modsmissionpacksnovacampaignsc2mod"><a class="markdownIt-Anchor" href="#modsmissionpacksnovacampaignsc2mod">#</a> mods/missionpacks/novacampaign.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/novacampaign.sc2mod/base.sc2data/LibNCST.galaxy#L2698">LibNCST.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2698</span>
+SoundLengthQueryWait()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2790</span>
+SoundLengthQueryWait()
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

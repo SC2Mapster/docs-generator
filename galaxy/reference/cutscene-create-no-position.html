@@ -1,0 +1,158 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Create Cutscene / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Create Cutscene"/>
+                <meta property="og:description" content="Cutscenes are built using the Cutscene Editor and saved to .SC2Cutscene files.  They can describe a complicated cinematic or a simple conversation.  WARNING: The Sound action Play Sound Scene File also accepts .SC2Cutscene files, but old-style scene files are not compatible with this action. 
+
+Returns: preset [ preset::Cutscene ]"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="create-cutscene"><a class="markdownIt-Anchor" href="#create-cutscene">#</a> Create Cutscene</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Create cutscene <strong>inFilePath|Cutscene</strong> for players <strong>players|Player Group</strong> with autoplaying <strong>inAutoPlay</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Cutscenes are built using the Cutscene Editor and saved to .SC2Cutscene files.  They can describe a complicated cinematic or a simple conversation.  WARNING: The Sound action Play Sound Scene File also accepts .SC2Cutscene files, but old-style scene files are not compatible with this action.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>string</code> <em>[ filepath ]</em> — File Path</li>
+<li><code>playergroup</code> — Players</li>
+<li><code>bool</code> — AutoPlay</li>
+</ul>
+<p>Returns — <code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-cutscene">Cutscene</a> ]</em></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">int</span> <span class="hljs-title">CutsceneCreateNoPosition</span><span class="hljs-params">(
+	<span class="hljs-built_in">string</span> inFilePath,
+	playergroup players,
+	<span class="hljs-keyword">bool</span> inAutoPlay,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#cutscene-cutscenes">Cutscene / Cutscenes</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-cutscene">Cutscene</a> ]</em> — <strong><a href="/galaxy/reference/cutscene-create-no-position">Create Cutscene</a></strong> — ( CutsceneCreateNoPosition )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-cutscene">Cutscene</a> ]</em> — <strong><a href="/galaxy/reference/cutscene-create-new">Create Cutscene at Position</a></strong> — ( CutsceneCreateNew )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/cutscene-go-to-next-bookmark">Go To Next Cutscene Bookmark</a></strong> — ( CutsceneGoToNextBookmark )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-cutscene-end-scene-fired">Cutscene EndScene Fired</a></strong> — ( TriggerAddEventCutsceneEndSceneFired )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-cutscene">Cutscene</a> ]</em> — <strong><a href="/galaxy/reference/cutscene-create-deprecated">Create Cutscene</a></strong> — ( CutsceneCreate )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-cutscene">Cutscene</a> ]</em> — <strong><a href="/galaxy/reference/cutscene-last-created">Last Created Cutscene</a></strong> — ( CutsceneLastCreated )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/cutscene-play">Play Cutscene</a></strong> — ( CutscenePlay )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/cutscene-pause">Pause Cutscene</a></strong> — ( CutscenePause )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/cutscene-stop">Stop Cutscene</a></strong> — ( CutsceneStop )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/cutscene-set-time">Set Cutscene Time</a></strong> — ( CutsceneSetTime )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/cutscene-go-to-bookmark">Go To Cutscene Bookmark</a></strong> — ( CutsceneGoToBookmark )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/cutscene-show">Show/Hide Cutscene</a></strong> — ( CutsceneShow )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/cutscene-play-cutscene-range-over-time">Play Cutscene Range Over Time</a></strong> — ( CutscenePlayCutsceneRangeOverTime )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/cutscene-fade">Cutscene Fade</a></strong> — ( CutsceneFade )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-cutscene">Cutscene</a> ]</em> — <strong><a href="/galaxy/reference/cutscene-get-trigger-control">Dialog Item Cutscene</a></strong> — ( CutsceneGetTriggerControl )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-cutscene-bookmark-fired">Cutscene Bookmark Fired</a></strong> — ( TriggerAddEventCutsceneBookmarkFired )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-cutscene">Cutscene</a> ]</em> — <strong><a href="/galaxy/reference/event-cutscene-id">Triggering Cutscene</a></strong> — ( EventCutsceneId )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> — <strong><a href="/galaxy/reference/event-cutscene-bookmark">Triggering Cutscene Bookmark</a></strong> — ( EventCutsceneBookmark )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/wait-for-cutscene-to-end">Wait For Cutscene To End</a></strong> — ( WaitForCutsceneToEnd )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignsvoidsc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidsc2campaign">#</a> campaigns/void.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/void.sc2campaign/base.sc2maps/maps/campaign/sc2tutorial.sc2map/MapScript.galaxy#L9568">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L9568</span>
+CutsceneCreateNoPosition(<span class="hljs-string">"Cutscenes\\Cutscene_TutorialTerranIntro.SC2Cutscene"</span>, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L15351</span>
+CutsceneCreateNoPosition(<span class="hljs-string">"Cutscenes\\Cutscene_TutorialZergIntro.SC2Cutscene"</span>, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19216</span>
+CutsceneCreateNoPosition(<span class="hljs-string">"Cutscenes\\Cutscene_TutorialProtossIntro.SC2Cutscene"</span>, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19434</span>
+CutsceneCreateNoPosition(<span class="hljs-string">"Cutscenes\\Cutscene_TutorialProtossOutro.SC2Cutscene"</span>, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9568</span>
+CutsceneCreateNoPosition(<span class="hljs-string">"Cutscenes\\Cutscene_TutorialTerranIntro.SC2Cutscene"</span>, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L15351</span>
+CutsceneCreateNoPosition(<span class="hljs-string">"Cutscenes\\Cutscene_TutorialZergIntro.SC2Cutscene"</span>, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19216</span>
+CutsceneCreateNoPosition(<span class="hljs-string">"Cutscenes\\Cutscene_TutorialProtossIntro.SC2Cutscene"</span>, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19434</span>
+CutsceneCreateNoPosition(<span class="hljs-string">"Cutscenes\\Cutscene_TutorialProtossOutro.SC2Cutscene"</span>, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="modsheroesdatastormmod"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/MapMechanicsLib.galaxy#L2306">MapMechanicsLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2306</span>
+CutsceneCreateNoPosition(lp_cutscene, libCore_gv_playerGroupFromPlayer[lp_player], <span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="modsnovastoryassetssc2mod"><a class="markdownIt-Anchor" href="#modsnovastoryassetssc2mod">#</a> mods/novastoryassets.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/novastoryassets.sc2mod/base2.sc2maps/maps/campaign/nova/nova05.sc2map/MapScript.galaxy#L6880">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L6880</span>
+CutsceneCreateNoPosition(<span class="hljs-string">"Cutscenes\\MonsterBirth.SC2Cutscene"</span>, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6880</span>
+CutsceneCreateNoPosition(<span class="hljs-string">"Cutscenes\\MonsterBirth.SC2Cutscene"</span>, PlayerGroupAll(), <span class="hljs-literal">true</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

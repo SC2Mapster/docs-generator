@@ -1,0 +1,225 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Allow/Disallow Behavior For Player / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Allow/Disallow Behavior For Player"/>
+                <meta property="og:description" content="Allows or disallows a behavior to be used by the specified player.  This is only useful if tech restrictions have been enabled using &quot;Enable/Disable Tech Tree Restrictions&quot;.  If the behavior has a tech requirement, the requirement must still be met for the player to use the behavior."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="allowdisallow-behavior-for-player"><a class="markdownIt-Anchor" href="#allowdisallow-behavior-for-player">#</a> Allow/Disallow Behavior For Player</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — <strong>allow|Allow/Disallow</strong> the <strong>behavior</strong> behavior for player <strong>p</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Allows or disallows a behavior to be used by the specified player.  This is only useful if tech restrictions have been enabled using <em>“Enable/Disable Tech Tree Restrictions”</em>.  If the behavior has a tech requirement, the requirement must still be met for the player to use the behavior.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> — Player</li>
+<li><code>string</code> <em>[ gamelink::Behavior ]</em> — Behavior</li>
+<li><code>bool</code> <em>[ preset::<a href="/galaxy/reference/preset-allow-disallow-option">AllowDisallowOption</a> ]</em> — Allow</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">TechTreeBehaviorAllow</span><span class="hljs-params">(
+	<span class="hljs-keyword">int</span> player,
+	<span class="hljs-built_in">string</span> behaviorType,
+	<span class="hljs-keyword">bool</span> allow,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#tech-tree-individual-restrictions">Tech Tree / Individual Restrictions</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/tech-tree-specific-requirement-enabled">Specific Requirements Are Enabled For Player</a></strong> — ( TechTreeSpecificRequirementEnabled )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/tech-tree-specific-requirement-enable">Enable/Disable SpecificTech Tree Requirements</a></strong> — ( TechTreeSpecificRequirementEnable )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/tech-tree-behavior-allow">Allow/Disallow Behavior For Player</a></strong> — ( TechTreeBehaviorAllow )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/tech-tree-ability-allow">Allow/Disallow Ability For Player</a></strong> — ( TechTreeAbilityAllow )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/tech-tree-unit-allow">Allow/Disallow Unit For Player</a></strong> — ( TechTreeUnitAllow )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/tech-tree-upgrade-allow">Allow/Disallow Upgrade For Player</a></strong> — ( TechTreeUpgradeAllow )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/tech-tree-ability-is-allowed">Ability Is Allowed For Player</a></strong> — ( TechTreeAbilityIsAllowed )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/tech-tree-behavior-is-allowed">Behavior Is Allowed For Player</a></strong> — ( TechTreeBehaviorIsAllowed )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/tech-tree-unit-is-allowed">Unit Is Allowed For Player</a></strong> — ( TechTreeUnitIsAllowed )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/tech-tree-upgrade-is-allowed">Upgrade Is Allowed For Player</a></strong> — ( TechTreeUpgradeIsAllowed )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/tech-tree-upgrade-add-level">Add Upgrade Level For Player</a></strong> — ( TechTreeUpgradeAddLevel )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-set-upgrade-level-for-player">Set Upgrade Level For Player</a></strong> — ( libNtve_gf_SetUpgradeLevelForPlayer )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/tech-tree-set-produce-cap">Set Production Cap For Player</a></strong> — ( TechTreeSetProduceCap )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/tech-tree-get-produce-cap">Production Cap For Player</a></strong> — ( TechTreeGetProduceCap )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/challenges/protosscombat.sc2map/MapScript.galaxy#L553">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L553</span>
+TechTreeBehaviorAllow(gv_pLAYER_USER, <span class="hljs-string">"Charging"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L554</span>
+TechTreeBehaviorAllow(gv_pLAYER_USER, <span class="hljs-string">"Charging"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L498</span>
+TechTreeBehaviorAllow(gv_pLAYER_USER, <span class="hljs-string">"TerranBuildingBurnDown"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L542</span>
+TechTreeBehaviorAllow(gv_pLAYER_USER, <span class="hljs-string">"ZergBuildingDies6"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L483</span>
+TechTreeBehaviorAllow(gv_pLAYER01_USER, <span class="hljs-string">"Cleave"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L483</span>
+TechTreeBehaviorAllow(gv_pLAYER01_USER, <span class="hljs-string">"Cleave"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L553</span>
+TechTreeBehaviorAllow(gv_pLAYER_USER, <span class="hljs-string">"Charging"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L554</span>
+TechTreeBehaviorAllow(gv_pLAYER_USER, <span class="hljs-string">"Charging"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L498</span>
+TechTreeBehaviorAllow(gv_pLAYER_USER, <span class="hljs-string">"TerranBuildingBurnDown"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L542</span>
+TechTreeBehaviorAllow(gv_pLAYER_USER, <span class="hljs-string">"ZergBuildingDies6"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="campaignsswarmstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmstorysc2campaign">#</a> campaigns/swarmstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstory.sc2campaign/base.sc2data/TriggerLibs/SwarmCampaignLib.galaxy#L15823">SwarmCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L15823</span>
+TechTreeBehaviorAllow(<span class="hljs-number">1</span>, <span class="hljs-string">"StukovArmorAura"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L15824</span>
+TechTreeBehaviorAllow(<span class="hljs-number">1</span>, <span class="hljs-string">"SwarmQueenRegenAura"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L15905</span>
+TechTreeBehaviorAllow(<span class="hljs-number">1</span>, <span class="hljs-string">"StukovArmorAura"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L15906</span>
+TechTreeBehaviorAllow(<span class="hljs-number">1</span>, <span class="hljs-string">"SwarmQueenRegenAura"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L15991</span>
+TechTreeBehaviorAllow(<span class="hljs-number">1</span>, <span class="hljs-string">"StukovArmorAura"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L15992</span>
+TechTreeBehaviorAllow(<span class="hljs-number">1</span>, <span class="hljs-string">"SwarmQueenRegenAura"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOMI.galaxy#L16334">LibCOMI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L16334</span>
+TechTreeBehaviorAllow(lv_player, libCOMI_gv_cM_Alarak_EmpowerBehaviorCaster, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L16337</span>
+TechTreeBehaviorAllow(lv_player, libCOMI_gv_cM_Alarak_EmpowerBehaviorCaster, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L18519</span>
+TechTreeBehaviorAllow(lv_player, <span class="hljs-string">"FenixExplode"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L27933</span>
+TechTreeBehaviorAllow(lv_p, <span class="hljs-string">"CannotTrade"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L27960</span>
+TechTreeBehaviorAllow(lv_p, <span class="hljs-string">"CannotTrade"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L28463</span>
+TechTreeBehaviorAllow(lv_p, <span class="hljs-string">"CannotTrade"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod-2"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod-2">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOOC.galaxy#L3934">LibCOOC.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3934</span>
+TechTreeBehaviorAllow(lp_player, libCOMI_gv_cM_Alarak_EmpowerBehaviorCaster, <span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="modsvoidprologuesc2mod"><a class="markdownIt-Anchor" href="#modsvoidprologuesc2mod">#</a> mods/voidprologue.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/voidprologue.sc2mod/base.sc2data/LibA3DDD02B.galaxy#L7519">LibA3DDD02B.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L7519</span>
+TechTreeBehaviorAllow(<span class="hljs-number">1</span>, <span class="hljs-string">"StukovArmorAura"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7520</span>
+TechTreeBehaviorAllow(<span class="hljs-number">1</span>, <span class="hljs-string">"SwarmQueenRegenAura"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7551</span>
+TechTreeBehaviorAllow(<span class="hljs-number">1</span>, <span class="hljs-string">"StukovArmorAura"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7552</span>
+TechTreeBehaviorAllow(<span class="hljs-number">1</span>, <span class="hljs-string">"SwarmQueenRegenAura"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7591</span>
+TechTreeBehaviorAllow(<span class="hljs-number">1</span>, <span class="hljs-string">"StukovArmorAura"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7592</span>
+TechTreeBehaviorAllow(<span class="hljs-number">1</span>, <span class="hljs-string">"SwarmQueenRegenAura"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="modswarcoopwarclassicsc2mod"><a class="markdownIt-Anchor" href="#modswarcoopwarclassicsc2mod">#</a> mods/warcoop/warclassic.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/warcoop/warclassic.sc2mod/base.sc2data/TriggerLibs/WarClassic.galaxy#L345">WarClassic.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L345</span>
+TechTreeBehaviorAllow(lv_p, lv_buff, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L359</span>
+TechTreeBehaviorAllow(lv_p, lv_buff, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="modswarcoopwarclassicsystemsc2mod"><a class="markdownIt-Anchor" href="#modswarcoopwarclassicsystemsc2mod">#</a> mods/warcoop/warclassicsystem.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/warcoop/warclassicsystem.sc2mod/base.sc2data/TriggerLibs/WarClassicSystem.galaxy#L932">WarClassicSystem.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L932</span>
+TechTreeBehaviorAllow(lv_itPlayer, libGAwX_gv_creepSpotsSleepBehavior, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L941</span>
+TechTreeBehaviorAllow(lv_itPlayer, libGAwX_gv_creepSpotsSleepBehavior, <span class="hljs-literal">false</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

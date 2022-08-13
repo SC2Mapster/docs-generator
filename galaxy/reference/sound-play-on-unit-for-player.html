@@ -1,0 +1,363 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Play Sound On Unit / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Play Sound On Unit"/>
+                <meta property="og:description" content="Plays a sound at a unit for the specified player group.  Use the &quot;Last Played Sound&quot; function to refer to this sound."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="play-sound-on-unit"><a class="markdownIt-Anchor" href="#play-sound-on-unit">#</a> Play Sound On Unit</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Play <strong>soundLink</strong> for <strong>audibleMask</strong> owned by player <strong>owningPlayer</strong> on <strong>unit</strong> with Z offset <strong>height|Z</strong> (at <strong>volume</strong>% volume, skip the first <strong>offset</strong> seconds)<br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Plays a sound at a unit for the specified player group.  Use the <em>“Last Played Sound”</em> function to refer to this sound.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>soundlink</code> — Sound Link</li>
+<li><code>int</code> — Owning Player</li>
+<li><code>playergroup</code> — Audible Mask</li>
+<li><code>unit</code> — Unit</li>
+<li><code>fixed</code> — Height</li>
+<li><code>fixed</code> — Volume</li>
+<li><code>fixed</code> — Offset</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">SoundPlayOnUnitForPlayer</span><span class="hljs-params">(
+	soundlink link,
+	<span class="hljs-keyword">int</span> inOwningPlayer,
+	playergroup audibleMask,
+	unit inUnit,
+	fixed height,
+	fixed volume,
+	fixed offset,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#sound-sounds">Sound / Sounds</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-play-on-unit-for-player">Play Sound On Unit</a></strong> — ( SoundPlayOnUnitForPlayer )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-play-at-point-for-player">Play Sound At Point</a></strong> — ( SoundPlayAtPointForPlayer )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-play-for-player">Play Sound</a></strong> — ( SoundPlayForPlayer )</li>
+<li><em><strong>[F]</strong></em> — <code>sound</code> — <strong><a href="/galaxy/reference/sound-last-played">Last Played Sound</a></strong> — ( SoundLastPlayed )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-pause">Pause Sound</a></strong> — ( SoundPause )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-stop">Stop Sound</a></strong> — ( SoundStop )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-set-offset">Skip To Sound Offset</a></strong> — ( SoundSetOffset )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-set-position">Move Sound</a></strong> — ( SoundSetPosition )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-wait">Wait For Sound</a></strong> — ( SoundWait )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-set-volume">Set Sound Volume</a></strong> — ( SoundSetVolume )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-stop-all-trigger-sounds">Stop All Trigger Sounds</a></strong> — ( SoundStopAllTriggerSounds )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-stop-all-model-sounds">Stop All Model Sounds</a></strong> — ( SoundStopAllModelSounds )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-set-listener-gender">Set Sound Listener Gender</a></strong> — ( SoundSetListenerGender )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignsvoidsc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidsc2campaign">#</a> campaigns/void.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/void.sc2campaign/base.sc2maps/maps/campaign/void/paiur01.sc2map/MapScript.galaxy#L2333">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2333</span>
+SoundPlayOnUnitForPlayer(SoundLink(<span class="hljs-string">"PAiur01_ColossusEnterVox01"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), UnitFromId(<span class="hljs-number">40</span>), <span class="hljs-number">10.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2335</span>
+SoundPlayOnUnitForPlayer(SoundLink(<span class="hljs-string">"PAiur01_ColossusEnterVox012"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), UnitFromId(<span class="hljs-number">39</span>), <span class="hljs-number">10.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2337</span>
+SoundPlayOnUnitForPlayer(SoundLink(<span class="hljs-string">"PAiur01_ColossusEnterVox0122"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), UnitFromId(<span class="hljs-number">5</span>), <span class="hljs-number">10.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2272</span>
+SoundPlayOnUnitForPlayer(SoundLink(<span class="hljs-string">"Hybrid_Protoss_Death"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), EventUnit(), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L606</span>
+SoundPlayOnUnitForPlayer(SoundLink(<span class="hljs-string">"StoneZealot_Birth"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), lp_construct, <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3543</span>
+SoundPlayOnUnitForPlayer(SoundLink(<span class="hljs-string">"NydusWorm_Unload"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), EventPlayerEffectUsedUnit(c_effectUnitCaster), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2333</span>
+SoundPlayOnUnitForPlayer(SoundLink(<span class="hljs-string">"PAiur01_ColossusEnterVox01"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), UnitFromId(<span class="hljs-number">40</span>), <span class="hljs-number">10.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2335</span>
+SoundPlayOnUnitForPlayer(SoundLink(<span class="hljs-string">"PAiur01_ColossusEnterVox012"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), UnitFromId(<span class="hljs-number">39</span>), <span class="hljs-number">10.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2337</span>
+SoundPlayOnUnitForPlayer(SoundLink(<span class="hljs-string">"PAiur01_ColossusEnterVox0122"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), UnitFromId(<span class="hljs-number">5</span>), <span class="hljs-number">10.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2272</span>
+SoundPlayOnUnitForPlayer(SoundLink(<span class="hljs-string">"Hybrid_Protoss_Death"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), EventUnit(), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L606</span>
+SoundPlayOnUnitForPlayer(SoundLink(<span class="hljs-string">"StoneZealot_Birth"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), lp_construct, <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3543</span>
+SoundPlayOnUnitForPlayer(SoundLink(<span class="hljs-string">"NydusWorm_Unload"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), EventPlayerEffectUsedUnit(c_effectUnitCaster), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<h4 id="modscoresc2mod"><a class="markdownIt-Anchor" href="#modscoresc2mod">#</a> mods/core.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/core.sc2mod/base.sc2data/TriggerLibs/NativeLib.galaxy#L4269">NativeLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4269</span>
+SoundPlayOnUnitForPlayer(lp_soundLink, c_maxPlayers, lp_players, lp_unit, lp_height, lp_volume, lp_offset)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3535</span>
+SoundPlayOnUnitForPlayer(lp_soundLink, c_maxPlayers, lp_players, lp_unit, lp_height, lp_volume, lp_offset)
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodsblackheartsrevengestormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodsblackheartsrevengestormmod">#</a> mods/heroesbrawlmods/brawlmapmods/blackheartsrevenge.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/blackheartsrevenge.stormmod/base.stormdata/LibMDoE.galaxy#L2596">LibMDoE.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2596</span>
+SoundPlayOnUnitForPlayer(SoundLink(<span class="hljs-string">"Event_GhostShip_CannonBall_Loop"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), lv_missile, <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3306</span>
+SoundPlayOnUnitForPlayer(SoundLink(<span class="hljs-string">"Event_Mines_EnterMinesEnd"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), lv_hero, <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodscoopdeadmansstandstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodscoopdeadmansstandstormmod">#</a> mods/heroesbrawlmods/brawlmapmods/coop/deadmansstand.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/coop/deadmansstand.stormmod/base.stormdata/LibPEB1.galaxy#L7245">LibPEB1.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L7245</span>
+SoundPlayOnUnitForPlayer(SoundLink(<span class="hljs-string">"Event_GhostShip_CannonBall_Loop"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), lv_missile, <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5516</span>
+SoundPlayOnUnitForPlayer(SoundLink(<span class="hljs-string">"Doodad_EscapeFromBraxis_Gate_Zerged_Loop"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), libPEB1_gv_checkpoints[<span class="hljs-number">1</span>].lv_entryGate, <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5518</span>
+SoundPlayOnUnitForPlayer(SoundLink(<span class="hljs-string">"Doodad_EscapeFromBraxis_Gate_Zerged_Loop"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), libPEB1_gv_checkpoints[<span class="hljs-number">1</span>].lv_exitGate, <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5594</span>
+SoundPlayOnUnitForPlayer(SoundLink(<span class="hljs-string">"Doodad_EscapeFromBraxis_Gate_Zerged_Loop"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), libPEB1_gv_checkpoints[<span class="hljs-number">2</span>].lv_entryGate, <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5596</span>
+SoundPlayOnUnitForPlayer(SoundLink(<span class="hljs-string">"Doodad_EscapeFromBraxis_Gate_Zerged_Loop"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), libPEB1_gv_checkpoints[<span class="hljs-number">2</span>].lv_exitGate, <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodscooppvebrawlmodstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodscooppvebrawlmodstormmod">#</a> mods/heroesbrawlmods/brawlmapmods/coop/pvebrawlmod.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/coop/pvebrawlmod.stormmod/base.stormdata/LibPVEB.galaxy#L246">LibPVEB.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L246</span>
+SoundPlayOnUnitForPlayer(SoundLink(<span class="hljs-string">"XP_Gain_Direct"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupSingle(lv_itPlayer), lp_killedUnit, <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L249</span>
+SoundPlayOnUnitForPlayer(SoundLink(<span class="hljs-string">"XP_Gain_Indirect"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupSingle(lv_itPlayer), lp_killedUnit, <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodscooppvemodstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodscooppvemodstormmod">#</a> mods/heroesbrawlmods/brawlmapmods/coop/pvemod.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/coop/pvemod.stormmod/base.stormdata/LibPVEM.galaxy#L1230">LibPVEM.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1230</span>
+SoundPlayOnUnitForPlayer(SoundLink(<span class="hljs-string">"XP_Gain_Direct"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupSingle(lv_itPlayer), lp_killedUnit, <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1233</span>
+SoundPlayOnUnitForPlayer(SoundLink(<span class="hljs-string">"XP_Gain_Indirect"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupSingle(lv_itPlayer), lp_killedUnit, <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<h4 id="modsheroesdatastormmod"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/GameDataHelperLib.galaxy#L4715">GameDataHelperLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4715</span>
+SoundPlayOnUnitForPlayer(SoundLink(<span class="hljs-string">"Gen_Hearthstone_Teleport_Fizzle"</span>, <span class="hljs-number">-1</span>), lv_hearthstonePlayer, PlayerGroupSingle(lv_hearthstonePlayer), lv_hearthstoneUnit, <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<h4 id="modsheroesdatastormmod-2"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-2">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/GameLib.galaxy#L3895">GameLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3895</span>
+SoundPlayOnUnitForPlayer(SoundLink(<span class="hljs-string">"XP_Gain_Direct"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupSingle(lp_playerKilling), lp_heroKilled, <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9131</span>
+SoundPlayOnUnitForPlayer(SoundLink(<span class="hljs-string">"XP_Gain_Direct"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupSingle(lv_itPlayer), lp_killedUnit, <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9134</span>
+SoundPlayOnUnitForPlayer(SoundLink(<span class="hljs-string">"XP_Gain_Indirect"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupSingle(lv_itPlayer), lp_killedUnit, <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<h4 id="modsheroesdatastormmod-3"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-3">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/SoundLib.galaxy#L238">SoundLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L238</span>
+SoundPlayOnUnitForPlayer(SoundLink(lv_soundID, c_soundIndexAny), lp_speakingPlayer, lp_targetPlayerGroup, lv_heroUnit, <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodsalteracpassstormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodsalteracpassstormmod">#</a> mods/heroesmapmods/battlegroundmapmods/alteracpass.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/alteracpass.stormmod/base.stormdata/LibMMAP.galaxy#L1326">LibMMAP.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1326</span>
+SoundPlayOnUnitForPlayer(libMMAP_gv_aVSounds.lv_aVTeamSpecificSounds[lp_team].lv_coreGetHitLarge, c_maxPlayers, PlayerGroupAll(), libGame_gv_teams[lp_team].lv_core, <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1329</span>
+SoundPlayOnUnitForPlayer(libMMAP_gv_aVSounds.lv_aVTeamSpecificSounds[lp_team].lv_coreGetHitSmall, c_maxPlayers, PlayerGroupAll(), libGame_gv_teams[lp_team].lv_core, <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3067</span>
+SoundPlayOnUnitForPlayer(SoundLink(<span class="hljs-string">"Gen_Spell_Slow_Loop_PLR"</span>, <span class="hljs-number">-1</span>), lv_player, PlayerGroupSingle(lv_player), EventUnit(), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodsblackheartsbaystormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodsblackheartsbaystormmod">#</a> mods/heroesmapmods/battlegroundmapmods/blackheartsbay.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/blackheartsbay.stormmod/base.stormdata/LibBBAY.galaxy#L1716">LibBBAY.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1716</span>
+SoundPlayOnUnitForPlayer(SoundLink(<span class="hljs-string">"Event_GhostShip_CannonBall_Loop"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), lv_missile, <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodshauntedminesstormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodshauntedminesstormmod">#</a> mods/heroesmapmods/battlegroundmapmods/hauntedmines.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/hauntedmines.stormmod/base.stormdata/LibMHtM.galaxy#L1744">LibMHtM.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1744</span>
+SoundPlayOnUnitForPlayer(SoundLink(<span class="hljs-string">"Event_Mines_EnterMinesEnd"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), lv_heroUnit, <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1809</span>
+SoundPlayOnUnitForPlayer(SoundLink(<span class="hljs-string">"Event_Mines_EnterMinesEnd"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), lv_heroUnit, <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodstowersofdoomstormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodstowersofdoomstormmod">#</a> mods/heroesmapmods/battlegroundmapmods/towersofdoom.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/towersofdoom.stormmod/base.stormdata/LibMTOD.galaxy#L3177">LibMTOD.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3177</span>
+SoundPlayOnUnitForPlayer(SoundLink(<span class="hljs-string">"Event_Mines_EnterMinesEnd"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), lv_hero, <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodsvolskayadatastormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodsvolskayadatastormmod">#</a> mods/heroesmapmods/battlegroundmapmods/volskayadata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/volskayadata.stormmod/base.stormdata/LibVolV.galaxy#L506">LibVolV.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L506</span>
+SoundPlayOnUnitForPlayer(SoundLink(<span class="hljs-string">"Event_Volskaya_Vehicle_CriticalDamage"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupSingle(lv_pilotPlayer), EventUnit(), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L510</span>
+SoundPlayOnUnitForPlayer(SoundLink(<span class="hljs-string">"Event_Volskaya_Vehicle_CriticalDamage"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupSingle(lv_gunnerPlayer), EventUnit(), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<h4 id="modsnovastoryassetssc2mod"><a class="markdownIt-Anchor" href="#modsnovastoryassetssc2mod">#</a> mods/novastoryassets.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/novastoryassets.sc2mod/base.sc2maps/maps/campaign/nova/nova01.sc2map/MapScript.galaxy#L2790">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2790</span>
+SoundPlayOnUnitForPlayer(SoundLink(<span class="hljs-string">"HeroNovaMP1_Health_Pickup"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), gv_artanis, <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2793</span>
+SoundPlayOnUnitForPlayer(SoundLink(<span class="hljs-string">"HeroNovaMP1_Energy_Pickup"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), gv_artanis, <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2071</span>
+SoundPlayOnUnitForPlayer(SoundLink(<span class="hljs-string">"HeroNovaMP1_Health_Pickup"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), gv_zeratul, <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2074</span>
+SoundPlayOnUnitForPlayer(SoundLink(<span class="hljs-string">"HeroNovaMP1_Energy_Pickup"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), gv_zeratul, <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9637</span>
+SoundPlayOnUnitForPlayer(SoundLink(<span class="hljs-string">"Spell_CloakField_Off"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), UnitFromId(<span class="hljs-number">4741</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">400.0</span>, <span class="hljs-number">0.25</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9642</span>
+SoundPlayOnUnitForPlayer(SoundLink(<span class="hljs-string">"Terran_CloakOn"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), gv_cinematicNova, <span class="hljs-number">0.0</span>, <span class="hljs-number">200.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9659</span>
+SoundPlayOnUnitForPlayer(SoundLink(<span class="hljs-string">"Spell_CloakField_On"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), UnitFromId(<span class="hljs-number">4741</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">200.0</span>, <span class="hljs-number">0.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9694</span>
+SoundPlayOnUnitForPlayer(SoundLink(<span class="hljs-string">"Marine_Land"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), gv_zeratul, <span class="hljs-number">0.0</span>, <span class="hljs-number">200.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1907</span>
+SoundPlayOnUnitForPlayer(SoundLink(<span class="hljs-string">"HeroNovaMP1_Health_Pickup"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), gv_nova, <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1910</span>
+SoundPlayOnUnitForPlayer(SoundLink(<span class="hljs-string">"HeroNovaMP1_Energy_Pickup"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), gv_nova, <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3533</span>
+SoundPlayOnUnitForPlayer(SoundLink(<span class="hljs-string">"Emitter_Nova07_CrowdSmallCheering"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), UnitFromId(<span class="hljs-number">537678267</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3535</span>
+SoundPlayOnUnitForPlayer(SoundLink(<span class="hljs-string">"Emitter_Nova07_CrowdSmallDiscussion"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), UnitFromId(<span class="hljs-number">851297348</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3537</span>
+SoundPlayOnUnitForPlayer(SoundLink(<span class="hljs-string">"Emitter_Nova07_CrowdJeers_01"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), UnitFromId(<span class="hljs-number">1098427410</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2790</span>
+SoundPlayOnUnitForPlayer(SoundLink(<span class="hljs-string">"HeroNovaMP1_Health_Pickup"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), gv_artanis, <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2793</span>
+SoundPlayOnUnitForPlayer(SoundLink(<span class="hljs-string">"HeroNovaMP1_Energy_Pickup"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), gv_artanis, <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2071</span>
+SoundPlayOnUnitForPlayer(SoundLink(<span class="hljs-string">"HeroNovaMP1_Health_Pickup"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), gv_zeratul, <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2074</span>
+SoundPlayOnUnitForPlayer(SoundLink(<span class="hljs-string">"HeroNovaMP1_Energy_Pickup"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), gv_zeratul, <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9637</span>
+SoundPlayOnUnitForPlayer(SoundLink(<span class="hljs-string">"Spell_CloakField_Off"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), UnitFromId(<span class="hljs-number">4741</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">400.0</span>, <span class="hljs-number">0.25</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9642</span>
+SoundPlayOnUnitForPlayer(SoundLink(<span class="hljs-string">"Terran_CloakOn"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), gv_cinematicNova, <span class="hljs-number">0.0</span>, <span class="hljs-number">200.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9659</span>
+SoundPlayOnUnitForPlayer(SoundLink(<span class="hljs-string">"Spell_CloakField_On"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), UnitFromId(<span class="hljs-number">4741</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">200.0</span>, <span class="hljs-number">0.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9694</span>
+SoundPlayOnUnitForPlayer(SoundLink(<span class="hljs-string">"Marine_Land"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), gv_zeratul, <span class="hljs-number">0.0</span>, <span class="hljs-number">200.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1907</span>
+SoundPlayOnUnitForPlayer(SoundLink(<span class="hljs-string">"HeroNovaMP1_Health_Pickup"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), gv_nova, <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1910</span>
+SoundPlayOnUnitForPlayer(SoundLink(<span class="hljs-string">"HeroNovaMP1_Energy_Pickup"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), gv_nova, <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3533</span>
+SoundPlayOnUnitForPlayer(SoundLink(<span class="hljs-string">"Emitter_Nova07_CrowdSmallCheering"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), UnitFromId(<span class="hljs-number">537678267</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3535</span>
+SoundPlayOnUnitForPlayer(SoundLink(<span class="hljs-string">"Emitter_Nova07_CrowdSmallDiscussion"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), UnitFromId(<span class="hljs-number">851297348</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3537</span>
+SoundPlayOnUnitForPlayer(SoundLink(<span class="hljs-string">"Emitter_Nova07_CrowdJeers_01"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), UnitFromId(<span class="hljs-number">1098427410</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOMI.galaxy#L4593">LibCOMI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4593</span>
+SoundPlayOnUnitForPlayer(SoundLink(<span class="hljs-string">"MusicDehakaMaxLevel"</span>, <span class="hljs-number">-1</span>), lp_dehakaPlayer, PlayerGroupSingle(lp_dehakaPlayer), lp_dehakaUnit, <span class="hljs-number">1.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L16792</span>
+SoundPlayOnUnitForPlayer(SoundLink(<span class="hljs-string">"DehakaEatDehaka"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), lv_dehakaUnit, <span class="hljs-number">1.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L24824</span>
+SoundPlayOnUnitForPlayer(SoundLink(<span class="hljs-string">"Medivac_Unload"</span>, <span class="hljs-number">-1</span>), EventPlayer(), PlayerGroupAll(), lv_newUnit, <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod-2"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod-2">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOMU.galaxy#L12989">LibCOMU.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L12989</span>
+SoundPlayOnUnitForPlayer(SoundLink(<span class="hljs-string">"InfestedCivilian_Moan"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), lv_hungerTarget, <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12994</span>
+SoundPlayOnUnitForPlayer(SoundLink(<span class="hljs-string">"InfestedCivilian_Moan"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), lv_hungerTarget, <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

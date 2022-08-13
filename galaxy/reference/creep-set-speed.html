@@ -1,0 +1,325 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Set Creep Speed / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Set Creep Speed"/>
+                <meta property="og:description" content="Sets the speed of creep.  Growth determines how rapidly creep will expand from its origin point.  Decay determines how rapidly creep will receed if there are no creep generators nearby.  Blend determines how rapidly the creep will visually appear, and is seperate from the functional purposes of creep."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="set-creep-speed"><a class="markdownIt-Anchor" href="#set-creep-speed">#</a> Set Creep Speed</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Set creep <strong>type</strong> speed to <strong>speed</strong>%<br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Sets the speed of creep.  Growth determines how rapidly creep will expand from its origin point.  Decay determines how rapidly creep will receed if there are no creep generators nearby.  Blend determines how rapidly the creep will visually appear, and is seperate from the functional purposes of creep.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-creep-speed-type">CreepSpeedType</a> ]</em> — Type</li>
+<li><code>fixed</code> — Speed</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">CreepSetSpeed</span><span class="hljs-params">(<span class="hljs-keyword">int</span> inType, fixed inPercent)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#environment-creep-and-power">Environment / Creep And Power</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/creep-set-speed">Set Creep Speed</a></strong> — ( CreepSetSpeed )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/creep-modify">Modify Creep</a></strong> — ( CreepModify )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/creep-is-present">Creep Is Present</a></strong> — ( CreepIsPresent )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/creep-adjacent">Creep Adjacent</a></strong> — ( CreepAdjacent )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/power-level-deprecated">FunctionDef/Name/lib_Ntve_00000250</a></strong> — ( PowerLevel )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/power-level">Power Level</a></strong> — ( PowerLevel )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/power-is-provided-by-deprecated">FunctionDef/Name/lib_Ntve_00000251</a></strong> — ( PowerIsProvidedBy )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/power-is-provided-by">Power Is Provided By</a></strong> — ( PowerIsProvidedBy )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/challenges/terrancovertops.sc2map/MapScript.galaxy#L216">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L216</span>
+CreepSetSpeed(c_creepSpeedGrowth, <span class="hljs-number">1000.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1141</span>
+CreepSetSpeed(c_creepSpeedDecay, <span class="hljs-number">200.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1251</span>
+CreepSetSpeed(c_creepSpeedGrowth, <span class="hljs-number">1000.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1267</span>
+CreepSetSpeed(c_creepSpeedGrowth, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4449</span>
+CreepSetSpeed(c_creepSpeedDecay, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4667</span>
+CreepSetSpeed(c_creepSpeedDecay, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L882</span>
+CreepSetSpeed(c_creepSpeedGrowth, <span class="hljs-number">1000.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L887</span>
+CreepSetSpeed(c_creepSpeedGrowth, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3723</span>
+CreepSetSpeed(c_creepSpeedGrowth, <span class="hljs-number">1000.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3725</span>
+CreepSetSpeed(c_creepSpeedGrowth, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5656</span>
+CreepSetSpeed(c_creepSpeedGrowth, <span class="hljs-number">1000.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5658</span>
+CreepSetSpeed(c_creepSpeedGrowth, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7224</span>
+CreepSetSpeed(c_creepSpeedGrowth, <span class="hljs-number">200.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7601</span>
+CreepSetSpeed(c_creepSpeedGrowth, <span class="hljs-number">1000.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7603</span>
+CreepSetSpeed(c_creepSpeedGrowth, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11515</span>
+CreepSetSpeed(c_creepSpeedGrowth, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L908</span>
+CreepSetSpeed(c_creepSpeedDecay, <span class="hljs-number">500.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8704</span>
+CreepSetSpeed(c_creepSpeedDecay, <span class="hljs-number">1000.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L769</span>
+CreepSetSpeed(c_creepSpeedGrowth, <span class="hljs-number">1000.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L785</span>
+CreepSetSpeed(c_creepSpeedGrowth, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4806</span>
+CreepSetSpeed(c_creepSpeedDecay, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4984</span>
+CreepSetSpeed(c_creepSpeedDecay, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5137</span>
+CreepSetSpeed(c_creepSpeedDecay, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1141</span>
+CreepSetSpeed(c_creepSpeedDecay, <span class="hljs-number">200.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1251</span>
+CreepSetSpeed(c_creepSpeedGrowth, <span class="hljs-number">1000.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1267</span>
+CreepSetSpeed(c_creepSpeedGrowth, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4449</span>
+CreepSetSpeed(c_creepSpeedDecay, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4667</span>
+CreepSetSpeed(c_creepSpeedDecay, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L882</span>
+CreepSetSpeed(c_creepSpeedGrowth, <span class="hljs-number">1000.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L887</span>
+CreepSetSpeed(c_creepSpeedGrowth, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3723</span>
+CreepSetSpeed(c_creepSpeedGrowth, <span class="hljs-number">1000.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3725</span>
+CreepSetSpeed(c_creepSpeedGrowth, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5656</span>
+CreepSetSpeed(c_creepSpeedGrowth, <span class="hljs-number">1000.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5658</span>
+CreepSetSpeed(c_creepSpeedGrowth, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7224</span>
+CreepSetSpeed(c_creepSpeedGrowth, <span class="hljs-number">200.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7601</span>
+CreepSetSpeed(c_creepSpeedGrowth, <span class="hljs-number">1000.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7603</span>
+CreepSetSpeed(c_creepSpeedGrowth, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11515</span>
+CreepSetSpeed(c_creepSpeedGrowth, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L908</span>
+CreepSetSpeed(c_creepSpeedDecay, <span class="hljs-number">500.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8704</span>
+CreepSetSpeed(c_creepSpeedDecay, <span class="hljs-number">1000.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L769</span>
+CreepSetSpeed(c_creepSpeedGrowth, <span class="hljs-number">1000.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L785</span>
+CreepSetSpeed(c_creepSpeedGrowth, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4806</span>
+CreepSetSpeed(c_creepSpeedDecay, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4984</span>
+CreepSetSpeed(c_creepSpeedDecay, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5137</span>
+CreepSetSpeed(c_creepSpeedDecay, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L216</span>
+CreepSetSpeed(c_creepSpeedGrowth, <span class="hljs-number">1000.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4741</span>
+CreepSetSpeed(c_creepSpeedGrowth, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4926</span>
+CreepSetSpeed(c_creepSpeedGrowth, <span class="hljs-number">200.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5425</span>
+CreepSetSpeed(c_creepSpeedGrowth, <span class="hljs-number">1000.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5670</span>
+CreepSetSpeed(c_creepSpeedGrowth, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1466</span>
+CreepSetSpeed(c_creepSpeedGrowth, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6683</span>
+CreepSetSpeed(c_creepSpeedDecay, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6832</span>
+CreepSetSpeed(c_creepSpeedDecay, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5520</span>
+CreepSetSpeed(c_creepSpeedGrowth, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5587</span>
+CreepSetSpeed(c_creepSpeedGrowth, <span class="hljs-number">200.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8307</span>
+CreepSetSpeed(c_creepSpeedDecay, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8650</span>
+CreepSetSpeed(c_creepSpeedDecay, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L796</span>
+CreepSetSpeed(c_creepSpeedGrowth, <span class="hljs-number">150.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L796</span>
+CreepSetSpeed(c_creepSpeedGrowth, <span class="hljs-number">150.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4741</span>
+CreepSetSpeed(c_creepSpeedGrowth, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4926</span>
+CreepSetSpeed(c_creepSpeedGrowth, <span class="hljs-number">200.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5425</span>
+CreepSetSpeed(c_creepSpeedGrowth, <span class="hljs-number">1000.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5670</span>
+CreepSetSpeed(c_creepSpeedGrowth, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1466</span>
+CreepSetSpeed(c_creepSpeedGrowth, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6683</span>
+CreepSetSpeed(c_creepSpeedDecay, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6832</span>
+CreepSetSpeed(c_creepSpeedDecay, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5520</span>
+CreepSetSpeed(c_creepSpeedGrowth, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5587</span>
+CreepSetSpeed(c_creepSpeedGrowth, <span class="hljs-number">200.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8307</span>
+CreepSetSpeed(c_creepSpeedDecay, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8650</span>
+CreepSetSpeed(c_creepSpeedDecay, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1602</span>
+CreepSetSpeed(c_creepSpeedGrowth, <span class="hljs-number">1000.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1604</span>
+CreepSetSpeed(c_creepSpeedGrowth, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1602</span>
+CreepSetSpeed(c_creepSpeedGrowth, <span class="hljs-number">1000.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1604</span>
+CreepSetSpeed(c_creepSpeedGrowth, <span class="hljs-number">100.0</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

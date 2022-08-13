@@ -1,0 +1,335 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Set Camera Data / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Set Camera Data"/>
+                <meta property="og:description" content="The active camera data determines how the camera moves and responds to player input. Camera data can be configured in the Data module."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="set-camera-data"><a class="markdownIt-Anchor" href="#set-camera-data">#</a> Set Camera Data</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Set <strong>camera</strong> as the active camera data for <strong>players</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>The active camera data determines how the camera moves and responds to player input. Camera data can be configured in the Data module.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>playergroup</code> — Players</li>
+<li><code>string</code> <em>[ gamelink::Camera ]</em> — Camera</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">CameraSetData</span><span class="hljs-params">(
+	playergroup players,
+	<span class="hljs-built_in">string</span> cameraId,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#camera-basic">Camera / Basic</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/camera-apply-info">Apply Camera Object</a></strong> — ( CameraApplyInfo )</li>
+<li><em><strong>[F]</strong></em> — <code>camerainfo</code> — <strong><a href="/galaxy/reference/camera-info-default">Default Game Camera</a></strong> — ( CameraInfoDefault )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/camera-pan">Pan Camera</a></strong> — ( CameraPan )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/camera-look-at">Make Camera Look At</a></strong> — ( CameraLookAt )</li>
+<li><em><strong>[F]</strong></em> — <code>point</code> — <strong><a href="/galaxy/reference/camera-get-target">Camera Target Of Player</a></strong> — ( CameraGetTarget )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/camera-get-pitch">Camera Pitch of Player</a></strong> — ( CameraGetPitch )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/camera-get-yaw">Camera Yaw of Player</a></strong> — ( CameraGetYaw )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/camera-get-distance">Camera Distance of Player</a></strong> — ( CameraGetDistance )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/camera-save">Save Camera</a></strong> — ( CameraSave )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/camera-restore">Restore Camera</a></strong> — ( CameraRestore )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/camera-set-channel-on-portrait">Set Camera Channel On Portrait</a></strong> — ( CameraSetChannelOnPortrait )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/camera-clear-channel-on-portrait">Clear Camera Channel On Portrait</a></strong> — ( CameraClearChannelOnPortrait )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/camera-set-data">Set Camera Data</a></strong> — ( CameraSetData )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignsswarmsc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmsc2campaign">#</a> campaigns/swarm.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarm.sc2campaign/base.sc2maps/maps/campaign/swarm/zexpedition03.sc2map/MapScript.galaxy#L1808">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1808</span>
+CameraSetData(PlayerGroupSingle(gv_pLAYER_01_USER), <span class="hljs-string">"SwarmQueen"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2002</span>
+CameraSetData(PlayerGroupSingle(gv_pLAYER_01_USER), <span class="hljs-string">"SwarmQueenLarge"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2169</span>
+CameraSetData(PlayerGroupSingle(gv_pLAYER_01_USER), <span class="hljs-string">"SwarmQueenHuge"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2704</span>
+CameraSetData(PlayerGroupSingle(gv_pLAYER_01_USER), <span class="hljs-string">"SwarmQueen"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2792</span>
+CameraSetData(PlayerGroupSingle(gv_pLAYER_01_USER), <span class="hljs-string">"LarvaCamera"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3258</span>
+CameraSetData(PlayerGroupSingle(gv_pLAYER_01_USER), <span class="hljs-string">"SwarmQueen"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3624</span>
+CameraSetData(PlayerGroupSingle(gv_pLAYER_01_USER), <span class="hljs-string">"LarvaCamera"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8843</span>
+CameraSetData(PlayerGroupSingle(gv_pLAYER_01_USER), <span class="hljs-string">"LarvaCamera"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11384</span>
+CameraSetData(PlayerGroupSingle(gv_pLAYER_01_USER), <span class="hljs-string">"LabHeroCamera"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11999</span>
+CameraSetData(PlayerGroupSingle(gv_pLAYER_01_USER), <span class="hljs-string">"Dflt"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12352</span>
+CameraSetData(PlayerGroupSingle(gv_pLAYER_01_USER), <span class="hljs-string">"LabHeroCamera"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12878</span>
+CameraSetData(PlayerGroupSingle(gv_pLAYER_01_USER), <span class="hljs-string">"LabHeroCamera"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4851</span>
+CameraSetData(PlayerGroupAll(), <span class="hljs-string">"ZoomedCamera"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6657</span>
+CameraSetData(PlayerGroupAll(), <span class="hljs-string">"ZoomedCamera"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9835</span>
+CameraSetData(PlayerGroupAll(), <span class="hljs-string">"ZoomedCamera"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9848</span>
+CameraSetData(PlayerGroupAll(), <span class="hljs-string">"ZoomedCamera"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10406</span>
+CameraSetData(PlayerGroupAll(), <span class="hljs-string">"ZoomedCamera"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10842</span>
+CameraSetData(PlayerGroupAll(), <span class="hljs-string">"ZoomedCamera"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10917</span>
+CameraSetData(PlayerGroupAll(), <span class="hljs-string">"ZoomedCamera"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11273</span>
+CameraSetData(PlayerGroupAll(), <span class="hljs-string">"ZoomedCamera"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11373</span>
+CameraSetData(PlayerGroupAll(), <span class="hljs-string">"ZoomedCamera"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11771</span>
+CameraSetData(PlayerGroupAll(), <span class="hljs-string">"ZoomedCamera"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1808</span>
+CameraSetData(PlayerGroupSingle(gv_pLAYER_01_USER), <span class="hljs-string">"SwarmQueen"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2002</span>
+CameraSetData(PlayerGroupSingle(gv_pLAYER_01_USER), <span class="hljs-string">"SwarmQueenLarge"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2169</span>
+CameraSetData(PlayerGroupSingle(gv_pLAYER_01_USER), <span class="hljs-string">"SwarmQueenHuge"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2704</span>
+CameraSetData(PlayerGroupSingle(gv_pLAYER_01_USER), <span class="hljs-string">"SwarmQueen"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2792</span>
+CameraSetData(PlayerGroupSingle(gv_pLAYER_01_USER), <span class="hljs-string">"LarvaCamera"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3258</span>
+CameraSetData(PlayerGroupSingle(gv_pLAYER_01_USER), <span class="hljs-string">"SwarmQueen"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3624</span>
+CameraSetData(PlayerGroupSingle(gv_pLAYER_01_USER), <span class="hljs-string">"LarvaCamera"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8843</span>
+CameraSetData(PlayerGroupSingle(gv_pLAYER_01_USER), <span class="hljs-string">"LarvaCamera"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11384</span>
+CameraSetData(PlayerGroupSingle(gv_pLAYER_01_USER), <span class="hljs-string">"LabHeroCamera"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11999</span>
+CameraSetData(PlayerGroupSingle(gv_pLAYER_01_USER), <span class="hljs-string">"Dflt"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12352</span>
+CameraSetData(PlayerGroupSingle(gv_pLAYER_01_USER), <span class="hljs-string">"LabHeroCamera"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12878</span>
+CameraSetData(PlayerGroupSingle(gv_pLAYER_01_USER), <span class="hljs-string">"LabHeroCamera"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4851</span>
+CameraSetData(PlayerGroupAll(), <span class="hljs-string">"ZoomedCamera"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6657</span>
+CameraSetData(PlayerGroupAll(), <span class="hljs-string">"ZoomedCamera"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9835</span>
+CameraSetData(PlayerGroupAll(), <span class="hljs-string">"ZoomedCamera"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9848</span>
+CameraSetData(PlayerGroupAll(), <span class="hljs-string">"ZoomedCamera"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10406</span>
+CameraSetData(PlayerGroupAll(), <span class="hljs-string">"ZoomedCamera"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10842</span>
+CameraSetData(PlayerGroupAll(), <span class="hljs-string">"ZoomedCamera"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10917</span>
+CameraSetData(PlayerGroupAll(), <span class="hljs-string">"ZoomedCamera"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11273</span>
+CameraSetData(PlayerGroupAll(), <span class="hljs-string">"ZoomedCamera"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11373</span>
+CameraSetData(PlayerGroupAll(), <span class="hljs-string">"ZoomedCamera"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11771</span>
+CameraSetData(PlayerGroupAll(), <span class="hljs-string">"ZoomedCamera"</span>)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignMissionLib.galaxy#L489">VoidCampaignMissionLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L489</span>
+CameraSetData(PlayerGroupAll(), <span class="hljs-string">"SOATargetingModeCamera"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L578</span>
+CameraSetData(PlayerGroupAll(), <span class="hljs-string">"Dflt"</span>)
+</code></pre>
+<h4 id="modsheroesdatastormmod"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/GameDataHelperLib.galaxy#L9676">GameDataHelperLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L9676</span>
+CameraSetData(PlayerGroupSingle(EventPlayer()), <span class="hljs-string">"Dryad"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9704</span>
+CameraSetData(PlayerGroupSingle(EventPlayer()), <span class="hljs-string">"BlizzardAllStars"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9732</span>
+CameraSetData(PlayerGroupSingle(libGDHL_gf_AbathurSymbioteAbathurPlayer()), <span class="hljs-string">"Dryad"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9736</span>
+CameraSetData(PlayerGroupSingle(libGDHL_gf_AbathurSymbioteAbathurPlayer()), <span class="hljs-string">"BlizzardAllStars"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9770</span>
+CameraSetData(PlayerGroupSingle(lv_player), <span class="hljs-string">"BlizzardAllStars"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9774</span>
+CameraSetData(PlayerGroupSingle(lv_player), <span class="hljs-string">"Dryad"</span>)
+</code></pre>
+<h4 id="modsnovastoryassetssc2mod"><a class="markdownIt-Anchor" href="#modsnovastoryassetssc2mod">#</a> mods/novastoryassets.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/novastoryassets.sc2mod/base.sc2maps/maps/campaign/nova/nova03.sc2map/MapScript.galaxy#L9819">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L9819</span>
+CameraSetData(PlayerGroupSingle(gv_pLAYER_01_USER), <span class="hljs-string">"Dflt2"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10175</span>
+CameraSetData(PlayerGroupSingle(gv_pLAYER_01_USER), <span class="hljs-string">"Dflt2"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6224</span>
+CameraSetData(PlayerGroupAll(), <span class="hljs-string">"BonusObjectiveInstallation"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6290</span>
+CameraSetData(PlayerGroupAll(), <span class="hljs-string">"Dflt"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6356</span>
+CameraSetData(PlayerGroupAll(), <span class="hljs-string">"BonusObjectiveInstallation"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6423</span>
+CameraSetData(PlayerGroupAll(), <span class="hljs-string">"Dflt"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6522</span>
+CameraSetData(PlayerGroupAll(), <span class="hljs-string">"Dflt"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3438</span>
+CameraSetData(PlayerGroupAll(), <span class="hljs-string">"Dflt2"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6071</span>
+CameraSetData(PlayerGroupAll(), <span class="hljs-string">"Dflt2"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9819</span>
+CameraSetData(PlayerGroupSingle(gv_pLAYER_01_USER), <span class="hljs-string">"Dflt2"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10175</span>
+CameraSetData(PlayerGroupSingle(gv_pLAYER_01_USER), <span class="hljs-string">"Dflt2"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6224</span>
+CameraSetData(PlayerGroupAll(), <span class="hljs-string">"BonusObjectiveInstallation"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6290</span>
+CameraSetData(PlayerGroupAll(), <span class="hljs-string">"Dflt"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6356</span>
+CameraSetData(PlayerGroupAll(), <span class="hljs-string">"BonusObjectiveInstallation"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6423</span>
+CameraSetData(PlayerGroupAll(), <span class="hljs-string">"Dflt"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6522</span>
+CameraSetData(PlayerGroupAll(), <span class="hljs-string">"Dflt"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3438</span>
+CameraSetData(PlayerGroupAll(), <span class="hljs-string">"Dflt2"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6071</span>
+CameraSetData(PlayerGroupAll(), <span class="hljs-string">"Dflt2"</span>)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOMI.galaxy#L7039">LibCOMI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L7039</span>
+CameraSetData(PlayerGroupSingle(lp_player), <span class="hljs-string">"SOATargetingModeCamera"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7060</span>
+CameraSetData(PlayerGroupSingle(lp_player), <span class="hljs-string">"Dflt"</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

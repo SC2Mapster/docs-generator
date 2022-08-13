@@ -1,0 +1,297 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Set Challenge Score Text / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Set Challenge Score Text"/>
+                <meta property="og:description" content="This action will only work for Blizzard maps."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="set-challenge-score-text"><a class="markdownIt-Anchor" href="#set-challenge-score-text">#</a> Set Challenge Score Text</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Set the score text of <strong>challenge</strong> to <strong>text</strong> for <strong>playerGroup</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code> | <code>Restricted</code></p>
+</blockquote>
+<p>This action will only work for Blizzard maps.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>playergroup</code> — PlayerGroup</li>
+<li><code>string</code> — Challenge</li>
+<li><code>text</code> — Text</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">UISetChallengeScoreText</span><span class="hljs-params">(
+	playergroup players,
+	<span class="hljs-built_in">string</span> challengeId,
+	text scoreText,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#ui-challenges">UI / Challenges</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ui-set-challenge-mode">Challenge Mode</a></strong> — ( UISetChallengeMode )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ui-set-challenge-high-score">Set Challenge High Score</a></strong> — ( UISetChallengeHighScore )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/ui-get-challenge-high-score">Get Challenge High Score</a></strong> — ( UIGetChallengeHighScore )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ui-set-challenge-score-text">Set Challenge Score Text</a></strong> — ( UISetChallengeScoreText )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ui-set-challenge-completed">Set Challenge Completed</a></strong> — ( UISetChallengeCompleted )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/challenges/advancedcommand.sc2map/MapScript.galaxy#L143">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L143</span>
+UISetChallengeScoreText(PlayerGroupAll(), <span class="hljs-string">"AdvancedCommand"</span>, (StringExternal(<span class="hljs-string">"Param/Value/22F25F02"</span>) + StringExternal(<span class="hljs-string">"Param/Value/A102DD13"</span>) + IntToText(lp_score) + StringExternal(<span class="hljs-string">"Param/Value/009E2762"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L457</span>
+UISetChallengeScoreText(PlayerGroupAll(), <span class="hljs-string">"ProtossCombat"</span>, (StringExternal(<span class="hljs-string">"Param/Value/3266C739"</span>) + StringExternal(<span class="hljs-string">"Param/Value/ABAE6AD4"</span>) + IntToText(lp_score) + StringExternal(<span class="hljs-string">"Param/Value/89936C55"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L462</span>
+UISetChallengeScoreText(PlayerGroupAll(), <span class="hljs-string">"ProtossCombat"</span>, (StringExternal(<span class="hljs-string">"Param/Value/4B5B04A4"</span>) + StringExternal(<span class="hljs-string">"Param/Value/5CAC8E73"</span>) + IntToText(<span class="hljs-number">0</span>) + StringExternal(<span class="hljs-string">"Param/Value/B0A6725C"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L463</span>
+UISetChallengeScoreText(PlayerGroupAll(), <span class="hljs-string">"ProtossCombat"</span>, (StringExternal(<span class="hljs-string">"Param/Value/BAB772FC"</span>) + StringExternal(<span class="hljs-string">"Param/Value/C20ED8D3"</span>) + IntToText(<span class="hljs-number">0</span>) + StringExternal(<span class="hljs-string">"Param/Value/88770290"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L464</span>
+UISetChallengeScoreText(PlayerGroupAll(), <span class="hljs-string">"ProtossCombat"</span>, (StringExternal(<span class="hljs-string">"Param/Value/1B1C77B5"</span>) + StringExternal(<span class="hljs-string">"Param/Value/2F97A659"</span>) + IntToText(<span class="hljs-number">0</span>) + StringExternal(<span class="hljs-string">"Param/Value/6BC7A30F"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L465</span>
+UISetChallengeScoreText(PlayerGroupAll(), <span class="hljs-string">"ProtossCombat"</span>, (StringExternal(<span class="hljs-string">"Param/Value/CE9D4008"</span>) + StringExternal(<span class="hljs-string">"Param/Value/668A4FCE"</span>) + IntToText(<span class="hljs-number">0</span>) + StringExternal(<span class="hljs-string">"Param/Value/60D16E89"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L466</span>
+UISetChallengeScoreText(PlayerGroupAll(), <span class="hljs-string">"ProtossCombat"</span>, (StringExternal(<span class="hljs-string">"Param/Value/D20E0021"</span>) + StringExternal(<span class="hljs-string">"Param/Value/0405E3E5"</span>) + IntToText(<span class="hljs-number">0</span>) + StringExternal(<span class="hljs-string">"Param/Value/EB0944A0"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L467</span>
+UISetChallengeScoreText(PlayerGroupAll(), <span class="hljs-string">"ProtossCombat"</span>, (StringExternal(<span class="hljs-string">"Param/Value/ED8C7E9D"</span>) + StringExternal(<span class="hljs-string">"Param/Value/523A507A"</span>) + IntToText(<span class="hljs-number">0</span>) + StringExternal(<span class="hljs-string">"Param/Value/4417DC67"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L468</span>
+UISetChallengeScoreText(PlayerGroupAll(), <span class="hljs-string">"ProtossCombat"</span>, (StringExternal(<span class="hljs-string">"Param/Value/1467AB8F"</span>) + StringExternal(<span class="hljs-string">"Param/Value/564BB812"</span>) + IntToText(<span class="hljs-number">0</span>) + StringExternal(<span class="hljs-string">"Param/Value/95EE8628"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L232</span>
+UISetChallengeScoreText(PlayerGroupAll(), <span class="hljs-string">"ProtossPsionics"</span>, (StringExternal(<span class="hljs-string">"Param/Value/EE5172C9"</span>) + StringExternal(<span class="hljs-string">"Param/Value/86DE4B9C"</span>) + IntToText(lp_score) + StringExternal(<span class="hljs-string">"Param/Value/36BEA4F8"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L165</span>
+UISetChallengeScoreText(PlayerGroupAll(), <span class="hljs-string">"Economy"</span>, (StringExternal(<span class="hljs-string">"Param/Value/C87CC032"</span>) + StringExternal(<span class="hljs-string">"Param/Value/F5B0B48F"</span>) + TextTimeFormat(StringToText(<span class="hljs-string">"&lt;min2/&gt;:&lt;sec2/&gt;"</span>), lp_score) + StringExternal(<span class="hljs-string">"Param/Value/B95B281A"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L170</span>
+UISetChallengeScoreText(PlayerGroupAll(), <span class="hljs-string">"Economy"</span>, (StringExternal(<span class="hljs-string">"Param/Value/A5C0D643"</span>) + StringExternal(<span class="hljs-string">"Param/Value/F0C6A3C7"</span>) + TextTimeFormat(StringToText(<span class="hljs-string">"&lt;min2/&gt;:&lt;sec2/&gt;"</span>), <span class="hljs-number">0</span>) + StringExternal(<span class="hljs-string">"Param/Value/CF5D7AC8"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L284</span>
+UISetChallengeScoreText(PlayerGroupAll(), <span class="hljs-string">"RushDefense"</span>, (StringExternal(<span class="hljs-string">"Param/Value/926A8B6A"</span>) + StringExternal(<span class="hljs-string">"Param/Value/2EFFCF92"</span>) + IntToText(lp_score) + StringExternal(<span class="hljs-string">"Param/Value/A781E2C8"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L289</span>
+UISetChallengeScoreText(PlayerGroupAll(), <span class="hljs-string">"RushDefense"</span>, (StringExternal(<span class="hljs-string">"Param/Value/543F6FE7"</span>) + StringExternal(<span class="hljs-string">"Param/Value/8ED94B19"</span>) + IntToText(<span class="hljs-number">0</span>) + StringExternal(<span class="hljs-string">"Param/Value/1D1310C2"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L421</span>
+UISetChallengeScoreText(PlayerGroupAll(), <span class="hljs-string">"TerranCombat"</span>, (StringExternal(<span class="hljs-string">"Param/Value/29078193"</span>) + StringExternal(<span class="hljs-string">"Param/Value/55B7ADF3"</span>) + IntToText(lp_score) + StringExternal(<span class="hljs-string">"Param/Value/AB0CE920"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L426</span>
+UISetChallengeScoreText(PlayerGroupAll(), <span class="hljs-string">"TerranCombat"</span>, (StringExternal(<span class="hljs-string">"Param/Value/9685FC2F"</span>) + StringExternal(<span class="hljs-string">"Param/Value/2E64AD8F"</span>) + IntToText(<span class="hljs-number">0</span>) + StringExternal(<span class="hljs-string">"Param/Value/C3915FF6"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L427</span>
+UISetChallengeScoreText(PlayerGroupAll(), <span class="hljs-string">"TerranCombat"</span>, (StringExternal(<span class="hljs-string">"Param/Value/FBBAB1E6"</span>) + StringExternal(<span class="hljs-string">"Param/Value/15B28B1A"</span>) + IntToText(<span class="hljs-number">0</span>) + StringExternal(<span class="hljs-string">"Param/Value/AEF1754D"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L428</span>
+UISetChallengeScoreText(PlayerGroupAll(), <span class="hljs-string">"TerranCombat"</span>, (StringExternal(<span class="hljs-string">"Param/Value/9B308DCE"</span>) + StringExternal(<span class="hljs-string">"Param/Value/888F294C"</span>) + IntToText(<span class="hljs-number">0</span>) + StringExternal(<span class="hljs-string">"Param/Value/59839E98"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L429</span>
+UISetChallengeScoreText(PlayerGroupAll(), <span class="hljs-string">"TerranCombat"</span>, (StringExternal(<span class="hljs-string">"Param/Value/020C7720"</span>) + StringExternal(<span class="hljs-string">"Param/Value/BEE37DFC"</span>) + IntToText(<span class="hljs-number">0</span>) + StringExternal(<span class="hljs-string">"Param/Value/199B4D30"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L430</span>
+UISetChallengeScoreText(PlayerGroupAll(), <span class="hljs-string">"TerranCombat"</span>, (StringExternal(<span class="hljs-string">"Param/Value/988E4C17"</span>) + StringExternal(<span class="hljs-string">"Param/Value/7D787FDC"</span>) + IntToText(<span class="hljs-number">0</span>) + StringExternal(<span class="hljs-string">"Param/Value/56F163A2"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L431</span>
+UISetChallengeScoreText(PlayerGroupAll(), <span class="hljs-string">"TerranCombat"</span>, (StringExternal(<span class="hljs-string">"Param/Value/2ADCAB4F"</span>) + StringExternal(<span class="hljs-string">"Param/Value/4D414E80"</span>) + IntToText(<span class="hljs-number">0</span>) + StringExternal(<span class="hljs-string">"Param/Value/2D0CD1AA"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L432</span>
+UISetChallengeScoreText(PlayerGroupAll(), <span class="hljs-string">"TerranCombat"</span>, (StringExternal(<span class="hljs-string">"Param/Value/A1C4AFA8"</span>) + StringExternal(<span class="hljs-string">"Param/Value/FC9ED8F5"</span>) + IntToText(<span class="hljs-number">0</span>) + StringExternal(<span class="hljs-string">"Param/Value/12C84BED"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L144</span>
+UISetChallengeScoreText(PlayerGroupAll(), <span class="hljs-string">"TerranCovertOps"</span>, (StringExternal(<span class="hljs-string">"Param/Value/E9F6BF56"</span>) + StringExternal(<span class="hljs-string">"Param/Value/86DDFCDF"</span>) + IntToText(lp_score) + StringExternal(<span class="hljs-string">"Param/Value/F63A2331"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L467</span>
+UISetChallengeScoreText(PlayerGroupAll(), <span class="hljs-string">"ZergCombat"</span>, (StringExternal(<span class="hljs-string">"Param/Value/79B25360"</span>) + StringExternal(<span class="hljs-string">"Param/Value/E2C03C33"</span>) + IntToText(lp_score) + StringExternal(<span class="hljs-string">"Param/Value/D32E29B0"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L472</span>
+UISetChallengeScoreText(PlayerGroupAll(), <span class="hljs-string">"ZergCombat"</span>, (StringExternal(<span class="hljs-string">"Param/Value/AEA1DF2B"</span>) + StringExternal(<span class="hljs-string">"Param/Value/DF366449"</span>) + IntToText(<span class="hljs-number">0</span>) + StringExternal(<span class="hljs-string">"Param/Value/CEA2F3D2"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L473</span>
+UISetChallengeScoreText(PlayerGroupAll(), <span class="hljs-string">"ZergCombat"</span>, (StringExternal(<span class="hljs-string">"Param/Value/3991444F"</span>) + StringExternal(<span class="hljs-string">"Param/Value/6A8D0E09"</span>) + IntToText(<span class="hljs-number">0</span>) + StringExternal(<span class="hljs-string">"Param/Value/48CB2045"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L474</span>
+UISetChallengeScoreText(PlayerGroupAll(), <span class="hljs-string">"ZergCombat"</span>, (StringExternal(<span class="hljs-string">"Param/Value/89859C9B"</span>) + StringExternal(<span class="hljs-string">"Param/Value/3D05D783"</span>) + IntToText(<span class="hljs-number">0</span>) + StringExternal(<span class="hljs-string">"Param/Value/166D8C10"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L475</span>
+UISetChallengeScoreText(PlayerGroupAll(), <span class="hljs-string">"ZergCombat"</span>, (StringExternal(<span class="hljs-string">"Param/Value/9B231198"</span>) + StringExternal(<span class="hljs-string">"Param/Value/E4FB1DF0"</span>) + IntToText(<span class="hljs-number">0</span>) + StringExternal(<span class="hljs-string">"Param/Value/57A8AB80"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L476</span>
+UISetChallengeScoreText(PlayerGroupAll(), <span class="hljs-string">"ZergCombat"</span>, (StringExternal(<span class="hljs-string">"Param/Value/3FD8C308"</span>) + StringExternal(<span class="hljs-string">"Param/Value/A28A32F3"</span>) + IntToText(<span class="hljs-number">0</span>) + StringExternal(<span class="hljs-string">"Param/Value/7A68772B"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L477</span>
+UISetChallengeScoreText(PlayerGroupAll(), <span class="hljs-string">"ZergCombat"</span>, (StringExternal(<span class="hljs-string">"Param/Value/2ABF749A"</span>) + StringExternal(<span class="hljs-string">"Param/Value/40438250"</span>) + IntToText(<span class="hljs-number">0</span>) + StringExternal(<span class="hljs-string">"Param/Value/F92CD3E7"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L478</span>
+UISetChallengeScoreText(PlayerGroupAll(), <span class="hljs-string">"ZergCombat"</span>, (StringExternal(<span class="hljs-string">"Param/Value/333E9138"</span>) + StringExternal(<span class="hljs-string">"Param/Value/0624E743"</span>) + IntToText(<span class="hljs-number">0</span>) + StringExternal(<span class="hljs-string">"Param/Value/AB94BCC5"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L142</span>
+UISetChallengeScoreText(PlayerGroupAll(), <span class="hljs-string">"ZergInfestation"</span>, (StringExternal(<span class="hljs-string">"Param/Value/A10E1679"</span>) + StringExternal(<span class="hljs-string">"Param/Value/8E3C261F"</span>) + IntToText(lp_scores) + StringExternal(<span class="hljs-string">"Param/Value/7D8661A5"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L143</span>
+UISetChallengeScoreText(PlayerGroupAll(), <span class="hljs-string">"AdvancedCommand"</span>, (StringExternal(<span class="hljs-string">"Param/Value/22F25F02"</span>) + StringExternal(<span class="hljs-string">"Param/Value/A102DD13"</span>) + IntToText(lp_score) + StringExternal(<span class="hljs-string">"Param/Value/009E2762"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L165</span>
+UISetChallengeScoreText(PlayerGroupAll(), <span class="hljs-string">"Economy"</span>, (StringExternal(<span class="hljs-string">"Param/Value/C87CC032"</span>) + StringExternal(<span class="hljs-string">"Param/Value/F5B0B48F"</span>) + TextTimeFormat(StringToText(<span class="hljs-string">"&lt;min2/&gt;:&lt;sec2/&gt;"</span>), lp_score) + StringExternal(<span class="hljs-string">"Param/Value/B95B281A"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L170</span>
+UISetChallengeScoreText(PlayerGroupAll(), <span class="hljs-string">"Economy"</span>, (StringExternal(<span class="hljs-string">"Param/Value/A5C0D643"</span>) + StringExternal(<span class="hljs-string">"Param/Value/F0C6A3C7"</span>) + TextTimeFormat(StringToText(<span class="hljs-string">"&lt;min2/&gt;:&lt;sec2/&gt;"</span>), <span class="hljs-number">0</span>) + StringExternal(<span class="hljs-string">"Param/Value/CF5D7AC8"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L457</span>
+UISetChallengeScoreText(PlayerGroupAll(), <span class="hljs-string">"ProtossCombat"</span>, (StringExternal(<span class="hljs-string">"Param/Value/3266C739"</span>) + StringExternal(<span class="hljs-string">"Param/Value/ABAE6AD4"</span>) + IntToText(lp_score) + StringExternal(<span class="hljs-string">"Param/Value/89936C55"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L462</span>
+UISetChallengeScoreText(PlayerGroupAll(), <span class="hljs-string">"ProtossCombat"</span>, (StringExternal(<span class="hljs-string">"Param/Value/4B5B04A4"</span>) + StringExternal(<span class="hljs-string">"Param/Value/5CAC8E73"</span>) + IntToText(<span class="hljs-number">0</span>) + StringExternal(<span class="hljs-string">"Param/Value/B0A6725C"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L463</span>
+UISetChallengeScoreText(PlayerGroupAll(), <span class="hljs-string">"ProtossCombat"</span>, (StringExternal(<span class="hljs-string">"Param/Value/BAB772FC"</span>) + StringExternal(<span class="hljs-string">"Param/Value/C20ED8D3"</span>) + IntToText(<span class="hljs-number">0</span>) + StringExternal(<span class="hljs-string">"Param/Value/88770290"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L464</span>
+UISetChallengeScoreText(PlayerGroupAll(), <span class="hljs-string">"ProtossCombat"</span>, (StringExternal(<span class="hljs-string">"Param/Value/1B1C77B5"</span>) + StringExternal(<span class="hljs-string">"Param/Value/2F97A659"</span>) + IntToText(<span class="hljs-number">0</span>) + StringExternal(<span class="hljs-string">"Param/Value/6BC7A30F"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L465</span>
+UISetChallengeScoreText(PlayerGroupAll(), <span class="hljs-string">"ProtossCombat"</span>, (StringExternal(<span class="hljs-string">"Param/Value/CE9D4008"</span>) + StringExternal(<span class="hljs-string">"Param/Value/668A4FCE"</span>) + IntToText(<span class="hljs-number">0</span>) + StringExternal(<span class="hljs-string">"Param/Value/60D16E89"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L466</span>
+UISetChallengeScoreText(PlayerGroupAll(), <span class="hljs-string">"ProtossCombat"</span>, (StringExternal(<span class="hljs-string">"Param/Value/D20E0021"</span>) + StringExternal(<span class="hljs-string">"Param/Value/0405E3E5"</span>) + IntToText(<span class="hljs-number">0</span>) + StringExternal(<span class="hljs-string">"Param/Value/EB0944A0"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L467</span>
+UISetChallengeScoreText(PlayerGroupAll(), <span class="hljs-string">"ProtossCombat"</span>, (StringExternal(<span class="hljs-string">"Param/Value/ED8C7E9D"</span>) + StringExternal(<span class="hljs-string">"Param/Value/523A507A"</span>) + IntToText(<span class="hljs-number">0</span>) + StringExternal(<span class="hljs-string">"Param/Value/4417DC67"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L468</span>
+UISetChallengeScoreText(PlayerGroupAll(), <span class="hljs-string">"ProtossCombat"</span>, (StringExternal(<span class="hljs-string">"Param/Value/1467AB8F"</span>) + StringExternal(<span class="hljs-string">"Param/Value/564BB812"</span>) + IntToText(<span class="hljs-number">0</span>) + StringExternal(<span class="hljs-string">"Param/Value/95EE8628"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L232</span>
+UISetChallengeScoreText(PlayerGroupAll(), <span class="hljs-string">"ProtossPsionics"</span>, (StringExternal(<span class="hljs-string">"Param/Value/EE5172C9"</span>) + StringExternal(<span class="hljs-string">"Param/Value/86DE4B9C"</span>) + IntToText(lp_score) + StringExternal(<span class="hljs-string">"Param/Value/36BEA4F8"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L284</span>
+UISetChallengeScoreText(PlayerGroupAll(), <span class="hljs-string">"RushDefense"</span>, (StringExternal(<span class="hljs-string">"Param/Value/926A8B6A"</span>) + StringExternal(<span class="hljs-string">"Param/Value/2EFFCF92"</span>) + IntToText(lp_score) + StringExternal(<span class="hljs-string">"Param/Value/A781E2C8"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L289</span>
+UISetChallengeScoreText(PlayerGroupAll(), <span class="hljs-string">"RushDefense"</span>, (StringExternal(<span class="hljs-string">"Param/Value/543F6FE7"</span>) + StringExternal(<span class="hljs-string">"Param/Value/8ED94B19"</span>) + IntToText(<span class="hljs-number">0</span>) + StringExternal(<span class="hljs-string">"Param/Value/1D1310C2"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L421</span>
+UISetChallengeScoreText(PlayerGroupAll(), <span class="hljs-string">"TerranCombat"</span>, (StringExternal(<span class="hljs-string">"Param/Value/29078193"</span>) + StringExternal(<span class="hljs-string">"Param/Value/55B7ADF3"</span>) + IntToText(lp_score) + StringExternal(<span class="hljs-string">"Param/Value/AB0CE920"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L426</span>
+UISetChallengeScoreText(PlayerGroupAll(), <span class="hljs-string">"TerranCombat"</span>, (StringExternal(<span class="hljs-string">"Param/Value/9685FC2F"</span>) + StringExternal(<span class="hljs-string">"Param/Value/2E64AD8F"</span>) + IntToText(<span class="hljs-number">0</span>) + StringExternal(<span class="hljs-string">"Param/Value/C3915FF6"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L427</span>
+UISetChallengeScoreText(PlayerGroupAll(), <span class="hljs-string">"TerranCombat"</span>, (StringExternal(<span class="hljs-string">"Param/Value/FBBAB1E6"</span>) + StringExternal(<span class="hljs-string">"Param/Value/15B28B1A"</span>) + IntToText(<span class="hljs-number">0</span>) + StringExternal(<span class="hljs-string">"Param/Value/AEF1754D"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L428</span>
+UISetChallengeScoreText(PlayerGroupAll(), <span class="hljs-string">"TerranCombat"</span>, (StringExternal(<span class="hljs-string">"Param/Value/9B308DCE"</span>) + StringExternal(<span class="hljs-string">"Param/Value/888F294C"</span>) + IntToText(<span class="hljs-number">0</span>) + StringExternal(<span class="hljs-string">"Param/Value/59839E98"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L429</span>
+UISetChallengeScoreText(PlayerGroupAll(), <span class="hljs-string">"TerranCombat"</span>, (StringExternal(<span class="hljs-string">"Param/Value/020C7720"</span>) + StringExternal(<span class="hljs-string">"Param/Value/BEE37DFC"</span>) + IntToText(<span class="hljs-number">0</span>) + StringExternal(<span class="hljs-string">"Param/Value/199B4D30"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L430</span>
+UISetChallengeScoreText(PlayerGroupAll(), <span class="hljs-string">"TerranCombat"</span>, (StringExternal(<span class="hljs-string">"Param/Value/988E4C17"</span>) + StringExternal(<span class="hljs-string">"Param/Value/7D787FDC"</span>) + IntToText(<span class="hljs-number">0</span>) + StringExternal(<span class="hljs-string">"Param/Value/56F163A2"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L431</span>
+UISetChallengeScoreText(PlayerGroupAll(), <span class="hljs-string">"TerranCombat"</span>, (StringExternal(<span class="hljs-string">"Param/Value/2ADCAB4F"</span>) + StringExternal(<span class="hljs-string">"Param/Value/4D414E80"</span>) + IntToText(<span class="hljs-number">0</span>) + StringExternal(<span class="hljs-string">"Param/Value/2D0CD1AA"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L432</span>
+UISetChallengeScoreText(PlayerGroupAll(), <span class="hljs-string">"TerranCombat"</span>, (StringExternal(<span class="hljs-string">"Param/Value/A1C4AFA8"</span>) + StringExternal(<span class="hljs-string">"Param/Value/FC9ED8F5"</span>) + IntToText(<span class="hljs-number">0</span>) + StringExternal(<span class="hljs-string">"Param/Value/12C84BED"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L144</span>
+UISetChallengeScoreText(PlayerGroupAll(), <span class="hljs-string">"TerranCovertOps"</span>, (StringExternal(<span class="hljs-string">"Param/Value/E9F6BF56"</span>) + StringExternal(<span class="hljs-string">"Param/Value/86DDFCDF"</span>) + IntToText(lp_score) + StringExternal(<span class="hljs-string">"Param/Value/F63A2331"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L467</span>
+UISetChallengeScoreText(PlayerGroupAll(), <span class="hljs-string">"ZergCombat"</span>, (StringExternal(<span class="hljs-string">"Param/Value/79B25360"</span>) + StringExternal(<span class="hljs-string">"Param/Value/E2C03C33"</span>) + IntToText(lp_score) + StringExternal(<span class="hljs-string">"Param/Value/D32E29B0"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L472</span>
+UISetChallengeScoreText(PlayerGroupAll(), <span class="hljs-string">"ZergCombat"</span>, (StringExternal(<span class="hljs-string">"Param/Value/AEA1DF2B"</span>) + StringExternal(<span class="hljs-string">"Param/Value/DF366449"</span>) + IntToText(<span class="hljs-number">0</span>) + StringExternal(<span class="hljs-string">"Param/Value/CEA2F3D2"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L473</span>
+UISetChallengeScoreText(PlayerGroupAll(), <span class="hljs-string">"ZergCombat"</span>, (StringExternal(<span class="hljs-string">"Param/Value/3991444F"</span>) + StringExternal(<span class="hljs-string">"Param/Value/6A8D0E09"</span>) + IntToText(<span class="hljs-number">0</span>) + StringExternal(<span class="hljs-string">"Param/Value/48CB2045"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L474</span>
+UISetChallengeScoreText(PlayerGroupAll(), <span class="hljs-string">"ZergCombat"</span>, (StringExternal(<span class="hljs-string">"Param/Value/89859C9B"</span>) + StringExternal(<span class="hljs-string">"Param/Value/3D05D783"</span>) + IntToText(<span class="hljs-number">0</span>) + StringExternal(<span class="hljs-string">"Param/Value/166D8C10"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L475</span>
+UISetChallengeScoreText(PlayerGroupAll(), <span class="hljs-string">"ZergCombat"</span>, (StringExternal(<span class="hljs-string">"Param/Value/9B231198"</span>) + StringExternal(<span class="hljs-string">"Param/Value/E4FB1DF0"</span>) + IntToText(<span class="hljs-number">0</span>) + StringExternal(<span class="hljs-string">"Param/Value/57A8AB80"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L476</span>
+UISetChallengeScoreText(PlayerGroupAll(), <span class="hljs-string">"ZergCombat"</span>, (StringExternal(<span class="hljs-string">"Param/Value/3FD8C308"</span>) + StringExternal(<span class="hljs-string">"Param/Value/A28A32F3"</span>) + IntToText(<span class="hljs-number">0</span>) + StringExternal(<span class="hljs-string">"Param/Value/7A68772B"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L477</span>
+UISetChallengeScoreText(PlayerGroupAll(), <span class="hljs-string">"ZergCombat"</span>, (StringExternal(<span class="hljs-string">"Param/Value/2ABF749A"</span>) + StringExternal(<span class="hljs-string">"Param/Value/40438250"</span>) + IntToText(<span class="hljs-number">0</span>) + StringExternal(<span class="hljs-string">"Param/Value/F92CD3E7"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L478</span>
+UISetChallengeScoreText(PlayerGroupAll(), <span class="hljs-string">"ZergCombat"</span>, (StringExternal(<span class="hljs-string">"Param/Value/333E9138"</span>) + StringExternal(<span class="hljs-string">"Param/Value/0624E743"</span>) + IntToText(<span class="hljs-number">0</span>) + StringExternal(<span class="hljs-string">"Param/Value/AB94BCC5"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L142</span>
+UISetChallengeScoreText(PlayerGroupAll(), <span class="hljs-string">"ZergInfestation"</span>, (StringExternal(<span class="hljs-string">"Param/Value/A10E1679"</span>) + StringExternal(<span class="hljs-string">"Param/Value/8E3C261F"</span>) + IntToText(lp_scores) + StringExternal(<span class="hljs-string">"Param/Value/7D8661A5"</span>)))
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

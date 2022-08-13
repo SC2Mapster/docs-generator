@@ -1,0 +1,411 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Set Background Model / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Set Background Model"/>
+                <meta property="og:description" content="Set or change the skybox on a map."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="set-background-model"><a class="markdownIt-Anchor" href="#set-background-model">#</a> Set Background Model</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Set <strong>type</strong> background model to <strong>model</strong> at <strong>speed</strong>% animation speed<br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Set or change the skybox on a map.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-background-type">BackgroundType</a> ]</em> — Type</li>
+<li><code>string</code> <em>[ gamelink::Model ]</em> — Model</li>
+<li><code>fixed</code> — Speed</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">GameSetBackground</span><span class="hljs-params">(
+	<span class="hljs-keyword">int</span> inType,
+	<span class="hljs-built_in">string</span> inModel,
+	fixed inAnimSpeed,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#environment-fog-and-background">Environment / Fog And Background</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/fog-set-enabled">Enable/Disable Fog</a></strong> — ( FogSetEnabled )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/fog-set-disable-at-ultra">Enable/Disable Fog At Ultra</a></strong> — ( FogSetDisableAtUltra )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/fog-set-density">Set Fog Density</a></strong> — ( FogSetDensity )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/fog-set-color">Set Fog Color</a></strong> — ( FogSetColor )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/fog-set-fall-off">Set Fog Falloff</a></strong> — ( FogSetFallOff )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/fog-set-start-height">Set Fog Start Height</a></strong> — ( FogSetStartHeight )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/fog-set-density-over-time">Set Fog Density Over Time</a></strong> — ( FogSetDensityOverTime )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/fog-set-color-over-time">Set Fog Color Over Time</a></strong> — ( FogSetColorOverTime )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/fog-set-fall-off-over-time">Set Fog Falloff Over Time</a></strong> — ( FogSetFallOffOverTime )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/fog-set-start-height-over-time">Set Fog Start Height Over Time</a></strong> — ( FogSetStartHeightOverTime )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/game-set-background">Set Background Model</a></strong> — ( GameSetBackground )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/tarcade.sc2map/MapScript.galaxy#L724">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L724</span>
+GameSetBackground(c_backgroundFixed, <span class="hljs-string">"SS_BackgroundSpaceProtossLarge"</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L866</span>
+GameSetBackground(c_backgroundFixed, <span class="hljs-string">"SS_BackgroundSpaceZergLarge"</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1193</span>
+GameSetBackground(c_backgroundFixed, <span class="hljs-string">"SS_BackgroundSpaceTerranLarge"</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6329</span>
+GameSetBackground(c_backgroundFixed, <span class="hljs-string">"WastelandRock0"</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5396</span>
+GameSetBackground(c_backgroundFixed, <span class="hljs-string">"AiurSkybox"</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6620</span>
+GameSetBackground(c_backgroundFixed, <span class="hljs-string">"BelShirSkyBox"</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L829</span>
+GameSetBackground(c_backgroundFixed, null, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5597</span>
+GameSetBackground(c_backgroundFixed, <span class="hljs-string">"BelShirSkyBox"</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5827</span>
+GameSetBackground(c_backgroundFixed, <span class="hljs-string">"BelShirSkyBox"</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5481</span>
+GameSetBackground(c_backgroundFixed, <span class="hljs-string">"BraxisAlphaSkyBox"</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5724</span>
+GameSetBackground(c_backgroundFixed, <span class="hljs-string">"BraxisAlphaSkyBox"</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5857</span>
+GameSetBackground(c_backgroundFixed, <span class="hljs-string">"BraxisAlphaSkyBox"</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6328</span>
+GameSetBackground(c_backgroundFixed, <span class="hljs-string">"BraxisAlphaSkyBox"</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6612</span>
+GameSetBackground(c_backgroundFixed, <span class="hljs-string">"BraxisAlphaSkyBox"</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7088</span>
+GameSetBackground(c_backgroundFixed, <span class="hljs-string">"BraxisAlphaSkyBox"</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4939</span>
+GameSetBackground(c_backgroundFixed, <span class="hljs-string">"MarSaraSkyBox"</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5805</span>
+GameSetBackground(c_backgroundFixed, <span class="hljs-string">"BraxisAlphaSkyBox"</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L629</span>
+GameSetBackground(c_backgroundFixed, null, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4648</span>
+GameSetBackground(c_backgroundFixed, <span class="hljs-string">"MarSaraSkyBox"</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4844</span>
+GameSetBackground(c_backgroundFixed, <span class="hljs-string">"MarSaraSkyBox"</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7947</span>
+GameSetBackground(c_backgroundTerrain, <span class="hljs-string">"SMCharInteractiveSkyparallax"</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7950</span>
+GameSetBackground(c_backgroundTerrain, <span class="hljs-string">"SMCharInteractive02Skyparallax"</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19820</span>
+GameSetBackground(c_backgroundFixed, null, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19821</span>
+GameSetBackground(c_backgroundTerrain, null, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19850</span>
+GameSetBackground(c_backgroundFixed, null, <span class="hljs-number">5.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19851</span>
+GameSetBackground(c_backgroundTerrain, null, <span class="hljs-number">5.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19890</span>
+GameSetBackground(c_backgroundFixed, null, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19891</span>
+GameSetBackground(c_backgroundTerrain, null, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19957</span>
+GameSetBackground(c_backgroundFixed, null, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19958</span>
+GameSetBackground(c_backgroundTerrain, null, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5107</span>
+GameSetBackground(c_backgroundFixed, <span class="hljs-string">"BraxisAlphaSkyBox"</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L867</span>
+GameSetBackground(c_backgroundFixed, null, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3937</span>
+GameSetBackground(c_backgroundFixed, <span class="hljs-string">"BelShirSkyBox"</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4246</span>
+GameSetBackground(c_backgroundFixed, <span class="hljs-string">"BelShirSkyBox"</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L543</span>
+GameSetBackground(c_backgroundFixed, <span class="hljs-string">"ShakurasSkyBox"</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L562</span>
+GameSetBackground(c_backgroundFixed, null, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4510</span>
+GameSetBackground(c_backgroundFixed, <span class="hljs-string">"ShakurasSkyBox"</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L609</span>
+GameSetBackground(c_backgroundFixed, null, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5004</span>
+GameSetBackground(c_backgroundFixed, <span class="hljs-string">"XilSkybox"</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5169</span>
+GameSetBackground(c_backgroundFixed, <span class="hljs-string">"XilSkybox"</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5426</span>
+GameSetBackground(c_backgroundFixed, null, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5661</span>
+GameSetBackground(c_backgroundFixed, <span class="hljs-string">"XilSkybox"</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3676</span>
+GameSetBackground(c_backgroundFixed, <span class="hljs-string">"AvernusSkybox"</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L924</span>
+GameSetBackground(c_backgroundFixed, null, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4800</span>
+GameSetBackground(c_backgroundFixed, <span class="hljs-string">"CharSkyBox"</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5559</span>
+GameSetBackground(c_backgroundFixed, <span class="hljs-string">"CharSkyBox"</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9899</span>
+GameSetBackground(c_backgroundFixed, <span class="hljs-string">"VC_Zeratul1_Sky"</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4347</span>
+GameSetBackground(c_backgroundFixed, <span class="hljs-string">"BraxisAlphaSkyBox"</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4802</span>
+GameSetBackground(c_backgroundFixed, <span class="hljs-string">"AiurSkybox"</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5181</span>
+GameSetBackground(c_backgroundFixed, <span class="hljs-string">"AiurSkybox"</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5243</span>
+GameSetBackground(c_backgroundFixed, <span class="hljs-string">"AiurSkybox"</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5315</span>
+GameSetBackground(c_backgroundFixed, <span class="hljs-string">"AiurSkybox"</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5414</span>
+GameSetBackground(c_backgroundFixed, <span class="hljs-string">"AiurSkybox"</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5415</span>
+GameSetBackground(c_backgroundTerrain, <span class="hljs-string">"BraxisAlphaSkyParallax"</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5496</span>
+GameSetBackground(c_backgroundTerrain, <span class="hljs-string">"AvernusSkybox"</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6043</span>
+GameSetBackground(c_backgroundFixed, <span class="hljs-string">"ShakurasSkyBox"</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6671</span>
+GameSetBackground(c_backgroundFixed, <span class="hljs-string">"ShakurasSkyBox"</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L724</span>
+GameSetBackground(c_backgroundFixed, <span class="hljs-string">"SS_BackgroundSpaceProtossLarge"</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L866</span>
+GameSetBackground(c_backgroundFixed, <span class="hljs-string">"SS_BackgroundSpaceZergLarge"</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1193</span>
+GameSetBackground(c_backgroundFixed, <span class="hljs-string">"SS_BackgroundSpaceTerranLarge"</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6329</span>
+GameSetBackground(c_backgroundFixed, <span class="hljs-string">"WastelandRock0"</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5396</span>
+GameSetBackground(c_backgroundFixed, <span class="hljs-string">"AiurSkybox"</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6620</span>
+GameSetBackground(c_backgroundFixed, <span class="hljs-string">"BelShirSkyBox"</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L829</span>
+GameSetBackground(c_backgroundFixed, null, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5597</span>
+GameSetBackground(c_backgroundFixed, <span class="hljs-string">"BelShirSkyBox"</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5827</span>
+GameSetBackground(c_backgroundFixed, <span class="hljs-string">"BelShirSkyBox"</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5481</span>
+GameSetBackground(c_backgroundFixed, <span class="hljs-string">"BraxisAlphaSkyBox"</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5724</span>
+GameSetBackground(c_backgroundFixed, <span class="hljs-string">"BraxisAlphaSkyBox"</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5857</span>
+GameSetBackground(c_backgroundFixed, <span class="hljs-string">"BraxisAlphaSkyBox"</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6328</span>
+GameSetBackground(c_backgroundFixed, <span class="hljs-string">"BraxisAlphaSkyBox"</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6612</span>
+GameSetBackground(c_backgroundFixed, <span class="hljs-string">"BraxisAlphaSkyBox"</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7088</span>
+GameSetBackground(c_backgroundFixed, <span class="hljs-string">"BraxisAlphaSkyBox"</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4939</span>
+GameSetBackground(c_backgroundFixed, <span class="hljs-string">"MarSaraSkyBox"</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5805</span>
+GameSetBackground(c_backgroundFixed, <span class="hljs-string">"BraxisAlphaSkyBox"</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L629</span>
+GameSetBackground(c_backgroundFixed, null, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4648</span>
+GameSetBackground(c_backgroundFixed, <span class="hljs-string">"MarSaraSkyBox"</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4844</span>
+GameSetBackground(c_backgroundFixed, <span class="hljs-string">"MarSaraSkyBox"</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7947</span>
+GameSetBackground(c_backgroundTerrain, <span class="hljs-string">"SMCharInteractiveSkyparallax"</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7950</span>
+GameSetBackground(c_backgroundTerrain, <span class="hljs-string">"SMCharInteractive02Skyparallax"</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19820</span>
+GameSetBackground(c_backgroundFixed, null, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19821</span>
+GameSetBackground(c_backgroundTerrain, null, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19850</span>
+GameSetBackground(c_backgroundFixed, null, <span class="hljs-number">5.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19851</span>
+GameSetBackground(c_backgroundTerrain, null, <span class="hljs-number">5.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19890</span>
+GameSetBackground(c_backgroundFixed, null, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19891</span>
+GameSetBackground(c_backgroundTerrain, null, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19957</span>
+GameSetBackground(c_backgroundFixed, null, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19958</span>
+GameSetBackground(c_backgroundTerrain, null, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5107</span>
+GameSetBackground(c_backgroundFixed, <span class="hljs-string">"BraxisAlphaSkyBox"</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L867</span>
+GameSetBackground(c_backgroundFixed, null, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3937</span>
+GameSetBackground(c_backgroundFixed, <span class="hljs-string">"BelShirSkyBox"</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4246</span>
+GameSetBackground(c_backgroundFixed, <span class="hljs-string">"BelShirSkyBox"</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L543</span>
+GameSetBackground(c_backgroundFixed, <span class="hljs-string">"ShakurasSkyBox"</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L562</span>
+GameSetBackground(c_backgroundFixed, null, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4510</span>
+GameSetBackground(c_backgroundFixed, <span class="hljs-string">"ShakurasSkyBox"</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L609</span>
+GameSetBackground(c_backgroundFixed, null, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5004</span>
+GameSetBackground(c_backgroundFixed, <span class="hljs-string">"XilSkybox"</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5169</span>
+GameSetBackground(c_backgroundFixed, <span class="hljs-string">"XilSkybox"</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5426</span>
+GameSetBackground(c_backgroundFixed, null, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5661</span>
+GameSetBackground(c_backgroundFixed, <span class="hljs-string">"XilSkybox"</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3676</span>
+GameSetBackground(c_backgroundFixed, <span class="hljs-string">"AvernusSkybox"</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,417 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Play Sound / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Play Sound"/>
+                <meta property="og:description" content="Plays a sound for the specified player group.  Use the &quot;Last Played Sound&quot; function to refer to this sound."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="play-sound"><a class="markdownIt-Anchor" href="#play-sound">#</a> Play Sound</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Play <strong>soundLink</strong> owned by player <strong>owningPlayer</strong> for <strong>audibleMask</strong> (at <strong>volume</strong>% volume, skip the first <strong>offset</strong> seconds)<br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Plays a sound for the specified player group.  Use the <em>“Last Played Sound”</em> function to refer to this sound.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>soundlink</code> — Sound Link</li>
+<li><code>int</code> — Owning Player</li>
+<li><code>playergroup</code> — Audible Mask</li>
+<li><code>fixed</code> — Volume</li>
+<li><code>fixed</code> — Offset</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">SoundPlayForPlayer</span><span class="hljs-params">(
+	soundlink link,
+	<span class="hljs-keyword">int</span> inOwningPlayer,
+	playergroup audibleMask,
+	fixed volume,
+	fixed offset,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#sound-sounds">Sound / Sounds</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-play-on-unit-for-player">Play Sound On Unit</a></strong> — ( SoundPlayOnUnitForPlayer )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-play-at-point-for-player">Play Sound At Point</a></strong> — ( SoundPlayAtPointForPlayer )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-play-for-player">Play Sound</a></strong> — ( SoundPlayForPlayer )</li>
+<li><em><strong>[F]</strong></em> — <code>sound</code> — <strong><a href="/galaxy/reference/sound-last-played">Last Played Sound</a></strong> — ( SoundLastPlayed )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-pause">Pause Sound</a></strong> — ( SoundPause )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-stop">Stop Sound</a></strong> — ( SoundStop )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-set-offset">Skip To Sound Offset</a></strong> — ( SoundSetOffset )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-set-position">Move Sound</a></strong> — ( SoundSetPosition )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-wait">Wait For Sound</a></strong> — ( SoundWait )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-set-volume">Set Sound Volume</a></strong> — ( SoundSetVolume )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-stop-all-trigger-sounds">Stop All Trigger Sounds</a></strong> — ( SoundStopAllTriggerSounds )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-stop-all-model-sounds">Stop All Model Sounds</a></strong> — ( SoundStopAllModelSounds )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-set-listener-gender">Set Sound Listener Gender</a></strong> — ( SoundSetListenerGender )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignsswarmsc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmsc2campaign">#</a> campaigns/swarm.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarm.sc2campaign/base.sc2maps/maps/campaign/voidprologue/voidprologue01.sc2map/MapScript.galaxy#L3393">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3393</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"Prologue_Zerg_Horde_Low_Rumble"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">80.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3397</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"Prologue_Zerg_Horde_Low_Rumble"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">80.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3401</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"Prologue_Zerg_Horde_Low_Rumble"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">80.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3405</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"Prologue_Zerg_Horde_Low_Rumble"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">80.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3409</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"Prologue_Zerg_Horde_Low_Rumble"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">80.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3413</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"Prologue_Zerg_Horde_Low_Rumble"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">80.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3417</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"Prologue_Zerg_Horde_Low_Rumble"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">80.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3474</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"Prologue_Zerg_Horde_AmbLow"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">90.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3478</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"Prologue_Zerg_Horde_AmbLow"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">90.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3482</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"Prologue_Zerg_Horde_AmbLow"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">90.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8841</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"XelNagaBridgeHit1"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">80.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8843</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"XelNagaBridgeFinalHit"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">80.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9217</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"XelNagaBridgeFirstLights"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">60.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9218</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"Prologue_Vespene_Crack_Rumble_2D"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">80.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9225</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"VP03_AmonThunder"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9226</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"VP03_VoidCatalyst_Vx_Fx_Long_WhiteGas"</span>, <span class="hljs-number">0</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10082</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"AmonShadowVolley"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">80.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10206</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"Event_Prologue03_VoidSeeker_FlyIn"</span>, <span class="hljs-number">0</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10212</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"Event_Prologue03_VoidSeeker_Exit"</span>, <span class="hljs-number">0</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3393</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"Prologue_Zerg_Horde_Low_Rumble"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">80.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3397</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"Prologue_Zerg_Horde_Low_Rumble"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">80.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3401</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"Prologue_Zerg_Horde_Low_Rumble"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">80.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3405</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"Prologue_Zerg_Horde_Low_Rumble"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">80.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3409</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"Prologue_Zerg_Horde_Low_Rumble"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">80.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3413</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"Prologue_Zerg_Horde_Low_Rumble"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">80.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3417</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"Prologue_Zerg_Horde_Low_Rumble"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">80.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3474</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"Prologue_Zerg_Horde_AmbLow"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">90.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3478</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"Prologue_Zerg_Horde_AmbLow"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">90.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3482</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"Prologue_Zerg_Horde_AmbLow"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">90.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8841</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"XelNagaBridgeHit1"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">80.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8843</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"XelNagaBridgeFinalHit"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">80.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9217</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"XelNagaBridgeFirstLights"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">60.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9218</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"Prologue_Vespene_Crack_Rumble_2D"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">80.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9225</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"VP03_AmonThunder"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9226</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"VP03_VoidCatalyst_Vx_Fx_Long_WhiteGas"</span>, <span class="hljs-number">0</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10082</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"AmonShadowVolley"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">80.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10206</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"Event_Prologue03_VoidSeeker_FlyIn"</span>, <span class="hljs-number">0</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10212</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"Event_Prologue03_VoidSeeker_Exit"</span>, <span class="hljs-number">0</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4088</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"SetPiece_HyperionDoor01_Close"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4243</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"SetPiece_HyperionDoor01_Open"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4249</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"UI_MercenaryBriefcase_HireMerc"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4825</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"UI_TerranPing"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19495</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"PAiur04_Dimentional_Recall"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">3.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19512</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"CS_Tutorial_Protoss_BeamStrike_01"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19513</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"CS_Tutorial_Protoss_BeamQuake_01a"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19515</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"CS_Tutorial_Protoss_BeamStrike_02"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19518</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"CS_Tutorial_Protoss_BeamStrike_03"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19521</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"CS_Tutorial_Protoss_BeamStrike_04"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1529</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"PAiur02_ReticuleAppears"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6673</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"PAiur02_Music_Stinger"</span>, <span class="hljs-number">0</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6898</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"Event_Lab01_ZerglingRelease"</span>, <span class="hljs-number">0</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7066</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"PAiur02_ReticuleAppears"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7457</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"PAiur02_ArtanisCorruptionAmbience"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7475</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"pAiur02_Cine_Amon_Quake"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7480</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"PAiur02_ZealotBam"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3464</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"Mutalisk_Yes"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3473</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"Event_Lab01_ZerglingRelease"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3869</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"PAiur01_HybridShockwave"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3876</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"PAiur01_Shak1_sfx_CarrierCrashExplo"</span>, <span class="hljs-number">0</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3976</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"PAiur01_HybridShockwave"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3985</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"PAiur01_Shak1_sfx_CarrierCrashExplo"</span>, <span class="hljs-number">0</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5629</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"PAiur01_MothershipFlyby1"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5635</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"PAiur01_MothershipFlyby2"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5642</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"PAiur01_MothershipExplosion1"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5643</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"PAiur01_MothershipExplosion2"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L665</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"Event_Aiur03_Victory_Nydus_01"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">120.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1606</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"SOAPylonPowerImpact"</span>, <span class="hljs-number">0</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1658</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"SOAPylonPowerImpact"</span>, <span class="hljs-number">0</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1711</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"SOAPylonPowerImpact"</span>, <span class="hljs-number">0</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1764</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"SOAPylonPowerImpact"</span>, <span class="hljs-number">0</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1839</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"PAiur03_NydusWorm_Birth"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1855</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"PAiur03_NydusWorm_Birth"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2812</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"Event_Expedition03_ProtossAlarm"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2857</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"Event_Expedition03_ProtossAlarm"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4106</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"Event_Purifier02_Zerg_Walla_01"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">300.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4069</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"PAiur04_Citadel_ShockWave"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4072</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"PAiur04_Citadel_ShockWave_RockDebris"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6090</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"PAiur04_BarrierDisipate"</span>, <span class="hljs-number">0</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">80.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8372</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"NydusWorm_Birth"</span>, <span class="hljs-number">0</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">150.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8514</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"NydusWorm_Birth"</span>, <span class="hljs-number">0</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">150.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10045</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"PAiur04_Music_MidTransitionAlarakStinger"</span>, <span class="hljs-number">0</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10057</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"PAiur04_Alarak_Destroys_PowerPoint"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10063</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"PAiur04_GateExplosion"</span>, <span class="hljs-number">0</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">80.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10293</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"Aiur_PowerPoint_Death"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10525</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"PAiur04_Karax_PowerPoint_KillShot"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4002</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"pAiur02_Cine_Amon_Quake"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">80.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4726</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"Event_Aiur05_OpenCine_Amb"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">70.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4730</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"Event_Aiur05_OpenCine_ShardReveal"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">80.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4739</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"Event_Aiur05_OpenCine_SkyBeam"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">80.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5097</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"Event_Aiur05Victory_AmonAwake"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">80.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5110</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"Event_Aiur05Victory_AmonShoots"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">90.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5125</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"Event_Aiur05Victory_Post_CS"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5126</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"Event_Aiur05Victory_Post_CS_Vx"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5135</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"Event_Aiur05Victory_SoABeam1"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5140</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"Event_Aiur05Victory_OrbitalStrikes"</span>, <span class="hljs-number">-1</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">80.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L581</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"Event_SoA_Damage"</span>, <span class="hljs-number">0</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L594</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"Alarm_SoA_Protoss"</span>, <span class="hljs-number">0</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L598</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"Alarm_SoA_Protoss"</span>, <span class="hljs-number">0</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L602</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"Alarm_SoA_Protoss"</span>, <span class="hljs-number">0</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L606</span>
+SoundPlayForPlayer(SoundLink(<span class="hljs-string">"Alarm_SoA_Protoss"</span>, <span class="hljs-number">0</span>), c_maxPlayers, PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

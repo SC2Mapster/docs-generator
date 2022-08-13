@@ -1,0 +1,277 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Default Expansion / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Default Expansion"/>
+                <meta property="og:description" content="Attempts to make the specified player expand.  There are certain conditions under which the AI will not expand, such as if the player does not have enough workers.  The Minerals and Gas parameters are thresholds that the player must be under in order to expand (unless the player has too many extra workers)."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="default-expansion"><a class="markdownIt-Anchor" href="#default-expansion">#</a> Default Expansion</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Attempts to make the specified player expand.  There are certain conditions under which the AI will not expand, such as if the player does not have enough workers.  The Minerals and Gas parameters are thresholds that the player must be under in order to expand (unless the player has too many extra workers).</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> — Player</li>
+<li><code>string</code> <em>[ gamelink::Unit ]</em> — TownHall</li>
+<li><code>int</code> — Minerals</li>
+<li><code>int</code> — Gas</li>
+<li><code>int</code> — Flags</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">AIDefaultExpansion</span><span class="hljs-params">(
+	<span class="hljs-keyword">int</span> player,
+	<span class="hljs-built_in">string</span> hall,
+	<span class="hljs-keyword">int</span> minerals,
+	<span class="hljs-keyword">int</span> gas,
+	<span class="hljs-keyword">int</span> expandFlags,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#ai-advanced-construction-actions">AI Advanced / Construction / Actions</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-build">Build</a></strong> — ( AIBuild )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-train">Train</a></strong> — ( AITrain )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-research">Research</a></strong> — ( AIResearch )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-make-always">Make Always</a></strong> — ( AIMakeAlways )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-make-once">Make Once</a></strong> — ( AIMakeOnce )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-clear-build-queue">Clear Build Queue</a></strong> — ( AIClearBuildQueue )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-clear-train-queue">Clear Train Queue</a></strong> — ( AIClearTrainQueue )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-clear-research-queue">Clear Research Queue</a></strong> — ( AIClearResearchQueue )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-clear-stock">Clear Stock</a></strong> — ( AIClearStock )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-enable-stock">Enable Stock</a></strong> — ( AIEnableStock )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-set-stock-ex">Set StockEx</a></strong> — ( AISetStockEx )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-set-stock">Set Stock</a></strong> — ( AISetStock )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-set-stock-opt">Set StockOpt</a></strong> — ( AISetStockOpt )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-set-stock-unit-next">Set StockUnitNext</a></strong> — ( AISetStockUnitNext )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/ai-set-stock-town">Set StockTown</a></strong> — ( AISetStockTown )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/ai-set-stock-expand">Set StockExpand</a></strong> — ( AISetStockExpand )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-set-stock-alias">Set StockAlias</a></strong> — ( AISetStockAlias )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-set-stock-free">Set StockFree</a></strong> — ( AISetStockFree )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-default-economy">Default Economy</a></strong> — ( AIDefaultEconomy )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-default-expansion">Default Expansion</a></strong> — ( AIDefaultExpansion )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="modscoresc2mod"><a class="markdownIt-Anchor" href="#modscoresc2mod">#</a> mods/core.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/core.sc2mod/base.sc2data/TriggerLibs/MeleeHighAI.galaxy#L316">MeleeHighAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L316</span>
+AIDefaultExpansion(player, hall, minerals, gas, expandFlags)
+</code></pre>
+<h4 id="modscoresc2mod-2"><a class="markdownIt-Anchor" href="#modscoresc2mod-2">#</a> mods/core.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/core.sc2mod/base.sc2data/TriggerLibs/MeleeLowAI.galaxy#L408">MeleeLowAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L408</span>
+AIDefaultExpansion(player, c_TB_CommandCenter, minerals, gas, c_expandDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L550</span>
+AIDefaultExpansion(player, c_ZB_Hatchery, minerals, gas, c_expandDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L692</span>
+AIDefaultExpansion(player, c_PB_Nexus, minerals, gas, c_expandDefault)
+</code></pre>
+<h4 id="modslibertysc2mod"><a class="markdownIt-Anchor" href="#modslibertysc2mod">#</a> mods/liberty.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/liberty.sc2mod/base.sc2data/TriggerLibs/Protoss/ProtossChIn.galaxy#L2067">ProtossChIn.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2067</span>
+AIDefaultExpansion(player, c_PB_Nexus, <span class="hljs-number">3000</span>, <span class="hljs-number">1000</span>, c_expandVitalHard)
+</code></pre>
+<h4 id="modslibertysc2mod-2"><a class="markdownIt-Anchor" href="#modslibertysc2mod-2">#</a> mods/liberty.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/liberty.sc2mod/base.sc2data/TriggerLibs/Protoss/ProtossHdVH.galaxy#L2066">ProtossHdVH.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2066</span>
+AIDefaultExpansion(player, c_PB_Nexus, <span class="hljs-number">3000</span>, <span class="hljs-number">1000</span>, c_expandVitalHard)
+</code></pre>
+<h4 id="modslibertysc2mod-3"><a class="markdownIt-Anchor" href="#modslibertysc2mod-3">#</a> mods/liberty.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/liberty.sc2mod/base.sc2data/TriggerLibs/Protoss/ProtossVyHd.galaxy#L2097">ProtossVyHd.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2097</span>
+AIDefaultExpansion(player, c_PB_Nexus, <span class="hljs-number">3000</span>, <span class="hljs-number">1000</span>, c_expandVitalHard)
+</code></pre>
+<h4 id="modslibertysc2mod-4"><a class="markdownIt-Anchor" href="#modslibertysc2mod-4">#</a> mods/liberty.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/liberty.sc2mod/base.sc2data/TriggerLibs/Terran/TerranChIn.galaxy#L2557">TerranChIn.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2557</span>
+AIDefaultExpansion(player, c_TB_CommandCenter, <span class="hljs-number">3000</span>, <span class="hljs-number">1000</span>, c_expandVitalHard)
+</code></pre>
+<h4 id="modslibertysc2mod-5"><a class="markdownIt-Anchor" href="#modslibertysc2mod-5">#</a> mods/liberty.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/liberty.sc2mod/base.sc2data/TriggerLibs/Terran/TerranHdVH.galaxy#L2556">TerranHdVH.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2556</span>
+AIDefaultExpansion(player, c_TB_CommandCenter, <span class="hljs-number">3000</span>, <span class="hljs-number">1000</span>, c_expandVitalHard)
+</code></pre>
+<h4 id="modslibertysc2mod-6"><a class="markdownIt-Anchor" href="#modslibertysc2mod-6">#</a> mods/liberty.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/liberty.sc2mod/base.sc2data/TriggerLibs/Terran/TerranVyHd.galaxy#L2589">TerranVyHd.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2589</span>
+AIDefaultExpansion(player, c_TB_CommandCenter, <span class="hljs-number">3000</span>, <span class="hljs-number">1000</span>, c_expandVitalHard)
+</code></pre>
+<h4 id="modslibertysc2mod-7"><a class="markdownIt-Anchor" href="#modslibertysc2mod-7">#</a> mods/liberty.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/liberty.sc2mod/base.sc2data/TriggerLibs/Zerg/ZergChIn.galaxy#L1874">ZergChIn.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1874</span>
+AIDefaultExpansion(player, c_ZB_Hatchery, <span class="hljs-number">3000</span>, <span class="hljs-number">1000</span>, c_expandVitalHard)
+</code></pre>
+<h4 id="modslibertysc2mod-8"><a class="markdownIt-Anchor" href="#modslibertysc2mod-8">#</a> mods/liberty.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/liberty.sc2mod/base.sc2data/TriggerLibs/Zerg/ZergHdVH.galaxy#L1873">ZergHdVH.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1873</span>
+AIDefaultExpansion(player, c_ZB_Hatchery, <span class="hljs-number">3000</span>, <span class="hljs-number">1000</span>, c_expandVitalHard)
+</code></pre>
+<h4 id="modslibertysc2mod-9"><a class="markdownIt-Anchor" href="#modslibertysc2mod-9">#</a> mods/liberty.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/liberty.sc2mod/base.sc2data/TriggerLibs/Zerg/ZergVyHd.galaxy#L1903">ZergVyHd.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1903</span>
+AIDefaultExpansion(player, c_ZB_Hatchery, <span class="hljs-number">3000</span>, <span class="hljs-number">1000</span>, c_expandVitalHard)
+</code></pre>
+<h4 id="modsswarmsc2mod"><a class="markdownIt-Anchor" href="#modsswarmsc2mod">#</a> mods/swarm.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/swarm.sc2mod/base.sc2data/TriggerLibs/Protoss/ProtossChIn.galaxy#L2067">ProtossChIn.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2067</span>
+AIDefaultExpansion(player, c_PB_Nexus, <span class="hljs-number">3000</span>, <span class="hljs-number">1000</span>, c_expandVitalHard)
+</code></pre>
+<h4 id="modsswarmsc2mod-2"><a class="markdownIt-Anchor" href="#modsswarmsc2mod-2">#</a> mods/swarm.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/swarm.sc2mod/base.sc2data/TriggerLibs/Protoss/ProtossHdVH.galaxy#L2066">ProtossHdVH.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2066</span>
+AIDefaultExpansion(player, c_PB_Nexus, <span class="hljs-number">3000</span>, <span class="hljs-number">1000</span>, c_expandVitalHard)
+</code></pre>
+<h4 id="modsswarmsc2mod-3"><a class="markdownIt-Anchor" href="#modsswarmsc2mod-3">#</a> mods/swarm.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/swarm.sc2mod/base.sc2data/TriggerLibs/Protoss/ProtossVyHd.galaxy#L2097">ProtossVyHd.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2097</span>
+AIDefaultExpansion(player, c_PB_Nexus, <span class="hljs-number">3000</span>, <span class="hljs-number">1000</span>, c_expandVitalHard)
+</code></pre>
+<h4 id="modsswarmsc2mod-4"><a class="markdownIt-Anchor" href="#modsswarmsc2mod-4">#</a> mods/swarm.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/swarm.sc2mod/base.sc2data/TriggerLibs/Terran/TerranChIn.galaxy#L2552">TerranChIn.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2552</span>
+AIDefaultExpansion(player, c_TB_CommandCenter, <span class="hljs-number">3000</span>, <span class="hljs-number">1000</span>, c_expandVitalHard)
+</code></pre>
+<h4 id="modsswarmsc2mod-5"><a class="markdownIt-Anchor" href="#modsswarmsc2mod-5">#</a> mods/swarm.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/swarm.sc2mod/base.sc2data/TriggerLibs/Terran/TerranHdVH.galaxy#L2548">TerranHdVH.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2548</span>
+AIDefaultExpansion(player, c_TB_CommandCenter, <span class="hljs-number">3000</span>, <span class="hljs-number">1000</span>, c_expandVitalHard)
+</code></pre>
+<h4 id="modsswarmsc2mod-6"><a class="markdownIt-Anchor" href="#modsswarmsc2mod-6">#</a> mods/swarm.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/swarm.sc2mod/base.sc2data/TriggerLibs/Terran/TerranVyHd.galaxy#L2581">TerranVyHd.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2581</span>
+AIDefaultExpansion(player, c_TB_CommandCenter, <span class="hljs-number">3000</span>, <span class="hljs-number">1000</span>, c_expandVitalHard)
+</code></pre>
+<h4 id="modsswarmsc2mod-7"><a class="markdownIt-Anchor" href="#modsswarmsc2mod-7">#</a> mods/swarm.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/swarm.sc2mod/base.sc2data/TriggerLibs/Zerg/ZergChIn.galaxy#L1939">ZergChIn.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1939</span>
+AIDefaultExpansion(player, c_ZB_Hatchery, <span class="hljs-number">3000</span>, <span class="hljs-number">1000</span>, c_expandVitalHard)
+</code></pre>
+<h4 id="modsswarmsc2mod-8"><a class="markdownIt-Anchor" href="#modsswarmsc2mod-8">#</a> mods/swarm.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/swarm.sc2mod/base.sc2data/TriggerLibs/Zerg/ZergHdVH.galaxy#L1938">ZergHdVH.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1938</span>
+AIDefaultExpansion(player, c_ZB_Hatchery, <span class="hljs-number">3000</span>, <span class="hljs-number">1000</span>, c_expandVitalHard)
+</code></pre>
+<h4 id="modsswarmsc2mod-9"><a class="markdownIt-Anchor" href="#modsswarmsc2mod-9">#</a> mods/swarm.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/swarm.sc2mod/base.sc2data/TriggerLibs/Zerg/ZergVyHd.galaxy#L1969">ZergVyHd.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1969</span>
+AIDefaultExpansion(player, c_ZB_Hatchery, <span class="hljs-number">3000</span>, <span class="hljs-number">1000</span>, c_expandVitalHard)
+</code></pre>
+<h4 id="modsvoidsc2mod"><a class="markdownIt-Anchor" href="#modsvoidsc2mod">#</a> mods/void.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/void.sc2mod/base.sc2data/TriggerLibs/MeleeHighAI.galaxy#L316">MeleeHighAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L316</span>
+AIDefaultExpansion(player, hall, minerals, gas, expandFlags)
+</code></pre>
+<h4 id="modsvoidsc2mod-2"><a class="markdownIt-Anchor" href="#modsvoidsc2mod-2">#</a> mods/void.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/void.sc2mod/base.sc2data/TriggerLibs/Protoss/ProtossChIn.galaxy#L2593">ProtossChIn.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2593</span>
+AIDefaultExpansion(player, c_PB_Nexus, <span class="hljs-number">3000</span>, <span class="hljs-number">1000</span>, c_expandVitalHard)
+</code></pre>
+<h4 id="modsvoidsc2mod-3"><a class="markdownIt-Anchor" href="#modsvoidsc2mod-3">#</a> mods/void.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/void.sc2mod/base.sc2data/TriggerLibs/Protoss/ProtossHdVH.galaxy#L2595">ProtossHdVH.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2595</span>
+AIDefaultExpansion(player, c_PB_Nexus, <span class="hljs-number">3000</span>, <span class="hljs-number">1000</span>, c_expandVitalHard)
+</code></pre>
+<h4 id="modsvoidsc2mod-4"><a class="markdownIt-Anchor" href="#modsvoidsc2mod-4">#</a> mods/void.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/void.sc2mod/base.sc2data/TriggerLibs/Protoss/ProtossVyHd.galaxy#L2626">ProtossVyHd.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2626</span>
+AIDefaultExpansion(player, c_PB_Nexus, <span class="hljs-number">3000</span>, <span class="hljs-number">1000</span>, c_expandVitalHard)
+</code></pre>
+<h4 id="modsvoidsc2mod-5"><a class="markdownIt-Anchor" href="#modsvoidsc2mod-5">#</a> mods/void.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/void.sc2mod/base.sc2data/TriggerLibs/Terran/TerranChIn.galaxy#L2815">TerranChIn.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2815</span>
+AIDefaultExpansion(player, c_TB_CommandCenter, <span class="hljs-number">3000</span>, <span class="hljs-number">1000</span>, c_expandVitalHard)
+</code></pre>
+<h4 id="modsvoidsc2mod-6"><a class="markdownIt-Anchor" href="#modsvoidsc2mod-6">#</a> mods/void.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/void.sc2mod/base.sc2data/TriggerLibs/Terran/TerranHdVH.galaxy#L2817">TerranHdVH.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2817</span>
+AIDefaultExpansion(player, c_TB_CommandCenter, <span class="hljs-number">3000</span>, <span class="hljs-number">1000</span>, c_expandVitalHard)
+</code></pre>
+<h4 id="modsvoidsc2mod-7"><a class="markdownIt-Anchor" href="#modsvoidsc2mod-7">#</a> mods/void.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/void.sc2mod/base.sc2data/TriggerLibs/Terran/TerranVyHd.galaxy#L2847">TerranVyHd.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2847</span>
+AIDefaultExpansion(player, c_TB_CommandCenter, <span class="hljs-number">3000</span>, <span class="hljs-number">1000</span>, c_expandVitalHard)
+</code></pre>
+<h4 id="modsvoidsc2mod-8"><a class="markdownIt-Anchor" href="#modsvoidsc2mod-8">#</a> mods/void.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/void.sc2mod/base.sc2data/TriggerLibs/Zerg/ZergChIn.galaxy#L2256">ZergChIn.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2256</span>
+AIDefaultExpansion(player, c_ZB_Hatchery, <span class="hljs-number">3000</span>, <span class="hljs-number">1000</span>, c_expandVitalHard)
+</code></pre>
+<h4 id="modsvoidsc2mod-9"><a class="markdownIt-Anchor" href="#modsvoidsc2mod-9">#</a> mods/void.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/void.sc2mod/base.sc2data/TriggerLibs/Zerg/ZergHdVH.galaxy#L2255">ZergHdVH.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2255</span>
+AIDefaultExpansion(player, c_ZB_Hatchery, <span class="hljs-number">3000</span>, <span class="hljs-number">1000</span>, c_expandVitalHard)
+</code></pre>
+<h4 id="modsvoidsc2mod-10"><a class="markdownIt-Anchor" href="#modsvoidsc2mod-10">#</a> mods/void.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/void.sc2mod/base.sc2data/TriggerLibs/Zerg/ZergVyHd.galaxy#L2291">ZergVyHd.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2291</span>
+AIDefaultExpansion(player, c_ZB_Hatchery, <span class="hljs-number">3000</span>, <span class="hljs-number">1000</span>, c_expandVitalHard)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

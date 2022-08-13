@@ -1,0 +1,402 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Create Revealer / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Create Revealer"/>
+                <meta property="og:description" content="Creates a revealer that covers the region specified, for the player specified.  Use the &quot;Last Created Revealer&quot; function to refer to this revealer.
+
+Returns: revealer"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="create-revealer"><a class="markdownIt-Anchor" href="#create-revealer">#</a> Create Revealer</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Create a visibility revealer for player <strong>player</strong> within <strong>area</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Creates a revealer that covers the region specified, for the player specified.  Use the <em>“Last Created Revealer”</em> function to refer to this revealer.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> — Player</li>
+<li><code>region</code> — Area</li>
+</ul>
+<p>Returns — <code>revealer</code></p>
+<pre class="hljs"><code><span class="hljs-function">native revealer <span class="hljs-title">VisRevealerCreate</span><span class="hljs-params">(<span class="hljs-keyword">int</span> player, region area)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#visibility-revealers">Visibility / Revealers</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>revealer</code> — <strong><a href="/galaxy/reference/vis-revealer-create">Create Revealer</a></strong> — ( VisRevealerCreate )</li>
+<li><em><strong>[F]</strong></em> — <code>revealer</code> — <strong><a href="/galaxy/reference/vis-revealer-last-created">Last Created Revealer</a></strong> — ( VisRevealerLastCreated )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/vis-revealer-enable">Enable/Disable Revealer</a></strong> — ( VisRevealerEnable )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/vis-revealer-update">Update Revealer</a></strong> — ( VisRevealerUpdate )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/vis-revealer-destroy">Destroy Revealer</a></strong> — ( VisRevealerDestroy )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/challenges/advancedcommand.sc2map/MapScript.galaxy#L724">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L724</span>
+VisRevealerCreate(gv_pLAYER_USER, RegionFromId(<span class="hljs-number">10</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L879</span>
+VisRevealerCreate(gv_pLAYER_USER, RegionEntireMap())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2097</span>
+VisRevealerCreate(gv_pLAYER_USER, RegionPlayableMap())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2942</span>
+VisRevealerCreate(gv_pLAYER_USER, RegionFromId(<span class="hljs-number">16</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2943</span>
+VisRevealerCreate(gv_pLAYER_USER, RegionFromId(<span class="hljs-number">12</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2944</span>
+VisRevealerCreate(gv_pLAYER_USER, RegionFromId(<span class="hljs-number">17</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L207</span>
+VisRevealerCreate(gv_pLAYER_USER, RegionFromId(<span class="hljs-number">13</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L214</span>
+VisRevealerCreate(gv_pLAYER_USER, RegionFromId(<span class="hljs-number">12</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L743</span>
+VisRevealerCreate(gv_pLAYER_USER, RegionFromId(<span class="hljs-number">10</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L745</span>
+VisRevealerCreate(gv_pLAYER_USER, RegionFromId(<span class="hljs-number">11</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1919</span>
+VisRevealerCreate(gv_pLAYER_USER, RegionPlayableMap())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2806</span>
+VisRevealerCreate(gv_pLAYER_USER, RegionFromId(<span class="hljs-number">28</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2807</span>
+VisRevealerCreate(gv_pLAYER_USER, RegionFromId(<span class="hljs-number">33</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2808</span>
+VisRevealerCreate(gv_pLAYER_USER, RegionFromId(<span class="hljs-number">34</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L865</span>
+VisRevealerCreate(gv_pLAYER_USER, RegionPlayableMap())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2003</span>
+VisRevealerCreate(gv_pLAYER_USER, RegionPlayableMap())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2961</span>
+VisRevealerCreate(gv_pLAYER_USER, RegionFromId(<span class="hljs-number">12</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2962</span>
+VisRevealerCreate(gv_pLAYER_USER, RegionFromId(<span class="hljs-number">16</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2963</span>
+VisRevealerCreate(gv_pLAYER_USER, RegionFromId(<span class="hljs-number">17</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L846</span>
+VisRevealerCreate(gv_pLAYER_USER, RegionEntireMap())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L804</span>
+VisRevealerCreate(gv_pLAYER01_USER, RegionCircle(RegionGetCenter(RegionFromId(<span class="hljs-number">9</span>)), <span class="hljs-number">10.0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L806</span>
+VisRevealerCreate(gv_pLAYER01_USER, RegionCircle(RegionGetCenter(RegionFromId(<span class="hljs-number">11</span>)), <span class="hljs-number">10.0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L808</span>
+VisRevealerCreate(gv_pLAYER01_USER, RegionCircle(RegionGetCenter(RegionFromId(<span class="hljs-number">12</span>)), <span class="hljs-number">10.0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L810</span>
+VisRevealerCreate(gv_pLAYER01_USER, RegionCircle(RegionGetCenter(RegionFromId(<span class="hljs-number">8</span>)), <span class="hljs-number">10.0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1514</span>
+VisRevealerCreate(gv_p01_USER, gv_infestationRegion[lv_colonyIndex])
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4670</span>
+VisRevealerCreate(gv_p01_USER, RegionFromId(<span class="hljs-number">9</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L431</span>
+VisRevealerCreate(gv_pLAYER_01_USER, RegionCircle(UnitGetPosition(lp_diamondback), <span class="hljs-number">4.5</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L749</span>
+VisRevealerCreate(gv_p01_USER, RegionFromId(<span class="hljs-number">52</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3755</span>
+VisRevealerCreate(gv_p01_USER, RegionCircle(UnitGetPosition(UnitFromId(<span class="hljs-number">327</span>)), <span class="hljs-number">3.0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2700</span>
+VisRevealerCreate(gv_p01_USER, RegionCircle(UnitGetPosition(UnitFromId(<span class="hljs-number">808</span>)), <span class="hljs-number">3.0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2702</span>
+VisRevealerCreate(gv_p01_USER, RegionCircle(UnitGetPosition(UnitFromId(<span class="hljs-number">806</span>)), <span class="hljs-number">3.0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2704</span>
+VisRevealerCreate(gv_p01_USER, RegionCircle(UnitGetPosition(UnitFromId(<span class="hljs-number">807</span>)), <span class="hljs-number">3.0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2299</span>
+VisRevealerCreate(gv_p01_USER, RegionFromId(<span class="hljs-number">25</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3097</span>
+VisRevealerCreate(gv_p01_USER, RegionFromId(<span class="hljs-number">12</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3222</span>
+VisRevealerCreate(gv_p01_USER, RegionFromId(<span class="hljs-number">12</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3287</span>
+VisRevealerCreate(gv_p01_USER, RegionFromId(<span class="hljs-number">12</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4001</span>
+VisRevealerCreate(gv_p01_USER, RegionFromId(<span class="hljs-number">74</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4816</span>
+VisRevealerCreate(<span class="hljs-number">1</span>, RegionFromId(<span class="hljs-number">95</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4828</span>
+VisRevealerCreate(gv_p01_USER, RegionFromId(<span class="hljs-number">143</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5261</span>
+VisRevealerCreate(<span class="hljs-number">1</span>, RegionFromId(<span class="hljs-number">97</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5747</span>
+VisRevealerCreate(<span class="hljs-number">1</span>, RegionFromId(<span class="hljs-number">97</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6615</span>
+VisRevealerCreate(gv_p01_USER, RegionFromId(<span class="hljs-number">94</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1735</span>
+VisRevealerCreate(gv_p1_USER, RegionFromId(<span class="hljs-number">59</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2201</span>
+VisRevealerCreate(gv_p1_USER, RegionFromId(<span class="hljs-number">28</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2491</span>
+VisRevealerCreate(gv_p1_USER, RegionFromId(<span class="hljs-number">80</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2771</span>
+VisRevealerCreate(gv_p1_USER, RegionFromId(<span class="hljs-number">92</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L632</span>
+VisRevealerCreate(gv_pLAYER_01_USER, RegionFromId(<span class="hljs-number">19</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L732</span>
+VisRevealerCreate(gv_pLAYER01_USER, RegionCircle(UnitGetPosition(UnitFromId(<span class="hljs-number">258</span>)), <span class="hljs-number">6.0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L733</span>
+VisRevealerCreate(gv_pLAYER01_USER, RegionFromId(<span class="hljs-number">15</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L734</span>
+VisRevealerCreate(gv_pLAYER01_USER, RegionFromId(<span class="hljs-number">18</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L741</span>
+VisRevealerCreate(gv_pLAYER01_USER, RegionFromId(<span class="hljs-number">21</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L744</span>
+VisRevealerCreate(gv_pLAYER01_USER, RegionFromId(<span class="hljs-number">7</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L747</span>
+VisRevealerCreate(gv_pLAYER01_USER, RegionFromId(<span class="hljs-number">29</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L750</span>
+VisRevealerCreate(gv_pLAYER01_USER, RegionFromId(<span class="hljs-number">68</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L753</span>
+VisRevealerCreate(gv_pLAYER01_USER, RegionFromId(<span class="hljs-number">34</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1195</span>
+VisRevealerCreate(gv_p01_USER, RegionEntireMap())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1715</span>
+VisRevealerCreate(gv_p01_USER, RegionFromId(<span class="hljs-number">10</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2005</span>
+VisRevealerCreate(gv_p01_USER, RegionEntireMap())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2704</span>
+VisRevealerCreate(gv_p01_USER, RegionEntireMap())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3336</span>
+VisRevealerCreate(gv_p01_USER, RegionFromId(<span class="hljs-number">28</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3444</span>
+VisRevealerCreate(gv_p01_USER, RegionEntireMap())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4124</span>
+VisRevealerCreate(gv_p01_USER, RegionEntireMap())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5693</span>
+VisRevealerCreate(gv_p01_USER, RegionEntireMap())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6500</span>
+VisRevealerCreate(gv_p01_USER, RegionEntireMap())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7933</span>
+VisRevealerCreate(gv_p01_USER, RegionEntireMap())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L440</span>
+VisRevealerCreate(gv_p1_USER, RegionCircle(UnitGetPosition(gv_artifact), <span class="hljs-number">24.0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L546</span>
+VisRevealerCreate(gv_p3_TEMPLE, RegionCircle(UnitGetPosition(gv_artifact), <span class="hljs-number">24.0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L559</span>
+VisRevealerCreate(gv_p3_TEMPLE, RegionCircle(UnitGetPosition(gv_artifact), <span class="hljs-number">12.0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2649</span>
+VisRevealerCreate(gv_p1_USER, RegionFromId(<span class="hljs-number">21</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3662</span>
+VisRevealerCreate(gv_p1_USER, RegionFromId(<span class="hljs-number">18</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3667</span>
+VisRevealerCreate(gv_p1_USER, gv_creepRegions[lv_i])
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3671</span>
+VisRevealerCreate(gv_p1_USER, RegionFromId(<span class="hljs-number">23</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3677</span>
+VisRevealerCreate(gv_p1_USER, RegionFromId(<span class="hljs-number">17</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3703</span>
+VisRevealerCreate(gv_p1_USER, RegionFromId(<span class="hljs-number">24</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3706</span>
+VisRevealerCreate(gv_p1_USER, RegionFromId(<span class="hljs-number">25</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2427</span>
+VisRevealerCreate(gv_p01_USER, RegionCircle(UnitGetPosition(gv_sITE_1_BUILDING), <span class="hljs-number">7.0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4685</span>
+VisRevealerCreate(gv_p01_USER, RegionCircle(UnitGetPosition(gv_sITE_2_BUILDING), <span class="hljs-number">5.0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4700</span>
+VisRevealerCreate(gv_p01_USER, RegionCircle(UnitGetPosition(gv_sITE_3_BUILDING), <span class="hljs-number">5.0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5664</span>
+VisRevealerCreate(<span class="hljs-number">1</span>, RegionFromId(<span class="hljs-number">23</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5665</span>
+VisRevealerCreate(<span class="hljs-number">1</span>, RegionFromId(<span class="hljs-number">28</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5666</span>
+VisRevealerCreate(<span class="hljs-number">1</span>, RegionFromId(<span class="hljs-number">31</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5667</span>
+VisRevealerCreate(<span class="hljs-number">1</span>, RegionFromId(<span class="hljs-number">29</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1648</span>
+VisRevealerCreate(gv_p01_USER, RegionCircle(RegionGetCenter(RegionFromId(<span class="hljs-number">30</span>)), <span class="hljs-number">12.0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1691</span>
+VisRevealerCreate(gv_p01_USER, RegionCircle(RegionGetCenter(RegionFromId(<span class="hljs-number">21</span>)), <span class="hljs-number">12.0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1761</span>
+VisRevealerCreate(gv_p01_USER, RegionCircle(RegionGetCenter(RegionFromId(<span class="hljs-number">12</span>)), <span class="hljs-number">12.0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1818</span>
+VisRevealerCreate(gv_p01_USER, RegionCircle(RegionGetCenter(RegionFromId(<span class="hljs-number">35</span>)), <span class="hljs-number">12.0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1865</span>
+VisRevealerCreate(gv_p01_USER, RegionCircle(RegionGetCenter(RegionFromId(<span class="hljs-number">37</span>)), <span class="hljs-number">12.0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1914</span>
+VisRevealerCreate(gv_p01_USER, RegionCircle(RegionGetCenter(RegionFromId(<span class="hljs-number">32</span>)), <span class="hljs-number">12.0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1958</span>
+VisRevealerCreate(gv_p01_USER, RegionCircle(RegionGetCenter(RegionFromId(<span class="hljs-number">22</span>)), <span class="hljs-number">12.0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2003</span>
+VisRevealerCreate(gv_p01_USER, RegionCircle(RegionGetCenter(RegionFromId(<span class="hljs-number">33</span>)), <span class="hljs-number">12.0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2047</span>
+VisRevealerCreate(gv_p01_USER, RegionCircle(RegionGetCenter(RegionFromId(<span class="hljs-number">34</span>)), <span class="hljs-number">12.0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2092</span>
+VisRevealerCreate(gv_p01_USER, RegionCircle(RegionGetCenter(RegionFromId(<span class="hljs-number">31</span>)), <span class="hljs-number">12.0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1560</span>
+VisRevealerCreate(gv_p1_USER, RegionFromId(<span class="hljs-number">98</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L906</span>
+VisRevealerCreate(gv_pLAYER_P01_USER, RegionFromId(<span class="hljs-number">22</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1498</span>
+VisRevealerCreate(gv_pLAYER_P01_USER, RegionFromId(<span class="hljs-number">1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1566</span>
+VisRevealerCreate(gv_pLAYER_P01_USER, RegionFromId(<span class="hljs-number">2</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1634</span>
+VisRevealerCreate(gv_pLAYER_P01_USER, RegionFromId(<span class="hljs-number">3</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1702</span>
+VisRevealerCreate(gv_pLAYER_P01_USER, RegionFromId(<span class="hljs-number">4</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5742</span>
+VisRevealerCreate(gv_pLAYER_P01_USER, RegionFromId(<span class="hljs-number">1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5748</span>
+VisRevealerCreate(gv_pLAYER_P01_USER, RegionFromId(<span class="hljs-number">2</span>))
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,424 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Run Trigger / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Run Trigger"/>
+                <meta property="og:description" content="Executes the specified trigger.  If Trigger A calls &quot;Run Trigger&quot; to execute Trigger B, then Trigger A will not continue execution until either Trigger B returns, reaches the end of its actions, or reaches a &quot;Wait&quot; action.  If Trigger B has a &quot;Wait&quot; action, and the Wait parameter of &quot;Run Trigger&quot; was set to Don&#39;t Wait, then Trigger A will resume execution.  If the Wait parameter was set to Wait, then Trigger A will not resume execution until Trigger B has completed or returned."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="run-trigger"><a class="markdownIt-Anchor" href="#run-trigger">#</a> Run Trigger</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Run <strong>t</strong>  (<strong>check|Check/Ignore Conditions</strong>, <strong>wait|Wait/Don’t Wait</strong> until it finishes)<br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Executes the specified trigger.  If Trigger A calls <em>“Run Trigger”</em> to execute Trigger B, then Trigger A will not continue execution until either Trigger B returns, reaches the end of its actions, or reaches a <em>“Wait”</em> action.  If Trigger B has a <em>“Wait”</em> action, and the Wait parameter of <em>“Run Trigger”</em> was set to Don’t Wait, then Trigger A will resume execution.  If the Wait parameter was set to Wait, then Trigger A will not resume execution until Trigger B has completed or returned.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>trigger</code> — Trigger</li>
+<li><code>bool</code> <em>[ preset::<a href="/galaxy/reference/preset-trigger-check-conditions">Trigger_Check_Conditions</a> ]</em> — Check</li>
+<li><code>bool</code> <em>[ preset::<a href="/galaxy/reference/preset-trigger-wait-option">Trigger_Wait_Option</a> ]</em> — Wait</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">TriggerExecute</span><span class="hljs-params">(
+	trigger t,
+	<span class="hljs-keyword">bool</span> testConds,
+	<span class="hljs-keyword">bool</span> waitUntilDone,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#trigger-basic">Trigger / Basic</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>trigger</code> — <strong><a href="/galaxy/reference/lib-ntve-op-create-trigger-from-trigger">Create Trigger From Trigger</a></strong> — (  )</li>
+<li><em><strong>[F]</strong></em> — <code>trigger</code> — <strong><a href="/galaxy/reference/trigger-create">New Trigger</a></strong> — ( TriggerCreate )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-execute">Run Trigger</a></strong> — ( TriggerExecute )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-trigger-execute-by-name">Run Trigger By Name</a></strong> — ( libNtve_gf_TriggerExecuteByName )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-stop">Stop Trigger</a></strong> — ( TriggerStop )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-destroy">Destroy Trigger</a></strong> — ( TriggerDestroy )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-enable">Turn Trigger On/Off</a></strong> — ( TriggerEnable )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/trigger-is-enabled">Trigger Is On</a></strong> — ( TriggerIsEnabled )</li>
+<li><em><strong>[F]</strong></em> — <code>trigger</code> — <strong><a href="/galaxy/reference/trigger-get-current">Current Trigger</a></strong> — ( TriggerGetCurrent )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-wait-for-trigger">Wait For Trigger</a></strong> — ( TriggerWaitForTrigger )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-current-trigger-thread-set-flags">Current Trigger Thread SetFlags</a></strong> — ( TriggerCurrentTriggerThreadSetFlags )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-skippable-begin">Allow Trigger To Be Skipped</a></strong> — ( TriggerSkippableBegin )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-trigger-skipped">Player Skips Trigger</a></strong> — ( TriggerAddEventTriggerSkipped )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-register-events">Register Events</a></strong> — (  )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-send-event">Send Generic Event</a></strong> — ( TriggerSendEvent )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-generic">Generic Event</a></strong> — ( TriggerAddEventGeneric )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> — <strong><a href="/galaxy/reference/trigger-event-param-name">Generic Event Parameter</a></strong> — ( TriggerEventParamName )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> — <strong><a href="/galaxy/reference/event-generic-name">Triggering Event Name</a></strong> — ( EventGenericName )</li>
+<li><em><strong>[F]</strong></em> — <code>trigger</code> — <strong><a href="/galaxy/reference/event-trigger">Triggering Trigger</a></strong> — ( EventTrigger )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/trigger-active-count">Trigger Active Count</a></strong> — ( TriggerActiveCount )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/trigger-get-exec-count">Trigger Execution Count</a></strong> — ( TriggerGetExecCount )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/trigger-get-eval-count">Trigger Evaluation Count</a></strong> — ( TriggerGetEvalCount )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> — <strong><a href="/galaxy/reference/trigger-get-function">Trigger Function Name</a></strong> — ( TriggerGetFunction )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/trigger-evaluate">Evaluate Trigger Conditions</a></strong> — ( TriggerEvaluate )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/challenges/advancedcommand.sc2map/MapScript.galaxy#L158">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L158</span>
+TriggerExecute(gt_Init01Players, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L159</span>
+TriggerExecute(gt_Init02Units, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L160</span>
+TriggerExecute(gt_Init03Music, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L161</span>
+TriggerExecute(gt_Init04Environment, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L162</span>
+TriggerExecute(gt_Init05Hints, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L163</span>
+TriggerExecute(gt_Init06MapSettings, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L164</span>
+TriggerExecute(gt_IntroQ, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L183</span>
+TriggerExecute(gt_Init01aTechnology, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L372</span>
+TriggerExecute(gt_RestartChallengeQ, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L581</span>
+TriggerExecute(gt_ResetGameData, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L483</span>
+TriggerExecute(gt_Init01Players, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L484</span>
+TriggerExecute(gt_Init02Units, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L485</span>
+TriggerExecute(gt_Init03Music, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L486</span>
+TriggerExecute(gt_Init04Environment, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L487</span>
+TriggerExecute(gt_Init05Hints, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L488</span>
+TriggerExecute(gt_Init06MapSettings, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L489</span>
+TriggerExecute(gt_IntroQ, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L508</span>
+TriggerExecute(gt_Init01aTechnology, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L722</span>
+TriggerExecute(gt_SpawnRound1, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L754</span>
+TriggerExecute(gt_SpawnRound2, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L206</span>
+TriggerExecute(gt_WarnPlayerSE, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L213</span>
+TriggerExecute(gt_WarnPlayerNW, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L225</span>
+TriggerExecute(gt_OrderRockBreakers, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L247</span>
+TriggerExecute(gt_Init01Players, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L248</span>
+TriggerExecute(gt_Init02Units, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L249</span>
+TriggerExecute(gt_Init03Music, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L250</span>
+TriggerExecute(gt_Init04Environment, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L251</span>
+TriggerExecute(gt_Init05Hints, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L252</span>
+TriggerExecute(gt_Init06MapSettings, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L253</span>
+TriggerExecute(gt_IntroQ, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L185</span>
+TriggerExecute(gt_Init01Players, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L186</span>
+TriggerExecute(gt_Init02Units, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L187</span>
+TriggerExecute(gt_Init03Music, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L188</span>
+TriggerExecute(gt_Init04Environment, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L189</span>
+TriggerExecute(gt_Init05Hints, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L190</span>
+TriggerExecute(gt_Init06MapSettings, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L191</span>
+TriggerExecute(gt_IntroQ, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L210</span>
+TriggerExecute(gt_Init01aTechnology, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L392</span>
+TriggerExecute(gt_RestartChallengeQ, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L512</span>
+TriggerExecute(gt_ResetGameData, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L304</span>
+TriggerExecute(gt_Init01Players, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L305</span>
+TriggerExecute(gt_Init02Units, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L306</span>
+TriggerExecute(gt_Init03Music, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L307</span>
+TriggerExecute(gt_Init04Environment, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L308</span>
+TriggerExecute(gt_Init05Hints, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L309</span>
+TriggerExecute(gt_Init06MapSettings, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L310</span>
+TriggerExecute(gt_ZergIntroQ, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L494</span>
+TriggerExecute(gt_DisplayTipsZerg, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L498</span>
+TriggerExecute(gt_WarnPlayerZerglingRush, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L503</span>
+TriggerExecute(gt_CreateLeaderboardZerg, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L447</span>
+TriggerExecute(gt_Init01Players, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L448</span>
+TriggerExecute(gt_Init02Units, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L449</span>
+TriggerExecute(gt_Init03Music, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L450</span>
+TriggerExecute(gt_Init04Environment, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L451</span>
+TriggerExecute(gt_Init05Hints, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L452</span>
+TriggerExecute(gt_Init06MapSettings, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L453</span>
+TriggerExecute(gt_IntroQ, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L472</span>
+TriggerExecute(gt_Init01aTechnology, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L670</span>
+TriggerExecute(gt_SpawnRound1, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L702</span>
+TriggerExecute(gt_SpawnRound2, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L159</span>
+TriggerExecute(gt_Init01Players, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L160</span>
+TriggerExecute(gt_Init02Units, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L161</span>
+TriggerExecute(gt_Init03Music, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L162</span>
+TriggerExecute(gt_Init04Environment, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L163</span>
+TriggerExecute(gt_Init05Hints, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L164</span>
+TriggerExecute(gt_Init06MapSettings, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L165</span>
+TriggerExecute(gt_IntroQ, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L184</span>
+TriggerExecute(gt_Init01aTechnology, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L348</span>
+TriggerExecute(gt_RestartChallenge, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L572</span>
+TriggerExecute(gt_ResetGameData, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L493</span>
+TriggerExecute(gt_Init01Players, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L494</span>
+TriggerExecute(gt_Init02Units, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L495</span>
+TriggerExecute(gt_Init03Music, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L496</span>
+TriggerExecute(gt_Init04Environment, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L497</span>
+TriggerExecute(gt_Init05Hints, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L498</span>
+TriggerExecute(gt_Init06MapSettings, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L499</span>
+TriggerExecute(gt_IntroQ, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L518</span>
+TriggerExecute(gt_Init01aTechnology, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L728</span>
+TriggerExecute(gt_SpawnRound1, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L760</span>
+TriggerExecute(gt_SpawnRound2, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L157</span>
+TriggerExecute(gt_Init01Players, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L158</span>
+TriggerExecute(gt_Init02Units, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L159</span>
+TriggerExecute(gt_Init03Music, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L160</span>
+TriggerExecute(gt_Init04Environment, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L161</span>
+TriggerExecute(gt_Init05Hints, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L162</span>
+TriggerExecute(gt_Init06MapSettings, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L163</span>
+TriggerExecute(gt_IntroQ, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L182</span>
+TriggerExecute(gt_Init01aTechnology, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L364</span>
+TriggerExecute(gt_RestartChallenge, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L569</span>
+TriggerExecute(gt_PopulateMap, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L600</span>
+TriggerExecute(gt_SpawnViking, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L781</span>
+TriggerExecute(gt_Level1SpawnWaves, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L787</span>
+TriggerExecute(gt_SpawnLevel1BossCarrier, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L906</span>
+TriggerExecute(gt_Level2SpawnWaves, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L925</span>
+TriggerExecute(auto_gf_Level2SpawnWavesScourgeDownBack_Trigger, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L974</span>
+TriggerExecute(auto_gf_Level2SpawnWavesScourgePatternFlyAway_Trigger, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1057</span>
+TriggerExecute(auto_gf_Level2ScourgeSound_Trigger, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1084</span>
+TriggerExecute(auto_gf_Level2SwarmGuardianMovement_Trigger, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1118</span>
+TriggerExecute(gt_SpawnLevel2BossLeviathan, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1148</span>
+TriggerExecute(auto_gf_Level2BossLeviathanSpawnBombs_Trigger, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

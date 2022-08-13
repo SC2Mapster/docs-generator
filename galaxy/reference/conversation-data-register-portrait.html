@@ -1,0 +1,266 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Set Data Conversation Portrait / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Set Data Conversation Portrait"/>
+                <meta property="og:description" content="Sets a portrait to be used for a given character during data-driven conversations."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="set-data-conversation-portrait"><a class="markdownIt-Anchor" href="#set-data-conversation-portrait">#</a> Set Data Conversation Portrait</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Set portrait for conversation <strong>stateIndex|State</strong> to <strong>portrait</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Sets a portrait to be used for a given character during data-driven conversations.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>string</code> <em>[ convcharacter ]</em> — State Index</li>
+<li><code>int</code> <em>[ portrait ]</em> — Portrait</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">ConversationDataRegisterPortrait</span><span class="hljs-params">(
+	<span class="hljs-built_in">string</span> stateIndex,
+	<span class="hljs-keyword">int</span> p,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#conversation-data-conversations">Conversation / Data Conversations</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/conversation-data-state-set-value">Set Data Conversation State</a></strong> — ( ConversationDataStateSetValue )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/conversation-data-register-portrait">Set Data Conversation Portrait</a></strong> — ( ConversationDataRegisterPortrait )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/conversation-data-register-unit">Set Data Conversation Unit</a></strong> — ( ConversationDataRegisterUnit )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/conversation-data-register-camera">Set Data Conversation Camera</a></strong> — ( ConversationDataRegisterCamera )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/conversation-data-run">Run Data Conversation</a></strong> — ( ConversationDataRun )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/conversation-data-stop">Stop Data Conversation</a></strong> — ( ConversationDataStop )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-conversation-state-changed">Data Conversation State Changed</a></strong> — ( TriggerAddEventConversationStateChanged )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> <em>[ convstateindex ]</em> — <strong><a href="/galaxy/reference/event-conversation-state">Triggering Conversation State</a></strong> — ( EventConversationState )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/tstory01.sc2map/MapScript.galaxy#L10636">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L10636</span>
+ConversationDataRegisterPortrait(gf_ConvoCharacter(ge_ActorID_ActorZeratul), c_invalidPortraitId)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L25189</span>
+ConversationDataRegisterPortrait(gf_ConvoCharacter(ge_ActorID_ActorAdjutant), PortraitGetPlanetPanel())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L25190</span>
+ConversationDataRegisterPortrait(gf_ConvoCharacter(ge_ActorID_ActorHanson), PortraitGetPlanetPanel())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L25191</span>
+ConversationDataRegisterPortrait(gf_ConvoCharacter(ge_ActorID_ActorHorner), PortraitGetPlanetPanel())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L25192</span>
+ConversationDataRegisterPortrait(gf_ConvoCharacter(ge_ActorID_ActorTosh), PortraitGetPlanetPanel())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L25193</span>
+ConversationDataRegisterPortrait(gf_ConvoCharacter(ge_ActorID_ActorTychus), PortraitGetPlanetPanel())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L25194</span>
+ConversationDataRegisterPortrait(gf_ConvoCharacter(ge_ActorID_ActorValerian), PortraitGetPlanetPanel())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L25195</span>
+ConversationDataRegisterPortrait(gf_ConvoCharacter(ge_ActorID_ActorZeratul), PortraitGetPlanetPanel())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L25210</span>
+ConversationDataRegisterPortrait(gf_ConvoCharacter(ge_ActorID_ActorAdjutant), c_invalidPortraitId)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L25211</span>
+ConversationDataRegisterPortrait(gf_ConvoCharacter(ge_ActorID_ActorHanson), c_invalidPortraitId)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10636</span>
+ConversationDataRegisterPortrait(gf_ConvoCharacter(ge_ActorID_ActorZeratul), c_invalidPortraitId)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L25189</span>
+ConversationDataRegisterPortrait(gf_ConvoCharacter(ge_ActorID_ActorAdjutant), PortraitGetPlanetPanel())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L25190</span>
+ConversationDataRegisterPortrait(gf_ConvoCharacter(ge_ActorID_ActorHanson), PortraitGetPlanetPanel())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L25191</span>
+ConversationDataRegisterPortrait(gf_ConvoCharacter(ge_ActorID_ActorHorner), PortraitGetPlanetPanel())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L25192</span>
+ConversationDataRegisterPortrait(gf_ConvoCharacter(ge_ActorID_ActorTosh), PortraitGetPlanetPanel())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L25193</span>
+ConversationDataRegisterPortrait(gf_ConvoCharacter(ge_ActorID_ActorTychus), PortraitGetPlanetPanel())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L25194</span>
+ConversationDataRegisterPortrait(gf_ConvoCharacter(ge_ActorID_ActorValerian), PortraitGetPlanetPanel())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L25195</span>
+ConversationDataRegisterPortrait(gf_ConvoCharacter(ge_ActorID_ActorZeratul), PortraitGetPlanetPanel())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L25210</span>
+ConversationDataRegisterPortrait(gf_ConvoCharacter(ge_ActorID_ActorAdjutant), c_invalidPortraitId)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L25211</span>
+ConversationDataRegisterPortrait(gf_ConvoCharacter(ge_ActorID_ActorHanson), c_invalidPortraitId)
+</code></pre>
+<h4 id="campaignsswarmstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmstorysc2campaign">#</a> campaigns/swarmstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstory.sc2campaign/base.sc2data/TriggerLibs/SwarmCampaignLib.galaxy#L20864">SwarmCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L20864</span>
+ConversationDataRegisterPortrait(<span class="hljs-string">"char_EvolutionMaster"</span>, PortraitGetTriggerControl(libSwaC_gv_zS_ArmyCustomMissionContactPortrait))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L20866</span>
+ConversationDataRegisterPortrait(<span class="hljs-string">"char_EvolutionMaster"</span>, c_invalidPortraitId)
+</code></pre>
+<h4 id="campaignsswarmstoryutilsc2mod"><a class="markdownIt-Anchor" href="#campaignsswarmstoryutilsc2mod">#</a> campaigns/swarmstoryutil.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstoryutil.sc2mod/base.sc2data/Lib281DEC45.galaxy#L4885">Lib281DEC45.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4885</span>
+ConversationDataRegisterPortrait(lib281DEC45_gv_zSS_Characters[lib281DEC45_gf_ZSS_CharacterIndex(lv_indexCharacter)].lv_conversationLink, lp_portrait)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4889</span>
+ConversationDataRegisterPortrait(<span class="hljs-string">"char_Stukov02"</span>, lp_portrait)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4890</span>
+ConversationDataRegisterPortrait(<span class="hljs-string">"char_DropShipAdjutant"</span>, lp_portrait)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4896</span>
+ConversationDataRegisterPortrait(lib281DEC45_gv_zSS_Characters[lib281DEC45_gf_ZSS_CharacterIndex(lv_indexCharacter)].lv_conversationLink, c_invalidPortraitId)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignStoryLib.galaxy#L5366">VoidCampaignStoryLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L5366</span>
+ConversationDataRegisterPortrait(libVoiC_gf_PC_ClickableConversationLink(lv_indexClickable), c_invalidPortraitId)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6298</span>
+ConversationDataRegisterPortrait(libVoiC_gf_PC_ClickableConversationLink(lv_indexClickable), c_invalidPortraitId)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6333</span>
+ConversationDataRegisterPortrait(libVoiC_gf_PC_ClickableConversationLink(lv_indexClickable), c_invalidPortraitId)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign-2"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign-2">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignUILib.galaxy#L1720">VoidCampaignUILib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1720</span>
+ConversationDataRegisterPortrait(libVoiC_gf_PC_ClickableConversationLink(<span class="hljs-string">"Artanis"</span>), PortraitGetPlanetPanel())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1780</span>
+ConversationDataRegisterPortrait(libVoiC_gf_PC_ClickableConversationLink(UserDataInstance(<span class="hljs-string">"Clickable"</span>, lv_clickableIndex)), c_invalidPortraitId)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1783</span>
+ConversationDataRegisterPortrait(libVoiC_gf_PC_ClickableConversationLink(UserDataInstance(<span class="hljs-string">"Clickable"</span>, lv_clickableIndex)), PortraitGetTriggerControl(libVCUI_gv_pU_MissionPortraitFrame))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3267</span>
+ConversationDataRegisterPortrait(libVoiC_gf_PC_ClickableConversationLink(lv_indexClickable), lp_portrait)
+</code></pre>
+<h4 id="modsmissionpacksnovacampaignsc2mod"><a class="markdownIt-Anchor" href="#modsmissionpacksnovacampaignsc2mod">#</a> mods/missionpacks/novacampaign.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/novacampaign.sc2mod/base.sc2data/LibNCST.galaxy#L4609">LibNCST.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4609</span>
+ConversationDataRegisterPortrait(libNovC_gf_NC_ClickableConversationLink(lv_indexClickable), c_invalidPortraitId)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5182</span>
+ConversationDataRegisterPortrait(libNovC_gf_NC_ClickableConversationLink(lv_indexClickable), c_invalidPortraitId)
+</code></pre>
+<h4 id="modsmissionpacksnovacampaignsc2mod-2"><a class="markdownIt-Anchor" href="#modsmissionpacksnovacampaignsc2mod-2">#</a> mods/missionpacks/novacampaign.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/novacampaign.sc2mod/base.sc2data/LibNCUI.galaxy#L1016">LibNCUI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1016</span>
+ConversationDataRegisterPortrait(<span class="hljs-string">"char_Nova"</span>, PortraitGetTriggerControl(libNCUI_gv_nU_MissionPortrait))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1542</span>
+ConversationDataRegisterPortrait(libNovC_gf_NC_ClickableConversationLink(lv_indexClickable), lp_portrait)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOMI.galaxy#L9490">LibCOMI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L9490</span>
+ConversationDataRegisterPortrait(<span class="hljs-string">"char_TerranAdjutant"</span>, libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_CenterLeft))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9491</span>
+ConversationDataRegisterPortrait(<span class="hljs-string">"char_ProtossExecutor"</span>, libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_CenterLeft))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9492</span>
+ConversationDataRegisterPortrait(<span class="hljs-string">"char_Izsha"</span>, libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_CenterLeft))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9493</span>
+ConversationDataRegisterPortrait(<span class="hljs-string">"char_SgtHammer"</span>, libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_CenterLeft))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9494</span>
+ConversationDataRegisterPortrait(<span class="hljs-string">"char_ACScientist"</span>, libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_CenterLeft))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9495</span>
+ConversationDataRegisterPortrait(<span class="hljs-string">"char_DominionOfficer"</span>, libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_CenterLeft))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9496</span>
+ConversationDataRegisterPortrait(<span class="hljs-string">"char_ShakurasAlly"</span>, libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_CenterLeft))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9497</span>
+ConversationDataRegisterPortrait(<span class="hljs-string">"char_Hill"</span>, libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_CenterLeft))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9498</span>
+ConversationDataRegisterPortrait(<span class="hljs-string">"char_TDChampion"</span>, libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_CenterLeft))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9499</span>
+ConversationDataRegisterPortrait(<span class="hljs-string">"char_Vermillion"</span>, libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_CenterLeft))
+</code></pre>
+<h4 id="modsvoidprologuesc2mod"><a class="markdownIt-Anchor" href="#modsvoidprologuesc2mod">#</a> mods/voidprologue.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/voidprologue.sc2mod/base.sc2data/LibA3DDD02B.galaxy#L6846">LibA3DDD02B.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L6846</span>
+ConversationDataRegisterPortrait(<span class="hljs-string">"char_RescuedTemplar"</span>, PortraitGetTriggerControl(libA3DDD02B_gv_pP_MLContactPortrait))
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

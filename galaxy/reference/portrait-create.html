@@ -1,0 +1,231 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Create Portrait / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Create Portrait"/>
+                <meta property="og:description" content="Creates a portrait on the screen.
+
+Returns: portrait [ portrait ]"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="create-portrait"><a class="markdownIt-Anchor" href="#create-portrait">#</a> Create Portrait</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Create a portrait sized (<strong>width</strong>, <strong>height</strong>), at position (<strong>offsetX|X</strong>, <strong>offsetY|Y</strong>) relative to <strong>anchor</strong> of screen,  and show model <strong>model</strong> (look from camera <strong>camera</strong> and play its <strong>animation|Default</strong> animation) (initially <strong>visible|Visible/Hidden</strong>) (<strong>wait</strong> until loaded)<br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Creates a portrait on the screen.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> — OffsetX</li>
+<li><code>int</code> — OffsetY</li>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-anchor">Anchor</a> ]</em> — Anchor</li>
+<li><code>int</code> — Width</li>
+<li><code>int</code> — Height</li>
+<li><code>string</code> <em>[ gamelink::Model ]</em> — Model</li>
+<li><code>string</code> — Camera</li>
+<li><code>string</code> <em>[ modelanim ]</em> — Animation</li>
+<li><code>bool</code> <em>[ preset::<a href="/galaxy/reference/preset-visible-hidden-option">VisibleHiddenOption</a> ]</em> — Visible</li>
+<li><code>bool</code> <em>[ preset::<a href="/galaxy/reference/preset-trigger-wait-option">Trigger_Wait_Option</a> ]</em> — Wait For Load</li>
+</ul>
+<p>Returns — <code>int</code> <em>[ portrait ]</em></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">int</span> <span class="hljs-title">PortraitCreate</span><span class="hljs-params">(
+	<span class="hljs-keyword">int</span> offsetX,
+	<span class="hljs-keyword">int</span> offsetY,
+	<span class="hljs-keyword">int</span> anchor,
+	<span class="hljs-keyword">int</span> width,
+	<span class="hljs-keyword">int</span> height,
+	<span class="hljs-built_in">string</span> modelLink,
+	<span class="hljs-built_in">string</span> cameraLink,
+	<span class="hljs-built_in">string</span> animProps,
+	<span class="hljs-keyword">bool</span> visible,
+	<span class="hljs-keyword">bool</span> waitUntilLoaded,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#portrait-basic">Portrait / Basic</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ portrait ]</em> — <strong><a href="/galaxy/reference/portrait-create">Create Portrait</a></strong> — ( PortraitCreate )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/portrait-set-visible">Show/Hide Portrait</a></strong> — ( PortraitSetVisible )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ portrait ]</em> — <strong><a href="/galaxy/reference/portrait-last-created">Last Created Portrait</a></strong> — ( PortraitLastCreated )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/portrait-visible">Portrait Is Visible</a></strong> — ( PortraitVisible )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/tstory01.sc2map/MapScript.galaxy#L10372">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L10372</span>
+PortraitCreate(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, c_anchorCenter, <span class="hljs-number">237</span>, <span class="hljs-number">360</span>, null, <span class="hljs-string">""</span>, <span class="hljs-string">"Stand"</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10377</span>
+PortraitCreate(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, c_anchorCenter, <span class="hljs-number">237</span>, <span class="hljs-number">360</span>, <span class="hljs-string">"SMZeratulMissionSelectBorder"</span>, <span class="hljs-string">""</span>, <span class="hljs-string">"Stand"</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13372</span>
+PortraitCreate(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, c_anchorCenter, lv_width, lv_height, lp_model, lv_cameraString, <span class="hljs-string">"Default"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13530</span>
+PortraitCreate(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, c_anchorCenter, <span class="hljs-number">237</span>, <span class="hljs-number">360</span>, <span class="hljs-string">"SMOvermindBriefingMenu"</span>, <span class="hljs-string">""</span>, <span class="hljs-string">"Stand"</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13534</span>
+PortraitCreate(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, c_anchorCenter, <span class="hljs-number">237</span>, <span class="hljs-number">360</span>, <span class="hljs-string">"SMZeratulBriefingBorder"</span>, <span class="hljs-string">""</span>, <span class="hljs-string">"Stand"</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L15148</span>
+PortraitCreate(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, c_anchorTopLeft, FixedToInt(gv_c_NEWITEMINFO_FLASHWIDTH), FixedToInt(gv_c_NEWITEMINFO_FLASHHEIGHT), gv_newItems[lv_newItemIndex].lv_modelFlash, <span class="hljs-string">"CameraPortrait"</span>, <span class="hljs-string">"Default"</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19588</span>
+PortraitCreate(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, c_anchorCenter, <span class="hljs-number">450</span>, <span class="hljs-number">450</span>, <span class="hljs-string">"ToshPortrait"</span>, <span class="hljs-string">"Dflt"</span>, <span class="hljs-string">""</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19617</span>
+PortraitCreate(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, c_anchorCenter, <span class="hljs-number">450</span>, <span class="hljs-number">450</span>, <span class="hljs-string">"HansonPortrait"</span>, <span class="hljs-string">"Dflt"</span>, <span class="hljs-string">""</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L26536</span>
+PortraitCreate(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, c_anchorCenter, <span class="hljs-number">720</span>, <span class="hljs-number">406</span>, <span class="hljs-string">"ValerianPortrait"</span>, <span class="hljs-string">""</span>, <span class="hljs-string">""</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1271</span>
+PortraitCreate(<span class="hljs-number">-324</span>, <span class="hljs-number">-131</span>, c_anchorCenter, <span class="hljs-number">260</span>, <span class="hljs-number">365</span>, null, <span class="hljs-string">""</span>, <span class="hljs-string">""</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7130</span>
+PortraitCreate(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, c_anchorCenter, <span class="hljs-number">237</span>, <span class="hljs-number">360</span>, <span class="hljs-string">"VC_Zeratul2_Planet"</span>, <span class="hljs-string">""</span>, <span class="hljs-string">""</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6717</span>
+PortraitCreate(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, c_anchorCenter, <span class="hljs-number">237</span>, <span class="hljs-number">360</span>, <span class="hljs-string">"VC_Zeratul4_Fade"</span>, <span class="hljs-string">""</span>, <span class="hljs-string">""</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10372</span>
+PortraitCreate(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, c_anchorCenter, <span class="hljs-number">237</span>, <span class="hljs-number">360</span>, null, <span class="hljs-string">""</span>, <span class="hljs-string">"Stand"</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10377</span>
+PortraitCreate(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, c_anchorCenter, <span class="hljs-number">237</span>, <span class="hljs-number">360</span>, <span class="hljs-string">"SMZeratulMissionSelectBorder"</span>, <span class="hljs-string">""</span>, <span class="hljs-string">"Stand"</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13372</span>
+PortraitCreate(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, c_anchorCenter, lv_width, lv_height, lp_model, lv_cameraString, <span class="hljs-string">"Default"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13530</span>
+PortraitCreate(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, c_anchorCenter, <span class="hljs-number">237</span>, <span class="hljs-number">360</span>, <span class="hljs-string">"SMOvermindBriefingMenu"</span>, <span class="hljs-string">""</span>, <span class="hljs-string">"Stand"</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13534</span>
+PortraitCreate(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, c_anchorCenter, <span class="hljs-number">237</span>, <span class="hljs-number">360</span>, <span class="hljs-string">"SMZeratulBriefingBorder"</span>, <span class="hljs-string">""</span>, <span class="hljs-string">"Stand"</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L15148</span>
+PortraitCreate(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, c_anchorTopLeft, FixedToInt(gv_c_NEWITEMINFO_FLASHWIDTH), FixedToInt(gv_c_NEWITEMINFO_FLASHHEIGHT), gv_newItems[lv_newItemIndex].lv_modelFlash, <span class="hljs-string">"CameraPortrait"</span>, <span class="hljs-string">"Default"</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19588</span>
+PortraitCreate(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, c_anchorCenter, <span class="hljs-number">450</span>, <span class="hljs-number">450</span>, <span class="hljs-string">"ToshPortrait"</span>, <span class="hljs-string">"Dflt"</span>, <span class="hljs-string">""</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19617</span>
+PortraitCreate(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, c_anchorCenter, <span class="hljs-number">450</span>, <span class="hljs-number">450</span>, <span class="hljs-string">"HansonPortrait"</span>, <span class="hljs-string">"Dflt"</span>, <span class="hljs-string">""</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L26536</span>
+PortraitCreate(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, c_anchorCenter, <span class="hljs-number">720</span>, <span class="hljs-number">406</span>, <span class="hljs-string">"ValerianPortrait"</span>, <span class="hljs-string">""</span>, <span class="hljs-string">""</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1271</span>
+PortraitCreate(<span class="hljs-number">-324</span>, <span class="hljs-number">-131</span>, c_anchorCenter, <span class="hljs-number">260</span>, <span class="hljs-number">365</span>, null, <span class="hljs-string">""</span>, <span class="hljs-string">""</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7130</span>
+PortraitCreate(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, c_anchorCenter, <span class="hljs-number">237</span>, <span class="hljs-number">360</span>, <span class="hljs-string">"VC_Zeratul2_Planet"</span>, <span class="hljs-string">""</span>, <span class="hljs-string">""</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6717</span>
+PortraitCreate(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, c_anchorCenter, <span class="hljs-number">237</span>, <span class="hljs-number">360</span>, <span class="hljs-string">"VC_Zeratul4_Fade"</span>, <span class="hljs-string">""</span>, <span class="hljs-string">""</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="campaignsswarmstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmstorysc2campaign">#</a> campaigns/swarmstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstory.sc2campaign/base.sc2data/TriggerLibs/SwarmCampaignLib.galaxy#L1501">SwarmCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1501</span>
+PortraitCreate(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, c_anchorTopLeft, <span class="hljs-number">50</span>, <span class="hljs-number">50</span>, lp_model, <span class="hljs-string">""</span>, <span class="hljs-string">"Default"</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignMissionLib.galaxy#L2007">VoidCampaignMissionLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2007</span>
+PortraitCreate(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, c_anchorTopLeft, <span class="hljs-number">50</span>, <span class="hljs-number">50</span>, lp_model, <span class="hljs-string">""</span>, <span class="hljs-string">"Default"</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="modscoresc2mod"><a class="markdownIt-Anchor" href="#modscoresc2mod">#</a> mods/core.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/core.sc2mod/base.sc2data/TriggerLibs/NativeLib.galaxy#L4097">NativeLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4097</span>
+PortraitCreate(lv_offsetX, lv_offsetY, lv_anchor, lv_width, lv_height, null, <span class="hljs-string">"Dflt"</span>, <span class="hljs-string">""</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4147</span>
+PortraitCreate(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, null, <span class="hljs-string">"Dflt"</span>, <span class="hljs-string">""</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3396</span>
+PortraitCreate(lv_offsetX, lv_offsetY, lv_anchor, lv_width, lv_height, null, <span class="hljs-string">"Dflt"</span>, <span class="hljs-string">""</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3446</span>
+PortraitCreate(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, null, <span class="hljs-string">"Dflt"</span>, <span class="hljs-string">""</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="modsmissionpacksnovacampaignsc2mod"><a class="markdownIt-Anchor" href="#modsmissionpacksnovacampaignsc2mod">#</a> mods/missionpacks/novacampaign.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/novacampaign.sc2mod/base.sc2data/LibNCMI.galaxy#L2687">LibNCMI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2687</span>
+PortraitCreate(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, c_anchorTopLeft, <span class="hljs-number">50</span>, <span class="hljs-number">50</span>, lp_model, <span class="hljs-string">""</span>, <span class="hljs-string">"Default"</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="modsmissionpacksnovacampaignsc2mod-2"><a class="markdownIt-Anchor" href="#modsmissionpacksnovacampaignsc2mod-2">#</a> mods/missionpacks/novacampaign.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/novacampaign.sc2mod/base.sc2data/LibNCST.galaxy#L4034">LibNCST.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4034</span>
+PortraitCreate(<span class="hljs-number">50</span>, <span class="hljs-number">0</span>, c_anchorLeft, <span class="hljs-number">237</span>, <span class="hljs-number">360</span>, <span class="hljs-string">"DebugModel_TimecodePortrait"</span>, <span class="hljs-string">""</span>, <span class="hljs-string">"Stand"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="modsvoidprologuesc2mod"><a class="markdownIt-Anchor" href="#modsvoidprologuesc2mod">#</a> mods/voidprologue.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/voidprologue.sc2mod/base.sc2data/LibA3DDD02B.galaxy#L1187">LibA3DDD02B.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1187</span>
+PortraitCreate(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, c_anchorTopLeft, <span class="hljs-number">50</span>, <span class="hljs-number">50</span>, lp_model, <span class="hljs-string">""</span>, <span class="hljs-string">"Default"</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

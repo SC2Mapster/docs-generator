@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Allies/Enemies Of Player (Count Inactive And Self) / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Allies/Enemies Of Player (Count Inactive And Self)"/>
+                <meta property="og:description" content="Returns all players that are considered allies or enemies, determined by the Alliance parameter, of the specified player. (Count inactive players, and the player itself would be count as a ally)
+
+Returns: playergroup"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="alliesenemies-of-player-count-inactive-and-self"><a class="markdownIt-Anchor" href="#alliesenemies-of-player-count-inactive-and-self">#</a> Allies/Enemies Of Player (Count Inactive And Self)</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — <strong>alliance|Allies/Enemies</strong> of player <strong>player</strong><br>
+<em>Flags</em> — <code>Function</code></p>
+</blockquote>
+<p>Returns all players that are considered allies or enemies, determined by the Alliance parameter, of the specified player. (Count inactive players, and the player itself would be count as a ally)</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-player-relation">PlayerRelation</a> ]</em> — Alliance</li>
+<li><code>int</code> — Player</li>
+</ul>
+<p>Returns — <code>playergroup</code></p>
+<pre class="hljs"><code><span class="hljs-function">playergroup <span class="hljs-title">libNtve_gf_AlliesEnemiesOfPlayerCountInactiveAndSelf</span><span class="hljs-params">(
+	<span class="hljs-keyword">int</span> lp_alliance,
+	<span class="hljs-keyword">int</span> lp_player,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#player-group-useful-player-groups">Player Group / Useful Player Groups</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>playergroup</code> — <strong><a href="/galaxy/reference/player-group-all">All Players</a></strong> — ( PlayerGroupAll )</li>
+<li><em><strong>[F]</strong></em> — <code>playergroup</code> — <strong><a href="/galaxy/reference/player-group-empty">Empty Player Group</a></strong> — ( PlayerGroupEmpty )</li>
+<li><em><strong>[F]</strong></em> — <code>playergroup</code> — <strong><a href="/galaxy/reference/player-group-active">Active Players</a></strong> — ( PlayerGroupActive )</li>
+<li><em><strong>[F]</strong></em> — <code>playergroup</code> — <strong><a href="/galaxy/reference/player-group-alliance">Allies/Enemies Of Player</a></strong> — ( PlayerGroupAlliance )</li>
+<li><em><strong>[F]</strong></em> — <code>playergroup</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-allies-enemies-of-player-count-inactive-and-self">Allies/Enemies Of Player (Count Inactive And Self)</a></strong> — ( libNtve_gf_AlliesEnemiesOfPlayerCountInactiveAndSelf )</li>
+<li><em><strong>[F]</strong></em> — <code>playergroup</code> — <strong><a href="/galaxy/reference/player-group-single">Convert Player To Player Group</a></strong> — ( PlayerGroupSingle )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="modsstarcoopstarcoopsc2mod"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOMI.galaxy#L12313">LibCOMI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L12313</span>
+libNtve_gf_AlliesEnemiesOfPlayerCountInactiveAndSelf(libNtve_ge_PlayerRelation_AllyMutual,autoD1FA3909_itPlayer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L30046</span>
+libNtve_gf_AlliesEnemiesOfPlayerCountInactiveAndSelf(libNtve_ge_PlayerRelation_AllyMutual,auto62F6BACF_itPlayer)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod-2"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod-2">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOMU.galaxy#L1085">LibCOMU.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1085</span>
+libNtve_gf_AlliesEnemiesOfPlayerCountInactiveAndSelf(libNtve_ge_PlayerRelation_Ally, <span class="hljs-number">1</span>)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod-3"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod-3">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOOC.galaxy#L5301">LibCOOC.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L5301</span>
+libNtve_gf_AlliesEnemiesOfPlayerCountInactiveAndSelf(libNtve_ge_PlayerRelation_AllyMutual, lp_player)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,334 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Unit Transmission Source / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Unit Transmission Source"/>
+                <meta property="og:description" content="Applies a unit as the transmission source for use in the transmission portrait.
+
+Returns: transmissionsource"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="unit-transmission-source"><a class="markdownIt-Anchor" href="#unit-transmission-source">#</a> Unit Transmission Source</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — <strong>Unit</strong> with <strong>Flash|Flash Option</strong> (<strong>overridePortrait|Do/Do Not</strong> override portrait) playing <strong>anim|Animation</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Function</code></p>
+</blockquote>
+<p>Applies a unit as the transmission source for use in the transmission portrait.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>unit</code> — Unit</li>
+<li><code>bool</code> <em>[ preset::<a href="/galaxy/reference/preset-transmission-flash-option">TransmissionFlashOption</a> ]</em> — Flash</li>
+<li><code>bool</code> <em>[ preset::<a href="/galaxy/reference/preset-do-do-not-option">Do_Do_Not_Option</a> ]</em> — Override Portrait</li>
+<li><code>string</code> <em>[ modelanim ]</em> — Anim</li>
+</ul>
+<p>Returns — <code>transmissionsource</code></p>
+<pre class="hljs"><code><span class="hljs-function">native transmissionsource <span class="hljs-title">TransmissionSourceFromUnit</span><span class="hljs-params">(
+	unit u,
+	<span class="hljs-keyword">bool</span> flash,
+	<span class="hljs-keyword">bool</span> overridePortrait,
+	<span class="hljs-built_in">string</span> anim,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#transmission-sources">Transmission / Sources</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>transmissionsource</code> — <strong><a href="/galaxy/reference/transmission-source-from-unit-type">Unit Type Transmission Source</a></strong> — ( TransmissionSourceFromUnitType )</li>
+<li><em><strong>[F]</strong></em> — <code>transmissionsource</code> — <strong><a href="/galaxy/reference/transmission-source-from-unit">Unit Transmission Source</a></strong> — ( TransmissionSourceFromUnit )</li>
+<li><em><strong>[F]</strong></em> — <code>transmissionsource</code> — <strong><a href="/galaxy/reference/transmission-source-from-model">Model Transmission Source</a></strong> — ( TransmissionSourceFromModel )</li>
+<li><em><strong>[F]</strong></em> — <code>transmissionsource</code> — <strong><a href="/galaxy/reference/transmission-source-from-movie">Movie Transmission Source</a></strong> — ( TransmissionSourceFromMovie )</li>
+<li><em><strong>[F]</strong></em> — <code>transmissionsource</code> — <strong><a href="/galaxy/reference/transmission-source">No Transmission Source</a></strong> — ( TransmissionSource )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/transmission-source-set-pause-allowed">Set Transmission Source Pause Allowed</a></strong> — ( TransmissionSourceSetPauseAllowed )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/transmission-source-set-streaming-allowed">Set Transmission Source Streaming Allowed</a></strong> — ( TransmissionSourceSetStreamingAllowed )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/transmission-source-set-bypass-message-log">Set Transmission Source Bypass Message Log</a></strong> — ( TransmissionSourceSetBypassMessageLog )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/thorner04.sc2map/MapScript.galaxy#L679">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L679</span>
+TransmissionSourceFromUnit(lp_currentStatue, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L690</span>
+TransmissionSourceFromUnit(lp_currentStatue, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L701</span>
+TransmissionSourceFromUnit(lp_currentStatue, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L712</span>
+TransmissionSourceFromUnit(lp_currentStatue, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L723</span>
+TransmissionSourceFromUnit(lp_currentStatue, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4898</span>
+TransmissionSourceFromUnit(UnitFromId(<span class="hljs-number">1095</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4938</span>
+TransmissionSourceFromUnit(UnitFromId(<span class="hljs-number">1087</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4978</span>
+TransmissionSourceFromUnit(UnitFromId(<span class="hljs-number">1227</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5018</span>
+TransmissionSourceFromUnit(UnitFromId(<span class="hljs-number">1104</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5058</span>
+TransmissionSourceFromUnit(UnitFromId(<span class="hljs-number">1120</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3617</span>
+TransmissionSourceFromUnit(lp_speaker, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3627</span>
+TransmissionSourceFromUnit(lp_speaker, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L28663</span>
+TransmissionSourceFromUnit(gf_ActorUnit(ge_ActorID_ActorRaynor), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L28670</span>
+TransmissionSourceFromUnit(gf_ActorUnit(ge_ActorID_ActorRaynor), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L28674</span>
+TransmissionSourceFromUnit(gf_ActorUnit(ge_ActorID_ActorRaynor), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L28678</span>
+TransmissionSourceFromUnit(gf_ActorUnit(ge_ActorID_ActorRaynor), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">""</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L28799</span>
+TransmissionSourceFromUnit(gf_ActorUnit(ge_ActorID_ActorRaynor), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L28801</span>
+TransmissionSourceFromUnit(gf_ActorUnit(ge_ActorID_ActorTychus), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L28809</span>
+TransmissionSourceFromUnit(gf_ActorUnit(ge_ActorID_ActorTychus), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L28810</span>
+TransmissionSourceFromUnit(gf_ActorUnit(ge_ActorID_ActorRaynor), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L679</span>
+TransmissionSourceFromUnit(lp_currentStatue, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L690</span>
+TransmissionSourceFromUnit(lp_currentStatue, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L701</span>
+TransmissionSourceFromUnit(lp_currentStatue, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L712</span>
+TransmissionSourceFromUnit(lp_currentStatue, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L723</span>
+TransmissionSourceFromUnit(lp_currentStatue, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4898</span>
+TransmissionSourceFromUnit(UnitFromId(<span class="hljs-number">1095</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4938</span>
+TransmissionSourceFromUnit(UnitFromId(<span class="hljs-number">1087</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4978</span>
+TransmissionSourceFromUnit(UnitFromId(<span class="hljs-number">1227</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5018</span>
+TransmissionSourceFromUnit(UnitFromId(<span class="hljs-number">1104</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5058</span>
+TransmissionSourceFromUnit(UnitFromId(<span class="hljs-number">1120</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3617</span>
+TransmissionSourceFromUnit(lp_speaker, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3627</span>
+TransmissionSourceFromUnit(lp_speaker, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L28663</span>
+TransmissionSourceFromUnit(gf_ActorUnit(ge_ActorID_ActorRaynor), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L28670</span>
+TransmissionSourceFromUnit(gf_ActorUnit(ge_ActorID_ActorRaynor), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L28674</span>
+TransmissionSourceFromUnit(gf_ActorUnit(ge_ActorID_ActorRaynor), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L28678</span>
+TransmissionSourceFromUnit(gf_ActorUnit(ge_ActorID_ActorRaynor), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">""</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L28799</span>
+TransmissionSourceFromUnit(gf_ActorUnit(ge_ActorID_ActorRaynor), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L28801</span>
+TransmissionSourceFromUnit(gf_ActorUnit(ge_ActorID_ActorTychus), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L28809</span>
+TransmissionSourceFromUnit(gf_ActorUnit(ge_ActorID_ActorTychus), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L28810</span>
+TransmissionSourceFromUnit(gf_ActorUnit(ge_ActorID_ActorRaynor), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>)
+</code></pre>
+<h4 id="campaignslibertystorysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertystorysc2campaign">#</a> campaigns/libertystory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/libertystory.sc2campaign/base.sc2data/TriggerLibs/CampaignLib.galaxy#L826">CampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L826</span>
+TransmissionSourceFromUnit(lp_unit, lv_flashOption, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>)
+</code></pre>
+<h4 id="campaignsswarmstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmstorysc2campaign">#</a> campaigns/swarmstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstory.sc2campaign/base.sc2data/TriggerLibs/SwarmCampaignLib.galaxy#L905">SwarmCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L905</span>
+TransmissionSourceFromUnit(lp_unit, lv_flashOption, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L910</span>
+TransmissionSourceFromUnit(lp_unit, lv_flashOption, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>)
+</code></pre>
+<h4 id="campaignsswarmstoryutilsc2mod"><a class="markdownIt-Anchor" href="#campaignsswarmstoryutilsc2mod">#</a> campaigns/swarmstoryutil.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstoryutil.sc2mod/base.sc2data/Lib281DEC45.galaxy#L8788">Lib281DEC45.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L8788</span>
+TransmissionSourceFromUnit(lib281DEC45_gf_CharacterUnit(lib281DEC45_gv_zSS_AmbientCharacter), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>)
+</code></pre>
+<h4 id="campaignsvoidsc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidsc2campaign">#</a> campaigns/void.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/void.sc2campaign/base.sc2maps/maps/campaign/sc2tutorial.sc2map/MapScript.galaxy#L15755">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L15755</span>
+TransmissionSourceFromUnit(UnitGroupUnit(gv_protossInfestedTerrans, <span class="hljs-number">3</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L15755</span>
+TransmissionSourceFromUnit(UnitGroupUnit(gv_protossInfestedTerrans, <span class="hljs-number">3</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignMissionLib.galaxy#L2837">VoidCampaignMissionLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2837</span>
+TransmissionSourceFromUnit(lp_unit, lv_flashOption, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2842</span>
+TransmissionSourceFromUnit(lp_unit, lv_flashOption, <span class="hljs-literal">true</span>, <span class="hljs-string">"Talk"</span>)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign-2"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign-2">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignStoryLib.galaxy#L6505">VoidCampaignStoryLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L6505</span>
+TransmissionSourceFromUnit(libVCST_gf_ClickableUnit(libVCST_gv_pS_AmbientCharacter), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>)
+</code></pre>
+<h4 id="modsheroesdatastormmod"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/GameDataHelperLib.galaxy#L16028">GameDataHelperLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L16028</span>
+TransmissionSourceFromUnit(libGame_gv_players[UnitGetOwner(lv_cargoUnit)].lv_activeVehicle, <span class="hljs-literal">false</span>, <span class="hljs-literal">true</span>, <span class="hljs-string">""</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L16032</span>
+TransmissionSourceFromUnit(libGame_gv_players[UnitGetOwner(lv_cargoUnit)].lv_heroUnit, <span class="hljs-literal">false</span>, <span class="hljs-literal">true</span>, <span class="hljs-string">""</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19144</span>
+TransmissionSourceFromUnit(libGame_gv_players[lv_rexxarPlayer].lv_heroUnit, <span class="hljs-literal">false</span>, <span class="hljs-literal">true</span>, <span class="hljs-string">""</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19160</span>
+TransmissionSourceFromUnit(libGame_gv_players[lv_rexxarPlayer].lv_heroUnit, <span class="hljs-literal">false</span>, <span class="hljs-literal">true</span>, <span class="hljs-string">""</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19171</span>
+TransmissionSourceFromUnit(libGame_gv_players[lv_rexxarPlayer].lv_heroUnit, <span class="hljs-literal">false</span>, <span class="hljs-literal">true</span>, <span class="hljs-string">""</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19180</span>
+TransmissionSourceFromUnit(libGame_gv_players[lv_rexxarPlayer].lv_heroUnit, <span class="hljs-literal">false</span>, <span class="hljs-literal">true</span>, <span class="hljs-string">""</span>)
+</code></pre>
+<h4 id="modsheroesdatastormmod-2"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-2">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/HeroesLib.galaxy#L3626">HeroesLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3626</span>
+TransmissionSourceFromUnit(lp_unit, lv_flashOption, <span class="hljs-literal">false</span>, <span class="hljs-string">""</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3631</span>
+TransmissionSourceFromUnit(lp_unit, lv_flashOption, <span class="hljs-literal">false</span>, <span class="hljs-string">""</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3826</span>
+TransmissionSourceFromUnit(lp_unit, lv_flashOption, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3831</span>
+TransmissionSourceFromUnit(lp_unit, lv_flashOption, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>)
+</code></pre>
+<h4 id="modsmissionpacksnovacampaignsc2mod"><a class="markdownIt-Anchor" href="#modsmissionpacksnovacampaignsc2mod">#</a> mods/missionpacks/novacampaign.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/novacampaign.sc2mod/base.sc2data/LibNCMI.galaxy#L3051">LibNCMI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3051</span>
+TransmissionSourceFromUnit(lp_unit, lv_flashOption, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3056</span>
+TransmissionSourceFromUnit(lp_unit, lv_flashOption, <span class="hljs-literal">true</span>, <span class="hljs-string">"Talk"</span>)
+</code></pre>
+<h4 id="modsmissionpacksnovacampaignsc2mod-2"><a class="markdownIt-Anchor" href="#modsmissionpacksnovacampaignsc2mod-2">#</a> mods/missionpacks/novacampaign.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/novacampaign.sc2mod/base.sc2data/LibNCST.galaxy#L5331">LibNCST.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L5331</span>
+TransmissionSourceFromUnit(libNCST_gf_ClickableUnit(libNCST_gv_nS_AmbientCharacter), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOMI.galaxy#L10763">LibCOMI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L10763</span>
+TransmissionSourceFromUnit(lp_unit, lv_flashOption, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10768</span>
+TransmissionSourceFromUnit(lp_unit, lv_flashOption, <span class="hljs-literal">true</span>, <span class="hljs-string">"Talk"</span>)
+</code></pre>
+<h4 id="modsvoidprologuesc2mod"><a class="markdownIt-Anchor" href="#modsvoidprologuesc2mod">#</a> mods/voidprologue.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/voidprologue.sc2mod/base.sc2data/LibA3DDD02B.galaxy#L596">LibA3DDD02B.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L596</span>
+TransmissionSourceFromUnit(lp_unit, lv_flashOption, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L601</span>
+TransmissionSourceFromUnit(lp_unit, lv_flashOption, <span class="hljs-literal">false</span>, <span class="hljs-string">"Talk"</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

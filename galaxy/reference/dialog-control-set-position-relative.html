@@ -1,0 +1,434 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Attach Dialog Item To Dialog Item / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Attach Dialog Item To Dialog Item"/>
+                <meta property="og:description" content="Moves the specified dialog item to the specified anchor, relative to the anchor of another dialog item, with the specified offsets."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="attach-dialog-item-to-dialog-item"><a class="markdownIt-Anchor" href="#attach-dialog-item-to-dialog-item">#</a> Attach Dialog Item To Dialog Item</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Move <strong>item|Dialog Item</strong> to (<strong>offsetX</strong>, <strong>offsetY</strong>) relative to <strong>relativeAnchor</strong> of <strong>relativeItem|Relative Control</strong> for <strong>players</strong> (from <strong>anchor</strong>)<br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Moves the specified dialog item to the specified anchor, relative to the anchor of another dialog item, with the specified offsets.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> <em>[ control ]</em> — Item</li>
+<li><code>playergroup</code> — Players</li>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-anchor">Anchor</a> ]</em> — Anchor</li>
+<li><code>int</code> <em>[ control ]</em> — Relative Item</li>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-anchor">Anchor</a> ]</em> — Relative Anchor</li>
+<li><code>int</code> — OffsetX</li>
+<li><code>int</code> — OffsetY</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">DialogControlSetPositionRelative</span><span class="hljs-params">(
+	<span class="hljs-keyword">int</span> control,
+	playergroup players,
+	<span class="hljs-keyword">int</span> anchor,
+	<span class="hljs-keyword">int</span> relative,
+	<span class="hljs-keyword">int</span> relativeAnchor,
+	<span class="hljs-keyword">int</span> offsetX,
+	<span class="hljs-keyword">int</span> offsetY,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#dialog-dialog-item-size-and-position">Dialog / Dialog Item Size And Position</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/dialog-control-set-position">Move Dialog Item</a></strong> — ( DialogControlSetPosition )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/dialog-control-set-position-relative">Attach Dialog Item To Dialog Item</a></strong> — ( DialogControlSetPositionRelative )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-set-dialog-item-rotation">Set Dialog Item Rotation</a></strong> — ( libNtve_gf_SetDialogItemRotation )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-set-dialog-itemto-use-aspect-uncorrection">Set Dialog Item to Use Aspect Uncorrection</a></strong> — ( libNtve_gf_SetDialogItemtoUseAspectUncorrection )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/dialog-control-set-full-dialog">Set Dialog Item Size to Parent</a></strong> — ( DialogControlSetFullDialog )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/dialog-control-set-size">Set Dialog Item Size</a></strong> — ( DialogControlSetSize )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/dialog-control-get-width">Dialog Item Width</a></strong> — ( DialogControlGetWidth )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/dialog-control-get-height">Dialog Item Height</a></strong> — ( DialogControlGetHeight )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/dialog-control-get-offset-x">Dialog Item Offset X</a></strong> — ( DialogControlGetOffsetX )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/dialog-control-get-offset-y">Dialog Item Offset Y</a></strong> — ( DialogControlGetOffsetY )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-anchor">Anchor</a> ]</em> — <strong><a href="/galaxy/reference/dialog-control-get-anchor">Dialog Item Anchor</a></strong> — ( DialogControlGetAnchor )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-anchor">Anchor</a> ]</em> — <strong><a href="/galaxy/reference/dialog-control-get-relative-anchor">Dialog Item Relative Anchor</a></strong> — ( DialogControlGetRelativeAnchor )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ control ]</em> — <strong><a href="/galaxy/reference/dialog-control-get-relative-control">Relative Dialog Item</a></strong> — ( DialogControlGetRelativeControl )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/dialog-control-is-full-dialog">Dialog Item Is Full Dialog</a></strong> — ( DialogControlIsFullDialog )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/tarcade.sc2map/MapScript.galaxy#L3284">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3284</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorTopLeft, gv_controlTipBG, c_anchorTopLeft, <span class="hljs-number">100</span>, <span class="hljs-number">70</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3288</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorTopLeft, gv_controlTipLabel1, c_anchorTopLeft, <span class="hljs-number">205</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3293</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorBottom, gv_controlTipBG, c_anchorBottom, <span class="hljs-number">0</span>, <span class="hljs-number">-70</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3691</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorTopLeft, lv_scoreTitle, c_anchorTopLeft, <span class="hljs-number">0</span>, <span class="hljs-number">25</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3703</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorTopLeft, lv_highScoreTitle, c_anchorTopLeft, <span class="hljs-number">0</span>, <span class="hljs-number">25</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3713</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorTopLeft, gv_uI_ScoreLabel, c_anchorTopLeft, (((lv_index - <span class="hljs-number">1</span>) * <span class="hljs-number">67</span>) - <span class="hljs-number">10</span>), <span class="hljs-number">25</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3725</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorBottomLeft, gv_uI_LifeLabelLargeIcon, c_anchorBottomRight, <span class="hljs-number">16</span>, <span class="hljs-number">-5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3748</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorBottomLeft, gv_uI_BombLabelLargeIcon, c_anchorBottomRight, <span class="hljs-number">16</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10443</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorRight, gv_zPlanetPanel_DropdownDifficulty, c_anchorLeft, <span class="hljs-number">-15</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10449</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorRight, lv_triangle, c_anchorLeft, <span class="hljs-number">-20</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10455</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorBottom, lv_bottom, c_anchorTop, <span class="hljs-number">0</span>, <span class="hljs-number">25</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10461</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorCenter, lv_missionInfoBG, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10687</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorCenter, lv_textBorder, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13652</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorCenter, lv_replayFrame, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13693</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorTopLeft, gv_aBChoiceFrame, c_anchorTopLeft, <span class="hljs-number">70</span>, <span class="hljs-number">70</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13696</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorTopRight, gv_aBChoiceFrame, c_anchorTopRight, <span class="hljs-number">-70</span>, <span class="hljs-number">70</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13703</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorBottomLeft, gv_aBChoiceFrame, c_anchorBottomLeft, <span class="hljs-number">65</span>, <span class="hljs-number">-50</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13706</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorBottomRight, gv_aBChoiceFrame, c_anchorBottomRight, <span class="hljs-number">-65</span>, <span class="hljs-number">-50</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3284</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorTopLeft, gv_controlTipBG, c_anchorTopLeft, <span class="hljs-number">100</span>, <span class="hljs-number">70</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3288</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorTopLeft, gv_controlTipLabel1, c_anchorTopLeft, <span class="hljs-number">205</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3293</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorBottom, gv_controlTipBG, c_anchorBottom, <span class="hljs-number">0</span>, <span class="hljs-number">-70</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3691</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorTopLeft, lv_scoreTitle, c_anchorTopLeft, <span class="hljs-number">0</span>, <span class="hljs-number">25</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3703</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorTopLeft, lv_highScoreTitle, c_anchorTopLeft, <span class="hljs-number">0</span>, <span class="hljs-number">25</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3713</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorTopLeft, gv_uI_ScoreLabel, c_anchorTopLeft, (((lv_index - <span class="hljs-number">1</span>) * <span class="hljs-number">67</span>) - <span class="hljs-number">10</span>), <span class="hljs-number">25</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3725</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorBottomLeft, gv_uI_LifeLabelLargeIcon, c_anchorBottomRight, <span class="hljs-number">16</span>, <span class="hljs-number">-5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3748</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorBottomLeft, gv_uI_BombLabelLargeIcon, c_anchorBottomRight, <span class="hljs-number">16</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10443</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorRight, gv_zPlanetPanel_DropdownDifficulty, c_anchorLeft, <span class="hljs-number">-15</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10449</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorRight, lv_triangle, c_anchorLeft, <span class="hljs-number">-20</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10455</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorBottom, lv_bottom, c_anchorTop, <span class="hljs-number">0</span>, <span class="hljs-number">25</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10461</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorCenter, lv_missionInfoBG, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10687</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorCenter, lv_textBorder, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13652</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorCenter, lv_replayFrame, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13693</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorTopLeft, gv_aBChoiceFrame, c_anchorTopLeft, <span class="hljs-number">70</span>, <span class="hljs-number">70</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13696</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorTopRight, gv_aBChoiceFrame, c_anchorTopRight, <span class="hljs-number">-70</span>, <span class="hljs-number">70</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13703</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorBottomLeft, gv_aBChoiceFrame, c_anchorBottomLeft, <span class="hljs-number">65</span>, <span class="hljs-number">-50</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13706</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorBottomRight, gv_aBChoiceFrame, c_anchorBottomRight, <span class="hljs-number">-65</span>, <span class="hljs-number">-50</span>)
+</code></pre>
+<h4 id="campaignslibertystorysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertystorysc2campaign">#</a> campaigns/libertystory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/libertystory.sc2campaign/base.sc2data/TriggerLibs/CampaignLib.galaxy#L1914">CampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1914</span>
+DialogControlSetPositionRelative(lp_item, PlayerGroupAll(), lp_anchor, lp_relativeItem, lp_relativeAnchor, FixedToInt(lp_offsetX), FixedToInt(lp_offsetY))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1973</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorTop, lv_titleItem, c_anchorBottom, <span class="hljs-number">0</span>, <span class="hljs-number">5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1979</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorBottom, libCamp_gv__MsgDlgButton, c_anchorTop, <span class="hljs-number">0</span>, <span class="hljs-number">-15</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5715</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorCenter, libCamp_gv_tS_RoomChangeButtons[libCamp_gv_tS_RoomChangeButtonCount], c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5724</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorCenter, libCamp_gv_tS_RoomChangeButtons[libCamp_gv_tS_RoomChangeButtonCount], c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5879</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorCenter, libCamp_gv_tS_RoomChangeButtons[lp_buttonId], c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">-1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10793</span>
+DialogControlSetPositionRelative(libCamp_gv_tS_DebugProgressImageCurrent, PlayerGroupAll(), c_anchorCenter, libCamp_gv_tS_DebugProgressMissionButtons[(lv_indexMission)], c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10794</span>
+DialogControlSetPositionRelative(libCamp_gv_tS_DebugProgressImageOK, PlayerGroupAll(), c_anchorCenter, libCamp_gv_tS_DebugProgressButtonOK, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13498</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorLeft, libCamp_gv_tS_DebugResearchButtonProtossMinus, c_anchorRight, <span class="hljs-number">2</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13505</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorLeft, libCamp_gv_tS_DebugResearchButtonProtossReset, c_anchorRight, <span class="hljs-number">2</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<h4 id="campaignsswarmsc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmsc2campaign">#</a> campaigns/swarm.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarm.sc2campaign/base.sc2maps/maps/campaign/swarm/zlab02.sc2map/MapScript.galaxy#L6418">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L6418</span>
+DialogControlSetPositionRelative(gv_buttonSecurityComputer_ReleaseZerg, PlayerGroupAll(), c_anchorTop, lv_panelReleaseZerg, c_anchorTop, <span class="hljs-number">0</span>, <span class="hljs-number">40</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6433</span>
+DialogControlSetPositionRelative(gv_buttonSecurityComputer_ReleaseGas, PlayerGroupAll(), c_anchorTop, lv_panelReleaseGas, c_anchorTop, <span class="hljs-number">0</span>, <span class="hljs-number">40</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6418</span>
+DialogControlSetPositionRelative(gv_buttonSecurityComputer_ReleaseZerg, PlayerGroupAll(), c_anchorTop, lv_panelReleaseZerg, c_anchorTop, <span class="hljs-number">0</span>, <span class="hljs-number">40</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6433</span>
+DialogControlSetPositionRelative(gv_buttonSecurityComputer_ReleaseGas, PlayerGroupAll(), c_anchorTop, lv_panelReleaseGas, c_anchorTop, <span class="hljs-number">0</span>, <span class="hljs-number">40</span>)
+</code></pre>
+<h4 id="campaignsswarmstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmstorysc2campaign">#</a> campaigns/swarmstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstory.sc2campaign/base.sc2data/TriggerLibs/SwarmCampaignLib.galaxy#L2908">SwarmCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2908</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorRight, libSwaC_gv_zS_BB_HpBackground, c_anchorRight, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9686</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorLeft, lv_border, c_anchorLeft, (((lv_upgradeIndex - <span class="hljs-number">1</span>) * <span class="hljs-number">225</span>) + <span class="hljs-number">12</span>), <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9690</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorLeft, libSwaC_gv_zS_ArmyCustomArchivesUpgradeCheck[lv_categoryIndex][lv_upgradeIndex], c_anchorRight, <span class="hljs-number">3</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9706</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorLeft, lv_border, c_anchorLeft, (((lv_evoIndex - <span class="hljs-number">1</span>) * <span class="hljs-number">190</span>) + <span class="hljs-number">12</span>), <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9709</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorLeft, libSwaC_gv_zS_ArmyCustomArchivesEvolutionCheck[lv_categoryIndex][lv_evoIndex], c_anchorRight, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9844</span>
+DialogControlSetPositionRelative(libSwaC_gv_zS_ArmyCustomArchivesUpgradeBorder, PlayerGroupAll(), c_anchorTopLeft, libSwaC_gv_zS_ArmyCustomArchivesSectionBG, c_anchorTopLeft, <span class="hljs-number">225</span>, <span class="hljs-number">85</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9851</span>
+DialogControlSetPositionRelative(libSwaC_gv_zS_ArmyCustomArchivesUpgradeBorder, PlayerGroupAll(), c_anchorTopLeft, libSwaC_gv_zS_ArmyCustomArchivesSectionBG, c_anchorTopLeft, <span class="hljs-number">225</span>, <span class="hljs-number">75</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11667</span>
+DialogControlSetPositionRelative(libSwaC_gv_zS_KerriganUITierAbilityFrame[<span class="hljs-number">5</span>], PlayerGroupAll(), c_anchorTopLeft, libSwaC_gv_zS_KerriganUITierTemplate3, c_anchorTopLeft, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11675</span>
+DialogControlSetPositionRelative(libSwaC_gv_zS_KerriganUITierAbilityFrame[<span class="hljs-number">5</span>], PlayerGroupAll(), c_anchorTopLeft, libSwaC_gv_zS_KerriganUITierTemplate2, c_anchorTopLeft, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L14597</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorTopRight, lv_button, c_anchorTopRight, (<span class="hljs-number">-1</span> * lv_marginX), (<span class="hljs-number">1</span> * lv_marginY))
+</code></pre>
+<h4 id="campaignsswarmstoryutilsc2mod"><a class="markdownIt-Anchor" href="#campaignsswarmstoryutilsc2mod">#</a> campaigns/swarmstoryutil.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstoryutil.sc2mod/base.sc2data/Lib281DEC45.galaxy#L819">Lib281DEC45.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L819</span>
+DialogControlSetPositionRelative(lib281DEC45_gv_zSS_UIArchivesLoadingLabel, PlayerGroupAll(), c_anchorTopRight, lib281DEC45_gv_zSS_UIArchivesMissionPanel, c_anchorBottomRight, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2390</span>
+DialogControlSetPositionRelative(lib281DEC45_gv_zSS_DebugStoryInteractiveLabel[lib281DEC45_gv_zSS_DebugStoryInteractiveCount], PlayerGroupAll(), c_anchorTopRight, lib281DEC45_gv_zSS_DebugStoryEnabledLabel, c_anchorTopLeft, lib281DEC45_gv_zSSC_DebugStoryMargin, (((lib281DEC45_gv_zSS_DebugStoryInteractiveCount<span class="hljs-number">-1</span>)*<span class="hljs-number">50</span>)+<span class="hljs-number">50</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2393</span>
+DialogControlSetPositionRelative(lib281DEC45_gv_zSS_DebugStoryEnabledCheckbox[lib281DEC45_gv_zSS_DebugStoryInteractiveCount], PlayerGroupAll(), c_anchorTop, lib281DEC45_gv_zSS_DebugStoryEnabledLabel, c_anchorTop, <span class="hljs-number">0</span>, (((lib281DEC45_gv_zSS_DebugStoryInteractiveCount<span class="hljs-number">-1</span>)*<span class="hljs-number">50</span>)+<span class="hljs-number">50</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2396</span>
+DialogControlSetPositionRelative(lib281DEC45_gv_zSS_DebugStoryAmbientCheckbox[lib281DEC45_gv_zSS_DebugStoryInteractiveCount], PlayerGroupAll(), c_anchorTop, lib281DEC45_gv_zSS_DebugStoryAmbientLabel, c_anchorTop, <span class="hljs-number">0</span>, (((lib281DEC45_gv_zSS_DebugStoryInteractiveCount<span class="hljs-number">-1</span>)*<span class="hljs-number">50</span>)+<span class="hljs-number">50</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2399</span>
+DialogControlSetPositionRelative(lib281DEC45_gv_zSS_DebugStoryInteractiveReset[lib281DEC45_gv_zSS_DebugStoryInteractiveCount], PlayerGroupAll(), c_anchorTopLeft, lib281DEC45_gv_zSS_DebugStoryAmbientLabel, c_anchorTopRight, lib281DEC45_gv_zSSC_DebugStoryMargin, (((lib281DEC45_gv_zSS_DebugStoryInteractiveCount<span class="hljs-number">-1</span>)*<span class="hljs-number">50</span>)+<span class="hljs-number">50</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7737</span>
+DialogControlSetPositionRelative(lib281DEC45_gv_zSS_DebugStorySceneList, PlayerGroupAll(), c_anchorTopLeft, lib281DEC45_gv_zSS_DebugStoryTypeList, c_anchorTopRight, <span class="hljs-number">50</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7750</span>
+DialogControlSetPositionRelative(lib281DEC45_gv_zSS_DebugStoryPlayButton, PlayerGroupAll(), c_anchorTopLeft, lib281DEC45_gv_zSS_DebugStoryTypeList, c_anchorTopLeft, <span class="hljs-number">0</span>, <span class="hljs-number">350</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7757</span>
+DialogControlSetPositionRelative(lib281DEC45_gv_zSS_DebugStoryKerriganTypeLabel, PlayerGroupAll(), c_anchorLeft, lib281DEC45_gv_zSS_DebugStoryPlayButton, c_anchorRight, <span class="hljs-number">20</span>, <span class="hljs-number">15</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7760</span>
+DialogControlSetPositionRelative(lib281DEC45_gv_zSS_DebugStoryKerriganTypeCheckbox, PlayerGroupAll(), c_anchorLeft, lib281DEC45_gv_zSS_DebugStoryKerriganTypeLabel, c_anchorRight, <span class="hljs-number">0</span>, <span class="hljs-number">-15</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7764</span>
+DialogControlSetPositionRelative(lib281DEC45_gv_zSS_DebugStoryStateList, PlayerGroupAll(), c_anchorTopLeft, lib281DEC45_gv_zSS_DebugStoryPlayButton, c_anchorBottomLeft, <span class="hljs-number">0</span>, <span class="hljs-number">50</span>)
+</code></pre>
+<h4 id="campaignsvoidsc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidsc2campaign">#</a> campaigns/void.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/void.sc2campaign/base.sc2maps/maps/campaign/sc2tutorial.sc2map/MapScript.galaxy#L1149">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1149</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorCenter, lv_anchorPoint, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1199</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorCenter, lv_anchorPoint, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1249</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorCenter, lv_anchorPoint, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1299</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorCenter, lv_anchorPoint, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1351</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorCenter, lv_anchorPoint, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1402</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorCenter, lv_anchorPoint, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1452</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorCenter, lv_anchorPoint, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1597</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorCenter, lv_anchorPoint, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2340</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorCenter, lv_textTagAnchorPoint, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3028</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorCenter, lv_textTagAnchorPoint, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3373</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorCenter, lv_textTagAnchorPoint, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2099</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorCenter, lv_textTagDialogAnchorPoint, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1149</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorCenter, lv_anchorPoint, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1199</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorCenter, lv_anchorPoint, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1249</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorCenter, lv_anchorPoint, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1299</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorCenter, lv_anchorPoint, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1351</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorCenter, lv_anchorPoint, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1402</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorCenter, lv_anchorPoint, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1452</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorCenter, lv_anchorPoint, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2099</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorCenter, lv_textTagDialogAnchorPoint, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1597</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorCenter, lv_anchorPoint, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2340</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorCenter, lv_textTagAnchorPoint, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3028</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorCenter, lv_textTagAnchorPoint, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3373</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorCenter, lv_textTagAnchorPoint, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignLib.galaxy#L175">VoidCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L175</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorTop, lv_lastItem, c_anchorBottom, <span class="hljs-number">0</span>, <span class="hljs-number">-20</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L193</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorTop, lv_lastItem, c_anchorBottom, <span class="hljs-number">0</span>, <span class="hljs-number">-20</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L289</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorTop, lv_lastItem, c_anchorBottom, <span class="hljs-number">0</span>, <span class="hljs-number">-20</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L910</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorTopRight, lv_button, c_anchorTopRight, (<span class="hljs-number">-1</span> * lv_marginX), (<span class="hljs-number">1</span> * lv_marginY))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L915</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorTopLeft, lv_button, c_anchorTopLeft, (<span class="hljs-number">1</span> * lv_marginX), (<span class="hljs-number">1</span> * lv_marginY))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L920</span>
+DialogControlSetPositionRelative(DialogControlLastCreated(), PlayerGroupAll(), c_anchorBottomLeft, lv_button, c_anchorBottomLeft, (<span class="hljs-number">1</span> * lv_marginX), (<span class="hljs-number">-1</span> * lv_marginY))
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

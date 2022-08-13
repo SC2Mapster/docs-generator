@@ -1,0 +1,229 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Creep Is Present / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Creep Is Present"/>
+                <meta property="og:description" content="Returns true if creep is present at a specified point.
+
+Returns: bool"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="creep-is-present"><a class="markdownIt-Anchor" href="#creep-is-present">#</a> Creep Is Present</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Creep is present at <strong>inPosition</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Function</code></p>
+</blockquote>
+<p>Returns true if creep is present at a specified point.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>point</code> — Position</li>
+</ul>
+<p>Returns — <code>bool</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">bool</span> <span class="hljs-title">CreepIsPresent</span><span class="hljs-params">(point inPos)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#environment-creep-and-power">Environment / Creep And Power</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/creep-set-speed">Set Creep Speed</a></strong> — ( CreepSetSpeed )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/creep-modify">Modify Creep</a></strong> — ( CreepModify )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/creep-is-present">Creep Is Present</a></strong> — ( CreepIsPresent )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/creep-adjacent">Creep Adjacent</a></strong> — ( CreepAdjacent )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/power-level-deprecated">FunctionDef/Name/lib_Ntve_00000250</a></strong> — ( PowerLevel )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/power-level">Power Level</a></strong> — ( PowerLevel )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/power-is-provided-by-deprecated">FunctionDef/Name/lib_Ntve_00000251</a></strong> — ( PowerIsProvidedBy )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/power-is-provided-by">Power Is Provided By</a></strong> — ( PowerIsProvidedBy )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/ttychus01.sc2map/MapScript.galaxy#L219">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L219</span>
+CreepIsPresent(lp_point)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L225</span>
+CreepIsPresent(PointWithOffsetPolar(lp_point, <span class="hljs-number">1.0</span>, (IntToFixed(lv_i) * <span class="hljs-number">90.0</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L647</span>
+CreepIsPresent(lp_point)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L653</span>
+CreepIsPresent(PointWithOffsetPolar(lp_point, <span class="hljs-number">1.0</span>, (IntToFixed(lv_i) * <span class="hljs-number">90.0</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L851</span>
+CreepIsPresent(UnitGetPosition(autoE675049B_var))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L861</span>
+CreepIsPresent(UnitGetPosition(autoDEB2E354_var))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L219</span>
+CreepIsPresent(lp_point)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L225</span>
+CreepIsPresent(PointWithOffsetPolar(lp_point, <span class="hljs-number">1.0</span>, (IntToFixed(lv_i) * <span class="hljs-number">90.0</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L647</span>
+CreepIsPresent(lp_point)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L653</span>
+CreepIsPresent(PointWithOffsetPolar(lp_point, <span class="hljs-number">1.0</span>, (IntToFixed(lv_i) * <span class="hljs-number">90.0</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L851</span>
+CreepIsPresent(UnitGetPosition(autoE675049B_var))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L861</span>
+CreepIsPresent(UnitGetPosition(autoDEB2E354_var))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L476</span>
+CreepIsPresent(Point(lv_x, lv_y))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1300</span>
+CreepIsPresent(PointFromId(<span class="hljs-number">205</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L476</span>
+CreepIsPresent(Point(lv_x, lv_y))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1300</span>
+CreepIsPresent(PointFromId(<span class="hljs-number">205</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L590</span>
+CreepIsPresent(Point(lv_x, lv_y))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1097</span>
+CreepIsPresent(lv_testPoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1111</span>
+CreepIsPresent(lv_testPoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L290</span>
+CreepIsPresent(lp_point)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L290</span>
+CreepIsPresent(PointWithOffsetPolar(lp_point, <span class="hljs-number">1.0</span>, <span class="hljs-number">0.0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L290</span>
+CreepIsPresent(PointWithOffsetPolar(lp_point, <span class="hljs-number">1.0</span>, <span class="hljs-number">90.0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L290</span>
+CreepIsPresent(PointWithOffsetPolar(lp_point, <span class="hljs-number">1.0</span>, <span class="hljs-number">180.0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L290</span>
+CreepIsPresent(PointWithOffsetPolar(lp_point, <span class="hljs-number">1.0</span>, <span class="hljs-number">270.0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L590</span>
+CreepIsPresent(Point(lv_x, lv_y))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1097</span>
+CreepIsPresent(lv_testPoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1111</span>
+CreepIsPresent(lv_testPoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L290</span>
+CreepIsPresent(lp_point)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L290</span>
+CreepIsPresent(PointWithOffsetPolar(lp_point, <span class="hljs-number">1.0</span>, <span class="hljs-number">0.0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L290</span>
+CreepIsPresent(PointWithOffsetPolar(lp_point, <span class="hljs-number">1.0</span>, <span class="hljs-number">90.0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L290</span>
+CreepIsPresent(PointWithOffsetPolar(lp_point, <span class="hljs-number">1.0</span>, <span class="hljs-number">180.0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L290</span>
+CreepIsPresent(PointWithOffsetPolar(lp_point, <span class="hljs-number">1.0</span>, <span class="hljs-number">270.0</span>))
+</code></pre>
+<h4 id="modscoresc2mod"><a class="markdownIt-Anchor" href="#modscoresc2mod">#</a> mods/core.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/core.sc2mod/base.sc2data/TriggerLibs/Tactical/TactZergAI.galaxy#L1150">TactZergAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1150</span>
+CreepIsPresent(UnitGetPosition(aiUnit))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1177</span>
+CreepIsPresent(UnitGetPosition(aiUnit))
+</code></pre>
+<h4 id="modsnovastoryassetssc2mod"><a class="markdownIt-Anchor" href="#modsnovastoryassetssc2mod">#</a> mods/novastoryassets.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/novastoryassets.sc2mod/base2.sc2maps/maps/campaign/nova/nova04.sc2map/MapScript.galaxy#L637">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L637</span>
+CreepIsPresent(UnitGetPosition(UnitGroupLoopCurrent()))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L637</span>
+CreepIsPresent(UnitGetPosition(UnitGroupLoopCurrent()))
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOMI.galaxy#L24438">LibCOMI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L24438</span>
+CreepIsPresent(Point(lv_placementX, lv_placementY))
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod-2"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod-2">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/TriggerLibs/Tactical/TactZergAI.galaxy#L1349">TactZergAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1349</span>
+CreepIsPresent(UnitGetPosition(aiUnit))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1372</span>
+CreepIsPresent(UnitGetPosition(aiUnit))
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

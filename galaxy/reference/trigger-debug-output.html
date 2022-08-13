@@ -1,0 +1,411 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Debug Message / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Debug Message"/>
+                <meta property="og:description" content="Outputs a debug message to a file, and optionally displays it to the screen as well.  Use &quot;Set Debug Message File&quot; to configure the name of the output file."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="debug-message"><a class="markdownIt-Anchor" href="#debug-message">#</a> Debug Message</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Display <strong>msg</strong> as debug output using <strong>type</strong>, and <strong>ui|Do/Do Not</strong> display it in the game window<br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Outputs a debug message to a file, and optionally displays it to the screen as well.  Use <em>“Set Debug Message File”</em> to configure the name of the output file.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-debug-message-type">DebugMessageType</a> ]</em> — Type</li>
+<li><code>text</code> — Text</li>
+<li><code>bool</code> <em>[ preset::<a href="/galaxy/reference/preset-do-do-not-option">Do_Do_Not_Option</a> ]</em> — UI</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">TriggerDebugOutput</span><span class="hljs-params">(
+	<span class="hljs-keyword">int</span> type,
+	text inText,
+	<span class="hljs-keyword">bool</span> includeGameUI,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#debug-trigger-debugging">Debug / Trigger Debugging</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-debug-output">Debug Message</a></strong> — ( TriggerDebugOutput )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-debug-output-enable">Enable/Disable Debug Messages</a></strong> — ( TriggerDebugOutputEnable )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-debug-enable-type">Enable/Disable Debug Message Type</a></strong> — ( TriggerDebugEnableType )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-debug-set-type-color">Set Debug Window Message Color</a></strong> — ( TriggerDebugSetTypeColor )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-debug-set-type-file">Set Debug Message File</a></strong> — ( TriggerDebugSetTypeFile )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-debug-set-type-filter">Set Debug Message Filter</a></strong> — ( TriggerDebugSetTypeFilter )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-debug-set-type-name">Set Debug Message Name</a></strong> — ( TriggerDebugSetTypeName )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-debug-window-open">Open or Close Debug Window</a></strong> — ( TriggerDebugWindowOpen )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-debug-message-type">DebugMessageType</a> ]</em> — <strong><a href="/galaxy/reference/lib-ntve-gf-convert-integer-to-debug-message-type">Convert Integer To Debug Message Type</a></strong> — ( libNtve_gf_ConvertIntegerToDebugMessageType )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/thanson01.sc2map/MapScript.galaxy#L5175">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L5175</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/092F1A5C"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4315</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/1A140166"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5203</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, TextExpressionAssemble(<span class="hljs-string">"Param/Expression/90D448AA"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3419</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, TextExpressionAssemble(<span class="hljs-string">"Param/Expression/C7A1FEC2"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5052</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/5EC8C131"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4486</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/542503D6"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4473</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, TextExpressionAssemble(<span class="hljs-string">"Param/Expression/D027731D"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4476</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/9C67BB40"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4534</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, TextExpressionAssemble(<span class="hljs-string">"Param/Expression/3CE0B89E"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4537</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/A766779D"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8148</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, TextExpressionAssemble(<span class="hljs-string">"Param/Expression/898DF7CE"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4015</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/53FE3F9F"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4305</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/426DB1C2"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4209</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/609220D0"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2379</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/BB73B4E1"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2382</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/0B3A684D"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2816</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, (StringExternal(<span class="hljs-string">"Param/Value/D3B1D2B5"</span>) + libNtve_gf_ConvertBooleanToText(gv_jukeboxes[lp_jukeboxID].lv_startRandom) + StringExternal(<span class="hljs-string">"Param/Value/A67D1B1C"</span>) + libNtve_gf_ConvertBooleanToText(gv_jukeboxes[lp_jukeboxID].lv_playback.lv_startedBefore)), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2827</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, (StringExternal(<span class="hljs-string">"Param/Value/C4DAEF83"</span>) + IntToText(gv_jukeboxes[lp_jukeboxID].lv_playback.lv_trackCurrent)), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2923</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, (StringExternal(<span class="hljs-string">"Param/Value/ABC761A1"</span>)), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2931</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, (StringExternal(<span class="hljs-string">"Param/Value/9F2D41DF"</span>)), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3232</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/5197FC87"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3237</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/147DBE51"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4186</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, (StringExternal(<span class="hljs-string">"Param/Value/FBF6B365"</span>) + IntToText(libCamp_gf_StoryState(libCamp_ge_StoryStateID_StoryStateArmoryOpened))), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4306</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, (StringExternal(<span class="hljs-string">"Param/Value/BAC339D7"</span>) + libNtve_gf_ConvertBooleanToText(gf_ActorWithConversation(ge_ActorID_ActorSwann))), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4695</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/6FAC3A22"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3551</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/5146E82B"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4411</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, TextExpressionAssemble(<span class="hljs-string">"Param/Expression/80B7A938"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4905</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, TextExpressionAssemble(<span class="hljs-string">"Param/Expression/C6908CC9"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4409</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/CE2CE6AB"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4492</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/47D5A648"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2504</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/DB549085"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2567</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/42514F44"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2572</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/FABC331F"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2609</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/9F0B2A76"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2617</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/ECCF683F"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5556</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/936B8DF0"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2764</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/FDAA6446"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3283</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/454EEC4A"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3292</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, IntToText(gv_protossStructuresRemainingTotal), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4426</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/738BEE7D"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8607</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, TextExpressionAssemble(<span class="hljs-string">"Param/Expression/E821EAA3"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1262</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, TextExpressionAssemble(<span class="hljs-string">"Param/Expression/3E1FEF24"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1265</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/D09C0E7C"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4463</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/A3D605D8"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8382</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/5C0AC0C0"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5166</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, TextExpressionAssemble(<span class="hljs-string">"Param/Expression/634B8128"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4099</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/0CD8BFF4"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5091</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/1E4D88F9"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5175</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/092F1A5C"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4315</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/1A140166"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5203</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, TextExpressionAssemble(<span class="hljs-string">"Param/Expression/90D448AA"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3419</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, TextExpressionAssemble(<span class="hljs-string">"Param/Expression/C7A1FEC2"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5052</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/5EC8C131"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4486</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/542503D6"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4473</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, TextExpressionAssemble(<span class="hljs-string">"Param/Expression/D027731D"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4476</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/9C67BB40"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4534</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, TextExpressionAssemble(<span class="hljs-string">"Param/Expression/3CE0B89E"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4537</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/A766779D"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8148</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, TextExpressionAssemble(<span class="hljs-string">"Param/Expression/898DF7CE"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4015</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/53FE3F9F"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4305</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/426DB1C2"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4209</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/609220D0"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2379</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/BB73B4E1"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2382</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/0B3A684D"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2816</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, (StringExternal(<span class="hljs-string">"Param/Value/D3B1D2B5"</span>) + libNtve_gf_ConvertBooleanToText(gv_jukeboxes[lp_jukeboxID].lv_startRandom) + StringExternal(<span class="hljs-string">"Param/Value/A67D1B1C"</span>) + libNtve_gf_ConvertBooleanToText(gv_jukeboxes[lp_jukeboxID].lv_playback.lv_startedBefore)), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2827</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, (StringExternal(<span class="hljs-string">"Param/Value/C4DAEF83"</span>) + IntToText(gv_jukeboxes[lp_jukeboxID].lv_playback.lv_trackCurrent)), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2923</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, (StringExternal(<span class="hljs-string">"Param/Value/ABC761A1"</span>)), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2931</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, (StringExternal(<span class="hljs-string">"Param/Value/9F2D41DF"</span>)), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3232</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/5197FC87"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3237</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/147DBE51"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4186</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, (StringExternal(<span class="hljs-string">"Param/Value/FBF6B365"</span>) + IntToText(libCamp_gf_StoryState(libCamp_ge_StoryStateID_StoryStateArmoryOpened))), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4306</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, (StringExternal(<span class="hljs-string">"Param/Value/BAC339D7"</span>) + libNtve_gf_ConvertBooleanToText(gf_ActorWithConversation(ge_ActorID_ActorSwann))), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4695</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/6FAC3A22"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3551</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/5146E82B"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4411</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, TextExpressionAssemble(<span class="hljs-string">"Param/Expression/80B7A938"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4905</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, TextExpressionAssemble(<span class="hljs-string">"Param/Expression/C6908CC9"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4409</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/CE2CE6AB"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4492</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/47D5A648"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2504</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/DB549085"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2567</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/42514F44"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2572</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/FABC331F"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2609</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/9F0B2A76"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2617</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/ECCF683F"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5556</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/936B8DF0"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2764</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/FDAA6446"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3283</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/454EEC4A"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3292</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, IntToText(gv_protossStructuresRemainingTotal), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4426</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/738BEE7D"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8607</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, TextExpressionAssemble(<span class="hljs-string">"Param/Expression/E821EAA3"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1262</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, TextExpressionAssemble(<span class="hljs-string">"Param/Expression/3E1FEF24"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1265</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/D09C0E7C"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4463</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/A3D605D8"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8382</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/5C0AC0C0"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5166</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, TextExpressionAssemble(<span class="hljs-string">"Param/Expression/634B8128"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4099</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/0CD8BFF4"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5091</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/1E4D88F9"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="campaignslibertystorysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertystorysc2campaign">#</a> campaigns/libertystory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/libertystory.sc2campaign/base.sc2data/TriggerLibs/CampaignLib.galaxy#L3891">CampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3891</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, (StringExternal(<span class="hljs-string">"Param/Value/lib_Camp_858B87B2"</span>) + IntToText(lv_missionCompletedCount)), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4053</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, (StringExternal(<span class="hljs-string">"Param/Value/lib_Camp_0D654D17"</span>) + IntToText(lv_count)), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4059</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, (IntToText(lv_index) + StringExternal(<span class="hljs-string">"Param/Value/lib_Camp_39F50B9E"</span>) + libCamp_gf_MissionNameInUpperCase(lv_missions[lv_index])), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4063</span>
+TriggerDebugOutput(<span class="hljs-number">1</span>, (IntToText(lv_index) + StringExternal(<span class="hljs-string">"Param/Value/lib_Camp_7BFD3F6C"</span>) + libCamp_gv_tS_SceneNames[(lv_scenes[lv_index])]), <span class="hljs-literal">false</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

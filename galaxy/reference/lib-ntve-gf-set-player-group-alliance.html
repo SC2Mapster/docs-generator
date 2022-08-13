@@ -1,0 +1,231 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Set Alliance For Player Group / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Set Alliance For Player Group"/>
+                <meta property="og:description" content="Changes alliance settings for all players in the player group.  Each player applies the requested alliance setting to every other player in the player group.  Pushable means that one player&#39;s units are allowed to push another player&#39;s units out of the way if they are trying to path through them."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="set-alliance-for-player-group"><a class="markdownIt-Anchor" href="#set-alliance-for-player-group">#</a> Set Alliance For Player Group</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Make all players in <strong>players|Player Group</strong> treat each other as <strong>alliance</strong><br>
+<em>Flags</em> — <code>Action</code></p>
+</blockquote>
+<p>Changes alliance settings for all players in the player group.  Each player applies the requested alliance setting to every other player in the player group.  Pushable means that one player*“s units are allowed to push another player”*s units out of the way if they are trying to path through them.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>playergroup</code> — Players</li>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-alliance-setting">AllianceSetting</a> ]</em> — Alliance Setting</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">libNtve_gf_SetPlayerGroupAlliance</span><span class="hljs-params">(
+	playergroup lp_players,
+	<span class="hljs-keyword">int</span> lp_alliance,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#player-alliances">Player / Alliances</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-player-alliance-change">Player Changes Alliances</a></strong> — ( TriggerAddEventPlayerAllianceChange )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-set-alliance">Set Alliance</a></strong> — ( libNtve_gf_SetAlliance )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-set-alliance-one-way">Set Alliance (One-Way)</a></strong> — ( libNtve_gf_SetAllianceOneWay )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/player-set-alliance">Set Alliance Aspect</a></strong> — ( PlayerSetAlliance )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-set-player-group-alliance">Set Alliance For Player Group</a></strong> — ( libNtve_gf_SetPlayerGroupAlliance )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-set-alliance-between-two-player-groups">Set Alliance Between Two Player Groups</a></strong> — ( libNtve_gf_SetAllianceBetweenTwoPlayerGroups )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-set-alliance-aspect-for-player-group">Set Alliance Aspect For Player Group</a></strong> — ( libNtve_gf_SetAllianceAspectForPlayerGroup )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/player-get-alliance">Alliance Aspect</a></strong> — ( PlayerGetAlliance )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-player-is-enemy">Get Relationship Between Players</a></strong> — ( libNtve_gf_PlayerIsEnemy )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/thanson03b.sc2map/MapScript.galaxy#L960">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L960</span>
+libNtve_gf_SetPlayerGroupAlliance(lv_allZerg, libNtve_ge_AllianceSetting_AllyWithSharedVisionAndControl)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L833</span>
+libNtve_gf_SetPlayerGroupAlliance(gv_dominionPlayers, libNtve_ge_AllianceSetting_AllyWithSharedVisionAndPushable)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L775</span>
+libNtve_gf_SetPlayerGroupAlliance(gv_zergPlayers, libNtve_ge_AllianceSetting_AllyWithSharedVisionAndPushable)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L960</span>
+libNtve_gf_SetPlayerGroupAlliance(lv_allZerg, libNtve_ge_AllianceSetting_AllyWithSharedVisionAndControl)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L833</span>
+libNtve_gf_SetPlayerGroupAlliance(gv_dominionPlayers, libNtve_ge_AllianceSetting_AllyWithSharedVisionAndPushable)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L775</span>
+libNtve_gf_SetPlayerGroupAlliance(gv_zergPlayers, libNtve_ge_AllianceSetting_AllyWithSharedVisionAndPushable)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1066</span>
+libNtve_gf_SetPlayerGroupAlliance(gv_enemyPlayerGroup, libNtve_ge_AllianceSetting_AllyWithSharedVisionAndPushable)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L842</span>
+libNtve_gf_SetPlayerGroupAlliance(gv_moebiusPlayerGroup, libNtve_ge_AllianceSetting_Neutral)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L853</span>
+libNtve_gf_SetPlayerGroupAlliance(gv_swarmPlayerGroup, libNtve_ge_AllianceSetting_AllyWithSharedVisionAndPushable)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L795</span>
+libNtve_gf_SetPlayerGroupAlliance(gv_dominionPlayers, libNtve_ge_AllianceSetting_AllyWithSharedVisionAndPushable)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L784</span>
+libNtve_gf_SetPlayerGroupAlliance(gv_dominionPlayerGroup, libNtve_ge_AllianceSetting_AllyWithSharedVisionAndPushable)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L795</span>
+libNtve_gf_SetPlayerGroupAlliance(gv_dominionPlayers, libNtve_ge_AllianceSetting_AllyWithSharedVisionAndPushable)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L784</span>
+libNtve_gf_SetPlayerGroupAlliance(gv_dominionPlayerGroup, libNtve_ge_AllianceSetting_AllyWithSharedVisionAndPushable)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L842</span>
+libNtve_gf_SetPlayerGroupAlliance(gv_moebiusPlayerGroup, libNtve_ge_AllianceSetting_Neutral)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L853</span>
+libNtve_gf_SetPlayerGroupAlliance(gv_swarmPlayerGroup, libNtve_ge_AllianceSetting_AllyWithSharedVisionAndPushable)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1066</span>
+libNtve_gf_SetPlayerGroupAlliance(gv_enemyPlayerGroup, libNtve_ge_AllianceSetting_AllyWithSharedVisionAndPushable)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1201</span>
+libNtve_gf_SetPlayerGroupAlliance(gv_friendlyPlayerGroup, libNtve_ge_AllianceSetting_AllyWithSharedVisionAndPushable)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1202</span>
+libNtve_gf_SetPlayerGroupAlliance(gv_enemyPlayerGroup, libNtve_ge_AllianceSetting_AllyWithSharedVisionAndPushable)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L737</span>
+libNtve_gf_SetPlayerGroupAlliance(gv_dominionGroup, libNtve_ge_AllianceSetting_AllyWithSharedVisionAndPushable)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L756</span>
+libNtve_gf_SetPlayerGroupAlliance(gv_enemyPlayers, libNtve_ge_AllianceSetting_AllyWithSharedVision)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L868</span>
+libNtve_gf_SetPlayerGroupAlliance(gv_enemyPlayerGroup, libNtve_ge_AllianceSetting_AllyWithSharedVisionAndPushable)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1201</span>
+libNtve_gf_SetPlayerGroupAlliance(gv_friendlyPlayerGroup, libNtve_ge_AllianceSetting_AllyWithSharedVisionAndPushable)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1202</span>
+libNtve_gf_SetPlayerGroupAlliance(gv_enemyPlayerGroup, libNtve_ge_AllianceSetting_AllyWithSharedVisionAndPushable)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L737</span>
+libNtve_gf_SetPlayerGroupAlliance(gv_dominionGroup, libNtve_ge_AllianceSetting_AllyWithSharedVisionAndPushable)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L756</span>
+libNtve_gf_SetPlayerGroupAlliance(gv_enemyPlayers, libNtve_ge_AllianceSetting_AllyWithSharedVision)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L868</span>
+libNtve_gf_SetPlayerGroupAlliance(gv_enemyPlayerGroup, libNtve_ge_AllianceSetting_AllyWithSharedVisionAndPushable)
+</code></pre>
+<h4 id="modsfrontierssc2mod"><a class="markdownIt-Anchor" href="#modsfrontierssc2mod">#</a> mods/frontiers.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/frontiers.sc2mod/base.sc2data/Lib6CB3363F.galaxy#L345">Lib6CB3363F.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L345</span>
+libNtve_gf_SetPlayerGroupAlliance(lib6CB3363F_gv_fT_PlayerGroup, libNtve_ge_AllianceSetting_AllyWithSharedVisionAndPushable)
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodscoopdeadmansstandstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodscoopdeadmansstandstormmod">#</a> mods/heroesbrawlmods/brawlmapmods/coop/deadmansstand.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/coop/deadmansstand.stormmod/base.stormdata/LibPEB1.galaxy#L13049">LibPEB1.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L13049</span>
+libNtve_gf_SetPlayerGroupAlliance(libGame_gv_teams[libGame_gv_teamOrderIndex_C].lv_teamPlayerGroup, libNtve_ge_AllianceSetting_AllyWithSharedVision)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13197</span>
+libNtve_gf_SetPlayerGroupAlliance(libGame_gv_teams[libGame_gv_teamOrderIndex_C].lv_teamPlayerGroup, libNtve_ge_AllianceSetting_AllyWithSharedVision)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3644</span>
+libNtve_gf_SetPlayerGroupAlliance(libGame_gv_teams[libGame_gv_teamOrderIndex_C].lv_teamPlayerGroup, libNtve_ge_AllianceSetting_AllyWithSharedVision)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3997</span>
+libNtve_gf_SetPlayerGroupAlliance(libGame_gv_teams[libGame_gv_teamOrderIndex_C].lv_teamPlayerGroup, libNtve_ge_AllianceSetting_AllyWithSharedVision)
+</code></pre>
+<h4 id="modsheroesdatastormmod"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/GameLib.galaxy#L12928">GameLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L12928</span>
+libNtve_gf_SetPlayerGroupAlliance(libGame_gv_teams[libGame_gv_teamOrderIndex_C].lv_teamPlayerGroup, libNtve_ge_AllianceSetting_AllyWithSharedVision)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12929</span>
+libNtve_gf_SetPlayerGroupAlliance(libGame_gv_teams[libGame_gv_teamChaosIndex_C].lv_teamPlayerGroup, libNtve_ge_AllianceSetting_AllyWithSharedVision)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOMI.galaxy#L12316">LibCOMI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L12316</span>
+libNtve_gf_SetPlayerGroupAlliance(lv_itPlayerGroup, libNtve_ge_AllianceSetting_AllyWithSharedVisionAndPushable)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12533</span>
+libNtve_gf_SetPlayerGroupAlliance(libCOMI_gv_coopPresetTeams[lv_index], libNtve_ge_AllianceSetting_AllyWithSharedVisionAndPushable)
+</code></pre>
+<h4 id="modswarcoopwarcoopdatasc2mod"><a class="markdownIt-Anchor" href="#modswarcoopwarcoopdatasc2mod">#</a> mods/warcoop/warcoopdata.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/warcoop/warcoopdata.sc2mod/base.sc2data/TriggerLibs/WarCoopData.galaxy#L242">WarCoopData.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L242</span>
+libNtve_gf_SetPlayerGroupAlliance(lp_legendPlayers, libNtve_ge_AllianceSetting_AllyWithSharedVisionAndPushable)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L243</span>
+libNtve_gf_SetPlayerGroupAlliance(lp_allyPlayers, libNtve_ge_AllianceSetting_Ally)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L244</span>
+libNtve_gf_SetPlayerGroupAlliance(lp_enemyPlayers, libNtve_ge_AllianceSetting_AllyWithSharedVision)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

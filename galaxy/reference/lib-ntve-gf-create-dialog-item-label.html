@@ -1,0 +1,461 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Create Dialog Item (Label) / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Create Dialog Item (Label)"/>
+                <meta property="og:description" content="Creates a label dialog item, using parameters to set up the essential properties for the label.  If text writeout is set to true, the text that appears within the label will animate as if being written out a single character at a time.  Text writeout duration will only work if text writeout is set to true.
+
+Returns: control [ control ]"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="create-dialog-item-label"><a class="markdownIt-Anchor" href="#create-dialog-item-label">#</a> Create Dialog Item (Label)</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Create a label for dialog <strong>dialog</strong> with the dimensions (<strong>width</strong>, <strong>height</strong>) anchored to <strong>anchor</strong> with an offset of (<strong>offsetX</strong>, <strong>offsetY</strong>) with the text <strong>text</strong> color set to <strong>color</strong> text writeout set to <strong>textWriteout</strong> with a writeout duration of <strong>textWriteoutDuration</strong><br>
+<em>Flags</em> — <code>Action</code></p>
+</blockquote>
+<p>Creates a label dialog item, using parameters to set up the essential properties for the label.  If text writeout is set to true, the text that appears within the label will animate as if being written out a single character at a time.  Text writeout duration will only work if text writeout is set to true.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> <em>[ dialog ]</em> — Dialog</li>
+<li><code>int</code> — Width</li>
+<li><code>int</code> — Height</li>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-anchor">Anchor</a> ]</em> — Anchor</li>
+<li><code>int</code> — Offset X</li>
+<li><code>int</code> — Offset Y</li>
+<li><code>text</code> — Text</li>
+<li><code>color</code> — Color</li>
+<li><code>bool</code> — Text Writeout</li>
+<li><code>fixed</code> — Text Writeout Duration</li>
+</ul>
+<p>Returns — <code>int</code> <em>[ control ]</em></p>
+<pre class="hljs"><code><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">libNtve_gf_CreateDialogItemLabel</span><span class="hljs-params">(
+	<span class="hljs-keyword">int</span> lp_dialog,
+	<span class="hljs-keyword">int</span> lp_width,
+	<span class="hljs-keyword">int</span> lp_height,
+	<span class="hljs-keyword">int</span> lp_anchor,
+	<span class="hljs-keyword">int</span> lp_offsetX,
+	<span class="hljs-keyword">int</span> lp_offsetY,
+	text lp_text,
+	color lp_color,
+	<span class="hljs-keyword">bool</span> lp_textWriteout,
+	fixed lp_textWriteoutDuration,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#dialog-create-specific-dialog-item-actions">Dialog / Create Specific Dialog Item Actions</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ control ]</em> — <strong><a href="/galaxy/reference/lib-ntve-gf-create-dialog-item-achievement">Create Dialog Item (Achievement)</a></strong> — ( libNtve_gf_CreateDialogItemAchievement )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ control ]</em> — <strong><a href="/galaxy/reference/lib-ntve-gf-create-dialog-item-button">Create Dialog Item (Button)</a></strong> — ( libNtve_gf_CreateDialogItemButton )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ control ]</em> — <strong><a href="/galaxy/reference/lib-ntve-gf-create-dialog-item-check-box">Create Dialog Item (Check Box)</a></strong> — ( libNtve_gf_CreateDialogItemCheckBox )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ control ]</em> — <strong><a href="/galaxy/reference/lib-ntve-gf-create-dialog-item-image">Create Dialog Item (Image)</a></strong> — ( libNtve_gf_CreateDialogItemImage )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ control ]</em> — <strong><a href="/galaxy/reference/lib-ntve-gf-create-dialog-item-label">Create Dialog Item (Label)</a></strong> — ( libNtve_gf_CreateDialogItemLabel )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/thorner05s.sc2map/MapScript.galaxy#L3039">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3039</span>
+libNtve_gf_CreateDialogItemLabel(gv_buttonComputer01SecurityCam, gv_labelDimensionWidth, gv_labelDimensionHeight, c_anchorTopLeft, gv_labelOffsetWidth, gv_labelOffsetHeight, StringExternal(<span class="hljs-string">"Param/Value/DCBED363"</span>), Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3159</span>
+libNtve_gf_CreateDialogItemLabel(gv_buttonComputer01DeactivateLeftFloorGuns, gv_labelDimensionWidth, gv_labelDimensionHeight, c_anchorTopLeft, gv_labelOffsetWidth, gv_labelOffsetHeight, StringExternal(<span class="hljs-string">"Param/Value/9E1B7C4C"</span>), Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3164</span>
+libNtve_gf_CreateDialogItemLabel(gv_buttonComputer01DeactivateRightFloorGuns, gv_labelDimensionWidth, gv_labelDimensionHeight, c_anchorTopLeft, gv_labelOffsetWidth, gv_labelOffsetHeight, StringExternal(<span class="hljs-string">"Param/Value/9C1BA11F"</span>), Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4028</span>
+libNtve_gf_CreateDialogItemLabel(gv_buttonComputer02ReleaseZealots, gv_labelDimensionWidth, gv_labelDimensionHeight, c_anchorTopLeft, gv_labelOffsetWidth, gv_labelOffsetHeight, StringExternal(<span class="hljs-string">"Param/Value/31FE07F1"</span>), Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4048</span>
+libNtve_gf_CreateDialogItemLabel(gv_buttonComputer02ReleaseZerg, gv_labelDimensionWidth, gv_labelDimensionHeight, c_anchorTopLeft, gv_labelOffsetWidth, gv_labelOffsetHeight, StringExternal(<span class="hljs-string">"Param/Value/0E6B1062"</span>), Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4068</span>
+libNtve_gf_CreateDialogItemLabel(gv_buttonComputer02Ultras, gv_labelDimensionWidth, gv_labelOffsetHeight, c_anchorTopLeft, gv_labelOffsetWidth, gv_labelOffsetHeight, StringExternal(<span class="hljs-string">"Param/Value/CC5D376D"</span>), Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4835</span>
+libNtve_gf_CreateDialogItemLabel(gv_buttonComputer04Missile, gv_labelDimensionWidth, gv_labelDimensionHeight, c_anchorTopLeft, gv_labelOffsetWidth, gv_labelOffsetHeight, StringExternal(<span class="hljs-string">"Param/Value/48B84FF9"</span>), Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4840</span>
+libNtve_gf_CreateDialogItemLabel(gv_buttonComputer04Napalm, gv_labelDimensionWidth, gv_labelOffsetHeight, c_anchorTopLeft, gv_labelOffsetWidth, gv_labelOffsetHeight, StringExternal(<span class="hljs-string">"Param/Value/E94F8409"</span>), Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4845</span>
+libNtve_gf_CreateDialogItemLabel(gv_buttonComputer04GatlingGun, gv_labelDimensionWidth, gv_labelOffsetHeight, c_anchorTopLeft, gv_labelOffsetWidth, gv_labelOffsetHeight, StringExternal(<span class="hljs-string">"Param/Value/141ECFDD"</span>), Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5273</span>
+libNtve_gf_CreateDialogItemLabel(gv_buttonComputer05Marine, gv_labelDimensionWidth, gv_labelOffsetHeight, c_anchorTopLeft, gv_labelOffsetWidth, gv_labelOffsetHeight, StringExternal(<span class="hljs-string">"Param/Value/B8A55D31"</span>), Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1276</span>
+libNtve_gf_CreateDialogItemLabel(gv_mainDialog, lv_itemWidth, lv_itemHeight, c_anchorTop, <span class="hljs-number">88</span>, <span class="hljs-number">165</span>, TextCase(StringExternal(<span class="hljs-string">"Param/Value/E60F4B90"</span>), <span class="hljs-literal">true</span>), Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3039</span>
+libNtve_gf_CreateDialogItemLabel(gv_buttonComputer01SecurityCam, gv_labelDimensionWidth, gv_labelDimensionHeight, c_anchorTopLeft, gv_labelOffsetWidth, gv_labelOffsetHeight, StringExternal(<span class="hljs-string">"Param/Value/DCBED363"</span>), Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3159</span>
+libNtve_gf_CreateDialogItemLabel(gv_buttonComputer01DeactivateLeftFloorGuns, gv_labelDimensionWidth, gv_labelDimensionHeight, c_anchorTopLeft, gv_labelOffsetWidth, gv_labelOffsetHeight, StringExternal(<span class="hljs-string">"Param/Value/9E1B7C4C"</span>), Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3164</span>
+libNtve_gf_CreateDialogItemLabel(gv_buttonComputer01DeactivateRightFloorGuns, gv_labelDimensionWidth, gv_labelDimensionHeight, c_anchorTopLeft, gv_labelOffsetWidth, gv_labelOffsetHeight, StringExternal(<span class="hljs-string">"Param/Value/9C1BA11F"</span>), Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4028</span>
+libNtve_gf_CreateDialogItemLabel(gv_buttonComputer02ReleaseZealots, gv_labelDimensionWidth, gv_labelDimensionHeight, c_anchorTopLeft, gv_labelOffsetWidth, gv_labelOffsetHeight, StringExternal(<span class="hljs-string">"Param/Value/31FE07F1"</span>), Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4048</span>
+libNtve_gf_CreateDialogItemLabel(gv_buttonComputer02ReleaseZerg, gv_labelDimensionWidth, gv_labelDimensionHeight, c_anchorTopLeft, gv_labelOffsetWidth, gv_labelOffsetHeight, StringExternal(<span class="hljs-string">"Param/Value/0E6B1062"</span>), Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4068</span>
+libNtve_gf_CreateDialogItemLabel(gv_buttonComputer02Ultras, gv_labelDimensionWidth, gv_labelOffsetHeight, c_anchorTopLeft, gv_labelOffsetWidth, gv_labelOffsetHeight, StringExternal(<span class="hljs-string">"Param/Value/CC5D376D"</span>), Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4835</span>
+libNtve_gf_CreateDialogItemLabel(gv_buttonComputer04Missile, gv_labelDimensionWidth, gv_labelDimensionHeight, c_anchorTopLeft, gv_labelOffsetWidth, gv_labelOffsetHeight, StringExternal(<span class="hljs-string">"Param/Value/48B84FF9"</span>), Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4840</span>
+libNtve_gf_CreateDialogItemLabel(gv_buttonComputer04Napalm, gv_labelDimensionWidth, gv_labelOffsetHeight, c_anchorTopLeft, gv_labelOffsetWidth, gv_labelOffsetHeight, StringExternal(<span class="hljs-string">"Param/Value/E94F8409"</span>), Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4845</span>
+libNtve_gf_CreateDialogItemLabel(gv_buttonComputer04GatlingGun, gv_labelDimensionWidth, gv_labelOffsetHeight, c_anchorTopLeft, gv_labelOffsetWidth, gv_labelOffsetHeight, StringExternal(<span class="hljs-string">"Param/Value/141ECFDD"</span>), Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5273</span>
+libNtve_gf_CreateDialogItemLabel(gv_buttonComputer05Marine, gv_labelDimensionWidth, gv_labelOffsetHeight, c_anchorTopLeft, gv_labelOffsetWidth, gv_labelOffsetHeight, StringExternal(<span class="hljs-string">"Param/Value/B8A55D31"</span>), Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1276</span>
+libNtve_gf_CreateDialogItemLabel(gv_mainDialog, lv_itemWidth, lv_itemHeight, c_anchorTop, <span class="hljs-number">88</span>, <span class="hljs-number">165</span>, TextCase(StringExternal(<span class="hljs-string">"Param/Value/E60F4B90"</span>), <span class="hljs-literal">true</span>), Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<h4 id="campaignslibertystorysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertystorysc2campaign">#</a> campaigns/libertystory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/libertystory.sc2campaign/base.sc2data/TriggerLibs/CampaignLib.galaxy#L10962">CampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L10962</span>
+libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), <span class="hljs-number">400</span>, <span class="hljs-number">50</span>, c_anchorTopLeft, <span class="hljs-number">50</span>, <span class="hljs-number">50</span>, StringExternal(<span class="hljs-string">"Param/Value/lib_Camp_116FA9E9"</span>), Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<h4 id="campaignsswarmsc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmsc2campaign">#</a> campaigns/swarm.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarm.sc2campaign/base.sc2maps/maps/campaign/voidprologue/voidprologue03.sc2map/MapScript.galaxy#L5068">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L5068</span>
+libNtve_gf_CreateDialogItemLabel(gv_s3EscapeDialog, <span class="hljs-number">500</span>, <span class="hljs-number">50</span>, c_anchorTop, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, StringExternal(<span class="hljs-string">"Param/Value/4EFBCEEE"</span>), ColorWithAlpha(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5072</span>
+libNtve_gf_CreateDialogItemLabel(gv_s3EscapeDialog, <span class="hljs-number">500</span>, <span class="hljs-number">50</span>, c_anchorTop, <span class="hljs-number">0</span>, <span class="hljs-number">50</span>, TextTimeFormat(StringToText(<span class="hljs-string">"&lt;mintotal/&gt;:&lt;sec2/&gt;"</span>), FixedToInt(TimerGetRemaining(gv_s3EscapeTimer))), ColorWithAlpha(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L726</span>
+libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), <span class="hljs-number">600</span>, <span class="hljs-number">50</span>, c_anchorBottom, <span class="hljs-number">0</span>, <span class="hljs-number">200</span>, StringExternal(<span class="hljs-string">"Param/Value/83CF7AAA"</span>), Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L726</span>
+libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), <span class="hljs-number">600</span>, <span class="hljs-number">50</span>, c_anchorBottom, <span class="hljs-number">0</span>, <span class="hljs-number">200</span>, StringExternal(<span class="hljs-string">"Param/Value/83CF7AAA"</span>), Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5068</span>
+libNtve_gf_CreateDialogItemLabel(gv_s3EscapeDialog, <span class="hljs-number">500</span>, <span class="hljs-number">50</span>, c_anchorTop, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, StringExternal(<span class="hljs-string">"Param/Value/4EFBCEEE"</span>), ColorWithAlpha(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5072</span>
+libNtve_gf_CreateDialogItemLabel(gv_s3EscapeDialog, <span class="hljs-number">500</span>, <span class="hljs-number">50</span>, c_anchorTop, <span class="hljs-number">0</span>, <span class="hljs-number">50</span>, TextTimeFormat(StringToText(<span class="hljs-string">"&lt;mintotal/&gt;:&lt;sec2/&gt;"</span>), FixedToInt(TimerGetRemaining(gv_s3EscapeTimer))), ColorWithAlpha(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<h4 id="campaignsswarmstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmstorysc2campaign">#</a> campaigns/swarmstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstory.sc2campaign/base.sc2data/TriggerLibs/SwarmCampaignLib.galaxy#L4436">SwarmCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4436</span>
+libNtve_gf_CreateDialogItemLabel(lv_achievementDialog, <span class="hljs-number">200</span>, <span class="hljs-number">50</span>, c_anchorTop, <span class="hljs-number">0</span>, <span class="hljs-number">100</span>, StringExternal(<span class="hljs-string">"Param/Value/lib_SwaC_D4EA7C13"</span>), Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9688</span>
+libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), <span class="hljs-number">182</span>, <span class="hljs-number">80</span>, c_anchorLeft, <span class="hljs-number">50</span>, <span class="hljs-number">50</span>, TextExpressionAssemble(<span class="hljs-string">"Param/Expression/lib_SwaC_CE6787DB"</span>), Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9707</span>
+libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), <span class="hljs-number">150</span>, <span class="hljs-number">80</span>, c_anchorLeft, <span class="hljs-number">50</span>, <span class="hljs-number">50</span>, libSwaC_gf_StoryArmyUnitName(lv_indexEvo), Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L14673</span>
+libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), <span class="hljs-number">600</span>, <span class="hljs-number">400</span>, c_anchorTopLeft, <span class="hljs-number">50</span>, <span class="hljs-number">50</span>, StringToText(<span class="hljs-string">""</span>), Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L14680</span>
+libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), lv_width, lv_height, c_anchorTopLeft, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, StringExternal(<span class="hljs-string">"Param/Value/lib_SwaC_56D7111D"</span>), Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L14696</span>
+libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), lv_width, lv_height, c_anchorTopLeft, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, StringExternal(<span class="hljs-string">"Param/Value/lib_SwaC_F303130C"</span>), Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L14712</span>
+libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), lv_width, lv_height, c_anchorTopLeft, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, StringExternal(<span class="hljs-string">"Param/Value/lib_SwaC_865850D5"</span>), Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L14728</span>
+libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), lv_width, lv_height, c_anchorTopLeft, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, StringExternal(<span class="hljs-string">"Param/Value/lib_SwaC_60EDF0B7"</span>), Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L14744</span>
+libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), lv_width, lv_height, c_anchorTopLeft, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, StringExternal(<span class="hljs-string">"Param/Value/lib_SwaC_63754777"</span>), Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L14760</span>
+libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), lv_width, <span class="hljs-number">120</span>, c_anchorTopLeft, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, StringExternal(<span class="hljs-string">"Param/Value/lib_SwaC_17002842"</span>), Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<h4 id="campaignsswarmstoryutilsc2mod"><a class="markdownIt-Anchor" href="#campaignsswarmstoryutilsc2mod">#</a> campaigns/swarmstoryutil.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstoryutil.sc2mod/base.sc2data/Lib281DEC45.galaxy#L817">Lib281DEC45.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L817</span>
+libNtve_gf_CreateDialogItemLabel(lib281DEC45_gv_zSS_UIArchivesLoadingDialog, <span class="hljs-number">200</span>, <span class="hljs-number">50</span>, c_anchorBottomLeft, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, StringExternal(<span class="hljs-string">"Param/Value/lib_281DEC45_05ECE39E"</span>), Color(<span class="hljs-number">254</span>*<span class="hljs-number">100</span>/<span class="hljs-number">255</span>,<span class="hljs-number">138</span>*<span class="hljs-number">100</span>/<span class="hljs-number">255</span>,<span class="hljs-number">14</span>*<span class="hljs-number">100</span>/<span class="hljs-number">255</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2387</span>
+libNtve_gf_CreateDialogItemLabel(lib281DEC45_gv_zSS_DebugStoryDialog, lib281DEC45_gv_zSSC_DebugStoryNameWidth, <span class="hljs-number">50</span>, c_anchorTopLeft, <span class="hljs-number">50</span>, <span class="hljs-number">50</span>, lv_name, Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7755</span>
+libNtve_gf_CreateDialogItemLabel(lib281DEC45_gv_zSS_DebugStoryDialog, <span class="hljs-number">200</span>, <span class="hljs-number">50</span>, c_anchorTopLeft, <span class="hljs-number">50</span>, <span class="hljs-number">50</span>, StringExternal(<span class="hljs-string">"Param/Value/lib_281DEC45_EBC1823B"</span>), Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7781</span>
+libNtve_gf_CreateDialogItemLabel(lib281DEC45_gv_zSS_DebugStoryDialog, lv_titleWidth, <span class="hljs-number">50</span>, c_anchorTopLeft, <span class="hljs-number">50</span>, <span class="hljs-number">50</span>, StringExternal(<span class="hljs-string">"Param/Value/lib_281DEC45_393257D8"</span>), Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7785</span>
+libNtve_gf_CreateDialogItemLabel(lib281DEC45_gv_zSS_DebugStoryDialog, <span class="hljs-number">150</span>, <span class="hljs-number">50</span>, c_anchorTopLeft, <span class="hljs-number">50</span>, <span class="hljs-number">50</span>, StringExternal(<span class="hljs-string">"Param/Value/lib_281DEC45_140E5644"</span>), Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<h4 id="campaignsvoidsc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidsc2campaign">#</a> campaigns/void.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/void.sc2campaign/base.sc2maps/maps/campaign/void/pshakuras02.sc2map/MapScript.galaxy#L1407">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1407</span>
+libNtve_gf_CreateDialogItemLabel(gv_zergCounterDialog, <span class="hljs-number">500</span>, <span class="hljs-number">30</span>, c_anchorTop, <span class="hljs-number">0</span>, <span class="hljs-number">10</span>, StringExternal(<span class="hljs-string">"Param/Value/ED270442"</span>), Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1412</span>
+libNtve_gf_CreateDialogItemLabel(gv_zergCounterDialog, <span class="hljs-number">500</span>, <span class="hljs-number">25</span>, c_anchorBottom, <span class="hljs-number">0</span>, <span class="hljs-number">10</span>, TextExpressionAssemble(<span class="hljs-string">"Param/Expression/861D5D81"</span>), Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1407</span>
+libNtve_gf_CreateDialogItemLabel(gv_zergCounterDialog, <span class="hljs-number">500</span>, <span class="hljs-number">30</span>, c_anchorTop, <span class="hljs-number">0</span>, <span class="hljs-number">10</span>, StringExternal(<span class="hljs-string">"Param/Value/ED270442"</span>), Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1412</span>
+libNtve_gf_CreateDialogItemLabel(gv_zergCounterDialog, <span class="hljs-number">500</span>, <span class="hljs-number">25</span>, c_anchorBottom, <span class="hljs-number">0</span>, <span class="hljs-number">10</span>, TextExpressionAssemble(<span class="hljs-string">"Param/Expression/861D5D81"</span>), Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignLib.galaxy#L145">VoidCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L145</span>
+libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), <span class="hljs-number">1000</span>, <span class="hljs-number">50</span>, c_anchorTopLeft, <span class="hljs-number">50</span>, lv_y, StringExternal(<span class="hljs-string">"Param/Value/lib_VoiC_1E7C2401"</span>), Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">50.20</span>, <span class="hljs-number">25.10</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L166</span>
+libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), <span class="hljs-number">150</span>, <span class="hljs-number">60</span>, c_anchorTopLeft, lv_x, lv_y, libVoiC_gf_PC_ArmyCategoryName(lv_indexArmyCategory), Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L182</span>
+libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), <span class="hljs-number">150</span>, <span class="hljs-number">60</span>, c_anchorTopLeft, lv_x, lv_y, libVoiC_gf_StoryArmyUnitName(lv_indexArmyUnit), Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L255</span>
+libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), <span class="hljs-number">600</span>, <span class="hljs-number">50</span>, c_anchorTopLeft, <span class="hljs-number">50</span>, lv_y, StringExternal(<span class="hljs-string">"Param/Value/lib_VoiC_55299EE6"</span>), Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L267</span>
+libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), <span class="hljs-number">500</span>, <span class="hljs-number">60</span>, c_anchorTopLeft, lv_x, lv_y, libVoiC_gf_PC_PerkGroupName(lv_indexPowerType), Color(<span class="hljs-number">94.90</span>, <span class="hljs-number">94.90</span>, <span class="hljs-number">0.00</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L283</span>
+libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), <span class="hljs-number">220</span>, <span class="hljs-number">60</span>, c_anchorTopLeft, lv_x, lv_y, libVoiC_gf_PC_PerkName(lv_indexPower), Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L989</span>
+libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), <span class="hljs-number">450</span>, <span class="hljs-number">50</span>, c_anchorTopLeft, <span class="hljs-number">50</span>, <span class="hljs-number">130</span>, StringExternal(<span class="hljs-string">"Param/Value/lib_VoiC_A88CC51D"</span>), ColorWithAlpha(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1001</span>
+libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), <span class="hljs-number">600</span>, <span class="hljs-number">400</span>, c_anchorTopLeft, <span class="hljs-number">50</span>, <span class="hljs-number">50</span>, StringToText(<span class="hljs-string">""</span>), ColorWithAlpha(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1008</span>
+libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), lv_width, lv_height, c_anchorTopLeft, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, StringExternal(<span class="hljs-string">"Param/Value/lib_VoiC_D79468A7"</span>), Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1013</span>
+libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), lv_width, lv_height, c_anchorTopLeft, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, StringExternal(<span class="hljs-string">"Param/Value/lib_VoiC_8E3EF1E5"</span>), Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign-2"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign-2">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignMissionLib.galaxy#L6157">VoidCampaignMissionLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L6157</span>
+libNtve_gf_CreateDialogItemLabel(libVCMI_gv_pM_GameCheat_Dialog, <span class="hljs-number">200</span>, <span class="hljs-number">25</span>, c_anchorTopLeft, <span class="hljs-number">80</span>, ((libVCMI_gv_pM_GameCheat_ArrayIndex * <span class="hljs-number">50</span>) + <span class="hljs-number">55</span>), lv_label, Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign-3"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign-3">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignStoryLib.galaxy#L4742">VoidCampaignStoryLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4742</span>
+libNtve_gf_CreateDialogItemLabel(libVCST_gv_pS_DebugStoryDialog, <span class="hljs-number">60</span>, <span class="hljs-number">50</span>, c_anchorTopLeft, <span class="hljs-number">50</span>, <span class="hljs-number">50</span>, StringExternal(<span class="hljs-string">"Param/Value/lib_VCST_C5DC5309"</span>), Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4749</span>
+libNtve_gf_CreateDialogItemLabel(libVCST_gv_pS_DebugStoryDialog, <span class="hljs-number">150</span>, <span class="hljs-number">50</span>, c_anchorTopLeft, <span class="hljs-number">50</span>, <span class="hljs-number">50</span>, StringExternal(<span class="hljs-string">"Param/Value/lib_VCST_0FA8FF05"</span>), Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4756</span>
+libNtve_gf_CreateDialogItemLabel(libVCST_gv_pS_DebugStoryDialog, <span class="hljs-number">80</span>, <span class="hljs-number">50</span>, c_anchorTopLeft, <span class="hljs-number">50</span>, <span class="hljs-number">50</span>, StringExternal(<span class="hljs-string">"Param/Value/lib_VCST_1F9F798F"</span>), Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign-4"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign-4">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignUILib.galaxy#L1391">VoidCampaignUILib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1391</span>
+libNtve_gf_CreateDialogItemLabel(libVCUI_gv_pU_ArchivesLoadingDialog, <span class="hljs-number">200</span>, <span class="hljs-number">50</span>, c_anchorBottomLeft, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, StringExternal(<span class="hljs-string">"Param/Value/lib_VCUI_8DFE4298"</span>), Color(<span class="hljs-number">254</span>*<span class="hljs-number">100</span>/<span class="hljs-number">255</span>,<span class="hljs-number">138</span>*<span class="hljs-number">100</span>/<span class="hljs-number">255</span>,<span class="hljs-number">14</span>*<span class="hljs-number">100</span>/<span class="hljs-number">255</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<h4 id="modsfrontierssc2mod"><a class="markdownIt-Anchor" href="#modsfrontierssc2mod">#</a> mods/frontiers.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/frontiers.sc2mod/base.sc2data/Lib6CB3363F.galaxy#L384">Lib6CB3363F.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L384</span>
+libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), <span class="hljs-number">400</span>, <span class="hljs-number">50</span>, c_anchorTop, <span class="hljs-number">0</span>, <span class="hljs-number">50</span>, StringExternal(<span class="hljs-string">"Param/Value/lib_6CB3363F_3D61D249"</span>), ColorWithAlpha(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L406</span>
+libNtve_gf_CreateDialogItemLabel(lib6CB3363F_gv_fT_DialogPlayerInfo, <span class="hljs-number">200</span>, <span class="hljs-number">100</span>, c_anchorTopLeft, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, StringExternal(<span class="hljs-string">"Param/Value/lib_6CB3363F_BA3C546A"</span>), ColorWithAlpha(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L428</span>
+libNtve_gf_CreateDialogItemLabel(lib6CB3363F_gv_fT_DialogAmmo, <span class="hljs-number">100</span>, <span class="hljs-number">100</span>, c_anchorTopLeft, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, StringExternal(<span class="hljs-string">"Param/Value/lib_6CB3363F_F99898F8"</span>), ColorWithAlpha(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L436</span>
+libNtve_gf_CreateDialogItemLabel(lib6CB3363F_gv_fT_DialogAmmo, <span class="hljs-number">100</span>, <span class="hljs-number">100</span>, c_anchorTopLeft, (lv_i * <span class="hljs-number">100</span>), <span class="hljs-number">10</span>, StringExternal(<span class="hljs-string">"Param/Value/lib_6CB3363F_0EE54434"</span>), ColorWithAlpha(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<h4 id="modsheroesdatastormmod"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/MapMechanicsLib.galaxy#L2435">MapMechanicsLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2435</span>
+libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), <span class="hljs-number">200</span>, <span class="hljs-number">50</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, lv_msg, ColorWithAlpha(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>), lp_writeOut, lp_writeOutDuration)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2487</span>
+libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), <span class="hljs-number">200</span>, <span class="hljs-number">50</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, TextExpressionAssemble(<span class="hljs-string">"Param/Expression/lib_MapM_3319AAA3"</span>), ColorWithAlpha(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>), lp_writeOut, lp_writeOutDuration)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2642</span>
+libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), <span class="hljs-number">200</span>, <span class="hljs-number">50</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, lp_announcement, ColorWithAlpha(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>), lp_writeOut, lp_writeOutDuration)
+</code></pre>
+<h4 id="modsheroesdatastormmod-2"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-2">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/StartingExperienceLib.galaxy#L1426">StartingExperienceLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1426</span>
+libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), <span class="hljs-number">200</span>, <span class="hljs-number">50</span>, c_anchorCenter, <span class="hljs-number">50</span>, <span class="hljs-number">50</span>, TextExpressionAssemble(<span class="hljs-string">"Param/Expression/lib_StEx_9B5ACB60"</span>), ColorWithAlpha(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2036</span>
+libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), <span class="hljs-number">1000</span>, <span class="hljs-number">50</span>, c_anchorTop, <span class="hljs-number">0</span>, <span class="hljs-number">400</span>, StringExternal(<span class="hljs-string">"Param/Value/lib_StEx_31549B6D"</span>), ColorWithAlpha(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<h4 id="modsheroesdatastormmod-3"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-3">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/SupportLib.galaxy#L783">SupportLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L783</span>
+libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), <span class="hljs-number">175</span>, <span class="hljs-number">25</span>, c_anchorTop, <span class="hljs-number">50</span>, <span class="hljs-number">0</span>, StringExternal(<span class="hljs-string">"Param/Value/lib_Sprt_3EA40164"</span>), Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<h4 id="modsmissionpackscampaigncommonsc2mod"><a class="markdownIt-Anchor" href="#modsmissionpackscampaigncommonsc2mod">#</a> mods/missionpacks/campaigncommon.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/campaigncommon.sc2mod/base.sc2data/LibComC.galaxy#L117">LibComC.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L117</span>
+libNtve_gf_CreateDialogItemLabel(lv_achievementDialog, <span class="hljs-number">200</span>, <span class="hljs-number">50</span>, c_anchorTop, <span class="hljs-number">0</span>, <span class="hljs-number">100</span>, StringExternal(<span class="hljs-string">"Param/Value/lib_ComC_1E62A3BC"</span>), Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<h4 id="modsmissionpacksnovacampaignsc2mod"><a class="markdownIt-Anchor" href="#modsmissionpacksnovacampaignsc2mod">#</a> mods/missionpacks/novacampaign.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/novacampaign.sc2mod/base.sc2data/LibNCMI.galaxy#L5097">LibNCMI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L5097</span>
+libNtve_gf_CreateDialogItemLabel(libNCMI_gv_NM_GameCheat_Dialog, <span class="hljs-number">200</span>, <span class="hljs-number">25</span>, c_anchorTopLeft, <span class="hljs-number">80</span>, ((libNCMI_gv_NM_GameCheat_ArrayIndex * <span class="hljs-number">50</span>) + <span class="hljs-number">55</span>), lv_label, Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<h4 id="modsmissionpacksnovacampaignsc2mod-2"><a class="markdownIt-Anchor" href="#modsmissionpacksnovacampaignsc2mod-2">#</a> mods/missionpacks/novacampaign.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/novacampaign.sc2mod/base.sc2data/LibNCST.galaxy#L4116">LibNCST.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4116</span>
+libNtve_gf_CreateDialogItemLabel(libNCST_gv_nS_DebugStoryDialog, <span class="hljs-number">60</span>, <span class="hljs-number">50</span>, c_anchorTopLeft, <span class="hljs-number">50</span>, <span class="hljs-number">50</span>, StringExternal(<span class="hljs-string">"Param/Value/lib_NCST_C5DC5309"</span>), Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4123</span>
+libNtve_gf_CreateDialogItemLabel(libNCST_gv_nS_DebugStoryDialog, <span class="hljs-number">150</span>, <span class="hljs-number">50</span>, c_anchorTopLeft, <span class="hljs-number">50</span>, <span class="hljs-number">50</span>, StringExternal(<span class="hljs-string">"Param/Value/lib_NCST_0FA8FF05"</span>), Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4130</span>
+libNtve_gf_CreateDialogItemLabel(libNCST_gv_nS_DebugStoryDialog, <span class="hljs-number">80</span>, <span class="hljs-number">50</span>, c_anchorTopLeft, <span class="hljs-number">50</span>, <span class="hljs-number">50</span>, StringExternal(<span class="hljs-string">"Param/Value/lib_NCST_1F9F798F"</span>), Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<h4 id="modsmissionpacksnovacampaignsc2mod-3"><a class="markdownIt-Anchor" href="#modsmissionpacksnovacampaignsc2mod-3">#</a> mods/missionpacks/novacampaign.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/novacampaign.sc2mod/base.sc2data/LibNCUI.galaxy#L520">LibNCUI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L520</span>
+libNtve_gf_CreateDialogItemLabel(libNCUI_gv_nU_ArchivesLoadingDialog, <span class="hljs-number">200</span>, <span class="hljs-number">50</span>, c_anchorBottomLeft, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, StringExternal(<span class="hljs-string">"Param/Value/lib_NCUI_8DFE4298"</span>), Color(<span class="hljs-number">254</span>*<span class="hljs-number">100</span>/<span class="hljs-number">255</span>,<span class="hljs-number">138</span>*<span class="hljs-number">100</span>/<span class="hljs-number">255</span>,<span class="hljs-number">14</span>*<span class="hljs-number">100</span>/<span class="hljs-number">255</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<h4 id="modsmissionpacksnovacampaignsc2mod-4"><a class="markdownIt-Anchor" href="#modsmissionpacksnovacampaignsc2mod-4">#</a> mods/missionpacks/novacampaign.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/novacampaign.sc2mod/base.sc2data/LibNovC.galaxy#L250">LibNovC.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L250</span>
+libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), <span class="hljs-number">1200</span>, <span class="hljs-number">50</span>, c_anchorTopLeft, <span class="hljs-number">50</span>, lv_y, StringExternal(<span class="hljs-string">"Param/Value/lib_NovC_2AB08BE5"</span>), Color(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">25.10</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L269</span>
+libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), <span class="hljs-number">180</span>, <span class="hljs-number">60</span>, c_anchorTopLeft, (lv_x + <span class="hljs-number">30</span>), (lv_y + <span class="hljs-number">80</span>), StringExternal(<span class="hljs-string">"Param/Value/lib_NovC_A7BC7D6A"</span>), Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">50.20</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L280</span>
+libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), <span class="hljs-number">500</span>, <span class="hljs-number">60</span>, c_anchorTopLeft, lv_x, lv_y, StringExternal(<span class="hljs-string">"Param/Value/lib_NovC_7D0D617A"</span>), Color(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">25.10</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L287</span>
+libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), <span class="hljs-number">220</span>, <span class="hljs-number">60</span>, c_anchorTopLeft, lv_x, lv_y, StringExternal(<span class="hljs-string">"Param/Value/lib_NovC_198090FF"</span>), Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L509</span>
+libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), <span class="hljs-number">1000</span>, <span class="hljs-number">50</span>, c_anchorTopLeft, <span class="hljs-number">50</span>, lv_y, StringExternal(<span class="hljs-string">"Param/Value/lib_NovC_4D23591E"</span>), Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">50.20</span>, <span class="hljs-number">25.10</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L520</span>
+libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), <span class="hljs-number">500</span>, <span class="hljs-number">60</span>, c_anchorTopLeft, lv_x, lv_y, libComC_gf_CC_PerkGroupName(lv_indexEquipmentGroup), Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">50.20</span>, <span class="hljs-number">25.10</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L532</span>
+libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), <span class="hljs-number">220</span>, <span class="hljs-number">60</span>, c_anchorTopLeft, lv_x, lv_y, libComC_gf_CC_PerkName(lv_indexEquipment), Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L888</span>
+libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), <span class="hljs-number">450</span>, <span class="hljs-number">50</span>, c_anchorTopLeft, <span class="hljs-number">50</span>, <span class="hljs-number">130</span>, StringExternal(<span class="hljs-string">"Param/Value/lib_NovC_A88CC51D"</span>), ColorWithAlpha(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L897</span>
+libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), <span class="hljs-number">600</span>, <span class="hljs-number">400</span>, c_anchorTopLeft, <span class="hljs-number">50</span>, <span class="hljs-number">50</span>, StringToText(<span class="hljs-string">""</span>), ColorWithAlpha(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<h4 id="modsnovastoryassetssc2mod"><a class="markdownIt-Anchor" href="#modsnovastoryassetssc2mod">#</a> mods/novastoryassets.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/novastoryassets.sc2mod/base.sc2maps/maps/campaign/nova/nova01.sc2map/MapScript.galaxy#L7430">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L7430</span>
+libNtve_gf_CreateDialogItemLabel(gv_vultureDistanceDialog, <span class="hljs-number">260</span>, <span class="hljs-number">45</span>, c_anchorTop, <span class="hljs-number">0</span>, <span class="hljs-number">10</span>, StringExternal(<span class="hljs-string">"Param/Value/5B8ECC81"</span>), Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7434</span>
+libNtve_gf_CreateDialogItemLabel(gv_vultureDistanceDialog, <span class="hljs-number">500</span>, <span class="hljs-number">25</span>, c_anchorBottom, <span class="hljs-number">0</span>, <span class="hljs-number">10</span>, TextExpressionAssemble(<span class="hljs-string">"Param/Expression/C759D4AC"</span>), Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1349</span>
+libNtve_gf_CreateDialogItemLabel(gv_gorgonDialog.lv_dialog, <span class="hljs-number">68</span>, <span class="hljs-number">68</span>, c_anchorLeft, <span class="hljs-number">35</span>, <span class="hljs-number">2</span>, FixedToText(libNtve_gf_DifficultyValueFixed(<span class="hljs-number">180.0</span>, <span class="hljs-number">180.0</span>, <span class="hljs-number">240.0</span>, <span class="hljs-number">300.0</span>), c_fixedPrecisionAny), ColorWithAlpha(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1353</span>
+libNtve_gf_CreateDialogItemLabel(gv_gorgonDialog.lv_dialog, <span class="hljs-number">68</span>, <span class="hljs-number">68</span>, c_anchorLeft, <span class="hljs-number">115</span>, <span class="hljs-number">2</span>, FixedToText(libNtve_gf_DifficultyValueFixed(<span class="hljs-number">180.0</span>, <span class="hljs-number">180.0</span>, <span class="hljs-number">240.0</span>, <span class="hljs-number">300.0</span>), c_fixedPrecisionAny), ColorWithAlpha(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1357</span>
+libNtve_gf_CreateDialogItemLabel(gv_gorgonDialog.lv_dialog, <span class="hljs-number">68</span>, <span class="hljs-number">68</span>, c_anchorLeft, <span class="hljs-number">195</span>, <span class="hljs-number">2</span>, FixedToText(libNtve_gf_DifficultyValueFixed(<span class="hljs-number">180.0</span>, <span class="hljs-number">180.0</span>, <span class="hljs-number">240.0</span>, <span class="hljs-number">300.0</span>), c_fixedPrecisionAny), ColorWithAlpha(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7430</span>
+libNtve_gf_CreateDialogItemLabel(gv_vultureDistanceDialog, <span class="hljs-number">260</span>, <span class="hljs-number">45</span>, c_anchorTop, <span class="hljs-number">0</span>, <span class="hljs-number">10</span>, StringExternal(<span class="hljs-string">"Param/Value/5B8ECC81"</span>), Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7434</span>
+libNtve_gf_CreateDialogItemLabel(gv_vultureDistanceDialog, <span class="hljs-number">500</span>, <span class="hljs-number">25</span>, c_anchorBottom, <span class="hljs-number">0</span>, <span class="hljs-number">10</span>, TextExpressionAssemble(<span class="hljs-string">"Param/Expression/C759D4AC"</span>), Color(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1349</span>
+libNtve_gf_CreateDialogItemLabel(gv_gorgonDialog.lv_dialog, <span class="hljs-number">68</span>, <span class="hljs-number">68</span>, c_anchorLeft, <span class="hljs-number">35</span>, <span class="hljs-number">2</span>, FixedToText(libNtve_gf_DifficultyValueFixed(<span class="hljs-number">180.0</span>, <span class="hljs-number">180.0</span>, <span class="hljs-number">240.0</span>, <span class="hljs-number">300.0</span>), c_fixedPrecisionAny), ColorWithAlpha(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1353</span>
+libNtve_gf_CreateDialogItemLabel(gv_gorgonDialog.lv_dialog, <span class="hljs-number">68</span>, <span class="hljs-number">68</span>, c_anchorLeft, <span class="hljs-number">115</span>, <span class="hljs-number">2</span>, FixedToText(libNtve_gf_DifficultyValueFixed(<span class="hljs-number">180.0</span>, <span class="hljs-number">180.0</span>, <span class="hljs-number">240.0</span>, <span class="hljs-number">300.0</span>), c_fixedPrecisionAny), ColorWithAlpha(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1357</span>
+libNtve_gf_CreateDialogItemLabel(gv_gorgonDialog.lv_dialog, <span class="hljs-number">68</span>, <span class="hljs-number">68</span>, c_anchorLeft, <span class="hljs-number">195</span>, <span class="hljs-number">2</span>, FixedToText(libNtve_gf_DifficultyValueFixed(<span class="hljs-number">180.0</span>, <span class="hljs-number">180.0</span>, <span class="hljs-number">240.0</span>, <span class="hljs-number">300.0</span>), c_fixedPrecisionAny), ColorWithAlpha(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOMU.galaxy#L7696">LibCOMU.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L7696</span>
+libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), <span class="hljs-number">1000</span>, <span class="hljs-number">50</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">100</span>, StringExternal(<span class="hljs-string">"Param/Value/lib_COMU_6FE6FC64"</span>), Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7700</span>
+libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), <span class="hljs-number">1000</span>, <span class="hljs-number">50</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">50</span>, StringExternal(<span class="hljs-string">"Param/Value/lib_COMU_12147283"</span>), Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

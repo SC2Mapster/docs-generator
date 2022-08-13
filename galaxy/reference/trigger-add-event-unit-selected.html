@@ -1,0 +1,425 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Unit Is Selected / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Unit Is Selected"/>
+                <meta property="og:description" content="This event fires when a unit is selected.  Use &quot;Triggering Unit&quot; to refer to the unit being selected or deselected.  Use &quot;Triggering Player&quot; to get the player that selected the unit."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="unit-is-selected"><a class="markdownIt-Anchor" href="#unit-is-selected">#</a> Unit Is Selected</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — <strong>unit</strong> is <strong>state</strong> by player <strong>player</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Event</code></p>
+</blockquote>
+<p>This event fires when a unit is selected.  Use <em>“Triggering Unit”</em> to refer to the unit being selected or deselected.  Use <em>“Triggering Player”</em> to get the player that selected the unit.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>unitref</code> <em>[ unit ]</em> — Unit</li>
+<li><code>int</code> — Player</li>
+<li><code>bool</code> <em>[ preset::<a href="/galaxy/reference/preset-select-deselect-state">SelectDeselectState</a> ]</em> — Selected/Deselected</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">TriggerAddEventUnitSelected</span><span class="hljs-params">(
+	trigger t,
+	unitref u,
+	<span class="hljs-keyword">int</span> player,
+	<span class="hljs-keyword">bool</span> state,
+)</span></span>;
+</code></pre>
+<h3 id="event-parameters"><a class="markdownIt-Anchor" href="#event-parameters">#</a> Event parameters</h3>
+<ul>
+<li><a href="/galaxy/reference/event-game-user">Triggering Game User</a> — EventGameUser</li>
+<li><a href="/galaxy/reference/event-player">Triggering Player</a> — EventPlayer</li>
+<li><a href="/galaxy/reference/event-unit">Triggering Unit</a> — EventUnit</li>
+</ul>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#selection-unit-selection">Selection / Unit Selection</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/unit-subgroup-index-selected">Subgroup Index</a></strong> — ( UnitSubgroupIndexSelected )</li>
+<li><em><strong>[F]</strong></em> — <code>unitgroup</code> — <strong><a href="/galaxy/reference/unit-subgroup-selected">Selected Subgroup Units</a></strong> — ( UnitSubgroupSelected )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-select">Select/Deselect Unit</a></strong> — ( UnitSelect )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-subgroup-index-next">Select Next Subgroup</a></strong> — ( UnitSubgroupIndexNext )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-subgroup-index-previous">Select Previous Subgroup</a></strong> — ( UnitSubgroupIndexPrevious )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-group-select">Select/Deselect Unit Group</a></strong> — ( UnitGroupSelect )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-clear-selection">Clear Unit Selection</a></strong> — ( UnitClearSelection )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/unit-is-selected">Unit Is Selected</a></strong> — ( UnitIsSelected )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-unit-type-is-selected">Unit Type Is Selected</a></strong> — ( libNtve_gf_UnitTypeIsSelected )</li>
+<li><em><strong>[F]</strong></em> — <code>unitgroup</code> — <strong><a href="/galaxy/reference/unit-group-selected">Selected Units</a></strong> — ( UnitGroupSelected )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-unit-selected">Unit Is Selected</a></strong> — ( TriggerAddEventUnitSelected )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-store-unit-selection">Store Unit Selection</a></strong> — ( libNtve_gf_StoreUnitSelection )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-restore-unit-selection">Restore Unit Selection</a></strong> — ( libNtve_gf_RestoreUnitSelection )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-flash-selection">Flash Unit Selection</a></strong> — ( UnitFlashSelection )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/thorner04.sc2map/MapScript.galaxy#L5602">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L5602</span>
+TriggerAddEventUnitSelected(gt_NewUnitThorTipQ, null, gv_p01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1338</span>
+TriggerAddEventUnitSelected(gt_SCVSafetyTXTkiller, null, gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2929</span>
+TriggerAddEventUnitSelected(gt_ObjectiveMovement01Complete, null, c_playerAny, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3667</span>
+TriggerAddEventUnitSelected(gt_ObjectiveMovement04Complete, null, c_playerAny, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5931</span>
+TriggerAddEventUnitSelected(gt_ObjectiveConstruction01Complete, null, c_playerAny, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7694</span>
+TriggerAddEventUnitSelected(gt_Collection03SCVSelectCheck, null, c_playerAny, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8161</span>
+TriggerAddEventUnitSelected(gt_ObjectiveProduction01Complete, null, c_playerAny, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3063</span>
+TriggerAddEventUnitSelected(gt_TIPFusionCoreQ, null, gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5602</span>
+TriggerAddEventUnitSelected(gt_NewUnitThorTipQ, null, gv_p01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1338</span>
+TriggerAddEventUnitSelected(gt_SCVSafetyTXTkiller, null, gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2929</span>
+TriggerAddEventUnitSelected(gt_ObjectiveMovement01Complete, null, c_playerAny, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3667</span>
+TriggerAddEventUnitSelected(gt_ObjectiveMovement04Complete, null, c_playerAny, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5931</span>
+TriggerAddEventUnitSelected(gt_ObjectiveConstruction01Complete, null, c_playerAny, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7694</span>
+TriggerAddEventUnitSelected(gt_Collection03SCVSelectCheck, null, c_playerAny, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8161</span>
+TriggerAddEventUnitSelected(gt_ObjectiveProduction01Complete, null, c_playerAny, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3063</span>
+TriggerAddEventUnitSelected(gt_TIPFusionCoreQ, null, gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="campaignslibertystorysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertystorysc2campaign">#</a> campaigns/libertystory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/libertystory.sc2campaign/base.sc2data/TriggerLibs/CampaignLib.galaxy#L11705">CampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L11705</span>
+TriggerAddEventUnitSelected(libCamp_gt__CB_ChatBubbleActivated, null, c_playerAny, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="campaignsswarmsc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmsc2campaign">#</a> campaigns/swarm.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarm.sc2campaign/base.sc2maps/maps/campaign/swarm/zchar01.sc2map/MapScript.galaxy#L3151">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3151</span>
+TriggerAddEventUnitSelected(gt_ZerglingSelectedtoMorphBaneling, null, gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2025</span>
+TriggerAddEventUnitSelected(gt_DroneSelected, UnitRefFromVariable(<span class="hljs-string">"gv_startingDrone"</span>), gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3161</span>
+TriggerAddEventUnitSelected(gt_HarvestingSelectDrones, UnitRefFromVariable(<span class="hljs-string">"gv_extraDroneUnit01"</span>), gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3162</span>
+TriggerAddEventUnitSelected(gt_HarvestingSelectDrones, UnitRefFromVariable(<span class="hljs-string">"gv_extraDroneUnit02"</span>), gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3163</span>
+TriggerAddEventUnitSelected(gt_HarvestingSelectDrones, UnitRefFromVariable(<span class="hljs-string">"gv_extraDroneUnit03"</span>), gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3164</span>
+TriggerAddEventUnitSelected(gt_HarvestingSelectDrones, UnitRefFromVariable(<span class="hljs-string">"gv_extraDroneUnit04"</span>), gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3165</span>
+TriggerAddEventUnitSelected(gt_HarvestingSelectDrones, UnitRefFromVariable(<span class="hljs-string">"gv_extraDroneUnit05"</span>), gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3166</span>
+TriggerAddEventUnitSelected(gt_HarvestingSelectDrones, UnitRefFromVariable(<span class="hljs-string">"gv_extraDroneUnit06"</span>), gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3753</span>
+TriggerAddEventUnitSelected(gt_OverlordHatcherySelected, null, gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3802</span>
+TriggerAddEventUnitSelected(gt_OverlordLarvaSelected, null, gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4603</span>
+TriggerAddEventUnitSelected(gt_SpawningPoolDroneSelected, null, gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3155</span>
+TriggerAddEventUnitSelected(gt_QueenHatcherySelected, null, gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3463</span>
+TriggerAddEventUnitSelected(gt_ExtractorDroneSelected, null, gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3774</span>
+TriggerAddEventUnitSelected(gt_OverlordHatcherySelected, null, gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4035</span>
+TriggerAddEventUnitSelected(gt_DronesHatcherySelected, null, gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3151</span>
+TriggerAddEventUnitSelected(gt_ZerglingSelectedtoMorphBaneling, null, gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2025</span>
+TriggerAddEventUnitSelected(gt_DroneSelected, UnitRefFromVariable(<span class="hljs-string">"gv_startingDrone"</span>), gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3161</span>
+TriggerAddEventUnitSelected(gt_HarvestingSelectDrones, UnitRefFromVariable(<span class="hljs-string">"gv_extraDroneUnit01"</span>), gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3162</span>
+TriggerAddEventUnitSelected(gt_HarvestingSelectDrones, UnitRefFromVariable(<span class="hljs-string">"gv_extraDroneUnit02"</span>), gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3163</span>
+TriggerAddEventUnitSelected(gt_HarvestingSelectDrones, UnitRefFromVariable(<span class="hljs-string">"gv_extraDroneUnit03"</span>), gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3164</span>
+TriggerAddEventUnitSelected(gt_HarvestingSelectDrones, UnitRefFromVariable(<span class="hljs-string">"gv_extraDroneUnit04"</span>), gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3165</span>
+TriggerAddEventUnitSelected(gt_HarvestingSelectDrones, UnitRefFromVariable(<span class="hljs-string">"gv_extraDroneUnit05"</span>), gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3166</span>
+TriggerAddEventUnitSelected(gt_HarvestingSelectDrones, UnitRefFromVariable(<span class="hljs-string">"gv_extraDroneUnit06"</span>), gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3753</span>
+TriggerAddEventUnitSelected(gt_OverlordHatcherySelected, null, gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3802</span>
+TriggerAddEventUnitSelected(gt_OverlordLarvaSelected, null, gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4603</span>
+TriggerAddEventUnitSelected(gt_SpawningPoolDroneSelected, null, gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3155</span>
+TriggerAddEventUnitSelected(gt_QueenHatcherySelected, null, gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3463</span>
+TriggerAddEventUnitSelected(gt_ExtractorDroneSelected, null, gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3774</span>
+TriggerAddEventUnitSelected(gt_OverlordHatcherySelected, null, gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4035</span>
+TriggerAddEventUnitSelected(gt_DronesHatcherySelected, null, gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3579</span>
+TriggerAddEventUnitSelected(gt_SupplyHelperSelection, null, gv_p01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3580</span>
+TriggerAddEventUnitSelected(gt_SupplyHelperSelection, null, gv_p01_USER, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4020</span>
+TriggerAddEventUnitSelected(gt_BasicSelectMarineComplete, null, gv_p01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5150</span>
+TriggerAddEventUnitSelected(gt_BasicDragSelectComplete, null, c_playerAny, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6478</span>
+TriggerAddEventUnitSelected(gt_TerranMakeSCVsCommandCenterSelection, null, gv_p01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6479</span>
+TriggerAddEventUnitSelected(gt_TerranMakeSCVsCommandCenterSelection, null, gv_p01_USER, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6987</span>
+TriggerAddEventUnitSelected(gt_TerranMakeSupplySCVSelection, null, gv_p01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6988</span>
+TriggerAddEventUnitSelected(gt_TerranMakeSupplySCVSelection, null, gv_p01_USER, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7413</span>
+TriggerAddEventUnitSelected(gt_TerranIdleSCVSCVSelection, null, gv_p01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7414</span>
+TriggerAddEventUnitSelected(gt_TerranIdleSCVSCVSelection, null, gv_p01_USER, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2303</span>
+TriggerAddEventUnitSelected(gt_TBuildPylonProbeSelection, null, gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2304</span>
+TriggerAddEventUnitSelected(gt_TBuildPylonProbeSelection, null, gv_pLAYER_01_USER, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2776</span>
+TriggerAddEventUnitSelected(gt_TTrainWarriorGatewaySelection, null, gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2777</span>
+TriggerAddEventUnitSelected(gt_TTrainWarriorGatewaySelection, null, gv_pLAYER_01_USER, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2984</span>
+TriggerAddEventUnitSelected(gt_TMakeAssimilatorProbeSelection, null, gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2985</span>
+TriggerAddEventUnitSelected(gt_TMakeAssimilatorProbeSelection, null, gv_pLAYER_01_USER, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3413</span>
+TriggerAddEventUnitSelected(gt_TTransferProbesProbeSelection, null, gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3414</span>
+TriggerAddEventUnitSelected(gt_TTransferProbesProbeSelection, null, gv_pLAYER_01_USER, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3627</span>
+TriggerAddEventUnitSelected(gt_TTrainMoreProbesNexusSelection, null, gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3628</span>
+TriggerAddEventUnitSelected(gt_TTrainMoreProbesNexusSelection, null, gv_pLAYER_01_USER, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2358</span>
+TriggerAddEventUnitSelected(gt_SentryGatewaySelectedCleanup, null, gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1848</span>
+TriggerAddEventUnitSelected(gt_PlayerClicksOnRoboticsFacility, UnitRefFromUnit(UnitFromId(<span class="hljs-number">123</span>)), gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1580</span>
+TriggerAddEventUnitSelected(gt_StargateSelectedCleanup, null, gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1254</span>
+TriggerAddEventUnitSelected(gt_StargateSelectedCleanup, null, gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1793</span>
+TriggerAddEventUnitSelected(gt_S1_KerriganSelected, UnitRefFromVariable(<span class="hljs-string">"gv_kERRIGAN"</span>), gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1830</span>
+TriggerAddEventUnitSelected(gt_S1_KerriganDeSelected, UnitRefFromVariable(<span class="hljs-string">"gv_kERRIGAN"</span>), gv_pLAYER_01_USER, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2983</span>
+TriggerAddEventUnitSelected(gt_S2_FlashKerriganSelectButtonStop, UnitRefFromVariable(<span class="hljs-string">"gv_kERRIGAN"</span>), c_playerAny, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3579</span>
+TriggerAddEventUnitSelected(gt_SupplyHelperSelection, null, gv_p01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3580</span>
+TriggerAddEventUnitSelected(gt_SupplyHelperSelection, null, gv_p01_USER, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4020</span>
+TriggerAddEventUnitSelected(gt_BasicSelectMarineComplete, null, gv_p01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5150</span>
+TriggerAddEventUnitSelected(gt_BasicDragSelectComplete, null, c_playerAny, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6478</span>
+TriggerAddEventUnitSelected(gt_TerranMakeSCVsCommandCenterSelection, null, gv_p01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6479</span>
+TriggerAddEventUnitSelected(gt_TerranMakeSCVsCommandCenterSelection, null, gv_p01_USER, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6987</span>
+TriggerAddEventUnitSelected(gt_TerranMakeSupplySCVSelection, null, gv_p01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6988</span>
+TriggerAddEventUnitSelected(gt_TerranMakeSupplySCVSelection, null, gv_p01_USER, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7413</span>
+TriggerAddEventUnitSelected(gt_TerranIdleSCVSCVSelection, null, gv_p01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7414</span>
+TriggerAddEventUnitSelected(gt_TerranIdleSCVSCVSelection, null, gv_p01_USER, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2303</span>
+TriggerAddEventUnitSelected(gt_TBuildPylonProbeSelection, null, gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2304</span>
+TriggerAddEventUnitSelected(gt_TBuildPylonProbeSelection, null, gv_pLAYER_01_USER, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2776</span>
+TriggerAddEventUnitSelected(gt_TTrainWarriorGatewaySelection, null, gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2777</span>
+TriggerAddEventUnitSelected(gt_TTrainWarriorGatewaySelection, null, gv_pLAYER_01_USER, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2984</span>
+TriggerAddEventUnitSelected(gt_TMakeAssimilatorProbeSelection, null, gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2985</span>
+TriggerAddEventUnitSelected(gt_TMakeAssimilatorProbeSelection, null, gv_pLAYER_01_USER, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3413</span>
+TriggerAddEventUnitSelected(gt_TTransferProbesProbeSelection, null, gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3414</span>
+TriggerAddEventUnitSelected(gt_TTransferProbesProbeSelection, null, gv_pLAYER_01_USER, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3627</span>
+TriggerAddEventUnitSelected(gt_TTrainMoreProbesNexusSelection, null, gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3628</span>
+TriggerAddEventUnitSelected(gt_TTrainMoreProbesNexusSelection, null, gv_pLAYER_01_USER, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2358</span>
+TriggerAddEventUnitSelected(gt_SentryGatewaySelectedCleanup, null, gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1848</span>
+TriggerAddEventUnitSelected(gt_PlayerClicksOnRoboticsFacility, UnitRefFromUnit(UnitFromId(<span class="hljs-number">123</span>)), gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1580</span>
+TriggerAddEventUnitSelected(gt_StargateSelectedCleanup, null, gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1254</span>
+TriggerAddEventUnitSelected(gt_StargateSelectedCleanup, null, gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1793</span>
+TriggerAddEventUnitSelected(gt_S1_KerriganSelected, UnitRefFromVariable(<span class="hljs-string">"gv_kERRIGAN"</span>), gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1830</span>
+TriggerAddEventUnitSelected(gt_S1_KerriganDeSelected, UnitRefFromVariable(<span class="hljs-string">"gv_kERRIGAN"</span>), gv_pLAYER_01_USER, <span class="hljs-literal">false</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

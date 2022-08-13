@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>For Each Player In Player Group / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: For Each Player In Player Group"/>
+                <meta property="og:description" content="Executes a For Loop using an integer value.  This will run the action set included under the For Each Player In Player Group action for every player in the specified player group.  For example: If you put a &quot;Set Player Color&quot; action that changed the color for Player &lt;Integer variable&gt;, under a For Each Player In Player Group action with the Player Group parameter set to All Players, it would change the color for all players."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="for-each-player-in-player-group"><a class="markdownIt-Anchor" href="#for-each-player-in-player-group">#</a> For Each Player In Player Group</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — For each player <strong>var|Player</strong> in <strong>group</strong> do (Actions)<br>
+<em>Flags</em> — <code>SubFunctions</code> | <code>Action</code></p>
+</blockquote>
+<p>Executes a For Loop using an integer value.  This will run the action set included under the For Each Player In Player Group action for every player in the specified player group.  For example: If you put a <em>“Set Player Color”</em> action that changed the color for Player <Integer variable>, under a For Each Player In Player Group action with the Player Group parameter set to All Players, it would change the color for all players.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>anyvariable</code> — Player Variable</li>
+<li><code>playergroup</code> — Player Group</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code>#AUTOVAR(g, playergroup) = #PARAM(group);
+#PARAM(var) = <span class="hljs-number">-1</span>;
+<span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>) {
+    #PARAM(var) = PlayerGroupNextPlayer(#AUTOVAR(g), #PARAM(var));
+    <span class="hljs-keyword">if</span> (#PARAM(var) &lt; <span class="hljs-number">0</span>) { <span class="hljs-keyword">break</span>; }
+    #SUBFUNCS(actions)
+}
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#player-group-loops">Player Group / Loops</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-for-each-player-in-group">For Each Player In Player Group</a></strong> — (  )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-for-each-player-in-group-deprecated">For Each Player In Player Group Deprecated</a></strong> — (  )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-pick-each-player-in-group">Pick Each Player In Player Group</a></strong> — (  )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-pick-each-player-in-group-deprecated">Pick Each Player In Player Group Deprecated</a></strong> — (  )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/lib-ntve-op-player-group-loop-current">Picked Player</a></strong> — (  )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/player-group-loop-current-deprecated">Picked Player Deprecated</a></strong> — ( PlayerGroupLoopCurrentDeprecated )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<p>— None found —</p>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,412 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Store Unit Selection / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Store Unit Selection"/>
+                <meta property="og:description" content="Stores which units a given player has selected.  Use the &quot;Restore Unit Selection&quot; action to restore this selection."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="store-unit-selection"><a class="markdownIt-Anchor" href="#store-unit-selection">#</a> Store Unit Selection</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Store unit selection for player <strong>forPlayer|Player</strong> and <strong>storeOption|Store Option</strong><br>
+<em>Flags</em> — <code>Action</code></p>
+</blockquote>
+<p>Stores which units a given player has selected.  Use the <em>“Restore Unit Selection”</em> action to restore this selection.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> — forPlayer</li>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-unit-selection-store-option">UnitSelectionStoreOption</a> ]</em> — storeOption</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">libNtve_gf_StoreUnitSelection</span><span class="hljs-params">(
+	<span class="hljs-keyword">int</span> lp_forPlayer,
+	<span class="hljs-keyword">int</span> lp_storeOption,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#selection-unit-selection">Selection / Unit Selection</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/unit-subgroup-index-selected">Subgroup Index</a></strong> — ( UnitSubgroupIndexSelected )</li>
+<li><em><strong>[F]</strong></em> — <code>unitgroup</code> — <strong><a href="/galaxy/reference/unit-subgroup-selected">Selected Subgroup Units</a></strong> — ( UnitSubgroupSelected )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-select">Select/Deselect Unit</a></strong> — ( UnitSelect )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-subgroup-index-next">Select Next Subgroup</a></strong> — ( UnitSubgroupIndexNext )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-subgroup-index-previous">Select Previous Subgroup</a></strong> — ( UnitSubgroupIndexPrevious )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-group-select">Select/Deselect Unit Group</a></strong> — ( UnitGroupSelect )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-clear-selection">Clear Unit Selection</a></strong> — ( UnitClearSelection )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/unit-is-selected">Unit Is Selected</a></strong> — ( UnitIsSelected )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-unit-type-is-selected">Unit Type Is Selected</a></strong> — ( libNtve_gf_UnitTypeIsSelected )</li>
+<li><em><strong>[F]</strong></em> — <code>unitgroup</code> — <strong><a href="/galaxy/reference/unit-group-selected">Selected Units</a></strong> — ( UnitGroupSelected )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-unit-selected">Unit Is Selected</a></strong> — ( TriggerAddEventUnitSelected )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-store-unit-selection">Store Unit Selection</a></strong> — ( libNtve_gf_StoreUnitSelection )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-restore-unit-selection">Restore Unit Selection</a></strong> — ( libNtve_gf_RestoreUnitSelection )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-flash-selection">Flash Unit Selection</a></strong> — ( UnitFlashSelection )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/thorner02.sc2map/MapScript.galaxy#L5447">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L5447</span>
+libNtve_gf_StoreUnitSelection(gv_p01_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5483</span>
+libNtve_gf_StoreUnitSelection(gv_p01_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6560</span>
+libNtve_gf_StoreUnitSelection(gv_p01_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3077</span>
+libNtve_gf_StoreUnitSelection(gv_p01_USER, libNtve_ge_UnitSelectionStoreOption_DoNotClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3990</span>
+libNtve_gf_StoreUnitSelection(gv_p01_USER, libNtve_ge_UnitSelectionStoreOption_DoNotClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4805</span>
+libNtve_gf_StoreUnitSelection(gv_p01_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5247</span>
+libNtve_gf_StoreUnitSelection(gv_p01_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5737</span>
+libNtve_gf_StoreUnitSelection(gv_p01_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11598</span>
+libNtve_gf_StoreUnitSelection(gv_p01_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11979</span>
+libNtve_gf_StoreUnitSelection(gv_p01_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12177</span>
+libNtve_gf_StoreUnitSelection(gv_p01_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5306</span>
+libNtve_gf_StoreUnitSelection(gv_p1_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5511</span>
+libNtve_gf_StoreUnitSelection(gv_p1_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5166</span>
+libNtve_gf_StoreUnitSelection(gv_p1_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3643</span>
+libNtve_gf_StoreUnitSelection(gv_pLAYER01_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5083</span>
+libNtve_gf_StoreUnitSelection(gv_pLAYER_01_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5512</span>
+libNtve_gf_StoreUnitSelection(gv_pLAYER_01_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5779</span>
+libNtve_gf_StoreUnitSelection(gv_pLAYER_01_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7679</span>
+libNtve_gf_StoreUnitSelection(gv_p01_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9423</span>
+libNtve_gf_StoreUnitSelection(gv_p1_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9776</span>
+libNtve_gf_StoreUnitSelection(gv_p1_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10158</span>
+libNtve_gf_StoreUnitSelection(gv_p1_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10499</span>
+libNtve_gf_StoreUnitSelection(gv_p1_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10941</span>
+libNtve_gf_StoreUnitSelection(gv_p1_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11512</span>
+libNtve_gf_StoreUnitSelection(gv_p1_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5601</span>
+libNtve_gf_StoreUnitSelection(gv_pLAYER_P01_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6538</span>
+libNtve_gf_StoreUnitSelection(gv_pLAYER_P01_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6804</span>
+libNtve_gf_StoreUnitSelection(gv_pLAYER_P01_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8885</span>
+libNtve_gf_StoreUnitSelection(gv_p1_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9292</span>
+libNtve_gf_StoreUnitSelection(gv_p1_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6708</span>
+libNtve_gf_StoreUnitSelection(gv_p1_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4732</span>
+libNtve_gf_StoreUnitSelection(gv_p01_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5134</span>
+libNtve_gf_StoreUnitSelection(gv_p01_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6251</span>
+libNtve_gf_StoreUnitSelection(gv_p01_PLAYER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5447</span>
+libNtve_gf_StoreUnitSelection(gv_p01_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5483</span>
+libNtve_gf_StoreUnitSelection(gv_p01_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6560</span>
+libNtve_gf_StoreUnitSelection(gv_p01_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3077</span>
+libNtve_gf_StoreUnitSelection(gv_p01_USER, libNtve_ge_UnitSelectionStoreOption_DoNotClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3990</span>
+libNtve_gf_StoreUnitSelection(gv_p01_USER, libNtve_ge_UnitSelectionStoreOption_DoNotClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4805</span>
+libNtve_gf_StoreUnitSelection(gv_p01_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5247</span>
+libNtve_gf_StoreUnitSelection(gv_p01_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5737</span>
+libNtve_gf_StoreUnitSelection(gv_p01_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11598</span>
+libNtve_gf_StoreUnitSelection(gv_p01_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11979</span>
+libNtve_gf_StoreUnitSelection(gv_p01_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12177</span>
+libNtve_gf_StoreUnitSelection(gv_p01_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5306</span>
+libNtve_gf_StoreUnitSelection(gv_p1_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5511</span>
+libNtve_gf_StoreUnitSelection(gv_p1_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5166</span>
+libNtve_gf_StoreUnitSelection(gv_p1_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3643</span>
+libNtve_gf_StoreUnitSelection(gv_pLAYER01_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5083</span>
+libNtve_gf_StoreUnitSelection(gv_pLAYER_01_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5512</span>
+libNtve_gf_StoreUnitSelection(gv_pLAYER_01_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5779</span>
+libNtve_gf_StoreUnitSelection(gv_pLAYER_01_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7679</span>
+libNtve_gf_StoreUnitSelection(gv_p01_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9423</span>
+libNtve_gf_StoreUnitSelection(gv_p1_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9776</span>
+libNtve_gf_StoreUnitSelection(gv_p1_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10158</span>
+libNtve_gf_StoreUnitSelection(gv_p1_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10499</span>
+libNtve_gf_StoreUnitSelection(gv_p1_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10941</span>
+libNtve_gf_StoreUnitSelection(gv_p1_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11512</span>
+libNtve_gf_StoreUnitSelection(gv_p1_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5601</span>
+libNtve_gf_StoreUnitSelection(gv_pLAYER_P01_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6538</span>
+libNtve_gf_StoreUnitSelection(gv_pLAYER_P01_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6804</span>
+libNtve_gf_StoreUnitSelection(gv_pLAYER_P01_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8885</span>
+libNtve_gf_StoreUnitSelection(gv_p1_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9292</span>
+libNtve_gf_StoreUnitSelection(gv_p1_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6708</span>
+libNtve_gf_StoreUnitSelection(gv_p1_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4732</span>
+libNtve_gf_StoreUnitSelection(gv_p01_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5134</span>
+libNtve_gf_StoreUnitSelection(gv_p01_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6251</span>
+libNtve_gf_StoreUnitSelection(gv_p01_PLAYER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6037</span>
+libNtve_gf_StoreUnitSelection(gv_pLAYER_01_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5515</span>
+libNtve_gf_StoreUnitSelection(gv_pLAYER_01_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5124</span>
+libNtve_gf_StoreUnitSelection(gv_pLAYER_01_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5905</span>
+libNtve_gf_StoreUnitSelection(gv_pLAYER_01_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7353</span>
+libNtve_gf_StoreUnitSelection(gv_pLAYER_01_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8951</span>
+libNtve_gf_StoreUnitSelection(gv_pLAYER_01_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5863</span>
+libNtve_gf_StoreUnitSelection(gv_pLAYER_01_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5915</span>
+libNtve_gf_StoreUnitSelection(gv_pLAYER_01_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5439</span>
+libNtve_gf_StoreUnitSelection(gv_PLAYER_01_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10402</span>
+libNtve_gf_StoreUnitSelection(gv_pLAYER_01_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6377</span>
+libNtve_gf_StoreUnitSelection(gv_pLAYER_01_USER, libNtve_ge_UnitSelectionStoreOption_DoNotClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11481</span>
+libNtve_gf_StoreUnitSelection(gv_pLAYER_01_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11855</span>
+libNtve_gf_StoreUnitSelection(gv_pLAYER_01_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12148</span>
+libNtve_gf_StoreUnitSelection(gv_pLAYER_01_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8922</span>
+libNtve_gf_StoreUnitSelection(gv_pLAYER_01_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6485</span>
+libNtve_gf_StoreUnitSelection(gv_pLAYER_01_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8033</span>
+libNtve_gf_StoreUnitSelection(gv_p01_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8334</span>
+libNtve_gf_StoreUnitSelection(gv_p01_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7291</span>
+libNtve_gf_StoreUnitSelection(gv_pLAYER_01_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9579</span>
+libNtve_gf_StoreUnitSelection(gv_pLAYER_01_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9635</span>
+libNtve_gf_StoreUnitSelection(gv_pLAYER_01_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9691</span>
+libNtve_gf_StoreUnitSelection(gv_pLAYER_01_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9736</span>
+libNtve_gf_StoreUnitSelection(gv_pLAYER_01_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10634</span>
+libNtve_gf_StoreUnitSelection(gv_pLAYER_01_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11071</span>
+libNtve_gf_StoreUnitSelection(gv_pLAYER_01_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11546</span>
+libNtve_gf_StoreUnitSelection(gv_pLAYER_01_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12045</span>
+libNtve_gf_StoreUnitSelection(gv_pLAYER_01_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3930</span>
+libNtve_gf_StoreUnitSelection(gv_pLAYER_01_USER, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4495</span>
+libNtve_gf_StoreUnitSelection(gv_pLAYER_01_USER, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3930</span>
+libNtve_gf_StoreUnitSelection(gv_pLAYER_01_USER, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4495</span>
+libNtve_gf_StoreUnitSelection(gv_pLAYER_01_USER, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5515</span>
+libNtve_gf_StoreUnitSelection(gv_pLAYER_01_USER, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

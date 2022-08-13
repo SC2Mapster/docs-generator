@@ -1,0 +1,413 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Set Sound Channel Volume / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Set Sound Channel Volume"/>
+                <meta property="og:description" content="Sets a specified sound channel to a volume for the specified player group."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="set-sound-channel-volume"><a class="markdownIt-Anchor" href="#set-sound-channel-volume">#</a> Set Sound Channel Volume</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Set <strong>channel</strong> channel volume to <strong>volume</strong>% over <strong>duration</strong> seconds for <strong>players</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Sets a specified sound channel to a volume for the specified player group.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>playergroup</code> — Players</li>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-sound-channel">SoundChannel</a> ]</em> — Channel</li>
+<li><code>fixed</code> — Volume</li>
+<li><code>fixed</code> — Duration</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">SoundChannelSetVolume</span><span class="hljs-params">(
+	playergroup players,
+	<span class="hljs-keyword">int</span> channel,
+	fixed volume,
+	fixed duration,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#sound-sound-channels">Sound / Sound Channels</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-channel-mute">Mute/Unmute Sound Channel</a></strong> — ( SoundChannelMute )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-channel-pause">Pause Sound Channel</a></strong> — ( SoundChannelPause )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-channel-stop">Stop Sound Channel</a></strong> — ( SoundChannelStop )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-channel-set-volume">Set Sound Channel Volume</a></strong> — ( SoundChannelSetVolume )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-set-all-sound-channel-volumes">Set All Sound Channel Volumes</a></strong> — ( libNtve_gf_SetAllSoundChannelVolumes )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-channel-dspinsert">Insert Sound Channel Digital Effect</a></strong> — ( SoundChannelDSPInsert )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-channel-dspremove">Remove Sound Channel Digital Effect</a></strong> — ( SoundChannelDSPRemove )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/tarcade.sc2map/MapScript.galaxy#L8642">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L8642</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryDoodad, <span class="hljs-number">0.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5013</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryVoice, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5014</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryDialogue, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2643</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryMusic, <span class="hljs-number">30.0</span>, <span class="hljs-number">0.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2644</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryVoice, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2667</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryAlert, <span class="hljs-number">0.0</span>, lp_duration)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2668</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryAmbient, <span class="hljs-number">0.0</span>, lp_duration)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2669</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryBuild, <span class="hljs-number">0.0</span>, lp_duration)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2670</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryCombat, <span class="hljs-number">0.0</span>, lp_duration)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2671</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryDeath, <span class="hljs-number">0.0</span>, lp_duration)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2672</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryDialogue, <span class="hljs-number">0.0</span>, lp_duration)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2673</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryDoodad, <span class="hljs-number">0.0</span>, lp_duration)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2674</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryFlames, <span class="hljs-number">0.0</span>, lp_duration)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5303</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryDialogue, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5304</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryVoice, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5553</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryMusic, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5667</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryMusic, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5668</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryDeath, <span class="hljs-number">50.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2277</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryDoodad, <span class="hljs-number">10.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2281</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryDoodad, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3914</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryDoodad, <span class="hljs-number">10.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3918</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryDoodad, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8642</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryDoodad, <span class="hljs-number">0.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5013</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryVoice, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5014</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryDialogue, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2643</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryMusic, <span class="hljs-number">30.0</span>, <span class="hljs-number">0.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2644</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryVoice, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2667</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryAlert, <span class="hljs-number">0.0</span>, lp_duration)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2668</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryAmbient, <span class="hljs-number">0.0</span>, lp_duration)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2669</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryBuild, <span class="hljs-number">0.0</span>, lp_duration)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2670</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryCombat, <span class="hljs-number">0.0</span>, lp_duration)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2671</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryDeath, <span class="hljs-number">0.0</span>, lp_duration)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2672</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryDialogue, <span class="hljs-number">0.0</span>, lp_duration)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2673</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryDoodad, <span class="hljs-number">0.0</span>, lp_duration)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2674</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryFlames, <span class="hljs-number">0.0</span>, lp_duration)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5303</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryDialogue, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5304</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryVoice, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5553</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryMusic, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5667</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryMusic, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5668</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryDeath, <span class="hljs-number">50.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2277</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryDoodad, <span class="hljs-number">10.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2281</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryDoodad, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3914</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryDoodad, <span class="hljs-number">10.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3918</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryDoodad, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<h4 id="campaignslibertystorysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertystorysc2campaign">#</a> campaigns/libertystory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/libertystory.sc2campaign/base.sc2data/TriggerLibs/CampaignLib.galaxy#L836">CampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L836</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryVoice, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L840</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryVoice, <span class="hljs-number">0.0</span>, <span class="hljs-number">0.25</span>)
+</code></pre>
+<h4 id="campaignsswarmsc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmsc2campaign">#</a> campaigns/swarm.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarm.sc2campaign/base.sc2maps/maps/campaign/voidprologue/voidprologue01.sc2map/MapScript.galaxy#L5775">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L5775</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryCombat, <span class="hljs-number">12.0</span>, <span class="hljs-number">1.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5776</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryDeath, <span class="hljs-number">12.0</span>, <span class="hljs-number">1.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5799</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryCombat, <span class="hljs-number">100.0</span>, <span class="hljs-number">1.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5800</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryDeath, <span class="hljs-number">100.0</span>, <span class="hljs-number">1.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6468</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryTV, <span class="hljs-number">50.0</span>, <span class="hljs-number">1.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2101</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryCombat, <span class="hljs-number">12.5</span>, <span class="hljs-number">1.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8821</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryOther, <span class="hljs-number">25.0</span>, <span class="hljs-number">0.1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8822</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryDoodad, <span class="hljs-number">25.0</span>, <span class="hljs-number">0.1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8850</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryOther, <span class="hljs-number">100.0</span>, <span class="hljs-number">1.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9192</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryMusic, <span class="hljs-number">70.0</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9200</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryMusic, <span class="hljs-number">100.0</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9228</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryOther, <span class="hljs-number">15.0</span>, <span class="hljs-number">4.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9241</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryOther, <span class="hljs-number">100.0</span>, <span class="hljs-number">3.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9675</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryOther, <span class="hljs-number">50.0</span>, <span class="hljs-number">1.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9677</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryOther, <span class="hljs-number">100.0</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5591</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryMusic, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5604</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryMusic, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5177</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryMusic, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5191</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryDeath, <span class="hljs-number">20.0</span>, <span class="hljs-number">0.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5192</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryCombat, <span class="hljs-number">20.0</span>, <span class="hljs-number">0.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5193</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryMusic, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L843</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryCombat, <span class="hljs-number">20.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L846</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryCombat, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5512</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryCombat, <span class="hljs-number">80.0</span>, <span class="hljs-number">0.1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5997</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryMusic, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2444</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryMovement, <span class="hljs-number">75.0</span>, <span class="hljs-number">0.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2445</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryCombat, <span class="hljs-number">75.0</span>, <span class="hljs-number">1.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2446</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryDoodad, <span class="hljs-number">85.0</span>, <span class="hljs-number">1.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2455</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryUI, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7465</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryDoodad, <span class="hljs-number">85.0</span>, <span class="hljs-number">1.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5116</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryDoodad, <span class="hljs-number">75.0</span>, <span class="hljs-number">1.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5125</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryDoodad, <span class="hljs-number">40.0</span>, <span class="hljs-number">1.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5142</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryMusic, <span class="hljs-number">100.0</span>, <span class="hljs-number">1.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5197</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryMusic, <span class="hljs-number">100.0</span>, <span class="hljs-number">1.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5201</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryMusic, <span class="hljs-number">100.0</span>, <span class="hljs-number">1.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5370</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryMusic, <span class="hljs-number">100.0</span>, <span class="hljs-number">1.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5373</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryMusic, <span class="hljs-number">100.0</span>, <span class="hljs-number">1.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8702</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryMusic, <span class="hljs-number">100.0</span>, <span class="hljs-number">1.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9065</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryMusic, <span class="hljs-number">100.0</span>, <span class="hljs-number">1.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9527</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryMusic, <span class="hljs-number">100.0</span>, <span class="hljs-number">1.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6503</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryME, <span class="hljs-number">45.0</span>, <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6507</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryME, <span class="hljs-number">70.0</span>, <span class="hljs-number">5.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7636</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryDoodad, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2777</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryCombat, <span class="hljs-number">25.0</span>, <span class="hljs-number">0.1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2778</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategorySpell, <span class="hljs-number">20.0</span>, <span class="hljs-number">0.1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3084</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryCombat, <span class="hljs-number">25.0</span>, <span class="hljs-number">0.1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3085</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategorySpell, <span class="hljs-number">20.0</span>, <span class="hljs-number">0.1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3259</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryCombat, <span class="hljs-number">25.0</span>, <span class="hljs-number">0.1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3260</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategorySpell, <span class="hljs-number">20.0</span>, <span class="hljs-number">0.1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3434</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryCombat, <span class="hljs-number">25.0</span>, <span class="hljs-number">0.1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3435</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategorySpell, <span class="hljs-number">20.0</span>, <span class="hljs-number">0.1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3788</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryCombat, <span class="hljs-number">25.0</span>, <span class="hljs-number">0.1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3789</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategorySpell, <span class="hljs-number">20.0</span>, <span class="hljs-number">0.1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4673</span>
+SoundChannelSetVolume(PlayerGroupAll(), c_soundCategoryDoodad, <span class="hljs-number">0.0</span>, <span class="hljs-number">0.1</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

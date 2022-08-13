@@ -1,0 +1,435 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Set Default Soundtrack / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Set Default Soundtrack"/>
+                <meta property="og:description" content="Sets the default soundtrack.  The default soundtrack will play when there are no other soundtracks being played."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="set-default-soundtrack"><a class="markdownIt-Anchor" href="#set-default-soundtrack">#</a> Set Default Soundtrack</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Set default <strong>category</strong> soundtrack to <strong>soundtrackID|Soundtrack</strong> (<strong>index</strong>) for <strong>players</strong> (with cue <strong>cue</strong>)<br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Sets the default soundtrack.  The default soundtrack will play when there are no other soundtracks being played.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>playergroup</code> — Players</li>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-soundtrack-category">SoundtrackCategory</a> ]</em> — Category</li>
+<li><code>string</code> <em>[ gamelink::Soundtrack ]</em> — Soundtrack ID</li>
+<li><code>int</code> — Cue</li>
+<li><code>int</code> — Index</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">SoundtrackDefault</span><span class="hljs-params">(
+	playergroup players,
+	<span class="hljs-keyword">int</span> category,
+	<span class="hljs-built_in">string</span> soundtrack,
+	<span class="hljs-keyword">int</span> cue,
+	<span class="hljs-keyword">int</span> index,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#sound-soundtracks">Sound / Soundtracks</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/soundtrack-play">Play Soundtrack</a></strong> — ( SoundtrackPlay )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/soundtrack-pause">Pause Soundtrack</a></strong> — ( SoundtrackPause )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/soundtrack-stop-current">Stop Soundtrack (Current)</a></strong> — ( SoundtrackStopCurrent )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/soundtrack-stop">Stop Soundtrack (Current &amp; Queued)</a></strong> — ( SoundtrackStop )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/soundtrack-wait">Wait For Soundtrack</a></strong> — ( SoundtrackWait )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/soundtrack-default">Set Default Soundtrack</a></strong> — ( SoundtrackDefault )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/soundtrack-set-continuous">Enable/Disable Soundtrack Continuous</a></strong> — ( SoundtrackSetContinuous )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/soundtrack-set-delay">Set Soundtrack Delay</a></strong> — ( SoundtrackSetDelay )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/soundtrack-set-shuffle">Enable/Disable Soundtrack Shuffle</a></strong> — ( SoundtrackSetShuffle )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/thanson01.sc2map/MapScript.galaxy#L745">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L745</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"THanson01MusicMain"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L660</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"THanson02MusicMain"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L783</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"Mission_MusicTHanson03AMain"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1108</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"THanson03BMusicMain"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L806</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"THorner01MusicMain"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L729</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"THorner02MusicMain"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L532</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"THorner03MusicMain"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1011</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"THorner04MusicMain"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L988</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"THorner05SMusicMain"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L574</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"TRaynor01MusicMain"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L709</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"TRaynor03MusicMain"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L16767</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, null, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L464</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"TTosh01MusicMainMain"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L846</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"TTosh02MusicMain"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L840</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"TTosh03AMusicMain"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L720</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"TTosh03BMusicMain"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L524</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"TTychus01MusicMain"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L586</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"TTychus02MusicIntro"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L660</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"TTychus03MusicMain"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L546</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"TTychus04MusicMain"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L633</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"TTychus05MusicMain"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1083</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"TValerian01MusicMain"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1300</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"TValerian02AMusicMain"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L885</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"TValerian02BMusicMain"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L899</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"TValerian03MusicMain"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L935</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"TZeratul01MusicMain"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L653</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"TZeratul02MusicMain"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L567</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"TZeratul03MusicMain"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L745</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"THanson01MusicMain"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L660</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"THanson02MusicMain"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L783</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"Mission_MusicTHanson03AMain"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1108</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"THanson03BMusicMain"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L806</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"THorner01MusicMain"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L729</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"THorner02MusicMain"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L532</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"THorner03MusicMain"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1011</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"THorner04MusicMain"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L988</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"THorner05SMusicMain"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L574</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"TRaynor01MusicMain"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L709</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"TRaynor03MusicMain"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L16767</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, null, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L464</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"TTosh01MusicMainMain"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L846</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"TTosh02MusicMain"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L840</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"TTosh03AMusicMain"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L720</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"TTosh03BMusicMain"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L524</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"TTychus01MusicMain"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L586</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"TTychus02MusicIntro"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L660</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"TTychus03MusicMain"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L546</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"TTychus04MusicMain"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L633</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"TTychus05MusicMain"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1083</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"TValerian01MusicMain"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1300</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"TValerian02AMusicMain"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L885</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"TValerian02BMusicMain"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L899</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"TValerian03MusicMain"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L935</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"TZeratul01MusicMain"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L653</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"TZeratul02MusicMain"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L567</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"TZeratul03MusicMain"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<h4 id="campaignslibertystorysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertystorysc2campaign">#</a> campaigns/libertystory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/libertystory.sc2campaign/base.sc2data/TriggerLibs/CampaignLib.galaxy#L10209">CampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L10209</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, null, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10210</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryAmbience, null, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<h4 id="campaignsswarmsc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmsc2campaign">#</a> campaigns/swarm.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarm.sc2campaign/base.sc2maps/maps/campaign/swarm/zhybrid01.sc2map/MapScript.galaxy#L1060">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1060</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"ZHybrid01MusicAlt1"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1060</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"ZHybrid01MusicAlt1"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<h4 id="campaignsswarmstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmstorysc2campaign">#</a> campaigns/swarmstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstory.sc2campaign/base.sc2data/TriggerLibs/SwarmCampaignLib.galaxy#L9316">SwarmCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L9316</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, null, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9317</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryAmbience, null, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L14103</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, null, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L14104</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryAmbience, null, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<h4 id="campaignsswarmstoryutilsc2mod"><a class="markdownIt-Anchor" href="#campaignsswarmstoryutilsc2mod">#</a> campaigns/swarmstoryutil.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstoryutil.sc2mod/base.sc2data/Lib281DEC45.galaxy#L259">Lib281DEC45.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L259</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, null, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignMissionLib.galaxy#L1464">VoidCampaignMissionLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1464</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, null, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1465</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryAmbience, null, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1489</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, null, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1490</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryAmbience, null, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign-2"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign-2">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignStoryLib.galaxy#L643">VoidCampaignStoryLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L643</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, null, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<h4 id="modsmissionpacksnovacampaignsc2mod"><a class="markdownIt-Anchor" href="#modsmissionpacksnovacampaignsc2mod">#</a> mods/missionpacks/novacampaign.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/novacampaign.sc2mod/base.sc2data/LibNCMI.galaxy#L2286">LibNCMI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2286</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, null, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2287</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryAmbience, null, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<h4 id="modsmissionpacksnovacampaignsc2mod-2"><a class="markdownIt-Anchor" href="#modsmissionpacksnovacampaignsc2mod-2">#</a> mods/missionpacks/novacampaign.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/novacampaign.sc2mod/base.sc2data/LibNCST.galaxy#L565">LibNCST.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L565</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, null, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<h4 id="modsnovastoryassetssc2mod"><a class="markdownIt-Anchor" href="#modsnovastoryassetssc2mod">#</a> mods/novastoryassets.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/novastoryassets.sc2mod/base.sc2maps/maps/campaign/nova/nova01.sc2map/MapScript.galaxy#L2821">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2821</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"nDLC_Music_Nova01_Main"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5352</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"nDLC_Music_Nova02_Main"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9198</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"nDLC_Music_Nova03_Main"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9632</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"nDLC_Music_Nova03_Main_B"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6228</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryAmbience, gv_mapMusicTrack3, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6360</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryAmbience, gv_mapMusicTrack4, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6421</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryAmbience, gv_mapMusicTrack2, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2821</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"nDLC_Music_Nova01_Main"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5352</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"nDLC_Music_Nova02_Main"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9198</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"nDLC_Music_Nova03_Main"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9632</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"nDLC_Music_Nova03_Main_B"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6228</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryAmbience, gv_mapMusicTrack3, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6360</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryAmbience, gv_mapMusicTrack4, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6421</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryAmbience, gv_mapMusicTrack2, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOMU.galaxy#L7640">LibCOMU.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L7640</span>
+SoundtrackDefault(PlayerGroupSingle(lv_indexPlayer), c_soundtrackCategoryMusic, <span class="hljs-string">"Music_TerrHalloween"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7643</span>
+SoundtrackDefault(PlayerGroupSingle(lv_indexPlayer), c_soundtrackCategoryMusic, <span class="hljs-string">"Music_ProtHalloween"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7646</span>
+SoundtrackDefault(PlayerGroupSingle(lv_indexPlayer), c_soundtrackCategoryMusic, <span class="hljs-string">"Music_ZergHalloween"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7649</span>
+SoundtrackDefault(PlayerGroupSingle(lv_indexPlayer), c_soundtrackCategoryMusic, <span class="hljs-string">"Music_TerrHalloween"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7892</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"Music_TerrChristmas_Festive"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7895</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"Music_ProtChristmas_Festive"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7898</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"Music_ZergChristmas_Festive"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7901</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"Music_TerrChristmas_Festive"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8222</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"Music_TerranRedEnvelope"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8225</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"Music_ProtossRedEnvelope"</span>, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<h4 id="modsvoidprologuesc2mod"><a class="markdownIt-Anchor" href="#modsvoidprologuesc2mod">#</a> mods/voidprologue.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/voidprologue.sc2mod/base.sc2data/LibA3DDD02B.galaxy#L6935">LibA3DDD02B.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L6935</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, null, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6936</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryAmbience, null, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9764</span>
+SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryMusic, null, c_soundtrackCueAny, c_soundtrackIndexAny)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

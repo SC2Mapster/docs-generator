@@ -1,0 +1,436 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Run Data Conversation / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Run Data Conversation"/>
+                <meta property="og:description" content="Runs a conversation for the specified player group. If the conversation contains Choices, cinematic mode must be enabled to view them, using the Cinematic Mode action."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="run-data-conversation"><a class="markdownIt-Anchor" href="#run-data-conversation">#</a> Run Data Conversation</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Run <strong>conversation</strong> conversation for <strong>players</strong>, allowing <strong>skipOption|No/Simple/Full Skipping</strong>, and <strong>waitUntilDone|Wait/Don’t Wait</strong> until done<br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Runs a conversation for the specified player group. If the conversation contains Choices, cinematic mode must be enabled to view them, using the Cinematic Mode action.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>string</code> <em>[ gamelink::Conversation ]</em> — Conversation</li>
+<li><code>playergroup</code> — Players</li>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-conversation-skip-option">ConversationSkipOption</a> ]</em> — Skip Option</li>
+<li><code>bool</code> <em>[ preset::<a href="/galaxy/reference/preset-trigger-wait-option">Trigger_Wait_Option</a> ]</em> — Wait Until Done</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">ConversationDataRun</span><span class="hljs-params">(
+	<span class="hljs-built_in">string</span> convId,
+	playergroup players,
+	<span class="hljs-keyword">int</span> skipType,
+	<span class="hljs-keyword">bool</span> waitUntilDone,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#conversation-data-conversations">Conversation / Data Conversations</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/conversation-data-state-set-value">Set Data Conversation State</a></strong> — ( ConversationDataStateSetValue )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/conversation-data-register-portrait">Set Data Conversation Portrait</a></strong> — ( ConversationDataRegisterPortrait )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/conversation-data-register-unit">Set Data Conversation Unit</a></strong> — ( ConversationDataRegisterUnit )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/conversation-data-register-camera">Set Data Conversation Camera</a></strong> — ( ConversationDataRegisterCamera )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/conversation-data-run">Run Data Conversation</a></strong> — ( ConversationDataRun )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/conversation-data-stop">Stop Data Conversation</a></strong> — ( ConversationDataStop )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-conversation-state-changed">Data Conversation State Changed</a></strong> — ( TriggerAddEventConversationStateChanged )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> <em>[ convstateindex ]</em> — <strong><a href="/galaxy/reference/event-conversation-state">Triggering Conversation State</a></strong> — ( EventConversationState )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/tstory01.sc2map/MapScript.galaxy#L10637">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L10637</span>
+ConversationDataRun(<span class="hljs-string">"Missionpitches"</span>, PlayerGroupAll(), c_conversationSkipNone, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10818</span>
+ConversationDataRun(lp_fidget, PlayerGroupAll(), c_conversationSkipSimple, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11845</span>
+ConversationDataRun(lp_convo, PlayerGroupAll(), c_conversationSkipFull, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L23370</span>
+ConversationDataRun(<span class="hljs-string">"CharFidgetsArtifact"</span>, PlayerGroupAll(), c_conversationSkipSimple, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L25199</span>
+ConversationDataRun(<span class="hljs-string">"Missionpitches"</span>, PlayerGroupAll(), c_conversationSkipNone, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L34864</span>
+ConversationDataRun(<span class="hljs-string">"Debriefs"</span>, PlayerGroupAll(), c_conversationSkipSimple, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L35020</span>
+ConversationDataRun(<span class="hljs-string">"Debriefs"</span>, PlayerGroupAll(), c_conversationSkipSimple, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L35218</span>
+ConversationDataRun(<span class="hljs-string">"Debriefs"</span>, PlayerGroupAll(), c_conversationSkipSimple, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L35369</span>
+ConversationDataRun(<span class="hljs-string">"Debriefs"</span>, PlayerGroupAll(), c_conversationSkipSimple, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L35431</span>
+ConversationDataRun(<span class="hljs-string">"Debriefs"</span>, PlayerGroupAll(), c_conversationSkipSimple, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10637</span>
+ConversationDataRun(<span class="hljs-string">"Missionpitches"</span>, PlayerGroupAll(), c_conversationSkipNone, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10818</span>
+ConversationDataRun(lp_fidget, PlayerGroupAll(), c_conversationSkipSimple, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11845</span>
+ConversationDataRun(lp_convo, PlayerGroupAll(), c_conversationSkipFull, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L23370</span>
+ConversationDataRun(<span class="hljs-string">"CharFidgetsArtifact"</span>, PlayerGroupAll(), c_conversationSkipSimple, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L25199</span>
+ConversationDataRun(<span class="hljs-string">"Missionpitches"</span>, PlayerGroupAll(), c_conversationSkipNone, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L34864</span>
+ConversationDataRun(<span class="hljs-string">"Debriefs"</span>, PlayerGroupAll(), c_conversationSkipSimple, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L35020</span>
+ConversationDataRun(<span class="hljs-string">"Debriefs"</span>, PlayerGroupAll(), c_conversationSkipSimple, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L35218</span>
+ConversationDataRun(<span class="hljs-string">"Debriefs"</span>, PlayerGroupAll(), c_conversationSkipSimple, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L35369</span>
+ConversationDataRun(<span class="hljs-string">"Debriefs"</span>, PlayerGroupAll(), c_conversationSkipSimple, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L35431</span>
+ConversationDataRun(<span class="hljs-string">"Debriefs"</span>, PlayerGroupAll(), c_conversationSkipSimple, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="campaignsswarmstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmstorysc2campaign">#</a> campaigns/swarmstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstory.sc2campaign/base.sc2data/TriggerLibs/SwarmCampaignLib.galaxy#L7373">SwarmCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L7373</span>
+ConversationDataRun(<span class="hljs-string">"zSMAmbient_EvolutionMaster"</span>, PlayerGroupAll(), c_conversationSkipNone, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8558</span>
+ConversationDataRun(<span class="hljs-string">"zSMAmbient_UnitUpgrade"</span>, PlayerGroupAll(), c_conversationSkipNone, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8834</span>
+ConversationDataRun(<span class="hljs-string">"zEvoChoice"</span>, PlayerGroupAll(), c_conversationSkipNone, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L20346</span>
+ConversationDataRun(<span class="hljs-string">"zSMAmbient_EvolutionMaster"</span>, PlayerGroupAll(), c_conversationSkipSimple, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L20865</span>
+ConversationDataRun(libSwaC_gf_MissionPitch(libSwaC_gv_zS_ArmyCustomMissionMap), PlayerGroupAll(), c_conversationSkipNone, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="campaignsswarmstoryutilsc2mod"><a class="markdownIt-Anchor" href="#campaignsswarmstoryutilsc2mod">#</a> campaigns/swarmstoryutil.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstoryutil.sc2mod/base.sc2data/Lib281DEC45.galaxy#L2025">Lib281DEC45.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2025</span>
+ConversationDataRun(<span class="hljs-string">"zSM_Kerrigan"</span>, PlayerGroupAll(), c_conversationSkipNone, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3732</span>
+ConversationDataRun(lib281DEC45_gf_ZSS_CharacterConversation(lp_character), PlayerGroupAll(), c_conversationSkipFull, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3806</span>
+ConversationDataRun(lp_conversation, PlayerGroupAll(), lv_skipMode, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4891</span>
+ConversationDataRun(lp_pitch, PlayerGroupAll(), c_conversationSkipNone, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8759</span>
+ConversationDataRun(lib281DEC45_gv_zSS_AmbientConversation, PlayerGroupAll(), c_conversationSkipSimple, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="campaignsvoidsc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidsc2campaign">#</a> campaigns/void.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/void.sc2campaign/base.sc2maps/maps/campaign/void/pstory01.sc2map/MapScript.galaxy#L383">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L383</span>
+ConversationDataRun(UserDataGetGameLink(<span class="hljs-string">"Clickable"</span>, lp_speaker, <span class="hljs-string">"GreetingConversation"</span>, <span class="hljs-number">1</span>), PlayerGroupAll(), c_conversationSkipSimple, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1410</span>
+ConversationDataRun(<span class="hljs-string">"pPrompt_WarCouncilVisit"</span>, PlayerGroupAll(), c_conversationSkipNone, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1417</span>
+ConversationDataRun(<span class="hljs-string">"pPrompt_WarCouncilUse"</span>, PlayerGroupAll(), c_conversationSkipSimple, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1427</span>
+ConversationDataRun(<span class="hljs-string">"pPrompt_SolarCoreUse"</span>, PlayerGroupAll(), c_conversationSkipSimple, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1437</span>
+ConversationDataRun(<span class="hljs-string">"pPrompt_SolarCoreVisit"</span>, PlayerGroupAll(), c_conversationSkipNone, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1446</span>
+ConversationDataRun(<span class="hljs-string">"pPrompt_WarCouncilVisit"</span>, PlayerGroupAll(), c_conversationSkipNone, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L383</span>
+ConversationDataRun(UserDataGetGameLink(<span class="hljs-string">"Clickable"</span>, lp_speaker, <span class="hljs-string">"GreetingConversation"</span>, <span class="hljs-number">1</span>), PlayerGroupAll(), c_conversationSkipSimple, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1410</span>
+ConversationDataRun(<span class="hljs-string">"pPrompt_WarCouncilVisit"</span>, PlayerGroupAll(), c_conversationSkipNone, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1417</span>
+ConversationDataRun(<span class="hljs-string">"pPrompt_WarCouncilUse"</span>, PlayerGroupAll(), c_conversationSkipSimple, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1427</span>
+ConversationDataRun(<span class="hljs-string">"pPrompt_SolarCoreUse"</span>, PlayerGroupAll(), c_conversationSkipSimple, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1437</span>
+ConversationDataRun(<span class="hljs-string">"pPrompt_SolarCoreVisit"</span>, PlayerGroupAll(), c_conversationSkipNone, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1446</span>
+ConversationDataRun(<span class="hljs-string">"pPrompt_WarCouncilVisit"</span>, PlayerGroupAll(), c_conversationSkipNone, <span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignStoryLib.galaxy#L3138">VoidCampaignStoryLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3138</span>
+ConversationDataRun(libVCST_gf_PS_ClickableConversation(lp_clickable), PlayerGroupAll(), c_conversationSkipFull, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3237</span>
+ConversationDataRun(lp_conversation, PlayerGroupAll(), lv_skipMode, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5927</span>
+ConversationDataRun(UserDataGetGameLink(<span class="hljs-string">"Clickable"</span>, lv_listOfTalkingClickables[lv_randomClickable], <span class="hljs-string">"Ambient Conversation"</span>, <span class="hljs-number">1</span>), PlayerGroupAll(), c_conversationSkipSimple, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6003</span>
+ConversationDataRun(<span class="hljs-string">"pAmbientDrone_Smith"</span>, PlayerGroupAll(), c_conversationSkipSimple, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6467</span>
+ConversationDataRun(libVCST_gv_pS_ResponseConversation, PlayerGroupAll(), c_conversationSkipSimple, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign-2"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign-2">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignUILib.galaxy#L3271">VoidCampaignUILib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3271</span>
+ConversationDataRun(lp_pitch, PlayerGroupAll(), c_conversationSkipNone, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7216</span>
+ConversationDataRun(libVoiC_gf_MissionPitch(libVCUI_gv_pU_MissionNextMap), PlayerGroupAll(), c_conversationSkipNone, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7946</span>
+ConversationDataRun(libVoiC_gf_MissionPitch(libVCUI_gv_pU_MissionNextMap), PlayerGroupAll(), c_conversationSkipNone, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9008</span>
+ConversationDataRun(lv_pitch, PlayerGroupAll(), c_conversationSkipNone, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="modsheroesbrawlmodsarenamodemodsgardenarenastormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsarenamodemodsgardenarenastormmod">#</a> mods/heroesbrawlmods/arenamodemods/gardenarena.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/arenamodemods/gardenarena.stormmod/base.stormdata/LibAMGT.galaxy#L1079">LibAMGT.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1079</span>
+ConversationDataRun(<span class="hljs-string">"ArenaVO"</span>, PlayerGroupAll(), c_conversationSkipNone, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1121</span>
+ConversationDataRun(<span class="hljs-string">"ArenaVO"</span>, PlayerGroupAll(), c_conversationSkipNone, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1163</span>
+ConversationDataRun(<span class="hljs-string">"ArenaVO"</span>, PlayerGroupAll(), c_conversationSkipNone, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1205</span>
+ConversationDataRun(<span class="hljs-string">"ArenaVO"</span>, PlayerGroupAll(), c_conversationSkipNone, <span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="modsheroesbrawlmodsarenamodemodspunisherarenastormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsarenamodemodspunisherarenastormmod">#</a> mods/heroesbrawlmods/arenamodemods/punisherarena.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/arenamodemods/punisherarena.stormmod/base.stormdata/LibAMPU.galaxy#L1383">LibAMPU.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1383</span>
+ConversationDataRun(<span class="hljs-string">"ArenaVO"</span>, PlayerGroupAll(), c_conversationSkipNone, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1424</span>
+ConversationDataRun(<span class="hljs-string">"ArenaVO"</span>, PlayerGroupAll(), c_conversationSkipNone, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1465</span>
+ConversationDataRun(<span class="hljs-string">"ArenaVO"</span>, PlayerGroupAll(), c_conversationSkipNone, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1506</span>
+ConversationDataRun(<span class="hljs-string">"ArenaVO"</span>, PlayerGroupAll(), c_conversationSkipNone, <span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="modsheroesbrawlmodsarenamodemodstemplearenastormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsarenamodemodstemplearenastormmod">#</a> mods/heroesbrawlmods/arenamodemods/templearena.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/arenamodemods/templearena.stormmod/base.stormdata/LibAMCT.galaxy#L1379">LibAMCT.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1379</span>
+ConversationDataRun(<span class="hljs-string">"ArenaVO"</span>, PlayerGroupAll(), c_conversationSkipNone, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1393</span>
+ConversationDataRun(<span class="hljs-string">"ArenaVO"</span>, PlayerGroupAll(), c_conversationSkipNone, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1407</span>
+ConversationDataRun(<span class="hljs-string">"ArenaVO"</span>, PlayerGroupAll(), c_conversationSkipNone, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1447</span>
+ConversationDataRun(<span class="hljs-string">"ArenaVO"</span>, PlayerGroupAll(), c_conversationSkipNone, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1488</span>
+ConversationDataRun(<span class="hljs-string">"ArenaVO"</span>, PlayerGroupAll(), c_conversationSkipNone, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1529</span>
+ConversationDataRun(<span class="hljs-string">"ArenaVO"</span>, PlayerGroupAll(), c_conversationSkipNone, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1570</span>
+ConversationDataRun(<span class="hljs-string">"ArenaVO"</span>, PlayerGroupAll(), c_conversationSkipNone, <span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="modsheroesbrawlmodsarenamodemodstrialgroundsstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsarenamodemodstrialgroundsstormmod">#</a> mods/heroesbrawlmods/arenamodemods/trialgrounds.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/arenamodemods/trialgrounds.stormmod/base.stormdata/LibAMVS.galaxy#L1141">LibAMVS.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1141</span>
+ConversationDataRun(<span class="hljs-string">"VolskayaArenaVO"</span>, PlayerGroupAll(), c_conversationSkipNone, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1170</span>
+ConversationDataRun(<span class="hljs-string">"VolskayaArenaVO"</span>, PlayerGroupAll(), c_conversationSkipNone, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1199</span>
+ConversationDataRun(<span class="hljs-string">"VolskayaArenaVO"</span>, PlayerGroupAll(), c_conversationSkipNone, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1246</span>
+ConversationDataRun(<span class="hljs-string">"VolskayaArenaVO"</span>, PlayerGroupAll(), c_conversationSkipNone, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1275</span>
+ConversationDataRun(<span class="hljs-string">"VolskayaArenaVO"</span>, PlayerGroupAll(), c_conversationSkipNone, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1322</span>
+ConversationDataRun(<span class="hljs-string">"VolskayaArenaVO"</span>, PlayerGroupAll(), c_conversationSkipNone, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1356</span>
+ConversationDataRun(<span class="hljs-string">"VolskayaArenaVO"</span>, PlayerGroupAll(), c_conversationSkipNone, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1385</span>
+ConversationDataRun(<span class="hljs-string">"VolskayaArenaVO"</span>, PlayerGroupAll(), c_conversationSkipNone, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1432</span>
+ConversationDataRun(<span class="hljs-string">"VolskayaArenaVO"</span>, PlayerGroupAll(), c_conversationSkipNone, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1479</span>
+ConversationDataRun(<span class="hljs-string">"VolskayaArenaVO"</span>, PlayerGroupAll(), c_conversationSkipNone, <span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodsblackheartsrevengestormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodsblackheartsrevengestormmod">#</a> mods/heroesbrawlmods/brawlmapmods/blackheartsrevenge.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/blackheartsrevenge.stormmod/base.stormdata/LibMDoE.galaxy#L1723">LibMDoE.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1723</span>
+ConversationDataRun(<span class="hljs-string">"ArenaVO"</span>, PlayerGroupAll(), c_conversationSkipNone, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1768</span>
+ConversationDataRun(<span class="hljs-string">"ArenaVO"</span>, PlayerGroupAll(), c_conversationSkipNone, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1813</span>
+ConversationDataRun(<span class="hljs-string">"ArenaVO"</span>, PlayerGroupAll(), c_conversationSkipNone, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1858</span>
+ConversationDataRun(<span class="hljs-string">"ArenaVO"</span>, PlayerGroupAll(), c_conversationSkipNone, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1903</span>
+ConversationDataRun(<span class="hljs-string">"ArenaVO"</span>, PlayerGroupAll(), c_conversationSkipNone, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1948</span>
+ConversationDataRun(<span class="hljs-string">"ArenaVO"</span>, PlayerGroupAll(), c_conversationSkipNone, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1993</span>
+ConversationDataRun(<span class="hljs-string">"ArenaVO"</span>, PlayerGroupAll(), c_conversationSkipNone, <span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodshanamurapayloadpushstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodshanamurapayloadpushstormmod">#</a> mods/heroesbrawlmods/brawlmapmods/hanamurapayloadpush.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/hanamurapayloadpush.stormmod/base.stormdata/LibMHPP.galaxy#L766">LibMHPP.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L766</span>
+ConversationDataRun(<span class="hljs-string">"PayloadVO"</span>, PlayerGroupAll(), c_conversationSkipNone, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L808</span>
+ConversationDataRun(<span class="hljs-string">"PayloadVO"</span>, PlayerGroupAll(), c_conversationSkipNone, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L850</span>
+ConversationDataRun(<span class="hljs-string">"PayloadVO"</span>, PlayerGroupAll(), c_conversationSkipNone, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L892</span>
+ConversationDataRun(<span class="hljs-string">"PayloadVO"</span>, PlayerGroupAll(), c_conversationSkipNone, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L934</span>
+ConversationDataRun(<span class="hljs-string">"PayloadVO"</span>, PlayerGroupAll(), c_conversationSkipNone, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L973</span>
+ConversationDataRun(<span class="hljs-string">"PayloadVO"</span>, PlayerGroupAll(), c_conversationSkipNone, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1012</span>
+ConversationDataRun(<span class="hljs-string">"PayloadVO"</span>, PlayerGroupAll(), c_conversationSkipNone, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1051</span>
+ConversationDataRun(<span class="hljs-string">"PayloadVO"</span>, PlayerGroupAll(), c_conversationSkipNone, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1092</span>
+ConversationDataRun(<span class="hljs-string">"PayloadVO"</span>, PlayerGroupAll(), c_conversationSkipNone, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1131</span>
+ConversationDataRun(<span class="hljs-string">"PayloadVO"</span>, PlayerGroupAll(), c_conversationSkipNone, <span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="modsheroesdatastormmod"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/HeroesLib.galaxy#L4008">HeroesLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4008</span>
+ConversationDataRun(lp_dataConvo, lp_forPlayers, lp_skipOptions, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="modsheroesdatastormmod-2"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-2">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/MapMechanicsLib.galaxy#L2704">MapMechanicsLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2704</span>
+ConversationDataRun(lp_convo, lp_players, c_conversationSkipNone, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3360</span>
+ConversationDataRun(<span class="hljs-string">"CursedHollow"</span>, PlayerGroupAll(), c_conversationSkipNone, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3386</span>
+ConversationDataRun(<span class="hljs-string">"CursedHollow"</span>, PlayerGroupAll(), c_conversationSkipNone, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3441</span>
+ConversationDataRun(<span class="hljs-string">"CursedHollow"</span>, PlayerGroupAll(), c_conversationSkipNone, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3467</span>
+ConversationDataRun(<span class="hljs-string">"CursedHollow"</span>, PlayerGroupAll(), c_conversationSkipNone, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3909</span>
+ConversationDataRun(<span class="hljs-string">"DragonShire"</span>, PlayerGroupAll(), c_conversationSkipNone, <span class="hljs-literal">false</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,341 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Player Sends AI Wave / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Player Sends AI Wave"/>
+                <meta property="og:description" content="This event fires when an AI wave is sent by the specified player."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="player-sends-ai-wave"><a class="markdownIt-Anchor" href="#player-sends-ai-wave">#</a> Player Sends AI Wave</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Player <strong>p</strong> sends an AI wave<br>
+<em>Flags</em> — <code>Native</code> | <code>Event</code></p>
+</blockquote>
+<p>This event fires when an AI wave is sent by the specified player.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> — Player</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">TriggerAddEventPlayerAIWave</span><span class="hljs-params">(
+	trigger inTrigger,
+	<span class="hljs-keyword">int</span> player,
+)</span></span>;
+</code></pre>
+<h3 id="event-parameters"><a class="markdownIt-Anchor" href="#event-parameters">#</a> Event parameters</h3>
+<ul>
+<li><a href="/galaxy/reference/event-player-wave">Triggering Wave</a> — EventPlayerWave</li>
+</ul>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#ai-attack-waves-events">AI / AttackWaves / Events</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-player-ai-wave">Player Sends AI Wave</a></strong> — ( TriggerAddEventPlayerAIWave )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignsswarmsc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmsc2campaign">#</a> campaigns/swarm.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarm.sc2campaign/base.sc2maps/maps/campaign/voidprologue/voidprologue02.sc2map/MapScript.galaxy#L2412">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2412</span>
+TriggerAddEventPlayerAIWave(gt_TaldarimSendOutAttackWaveQ, gv_pLAYER_06_TALDARIM)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3351</span>
+TriggerAddEventPlayerAIWave(gt_KerriganWaveSent, gv_pLAYER_05_KERRIGAN_S01)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3352</span>
+TriggerAddEventPlayerAIWave(gt_KerriganWaveSent, gv_pLAYER_06_KERRIGAN_S02)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3353</span>
+TriggerAddEventPlayerAIWave(gt_KerriganWaveSent, gv_pLAYER_07_KERRIGAN_S03)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3520</span>
+TriggerAddEventPlayerAIWave(gt_TransmissionZergWaveSendQ, gv_pLAYER_05_KERRIGAN_S01)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3521</span>
+TriggerAddEventPlayerAIWave(gt_TransmissionZergWaveSendQ, gv_pLAYER_06_KERRIGAN_S02)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3522</span>
+TriggerAddEventPlayerAIWave(gt_TransmissionZergWaveSendQ, gv_pLAYER_07_KERRIGAN_S03)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4456</span>
+TriggerAddEventPlayerAIWave(gt_MoebiusCorpsAttackWarning01Q, gv_pLAYER_03_MOEBIUS_S02)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4675</span>
+TriggerAddEventPlayerAIWave(gt_MoebiusCorpsAttackWarning02Q, gv_pLAYER_02_MOEBIUS_S01)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4741</span>
+TriggerAddEventPlayerAIWave(gt_Player2SendsAIWave, gv_PLAYER_02_DOMINION_RED)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4741</span>
+TriggerAddEventPlayerAIWave(gt_Player2SendsAIWave, gv_PLAYER_02_DOMINION_RED)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3351</span>
+TriggerAddEventPlayerAIWave(gt_KerriganWaveSent, gv_pLAYER_05_KERRIGAN_S01)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3352</span>
+TriggerAddEventPlayerAIWave(gt_KerriganWaveSent, gv_pLAYER_06_KERRIGAN_S02)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3353</span>
+TriggerAddEventPlayerAIWave(gt_KerriganWaveSent, gv_pLAYER_07_KERRIGAN_S03)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3520</span>
+TriggerAddEventPlayerAIWave(gt_TransmissionZergWaveSendQ, gv_pLAYER_05_KERRIGAN_S01)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3521</span>
+TriggerAddEventPlayerAIWave(gt_TransmissionZergWaveSendQ, gv_pLAYER_06_KERRIGAN_S02)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3522</span>
+TriggerAddEventPlayerAIWave(gt_TransmissionZergWaveSendQ, gv_pLAYER_07_KERRIGAN_S03)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4456</span>
+TriggerAddEventPlayerAIWave(gt_MoebiusCorpsAttackWarning01Q, gv_pLAYER_03_MOEBIUS_S02)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4675</span>
+TriggerAddEventPlayerAIWave(gt_MoebiusCorpsAttackWarning02Q, gv_pLAYER_02_MOEBIUS_S01)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2412</span>
+TriggerAddEventPlayerAIWave(gt_TaldarimSendOutAttackWaveQ, gv_pLAYER_06_TALDARIM)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2789</span>
+TriggerAddEventPlayerAIWave(gt_TransmissionWarpInZone01AttackWaveInitialBattlecryQ, gv_pLAYER_08_NERAZIM)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2833</span>
+TriggerAddEventPlayerAIWave(gt_TransmissionWarpInZone02AttackWaveInitialBattlecryQ, gv_pLAYER_09_TALDARIM)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2877</span>
+TriggerAddEventPlayerAIWave(gt_TransmissionWarpInZone03AttackWaveInitialBattlecryQ, gv_pLAYER_10_PURIFIER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2942</span>
+TriggerAddEventPlayerAIWave(gt_TransmissionWarpInZone01AttackWaveRepeatBattlecryQ, gv_pLAYER_08_NERAZIM)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3007</span>
+TriggerAddEventPlayerAIWave(gt_TransmissionWarpInZone02AttackWaveRepeatBattlecryQ, gv_pLAYER_09_TALDARIM)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3072</span>
+TriggerAddEventPlayerAIWave(gt_TransmissionWarpInZone03AttackWaveRepeatBattlecryQ, gv_pLAYER_10_PURIFIER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3784</span>
+TriggerAddEventPlayerAIWave(gt_TransmissionFirstAttackWaveQ, gv_pLAYER_05_VOIDFORCES)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3785</span>
+TriggerAddEventPlayerAIWave(gt_TransmissionFirstAttackWaveQ, gv_pLAYER_06_VOIDFORCES)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3786</span>
+TriggerAddEventPlayerAIWave(gt_TransmissionFirstAttackWaveQ, gv_pLAYER_07_VOIDFORCES)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3897</span>
+TriggerAddEventPlayerAIWave(gt_BigWaveTransmissionController, gv_pLAYER_05_VOIDFORCES)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3433</span>
+TriggerAddEventPlayerAIWave(gt_AIGateUsageOnOffControlFF2, gv_pLAYER_02_TALDARIM)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3492</span>
+TriggerAddEventPlayerAIWave(gt_AIGateUsageOnOffControlFF4, gv_pLAYER_02_TALDARIM)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4591</span>
+TriggerAddEventPlayerAIWave(gt_TransmissionVsCoreMatrixAttackWave01Q, gv_pLAYER_02_DOMINION)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4592</span>
+TriggerAddEventPlayerAIWave(gt_TransmissionVsCoreMatrixAttackWave01Q, gv_pLAYER_02_DOMINION2)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4593</span>
+TriggerAddEventPlayerAIWave(gt_TransmissionVsCoreMatrixAttackWave01Q, gv_pLAYER_02_DOMINION3)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4594</span>
+TriggerAddEventPlayerAIWave(gt_TransmissionVsCoreMatrixAttackWave01Q, gv_pLAYER_02_DOMINION4)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4648</span>
+TriggerAddEventPlayerAIWave(gt_TransmissionFirstNEAttackWarningQ, gv_pLAYER_02_DOMINION4)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5278</span>
+TriggerAddEventPlayerAIWave(gt_AttackWaveWarningQ, gv_pLAYER_02_DOMINION)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3452</span>
+TriggerAddEventPlayerAIWave(gt_AttackWave01Q, gv_pLAYER_03_TALDARIM)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3508</span>
+TriggerAddEventPlayerAIWave(gt_AttackWave04Q, gv_pLAYER_04_TALDARIM)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2516</span>
+TriggerAddEventPlayerAIWave(gt_RecentlySentWaves, c_playerAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2789</span>
+TriggerAddEventPlayerAIWave(gt_TransmissionWarpInZone01AttackWaveInitialBattlecryQ, gv_pLAYER_08_NERAZIM)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2833</span>
+TriggerAddEventPlayerAIWave(gt_TransmissionWarpInZone02AttackWaveInitialBattlecryQ, gv_pLAYER_09_TALDARIM)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2877</span>
+TriggerAddEventPlayerAIWave(gt_TransmissionWarpInZone03AttackWaveInitialBattlecryQ, gv_pLAYER_10_PURIFIER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2942</span>
+TriggerAddEventPlayerAIWave(gt_TransmissionWarpInZone01AttackWaveRepeatBattlecryQ, gv_pLAYER_08_NERAZIM)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3007</span>
+TriggerAddEventPlayerAIWave(gt_TransmissionWarpInZone02AttackWaveRepeatBattlecryQ, gv_pLAYER_09_TALDARIM)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3072</span>
+TriggerAddEventPlayerAIWave(gt_TransmissionWarpInZone03AttackWaveRepeatBattlecryQ, gv_pLAYER_10_PURIFIER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3784</span>
+TriggerAddEventPlayerAIWave(gt_TransmissionFirstAttackWaveQ, gv_pLAYER_05_VOIDFORCES)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3785</span>
+TriggerAddEventPlayerAIWave(gt_TransmissionFirstAttackWaveQ, gv_pLAYER_06_VOIDFORCES)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3786</span>
+TriggerAddEventPlayerAIWave(gt_TransmissionFirstAttackWaveQ, gv_pLAYER_07_VOIDFORCES)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3897</span>
+TriggerAddEventPlayerAIWave(gt_BigWaveTransmissionController, gv_pLAYER_05_VOIDFORCES)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3433</span>
+TriggerAddEventPlayerAIWave(gt_AIGateUsageOnOffControlFF2, gv_pLAYER_02_TALDARIM)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3492</span>
+TriggerAddEventPlayerAIWave(gt_AIGateUsageOnOffControlFF4, gv_pLAYER_02_TALDARIM)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4591</span>
+TriggerAddEventPlayerAIWave(gt_TransmissionVsCoreMatrixAttackWave01Q, gv_pLAYER_02_DOMINION)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4592</span>
+TriggerAddEventPlayerAIWave(gt_TransmissionVsCoreMatrixAttackWave01Q, gv_pLAYER_02_DOMINION2)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4593</span>
+TriggerAddEventPlayerAIWave(gt_TransmissionVsCoreMatrixAttackWave01Q, gv_pLAYER_02_DOMINION3)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4594</span>
+TriggerAddEventPlayerAIWave(gt_TransmissionVsCoreMatrixAttackWave01Q, gv_pLAYER_02_DOMINION4)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4648</span>
+TriggerAddEventPlayerAIWave(gt_TransmissionFirstNEAttackWarningQ, gv_pLAYER_02_DOMINION4)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5278</span>
+TriggerAddEventPlayerAIWave(gt_AttackWaveWarningQ, gv_pLAYER_02_DOMINION)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3452</span>
+TriggerAddEventPlayerAIWave(gt_AttackWave01Q, gv_pLAYER_03_TALDARIM)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3508</span>
+TriggerAddEventPlayerAIWave(gt_AttackWave04Q, gv_pLAYER_04_TALDARIM)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2516</span>
+TriggerAddEventPlayerAIWave(gt_RecentlySentWaves, c_playerAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4481</span>
+TriggerAddEventPlayerAIWave(gt_AttackWaveManager, c_playerAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7791</span>
+TriggerAddEventPlayerAIWave(gt_S1AttackWaveOverseerReturnsHome, gv_pLAYER_09_FERALZERG_MIDDLEWAVES)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7792</span>
+TriggerAddEventPlayerAIWave(gt_S1AttackWaveOverseerReturnsHome, gv_pLAYER_10_FERALZERG_RIGHTWAVES)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7793</span>
+TriggerAddEventPlayerAIWave(gt_S1AttackWaveOverseerReturnsHome, gv_pLAYER_11_FERALZERG_LEFTWAVES)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8084</span>
+TriggerAddEventPlayerAIWave(gt_FirstInfestedAttackQ, gv_pLAYER_05_INFESTED_FIGHTPROTOSS)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3630</span>
+TriggerAddEventPlayerAIWave(gt_AttackWaveUnitGroup, c_playerAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4853</span>
+TriggerAddEventPlayerAIWave(gt_FirstGhostTransmissionQ, c_playerAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4893</span>
+TriggerAddEventPlayerAIWave(gt_FirstAttackTransmissionQ, c_playerAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4481</span>
+TriggerAddEventPlayerAIWave(gt_AttackWaveManager, c_playerAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7791</span>
+TriggerAddEventPlayerAIWave(gt_S1AttackWaveOverseerReturnsHome, gv_pLAYER_09_FERALZERG_MIDDLEWAVES)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7792</span>
+TriggerAddEventPlayerAIWave(gt_S1AttackWaveOverseerReturnsHome, gv_pLAYER_10_FERALZERG_RIGHTWAVES)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7793</span>
+TriggerAddEventPlayerAIWave(gt_S1AttackWaveOverseerReturnsHome, gv_pLAYER_11_FERALZERG_LEFTWAVES)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8084</span>
+TriggerAddEventPlayerAIWave(gt_FirstInfestedAttackQ, gv_pLAYER_05_INFESTED_FIGHTPROTOSS)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3630</span>
+TriggerAddEventPlayerAIWave(gt_AttackWaveUnitGroup, c_playerAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4853</span>
+TriggerAddEventPlayerAIWave(gt_FirstGhostTransmissionQ, c_playerAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4893</span>
+TriggerAddEventPlayerAIWave(gt_FirstAttackTransmissionQ, c_playerAny)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOMI.galaxy#L13022">LibCOMI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L13022</span>
+TriggerAddEventPlayerAIWave(libCOMI_gt_CM_CoopAI_AttackWaveSetup, c_playerAny)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

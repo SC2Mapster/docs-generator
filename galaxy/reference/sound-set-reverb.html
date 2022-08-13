@@ -1,0 +1,194 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Set Sound Reverb (Deprecated) / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Set Sound Reverb (Deprecated)"/>
+                <meta property="og:description" content="Sets sound reverb."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="set-sound-reverb-deprecated"><a class="markdownIt-Anchor" href="#set-sound-reverb-deprecated">#</a> Set Sound Reverb (Deprecated)</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Set sound reverb to <strong>reverb</strong> over <strong>duration</strong> seconds (Ambient: <strong>ambient</strong>, Global: <strong>global</strong>)<br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code> | <code>Hidden</code></p>
+</blockquote>
+<p>Sets sound reverb.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>string</code> <em>[ gamelink::Reverb ]</em> — Reverb</li>
+<li><code>fixed</code> — Duration</li>
+<li><code>bool</code> — Ambient</li>
+<li><code>bool</code> — Global</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">SoundSetReverb</span><span class="hljs-params">(
+	<span class="hljs-built_in">string</span> inReverbLink,
+	fixed inDuration,
+	<span class="hljs-keyword">bool</span> inAmbient,
+	<span class="hljs-keyword">bool</span> inGlobal,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#sound-deprecated">Sound / Deprecated</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-set-reverb">Set Sound Reverb (Deprecated)</a></strong> — ( SoundSetReverb )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-play-scene-file">Play Sound Scene File (Deprecated)</a></strong> — ( SoundPlaySceneFile )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-play-scene">Play Sound Scene  (Deprecated)</a></strong> — ( SoundPlayScene )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-play">Play Sound  (Deprecated)</a></strong> — ( SoundPlay )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-play-on-unit">Play Sound On Unit (Deprecated)</a></strong> — ( SoundPlayOnUnit )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-play-at-point">Play Sound At Point (Deprecated)</a></strong> — ( SoundPlayAtPoint )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/tstory01.sc2map/MapScript.galaxy#L7666">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L7666</span>
+SoundSetReverb(<span class="hljs-string">"Reverb_StoryModeTest"</span>, <span class="hljs-number">0.0</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19829</span>
+SoundSetReverb(<span class="hljs-string">"Reverb_HyperionArmory"</span>, <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19860</span>
+SoundSetReverb(<span class="hljs-string">"Reverb_HyperionBridge"</span>, <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19930</span>
+SoundSetReverb(<span class="hljs-string">"Reverb_HyperionCantina"</span>, <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19984</span>
+SoundSetReverb(<span class="hljs-string">"Reverb_CharBattlefield"</span>, <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L20125</span>
+SoundSetReverb(<span class="hljs-string">"Reverb_HyperionLaboratory"</span>, <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L20182</span>
+SoundSetReverb(<span class="hljs-string">"Reverb_MarSaraBar"</span>, <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7666</span>
+SoundSetReverb(<span class="hljs-string">"Reverb_StoryModeTest"</span>, <span class="hljs-number">0.0</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19829</span>
+SoundSetReverb(<span class="hljs-string">"Reverb_HyperionArmory"</span>, <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19860</span>
+SoundSetReverb(<span class="hljs-string">"Reverb_HyperionBridge"</span>, <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19930</span>
+SoundSetReverb(<span class="hljs-string">"Reverb_HyperionCantina"</span>, <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19984</span>
+SoundSetReverb(<span class="hljs-string">"Reverb_CharBattlefield"</span>, <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L20125</span>
+SoundSetReverb(<span class="hljs-string">"Reverb_HyperionLaboratory"</span>, <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L20182</span>
+SoundSetReverb(<span class="hljs-string">"Reverb_MarSaraBar"</span>, <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="campaignsswarmstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmstorysc2campaign">#</a> campaigns/swarmstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstory.sc2campaign/base.sc2data/TriggerLibs/SwarmCampaignLib.galaxy#L8831">SwarmCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L8831</span>
+SoundSetReverb(<span class="hljs-string">"Reverb_EggRoom"</span>, <span class="hljs-number">1.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="campaignsswarmstoryutilsc2mod"><a class="markdownIt-Anchor" href="#campaignsswarmstoryutilsc2mod">#</a> campaigns/swarmstoryutil.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstoryutil.sc2mod/base.sc2data/Lib281DEC45.galaxy#L3097">Lib281DEC45.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3097</span>
+SoundSetReverb(<span class="hljs-string">"Off"</span>, <span class="hljs-number">1.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3120</span>
+SoundSetReverb(<span class="hljs-string">"Off"</span>, <span class="hljs-number">1.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3319</span>
+SoundSetReverb(<span class="hljs-string">"Reverb_LeviathanMouth01"</span>, <span class="hljs-number">1.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3327</span>
+SoundSetReverb(<span class="hljs-string">"Reverb_EggRoom"</span>, <span class="hljs-number">1.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3382</span>
+SoundSetReverb(<span class="hljs-string">"Off"</span>, <span class="hljs-number">1.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignStoryLib.galaxy#L1844">VoidCampaignStoryLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1844</span>
+SoundSetReverb(<span class="hljs-string">"Off"</span>, <span class="hljs-number">1.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1870</span>
+SoundSetReverb(<span class="hljs-string">"Off"</span>, <span class="hljs-number">1.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1958</span>
+SoundSetReverb(<span class="hljs-string">"Off"</span>, <span class="hljs-number">1.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="modsmissionpacksnovacampaignsc2mod"><a class="markdownIt-Anchor" href="#modsmissionpacksnovacampaignsc2mod">#</a> mods/missionpacks/novacampaign.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/novacampaign.sc2mod/base.sc2data/LibNCST.galaxy#L1652">LibNCST.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1652</span>
+SoundSetReverb(<span class="hljs-string">"Off"</span>, <span class="hljs-number">1.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1678</span>
+SoundSetReverb(<span class="hljs-string">"Off"</span>, <span class="hljs-number">1.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1761</span>
+SoundSetReverb(<span class="hljs-string">"Off"</span>, <span class="hljs-number">1.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

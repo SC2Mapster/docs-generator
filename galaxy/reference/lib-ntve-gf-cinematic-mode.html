@@ -1,0 +1,405 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Cinematic Mode / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Cinematic Mode"/>
+                <meta property="og:description" content="Turns on/off cinematic mode for a player(s). Cinematic mode hides the normal gameplay UI.  When cinematic mode is turned on, the state of the gameplay UI is cached, and when cinematic mode is turned off, the state of the gameplay UI is restored from that cache.  Therefore, changing visibility settings of gameplay UI elements while cinematic mode is turned on will have no effect.  This mode will also mute certain sound channels."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="cinematic-mode"><a class="markdownIt-Anchor" href="#cinematic-mode">#</a> Cinematic Mode</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Turn cinematic mode <strong>onOff</strong> for <strong>players</strong> over <strong>duration</strong> seconds<br>
+<em>Flags</em> — <code>Action</code></p>
+</blockquote>
+<p>Turns on/off cinematic mode for a player(s). Cinematic mode hides the normal gameplay UI.  When cinematic mode is turned on, the state of the gameplay UI is cached, and when cinematic mode is turned off, the state of the gameplay UI is restored from that cache.  Therefore, changing visibility settings of gameplay UI elements while cinematic mode is turned on will have no effect.  This mode will also mute certain sound channels.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>bool</code> <em>[ preset::<a href="/galaxy/reference/preset-on-off-option">OnOffOption</a> ]</em> — On/Off</li>
+<li><code>playergroup</code> — Players</li>
+<li><code>fixed</code> — Duration</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">libNtve_gf_CinematicMode</span><span class="hljs-params">(
+	<span class="hljs-keyword">bool</span> lp_onOff,
+	playergroup lp_players,
+	fixed lp_duration,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#cinematics-cinematic-mode">Cinematics / Cinematic Mode</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-cinematic-mode">Cinematic Mode</a></strong> — ( libNtve_gf_CinematicMode )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-global-cinematic-setting">Global Cinematic Setting</a></strong> — ( libNtve_gf_GlobalCinematicSetting )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-global-cinematic-setting-fixed-seed-on-off">Global Cinematic Setting (Fixed Seed On/Off)</a></strong> — ( libNtve_gf_GlobalCinematicSettingFixedSeedOnOff )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-set-cinematic-transition-style">Set Cinematic Transition Style</a></strong> — ( libNtve_gf_SetCinematicTransitionStyle )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-player-in-cinematic-mode">Player In Cinematic Mode</a></strong> — ( libNtve_gf_PlayerInCinematicMode )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/challenges/advancedcommand.sc2map/MapScript.galaxy#L1332">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1332</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">true</span>, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1459</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">false</span>, PlayerGroupAll(), c_transitionDurationDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L996</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">false</span>, PlayerGroupAll(), c_transitionDurationDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1157</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">false</span>, PlayerGroupAll(), c_transitionDurationDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1338</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">false</span>, PlayerGroupAll(), c_transitionDurationDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2818</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">true</span>, PlayerGroupAll(), c_transitionDurationImmediate)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2945</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">false</span>, PlayerGroupAll(), <span class="hljs-number">1.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1613</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">true</span>, PlayerGroupAll(), c_transitionDurationImmediate)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1836</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">false</span>, PlayerGroupAll(), c_transitionDurationDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1532</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">true</span>, PlayerGroupAll(), c_transitionDurationImmediate)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1738</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">false</span>, PlayerGroupAll(), c_transitionDurationDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2004</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">true</span>, PlayerGroupAll(), c_transitionDurationImmediate)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2211</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">false</span>, PlayerGroupAll(), <span class="hljs-number">1.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2301</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">true</span>, PlayerGroupAll(), c_transitionDurationDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2497</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">false</span>, PlayerGroupAll(), <span class="hljs-number">1.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L945</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">false</span>, PlayerGroupAll(), c_transitionDurationDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1107</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">false</span>, PlayerGroupAll(), c_transitionDurationDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1274</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">false</span>, PlayerGroupAll(), c_transitionDurationDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2660</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">true</span>, PlayerGroupAll(), c_transitionDurationImmediate)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2809</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">false</span>, PlayerGroupAll(), c_transitionDurationDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1368</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">true</span>, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1455</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">false</span>, PlayerGroupAll(), <span class="hljs-number">1.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1009</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">false</span>, PlayerGroupAll(), c_transitionDurationDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1177</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">false</span>, PlayerGroupAll(), c_transitionDurationDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1347</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">false</span>, PlayerGroupAll(), c_transitionDurationDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2805</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">true</span>, PlayerGroupAll(), c_transitionDurationImmediate)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2965</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">false</span>, PlayerGroupAll(), <span class="hljs-number">1.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1311</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">true</span>, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1396</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">false</span>, PlayerGroupAll(), <span class="hljs-number">1.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8644</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">true</span>, PlayerGroupAll(), c_transitionDurationImmediate)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8906</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">false</span>, PlayerGroupAll(), c_transitionDurationImmediate)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L889</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">true</span>, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L892</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">false</span>, PlayerGroupAll(), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5683</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">true</span>, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6244</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">true</span>, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L758</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">true</span>, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L763</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">false</span>, PlayerGroupAll(), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4730</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">true</span>, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5343</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">true</span>, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L938</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">true</span>, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L942</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">false</span>, PlayerGroupAll(), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5951</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">true</span>, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6527</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">true</span>, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3522</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">true</span>, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3904</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">true</span>, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4446</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">true</span>, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4675</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">false</span>, PlayerGroupAll(), lv_fadeDuration)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L971</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">true</span>, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L978</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">false</span>, PlayerGroupAll(), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5599</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">true</span>, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5822</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">true</span>, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L896</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">true</span>, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L901</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">false</span>, PlayerGroupAll(), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5101</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">true</span>, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5444</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">true</span>, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5594</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">false</span>, PlayerGroupAll(), lv_fadeDuration)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5656</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">true</span>, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L749</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">true</span>, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L759</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">false</span>, PlayerGroupAll(), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5080</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">true</span>, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5481</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">true</span>, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5705</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">false</span>, PlayerGroupAll(), lv_fadeDuration)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5816</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">true</span>, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5937</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">true</span>, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6295</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">true</span>, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6494</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">false</span>, PlayerGroupAll(), lv_fadeDuration)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6557</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">true</span>, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6836</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">false</span>, PlayerGroupAll(), lv_fadeDuration)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7025</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">true</span>, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11100</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">true</span>, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11256</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">true</span>, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11442</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">false</span>, PlayerGroupAll(), lv_fadeDuration)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11595</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">true</span>, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11761</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">false</span>, PlayerGroupAll(), lv_fadeDuration)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11976</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">true</span>, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12104</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">false</span>, PlayerGroupAll(), lv_fadeDuration)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12174</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">true</span>, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12458</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">false</span>, PlayerGroupAll(), lv_fadeDuration)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12685</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">true</span>, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4631</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">true</span>, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4897</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">true</span>, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5058</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">false</span>, PlayerGroupAll(), c_transitionDurationDefault)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5161</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">false</span>, PlayerGroupAll(), lv_fadeDuration)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5304</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">true</span>, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5444</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">false</span>, PlayerGroupAll(), lv_fadeDuration)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5508</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">true</span>, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5700</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">false</span>, PlayerGroupAll(), lv_fadeDuration)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5760</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">true</span>, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L749</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">true</span>, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L758</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">false</span>, PlayerGroupAll(), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4650</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">true</span>, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4839</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">true</span>, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L840</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">true</span>, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L852</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">false</span>, PlayerGroupAll(), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4601</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">true</span>, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5077</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">true</span>, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11841</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">true</span>, PlayerGroupAll(), c_transitionDurationImmediate)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11871</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">false</span>, PlayerGroupAll(), c_transitionDurationImmediate)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11890</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">true</span>, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11897</span>
+libNtve_gf_CinematicMode(<span class="hljs-literal">false</span>, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

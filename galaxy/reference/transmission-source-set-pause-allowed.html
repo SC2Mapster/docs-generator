@@ -1,0 +1,155 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Set Transmission Source Pause Allowed / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Set Transmission Source Pause Allowed"/>
+                <meta property="og:description" content="If the pause allowed flag is set to true and this transmission source is a movie, the movie can be paused."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="set-transmission-source-pause-allowed"><a class="markdownIt-Anchor" href="#set-transmission-source-pause-allowed">#</a> Set Transmission Source Pause Allowed</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Set the Pause Allowed flag for <strong>transmissionSource</strong> to <strong>allowed|allowed</strong>.<br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>If the pause allowed flag is set to true and this transmission source is a movie, the movie can be paused.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>transmissionsource</code> — Transmission Source</li>
+<li><code>bool</code> — Allowed</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">TransmissionSourceSetPauseAllowed</span><span class="hljs-params">(
+	transmissionsource source,
+	<span class="hljs-keyword">bool</span> allowed,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#transmission-sources">Transmission / Sources</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>transmissionsource</code> — <strong><a href="/galaxy/reference/transmission-source-from-unit-type">Unit Type Transmission Source</a></strong> — ( TransmissionSourceFromUnitType )</li>
+<li><em><strong>[F]</strong></em> — <code>transmissionsource</code> — <strong><a href="/galaxy/reference/transmission-source-from-unit">Unit Transmission Source</a></strong> — ( TransmissionSourceFromUnit )</li>
+<li><em><strong>[F]</strong></em> — <code>transmissionsource</code> — <strong><a href="/galaxy/reference/transmission-source-from-model">Model Transmission Source</a></strong> — ( TransmissionSourceFromModel )</li>
+<li><em><strong>[F]</strong></em> — <code>transmissionsource</code> — <strong><a href="/galaxy/reference/transmission-source-from-movie">Movie Transmission Source</a></strong> — ( TransmissionSourceFromMovie )</li>
+<li><em><strong>[F]</strong></em> — <code>transmissionsource</code> — <strong><a href="/galaxy/reference/transmission-source">No Transmission Source</a></strong> — ( TransmissionSource )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/transmission-source-set-pause-allowed">Set Transmission Source Pause Allowed</a></strong> — ( TransmissionSourceSetPauseAllowed )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/transmission-source-set-streaming-allowed">Set Transmission Source Streaming Allowed</a></strong> — ( TransmissionSourceSetStreamingAllowed )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/transmission-source-set-bypass-message-log">Set Transmission Source Bypass Message Log</a></strong> — ( TransmissionSourceSetBypassMessageLog )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/tstory01.sc2map/MapScript.galaxy#L28260">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L28260</span>
+TransmissionSourceSetPauseAllowed(lv_movieSource, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L28308</span>
+TransmissionSourceSetPauseAllowed(lv_movieSource, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L28380</span>
+TransmissionSourceSetPauseAllowed(lv_movieSource, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L28428</span>
+TransmissionSourceSetPauseAllowed(lv_movieSource, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L28260</span>
+TransmissionSourceSetPauseAllowed(lv_movieSource, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L28308</span>
+TransmissionSourceSetPauseAllowed(lv_movieSource, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L28380</span>
+TransmissionSourceSetPauseAllowed(lv_movieSource, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L28428</span>
+TransmissionSourceSetPauseAllowed(lv_movieSource, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="campaignslibertystorysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertystorysc2campaign">#</a> campaigns/libertystory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/libertystory.sc2campaign/base.sc2data/TriggerLibs/CampaignLib.galaxy#L12907">CampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L12907</span>
+TransmissionSourceSetPauseAllowed(lv_movieSource, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="campaignsswarmstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmstorysc2campaign">#</a> campaigns/swarmstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstory.sc2campaign/base.sc2data/TriggerLibs/SwarmCampaignLib.galaxy#L19778">SwarmCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L19778</span>
+TransmissionSourceSetPauseAllowed(lv_movieSource, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignLib.galaxy#L10472">VoidCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L10472</span>
+TransmissionSourceSetPauseAllowed(lv_movieSource, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="modsmissionpackscampaigncommonsc2mod"><a class="markdownIt-Anchor" href="#modsmissionpackscampaigncommonsc2mod">#</a> mods/missionpacks/campaigncommon.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/campaigncommon.sc2mod/base.sc2data/LibComC.galaxy#L4580">LibComC.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4580</span>
+TransmissionSourceSetPauseAllowed(lv_movieSource, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="modsvoidprologuesc2mod"><a class="markdownIt-Anchor" href="#modsvoidprologuesc2mod">#</a> mods/voidprologue.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/voidprologue.sc2mod/base.sc2data/LibA3DDD02B.galaxy#L8840">LibA3DDD02B.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L8840</span>
+TransmissionSourceSetPauseAllowed(lv_movieSource, <span class="hljs-literal">true</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

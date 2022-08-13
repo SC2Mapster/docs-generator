@@ -1,0 +1,399 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Global Cinematic Setting / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Global Cinematic Setting"/>
+                <meta property="og:description" content="Turns on/off the aspects of cinematic mode that are not player-specific, such as game speed.  This will also turn on fixed random seed, so random rolls done while in cinematic mode will come out the same every time it is run.  These settings affect all players, so this action should not be used if some players in a game are viewing a cinematic while others are not.  This action is intended to be used in conjunction with the &quot;Cinematic Mode&quot; action."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="global-cinematic-setting"><a class="markdownIt-Anchor" href="#global-cinematic-setting">#</a> Global Cinematic Setting</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Turn global cinematic setting <strong>onOff</strong><br>
+<em>Flags</em> — <code>Action</code></p>
+</blockquote>
+<p>Turns on/off the aspects of cinematic mode that are not player-specific, such as game speed.  This will also turn on fixed random seed, so random rolls done while in cinematic mode will come out the same every time it is run.  These settings affect all players, so this action should not be used if some players in a game are viewing a cinematic while others are not.  This action is intended to be used in conjunction with the <em>“Cinematic Mode”</em> action.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>bool</code> <em>[ preset::<a href="/galaxy/reference/preset-on-off-option">OnOffOption</a> ]</em> — On/Off</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">libNtve_gf_GlobalCinematicSetting</span><span class="hljs-params">(<span class="hljs-keyword">bool</span> lp_onOff)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#cinematics-cinematic-mode">Cinematics / Cinematic Mode</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-cinematic-mode">Cinematic Mode</a></strong> — ( libNtve_gf_CinematicMode )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-global-cinematic-setting">Global Cinematic Setting</a></strong> — ( libNtve_gf_GlobalCinematicSetting )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-global-cinematic-setting-fixed-seed-on-off">Global Cinematic Setting (Fixed Seed On/Off)</a></strong> — ( libNtve_gf_GlobalCinematicSettingFixedSeedOnOff )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-set-cinematic-transition-style">Set Cinematic Transition Style</a></strong> — ( libNtve_gf_SetCinematicTransitionStyle )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-player-in-cinematic-mode">Player In Cinematic Mode</a></strong> — ( libNtve_gf_PlayerInCinematicMode )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/challenges/advancedcommand.sc2map/MapScript.galaxy#L1333">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1333</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1460</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L997</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1158</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1339</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2819</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2946</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1614</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1837</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1533</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1739</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2005</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2212</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2302</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2498</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L946</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1108</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1275</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2661</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2810</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1369</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1456</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1010</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1178</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1348</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2806</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2966</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1312</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1397</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L890</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L893</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5684</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6245</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L759</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L764</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4731</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5344</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L939</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L943</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5952</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6528</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3523</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3905</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4447</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4676</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L972</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L979</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5600</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5823</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L897</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L902</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5102</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5445</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5595</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5657</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L750</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L760</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5081</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5482</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5706</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5817</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5938</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6296</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6495</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6558</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6837</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7026</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11101</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11257</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11443</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11596</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11762</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11977</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12105</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12175</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12459</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12686</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4632</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4898</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5059</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5162</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5305</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5445</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5509</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5701</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5761</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L750</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L759</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4651</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4840</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L841</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L853</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4602</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5078</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L606</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L611</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4759</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5039</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L967</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L972</span>
+libNtve_gf_GlobalCinematicSetting(<span class="hljs-literal">false</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

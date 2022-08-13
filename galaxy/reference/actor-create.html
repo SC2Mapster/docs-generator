@@ -1,0 +1,345 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Create Actor / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Create Actor"/>
+                <meta property="og:description" content="Creates an actor.  The Scope parameter can be null if you do not want to create the actor in an existing scope.  The Name parameter is the string ID of the actor you are creating.  The Content parameters are optional, and allow you to specify additional properties for the actor being created.  Running the &quot;Last Created Actor&quot; function immediately after this action will return the actor created by this action.
+
+Returns: actor"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="create-actor"><a class="markdownIt-Anchor" href="#create-actor">#</a> Create Actor</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Create a <strong>name</strong> actor in the scope <strong>actorScope</strong> with content parameters <strong>content1</strong>, <strong>content2</strong>, <strong>content3</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Creates an actor.  The Scope parameter can be null if you do not want to create the actor in an existing scope.  The Name parameter is the string ID of the actor you are creating.  The Content parameters are optional, and allow you to specify additional properties for the actor being created.  Running the <em>“Last Created Actor”</em> function immediately after this action will return the actor created by this action.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>actorscope</code> — Actor Scope</li>
+<li><code>string</code> <em>[ gamelink::Actor ]</em> — Name</li>
+<li><code>string</code> — Content1</li>
+<li><code>string</code> — Content2</li>
+<li><code>string</code> — Content3</li>
+</ul>
+<p>Returns — <code>actor</code></p>
+<pre class="hljs"><code><span class="hljs-function">native actor <span class="hljs-title">ActorCreate</span><span class="hljs-params">(
+	actorscope as,
+	<span class="hljs-built_in">string</span> actorName,
+	<span class="hljs-built_in">string</span> content1Name,
+	<span class="hljs-built_in">string</span> content2Name,
+	<span class="hljs-built_in">string</span> content3Name,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#actor-create-actors">Actor / Create Actors</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>actor</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-attach-model-to-unit">Attach Model To Unit</a></strong> — ( libNtve_gf_AttachModelToUnit )</li>
+<li><em><strong>[F]</strong></em> — <code>actor</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-attach-model-to-unit-inherit-visibility">Attach Model To Unit (Inherit Visibility)</a></strong> — ( libNtve_gf_AttachModelToUnitInheritVisibility )</li>
+<li><em><strong>[F]</strong></em> — <code>actor</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-attach-model-to-actor2">Attach Model To Actor</a></strong> — ( libNtve_gf_AttachModelToActor2 )</li>
+<li><em><strong>[F]</strong></em> — <code>actorscope</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-actor-scope-last-created">Last Created Actor Scope</a></strong> — ( libNtve_gf_ActorScopeLastCreated )</li>
+<li><em><strong>[F]</strong></em> — <code>actorscope</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-actor-scope-last-created-send">Last Created Actor Scope by Message</a></strong> — ( libNtve_gf_ActorScopeLastCreatedSend )</li>
+<li><em><strong>[F]</strong></em> — <code>actor</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-actor-last-created">Last Created Actor</a></strong> — ( libNtve_gf_ActorLastCreated )</li>
+<li><em><strong>[F]</strong></em> — <code>actor</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-actor-last-created-send">Last Created Actor by Message</a></strong> — ( libNtve_gf_ActorLastCreatedSend )</li>
+<li><em><strong>[F]</strong></em> — <code>actor</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-attach-actor-to-unit">Attach Actor To Unit</a></strong> — ( libNtve_gf_AttachActorToUnit )</li>
+<li><em><strong>[F]</strong></em> — <code>actor</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-attach-actor-to-actor">Attach Actor To Actor</a></strong> — ( libNtve_gf_AttachActorToActor )</li>
+<li><em><strong>[F]</strong></em> — <code>actorscope</code> — <strong><a href="/galaxy/reference/actor-scope-create">Create Actor Scope</a></strong> — ( ActorScopeCreate )</li>
+<li><em><strong>[F]</strong></em> — <code>actor</code> — <strong><a href="/galaxy/reference/actor-create">Create Actor</a></strong> — ( ActorCreate )</li>
+<li><em><strong>[F]</strong></em> — <code>actor</code> — <strong><a href="/galaxy/reference/actor-region-create">Create Actor Region</a></strong> — ( ActorRegionCreate )</li>
+<li><em><strong>[F]</strong></em> — <code>actor</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-create-actor-at-point">Create Actor At Point</a></strong> — ( libNtve_gf_CreateActorAtPoint )</li>
+<li><em><strong>[F]</strong></em> — <code>actor</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-create-model-at-point">Create Model At Point</a></strong> — ( libNtve_gf_CreateModelAtPoint )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-create-model-with-point-facing">Create Model With Point Facing</a></strong> — ( libNtve_gf_CreateModelWithPointFacing )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/actor-scope-move-to">Actor Scope Move To</a></strong> — ( ActorScopeMoveTo )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/tzeratul03.sc2map/MapScript.galaxy#L4833">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4833</span>
+ActorCreate(ActorScopeFromUnit(UnitFromId(<span class="hljs-number">154</span>)), <span class="hljs-string">"WaterSplash"</span>, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4834</span>
+ActorCreate(ActorScopeFromUnit(UnitFromId(<span class="hljs-number">455</span>)), <span class="hljs-string">"WaterSplash"</span>, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4844</span>
+ActorCreate(ActorScopeFromUnit(UnitFromId(<span class="hljs-number">154</span>)), <span class="hljs-string">"WaterDrops"</span>, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4845</span>
+ActorCreate(ActorScopeFromUnit(UnitFromId(<span class="hljs-number">455</span>)), <span class="hljs-string">"WaterDrops"</span>, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4833</span>
+ActorCreate(ActorScopeFromUnit(UnitFromId(<span class="hljs-number">154</span>)), <span class="hljs-string">"WaterSplash"</span>, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4834</span>
+ActorCreate(ActorScopeFromUnit(UnitFromId(<span class="hljs-number">455</span>)), <span class="hljs-string">"WaterSplash"</span>, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4844</span>
+ActorCreate(ActorScopeFromUnit(UnitFromId(<span class="hljs-number">154</span>)), <span class="hljs-string">"WaterDrops"</span>, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4845</span>
+ActorCreate(ActorScopeFromUnit(UnitFromId(<span class="hljs-number">455</span>)), <span class="hljs-string">"WaterDrops"</span>, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1528</span>
+ActorCreate(null, <span class="hljs-string">"UI_pSetClick_CelestialArray"</span>, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1566</span>
+ActorCreate(null, <span class="hljs-string">"UI_pSetClick_ArmyConsole"</span>, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1590</span>
+ActorCreate(null, <span class="hljs-string">"UI_pSetClick_SolarCoreInterface"</span>, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1982</span>
+ActorCreate(null, <span class="hljs-string">"UI_pSetClick_SolarCoreInterface"</span>, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1528</span>
+ActorCreate(null, <span class="hljs-string">"UI_pSetClick_CelestialArray"</span>, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1566</span>
+ActorCreate(null, <span class="hljs-string">"UI_pSetClick_ArmyConsole"</span>, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1590</span>
+ActorCreate(null, <span class="hljs-string">"UI_pSetClick_SolarCoreInterface"</span>, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1982</span>
+ActorCreate(null, <span class="hljs-string">"UI_pSetClick_SolarCoreInterface"</span>, null, null, null)
+</code></pre>
+<h4 id="modscoresc2mod"><a class="markdownIt-Anchor" href="#modscoresc2mod">#</a> mods/core.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/core.sc2mod/base.sc2data/TriggerLibs/NativeLib.galaxy#L257">NativeLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L257</span>
+ActorCreate(lv_scope, <span class="hljs-string">"SiteHosted"</span>, lp_attachPoint, <span class="hljs-string">""</span>, <span class="hljs-string">""</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L259</span>
+ActorCreate(lv_scope, <span class="hljs-string">"ModelHosted"</span>, (lp_model), <span class="hljs-string">""</span>, <span class="hljs-string">""</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L286</span>
+ActorCreate(lv_scope, <span class="hljs-string">"SiteHosted"</span>, lp_attachPoint, <span class="hljs-string">""</span>, <span class="hljs-string">""</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L288</span>
+ActorCreate(lv_scope, <span class="hljs-string">"ModelHosted"</span>, (lp_model), <span class="hljs-string">""</span>, <span class="hljs-string">""</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L303</span>
+ActorCreate(lv_scope, <span class="hljs-string">"SiteHosted"</span>, lp_attachPoint, <span class="hljs-string">""</span>, <span class="hljs-string">""</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L305</span>
+ActorCreate(lv_scope, <span class="hljs-string">"ModelHostedInheritVisibility"</span>, (lp_model), <span class="hljs-string">""</span>, <span class="hljs-string">""</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L361</span>
+ActorCreate(lv_scope, <span class="hljs-string">"SiteHosted"</span>, lp_attachPoint, <span class="hljs-string">""</span>, <span class="hljs-string">""</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L364</span>
+ActorCreate(lv_scope, lp_actor, <span class="hljs-string">""</span>, <span class="hljs-string">""</span>, <span class="hljs-string">""</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L380</span>
+ActorCreate(lv_scope, <span class="hljs-string">"SiteHosted"</span>, lp_attachPoint, <span class="hljs-string">""</span>, <span class="hljs-string">""</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L383</span>
+ActorCreate(lv_scope, lp_attachingActor, <span class="hljs-string">""</span>, <span class="hljs-string">""</span>, <span class="hljs-string">""</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L133</span>
+ActorCreate(lv_scope, <span class="hljs-string">"SiteHosted"</span>, lp_attachPoint, <span class="hljs-string">""</span>, <span class="hljs-string">""</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L135</span>
+ActorCreate(lv_scope, <span class="hljs-string">"ModelHosted"</span>, (lp_model), <span class="hljs-string">""</span>, <span class="hljs-string">""</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L162</span>
+ActorCreate(lv_scope, <span class="hljs-string">"SiteHosted"</span>, lp_attachPoint, <span class="hljs-string">""</span>, <span class="hljs-string">""</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L164</span>
+ActorCreate(lv_scope, <span class="hljs-string">"ModelHosted"</span>, (lp_model), <span class="hljs-string">""</span>, <span class="hljs-string">""</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L179</span>
+ActorCreate(lv_scope, <span class="hljs-string">"SiteHosted"</span>, lp_attachPoint, <span class="hljs-string">""</span>, <span class="hljs-string">""</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L181</span>
+ActorCreate(lv_scope, <span class="hljs-string">"ModelHostedInheritVisibility"</span>, (lp_model), <span class="hljs-string">""</span>, <span class="hljs-string">""</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L237</span>
+ActorCreate(lv_scope, <span class="hljs-string">"SiteHosted"</span>, lp_attachPoint, <span class="hljs-string">""</span>, <span class="hljs-string">""</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L240</span>
+ActorCreate(lv_scope, lp_actor, <span class="hljs-string">""</span>, <span class="hljs-string">""</span>, <span class="hljs-string">""</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L256</span>
+ActorCreate(lv_scope, <span class="hljs-string">"SiteHosted"</span>, lp_attachPoint, <span class="hljs-string">""</span>, <span class="hljs-string">""</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L259</span>
+ActorCreate(lv_scope, lp_attachingActor, <span class="hljs-string">""</span>, <span class="hljs-string">""</span>, <span class="hljs-string">""</span>)
+</code></pre>
+<h4 id="modsheroesdatastormmod"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/GameLib.galaxy#L17437">GameLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L17437</span>
+ActorCreate(ActorScopeFromUnit(lv_deadUnit), <span class="hljs-string">"RedemptionVisualModel"</span>, null, null, null)
+</code></pre>
+<h4 id="modsheroesdatastormmod-2"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-2">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/MapMechanicsLib.galaxy#L6230">MapMechanicsLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L6230</span>
+ActorCreate(ActorScopeFromUnit(UnitLastCreated()), <span class="hljs-string">"UI_Game_Ping_Tribute_Ready"</span>, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7237</span>
+ActorCreate(ActorScopeFromUnit(libMapM_gv_mMGardensDragonDragonTowers[lv_obelisk].lv_shrineUnit), <span class="hljs-string">"UI_Game_Ping_Shrine_Ready"</span>, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7280</span>
+ActorCreate(ActorScopeFromUnit(libMapM_gv_mMGardensDragonDragonTowers[lv_dragontower].lv_shrineUnit), <span class="hljs-string">"UI_Game_Ping_Shrine_Ready"</span>, null, null, null)
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodsblackheartsbaystormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodsblackheartsbaystormmod">#</a> mods/heroesmapmods/battlegroundmapmods/blackheartsbay.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/blackheartsbay.stormmod/base.stormdata/LibBBAY.galaxy#L403">LibBBAY.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L403</span>
+ActorCreate(ActorScopeFromUnit(libBBAY_gv_mMBBCannonballsGhostShipBeacon), <span class="hljs-string">"UI_Game_Ping_GhostShip_Ready"</span>, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1427</span>
+ActorCreate(ActorScopeFromUnit(libBBAY_gv_mMBBCannonballsGhostShip), <span class="hljs-string">"UI_Game_Ping_GhostShip_Ready"</span>, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1864</span>
+ActorCreate(ActorScopeFromUnit(libBBAY_gv_mMBBCannonballsTreasureChestChests[lv_iter]), <span class="hljs-string">"UI_Game_Ping_TreasureSpawn"</span>, null, null, null)
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodsgardenofterrorstormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodsgardenofterrorstormmod">#</a> mods/heroesmapmods/battlegroundmapmods/gardenofterror.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/gardenofterror.stormmod/base.stormdata/LibGRDN.galaxy#L195">LibGRDN.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L195</span>
+ActorCreate(ActorScopeFromUnit(UnitLastCreated()), <span class="hljs-string">"UI_Game_Ping_Tribute_Ready"</span>, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L422</span>
+ActorCreate(ActorScopeFromActor(libMapM_gv_mapMechanicControllerActor), <span class="hljs-string">"Amb_Group_GardenOfTerror_Day2Night"</span>, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L457</span>
+ActorCreate(ActorScopeFromActor(libMapM_gv_mapMechanicControllerActor), <span class="hljs-string">"Amb_Group_GardenOfTerror_Night2Day"</span>, null, null, null)
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodshauntedminesstormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodshauntedminesstormmod">#</a> mods/heroesmapmods/battlegroundmapmods/hauntedmines.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/hauntedmines.stormmod/base.stormdata/LibMHtM.galaxy#L1405">LibMHtM.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1405</span>
+ActorCreate(ActorScopeFromUnit(lv_itGate), <span class="hljs-string">"UI_Game_Ping_Mines_Ready"</span>, null, null, null)
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodsvolskayasoundstormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodsvolskayasoundstormmod">#</a> mods/heroesmapmods/battlegroundmapmods/volskayasound.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/volskayasound.stormmod/base.stormdata/LibVLSS.galaxy#L121">LibVLSS.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L121</span>
+ActorCreate(ActorScopeFromUnit(libGame_gv_teams[libGame_gv_teamOrderIndex_C].lv_core), <span class="hljs-string">"UI_Game_Volskaya_CapturePoint_Capturing_Ally"</span>, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L123</span>
+ActorCreate(ActorScopeFromUnit(libGame_gv_teams[libGame_gv_teamOrderIndex_C].lv_core), <span class="hljs-string">"UI_Game_Volskaya_CapturePoint_Capturing_Enemy"</span>, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L127</span>
+ActorCreate(ActorScopeFromUnit(libGame_gv_teams[libGame_gv_teamChaosIndex_C].lv_core), <span class="hljs-string">"UI_Game_Volskaya_CapturePoint_Capturing_Ally"</span>, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L130</span>
+ActorCreate(ActorScopeFromUnit(libGame_gv_teams[libGame_gv_teamChaosIndex_C].lv_core), <span class="hljs-string">"UI_Game_Volskaya_CapturePoint_Capturing_Enemy"</span>, null, null, null)
+</code></pre>
+<h4 id="modsheromodschromiestormmod"><a class="markdownIt-Anchor" href="#modsheromodschromiestormmod">#</a> mods/heromods/chromie.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heromods/chromie.stormmod/base.stormdata/LibHCHR.galaxy#L250">LibHCHR.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L250</span>
+ActorCreate(ActorScopeFromUnit(EventPlayerEffectUsedUnitLaunch()), <span class="hljs-string">"ChromieTemporalLoopTargetTrailFX"</span>, null, null, null)
+</code></pre>
+<h4 id="modsheromodsluciostormmod"><a class="markdownIt-Anchor" href="#modsheromodsluciostormmod">#</a> mods/heromods/lucio.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heromods/lucio.stormmod/base.stormdata/LibHLUC.galaxy#L585">LibHLUC.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L585</span>
+ActorCreate(ActorScopeFromUnit(lv_lucioUnit), <span class="hljs-string">"LucioWallRideCantStopWontStopActivate"</span>, null, null, null)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOMI.galaxy#L14254">LibCOMI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L14254</span>
+ActorCreate(ActorScopeFromUnit(lv_u), <span class="hljs-string">"CandyBowlCandyX"</span>, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L20583</span>
+ActorCreate(ActorScopeFromUnit(lv_bomberTargetUnit), <span class="hljs-string">"HHBomberAreaBombWarning"</span>, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L25353</span>
+ActorCreate(ActorScopeFromUnit(lv_odin), <span class="hljs-string">"TychusOdinDeathTimeOut"</span>, null, null, null)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod-2"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod-2">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOMU.galaxy#L952">LibCOMU.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L952</span>
+ActorCreate(ActorScopeFromUnit(lp_damagedUnit), <span class="hljs-string">"Diffusion_Shockwave_Coop"</span>, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L962</span>
+ActorCreate(ActorScopeFromUnit(lp_damagedUnit), <span class="hljs-string">"Diffusion_Shockwave_Coop"</span>, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12399</span>
+ActorCreate(ActorScopeFromUnit(UnitLastCreated()), <span class="hljs-string">"Reanimator_Resurrect_Coop"</span>, null, null, null)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod-3"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod-3">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOUI.galaxy#L9338">LibCOUI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L9338</span>
+ActorCreate(ActorScopeFromUnit(EventUnit()), <span class="hljs-string">"Heavens_COOP_GearDeliveryBeam_Source"</span>, null, null, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9341</span>
+ActorCreate(ActorScopeFromUnit(lv_squadhero), <span class="hljs-string">"Heavens_COOP_GearDeliveryBeam_Target"</span>, null, null, null)
+</code></pre>
+<h4 id="modswarcoopprogressionequipmentssc2mod"><a class="markdownIt-Anchor" href="#modswarcoopprogressionequipmentssc2mod">#</a> mods/warcoop/progression/equipments.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/warcoop/progression/equipments.sc2mod/base.sc2data/LibPEqu.galaxy#L69">LibPEqu.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L69</span>
+ActorCreate(ActorScopeFromUnit(lv_attacker), <span class="hljs-string">"RemoveUnitTeleportVisual"</span>, null, null, null)
+</code></pre>
+<h4 id="modswarcoopwarclassicsc2mod"><a class="markdownIt-Anchor" href="#modswarcoopwarclassicsc2mod">#</a> mods/warcoop/warclassic.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/warcoop/warclassic.sc2mod/base.sc2data/TriggerLibs/WarClassic.galaxy#L266">WarClassic.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L266</span>
+ActorCreate(null, <span class="hljs-string">"War3_TriggerEffect"</span>, (lp_model), null, <span class="hljs-string">"null"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L283</span>
+ActorCreate(lv_scope, <span class="hljs-string">"SiteHosted"</span>, lp_attachPoint, <span class="hljs-string">""</span>, <span class="hljs-string">""</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L285</span>
+ActorCreate(lv_scope, <span class="hljs-string">"War3_TriggerEffectHostedInheritVisibility"</span>, (lp_model), <span class="hljs-string">""</span>, <span class="hljs-string">""</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

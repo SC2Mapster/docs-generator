@@ -1,0 +1,444 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Get State / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Get State"/>
+                <meta property="og:description" content="Gets the current value of the specified state index for a player.  The state is a per player integer array that can be useful to AI scripting.
+
+Returns: int"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="get-state"><a class="markdownIt-Anchor" href="#get-state">#</a> Get State</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Gets the current value of the state at index <strong>index</strong> for player <strong>player</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Function</code></p>
+</blockquote>
+<p>Gets the current value of the specified state index for a player.  The state is a per player integer array that can be useful to AI scripting.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> — Player</li>
+<li><code>int</code> — Index</li>
+</ul>
+<p>Returns — <code>int</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">int</span> <span class="hljs-title">AIState</span><span class="hljs-params">(<span class="hljs-keyword">int</span> player, <span class="hljs-keyword">int</span> index)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#ai-advanced-utility-functions">AI Advanced / Utility / Functions</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/in-shrub">Is Point In Shrub</a></strong> — ( InShrub )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/ai-is-campaign">Is Campaign AI</a></strong> — ( AIIsCampaign )</li>
+<li><em><strong>[F]</strong></em> — <code>unit</code> — <strong><a href="/galaxy/reference/ai-grab-unit">Grab Unit</a></strong> — ( AIGrabUnit )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/ai-state">Get State</a></strong> — ( AIState )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/ai-get-flag">Get Flag</a></strong> — ( AIGetFlag )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/ai-get-coop-flag">Get Coop Flag</a></strong> — ( AIGetCoopFlag )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/unit-get-ai-option">Unit Has AI Option</a></strong> — ( UnitGetAIOption )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/ai-giving-up">Wants To Surrender</a></strong> — ( AIGivingUp )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/ai-pathing-cost-map">AI Pathing Cost Map</a></strong> — ( AIPathingCostMap )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/ai-pathing-cost-unit">AI Pathing Cost Unit</a></strong> — ( AIPathingCostUnit )</li>
+<li><em><strong>[F]</strong></em> — <code>point</code> — <strong><a href="/galaxy/reference/ai-self-reinforce-drop-point">AI Self Reinforce Point</a></strong> — ( AISelfReinforceDropPoint )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="modscoresc2mod"><a class="markdownIt-Anchor" href="#modscoresc2mod">#</a> mods/core.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/core.sc2mod/base.sc2data/TriggerLibs/MeleeAI.galaxy#L188">MeleeAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L188</span>
+AIState(player, e_attackState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L204</span>
+AIState(player, e_mainState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L205</span>
+AIState(player, e_mainSubState)
+</code></pre>
+<h4 id="modscoresc2mod-2"><a class="markdownIt-Anchor" href="#modscoresc2mod-2">#</a> mods/core.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/core.sc2mod/base.sc2data/TriggerLibs/MeleeHighAI.galaxy#L134">MeleeHighAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L134</span>
+AIState(player, e_attackState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L157</span>
+AIState(player, e_attackState)
+</code></pre>
+<h4 id="modscoresc2mod-3"><a class="markdownIt-Anchor" href="#modscoresc2mod-3">#</a> mods/core.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/core.sc2mod/base.sc2data/TriggerLibs/MeleeLowAI.galaxy#L113">MeleeLowAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L113</span>
+AIState(player, e_mainState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L159</span>
+AIState(player, e_attackState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L165</span>
+AIState(player, e_attackState)
+</code></pre>
+<h4 id="modscoresc2mod-4"><a class="markdownIt-Anchor" href="#modscoresc2mod-4">#</a> mods/core.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/core.sc2mod/base.sc2data/TriggerLibs/MeleeWaveAI.galaxy#L157">MeleeWaveAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L157</span>
+AIState(player, e_attackState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L396</span>
+AIState(player, e_attackState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L421</span>
+AIState(player, e_attackState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L512</span>
+AIState(player, e_attackState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L630</span>
+AIState(player, e_attackState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L686</span>
+AIState(player, e_attackState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L785</span>
+AIState(player, e_attackState)
+</code></pre>
+<h4 id="modslibertysc2mod"><a class="markdownIt-Anchor" href="#modslibertysc2mod">#</a> mods/liberty.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/liberty.sc2mod/base.sc2data/TriggerLibs/Protoss/Protoss.galaxy#L77">Protoss.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L77</span>
+AIState(player, e_mainState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L78</span>
+AIState(player, e_mainSubState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L79</span>
+AIState(player, e_attackState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L237</span>
+AIState(player, e_mainState)
+</code></pre>
+<h4 id="modslibertysc2mod-2"><a class="markdownIt-Anchor" href="#modslibertysc2mod-2">#</a> mods/liberty.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/liberty.sc2mod/base.sc2data/TriggerLibs/Protoss/ProtossEasy.galaxy#L771">ProtossEasy.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L771</span>
+AIState(player, e_mainSubState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L775</span>
+AIState(player, e_mainSubState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L786</span>
+AIState(player, e_mainSubState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L790</span>
+AIState(player, e_mainSubState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L801</span>
+AIState(player, e_mainSubState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L805</span>
+AIState(player, e_mainSubState)
+</code></pre>
+<h4 id="modslibertysc2mod-3"><a class="markdownIt-Anchor" href="#modslibertysc2mod-3">#</a> mods/liberty.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/liberty.sc2mod/base.sc2data/TriggerLibs/Protoss/ProtossHard.galaxy#L1067">ProtossHard.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1067</span>
+AIState(player, e_mainSubState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1071</span>
+AIState(player, e_mainSubState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1082</span>
+AIState(player, e_mainSubState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1086</span>
+AIState(player, e_mainSubState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1097</span>
+AIState(player, e_mainSubState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1101</span>
+AIState(player, e_mainSubState)
+</code></pre>
+<h4 id="modslibertysc2mod-4"><a class="markdownIt-Anchor" href="#modslibertysc2mod-4">#</a> mods/liberty.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/liberty.sc2mod/base.sc2data/TriggerLibs/Protoss/ProtossHigh.galaxy#L575">ProtossHigh.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L575</span>
+AIState(player, e_mainState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L613</span>
+AIState(player, e_mainSubState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L643</span>
+AIState(player, e_mainState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L681</span>
+AIState(player, e_mainSubState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L711</span>
+AIState(player, e_mainState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L749</span>
+AIState(player, e_mainSubState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L811</span>
+AIState(player, e_attackState)
+</code></pre>
+<h4 id="modslibertysc2mod-5"><a class="markdownIt-Anchor" href="#modslibertysc2mod-5">#</a> mods/liberty.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/liberty.sc2mod/base.sc2data/TriggerLibs/Protoss/ProtossMdHd.galaxy#L993">ProtossMdHd.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L993</span>
+AIState(player, e_mainSubState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L997</span>
+AIState(player, e_mainSubState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1008</span>
+AIState(player, e_mainSubState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1012</span>
+AIState(player, e_mainSubState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1023</span>
+AIState(player, e_mainSubState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1027</span>
+AIState(player, e_mainSubState)
+</code></pre>
+<h4 id="modslibertysc2mod-6"><a class="markdownIt-Anchor" href="#modslibertysc2mod-6">#</a> mods/liberty.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/liberty.sc2mod/base.sc2data/TriggerLibs/Protoss/ProtossMedi.galaxy#L884">ProtossMedi.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L884</span>
+AIState(player, e_mainSubState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L888</span>
+AIState(player, e_mainSubState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L899</span>
+AIState(player, e_mainSubState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L903</span>
+AIState(player, e_mainSubState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L914</span>
+AIState(player, e_mainSubState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L918</span>
+AIState(player, e_mainSubState)
+</code></pre>
+<h4 id="modslibertysc2mod-7"><a class="markdownIt-Anchor" href="#modslibertysc2mod-7">#</a> mods/liberty.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/liberty.sc2mod/base.sc2data/TriggerLibs/Protoss/ProtossVyEy.galaxy#L719">ProtossVyEy.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L719</span>
+AIState(player, e_mainSubState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L723</span>
+AIState(player, e_mainSubState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L734</span>
+AIState(player, e_mainSubState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L738</span>
+AIState(player, e_mainSubState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L749</span>
+AIState(player, e_mainSubState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L753</span>
+AIState(player, e_mainSubState)
+</code></pre>
+<h4 id="modslibertysc2mod-8"><a class="markdownIt-Anchor" href="#modslibertysc2mod-8">#</a> mods/liberty.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/liberty.sc2mod/base.sc2data/TriggerLibs/Terran/Terran.galaxy#L77">Terran.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L77</span>
+AIState(player, e_mainState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L78</span>
+AIState(player, e_mainSubState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L79</span>
+AIState(player, e_attackState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L263</span>
+AIState(player, e_mainState)
+</code></pre>
+<h4 id="modslibertysc2mod-9"><a class="markdownIt-Anchor" href="#modslibertysc2mod-9">#</a> mods/liberty.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/liberty.sc2mod/base.sc2data/TriggerLibs/Terran/TerranEasy.galaxy#L758">TerranEasy.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L758</span>
+AIState(player, e_mainSubState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L762</span>
+AIState(player, e_mainSubState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L773</span>
+AIState(player, e_mainSubState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L777</span>
+AIState(player, e_mainSubState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L788</span>
+AIState(player, e_mainSubState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L792</span>
+AIState(player, e_mainSubState)
+</code></pre>
+<h4 id="modslibertysc2mod-10"><a class="markdownIt-Anchor" href="#modslibertysc2mod-10">#</a> mods/liberty.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/liberty.sc2mod/base.sc2data/TriggerLibs/Terran/TerranHard.galaxy#L1224">TerranHard.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1224</span>
+AIState(player, e_mainSubState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1228</span>
+AIState(player, e_mainSubState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1239</span>
+AIState(player, e_mainSubState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1243</span>
+AIState(player, e_mainSubState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1254</span>
+AIState(player, e_mainSubState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1258</span>
+AIState(player, e_mainSubState)
+</code></pre>
+<h4 id="modslibertysc2mod-11"><a class="markdownIt-Anchor" href="#modslibertysc2mod-11">#</a> mods/liberty.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/liberty.sc2mod/base.sc2data/TriggerLibs/Terran/TerranHigh.galaxy#L607">TerranHigh.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L607</span>
+AIState(player, e_mainState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L645</span>
+AIState(player, e_mainSubState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L675</span>
+AIState(player, e_mainState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L713</span>
+AIState(player, e_mainSubState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L743</span>
+AIState(player, e_mainState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L781</span>
+AIState(player, e_mainSubState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L843</span>
+AIState(player, e_attackState)
+</code></pre>
+<h4 id="modslibertysc2mod-12"><a class="markdownIt-Anchor" href="#modslibertysc2mod-12">#</a> mods/liberty.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/liberty.sc2mod/base.sc2data/TriggerLibs/Terran/TerranMdHd.galaxy#L1166">TerranMdHd.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1166</span>
+AIState(player, e_mainSubState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1170</span>
+AIState(player, e_mainSubState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1181</span>
+AIState(player, e_mainSubState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1185</span>
+AIState(player, e_mainSubState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1196</span>
+AIState(player, e_mainSubState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1200</span>
+AIState(player, e_mainSubState)
+</code></pre>
+<h4 id="modslibertysc2mod-13"><a class="markdownIt-Anchor" href="#modslibertysc2mod-13">#</a> mods/liberty.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/liberty.sc2mod/base.sc2data/TriggerLibs/Terran/TerranMedi.galaxy#L981">TerranMedi.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L981</span>
+AIState(player, e_mainSubState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L985</span>
+AIState(player, e_mainSubState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L996</span>
+AIState(player, e_mainSubState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1000</span>
+AIState(player, e_mainSubState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1011</span>
+AIState(player, e_mainSubState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1015</span>
+AIState(player, e_mainSubState)
+</code></pre>
+<h4 id="modslibertysc2mod-14"><a class="markdownIt-Anchor" href="#modslibertysc2mod-14">#</a> mods/liberty.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/liberty.sc2mod/base.sc2data/TriggerLibs/Terran/TerranVyEy.galaxy#L701">TerranVyEy.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L701</span>
+AIState(player, e_mainSubState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L705</span>
+AIState(player, e_mainSubState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L716</span>
+AIState(player, e_mainSubState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L720</span>
+AIState(player, e_mainSubState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L731</span>
+AIState(player, e_mainSubState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L735</span>
+AIState(player, e_mainSubState)
+</code></pre>
+<h4 id="modslibertysc2mod-15"><a class="markdownIt-Anchor" href="#modslibertysc2mod-15">#</a> mods/liberty.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/liberty.sc2mod/base.sc2data/TriggerLibs/Zerg/Zerg.galaxy#L77">Zerg.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L77</span>
+AIState(player, e_mainState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L78</span>
+AIState(player, e_mainSubState)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L79</span>
+AIState(player, e_attackState)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

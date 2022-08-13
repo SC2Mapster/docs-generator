@@ -1,0 +1,412 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Issue AI Order / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Issue AI Order"/>
+                <meta property="og:description" content="Suggests an order to a unit.  If the computer that controls the unit has the ability to execute the order (with respect to its current APM constraint), then it will do so.  The order will eventually be dropped if the computer is unable to execute it for a few seconds after it was issued.  If you need a unit to do something immediately, use Issue Order instead."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="issue-ai-order"><a class="markdownIt-Anchor" href="#issue-ai-order">#</a> Issue AI Order</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Suggests order <strong>order</strong> to <strong>unit</strong> using tactical AI logic<br>
+<em>Flags</em> — <code>Action</code></p>
+</blockquote>
+<p>Suggests an order to a unit.  If the computer that controls the unit has the ability to execute the order (with respect to its current APM constraint), then it will do so.  The order will eventually be dropped if the computer is unable to execute it for a few seconds after it was issued.  If you need a unit to do something immediately, use Issue Order instead.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>unit</code> — Unit</li>
+<li><code>order</code> — Order</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">libNtve_gf_AICast</span><span class="hljs-params">(unit lp_unit, order lp_order)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#ai-misc-campaign-actions">AI / MiscCampaign / Actions</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-time-pause">Pause AI Time</a></strong> — ( AITimePause )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/campaign-init-ai">Start Campaign AI For All Players</a></strong> — ( CampaignInitAI )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-campaign-start">Start Campaign AI For Player</a></strong> — ( AICampaignStart )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-global-suicide">Global Suicide</a></strong> — ( AIGlobalSuicide )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-set-unit-script-controlled">Enable/Disable Script Control For Unit</a></strong> — ( AISetUnitScriptControlled )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-set-group-script-controlled">Enable/Disable Script Control For Unit Group</a></strong> — ( AISetGroupScriptControlled )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-set-unit-not-usable-in-waves">Enable/Disable Wave Use For Unit</a></strong> — ( AISetUnitNotUsableInWaves )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-set-group-not-usable-in-waves">Enable/Disable Wave Use For Unit Group</a></strong> — ( AISetGroupNotUsableInWaves )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-set-unit-suicide">Enable/Disable Suicide For Unit</a></strong> — ( AISetUnitSuicide )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-set-group-suicide">Enable/Disable Suicide For Unit Group</a></strong> — ( AISetGroupSuicide )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-remove-unit-from-any-waves">Remove Unit From All Waves</a></strong> — ( AIRemoveUnitFromAnyWaves )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-remove-group-from-any-waves">Remove Unit Group From All Waves</a></strong> — ( AIRemoveGroupFromAnyWaves )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-remove-unit-from-any-waves-and-set-home">Remove Unit From All Waves And Set Home</a></strong> — ( AIRemoveUnitFromAnyWavesAndSetHome )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-remove-group-from-any-waves-and-set-home">Remove Unit Group From All Waves And Set Home</a></strong> — ( AIRemoveGroupFromAnyWavesAndSetHome )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-init-campaign-towns">Init Campaign Towns</a></strong> — ( AIInitCampaignTowns )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-init-campaign-harvest">Init Campaign Harvesting</a></strong> — ( AIInitCampaignHarvest )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-ai-cast">Issue AI Order</a></strong> — ( libNtve_gf_AICast )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/thorner02.sc2map/MapScript.galaxy#L1693">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1693</span>
+libNtve_gf_AICast(autoD4B68B02_var, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"attack"</span>, <span class="hljs-number">0</span>), UnitGetPosition(UnitGroupRandomUnit(UnitGroup(null, gv_p01_USER, RegionFromId(<span class="hljs-number">47</span>), UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterAir) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))), <span class="hljs-number">0</span>), c_unitCountAlive))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1745</span>
+libNtve_gf_AICast(auto70B70FB3_var, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"attack"</span>, <span class="hljs-number">0</span>), UnitGetPosition(UnitGroupRandomUnit(UnitGroup(null, gv_p01_USER, RegionFromId(<span class="hljs-number">48</span>), UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterAir) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))), <span class="hljs-number">0</span>), c_unitCountAlive))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1752</span>
+libNtve_gf_AICast(autoE44AEF93_var, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"attack"</span>, <span class="hljs-number">0</span>), UnitGetPosition(UnitGroupRandomUnit(UnitGroup(null, gv_p01_USER, RegionFromId(<span class="hljs-number">48</span>), UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterAir) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))), <span class="hljs-number">0</span>), c_unitCountAlive))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1801</span>
+libNtve_gf_AICast(autoD081A4BB_var, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"attack"</span>, <span class="hljs-number">0</span>), UnitGetPosition(UnitGroupRandomUnit(UnitGroup(null, gv_p01_USER, RegionFromId(<span class="hljs-number">49</span>), UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterAir) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))), <span class="hljs-number">0</span>), c_unitCountAlive))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6788</span>
+libNtve_gf_AICast(autoF3942310_var, Order(AbilityCommand(<span class="hljs-string">"stop"</span>, <span class="hljs-number">0</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6798</span>
+libNtve_gf_AICast(auto664148D3_var, Order(AbilityCommand(<span class="hljs-string">"stop"</span>, <span class="hljs-number">0</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6808</span>
+libNtve_gf_AICast(autoFA9D59B5_var, Order(AbilityCommand(<span class="hljs-string">"stop"</span>, <span class="hljs-number">0</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6818</span>
+libNtve_gf_AICast(auto2C0BF552_var, Order(AbilityCommand(<span class="hljs-string">"stop"</span>, <span class="hljs-number">0</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L481</span>
+libNtve_gf_AICast(lp_medic, OrderTargetingUnit(AbilityCommand(<span class="hljs-string">"heal"</span>, <span class="hljs-number">0</span>), gv_tosh))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1407</span>
+libNtve_gf_AICast(auto2382E995_var, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"attack"</span>, <span class="hljs-number">0</span>), PointWithOffsetPolar(RegionRandomPoint(RegionCircle(UnitGetPosition(gv_leviathan), <span class="hljs-number">8.0</span>)), <span class="hljs-number">8.0</span>, UnitGetFacing(gv_leviathan))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1815</span>
+libNtve_gf_AICast(gv_hybridPhysical, OrderTargetingUnit(AbilityCommand(<span class="hljs-string">"GravitonPrison"</span>, <span class="hljs-number">0</span>), lv_target))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1888</span>
+libNtve_gf_AICast(gv_hybridPhysical, OrderTargetingUnit(AbilityCommand(<span class="hljs-string">"HybridCPlasmaBlast"</span>, <span class="hljs-number">0</span>), lv_target))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1693</span>
+libNtve_gf_AICast(autoD4B68B02_var, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"attack"</span>, <span class="hljs-number">0</span>), UnitGetPosition(UnitGroupRandomUnit(UnitGroup(null, gv_p01_USER, RegionFromId(<span class="hljs-number">47</span>), UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterAir) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))), <span class="hljs-number">0</span>), c_unitCountAlive))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1745</span>
+libNtve_gf_AICast(auto70B70FB3_var, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"attack"</span>, <span class="hljs-number">0</span>), UnitGetPosition(UnitGroupRandomUnit(UnitGroup(null, gv_p01_USER, RegionFromId(<span class="hljs-number">48</span>), UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterAir) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))), <span class="hljs-number">0</span>), c_unitCountAlive))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1752</span>
+libNtve_gf_AICast(autoE44AEF93_var, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"attack"</span>, <span class="hljs-number">0</span>), UnitGetPosition(UnitGroupRandomUnit(UnitGroup(null, gv_p01_USER, RegionFromId(<span class="hljs-number">48</span>), UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterAir) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))), <span class="hljs-number">0</span>), c_unitCountAlive))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1801</span>
+libNtve_gf_AICast(autoD081A4BB_var, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"attack"</span>, <span class="hljs-number">0</span>), UnitGetPosition(UnitGroupRandomUnit(UnitGroup(null, gv_p01_USER, RegionFromId(<span class="hljs-number">49</span>), UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterAir) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))), <span class="hljs-number">0</span>), c_unitCountAlive))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6788</span>
+libNtve_gf_AICast(autoF3942310_var, Order(AbilityCommand(<span class="hljs-string">"stop"</span>, <span class="hljs-number">0</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6798</span>
+libNtve_gf_AICast(auto664148D3_var, Order(AbilityCommand(<span class="hljs-string">"stop"</span>, <span class="hljs-number">0</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6808</span>
+libNtve_gf_AICast(autoFA9D59B5_var, Order(AbilityCommand(<span class="hljs-string">"stop"</span>, <span class="hljs-number">0</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6818</span>
+libNtve_gf_AICast(auto2C0BF552_var, Order(AbilityCommand(<span class="hljs-string">"stop"</span>, <span class="hljs-number">0</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L481</span>
+libNtve_gf_AICast(lp_medic, OrderTargetingUnit(AbilityCommand(<span class="hljs-string">"heal"</span>, <span class="hljs-number">0</span>), gv_tosh))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1407</span>
+libNtve_gf_AICast(auto2382E995_var, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"attack"</span>, <span class="hljs-number">0</span>), PointWithOffsetPolar(RegionRandomPoint(RegionCircle(UnitGetPosition(gv_leviathan), <span class="hljs-number">8.0</span>)), <span class="hljs-number">8.0</span>, UnitGetFacing(gv_leviathan))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1815</span>
+libNtve_gf_AICast(gv_hybridPhysical, OrderTargetingUnit(AbilityCommand(<span class="hljs-string">"GravitonPrison"</span>, <span class="hljs-number">0</span>), lv_target))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1888</span>
+libNtve_gf_AICast(gv_hybridPhysical, OrderTargetingUnit(AbilityCommand(<span class="hljs-string">"HybridCPlasmaBlast"</span>, <span class="hljs-number">0</span>), lv_target))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2732</span>
+libNtve_gf_AICast(UnitFromId(<span class="hljs-number">1907</span>), OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"move"</span>, <span class="hljs-number">4</span>), UnitGetPosition(UnitFromId(<span class="hljs-number">72</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2733</span>
+libNtve_gf_AICast(UnitFromId(<span class="hljs-number">1924</span>), OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"move"</span>, <span class="hljs-number">4</span>), UnitGetPosition(UnitFromId(<span class="hljs-number">72</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2734</span>
+libNtve_gf_AICast(UnitFromId(<span class="hljs-number">1925</span>), OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"move"</span>, <span class="hljs-number">4</span>), UnitGetPosition(UnitFromId(<span class="hljs-number">72</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1402</span>
+libNtve_gf_AICast(autoEC7409C0_var, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"attack"</span>, <span class="hljs-number">0</span>), RegionRandomPoint(RegionCircle(Point(UnitGetCustomValue(autoEC7409C0_var, <span class="hljs-number">0</span>), UnitGetCustomValue(autoEC7409C0_var, <span class="hljs-number">1</span>)), <span class="hljs-number">2.0</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1025</span>
+libNtve_gf_AICast(lp_hybrid, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"move"</span>, <span class="hljs-number">0</span>), gf_HybridHome(lv_indexHybrid)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1049</span>
+libNtve_gf_AICast(lp_hybrid, OrderTargetingUnit(AbilityCommand(<span class="hljs-string">"attack"</span>, <span class="hljs-number">0</span>), gv_aIHybridAttacker[lv_indexHybrid]))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1056</span>
+libNtve_gf_AICast(lp_hybrid, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"move"</span>, <span class="hljs-number">0</span>), gf_HybridHome(lv_indexHybrid)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1075</span>
+libNtve_gf_AICast(lp_hybrid, Order(AbilityCommand(<span class="hljs-string">"ZHybridPsionicShockwave"</span>, <span class="hljs-number">0</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1094</span>
+libNtve_gf_AICast(lp_hybrid, OrderTargetingUnit(AbilityCommand(<span class="hljs-string">"ZHybridPlasmaBlast"</span>, <span class="hljs-number">0</span>), lv_victim))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1099</span>
+libNtve_gf_AICast(lp_hybrid, OrderTargetingUnit(AbilityCommand(<span class="hljs-string">"ZHybridGravitonPrison"</span>, <span class="hljs-number">0</span>), lv_victim))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1108</span>
+libNtve_gf_AICast(lp_hybrid, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"move"</span>, <span class="hljs-number">0</span>), gf_HybridHome(lv_indexHybrid)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2673</span>
+libNtve_gf_AICast(EventUnitProgressUnit(), OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"attack"</span>, <span class="hljs-number">0</span>), gv_templeDefensePoint))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3977</span>
+libNtve_gf_AICast(auto9D485733_var, OrderTargetingUnit(AbilityCommand(<span class="hljs-string">"ConsumeDNA"</span>, <span class="hljs-number">0</span>), UnitGroupClosestToPoint(lv_consumeDNATargets, UnitGetPosition(auto9D485733_var))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3988</span>
+libNtve_gf_AICast(auto2020BFEA_var, Order(AbilityCommand(<span class="hljs-string">"HybridFAoEStun"</span>, <span class="hljs-number">0</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4333</span>
+libNtve_gf_AICast(autoA7E5583D_var, OrderTargetingUnit(AbilityCommand(<span class="hljs-string">"Yoink"</span>, <span class="hljs-number">0</span>), lv_currentUnit))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4382</span>
+libNtve_gf_AICast(auto0BF956FF_var, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"attack"</span>, <span class="hljs-number">0</span>), UnitGetPosition(gv_chrysalis)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4389</span>
+libNtve_gf_AICast(auto19B8D227_var, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"attack"</span>, <span class="hljs-number">0</span>), UnitGetPosition(gv_chrysalis)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1402</span>
+libNtve_gf_AICast(autoEC7409C0_var, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"attack"</span>, <span class="hljs-number">0</span>), RegionRandomPoint(RegionCircle(Point(UnitGetCustomValue(autoEC7409C0_var, <span class="hljs-number">0</span>), UnitGetCustomValue(autoEC7409C0_var, <span class="hljs-number">1</span>)), <span class="hljs-number">2.0</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1025</span>
+libNtve_gf_AICast(lp_hybrid, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"move"</span>, <span class="hljs-number">0</span>), gf_HybridHome(lv_indexHybrid)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1049</span>
+libNtve_gf_AICast(lp_hybrid, OrderTargetingUnit(AbilityCommand(<span class="hljs-string">"attack"</span>, <span class="hljs-number">0</span>), gv_aIHybridAttacker[lv_indexHybrid]))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1056</span>
+libNtve_gf_AICast(lp_hybrid, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"move"</span>, <span class="hljs-number">0</span>), gf_HybridHome(lv_indexHybrid)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1075</span>
+libNtve_gf_AICast(lp_hybrid, Order(AbilityCommand(<span class="hljs-string">"ZHybridPsionicShockwave"</span>, <span class="hljs-number">0</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1094</span>
+libNtve_gf_AICast(lp_hybrid, OrderTargetingUnit(AbilityCommand(<span class="hljs-string">"ZHybridPlasmaBlast"</span>, <span class="hljs-number">0</span>), lv_victim))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1099</span>
+libNtve_gf_AICast(lp_hybrid, OrderTargetingUnit(AbilityCommand(<span class="hljs-string">"ZHybridGravitonPrison"</span>, <span class="hljs-number">0</span>), lv_victim))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1108</span>
+libNtve_gf_AICast(lp_hybrid, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"move"</span>, <span class="hljs-number">0</span>), gf_HybridHome(lv_indexHybrid)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2673</span>
+libNtve_gf_AICast(EventUnitProgressUnit(), OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"attack"</span>, <span class="hljs-number">0</span>), gv_templeDefensePoint))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3977</span>
+libNtve_gf_AICast(auto9D485733_var, OrderTargetingUnit(AbilityCommand(<span class="hljs-string">"ConsumeDNA"</span>, <span class="hljs-number">0</span>), UnitGroupClosestToPoint(lv_consumeDNATargets, UnitGetPosition(auto9D485733_var))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3988</span>
+libNtve_gf_AICast(auto2020BFEA_var, Order(AbilityCommand(<span class="hljs-string">"HybridFAoEStun"</span>, <span class="hljs-number">0</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4333</span>
+libNtve_gf_AICast(autoA7E5583D_var, OrderTargetingUnit(AbilityCommand(<span class="hljs-string">"Yoink"</span>, <span class="hljs-number">0</span>), lv_currentUnit))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4382</span>
+libNtve_gf_AICast(auto0BF956FF_var, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"attack"</span>, <span class="hljs-number">0</span>), UnitGetPosition(gv_chrysalis)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4389</span>
+libNtve_gf_AICast(auto19B8D227_var, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"attack"</span>, <span class="hljs-number">0</span>), UnitGetPosition(gv_chrysalis)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2732</span>
+libNtve_gf_AICast(UnitFromId(<span class="hljs-number">1907</span>), OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"move"</span>, <span class="hljs-number">4</span>), UnitGetPosition(UnitFromId(<span class="hljs-number">72</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2733</span>
+libNtve_gf_AICast(UnitFromId(<span class="hljs-number">1924</span>), OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"move"</span>, <span class="hljs-number">4</span>), UnitGetPosition(UnitFromId(<span class="hljs-number">72</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2734</span>
+libNtve_gf_AICast(UnitFromId(<span class="hljs-number">1925</span>), OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"move"</span>, <span class="hljs-number">4</span>), UnitGetPosition(UnitFromId(<span class="hljs-number">72</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L628</span>
+libNtve_gf_AICast(UnitLastCreated(), OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"attack"</span>, <span class="hljs-number">0</span>), PointFromId(<span class="hljs-number">11</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1921</span>
+libNtve_gf_AICast(lv_ultralisk, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"attack"</span>, <span class="hljs-number">0</span>), PointFromId(<span class="hljs-number">1933</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1942</span>
+libNtve_gf_AICast(autoE248B36B_var, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"attack"</span>, <span class="hljs-number">0</span>), PointFromId(<span class="hljs-number">1933</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2593</span>
+libNtve_gf_AICast(EventUnitProgressUnit(), OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"attack"</span>, <span class="hljs-number">0</span>), PointFromId(<span class="hljs-number">11</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2599</span>
+libNtve_gf_AICast(EventUnitProgressUnit(), OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"attack"</span>, <span class="hljs-number">0</span>), PointFromId(<span class="hljs-number">19</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2604</span>
+libNtve_gf_AICast(EventUnitProgressUnit(), OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"attack"</span>, <span class="hljs-number">0</span>), PointFromId(<span class="hljs-number">832</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2736</span>
+libNtve_gf_AICast(UnitGroupClosestToPoint(lv_nearbyZergGroup, UnitGetPosition(auto075978B0_var)), OrderTargetingUnit(AbilityCommand(<span class="hljs-string">"attack"</span>, <span class="hljs-number">0</span>), auto075978B0_var))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2025</span>
+libNtve_gf_AICast(autoFE5BBE4A_var, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"attack"</span>, <span class="hljs-number">0</span>), UnitGetPosition(gv_alarak)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2029</span>
+libNtve_gf_AICast(autoFE5BBE4A_var, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"attack"</span>, <span class="hljs-number">0</span>), RegionRandomPoint(RegionCircle(Point(UnitGetCustomValue(autoFE5BBE4A_var, <span class="hljs-number">0</span>), UnitGetCustomValue(autoFE5BBE4A_var, <span class="hljs-number">1</span>)), <span class="hljs-number">2.0</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4948</span>
+libNtve_gf_AICast(auto27FF145D_var, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"attack"</span>, <span class="hljs-number">0</span>), UnitGetPosition(UnitGroupClosestToPoint(gv_activePlayerUnits, UnitGetPosition(auto27FF145D_var)))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5907</span>
+libNtve_gf_AICast(auto3B9535E5_var, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"attack"</span>, <span class="hljs-number">0</span>), UnitGetPosition(UnitGroupClosestToPoint(lv_playerUnits, UnitGetPosition(auto3B9535E5_var)))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7916</span>
+libNtve_gf_AICast(auto84CFA311_var, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"attack"</span>, <span class="hljs-number">0</span>), UnitGetPosition(gv_artanis)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8034</span>
+libNtve_gf_AICast(auto86823B5C_var, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"attack"</span>, <span class="hljs-number">0</span>), RegionGetCenter(RegionFromId(<span class="hljs-number">5</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8044</span>
+libNtve_gf_AICast(autoB2D4C1E9_var, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"attack"</span>, <span class="hljs-number">0</span>), RegionGetCenter(RegionFromId(<span class="hljs-number">5</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8055</span>
+libNtve_gf_AICast(autoAA44B913_var, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"attack"</span>, <span class="hljs-number">0</span>), RegionGetCenter(RegionFromId(<span class="hljs-number">5</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8065</span>
+libNtve_gf_AICast(autoC9F8A0DD_var, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"attack"</span>, <span class="hljs-number">0</span>), RegionGetCenter(RegionFromId(<span class="hljs-number">5</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8127</span>
+libNtve_gf_AICast(auto0B614B4E_var, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"attack"</span>, <span class="hljs-number">0</span>), RegionGetCenter(RegionFromId(<span class="hljs-number">5</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L779</span>
+libNtve_gf_AICast(lp_warpPrism, Order(AbilityCommand(<span class="hljs-string">"TransportMode"</span>, <span class="hljs-number">0</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L794</span>
+libNtve_gf_AICast(lp_blinkStalker, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"BlinkShieldRestore"</span>, <span class="hljs-number">0</span>), lv_targetPoint))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L840</span>
+libNtve_gf_AICast(lp_karax, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"PhaseCannon"</span>, <span class="hljs-number">0</span>), lv_targetPoint))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L849</span>
+libNtve_gf_AICast(lp_karax, OrderTargetingUnit(AbilityCommand(<span class="hljs-string">"Reclamation"</span>, <span class="hljs-number">0</span>), lv_currentUnit))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L892</span>
+libNtve_gf_AICast(lp_alarak, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"AlarakKnockback"</span>, <span class="hljs-number">0</span>), lv_targetPoint))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L918</span>
+libNtve_gf_AICast(lp_vorazun, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"VorazunShadowDash"</span>, <span class="hljs-number">0</span>), lv_targetPoint))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L940</span>
+libNtve_gf_AICast(auto0FB03E72_var, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"attack"</span>, <span class="hljs-number">0</span>), UnitGetPosition(gv_keystone)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2492</span>
+libNtve_gf_AICast(auto29A7AC29_var, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"attack"</span>, <span class="hljs-number">0</span>), UnitGetPosition(UnitGroupClosestToPoint(UnitGroupAlliance(gv_pLAYER_02_MOEBIUS, c_unitAllianceEnemy, gv_stabilizers[lv_index].lv_secureZone, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterCloaked), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))), <span class="hljs-number">0</span>), UnitGetPosition(auto29A7AC29_var)))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L443</span>
+libNtve_gf_AICast(lp_hybrid, OrderTargetingUnit(AbilityCommand(<span class="hljs-string">"HybridDominatorVoidPlasmaBlast"</span>, <span class="hljs-number">0</span>), gf_ToughestUnitinUnitGroup(lv_enemyGroup9)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L447</span>
+libNtve_gf_AICast(lp_hybrid, OrderTargetingUnit(AbilityCommand(<span class="hljs-string">"HybridDominatorVoidPlasmaBlast"</span>, <span class="hljs-number">0</span>), lv_lastAttacker))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L462</span>
+libNtve_gf_AICast(lp_hybrid, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"HybridDominatorVoidPsiStorm"</span>, <span class="hljs-number">0</span>), lv_targetPoint))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2016</span>
+libNtve_gf_AICast(auto05AF8105_var, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"attack"</span>, <span class="hljs-number">0</span>), UnitGetPosition(UnitGroupClosestToPoint(lv_nearbyPlayerUnits, UnitGetPosition(auto05AF8105_var)))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4441</span>
+libNtve_gf_AICast(auto44AAC7FE_var, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"attack"</span>, <span class="hljs-number">0</span>), RegionRandomPoint(lv_region)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L993</span>
+libNtve_gf_AICast(lp_hybrid, OrderTargetingUnit(AbilityCommand(<span class="hljs-string">"ConsumeDNA"</span>, <span class="hljs-number">0</span>), gf_ToughestUnitinUnitGroup(lv_enemyGroup5)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1000</span>
+libNtve_gf_AICast(lp_hybrid, Order(AbilityCommand(<span class="hljs-string">"HybridFAoEStun"</span>, <span class="hljs-number">0</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1051</span>
+libNtve_gf_AICast(lp_hybrid, OrderTargetingUnit(AbilityCommand(<span class="hljs-string">"HybridGeneralPhaseShift"</span>, <span class="hljs-number">0</span>), UnitGroupClosestToPoint(lv_enemyGroup9, UnitGetPosition(lp_hybrid))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3306</span>
+libNtve_gf_AICast(gv_purifierWarden, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"attack"</span>, <span class="hljs-number">0</span>), UnitGetPosition(UnitGroupRandomUnit(UnitGroup(null, gv_pLAYER_01_USER, RegionFromId(<span class="hljs-number">107</span>), UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))), <span class="hljs-number">0</span>), c_unitCountAlive))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3312</span>
+libNtve_gf_AICast(gv_purifierWarden, OrderTargetingUnit(AbilityCommand(<span class="hljs-string">"attack"</span>, <span class="hljs-number">0</span>), UnitGroupRandomUnit(UnitGroup(<span class="hljs-string">"InvisibleTargetDummy"</span>, <span class="hljs-number">0</span>, RegionFromId(<span class="hljs-number">107</span>), UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))), <span class="hljs-number">0</span>), c_unitCountAlive)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L785</span>
+libNtve_gf_AICast(lp_darkArchon, OrderTargetingUnit(AbilityCommand(<span class="hljs-string">"HybridGeneralPhaseShift"</span>, <span class="hljs-number">0</span>), lv_target))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2424</span>
+libNtve_gf_AICast(autoB57550EF_var, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"attack"</span>, <span class="hljs-number">0</span>), UnitGetPosition(UnitGroupClosestToPoint(lv_enemyGroup14, UnitGetPosition(gv_mothership[<span class="hljs-number">1</span>])))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2464</span>
+libNtve_gf_AICast(gv_mothership[<span class="hljs-number">1</span>], Order(AbilityCommand(<span class="hljs-string">"FlagshipTimeBomb"</span>, <span class="hljs-number">0</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2545</span>
+libNtve_gf_AICast(autoD914BE2A_var, OrderTargetingPoint(AbilityCommand(<span class="hljs-string">"attack"</span>, <span class="hljs-number">0</span>), UnitGetPosition(UnitGroupClosestToPoint(lv_enemyGroup14, UnitGetPosition(gv_mothership[<span class="hljs-number">2</span>])))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2585</span>
+libNtve_gf_AICast(gv_mothership[<span class="hljs-number">2</span>], Order(AbilityCommand(<span class="hljs-string">"FlagshipCloak"</span>, <span class="hljs-number">0</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L941</span>
+libNtve_gf_AICast(lp_hybrid, OrderTargetingUnit(AbilityCommand(<span class="hljs-string">"HybridDominatorVoidPlasmaBlast"</span>, <span class="hljs-number">0</span>), gf_ToughestUnitinUnitGroup(lv_enemyGroup9)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L945</span>
+libNtve_gf_AICast(lp_hybrid, OrderTargetingUnit(AbilityCommand(<span class="hljs-string">"HybridDominatorVoidPlasmaBlast"</span>, <span class="hljs-number">0</span>), lv_lastAttacker))
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

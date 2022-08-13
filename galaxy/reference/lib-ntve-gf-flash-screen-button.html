@@ -1,0 +1,211 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Flash Screen Button / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Flash Screen Button"/>
+                <meta property="og:description" content="Causes a screen button to change between two colors at the specified interval."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="flash-screen-button"><a class="markdownIt-Anchor" href="#flash-screen-button">#</a> Flash Screen Button</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Flash screen button <strong>screenButtonID|ID</strong> from <strong>color1</strong> to <strong>color2</strong> every <strong>flashTime</strong> seconds<br>
+<em>Flags</em> — <code>Action</code></p>
+</blockquote>
+<p>Causes a screen button to change between two colors at the specified interval.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> — ScreenButtonID</li>
+<li><code>fixed</code> — FlashTime</li>
+<li><code>color</code> — Color1</li>
+<li><code>color</code> — Color2</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">libNtve_gf_FlashScreenButton</span><span class="hljs-params">(
+	<span class="hljs-keyword">int</span> lp_screenButtonID,
+	fixed lp_flashTime,
+	color lp_color1,
+	color lp_color2,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#dialog-screen-button">Dialog / Screen Button</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-display-screen-button">Display Screen Button</a></strong> — ( libNtve_gf_DisplayScreenButton )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-hide-screen-button">Show/Hide Screen Button</a></strong> — ( libNtve_gf_HideScreenButton )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-flash-screen-button">Flash Screen Button</a></strong> — ( libNtve_gf_FlashScreenButton )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-stop-flashing-screen-button">Stop Flashing Screen Button</a></strong> — ( libNtve_gf_StopFlashingScreenButton )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-set-screen-button-border-image">Set Screen Button Border Image</a></strong> — ( libNtve_gf_SetScreenButtonBorderImage )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-set-screen-button-flashing-border-image">Set Screen Button Flashing Border Image</a></strong> — ( libNtve_gf_SetScreenButtonFlashingBorderImage )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ dialog ]</em> — <strong><a href="/galaxy/reference/lib-ntve-gf-screen-button-dialog">Screen Button Dialog</a></strong> — ( libNtve_gf_ScreenButtonDialog )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ control ]</em> — <strong><a href="/galaxy/reference/lib-ntve-gf-screen-button">Screen Button</a></strong> — ( libNtve_gf_ScreenButton )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/thorner05s.sc2map/MapScript.galaxy#L3041">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3041</span>
+libNtve_gf_FlashScreenButton(gv_computer01SecurityCam, <span class="hljs-number">2.0</span>, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3161</span>
+libNtve_gf_FlashScreenButton(gv_computer01DeactivateLeftFloorGuns, <span class="hljs-number">2.0</span>, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3166</span>
+libNtve_gf_FlashScreenButton(gv_computer01DeactivateRightFloorGuns, <span class="hljs-number">2.0</span>, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3940</span>
+libNtve_gf_FlashScreenButton(gv_computer02SecurityCam, <span class="hljs-number">2.0</span>, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4030</span>
+libNtve_gf_FlashScreenButton(gv_computer02ReleaseZealots, <span class="hljs-number">2.0</span>, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4050</span>
+libNtve_gf_FlashScreenButton(gv_computer02ReleaseZerg, <span class="hljs-number">2.0</span>, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4070</span>
+libNtve_gf_FlashScreenButton(gv_computer02ReleaseUltras, <span class="hljs-number">2.0</span>, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4764</span>
+libNtve_gf_FlashScreenButton(gv_computer04SecurityCam, <span class="hljs-number">2.0</span>, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4837</span>
+libNtve_gf_FlashScreenButton(gv_computer04AddMissile, <span class="hljs-number">2.0</span>, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4842</span>
+libNtve_gf_FlashScreenButton(gv_computer04AddNapalm, <span class="hljs-number">2.0</span>, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L796</span>
+libNtve_gf_FlashScreenButton(gv_replay_Transmission_ButtonID_Main, <span class="hljs-number">4.0</span>, ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">64.71</span>, <span class="hljs-number">29.02</span>, <span class="hljs-number">0.00</span>), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L805</span>
+libNtve_gf_FlashScreenButton(gv_replay_Transmission_ButtonID_Tutorial, <span class="hljs-number">4.0</span>, ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">64.71</span>, <span class="hljs-number">29.02</span>, <span class="hljs-number">0.00</span>), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1517</span>
+libNtve_gf_FlashScreenButton(gv_replay_Transmission_ButtonID_Main, <span class="hljs-number">4.0</span>, ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">64.71</span>, <span class="hljs-number">29.02</span>, <span class="hljs-number">0.00</span>), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1218</span>
+libNtve_gf_FlashScreenButton(<span class="hljs-number">1</span>, <span class="hljs-number">2.0</span>, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3041</span>
+libNtve_gf_FlashScreenButton(gv_computer01SecurityCam, <span class="hljs-number">2.0</span>, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3161</span>
+libNtve_gf_FlashScreenButton(gv_computer01DeactivateLeftFloorGuns, <span class="hljs-number">2.0</span>, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3166</span>
+libNtve_gf_FlashScreenButton(gv_computer01DeactivateRightFloorGuns, <span class="hljs-number">2.0</span>, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3940</span>
+libNtve_gf_FlashScreenButton(gv_computer02SecurityCam, <span class="hljs-number">2.0</span>, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4030</span>
+libNtve_gf_FlashScreenButton(gv_computer02ReleaseZealots, <span class="hljs-number">2.0</span>, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4050</span>
+libNtve_gf_FlashScreenButton(gv_computer02ReleaseZerg, <span class="hljs-number">2.0</span>, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4070</span>
+libNtve_gf_FlashScreenButton(gv_computer02ReleaseUltras, <span class="hljs-number">2.0</span>, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4764</span>
+libNtve_gf_FlashScreenButton(gv_computer04SecurityCam, <span class="hljs-number">2.0</span>, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4837</span>
+libNtve_gf_FlashScreenButton(gv_computer04AddMissile, <span class="hljs-number">2.0</span>, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4842</span>
+libNtve_gf_FlashScreenButton(gv_computer04AddNapalm, <span class="hljs-number">2.0</span>, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L796</span>
+libNtve_gf_FlashScreenButton(gv_replay_Transmission_ButtonID_Main, <span class="hljs-number">4.0</span>, ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">64.71</span>, <span class="hljs-number">29.02</span>, <span class="hljs-number">0.00</span>), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L805</span>
+libNtve_gf_FlashScreenButton(gv_replay_Transmission_ButtonID_Tutorial, <span class="hljs-number">4.0</span>, ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">64.71</span>, <span class="hljs-number">29.02</span>, <span class="hljs-number">0.00</span>), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1517</span>
+libNtve_gf_FlashScreenButton(gv_replay_Transmission_ButtonID_Main, <span class="hljs-number">4.0</span>, ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">64.71</span>, <span class="hljs-number">29.02</span>, <span class="hljs-number">0.00</span>), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1218</span>
+libNtve_gf_FlashScreenButton(<span class="hljs-number">1</span>, <span class="hljs-number">2.0</span>, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2947</span>
+libNtve_gf_FlashScreenButton(<span class="hljs-number">1</span>, <span class="hljs-number">2.0</span>, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2947</span>
+libNtve_gf_FlashScreenButton(<span class="hljs-number">1</span>, <span class="hljs-number">2.0</span>, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), ColorWithAlpha(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<h4 id="modschallengessc2mod"><a class="markdownIt-Anchor" href="#modschallengessc2mod">#</a> mods/challenges.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/challenges.sc2mod/base.sc2data/LibChal.galaxy#L283">LibChal.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L283</span>
+libNtve_gf_FlashScreenButton(lp_screenButtonID, <span class="hljs-number">3.0</span>, ColorWithAlpha(<span class="hljs-number">16.08</span>, <span class="hljs-number">16.08</span>, <span class="hljs-number">99.61</span>, <span class="hljs-number">74.90</span>), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L290</span>
+libNtve_gf_FlashScreenButton(lp_screenButtonID, <span class="hljs-number">3.0</span>, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">68.24</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">74.51</span>), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L297</span>
+libNtve_gf_FlashScreenButton(lp_screenButtonID, <span class="hljs-number">3.0</span>, ColorWithAlpha(<span class="hljs-number">99.22</span>, <span class="hljs-number">52.55</span>, <span class="hljs-number">0.78</span>, <span class="hljs-number">74.51</span>), ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

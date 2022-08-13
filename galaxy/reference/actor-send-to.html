@@ -1,0 +1,260 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Send Actor Message Via Name / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Send Actor Message Via Name"/>
+                <meta property="og:description" content="Sends an actor message to an actor that is related to another actor.  The Actor parameter is used to specify the primary actor, and the Name parameter is used to specify a reference (such as ::Host) that will derive a secondary actor from the primary actor.  The message gets sent to the secondary actor.  An actor message will perform an action and/or trigger an event on the actor it is sent to."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="send-actor-message-via-name"><a class="markdownIt-Anchor" href="#send-actor-message-via-name">#</a> Send Actor Message Via Name</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Send <strong>message</strong> to the <strong>name</strong> actor of <strong>actor</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Sends an actor message to an actor that is related to another actor.  The Actor parameter is used to specify the primary actor, and the Name parameter is used to specify a reference (such as ::Host) that will derive a secondary actor from the primary actor.  The message gets sent to the secondary actor.  An actor message will perform an action and/or trigger an event on the actor it is sent to.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>actor</code> — Actor</li>
+<li><code>string</code> — Name</li>
+<li><code>string</code> <em>[ actormsg ]</em> — Message</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">ActorSendTo</span><span class="hljs-params">(
+	actor a,
+	<span class="hljs-built_in">string</span> refName,
+	<span class="hljs-built_in">string</span> msg,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#actor-send-actor-messages">Actor / Send Actor Messages</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/actor-send">Send Actor Message</a></strong> — ( ActorSend )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/actor-send-as-text">Send Actor Message As Text</a></strong> — ( ActorSendAsText )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-send-actor-message-to-unit">Send Actor Message To Unit</a></strong> — ( libNtve_gf_SendActorMessageToUnit )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/actor-scope-send">Send Actor Message To Scope</a></strong> — ( ActorScopeSend )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-actor-region-send-simple">Send Actor Message To Actor Region</a></strong> — ( libNtve_gf_ActorRegionSendSimple )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/actor-region-send">Send Actor Message To Actor Region With Filters</a></strong> — ( ActorRegionSend )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-send-actor-message-to-game-region">Send Actor Message To Game Region</a></strong> — ( libNtve_gf_SendActorMessageToGameRegion )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-send-actor-message-to-game-region-with-filters">Send Actor Message To Game Region With Filters</a></strong> — ( libNtve_gf_SendActorMessageToGameRegionWithFilters )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/actor-send-to">Send Actor Message Via Name</a></strong> — ( ActorSendTo )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/actor-send-to-as-text">Send Actor Message As Text Via Name</a></strong> — ( ActorSendToAsText )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignsswarmsc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmsc2campaign">#</a> campaigns/swarm.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarm.sc2campaign/base.sc2maps/maps/campaign/swarm/zspace02.sc2map/MapScript.galaxy#L3812">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3812</span>
+ActorSendTo(ActorFromDoodad(DoodadFromId(<span class="hljs-number">1607</span>)), <span class="hljs-string">"SidewaysNydusAdditionDown"</span>, <span class="hljs-string">"ModelSwap SpaceTentacle"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3813</span>
+ActorSendTo(ActorFromDoodad(DoodadFromId(<span class="hljs-number">1607</span>)), <span class="hljs-string">"SidewaysNydusAdditionDown"</span>, <span class="hljs-string">"AnimBracketStart HoverShort Hover,Start Stand IGNORE"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7813</span>
+ActorSendTo(ActorFromDoodad(DoodadFromId(<span class="hljs-number">1673</span>)), <span class="hljs-string">"SidewaysNydusAdditionDownRight"</span>, <span class="hljs-string">"ModelSwap SpaceTentacle"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9050</span>
+ActorSendTo(ActorFromDoodad(DoodadFromId(<span class="hljs-number">1363</span>)), <span class="hljs-string">"SidewaysNydusAdditionDownRight"</span>, <span class="hljs-string">"ModelSwap SpaceTentacle"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9051</span>
+ActorSendTo(ActorFromDoodad(DoodadFromId(<span class="hljs-number">1363</span>)), <span class="hljs-string">"SidewaysNydusAdditionDownRight"</span>, <span class="hljs-string">"AnimPlay Stabilize Spell,B"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9061</span>
+ActorSendTo(ActorFromDoodad(DoodadFromId(<span class="hljs-number">1363</span>)), <span class="hljs-string">"SidewaysNydusAdditionDownRight"</span>, <span class="hljs-string">"AnimSetPausedAll"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9080</span>
+ActorSendTo(ActorFromDoodad(DoodadFromId(<span class="hljs-number">1671</span>)), <span class="hljs-string">"SidewaysNydusAdditionDownLeftSideways"</span>, <span class="hljs-string">"ModelSwap SpaceTentacle"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9081</span>
+ActorSendTo(ActorFromDoodad(DoodadFromId(<span class="hljs-number">1671</span>)), <span class="hljs-string">"SidewaysNydusAdditionDownLeftSideways"</span>, <span class="hljs-string">"AnimPlay Stabilize Spell,B"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9090</span>
+ActorSendTo(ActorFromDoodad(DoodadFromId(<span class="hljs-number">1671</span>)), <span class="hljs-string">"SidewaysNydusAdditionDownLeftSideways"</span>, <span class="hljs-string">"AnimSetPausedAll"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9109</span>
+ActorSendTo(ActorFromDoodad(DoodadFromId(<span class="hljs-number">1668</span>)), <span class="hljs-string">"SidewaysNydusAdditionDownLeft"</span>, <span class="hljs-string">"ModelSwap SpaceTentacle"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3812</span>
+ActorSendTo(ActorFromDoodad(DoodadFromId(<span class="hljs-number">1607</span>)), <span class="hljs-string">"SidewaysNydusAdditionDown"</span>, <span class="hljs-string">"ModelSwap SpaceTentacle"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3813</span>
+ActorSendTo(ActorFromDoodad(DoodadFromId(<span class="hljs-number">1607</span>)), <span class="hljs-string">"SidewaysNydusAdditionDown"</span>, <span class="hljs-string">"AnimBracketStart HoverShort Hover,Start Stand IGNORE"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7813</span>
+ActorSendTo(ActorFromDoodad(DoodadFromId(<span class="hljs-number">1673</span>)), <span class="hljs-string">"SidewaysNydusAdditionDownRight"</span>, <span class="hljs-string">"ModelSwap SpaceTentacle"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9050</span>
+ActorSendTo(ActorFromDoodad(DoodadFromId(<span class="hljs-number">1363</span>)), <span class="hljs-string">"SidewaysNydusAdditionDownRight"</span>, <span class="hljs-string">"ModelSwap SpaceTentacle"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9051</span>
+ActorSendTo(ActorFromDoodad(DoodadFromId(<span class="hljs-number">1363</span>)), <span class="hljs-string">"SidewaysNydusAdditionDownRight"</span>, <span class="hljs-string">"AnimPlay Stabilize Spell,B"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9061</span>
+ActorSendTo(ActorFromDoodad(DoodadFromId(<span class="hljs-number">1363</span>)), <span class="hljs-string">"SidewaysNydusAdditionDownRight"</span>, <span class="hljs-string">"AnimSetPausedAll"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9080</span>
+ActorSendTo(ActorFromDoodad(DoodadFromId(<span class="hljs-number">1671</span>)), <span class="hljs-string">"SidewaysNydusAdditionDownLeftSideways"</span>, <span class="hljs-string">"ModelSwap SpaceTentacle"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9081</span>
+ActorSendTo(ActorFromDoodad(DoodadFromId(<span class="hljs-number">1671</span>)), <span class="hljs-string">"SidewaysNydusAdditionDownLeftSideways"</span>, <span class="hljs-string">"AnimPlay Stabilize Spell,B"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9090</span>
+ActorSendTo(ActorFromDoodad(DoodadFromId(<span class="hljs-number">1671</span>)), <span class="hljs-string">"SidewaysNydusAdditionDownLeftSideways"</span>, <span class="hljs-string">"AnimSetPausedAll"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9109</span>
+ActorSendTo(ActorFromDoodad(DoodadFromId(<span class="hljs-number">1668</span>)), <span class="hljs-string">"SidewaysNydusAdditionDownLeft"</span>, <span class="hljs-string">"ModelSwap SpaceTentacle"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2236</span>
+ActorSendTo(libNtve_gf_MainActorofUnit(gv_tBuildPylonPylon), <span class="hljs-string">"PowerVisual"</span>, <span class="hljs-string">"SetTintColorBlendPair 0,0,0 255,255,255 1.250000 Bounce"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2242</span>
+ActorSendTo(libNtve_gf_MainActorofUnit(gv_tBuildPylonPylon), <span class="hljs-string">"PowerVisual"</span>, <span class="hljs-string">"Destroy"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3921</span>
+ActorSendTo(libNtve_gf_MainActorofUnit(gv_tBuildPylonPylon), <span class="hljs-string">"PowerVisual"</span>, <span class="hljs-string">"Destroy"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2236</span>
+ActorSendTo(libNtve_gf_MainActorofUnit(gv_tBuildPylonPylon), <span class="hljs-string">"PowerVisual"</span>, <span class="hljs-string">"SetTintColorBlendPair 0,0,0 255,255,255 1.250000 Bounce"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2242</span>
+ActorSendTo(libNtve_gf_MainActorofUnit(gv_tBuildPylonPylon), <span class="hljs-string">"PowerVisual"</span>, <span class="hljs-string">"Destroy"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3921</span>
+ActorSendTo(libNtve_gf_MainActorofUnit(gv_tBuildPylonPylon), <span class="hljs-string">"PowerVisual"</span>, <span class="hljs-string">"Destroy"</span>)
+</code></pre>
+<h4 id="modsheroesdatastormmod"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/AILib.galaxy#L2803">AILib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2803</span>
+ActorSendTo(libNtve_gf_MainActorofUnit(libGame_gv_teams[libGame_gv_teamOrderIndex_C].lv_core), <span class="hljs-string">"TowerAttackRange"</span>, <span class="hljs-string">"Destroy"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2810</span>
+ActorSendTo(libNtve_gf_MainActorofUnit(libGame_gv_teams[libGame_gv_teamChaosIndex_C].lv_core), <span class="hljs-string">"TowerAttackRange"</span>, <span class="hljs-string">"Destroy"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2822</span>
+ActorSendTo(libNtve_gf_MainActorofUnit(lv_itUnit), <span class="hljs-string">"TowerAttackRange"</span>, <span class="hljs-string">"Destroy"</span>)
+</code></pre>
+<h4 id="modsheroesdatastormmod-2"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-2">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/GameLib.galaxy#L8435">GameLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L8435</span>
+ActorSendTo(libNtve_gf_MainActorofUnit(libGame_gv_townTownData[lp_townIndex].lv_lootBannerUnit), <span class="hljs-string">"LootBanner"</span>, libNtve_gf_BannerSet(libGame_gv_players[lv_creditPlayer].lv_lootContent.lv_loot_Banner.lv_bannerID))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8447</span>
+ActorSendTo(libNtve_gf_MainActorofUnit(libGame_gv_townTownData[lp_townIndex].lv_lootBannerUnit), <span class="hljs-string">"LootBanner"</span>, libNtve_gf_BannerSet(<span class="hljs-string">"NeutralMercCamp"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8493</span>
+ActorSendTo(libNtve_gf_MainActorofUnit(lp_sconceUnit), <span class="hljs-string">"LootBanner"</span>, libNtve_gf_BannerSet(lv_realBannerID))
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodshanamurastormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodshanamurastormmod">#</a> mods/heroesmapmods/battlegroundmapmods/hanamura.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/hanamura.stormmod/base.stormdata/LibMHmu.galaxy#L699">LibMHmu.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L699</span>
+ActorSendTo(libNtve_gf_MainActorofUnit(libMHmu_gv_elevator_PathingBlocker_Unit), <span class="hljs-string">"::global.PayloadElevatorAttachment"</span>, <span class="hljs-string">"SetTintColor 0,255,255"</span>)
+</code></pre>
+<h4 id="modsheromodsalarakstormmod"><a class="markdownIt-Anchor" href="#modsheromodsalarakstormmod">#</a> mods/heromods/alarak.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heromods/alarak.stormmod/base.stormdata/LibHALA.galaxy#L815">LibHALA.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L815</span>
+ActorSendTo(libNtve_gf_MainActorofUnit(lv_unit), <span class="hljs-string">"AlarakLightningSurgeReticule"</span>, <span class="hljs-string">"AnimSetTime Custom 0.200000"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L816</span>
+ActorSendTo(libNtve_gf_MainActorofUnit(lv_unit), <span class="hljs-string">"AlarakLightningSurgeBeam"</span>, <span class="hljs-string">"AnimSetTime Custom 0.200000"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L820</span>
+ActorSendTo(libNtve_gf_MainActorofUnit(lv_unit), <span class="hljs-string">"AlarakLightningSurgeReticule"</span>, <span class="hljs-string">"AnimSetTime Custom 0.300000"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L821</span>
+ActorSendTo(libNtve_gf_MainActorofUnit(lv_unit), <span class="hljs-string">"AlarakLightningSurgeBeam"</span>, <span class="hljs-string">"AnimSetTime Custom 0.300000"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L825</span>
+ActorSendTo(libNtve_gf_MainActorofUnit(lv_unit), <span class="hljs-string">"AlarakLightningSurgeReticule"</span>, <span class="hljs-string">"AnimSetTime Custom 0.390000"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L826</span>
+ActorSendTo(libNtve_gf_MainActorofUnit(lv_unit), <span class="hljs-string">"AlarakLightningSurgeBeam"</span>, <span class="hljs-string">"AnimSetTime Custom 0.390000"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L830</span>
+ActorSendTo(libNtve_gf_MainActorofUnit(lv_unit), <span class="hljs-string">"AlarakLightningSurgeReticule"</span>, <span class="hljs-string">"AnimSetTime Custom 0.430000"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L831</span>
+ActorSendTo(libNtve_gf_MainActorofUnit(lv_unit), <span class="hljs-string">"AlarakLightningSurgeBeam"</span>, <span class="hljs-string">"AnimSetTime Custom 0.430000"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L835</span>
+ActorSendTo(libNtve_gf_MainActorofUnit(lv_unit), <span class="hljs-string">"AlarakLightningSurgeReticule"</span>, <span class="hljs-string">"AnimSetTime Custom 0.540000"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L836</span>
+ActorSendTo(libNtve_gf_MainActorofUnit(lv_unit), <span class="hljs-string">"AlarakLightningSurgeBeam"</span>, <span class="hljs-string">"AnimSetTime Custom 0.540000"</span>)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOMI.galaxy#L14577">LibCOMI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L14577</span>
+ActorSendTo(libNtve_gf_MainActorofUnit(lv_u), libCOMI_gv_cM_MasteryVorazunDarkPylonRadiusActorLink, (<span class="hljs-string">"SetScale 0.45"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L14578</span>
+ActorSendTo(libNtve_gf_MainActorofUnit(lv_u), libCOMI_gv_cM_MasteryVorazunDarkPylonRadiusActorLink, ((<span class="hljs-string">"SetScale "</span> + FixedToString(lv_scale, <span class="hljs-number">2</span>) + <span class="hljs-string">" 1"</span>)))
+</code></pre>
+<h4 id="modswarcoopwarclassicsystemsc2mod"><a class="markdownIt-Anchor" href="#modswarcoopwarclassicsystemsc2mod">#</a> mods/warcoop/warclassicsystem.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/warcoop/warclassicsystem.sc2mod/base.sc2data/TriggerLibs/WarClassicSystem.galaxy#L1359">WarClassicSystem.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1359</span>
+ActorSendTo(libNtve_gf_MainActorofUnit(lv_itUnit), <span class="hljs-string">"AHerSuppress"</span>, <span class="hljs-string">"Destroy"</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

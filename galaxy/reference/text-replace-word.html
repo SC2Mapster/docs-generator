@@ -1,0 +1,413 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Text With Search Replacement / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Text With Search Replacement"/>
+                <meta property="og:description" content="Replaces one or more occcurrences of a substring inside text.
+
+Returns: text"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="text-with-search-replacement"><a class="markdownIt-Anchor" href="#text-with-search-replacement">#</a> Text With Search Replacement</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — <strong>text</strong> with up to <strong>count</strong> <strong>findText</strong> replaced by <strong>replaceText</strong> (<strong>sensitivity|Sensitive/Insensitive</strong> to case)<br>
+<em>Flags</em> — <code>Native</code> | <code>Function</code></p>
+</blockquote>
+<p>Replaces one or more occcurrences of a substring inside text.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>text</code> — Text</li>
+<li><code>text</code> — Find Text</li>
+<li><code>text</code> — Replace Text</li>
+<li><code>int</code> — Count</li>
+<li><code>bool</code> <em>[ preset::<a href="/galaxy/reference/preset-string-case-sensitivity">String_Case_Sensitivity</a> ]</em> — Sensitivity</li>
+</ul>
+<p>Returns — <code>text</code></p>
+<pre class="hljs"><code><span class="hljs-function">native text <span class="hljs-title">TextReplaceWord</span><span class="hljs-params">(
+	text t,
+	text word,
+	text replace,
+	<span class="hljs-keyword">int</span> maxCount,
+	<span class="hljs-keyword">bool</span> caseSens,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#string-substrings">String / Substrings</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>string</code> — <strong><a href="/galaxy/reference/string-word">Word Of String</a></strong> — ( StringWord )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> — <strong><a href="/galaxy/reference/string-sub">Substring</a></strong> — ( StringSub )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/string-find">Position Of Substring</a></strong> — ( StringFind )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/string-contains">String Containment</a></strong> — ( StringContains )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> — <strong><a href="/galaxy/reference/string-replace">String With Indexed Replacement</a></strong> — ( StringReplace )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> — <strong><a href="/galaxy/reference/string-replace-word">String With Search Replacement</a></strong> — ( StringReplaceWord )</li>
+<li><em><strong>[F]</strong></em> — <code>text</code> — <strong><a href="/galaxy/reference/text-replace-word">Text With Search Replacement</a></strong> — ( TextReplaceWord )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/challenges/advancedcommand.sc2map/MapScript.galaxy#L459">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L459</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/974891C1"</span>), StringExternal(<span class="hljs-string">"Param/Value/62CFCF47"</span>), IntToText(gv_winningScoreBronze), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L955</span>
+TextReplaceWord((StringExternal(<span class="hljs-string">"Param/Value/53FCAC82"</span>) + gv_ratingTextBronze + StringExternal(<span class="hljs-string">"Param/Value/029129D5"</span>)), StringExternal(<span class="hljs-string">"Param/Value/5F6EBF43"</span>), IntToText(gv_winningScoreBronze), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L955</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/32DF2F98"</span>), StringExternal(<span class="hljs-string">"Param/Value/8AA09FB4"</span>), IntToText(gv_winningScoreBronze), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L958</span>
+TextReplaceWord((StringExternal(<span class="hljs-string">"Param/Value/04CFC30A"</span>) + gv_ratingTextSilver + StringExternal(<span class="hljs-string">"Param/Value/7F7B82FC"</span>)), StringExternal(<span class="hljs-string">"Param/Value/D75FAE77"</span>), IntToText(gv_winningScoreSilver), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L958</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/2B200293"</span>), StringExternal(<span class="hljs-string">"Param/Value/E7477835"</span>), IntToText(gv_winningScoreSilver), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L961</span>
+TextReplaceWord((StringExternal(<span class="hljs-string">"Param/Value/AA04631D"</span>) + gv_ratingTextGold + StringExternal(<span class="hljs-string">"Param/Value/D59DA782"</span>)), StringExternal(<span class="hljs-string">"Param/Value/4D415390"</span>), IntToText(gv_winningScoreGold), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L961</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/677E8B18"</span>), StringExternal(<span class="hljs-string">"Param/Value/3F40F919"</span>), IntToText(gv_winningScoreGold), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1244</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/8BDE6E58"</span>), StringExternal(<span class="hljs-string">"Param/Value/6E67A216"</span>), IntToText(gv_winningScoreBronze), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2265</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/54C42162"</span>), StringExternal(<span class="hljs-string">"Param/Value/56D79116"</span>), IntToText(gv_roundCount), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2274</span>
+TextReplaceWord((StringExternal(<span class="hljs-string">"Param/Value/203A7B8C"</span>) + gv_ratingTextSilver + StringExternal(<span class="hljs-string">"Param/Value/51853534"</span>)), StringExternal(<span class="hljs-string">"Param/Value/52B42A7D"</span>), IntToText(gv_winningScoreSilver), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2274</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/E6A97E03"</span>), StringExternal(<span class="hljs-string">"Param/Value/6F02CE23"</span>), IntToText(gv_winningScoreSilver), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2277</span>
+TextReplaceWord((StringExternal(<span class="hljs-string">"Param/Value/52A3B2DA"</span>) + gv_ratingTextGold + StringExternal(<span class="hljs-string">"Param/Value/10814915"</span>)), StringExternal(<span class="hljs-string">"Param/Value/6128B216"</span>), IntToText(gv_winningScoreGold), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2277</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/B73A69D3"</span>), StringExternal(<span class="hljs-string">"Param/Value/BE8D77BE"</span>), IntToText(gv_winningScoreGold), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2297</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/16E9842C"</span>), StringExternal(<span class="hljs-string">"Param/Value/524D84D1"</span>), IntToText(gv_roundCount), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L532</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/FBD3213A"</span>), StringExternal(<span class="hljs-string">"Param/Value/417D4E1E"</span>), IntToText(gv_winningScoreBronze), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1224</span>
+TextReplaceWord((StringExternal(<span class="hljs-string">"Param/Value/7317C301"</span>) + gv_ratingTextBronze + StringExternal(<span class="hljs-string">"Param/Value/EDEC0D20"</span>)), StringExternal(<span class="hljs-string">"Param/Value/BA56269E"</span>), IntToText(gv_winningScoreBronze), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1224</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/F403DB8E"</span>), StringExternal(<span class="hljs-string">"Param/Value/17A3EDD0"</span>), IntToText(gv_winningScoreBronze), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1227</span>
+TextReplaceWord((StringExternal(<span class="hljs-string">"Param/Value/0985B5EC"</span>) + gv_ratingTextSilver + StringExternal(<span class="hljs-string">"Param/Value/28F0A7BF"</span>)), StringExternal(<span class="hljs-string">"Param/Value/FCE6EAF4"</span>), IntToText(gv_winningScoreSilver), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1227</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/22099900"</span>), StringExternal(<span class="hljs-string">"Param/Value/B4DFD7CB"</span>), IntToText(gv_winningScoreSilver), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1230</span>
+TextReplaceWord((StringExternal(<span class="hljs-string">"Param/Value/605D19F2"</span>) + gv_ratingTextGold + StringExternal(<span class="hljs-string">"Param/Value/11A93DBC"</span>)), StringExternal(<span class="hljs-string">"Param/Value/0E47DE2A"</span>), IntToText(gv_winningScoreGold), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1230</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/D6349BB2"</span>), StringExternal(<span class="hljs-string">"Param/Value/0FAD66E8"</span>), IntToText(gv_winningScoreGold), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1515</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/271EB141"</span>), StringExternal(<span class="hljs-string">"Param/Value/2CC74C61"</span>), IntToText(gv_winningScoreBronze), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1130</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/07CB6342"</span>), StringExternal(<span class="hljs-string">"Param/Value/CDF4E3C5"</span>), IntToText(gv_marineBuiltCount), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1130</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/9CE8ADE0"</span>), StringExternal(<span class="hljs-string">"Param/Value/0FD78E04"</span>), IntToText(gv_marineNeeded), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1130</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/BCEC4C42"</span>), StringExternal(<span class="hljs-string">"Param/Value/CC8DF48B"</span>), IntToText(gv_marineNeeded), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1133</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/E5A32A1B"</span>), StringExternal(<span class="hljs-string">"Param/Value/4BBAF9F5"</span>), IntToText(gv_tankBuiltCount), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1133</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/11077E9C"</span>), StringExternal(<span class="hljs-string">"Param/Value/84920319"</span>), IntToText(gv_tanksNeeded), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1133</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/172D839D"</span>), StringExternal(<span class="hljs-string">"Param/Value/4726D1B5"</span>), IntToText(gv_tanksNeeded), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1136</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/FB85A5A6"</span>), StringExternal(<span class="hljs-string">"Param/Value/F48A93A8"</span>), IntToText(gv_ghostsBuiltCount), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1136</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/E3C9AF93"</span>), StringExternal(<span class="hljs-string">"Param/Value/6B895D03"</span>), IntToText(gv_ghostsNeeded), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1136</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/B707EFF9"</span>), StringExternal(<span class="hljs-string">"Param/Value/2BD283C3"</span>), IntToText(gv_ghostsNeeded), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1175</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/70AC623B"</span>), StringExternal(<span class="hljs-string">"Param/Value/D01F147F"</span>), IntToText(gv_marineBuiltCount), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1756</span>
+TextReplaceWord((StringExternal(<span class="hljs-string">"Param/Value/49304EAE"</span>) + gv_ratingTextSilver + StringExternal(<span class="hljs-string">"Param/Value/3077DE16"</span>)), StringExternal(<span class="hljs-string">"Param/Value/75080C2D"</span>), IntToText(gv_silverLosses), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1759</span>
+TextReplaceWord((StringExternal(<span class="hljs-string">"Param/Value/4377C835"</span>) + gv_ratingTextGold + StringExternal(<span class="hljs-string">"Param/Value/D7702915"</span>)), StringExternal(<span class="hljs-string">"Param/Value/238D3C64"</span>), IntToText(gv_goldLosses), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2096</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/BABA6EED"</span>), StringExternal(<span class="hljs-string">"Param/Value/AD04669B"</span>), IntToText(gv_roundCount), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2105</span>
+TextReplaceWord((StringExternal(<span class="hljs-string">"Param/Value/C9E0F07E"</span>) + gv_ratingTextSilver + StringExternal(<span class="hljs-string">"Param/Value/8B193142"</span>)), StringExternal(<span class="hljs-string">"Param/Value/FF3A1403"</span>), IntToText(gv_winningScoreSilver), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2105</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/24751C21"</span>), StringExternal(<span class="hljs-string">"Param/Value/CAB13CCB"</span>), IntToText(gv_winningScoreSilver), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2108</span>
+TextReplaceWord((StringExternal(<span class="hljs-string">"Param/Value/69B8B409"</span>) + gv_ratingTextGold + StringExternal(<span class="hljs-string">"Param/Value/DFFC2E41"</span>)), StringExternal(<span class="hljs-string">"Param/Value/F68901EC"</span>), IntToText(gv_winningScoreGold), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2108</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/3D3762C1"</span>), StringExternal(<span class="hljs-string">"Param/Value/8FB1EBC6"</span>), IntToText(gv_winningScoreGold), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2128</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/7B6323B3"</span>), StringExternal(<span class="hljs-string">"Param/Value/27527C62"</span>), IntToText(gv_roundCount), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L429</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/BE2067FC"</span>), StringExternal(<span class="hljs-string">"Param/Value/1A08FB6F"</span>), IntToText(gv_winningScoreBronze), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L960</span>
+TextReplaceWord((StringExternal(<span class="hljs-string">"Param/Value/EFE754C7"</span>) + gv_ratingTextBronze + StringExternal(<span class="hljs-string">"Param/Value/8C10741F"</span>)), StringExternal(<span class="hljs-string">"Param/Value/BD16A3E9"</span>), IntToText(gv_winningScoreBronze), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L960</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/ACF57983"</span>), StringExternal(<span class="hljs-string">"Param/Value/7643C36C"</span>), IntToText(gv_winningScoreBronze), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L963</span>
+TextReplaceWord((StringExternal(<span class="hljs-string">"Param/Value/D90D6F5A"</span>) + gv_ratingTextSilver + StringExternal(<span class="hljs-string">"Param/Value/2163B4C0"</span>)), StringExternal(<span class="hljs-string">"Param/Value/CFD416AF"</span>), IntToText(gv_winningScoreSilver), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L963</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/3C92E42C"</span>), StringExternal(<span class="hljs-string">"Param/Value/0159C03F"</span>), IntToText(gv_winningScoreSilver), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L966</span>
+TextReplaceWord((StringExternal(<span class="hljs-string">"Param/Value/44DF095B"</span>) + gv_ratingTextGold + StringExternal(<span class="hljs-string">"Param/Value/B960EE27"</span>)), StringExternal(<span class="hljs-string">"Param/Value/BF39FAE0"</span>), IntToText(gv_winningScoreGold), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L966</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/51F8FB98"</span>), StringExternal(<span class="hljs-string">"Param/Value/CF1192E2"</span>), IntToText(gv_winningScoreGold), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1280</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/67682E63"</span>), StringExternal(<span class="hljs-string">"Param/Value/5B0448DD"</span>), IntToText(gv_winningScoreBronze), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2205</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/849B54A1"</span>), StringExternal(<span class="hljs-string">"Param/Value/8BFF5549"</span>), IntToText(gv_roundCount), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2214</span>
+TextReplaceWord((StringExternal(<span class="hljs-string">"Param/Value/C68EE48D"</span>) + gv_ratingTextSilver + StringExternal(<span class="hljs-string">"Param/Value/6501C3BD"</span>)), StringExternal(<span class="hljs-string">"Param/Value/D8461B70"</span>), IntToText(gv_winningScoreSilver), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2214</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/F50A1C45"</span>), StringExternal(<span class="hljs-string">"Param/Value/012557E7"</span>), IntToText(gv_winningScoreSilver), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2217</span>
+TextReplaceWord((StringExternal(<span class="hljs-string">"Param/Value/96804F89"</span>) + gv_ratingTextGold + StringExternal(<span class="hljs-string">"Param/Value/5B8E052D"</span>)), StringExternal(<span class="hljs-string">"Param/Value/F5702168"</span>), IntToText(gv_winningScoreGold), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2217</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/89E785A7"</span>), StringExternal(<span class="hljs-string">"Param/Value/6BCFF374"</span>), IntToText(gv_winningScoreGold), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2237</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/02B1F8A4"</span>), StringExternal(<span class="hljs-string">"Param/Value/09B9AAA0"</span>), IntToText(gv_roundCount), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L445</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/8E74D676"</span>), StringExternal(<span class="hljs-string">"Param/Value/BA71E049"</span>), IntToText(gv_winningScoreBronze), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L919</span>
+TextReplaceWord((StringExternal(<span class="hljs-string">"Param/Value/9BB95271"</span>) + gv_ratingTextBronze + StringExternal(<span class="hljs-string">"Param/Value/B8BF9F5E"</span>)), StringExternal(<span class="hljs-string">"Param/Value/8DE488BF"</span>), IntToText(gv_winningScoreBronze), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L919</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/7EBC70BE"</span>), StringExternal(<span class="hljs-string">"Param/Value/70D690E3"</span>), IntToText(gv_winningScoreBronze), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L922</span>
+TextReplaceWord((StringExternal(<span class="hljs-string">"Param/Value/AA563A58"</span>) + gv_ratingTextSilver + StringExternal(<span class="hljs-string">"Param/Value/5B5C35FD"</span>)), StringExternal(<span class="hljs-string">"Param/Value/22FC8E39"</span>), IntToText(gv_winningScoreSilver), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L922</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/BA81DF4E"</span>), StringExternal(<span class="hljs-string">"Param/Value/728AC594"</span>), IntToText(gv_winningScoreSilver), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L925</span>
+TextReplaceWord((StringExternal(<span class="hljs-string">"Param/Value/244C17E1"</span>) + gv_ratingTextGold + StringExternal(<span class="hljs-string">"Param/Value/51EBBEFD"</span>)), StringExternal(<span class="hljs-string">"Param/Value/0E2B6A3B"</span>), IntToText(gv_winningScoreGold), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L925</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/3120DE77"</span>), StringExternal(<span class="hljs-string">"Param/Value/772D05BB"</span>), IntToText(gv_winningScoreGold), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1222</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/7EEA38A2"</span>), StringExternal(<span class="hljs-string">"Param/Value/F83A5EB4"</span>), IntToText(gv_winningScoreBronze), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4297</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/2F86BD5F"</span>), StringExternal(<span class="hljs-string">"Param/Value/1C42E24F"</span>), IntToText(gv_colonistsDeathQuota), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4297</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/87078404"</span>), StringExternal(<span class="hljs-string">"Param/Value/11147D32"</span>), IntToText(gv_colonistsKilled), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4493</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/5E1B1335"</span>), StringExternal(<span class="hljs-string">"Param/Value/C00EA670"</span>), IntToText(gv_colonistsDeathQuota), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4493</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/D744ABDE"</span>), StringExternal(<span class="hljs-string">"Param/Value/23575D29"</span>), IntToText(gv_colonistsKilled), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5392</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/16FE1334"</span>), StringExternal(<span class="hljs-string">"Param/Value/8B5EA2CC"</span>), IntToText(gv_colonistsDeathQuota), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5392</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/E0B8EF62"</span>), StringExternal(<span class="hljs-string">"Param/Value/BEDB5804"</span>), IntToText(gv_colonistsKilled), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1054</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/6B0A5E41"</span>), StringExternal(<span class="hljs-string">"Param/Value/C3A5EF7D"</span>), IntToText(gv_day), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1061</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/70B324C3"</span>), StringExternal(<span class="hljs-string">"Param/Value/7B02C8CB"</span>), IntToText(gv_day), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1073</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/749F57BE"</span>), StringExternal(<span class="hljs-string">"Param/Value/7E7BF9AB"</span>), IntToText(gv_night), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4480</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/DDDA8C18"</span>), StringExternal(<span class="hljs-string">"Param/Value/F10F8990"</span>), IntToText(UnitGroupCount(UnitGroup(null, gv_pLAYER_03_INFESTED_REFUGEES, null, UnitFilter((<span class="hljs-number">1</span> &lt;&lt; c_targetFilterStructure) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterPreventDefeat), <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0</span>), c_unitCountAlive)), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4741</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/D33401E3"</span>), StringExternal(<span class="hljs-string">"Param/Value/9590FC4A"</span>), IntToText(gv_mERC_CONTRACT_PRICE), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2872</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/2519AF5D"</span>), StringExternal(<span class="hljs-string">"Param/Value/D67E2367"</span>), lv_author, c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2872</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/344F6720"</span>), StringExternal(<span class="hljs-string">"Param/Value/A281DAD4"</span>), lv_title, c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4520</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/D3C035F7"</span>), StringExternal(<span class="hljs-string">"Param/Value/8BAF666E"</span>), IntToText(gv_objectiveMineralsQuota), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4522</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/21CBD08C"</span>), StringExternal(<span class="hljs-string">"Param/Value/9163F2DB"</span>), IntToText(gv_objectiveMineralsQuota), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5217</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/F6F153EE"</span>), StringExternal(<span class="hljs-string">"Param/Value/E46C4938"</span>), IntToText(gv_sTAGE_01_KILL_QUOTA), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5252</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/93FAEACE"</span>), StringExternal(<span class="hljs-string">"Param/Value/5FE97FBF"</span>), IntToText(gv_sTAGE_01_KILL_QUOTA), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4297</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/2F86BD5F"</span>), StringExternal(<span class="hljs-string">"Param/Value/1C42E24F"</span>), IntToText(gv_colonistsDeathQuota), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4297</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/87078404"</span>), StringExternal(<span class="hljs-string">"Param/Value/11147D32"</span>), IntToText(gv_colonistsKilled), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4493</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/5E1B1335"</span>), StringExternal(<span class="hljs-string">"Param/Value/C00EA670"</span>), IntToText(gv_colonistsDeathQuota), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4493</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/D744ABDE"</span>), StringExternal(<span class="hljs-string">"Param/Value/23575D29"</span>), IntToText(gv_colonistsKilled), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5392</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/16FE1334"</span>), StringExternal(<span class="hljs-string">"Param/Value/8B5EA2CC"</span>), IntToText(gv_colonistsDeathQuota), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5392</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/E0B8EF62"</span>), StringExternal(<span class="hljs-string">"Param/Value/BEDB5804"</span>), IntToText(gv_colonistsKilled), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1054</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/6B0A5E41"</span>), StringExternal(<span class="hljs-string">"Param/Value/C3A5EF7D"</span>), IntToText(gv_day), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1061</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/70B324C3"</span>), StringExternal(<span class="hljs-string">"Param/Value/7B02C8CB"</span>), IntToText(gv_day), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1073</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/749F57BE"</span>), StringExternal(<span class="hljs-string">"Param/Value/7E7BF9AB"</span>), IntToText(gv_night), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4480</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/DDDA8C18"</span>), StringExternal(<span class="hljs-string">"Param/Value/F10F8990"</span>), IntToText(UnitGroupCount(UnitGroup(null, gv_pLAYER_03_INFESTED_REFUGEES, null, UnitFilter((<span class="hljs-number">1</span> &lt;&lt; c_targetFilterStructure) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterPreventDefeat), <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0</span>), c_unitCountAlive)), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4741</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/D33401E3"</span>), StringExternal(<span class="hljs-string">"Param/Value/9590FC4A"</span>), IntToText(gv_mERC_CONTRACT_PRICE), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2872</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/2519AF5D"</span>), StringExternal(<span class="hljs-string">"Param/Value/D67E2367"</span>), lv_author, c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2872</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/344F6720"</span>), StringExternal(<span class="hljs-string">"Param/Value/A281DAD4"</span>), lv_title, c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4520</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/D3C035F7"</span>), StringExternal(<span class="hljs-string">"Param/Value/8BAF666E"</span>), IntToText(gv_objectiveMineralsQuota), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4522</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/21CBD08C"</span>), StringExternal(<span class="hljs-string">"Param/Value/9163F2DB"</span>), IntToText(gv_objectiveMineralsQuota), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5217</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/F6F153EE"</span>), StringExternal(<span class="hljs-string">"Param/Value/E46C4938"</span>), IntToText(gv_sTAGE_01_KILL_QUOTA), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5252</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/93FAEACE"</span>), StringExternal(<span class="hljs-string">"Param/Value/5FE97FBF"</span>), IntToText(gv_sTAGE_01_KILL_QUOTA), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L459</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/974891C1"</span>), StringExternal(<span class="hljs-string">"Param/Value/62CFCF47"</span>), IntToText(gv_winningScoreBronze), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L955</span>
+TextReplaceWord((StringExternal(<span class="hljs-string">"Param/Value/53FCAC82"</span>) + gv_ratingTextBronze + StringExternal(<span class="hljs-string">"Param/Value/029129D5"</span>)), StringExternal(<span class="hljs-string">"Param/Value/5F6EBF43"</span>), IntToText(gv_winningScoreBronze), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L955</span>
+TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/32DF2F98"</span>), StringExternal(<span class="hljs-string">"Param/Value/8AA09FB4"</span>), IntToText(gv_winningScoreBronze), c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L958</span>
+TextReplaceWord((StringExternal(<span class="hljs-string">"Param/Value/04CFC30A"</span>) + gv_ratingTextSilver + StringExternal(<span class="hljs-string">"Param/Value/7F7B82FC"</span>)), StringExternal(<span class="hljs-string">"Param/Value/D75FAE77"</span>), IntToText(gv_winningScoreSilver), c_stringReplaceAll, c_stringCase)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

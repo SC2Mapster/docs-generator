@@ -1,0 +1,437 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Console Command / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Console Command"/>
+                <meta property="og:description" content="Runs a console command.
+
+Returns: bool"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="console-command"><a class="markdownIt-Anchor" href="#console-command">#</a> Console Command</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Run console command: <strong>text|Command</strong> (<strong>defaults|Enable/Disable</strong> defaults, <strong>macros|Enable/Disable</strong> macros)<br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Runs a console command.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>string</code> — Text</li>
+<li><code>bool</code> <em>[ preset::<a href="/galaxy/reference/preset-enable-disable-option">Enable_Disable_Option</a> ]</em> — Defaults</li>
+<li><code>bool</code> <em>[ preset::<a href="/galaxy/reference/preset-enable-disable-option">Enable_Disable_Option</a> ]</em> — Macros</li>
+</ul>
+<p>Returns — <code>bool</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">bool</span> <span class="hljs-title">ConsoleCommand</span><span class="hljs-params">(
+	<span class="hljs-built_in">string</span> inText,
+	<span class="hljs-keyword">bool</span> allowDefault,
+	<span class="hljs-keyword">bool</span> allowMacros,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#game-chat-and-console">Game / Chat And Console</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-chat-message">Chat Message</a></strong> — ( TriggerAddEventChatMessage )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-cheat-used">Cheat Used</a></strong> — ( TriggerAddEventCheatUsed )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> — <strong><a href="/galaxy/reference/event-chat-message">Chat String</a></strong> — ( EventChatMessage )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-game-cheat-type">GameCheatType</a> ]</em> — <strong><a href="/galaxy/reference/event-cheat-used">Cheat Type Used</a></strong> — ( EventCheatUsed )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/console-command">Console Command</a></strong> — ( ConsoleCommand )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/game-cheats-enabled">Cheats Enabled</a></strong> — ( GameCheatsEnabled )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/game-cheat-allow">Allow Cheat</a></strong> — ( GameCheatAllow )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/tarcade.sc2map/MapScript.galaxy#L4055">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4055</span>
+ConsoleCommand(<span class="hljs-string">"god"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L15427</span>
+ConsoleCommand(<span class="hljs-string">"resourcesnapshot"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L17677</span>
+ConsoleCommand(<span class="hljs-string">"exit"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L17682</span>
+ConsoleCommand(<span class="hljs-string">"resourcesnapshot"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L17684</span>
+ConsoleCommand(<span class="hljs-string">"exit"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L17749</span>
+ConsoleCommand(<span class="hljs-string">"resourcesnapshot"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L17751</span>
+ConsoleCommand(<span class="hljs-string">"exit"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L18207</span>
+ConsoleCommand(<span class="hljs-string">"debugcamera 1"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1673</span>
+ConsoleCommand(<span class="hljs-string">"exit"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4055</span>
+ConsoleCommand(<span class="hljs-string">"god"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L15427</span>
+ConsoleCommand(<span class="hljs-string">"resourcesnapshot"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L17677</span>
+ConsoleCommand(<span class="hljs-string">"exit"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L17682</span>
+ConsoleCommand(<span class="hljs-string">"resourcesnapshot"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L17684</span>
+ConsoleCommand(<span class="hljs-string">"exit"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L17749</span>
+ConsoleCommand(<span class="hljs-string">"resourcesnapshot"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L17751</span>
+ConsoleCommand(<span class="hljs-string">"exit"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L18207</span>
+ConsoleCommand(<span class="hljs-string">"debugcamera 1"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1673</span>
+ConsoleCommand(<span class="hljs-string">"exit"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="campaignslibertystorysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertystorysc2campaign">#</a> campaigns/libertystory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/libertystory.sc2campaign/base.sc2data/TriggerLibs/CampaignLib.galaxy#L11543">CampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L11543</span>
+ConsoleCommand(<span class="hljs-string">"exit"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="campaignsswarmstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmstorysc2campaign">#</a> campaigns/swarmstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstory.sc2campaign/base.sc2data/TriggerLibs/SwarmCampaignLib.galaxy#L14518">SwarmCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L14518</span>
+ConsoleCommand(<span class="hljs-string">"exit"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="campaignsswarmstoryutilsc2mod"><a class="markdownIt-Anchor" href="#campaignsswarmstoryutilsc2mod">#</a> campaigns/swarmstoryutil.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstoryutil.sc2mod/base.sc2data/Lib281DEC45.galaxy#L303">Lib281DEC45.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L303</span>
+ConsoleCommand(<span class="hljs-string">"resourceclean"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L305</span>
+ConsoleCommand(<span class="hljs-string">"resourcedump"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L426</span>
+ConsoleCommand(<span class="hljs-string">"exit"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2077</span>
+ConsoleCommand(<span class="hljs-string">"resourcedump"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2088</span>
+ConsoleCommand(<span class="hljs-string">"resourceclean"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2101</span>
+ConsoleCommand(<span class="hljs-string">"resourcedump"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2105</span>
+ConsoleCommand(<span class="hljs-string">"resourceclean"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignLib.galaxy#L1883">VoidCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1883</span>
+ConsoleCommand(<span class="hljs-string">"exit"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign-2"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign-2">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignMissionLib.galaxy#L6253">VoidCampaignMissionLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L6253</span>
+ConsoleCommand(<span class="hljs-string">"cd"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6256</span>
+ConsoleCommand(<span class="hljs-string">"fb"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6259</span>
+ConsoleCommand(<span class="hljs-string">"god 1"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6262</span>
+ConsoleCommand(<span class="hljs-string">"sm"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6265</span>
+ConsoleCommand(<span class="hljs-string">"gimme"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6268</span>
+ConsoleCommand(<span class="hljs-string">"tt"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6661</span>
+ConsoleCommand(<span class="hljs-string">"togui"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6671</span>
+ConsoleCommand(<span class="hljs-string">"togui"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="modsheroesstormmod"><a class="markdownIt-Anchor" href="#modsheroesstormmod">#</a> mods/heroes.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroes.stormmod/base.stormmaps/maps/heroes/singleplayermaps/%2810%29trymemode.stormmap/MapScript.galaxy#L1551">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1551</span>
+ConsoleCommand(<span class="hljs-string">"exit"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5714</span>
+ConsoleCommand(<span class="hljs-string">"exit"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5936</span>
+ConsoleCommand(<span class="hljs-string">"exit"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3412</span>
+ConsoleCommand(<span class="hljs-string">"exit"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3559</span>
+ConsoleCommand(<span class="hljs-string">"exit"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10154</span>
+ConsoleCommand(<span class="hljs-string">"exit"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10183</span>
+ConsoleCommand(<span class="hljs-string">"exit"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1551</span>
+ConsoleCommand(<span class="hljs-string">"exit"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5714</span>
+ConsoleCommand(<span class="hljs-string">"exit"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5936</span>
+ConsoleCommand(<span class="hljs-string">"exit"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3412</span>
+ConsoleCommand(<span class="hljs-string">"exit"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3559</span>
+ConsoleCommand(<span class="hljs-string">"exit"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10154</span>
+ConsoleCommand(<span class="hljs-string">"exit"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10183</span>
+ConsoleCommand(<span class="hljs-string">"exit"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodscooppvebrawlmodstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodscooppvebrawlmodstormmod">#</a> mods/heroesbrawlmods/brawlmapmods/coop/pvebrawlmod.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/coop/pvebrawlmod.stormmod/base.stormdata/LibPVEB.galaxy#L1402">LibPVEB.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1402</span>
+ConsoleCommand((<span class="hljs-string">"AllianceControl "</span> + IntToString(lp_playerToSelect) + <span class="hljs-string">" "</span> + IntToString(lp_player) + <span class="hljs-string">" 1"</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodscooppvemodstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodscooppvemodstormmod">#</a> mods/heroesbrawlmods/brawlmapmods/coop/pvemod.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/coop/pvemod.stormmod/base.stormdata/LibPVEM.galaxy#L1505">LibPVEM.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1505</span>
+ConsoleCommand((<span class="hljs-string">"AllianceControl "</span> + IntToString(lp_playerToSelect) + <span class="hljs-string">" "</span> + IntToString(lp_player) + <span class="hljs-string">" 1"</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="modsheroesdatastormmod"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/StartingExperienceLib.galaxy#L4108">StartingExperienceLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4108</span>
+ConsoleCommand(<span class="hljs-string">"variable skirmishpractice 0"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4113</span>
+ConsoleCommand(<span class="hljs-string">"variable skirmishpractice 1"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="modsheroesdatastormmod-2"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-2">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/SupportLib.galaxy#L1869">SupportLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1869</span>
+ConsoleCommand(<span class="hljs-string">"restart"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1899</span>
+ConsoleCommand(<span class="hljs-string">"speed 8"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1930</span>
+ConsoleCommand(<span class="hljs-string">"exit"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2033</span>
+ConsoleCommand(<span class="hljs-string">"exit"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2872</span>
+ConsoleCommand(<span class="hljs-string">"sm"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2947</span>
+ConsoleCommand(<span class="hljs-string">"cd"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2978</span>
+ConsoleCommand(<span class="hljs-string">"grid"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3009</span>
+ConsoleCommand(<span class="hljs-string">"tve"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3040</span>
+ConsoleCommand(<span class="hljs-string">"free"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3502</span>
+ConsoleCommand((<span class="hljs-string">"speed "</span> + lv_speedEditBoxContents), <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="modsheroesdatastormmod-3"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-3">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/UILib.galaxy#L11080">UILib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L11080</span>
+ConsoleCommand(<span class="hljs-string">"speed 5"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11084</span>
+ConsoleCommand(<span class="hljs-string">"speed"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="modsmissionpacksnovacampaignsc2mod"><a class="markdownIt-Anchor" href="#modsmissionpacksnovacampaignsc2mod">#</a> mods/missionpacks/novacampaign.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/novacampaign.sc2mod/base.sc2data/LibNCMI.galaxy#L5192">LibNCMI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L5192</span>
+ConsoleCommand(<span class="hljs-string">"cd"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5195</span>
+ConsoleCommand(<span class="hljs-string">"fb"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5198</span>
+ConsoleCommand(<span class="hljs-string">"god 1"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5201</span>
+ConsoleCommand(<span class="hljs-string">"sm"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5204</span>
+ConsoleCommand(<span class="hljs-string">"gimme"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5207</span>
+ConsoleCommand(<span class="hljs-string">"tt"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5780</span>
+ConsoleCommand(<span class="hljs-string">"togui"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5790</span>
+ConsoleCommand(<span class="hljs-string">"togui"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="modsnovastoryassetssc2mod"><a class="markdownIt-Anchor" href="#modsnovastoryassetssc2mod">#</a> mods/novastoryassets.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/novastoryassets.sc2mod/base.sc2maps/maps/campaign/nova/nova02.sc2map/MapScript.galaxy#L971">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L971</span>
+ConsoleCommand(<span class="hljs-string">"exit"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1334</span>
+ConsoleCommand(<span class="hljs-string">"exit"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1910</span>
+ConsoleCommand(<span class="hljs-string">"exit"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1262</span>
+ConsoleCommand(<span class="hljs-string">"exit"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3165</span>
+ConsoleCommand(<span class="hljs-string">"exit"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1595</span>
+ConsoleCommand(<span class="hljs-string">"exit"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1854</span>
+ConsoleCommand(<span class="hljs-string">"exit"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L924</span>
+ConsoleCommand(<span class="hljs-string">"exit"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1646</span>
+ConsoleCommand(<span class="hljs-string">"exit"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L539</span>
+ConsoleCommand(<span class="hljs-string">"exit"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L846</span>
+ConsoleCommand(<span class="hljs-string">"exit"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1254</span>
+ConsoleCommand(<span class="hljs-string">"exit"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L971</span>
+ConsoleCommand(<span class="hljs-string">"exit"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1334</span>
+ConsoleCommand(<span class="hljs-string">"exit"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1910</span>
+ConsoleCommand(<span class="hljs-string">"exit"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1262</span>
+ConsoleCommand(<span class="hljs-string">"exit"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3165</span>
+ConsoleCommand(<span class="hljs-string">"exit"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1595</span>
+ConsoleCommand(<span class="hljs-string">"exit"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1854</span>
+ConsoleCommand(<span class="hljs-string">"exit"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L924</span>
+ConsoleCommand(<span class="hljs-string">"exit"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1646</span>
+ConsoleCommand(<span class="hljs-string">"exit"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L539</span>
+ConsoleCommand(<span class="hljs-string">"exit"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L846</span>
+ConsoleCommand(<span class="hljs-string">"exit"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1254</span>
+ConsoleCommand(<span class="hljs-string">"exit"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="modstestmodsautopvestormmod"><a class="markdownIt-Anchor" href="#modstestmodsautopvestormmod">#</a> mods/testmods/autopve.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/testmods/autopve.stormmod/base.stormdata/Lib1035AFB3.galaxy#L106">Lib1035AFB3.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L106</span>
+ConsoleCommand(<span class="hljs-string">"exit"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L136</span>
+ConsoleCommand(<span class="hljs-string">"chat -perf boss"</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

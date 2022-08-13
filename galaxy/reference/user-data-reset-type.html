@@ -1,0 +1,432 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Reset User Data Type / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Reset User Data Type"/>
+                <meta property="og:description" content="Resets all instances of the given type to the default values defined in the Data module."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="reset-user-data-type"><a class="markdownIt-Anchor" href="#reset-user-data-type">#</a> Reset User Data Type</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Reset all user data for <strong>userType</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Resets all instances of the given type to the default values defined in the Data module.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>string</code> <em>[ gamelink::User ]</em> — User Type</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">UserDataResetType</span><span class="hljs-params">(<span class="hljs-built_in">string</span> inType)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#user-data-utility">User Data / Utility</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/user-data-reset-value">Reset User Data Value</a></strong> — ( UserDataResetValue )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/user-data-reset-instance">Reset User Data Instance</a></strong> — ( UserDataResetInstance )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/user-data-reset-type">Reset User Data Type</a></strong> — ( UserDataResetType )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/user-data-reset-all">Reset All User Data</a></strong> — ( UserDataResetAll )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> <em>[ gamelink::User ]</em> — <strong><a href="/galaxy/reference/user-data-type-from-reference">User Type From Reference</a></strong> — ( UserDataTypeFromReference )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> <em>[ userinstance ]</em> — <strong><a href="/galaxy/reference/user-data-instance-from-reference">User Instance From Reference</a></strong> — ( UserDataInstanceFromReference )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignsswarmstoryutilsc2mod"><a class="markdownIt-Anchor" href="#campaignsswarmstoryutilsc2mod">#</a> campaigns/swarmstoryutil.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstoryutil.sc2mod/base.sc2data/Lib281DEC45.galaxy#L5784">Lib281DEC45.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L5784</span>
+UserDataResetType(<span class="hljs-string">"StoryStates"</span>)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignStoryLib.galaxy#L249">VoidCampaignStoryLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L249</span>
+UserDataResetType(<span class="hljs-string">"Locations"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5099</span>
+UserDataResetType(<span class="hljs-string">"StoryStates"</span>)
+</code></pre>
+<h4 id="modsheroesbrawlmodsarenamodemodsgardenarenastormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsarenamodemodsgardenarenastormmod">#</a> mods/heroesbrawlmods/arenamodemods/gardenarena.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/arenamodemods/gardenarena.stormmod/base.stormdata/LibAMGT.galaxy#L1068">LibAMGT.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1068</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1110</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1152</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1194</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<h4 id="modsheroesbrawlmodsarenamodemodspunisherarenastormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsarenamodemodspunisherarenastormmod">#</a> mods/heroesbrawlmods/arenamodemods/punisherarena.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/arenamodemods/punisherarena.stormmod/base.stormdata/LibAMPU.galaxy#L1372">LibAMPU.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1372</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1413</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1454</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1495</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<h4 id="modsheroesbrawlmodsarenamodemodstemplearenastormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsarenamodemodstemplearenastormmod">#</a> mods/heroesbrawlmods/arenamodemods/templearena.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/arenamodemods/templearena.stormmod/base.stormdata/LibAMCT.galaxy#L1374">LibAMCT.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1374</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1388</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1402</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1436</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1477</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1518</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1559</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<h4 id="modsheroesbrawlmodsarenamodemodstrialgroundsstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsarenamodemodstrialgroundsstormmod">#</a> mods/heroesbrawlmods/arenamodemods/trialgrounds.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/arenamodemods/trialgrounds.stormmod/base.stormdata/LibAMVS.galaxy#L1139">LibAMVS.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1139</span>
+UserDataResetType(<span class="hljs-string">"VolskayaTrialGrounds"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1165</span>
+UserDataResetType(<span class="hljs-string">"VolskayaTrialGrounds"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1194</span>
+UserDataResetType(<span class="hljs-string">"VolskayaTrialGrounds"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1238</span>
+UserDataResetType(<span class="hljs-string">"VolskayaTrialGrounds"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1270</span>
+UserDataResetType(<span class="hljs-string">"VolskayaTrialGrounds"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1314</span>
+UserDataResetType(<span class="hljs-string">"VolskayaTrialGrounds"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1351</span>
+UserDataResetType(<span class="hljs-string">"VolskayaTrialGrounds"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1380</span>
+UserDataResetType(<span class="hljs-string">"VolskayaTrialGrounds"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1424</span>
+UserDataResetType(<span class="hljs-string">"VolskayaTrialGrounds"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1471</span>
+UserDataResetType(<span class="hljs-string">"VolskayaTrialGrounds"</span>)
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodsblackheartsrevengestormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodsblackheartsrevengestormmod">#</a> mods/heroesbrawlmods/brawlmapmods/blackheartsrevenge.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/blackheartsrevenge.stormmod/base.stormdata/LibMDoE.galaxy#L1712">LibMDoE.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1712</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1757</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1802</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1847</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1892</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1937</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1982</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodshanamurapayloadpushstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodshanamurapayloadpushstormmod">#</a> mods/heroesbrawlmods/brawlmapmods/hanamurapayloadpush.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/hanamurapayloadpush.stormmod/base.stormdata/LibMHPP.galaxy#L758">LibMHPP.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L758</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L800</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L842</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L884</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L926</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L968</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1007</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1046</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1087</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1126</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<h4 id="modsheroesdatastormmod"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/MapMechanicsLib.galaxy#L3358">MapMechanicsLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3358</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3384</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3425</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3465</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3907</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3933</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3959</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3985</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4057</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4097</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodsalteracpassstormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodsalteracpassstormmod">#</a> mods/heroesmapmods/battlegroundmapmods/alteracpass.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/alteracpass.stormmod/base.stormdata/LibMMAP.galaxy#L1362">LibMMAP.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1362</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1411</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1462</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1509</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1556</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1603</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1648</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1697</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1746</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1791</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodsbattlefieldofeternitystormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodsbattlefieldofeternitystormmod">#</a> mods/heroesmapmods/battlegroundmapmods/battlefieldofeternity.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/battlefieldofeternity.stormmod/base.stormdata/LibMLBD.galaxy#L1815">LibMLBD.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1815</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1870</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1920</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1973</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2031</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2094</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodsblackheartsbaystormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodsblackheartsbaystormmod">#</a> mods/heroesmapmods/battlegroundmapmods/blackheartsbay.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/blackheartsbay.stormmod/base.stormdata/LibBBAY.galaxy#L876">LibBBAY.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L876</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L918</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L974</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1006</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1037</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1073</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodsbraxisholdoutstormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodsbraxisholdoutstormmod">#</a> mods/heroesmapmods/battlegroundmapmods/braxisholdout.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/braxisholdout.stormmod/base.stormdata/LibSCHO.galaxy#L2614">LibSCHO.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2614</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2645</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2787</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2836</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodsgardenofterrorstormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodsgardenofterrorstormmod">#</a> mods/heroesmapmods/battlegroundmapmods/gardenofterror.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/gardenofterror.stormmod/base.stormdata/LibGRDN.galaxy#L684">LibGRDN.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L684</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L710</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L736</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L762</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L788</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L819</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L861</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodshanamurastormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodshanamurastormmod">#</a> mods/heroesmapmods/battlegroundmapmods/hanamura.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/hanamura.stormmod/base.stormdata/LibMHmu.galaxy#L773">LibMHmu.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L773</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L819</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L864</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L910</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodshauntedminesstormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodshauntedminesstormmod">#</a> mods/heroesmapmods/battlegroundmapmods/hauntedmines.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/hauntedmines.stormmod/base.stormdata/LibMHtM.galaxy#L981">LibMHtM.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L981</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1007</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1033</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1059</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1102</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1165</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1211</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodsinfernalshrinesstormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodsinfernalshrinesstormmod">#</a> mods/heroesmapmods/battlegroundmapmods/infernalshrines.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/infernalshrines.stormmod/base.stormdata/LibMSHE.galaxy#L709">LibMSHE.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L709</span>
+UserDataResetType(<span class="hljs-string">"MapVOEvent"</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,463 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Catalog Field Value Get As Integer / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Catalog Field Value Get As Integer"/>
+                <meta property="og:description" content="Returns the value of a field for an entry as an integer.  Use catalog lookup functions to retrieve a data value or other information from the game data.  To find the name of a field path, open the data editor and turn on View Raw Data.  For example, if you wanted to get the unit for the first index of a train ability, your field path string would be &quot;InfoArray[0].Unit&quot;.
+
+Returns: int"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="catalog-field-value-get-as-integer"><a class="markdownIt-Anchor" href="#catalog-field-value-get-as-integer">#</a> Catalog Field Value Get As Integer</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Value of <strong>catalog</strong> <strong>entry</strong> <strong>fieldPath</strong> for player <strong>player</strong> as an integer<br>
+<em>Flags</em> — <code>Native</code> | <code>Function</code></p>
+</blockquote>
+<p>Returns the value of a field for an entry as an integer.  Use catalog lookup functions to retrieve a data value or other information from the game data.  To find the name of a field path, open the data editor and turn on View Raw Data.  For example, if you wanted to get the unit for the first index of a train ability, your field path string would be <em>“InfoArray[0].Unit”</em>.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-catalog-type">CatalogType</a> ]</em> — Catalog</li>
+<li><code>string</code> <em>[ catalogentry ]</em> — Entry</li>
+<li><code>string</code> <em>[ catalogfieldpath ]</em> — Field Path</li>
+<li><code>int</code> — Player</li>
+</ul>
+<p>Returns — <code>int</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">int</span> <span class="hljs-title">CatalogFieldValueGetAsInt</span><span class="hljs-params">(
+	<span class="hljs-keyword">int</span> catalog,
+	<span class="hljs-built_in">string</span> entry,
+	<span class="hljs-built_in">string</span> fieldPath,
+	<span class="hljs-keyword">int</span> player,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#catalog-lookup">Catalog / Lookup</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/catalog-entry-is-default">Catalog Entry Is Default</a></strong> — ( CatalogEntryIsDefault )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/catalog-entry-is-valid">Catalog Entry Is Valid</a></strong> — ( CatalogEntryIsValid )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/catalog-entry-class">Catalog Entry Class</a></strong> — ( CatalogEntryClass )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/catalog-entry-count">Catalog Entry Count</a></strong> — ( CatalogEntryCount )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> <em>[ catalogentry ]</em> — <strong><a href="/galaxy/reference/catalog-entry-get">Catalog Entry Get</a></strong> — ( CatalogEntryGet )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> <em>[ catalogentry ]</em> — <strong><a href="/galaxy/reference/catalog-entry-parent">Catalog Entry Parent</a></strong> — ( CatalogEntryParent )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> <em>[ catalogscope ]</em> — <strong><a href="/galaxy/reference/catalog-entry-scope">Catalog Entry Scope</a></strong> — ( CatalogEntryScope )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/catalog-field-count">Catalog Field Count</a></strong> — ( CatalogFieldCount )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> <em>[ catalogfieldname ]</em> — <strong><a href="/galaxy/reference/catalog-field-get">Catalog Field Get</a></strong> — ( CatalogFieldGet )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/catalog-field-exists">Catalog Field Exists</a></strong> — ( CatalogFieldExists )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/catalog-field-is-array">Catalog Field Is Array</a></strong> — ( CatalogFieldIsArray )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/catalog-field-is-scope">Catalog Field Is Scope</a></strong> — ( CatalogFieldIsScope )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> — <strong><a href="/galaxy/reference/catalog-field-type">Catalog Field Type</a></strong> — ( CatalogFieldType )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-field-type-category">FieldTypeCategory</a> ]</em> — <strong><a href="/galaxy/reference/catalog-field-type-category">Catalog Field Type Category</a></strong> — ( CatalogFieldTypeCategory )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> — <strong><a href="/galaxy/reference/catalog-field-value-get">Catalog Field Value Get</a></strong> — ( CatalogFieldValueGet )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/catalog-field-value-get-as-int">Catalog Field Value Get As Integer</a></strong> — ( CatalogFieldValueGetAsInt )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/catalog-field-value-get-flags-as-int">Catalog Field Value Get Flags As Integer</a></strong> — ( CatalogFieldValueGetFlagsAsInt )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-catalog-field-value-get-as-real">Catalog Field Value Get As Real</a></strong> — ( libNtve_gf_CatalogFieldValueGetAsReal )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/catalog-field-value-count">Catalog Field Value Count</a></strong> — ( CatalogFieldValueCount )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> — <strong><a href="/galaxy/reference/catalog-reference-get">Catalog Reference Get</a></strong> — ( CatalogReferenceGet )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/catalog-reference-get-as-int">Catalog Reference Get As Integer</a></strong> — ( CatalogReferenceGetAsInt )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-catalog-reference-get-as-real">Catalog Reference Get As Real</a></strong> — ( libNtve_gf_CatalogReferenceGetAsReal )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/catalog-reference-count">Catalog Reference Count</a></strong> — ( CatalogReferenceCount )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-ability-class">AbilityClass</a> ]</em> — <strong><a href="/galaxy/reference/ability-class">Class Of Ability</a></strong> — ( AbilityClass )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-cost-of-ability">Cost Of Ability</a></strong> — ( libNtve_gf_CostOfAbility )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignsswarmsc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmsc2campaign">#</a> campaigns/swarm.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarm.sc2campaign/base.sc2maps/maps/campaign/swarm/zzerus01.sc2map/MapScript.galaxy#L3533">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3533</span>
+CatalogFieldValueGetAsInt(c_gameCatalogUnit, UnitGetType(auto02B9333B_var), <span class="hljs-string">"Sight"</span>, gv_pLAYER_01_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3533</span>
+CatalogFieldValueGetAsInt(c_gameCatalogUnit, UnitGetType(auto02B9333B_var), <span class="hljs-string">"Sight"</span>, gv_pLAYER_01_USER)
+</code></pre>
+<h4 id="campaignsswarmstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmstorysc2campaign">#</a> campaigns/swarmstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstory.sc2campaign/base.sc2data/TriggerLibs/SwarmCampaignLib.galaxy#L4773">SwarmCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4773</span>
+CatalogFieldValueGetAsInt(c_gameCatalogMap, (lp_map), <span class="hljs-string">"Kind"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6079</span>
+CatalogFieldValueGetAsInt(c_gameCatalogObjective, (lp_objective), <span class="hljs-string">"RequiredCount"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6116</span>
+CatalogFieldValueGetAsInt(c_gameCatalogObjective, (lp_objective), <span class="hljs-string">"Type"</span>, c_playerAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6127</span>
+CatalogFieldValueGetAsInt(c_gameCatalogObjective, (lp_objective), <span class="hljs-string">"Type"</span>, c_playerAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11368</span>
+CatalogFieldValueGetAsInt(c_gameCatalogUnit, <span class="hljs-string">"K5Kerrigan"</span>, <span class="hljs-string">"LifeMax"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11369</span>
+CatalogFieldValueGetAsInt(c_gameCatalogUnit, <span class="hljs-string">"K5Kerrigan"</span>, <span class="hljs-string">"EnergyMax"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11370</span>
+CatalogFieldValueGetAsInt(c_gameCatalogEffect, <span class="hljs-string">"ChainReaction1Damage"</span>, <span class="hljs-string">"Amount"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11371</span>
+CatalogFieldValueGetAsInt(c_gameCatalogUnit, <span class="hljs-string">"K5Kerrigan"</span>, <span class="hljs-string">"LifeArmor"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11703</span>
+CatalogFieldValueGetAsInt(c_gameCatalogUnit, <span class="hljs-string">"K5Kerrigan"</span>, <span class="hljs-string">"LifeMax"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11704</span>
+CatalogFieldValueGetAsInt(c_gameCatalogUnit, <span class="hljs-string">"K5Kerrigan"</span>, <span class="hljs-string">"EnergyMax"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<h4 id="campaignsvoidsc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidsc2campaign">#</a> campaigns/void.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/void.sc2campaign/base.sc2maps/maps/campaign/void/paiur06.sc2map/MapScript.galaxy#L1633">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1633</span>
+CatalogFieldValueGetAsInt(c_gameCatalogBehavior, <span class="hljs-string">"SOATimeFreeze"</span>, <span class="hljs-string">"Duration"</span>, c_playerAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2833</span>
+CatalogFieldValueGetAsInt(c_gameCatalogBehavior, <span class="hljs-string">"SOATimeFreeze"</span>, <span class="hljs-string">"Duration"</span>, c_playerAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1633</span>
+CatalogFieldValueGetAsInt(c_gameCatalogBehavior, <span class="hljs-string">"SOATimeFreeze"</span>, <span class="hljs-string">"Duration"</span>, c_playerAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2833</span>
+CatalogFieldValueGetAsInt(c_gameCatalogBehavior, <span class="hljs-string">"SOATimeFreeze"</span>, <span class="hljs-string">"Duration"</span>, c_playerAny)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignLib.galaxy#L2220">VoidCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2220</span>
+CatalogFieldValueGetAsInt(c_gameCatalogMap, (lp_map), <span class="hljs-string">"Kind"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3723</span>
+CatalogFieldValueGetAsInt(c_gameCatalogObjective, (lp_objective), <span class="hljs-string">"RequiredCount"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3847</span>
+CatalogFieldValueGetAsInt(c_gameCatalogObjective, (lp_objective), <span class="hljs-string">"Type"</span>, c_playerAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3858</span>
+CatalogFieldValueGetAsInt(c_gameCatalogObjective, (lp_objective), <span class="hljs-string">"Type"</span>, c_playerAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6886</span>
+CatalogFieldValueGetAsInt(c_gameCatalogMap, (lp_nextMap), <span class="hljs-string">"LoadingTextWidth"</span>, c_playerAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6886</span>
+CatalogFieldValueGetAsInt(c_gameCatalogMap, (lp_nextMap), <span class="hljs-string">"LoadingTextHeight"</span>, c_playerAny)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign-2"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign-2">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignMissionLib.galaxy#L4960">VoidCampaignMissionLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4960</span>
+CatalogFieldValueGetAsInt(c_gameCatalogBehavior, <span class="hljs-string">"SOATimeFreeze"</span>, <span class="hljs-string">"Duration"</span>, c_playerAny)
+</code></pre>
+<h4 id="modsheroesstormmod"><a class="markdownIt-Anchor" href="#modsheroesstormmod">#</a> mods/heroes.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroes.stormmod/base.stormmaps/maps/heroes/singleplayermaps/%2810%29trymemode.stormmap/MapScript.galaxy#L772">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L772</span>
+CatalogFieldValueGetAsInt(c_gameCatalogHero, (lv_heroStringIDs), <span class="hljs-string">"Flags[ShowInStore]"</span>, c_playerAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L772</span>
+CatalogFieldValueGetAsInt(c_gameCatalogHero, (lv_heroStringIDs), <span class="hljs-string">"Flags[PreventTryMeLaunch]"</span>, c_playerAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L772</span>
+CatalogFieldValueGetAsInt(c_gameCatalogHero, (lv_heroStringIDs), <span class="hljs-string">"Flags[AllowAIRandomSelection]"</span>, c_playerAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L772</span>
+CatalogFieldValueGetAsInt(c_gameCatalogHero, (lv_heroStringIDs), <span class="hljs-string">"Flags[AllowHumanRandomSelection]"</span>, c_playerAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L814</span>
+CatalogFieldValueGetAsInt(c_gameCatalogHero, (lv_heroStringIDs), <span class="hljs-string">"Flags[ShowInStore]"</span>, c_playerAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L814</span>
+CatalogFieldValueGetAsInt(c_gameCatalogHero, (lv_heroStringIDs), <span class="hljs-string">"Flags[PreventTryMeLaunch]"</span>, c_playerAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L814</span>
+CatalogFieldValueGetAsInt(c_gameCatalogHero, (lv_heroStringIDs), <span class="hljs-string">"Flags[AllowAIRandomSelection]"</span>, c_playerAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L814</span>
+CatalogFieldValueGetAsInt(c_gameCatalogHero, (lv_heroStringIDs), <span class="hljs-string">"Flags[AllowHumanRandomSelection]"</span>, c_playerAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L772</span>
+CatalogFieldValueGetAsInt(c_gameCatalogHero, (lv_heroStringIDs), <span class="hljs-string">"Flags[ShowInStore]"</span>, c_playerAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L772</span>
+CatalogFieldValueGetAsInt(c_gameCatalogHero, (lv_heroStringIDs), <span class="hljs-string">"Flags[PreventTryMeLaunch]"</span>, c_playerAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L772</span>
+CatalogFieldValueGetAsInt(c_gameCatalogHero, (lv_heroStringIDs), <span class="hljs-string">"Flags[AllowAIRandomSelection]"</span>, c_playerAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L772</span>
+CatalogFieldValueGetAsInt(c_gameCatalogHero, (lv_heroStringIDs), <span class="hljs-string">"Flags[AllowHumanRandomSelection]"</span>, c_playerAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L814</span>
+CatalogFieldValueGetAsInt(c_gameCatalogHero, (lv_heroStringIDs), <span class="hljs-string">"Flags[ShowInStore]"</span>, c_playerAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L814</span>
+CatalogFieldValueGetAsInt(c_gameCatalogHero, (lv_heroStringIDs), <span class="hljs-string">"Flags[PreventTryMeLaunch]"</span>, c_playerAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L814</span>
+CatalogFieldValueGetAsInt(c_gameCatalogHero, (lv_heroStringIDs), <span class="hljs-string">"Flags[AllowAIRandomSelection]"</span>, c_playerAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L814</span>
+CatalogFieldValueGetAsInt(c_gameCatalogHero, (lv_heroStringIDs), <span class="hljs-string">"Flags[AllowHumanRandomSelection]"</span>, c_playerAny)
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodscooppvebrawlmodstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodscooppvebrawlmodstormmod">#</a> mods/heroesbrawlmods/brawlmapmods/coop/pvebrawlmod.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/coop/pvebrawlmod.stormmod/base.stormdata/LibPVEB.galaxy#L2691">LibPVEB.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2691</span>
+CatalogFieldValueGetAsInt(c_gameCatalogBehavior, <span class="hljs-string">"TychusOdin"</span>, <span class="hljs-string">"Duration"</span>, lv_enemyPlayerIndex)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2692</span>
+CatalogFieldValueGetAsInt(c_gameCatalogBehavior, <span class="hljs-string">"MurkySafetyBubble"</span>, <span class="hljs-string">"Duration"</span>, lv_enemyPlayerIndex)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2693</span>
+CatalogFieldValueGetAsInt(c_gameCatalogAbil, <span class="hljs-string">"MurkyOctoGrab"</span>, <span class="hljs-string">"Cost.Cooldown.TimeUse"</span>, lv_enemyPlayerIndex)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2694</span>
+CatalogFieldValueGetAsInt(c_gameCatalogAbil, <span class="hljs-string">"MurkySafetyBubble"</span>, <span class="hljs-string">"Cost.Cooldown.TimeUse"</span>, lv_enemyPlayerIndex)
+</code></pre>
+<h4 id="modsheroesbrawlmodsheroselectionmodsingameheroselectionstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsheroselectionmodsingameheroselectionstormmod">#</a> mods/heroesbrawlmods/heroselectionmods/ingameheroselection.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/heroselectionmods/ingameheroselection.stormmod/base.stormdata/LibIGHS.galaxy#L1252">LibIGHS.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1252</span>
+CatalogFieldValueGetAsInt(c_gameCatalogHero, libIGHS_gv_shuffleSettings.lv_players[lv_updatedPlayer].lv_heroPickOptions[lv_pick], <span class="hljs-string">"ExpandedRole"</span>, c_playerAny)
+</code></pre>
+<h4 id="modsheroesdatastormmod"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/AILib.galaxy#L1462">AILib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1462</span>
+CatalogFieldValueGetAsInt(c_gameCatalogHero, lv_heroName, <span class="hljs-string">"TalentAIBuildsArray["</span> + IntToString((lv_talentBuildIndex - <span class="hljs-number">1</span>)) + <span class="hljs-string">"].AIOnly"</span>, lp_trigPlayer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1467</span>
+CatalogFieldValueGetAsInt(c_gameCatalogHero, lv_heroName, <span class="hljs-string">"TalentAIBuildsArray["</span> + IntToString((lv_talentBuildIndex - <span class="hljs-number">1</span>)) + <span class="hljs-string">"].MinDifficulty"</span>, lp_trigPlayer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1472</span>
+CatalogFieldValueGetAsInt(c_gameCatalogHero, lv_heroName, <span class="hljs-string">"TalentAIBuildsArray["</span> + IntToString((lv_talentBuildIndex - <span class="hljs-number">1</span>)) + <span class="hljs-string">"].MaxDifficulty"</span>, lp_trigPlayer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2048</span>
+CatalogFieldValueGetAsInt(c_gameCatalogHero, libCore_gf_GetHeroFromIndex(lp_heroIndex), <span class="hljs-string">"AIComplexityTier"</span>, lp_player)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2053</span>
+CatalogFieldValueGetAsInt(c_gameCatalogGame, <span class="hljs-string">"Dflt"</span>, <span class="hljs-string">"AIDifficultySettings["</span> + IntToString((libAIAI_gv_aIHeroes[lp_player].lv_difficulty)) + <span class="hljs-string">"].HeroComplexityTier"</span>, lp_player)
+</code></pre>
+<h4 id="modsheroesdatastormmod-2"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-2">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/GameDataHelperLib.galaxy#L62">GameDataHelperLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L62</span>
+CatalogFieldValueGetAsInt(c_gameCatalogBehavior, <span class="hljs-string">"ButcherFreshMeatTokenCounter"</span>, <span class="hljs-string">"ConditionalEvents["</span> + IntToString(<span class="hljs-number">0</span>) + <span class="hljs-string">"].CompareValue"</span>, c_playerAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L85</span>
+CatalogFieldValueGetAsInt(c_gameCatalogBehavior, <span class="hljs-string">"JainaFrostbiteTokenCounter"</span>, <span class="hljs-string">"Max"</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L237</span>
+CatalogFieldValueGetAsInt(c_gameCatalogUnit, UnitGetType(lp_unit), <span class="hljs-string">"Height"</span>, c_playerAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5304</span>
+CatalogFieldValueGetAsInt(c_gameCatalogAbil, lv_abilLink, <span class="hljs-string">"Cost["</span> + IntToString(<span class="hljs-number">0</span>) + <span class="hljs-string">"].Cooldown.TimeUse"</span>, auto6824BDCC_var)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7795</span>
+CatalogFieldValueGetAsInt(c_gameCatalogAbil, <span class="hljs-string">"ButcherRuthlessOnslaught"</span>, <span class="hljs-string">"Range["</span> + IntToString(<span class="hljs-number">0</span>) + <span class="hljs-string">"]"</span>, c_playerAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8764</span>
+CatalogFieldValueGetAsInt(c_gameCatalogEffect, <span class="hljs-string">"RegenGlobePickupSearch"</span>, <span class="hljs-string">"AreaArray["</span> + IntToString(<span class="hljs-number">0</span>) + <span class="hljs-string">"].Radius"</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11369</span>
+CatalogFieldValueGetAsInt(c_gameCatalogBehavior, <span class="hljs-string">"ETCProgRockTokenCounter"</span>, <span class="hljs-string">"Max"</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L15508</span>
+CatalogFieldValueGetAsInt(c_gameCatalogBehavior, EventUnitBehavior(), <span class="hljs-string">"BehaviorCategories[Restorable]"</span>, c_playerAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L25828</span>
+CatalogFieldValueGetAsInt(c_gameCatalogBehavior, <span class="hljs-string">"ZeratulGrimTaskQuestToken"</span>, <span class="hljs-string">"Max"</span>, c_playerAny)
+</code></pre>
+<h4 id="modsheroesdatastormmod-3"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-3">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/GameLib.galaxy#L7504">GameLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L7504</span>
+CatalogFieldValueGetAsInt(c_gameCatalogHero, DataTableGetString(<span class="hljs-literal">true</span>, (<span class="hljs-string">"HeroIndex_"</span> + IntToString(lv_itHeroIndex))), <span class="hljs-string">"ExpandedRole"</span>, c_playerAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8113</span>
+CatalogFieldValueGetAsInt(c_gameCatalogAbil, lv_abilLink, <span class="hljs-string">"Cost["</span> + IntToString(<span class="hljs-number">0</span>) + <span class="hljs-string">"].Charge.CountMax"</span>, UnitGetOwner(lv_itUnit))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11558</span>
+CatalogFieldValueGetAsInt(c_gameCatalogHero, lv_heroID, <span class="hljs-string">"TalentTreeArray["</span> + IntToString((lv_itTalent - <span class="hljs-number">1</span>)) + <span class="hljs-string">"].Tier"</span>, c_playerAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11567</span>
+CatalogFieldValueGetAsInt(c_gameCatalogHero, lv_heroID, <span class="hljs-string">"TalentTreeArray["</span> + IntToString((lv_itTalent - <span class="hljs-number">1</span>)) + <span class="hljs-string">"].Column"</span>, c_playerAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11643</span>
+CatalogFieldValueGetAsInt(c_gameCatalogTalent, lv_talentID, <span class="hljs-string">"AbilityModificationArray["</span> + IntToString((lv_itAbilityMod - <span class="hljs-number">1</span>)) + <span class="hljs-string">"].Modifications["</span> + IntToString((lv_itAbilityModChange - <span class="hljs-number">1</span>)) + <span class="hljs-string">"].Type"</span>, c_playerAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11645</span>
+CatalogFieldValueGetAsInt(c_gameCatalogTalent, lv_talentID, <span class="hljs-string">"AbilityModificationArray["</span> + IntToString((lv_itAbilityMod - <span class="hljs-number">1</span>)) + <span class="hljs-string">"].Modifications["</span> + IntToString((lv_itAbilityModChange - <span class="hljs-number">1</span>)) + <span class="hljs-string">"].Catalog"</span>, c_playerAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11648</span>
+CatalogFieldValueGetAsInt(c_gameCatalogTalent, lv_talentID, <span class="hljs-string">"AbilityModificationArray["</span> + IntToString((lv_itAbilityMod - <span class="hljs-number">1</span>)) + <span class="hljs-string">"].Modifications["</span> + IntToString((lv_itAbilityModChange - <span class="hljs-number">1</span>)) + <span class="hljs-string">"].FieldIsInteger"</span>, c_playerAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11905</span>
+CatalogFieldValueGetAsInt(c_gameCatalogBehavior, lp_tokenCounterBehavior, <span class="hljs-string">"Min"</span>, libCore_gv_cOMPUTER_Neutral)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L20493</span>
+CatalogFieldValueGetAsInt(c_gameCatalogUnit, UnitGetType(EventPlayerEffectUsedUnit(c_effectUnitCaster)), <span class="hljs-string">"KillXP"</span>, c_playerAny)
+</code></pre>
+<h4 id="modsheroesdatastormmod-4"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-4">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/HeroesLib.galaxy#L103">HeroesLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L103</span>
+CatalogFieldValueGetAsInt(c_gameCatalogConfig, <span class="hljs-string">"Config"</span>, <span class="hljs-string">"FreeToPlayHeroBaseCount"</span>, c_playerAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L791</span>
+CatalogFieldValueGetAsInt(c_gameCatalogHero, lv_heroID, <span class="hljs-string">"Role"</span>, c_playerAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L792</span>
+CatalogFieldValueGetAsInt(c_gameCatalogHero, lv_heroID, <span class="hljs-string">"ExpandedRole"</span>, c_playerAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L793</span>
+CatalogFieldValueGetAsInt(c_gameCatalogHero, lv_heroID, <span class="hljs-string">"Universe"</span>, c_playerAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L794</span>
+CatalogFieldValueGetAsInt(c_gameCatalogHero, lv_heroID, <span class="hljs-string">"Gender"</span>, c_playerAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L799</span>
+CatalogFieldValueGetAsInt(c_gameCatalogHero, lv_heroID, <span class="hljs-string">"Melee"</span>, c_playerAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L806</span>
+CatalogFieldValueGetAsInt(c_gameCatalogHero, lv_heroID, <span class="hljs-string">"IntroCutsceneSize"</span>, c_playerAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L808</span>
+CatalogFieldValueGetAsInt(c_gameCatalogHero, lv_heroID, <span class="hljs-string">"Flags[Flyer]"</span>, c_playerAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L809</span>
+CatalogFieldValueGetAsInt(c_gameCatalogHero, lv_heroID, <span class="hljs-string">"Flags[AllowAIRandomSelection]"</span>, c_playerAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L810</span>
+CatalogFieldValueGetAsInt(c_gameCatalogHero, lv_heroID, <span class="hljs-string">"Flags[AllowHumanRandomSelection]"</span>, c_playerAny)
+</code></pre>
+<h4 id="modsheroesdatastormmod-5"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-5">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/MapMechanicsLib.galaxy#L5527">MapMechanicsLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L5527</span>
+CatalogFieldValueGetAsInt(c_gameCatalogBehavior, <span class="hljs-string">"MercLanerOgreBuff"</span>, <span class="hljs-string">"DamageResponse.ModifyLimit"</span>, c_playerAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5554</span>
+CatalogFieldValueGetAsInt(c_gameCatalogBehavior, <span class="hljs-string">"MercLanerOgreBuff"</span>, <span class="hljs-string">"DamageResponse.ModifyLimit"</span>, c_playerAny)
+</code></pre>
+<h4 id="modsheroesdatastormmod-6"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-6">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/SoundLib.galaxy#L1478">SoundLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1478</span>
+CatalogFieldValueGetAsInt(c_gameCatalogEffect, EventPlayerEffectUsed(), <span class="hljs-string">"Flags[TriggerVoiceResponse]"</span>, c_playerAny)
+</code></pre>
+<h4 id="modsheroesdatastormmod-7"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-7">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/SupportLib.galaxy#L1715">SupportLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1715</span>
+CatalogFieldValueGetAsInt(c_gameCatalogBehavior, lv_tokenBehavior, <span class="hljs-string">"Max"</span>, lp_player)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1727</span>
+CatalogFieldValueGetAsInt(c_gameCatalogBehavior, lv_tokenBehavior, <span class="hljs-string">"ConditionalEvents["</span> + IntToString(lv_itConditionalIndex) + <span class="hljs-string">"].CompareValue"</span>, c_playerAny)
+</code></pre>
+<h4 id="modsheroesdatastormmod-8"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-8">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/UILib.galaxy#L4276">UILib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4276</span>
+CatalogFieldValueGetAsInt(c_gameCatalogBehavior, lp_behavior, <span class="hljs-string">"DisplayPriority"</span>, c_playerAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4276</span>
+CatalogFieldValueGetAsInt(c_gameCatalogBehavior, libUIUI_gv_heroConsoleUnitStatusBars_BehaviorChannelBarCurrentBehaviorForPlayer[lp_player], <span class="hljs-string">"DisplayPriority"</span>, c_playerAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4277</span>
+CatalogFieldValueGetAsInt(c_gameCatalogBehavior, lp_behavior, <span class="hljs-string">"DisplayPriority"</span>, c_playerAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4277</span>
+CatalogFieldValueGetAsInt(c_gameCatalogBehavior, libUIUI_gv_heroConsoleUnitStatusBars_BehaviorChannelBarCurrentBehaviorForPlayer[lp_player], <span class="hljs-string">"DisplayPriority"</span>, c_playerAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4298</span>
+CatalogFieldValueGetAsInt(c_gameCatalogBehavior, lp_behavior, <span class="hljs-string">"DisplayPriority"</span>, c_playerAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4298</span>
+CatalogFieldValueGetAsInt(c_gameCatalogBehavior, libUIUI_gv_heroConsoleUnitStatusBars_BehaviorChannelBarCurrentBehaviorForPlayerRight[lp_player], <span class="hljs-string">"DisplayPriority"</span>, c_playerAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4299</span>
+CatalogFieldValueGetAsInt(c_gameCatalogBehavior, lp_behavior, <span class="hljs-string">"DisplayPriority"</span>, c_playerAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4299</span>
+CatalogFieldValueGetAsInt(c_gameCatalogBehavior, libUIUI_gv_heroConsoleUnitStatusBars_BehaviorChannelBarCurrentBehaviorForPlayerRight[lp_player], <span class="hljs-string">"DisplayPriority"</span>, c_playerAny)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6703</span>
+CatalogFieldValueGetAsInt(c_gameCatalogAbil, lv_heroicAbilityLink, <span class="hljs-string">"Cost.Charge.CountMax"</span>, lv_playerIndex)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6848</span>
+CatalogFieldValueGetAsInt(c_gameCatalogAbil, lp_ability, <span class="hljs-string">"Cost.Charge.CountMax"</span>, lp_player)
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodshauntedminesstormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodshauntedminesstormmod">#</a> mods/heroesmapmods/battlegroundmapmods/hauntedmines.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/hauntedmines.stormmod/base.stormdata/LibMHtM.galaxy#L1611">LibMHtM.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1611</span>
+CatalogFieldValueGetAsInt(c_gameCatalogEffect, <span class="hljs-string">"CaptureMacGuffin"</span>, <span class="hljs-string">"PeriodCount"</span>, UnitGetOwner(EventUnit()))
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodsinfernalshrinesstormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodsinfernalshrinesstormmod">#</a> mods/heroesmapmods/battlegroundmapmods/infernalshrines.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/infernalshrines.stormmod/base.stormdata/LibMSHE.galaxy#L2022">LibMSHE.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2022</span>
+CatalogFieldValueGetAsInt(c_gameCatalogEffect, <span class="hljs-string">"DiabloMoltenDamage"</span>, <span class="hljs-string">"Amount"</span>, libCore_gv_cOMPUTER_TeamOrder)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2023</span>
+CatalogFieldValueGetAsInt(c_gameCatalogEffect, <span class="hljs-string">"DiabloMortarDamage"</span>, <span class="hljs-string">"Amount"</span>, libCore_gv_cOMPUTER_TeamOrder)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2024</span>
+CatalogFieldValueGetAsInt(c_gameCatalogEffect, <span class="hljs-string">"DiabloThunderstormDamage"</span>, <span class="hljs-string">"Amount"</span>, libCore_gv_cOMPUTER_TeamOrder)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2025</span>
+CatalogFieldValueGetAsInt(c_gameCatalogEffect, <span class="hljs-string">"DiabloFrozenDamage"</span>, <span class="hljs-string">"Amount"</span>, libCore_gv_cOMPUTER_TeamOrder)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2026</span>
+CatalogFieldValueGetAsInt(c_gameCatalogEffect, <span class="hljs-string">"DiabloArcaneDamage"</span>, <span class="hljs-string">"Amount"</span>, libCore_gv_cOMPUTER_TeamOrder)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2027</span>
+CatalogFieldValueGetAsInt(c_gameCatalogEffect, <span class="hljs-string">"DiabloMoltenDamage"</span>, <span class="hljs-string">"Amount"</span>, libCore_gv_cOMPUTER_TeamChaos)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2028</span>
+CatalogFieldValueGetAsInt(c_gameCatalogEffect, <span class="hljs-string">"DiabloMortarDamage"</span>, <span class="hljs-string">"Amount"</span>, libCore_gv_cOMPUTER_TeamChaos)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

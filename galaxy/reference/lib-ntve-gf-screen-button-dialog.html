@@ -1,0 +1,232 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Screen Button Dialog / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Screen Button Dialog"/>
+                <meta property="og:description" content="Returns the dialog the specified screen button belongs to.
+
+Returns: dialog [ dialog ]"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="screen-button-dialog"><a class="markdownIt-Anchor" href="#screen-button-dialog">#</a> Screen Button Dialog</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Screen button <strong>screenButtonID|ID</strong> dialog<br>
+<em>Flags</em> — <code>Function</code></p>
+</blockquote>
+<p>Returns the dialog the specified screen button belongs to.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> — ScreenButtonID</li>
+</ul>
+<p>Returns — <code>int</code> <em>[ dialog ]</em></p>
+<pre class="hljs"><code><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">libNtve_gf_ScreenButtonDialog</span><span class="hljs-params">(<span class="hljs-keyword">int</span> lp_screenButtonID)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#dialog-screen-button">Dialog / Screen Button</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-display-screen-button">Display Screen Button</a></strong> — ( libNtve_gf_DisplayScreenButton )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-hide-screen-button">Show/Hide Screen Button</a></strong> — ( libNtve_gf_HideScreenButton )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-flash-screen-button">Flash Screen Button</a></strong> — ( libNtve_gf_FlashScreenButton )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-stop-flashing-screen-button">Stop Flashing Screen Button</a></strong> — ( libNtve_gf_StopFlashingScreenButton )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-set-screen-button-border-image">Set Screen Button Border Image</a></strong> — ( libNtve_gf_SetScreenButtonBorderImage )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-set-screen-button-flashing-border-image">Set Screen Button Flashing Border Image</a></strong> — ( libNtve_gf_SetScreenButtonFlashingBorderImage )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ dialog ]</em> — <strong><a href="/galaxy/reference/lib-ntve-gf-screen-button-dialog">Screen Button Dialog</a></strong> — ( libNtve_gf_ScreenButtonDialog )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ control ]</em> — <strong><a href="/galaxy/reference/lib-ntve-gf-screen-button">Screen Button</a></strong> — ( libNtve_gf_ScreenButton )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/thorner05s.sc2map/MapScript.galaxy#L3038">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3038</span>
+libNtve_gf_ScreenButtonDialog(gv_computer01SecurityCam)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3158</span>
+libNtve_gf_ScreenButtonDialog(gv_computer01DeactivateLeftFloorGuns)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3163</span>
+libNtve_gf_ScreenButtonDialog(gv_computer01DeactivateRightFloorGuns)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3169</span>
+libNtve_gf_ScreenButtonDialog(gv_computer01Back)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3339</span>
+libNtve_gf_ScreenButtonDialog(gv_computer01SecurityCam)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3456</span>
+libNtve_gf_ScreenButtonDialog(gv_hacking01OneDot)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3458</span>
+libNtve_gf_ScreenButtonDialog(gv_hacking02OneDot)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3463</span>
+libNtve_gf_ScreenButtonDialog(gv_hackingProgress01TwoDot)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3465</span>
+libNtve_gf_ScreenButtonDialog(gv_hackingProgress02TwoDot)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3470</span>
+libNtve_gf_ScreenButtonDialog(gv_hackingProgress01ThreeDot)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L16922</span>
+libNtve_gf_ScreenButtonDialog((ge_ScreenButtonID_ButtonPlay))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L16922</span>
+libNtve_gf_ScreenButtonDialog((ge_ScreenButtonID_ButtonBack))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L22709</span>
+libNtve_gf_ScreenButtonDialog((ge_ScreenButtonID_ButtonPlay))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L22709</span>
+libNtve_gf_ScreenButtonDialog((ge_ScreenButtonID_ButtonBack))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1255</span>
+libNtve_gf_ScreenButtonDialog(gv_replay_Transmission_ButtonID_Tutorial)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1256</span>
+libNtve_gf_ScreenButtonDialog(gv_replay_Transmission_ButtonID_Tutorial)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1267</span>
+libNtve_gf_ScreenButtonDialog(gv_replay_Transmission_ButtonID_Main)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1268</span>
+libNtve_gf_ScreenButtonDialog(gv_replay_Transmission_ButtonID_Main)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3038</span>
+libNtve_gf_ScreenButtonDialog(gv_computer01SecurityCam)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3158</span>
+libNtve_gf_ScreenButtonDialog(gv_computer01DeactivateLeftFloorGuns)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3163</span>
+libNtve_gf_ScreenButtonDialog(gv_computer01DeactivateRightFloorGuns)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3169</span>
+libNtve_gf_ScreenButtonDialog(gv_computer01Back)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3339</span>
+libNtve_gf_ScreenButtonDialog(gv_computer01SecurityCam)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3456</span>
+libNtve_gf_ScreenButtonDialog(gv_hacking01OneDot)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3458</span>
+libNtve_gf_ScreenButtonDialog(gv_hacking02OneDot)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3463</span>
+libNtve_gf_ScreenButtonDialog(gv_hackingProgress01TwoDot)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3465</span>
+libNtve_gf_ScreenButtonDialog(gv_hackingProgress02TwoDot)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3470</span>
+libNtve_gf_ScreenButtonDialog(gv_hackingProgress01ThreeDot)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L16922</span>
+libNtve_gf_ScreenButtonDialog((ge_ScreenButtonID_ButtonPlay))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L16922</span>
+libNtve_gf_ScreenButtonDialog((ge_ScreenButtonID_ButtonBack))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L22709</span>
+libNtve_gf_ScreenButtonDialog((ge_ScreenButtonID_ButtonPlay))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L22709</span>
+libNtve_gf_ScreenButtonDialog((ge_ScreenButtonID_ButtonBack))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1255</span>
+libNtve_gf_ScreenButtonDialog(gv_replay_Transmission_ButtonID_Tutorial)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1256</span>
+libNtve_gf_ScreenButtonDialog(gv_replay_Transmission_ButtonID_Tutorial)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1267</span>
+libNtve_gf_ScreenButtonDialog(gv_replay_Transmission_ButtonID_Main)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1268</span>
+libNtve_gf_ScreenButtonDialog(gv_replay_Transmission_ButtonID_Main)
+</code></pre>
+<h4 id="modscoresc2mod"><a class="markdownIt-Anchor" href="#modscoresc2mod">#</a> mods/core.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/core.sc2mod/base.sc2data/TriggerLibs/NativeLib.galaxy#L6195">NativeLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L6195</span>
+libNtve_gf_ScreenButtonDialog(lv_iD)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6201</span>
+libNtve_gf_ScreenButtonDialog(lv_iD)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6209</span>
+libNtve_gf_ScreenButtonDialog(lv_iD)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5309</span>
+libNtve_gf_ScreenButtonDialog(lv_iD)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5315</span>
+libNtve_gf_ScreenButtonDialog(lv_iD)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5323</span>
+libNtve_gf_ScreenButtonDialog(lv_iD)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

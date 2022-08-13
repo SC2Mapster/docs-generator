@@ -1,0 +1,144 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Set Next Loading Screen / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Set Next Loading Screen"/>
+                <meta property="og:description" content="Creates the next loading screen if transitioning to a new map from the current one."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="set-next-loading-screen"><a class="markdownIt-Anchor" href="#set-next-loading-screen">#</a> Set Next Loading Screen</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Set the next loading screen image to <strong>image</strong> and text to <strong>title</strong>, <strong>subtitle</strong>, <strong>body</strong>, and <strong>help</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Creates the next loading screen if transitioning to a new map from the current one.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>string</code> <em>[ filepath ]</em> — Image</li>
+<li><code>text</code> — Title</li>
+<li><code>text</code> — Subtitle</li>
+<li><code>text</code> — Body</li>
+<li><code>text</code> — Help</li>
+<li><code>bool</code> — Wait For Input</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">UISetNextLoadingScreen</span><span class="hljs-params">(
+	<span class="hljs-built_in">string</span> imagePath,
+	text title,
+	text subtitle,
+	text body,
+	text help,
+	<span class="hljs-keyword">bool</span> waitForInput,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#ui-transitions">UI / Transitions</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/movie-play-after-game">Set Next Movie</a></strong> — ( MoviePlayAfterGame )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ui-set-next-loading-screen">Set Next Loading Screen</a></strong> — ( UISetNextLoadingScreen )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ui-set-next-loading-screen-image-scale">Set Next Loading Screen Image Scale</a></strong> — ( UISetNextLoadingScreenImageScale )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ui-set-next-loading-screen-text-position">Set Next Loading Screen Text Position</a></strong> — ( UISetNextLoadingScreenTextPosition )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ui-set-restart-loading-screen">Set Restart Loading Screen Tip</a></strong> — ( UISetRestartLoadingScreen )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-game-credits-finished">Game Credits Finished</a></strong> — ( TriggerAddEventGameCreditsFinished )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertystorysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertystorysc2campaign">#</a> campaigns/libertystory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/libertystory.sc2campaign/base.sc2data/TriggerLibs/CampaignLib.galaxy#L8403">CampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L8403</span>
+UISetNextLoadingScreen(<span class="hljs-string">"Assets\\Textures\\loading-lostviking.dds"</span>, StringToText(<span class="hljs-string">""</span>), (StringExternal(<span class="hljs-string">"Param/Value/lib_Camp_D1F4D6A7"</span>) + StringExternal(<span class="hljs-string">"Param/Value/lib_Camp_3AB64EDD"</span>) + StringExternal(<span class="hljs-string">"Param/Value/lib_Camp_8172429D"</span>)), StringToText(<span class="hljs-string">""</span>), StringExternal(<span class="hljs-string">"Param/Value/lib_Camp_5B28E86A"</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8412</span>
+UISetNextLoadingScreen(lv_image, lv_title, lv_subTitle, StringToText(<span class="hljs-string">""</span>), lv_help, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8466</span>
+UISetNextLoadingScreen(lv_image, StringToText(<span class="hljs-string">""</span>), StringToText(<span class="hljs-string">""</span>), StringToText(<span class="hljs-string">""</span>), StringExternal(<span class="hljs-string">"Param/Value/lib_Camp_CFB915EF"</span>), <span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="campaignsswarmstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmstorysc2campaign">#</a> campaigns/swarmstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstory.sc2campaign/base.sc2data/TriggerLibs/SwarmCampaignLib.galaxy#L13210">SwarmCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L13210</span>
+UISetNextLoadingScreen(libSwaC_gf_StoryMapLoadingScreenImage(<span class="hljs-string">"ZLab1"</span>), StringToText(<span class="hljs-string">""</span>), StringToText(<span class="hljs-string">""</span>), StringToText(<span class="hljs-string">""</span>), StringExternal(CatalogFieldValueGet(c_gameCatalogMap, lp_nextMap, <span class="hljs-string">"LoadingHelpRestart"</span>, c_playerAny)), lv_waitForKey)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13233</span>
+UISetNextLoadingScreen(lv_image, lv_title, lv_subtitle, lv_body, libSwaC_gf_StoryMapHelp(lp_nextMap), lv_waitForKey)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignLib.galaxy#L6885">VoidCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L6885</span>
+UISetNextLoadingScreen(lv_image, StringToText(<span class="hljs-string">""</span>), lv_subtitle, lv_body, libVoiC_gf_PC_CampaignMapHelp(lp_nextMap), lv_waitForKey)
+</code></pre>
+<h4 id="modsmissionpackscampaigncommonsc2mod"><a class="markdownIt-Anchor" href="#modsmissionpackscampaigncommonsc2mod">#</a> mods/missionpacks/campaigncommon.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/campaigncommon.sc2mod/base.sc2data/LibComC.galaxy#L3039">LibComC.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3039</span>
+UISetNextLoadingScreen(lv_image, StringToText(<span class="hljs-string">""</span>), lv_subtitle, lv_body, libComC_gf_CC_MapHelp(lp_nextMap), lv_waitForKey)
+</code></pre>
+<h4 id="modsvoidprologuesc2mod"><a class="markdownIt-Anchor" href="#modsvoidprologuesc2mod">#</a> mods/voidprologue.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/voidprologue.sc2mod/base.sc2data/LibA3DDD02B.galaxy#L6360">LibA3DDD02B.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L6360</span>
+UISetNextLoadingScreen(lv_image, lv_title, lv_subtitle, lv_body, libA3DDD02B_gf_StoryMapHelp(lp_nextMap), lv_waitForKey)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

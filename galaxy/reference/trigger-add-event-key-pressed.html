@@ -1,0 +1,325 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Key Pressed / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Key Pressed"/>
+                <meta property="og:description" content="Only register for this event when you absolutely need it, as it will generate network traffic from all players for every button they press.  This event fires when a player presses the specified key.  Use &quot;Key Pressed&quot; to get the key that was pressed.  Use &quot;Alt Key Pressed&quot;, &quot;Control Key Pressed&quot;, and &quot;Shift Key Pressed&quot; to find out what modifier keys were pressed."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="key-pressed"><a class="markdownIt-Anchor" href="#key-pressed">#</a> Key Pressed</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Player <strong>player</strong> presses <strong>key</strong> key <strong>down|up/down</strong> with shift <strong>s2|Enabled</strong>, control <strong>c2|Enabled</strong>, alt <strong>a2|Enabled</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Event</code></p>
+</blockquote>
+<p>Only register for this event when you absolutely need it, as it will generate network traffic from all players for every button they press.  This event fires when a player presses the specified key.  Use <em>“Key Pressed”</em> to get the key that was pressed.  Use <em>“Alt Key Pressed”</em>, <em>“Control Key Pressed”</em>, and <em>“Shift Key Pressed”</em> to find out what modifier keys were pressed.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> — Player</li>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-key">Key</a> ]</em> — Key</li>
+<li><code>bool</code> <em>[ preset::<a href="/galaxy/reference/preset-up-down-option">UpDownOption</a> ]</em> — Down</li>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-key-modifier-state">KeyModifierState</a> ]</em> — Shift</li>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-key-modifier-state">KeyModifierState</a> ]</em> — Control</li>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-key-modifier-state">KeyModifierState</a> ]</em> — Alt</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">TriggerAddEventKeyPressed</span><span class="hljs-params">(
+	trigger t,
+	<span class="hljs-keyword">int</span> player,
+	<span class="hljs-keyword">int</span> key,
+	<span class="hljs-keyword">bool</span> down,
+	<span class="hljs-keyword">int</span> s,
+	<span class="hljs-keyword">int</span> c,
+	<span class="hljs-keyword">int</span> a,
+)</span></span>;
+</code></pre>
+<h3 id="event-parameters"><a class="markdownIt-Anchor" href="#event-parameters">#</a> Event parameters</h3>
+<ul>
+<li><a href="/galaxy/reference/event-game-user">Triggering Game User</a> — EventGameUser</li>
+<li><a href="/galaxy/reference/event-player">Triggering Player</a> — EventPlayer</li>
+<li><a href="/galaxy/reference/event-key-pressed">Key Pressed</a> — EventKeyPressed</li>
+<li><a href="/galaxy/reference/event-hotkey-pressed">Hotkey Pressed</a> — EventHotkeyPressed</li>
+<li><a href="/galaxy/reference/event-key-control">Control Key Pressed</a> — EventKeyControl</li>
+<li><a href="/galaxy/reference/event-key-alt">Alt Key Pressed</a> — EventKeyAlt</li>
+<li><a href="/galaxy/reference/event-key-shift">Shift Key Pressed</a> — EventKeyShift</li>
+</ul>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#ui-input">UI / Input</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-key-pressed">Key Pressed</a></strong> — ( TriggerAddEventKeyPressed )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-hotkey-pressed">Hotkey Pressed</a></strong> — ( TriggerAddEventHotkeyPressed )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-button-pressed">Button Pressed</a></strong> — ( TriggerAddEventButtonPressed )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-mouse-clicked">Mouse Clicked</a></strong> — ( TriggerAddEventMouseClicked )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-mouse-moved">Mouse Moved</a></strong> — ( TriggerAddEventMouseMoved )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-mouse-wheel">Mouse Wheel</a></strong> — ( TriggerAddEventMouseWheel )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> <em>[ gamelink::Button ]</em> — <strong><a href="/galaxy/reference/event-button-pressed">Button Pressed</a></strong> — ( EventButtonPressed )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-key">Key</a> ]</em> — <strong><a href="/galaxy/reference/event-key-pressed">Key Pressed</a></strong> — ( EventKeyPressed )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-key">Key</a> ]</em> — <strong><a href="/galaxy/reference/event-hotkey-pressed">Hotkey Pressed</a></strong> — ( EventHotkeyPressed )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/event-key-control">Control Key Pressed</a></strong> — ( EventKeyControl )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/event-key-alt">Alt Key Pressed</a></strong> — ( EventKeyAlt )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/event-key-shift">Shift Key Pressed</a></strong> — ( EventKeyShift )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-mouse-button">MouseButton</a> ]</em> — <strong><a href="/galaxy/reference/event-mouse-clicked-button">Mouse Clicked Button</a></strong> — ( EventMouseClickedButton )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/event-mouse-clicked-pos-xui">Mouse Clicked UI Pos X</a></strong> — ( EventMouseClickedPosXUI )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/event-mouse-clicked-pos-yui">Mouse Clicked UI Pos Y</a></strong> — ( EventMouseClickedPosYUI )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/event-mouse-clicked-pos-xworld">Mouse Clicked World Pos X</a></strong> — ( EventMouseClickedPosXWorld )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/event-mouse-clicked-pos-yworld">Mouse Clicked World Pos Y</a></strong> — ( EventMouseClickedPosYWorld )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/event-mouse-clicked-pos-zworld">Mouse Clicked World Pos Z</a></strong> — ( EventMouseClickedPosZWorld )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/event-mouse-moved-pos-xui">Mouse Moved UI Pos X</a></strong> — ( EventMouseMovedPosXUI )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/event-mouse-moved-pos-yui">Mouse Moved UI Pos Y</a></strong> — ( EventMouseMovedPosYUI )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/event-mouse-moved-pos-xworld">Mouse Moved World Pos X</a></strong> — ( EventMouseMovedPosXWorld )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/event-mouse-moved-pos-yworld">Mouse Moved World Pos Y</a></strong> — ( EventMouseMovedPosYWorld )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/event-mouse-moved-pos-zworld">Mouse Moved World Pos Z</a></strong> — ( EventMouseMovedPosZWorld )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/event-mouse-wheel-spin">Mouse Wheel Spin</a></strong> — ( EventMouseWheelSpin )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/tarcade.sc2map/MapScript.galaxy#L7477">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L7477</span>
+TriggerAddEventKeyPressed(gt_FighterAttackKeyDown, c_playerAny, c_keySpace, <span class="hljs-literal">true</span>, c_keyModifierStateExclude, c_keyModifierStateExclude, c_keyModifierStateExclude)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7478</span>
+TriggerAddEventKeyPressed(gt_FighterAttackKeyDown, c_playerAny, c_keyNumPad0, <span class="hljs-literal">true</span>, c_keyModifierStateExclude, c_keyModifierStateExclude, c_keyModifierStateExclude)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7479</span>
+TriggerAddEventKeyPressed(gt_FighterAttackKeyDown, c_playerAny, c_keyV, <span class="hljs-literal">true</span>, c_keyModifierStateExclude, c_keyModifierStateExclude, c_keyModifierStateExclude)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7499</span>
+TriggerAddEventKeyPressed(gt_FighterAttackKeyUp, c_playerAny, c_keySpace, <span class="hljs-literal">false</span>, c_keyModifierStateExclude, c_keyModifierStateExclude, c_keyModifierStateExclude)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7500</span>
+TriggerAddEventKeyPressed(gt_FighterAttackKeyUp, c_playerAny, c_keyNumPad0, <span class="hljs-literal">false</span>, c_keyModifierStateExclude, c_keyModifierStateExclude, c_keyModifierStateExclude)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7501</span>
+TriggerAddEventKeyPressed(gt_FighterAttackKeyUp, c_playerAny, c_keyV, <span class="hljs-literal">false</span>, c_keyModifierStateExclude, c_keyModifierStateExclude, c_keyModifierStateExclude)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7568</span>
+TriggerAddEventKeyPressed(gt_FighterBombKeyDown, c_playerAny, c_keyControl, <span class="hljs-literal">true</span>, c_keyModifierStateExclude, c_keyModifierStateIgnore, c_keyModifierStateExclude)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7569</span>
+TriggerAddEventKeyPressed(gt_FighterBombKeyDown, c_playerAny, c_keyB, <span class="hljs-literal">true</span>, c_keyModifierStateExclude, c_keyModifierStateExclude, c_keyModifierStateExclude)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7588</span>
+TriggerAddEventKeyPressed(gt_FighterMoveLeftKeyDown, c_playerAny, c_keyLeft, <span class="hljs-literal">true</span>, c_keyModifierStateIgnore, c_keyModifierStateIgnore, c_keyModifierStateIgnore)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7589</span>
+TriggerAddEventKeyPressed(gt_FighterMoveLeftKeyDown, c_playerAny, c_keyA, <span class="hljs-literal">true</span>, c_keyModifierStateIgnore, c_keyModifierStateIgnore, c_keyModifierStateIgnore)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L15032</span>
+TriggerAddEventKeyPressed(gt_PinboardItemBack, c_playerAny, c_keyNone, <span class="hljs-literal">true</span>, c_keyModifierStateIgnore, c_keyModifierStateIgnore, c_keyModifierStateIgnore)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7477</span>
+TriggerAddEventKeyPressed(gt_FighterAttackKeyDown, c_playerAny, c_keySpace, <span class="hljs-literal">true</span>, c_keyModifierStateExclude, c_keyModifierStateExclude, c_keyModifierStateExclude)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7478</span>
+TriggerAddEventKeyPressed(gt_FighterAttackKeyDown, c_playerAny, c_keyNumPad0, <span class="hljs-literal">true</span>, c_keyModifierStateExclude, c_keyModifierStateExclude, c_keyModifierStateExclude)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7479</span>
+TriggerAddEventKeyPressed(gt_FighterAttackKeyDown, c_playerAny, c_keyV, <span class="hljs-literal">true</span>, c_keyModifierStateExclude, c_keyModifierStateExclude, c_keyModifierStateExclude)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7499</span>
+TriggerAddEventKeyPressed(gt_FighterAttackKeyUp, c_playerAny, c_keySpace, <span class="hljs-literal">false</span>, c_keyModifierStateExclude, c_keyModifierStateExclude, c_keyModifierStateExclude)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7500</span>
+TriggerAddEventKeyPressed(gt_FighterAttackKeyUp, c_playerAny, c_keyNumPad0, <span class="hljs-literal">false</span>, c_keyModifierStateExclude, c_keyModifierStateExclude, c_keyModifierStateExclude)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7501</span>
+TriggerAddEventKeyPressed(gt_FighterAttackKeyUp, c_playerAny, c_keyV, <span class="hljs-literal">false</span>, c_keyModifierStateExclude, c_keyModifierStateExclude, c_keyModifierStateExclude)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7568</span>
+TriggerAddEventKeyPressed(gt_FighterBombKeyDown, c_playerAny, c_keyControl, <span class="hljs-literal">true</span>, c_keyModifierStateExclude, c_keyModifierStateIgnore, c_keyModifierStateExclude)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7569</span>
+TriggerAddEventKeyPressed(gt_FighterBombKeyDown, c_playerAny, c_keyB, <span class="hljs-literal">true</span>, c_keyModifierStateExclude, c_keyModifierStateExclude, c_keyModifierStateExclude)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7588</span>
+TriggerAddEventKeyPressed(gt_FighterMoveLeftKeyDown, c_playerAny, c_keyLeft, <span class="hljs-literal">true</span>, c_keyModifierStateIgnore, c_keyModifierStateIgnore, c_keyModifierStateIgnore)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7589</span>
+TriggerAddEventKeyPressed(gt_FighterMoveLeftKeyDown, c_playerAny, c_keyA, <span class="hljs-literal">true</span>, c_keyModifierStateIgnore, c_keyModifierStateIgnore, c_keyModifierStateIgnore)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L15032</span>
+TriggerAddEventKeyPressed(gt_PinboardItemBack, c_playerAny, c_keyNone, <span class="hljs-literal">true</span>, c_keyModifierStateIgnore, c_keyModifierStateIgnore, c_keyModifierStateIgnore)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4262</span>
+TriggerAddEventKeyPressed(gt_CenterOnHyperion, gv_pLAYER_01_USER, c_keySpace, <span class="hljs-literal">true</span>, c_keyModifierStateIgnore, c_keyModifierStateIgnore, c_keyModifierStateIgnore)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4262</span>
+TriggerAddEventKeyPressed(gt_CenterOnHyperion, gv_pLAYER_01_USER, c_keySpace, <span class="hljs-literal">true</span>, c_keyModifierStateIgnore, c_keyModifierStateIgnore, c_keyModifierStateIgnore)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignMissionLib.galaxy#L6711">VoidCampaignMissionLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L6711</span>
+TriggerAddEventKeyPressed(libVCMI_gt_PM_TurnOffFlyoverMode, c_playerAny, c_keyB, <span class="hljs-literal">true</span>, c_keyModifierStateIgnore, c_keyModifierStateIgnore, c_keyModifierStateIgnore)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign-2"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign-2">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignUILib.galaxy#L10449">VoidCampaignUILib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L10449</span>
+TriggerAddEventKeyPressed(libVCUI_gt_PU_LoreCreditsSkip, c_playerAny, c_keyEscape, <span class="hljs-literal">true</span>, c_keyModifierStateIgnore, c_keyModifierStateIgnore, c_keyModifierStateIgnore)
+</code></pre>
+<h4 id="modsfrontierssc2mod"><a class="markdownIt-Anchor" href="#modsfrontierssc2mod">#</a> mods/frontiers.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/frontiers.sc2mod/base.sc2data/Lib6CB3363F.galaxy#L1035">Lib6CB3363F.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1035</span>
+TriggerAddEventKeyPressed(lib6CB3363F_gt_SprintPressed, c_playerAny, c_keyShift, <span class="hljs-literal">true</span>, c_keyModifierStateIgnore, c_keyModifierStateIgnore, c_keyModifierStateIgnore)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1036</span>
+TriggerAddEventKeyPressed(lib6CB3363F_gt_SprintPressed, c_playerAny, c_keyNumPad0, <span class="hljs-literal">true</span>, c_keyModifierStateIgnore, c_keyModifierStateIgnore, c_keyModifierStateIgnore)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1055</span>
+TriggerAddEventKeyPressed(lib6CB3363F_gt_SprintReleased, c_playerAny, c_keyShift, <span class="hljs-literal">false</span>, c_keyModifierStateIgnore, c_keyModifierStateIgnore, c_keyModifierStateIgnore)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1056</span>
+TriggerAddEventKeyPressed(lib6CB3363F_gt_SprintReleased, c_playerAny, c_keyNumPad0, <span class="hljs-literal">false</span>, c_keyModifierStateIgnore, c_keyModifierStateIgnore, c_keyModifierStateIgnore)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1087</span>
+TriggerAddEventKeyPressed(lib6CB3363F_gt_UpPressed, c_playerAny, c_keyW, <span class="hljs-literal">true</span>, c_keyModifierStateIgnore, c_keyModifierStateIgnore, c_keyModifierStateIgnore)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1088</span>
+TriggerAddEventKeyPressed(lib6CB3363F_gt_UpPressed, c_playerAny, c_keyUp, <span class="hljs-literal">true</span>, c_keyModifierStateIgnore, c_keyModifierStateIgnore, c_keyModifierStateIgnore)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1089</span>
+TriggerAddEventKeyPressed(lib6CB3363F_gt_UpPressed, c_playerAny, c_keyNumPad8, <span class="hljs-literal">true</span>, c_keyModifierStateIgnore, c_keyModifierStateIgnore, c_keyModifierStateIgnore)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1108</span>
+TriggerAddEventKeyPressed(lib6CB3363F_gt_UpReleased, c_playerAny, c_keyW, <span class="hljs-literal">false</span>, c_keyModifierStateIgnore, c_keyModifierStateIgnore, c_keyModifierStateIgnore)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1109</span>
+TriggerAddEventKeyPressed(lib6CB3363F_gt_UpReleased, c_playerAny, c_keyUp, <span class="hljs-literal">false</span>, c_keyModifierStateIgnore, c_keyModifierStateIgnore, c_keyModifierStateIgnore)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1110</span>
+TriggerAddEventKeyPressed(lib6CB3363F_gt_UpReleased, c_playerAny, c_keyNumPad8, <span class="hljs-literal">false</span>, c_keyModifierStateIgnore, c_keyModifierStateIgnore, c_keyModifierStateIgnore)
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodscooppvebrawlmodstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodscooppvebrawlmodstormmod">#</a> mods/heroesbrawlmods/brawlmapmods/coop/pvebrawlmod.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/coop/pvebrawlmod.stormmod/base.stormdata/LibPVEB.galaxy#L3032">LibPVEB.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3032</span>
+TriggerAddEventKeyPressed(libPVEB_gt_DebugPlayerSelection, c_playerAny, c_keyNone, <span class="hljs-literal">false</span>, c_keyModifierStateExclude, c_keyModifierStateExclude, c_keyModifierStateExclude)
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodscooppvemodstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodscooppvemodstormmod">#</a> mods/heroesbrawlmods/brawlmapmods/coop/pvemod.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/coop/pvemod.stormmod/base.stormdata/LibPVEM.galaxy#L3120">LibPVEM.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3120</span>
+TriggerAddEventKeyPressed(libPVEM_gt_PvEDebugPlayerSelection, c_playerAny, c_keyNone, <span class="hljs-literal">false</span>, c_keyModifierStateExclude, c_keyModifierStateExclude, c_keyModifierStateExclude)
+</code></pre>
+<h4 id="modsheroesdatastormmod"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/StartingExperienceLib.galaxy#L3026">StartingExperienceLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3026</span>
+TriggerAddEventKeyPressed(libStEx_gt_SE_TrainingModeTipAbilitiesQWERUsed, c_playerAny, c_keyQ, <span class="hljs-literal">true</span>, c_keyModifierStateExclude, c_keyModifierStateExclude, c_keyModifierStateIgnore)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3027</span>
+TriggerAddEventKeyPressed(libStEx_gt_SE_TrainingModeTipAbilitiesQWERUsed, c_playerAny, c_keyW, <span class="hljs-literal">true</span>, c_keyModifierStateExclude, c_keyModifierStateExclude, c_keyModifierStateIgnore)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3028</span>
+TriggerAddEventKeyPressed(libStEx_gt_SE_TrainingModeTipAbilitiesQWERUsed, c_playerAny, c_keyE, <span class="hljs-literal">true</span>, c_keyModifierStateExclude, c_keyModifierStateExclude, c_keyModifierStateIgnore)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3029</span>
+TriggerAddEventKeyPressed(libStEx_gt_SE_TrainingModeTipAbilitiesQWERUsed, c_playerAny, c_keyR, <span class="hljs-literal">true</span>, c_keyModifierStateExclude, c_keyModifierStateExclude, c_keyModifierStateIgnore)
+</code></pre>
+<h4 id="modsheroesdatastormmod-2"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-2">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/SupportLib.galaxy#L8498">SupportLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L8498</span>
+TriggerAddEventKeyPressed(libSprt_gt_DEBUGClearDPSTrackerStats, c_playerAny, c_keyNumPad5, <span class="hljs-literal">true</span>, c_keyModifierStateIgnore, c_keyModifierStateIgnore, c_keyModifierStateIgnore)
+</code></pre>
+<h4 id="modsheroesdatastormmod-3"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-3">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/UILib.galaxy#L13724">UILib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L13724</span>
+TriggerAddEventKeyPressed(libUIUI_gt_InputBackslashKeyDown, c_playerAny, c_keyBackSlash, <span class="hljs-literal">true</span>, c_keyModifierStateIgnore, c_keyModifierStateIgnore, c_keyModifierStateIgnore)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L14871</span>
+TriggerAddEventKeyPressed(libUIUI_gt_UIOnFireDEBUGCycleDefenseOnFire, c_playerAny, c_keyI, <span class="hljs-literal">true</span>, c_keyModifierStateIgnore, c_keyModifierStateIgnore, c_keyModifierStateIgnore)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L14937</span>
+TriggerAddEventKeyPressed(libUIUI_gt_UIOnFireDEBUGCycleOffenseOnFire, c_playerAny, c_keyO, <span class="hljs-literal">true</span>, c_keyModifierStateIgnore, c_keyModifierStateIgnore, c_keyModifierStateIgnore)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L15003</span>
+TriggerAddEventKeyPressed(libUIUI_gt_UIOnFireDEBUGCycleUtilityOnFire, c_playerAny, c_keyP, <span class="hljs-literal">true</span>, c_keyModifierStateIgnore, c_keyModifierStateIgnore, c_keyModifierStateIgnore)
+</code></pre>
+<h4 id="modsmissionpacksnovacampaignsc2mod"><a class="markdownIt-Anchor" href="#modsmissionpacksnovacampaignsc2mod">#</a> mods/missionpacks/novacampaign.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/novacampaign.sc2mod/base.sc2data/LibNCMI.galaxy#L5829">LibNCMI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L5829</span>
+TriggerAddEventKeyPressed(libNCMI_gt_NM_TurnOffFlyoverMode, c_playerAny, c_keyB, <span class="hljs-literal">true</span>, c_keyModifierStateIgnore, c_keyModifierStateIgnore, c_keyModifierStateIgnore)
+</code></pre>
+<h4 id="modsmissionpacksnovacampaignsc2mod-2"><a class="markdownIt-Anchor" href="#modsmissionpacksnovacampaignsc2mod-2">#</a> mods/missionpacks/novacampaign.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/novacampaign.sc2mod/base.sc2data/LibNCUI.galaxy#L5310">LibNCUI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L5310</span>
+TriggerAddEventKeyPressed(libNCUI_gt_NU_MissionEscPressed, c_playerAny, c_keyEscape, <span class="hljs-literal">true</span>, c_keyModifierStateIgnore, c_keyModifierStateIgnore, c_keyModifierStateIgnore)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5548</span>
+TriggerAddEventKeyPressed(libNCUI_gt_NU_MissionNewsCanceledESC, c_playerAny, c_keyEscape, <span class="hljs-literal">true</span>, c_keyModifierStateIgnore, c_keyModifierStateIgnore, c_keyModifierStateIgnore)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7377</span>
+TriggerAddEventKeyPressed(libNCUI_gt_NU_EndCreditsEnds, c_playerAny, c_keyEscape, <span class="hljs-literal">true</span>, c_keyModifierStateIgnore, c_keyModifierStateIgnore, c_keyModifierStateIgnore)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOUI.galaxy#L7070">LibCOUI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L7070</span>
+TriggerAddEventKeyPressed(libCOUI_gt_CU_MasteryShiftTrackDown, c_playerAny, c_keyShift, <span class="hljs-literal">true</span>, c_keyModifierStateIgnore, c_keyModifierStateIgnore, c_keyModifierStateIgnore)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7091</span>
+TriggerAddEventKeyPressed(libCOUI_gt_CU_MasteryShiftTrackUp, c_playerAny, c_keyShift, <span class="hljs-literal">false</span>, c_keyModifierStateIgnore, c_keyModifierStateIgnore, c_keyModifierStateIgnore)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9738</span>
+TriggerAddEventKeyPressed(libCOUI_gt_CU_MinimapAllyViewCamera, c_playerAny, c_keyV, <span class="hljs-literal">true</span>, c_keyModifierStateExclude, c_keyModifierStateExclude, c_keyModifierStateRequire)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

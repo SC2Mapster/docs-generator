@@ -1,0 +1,326 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Maximum (Real) / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Maximum (Real)"/>
+                <meta property="og:description" content="Returns the highest of the two real values specified.
+
+Returns: fixed"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="maximum-real"><a class="markdownIt-Anchor" href="#maximum-real">#</a> Maximum (Real)</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Max(<strong>value1</strong>, <strong>value2</strong>)<br>
+<em>Flags</em> — <code>Native</code> | <code>Function</code></p>
+</blockquote>
+<p>Returns the highest of the two real values specified.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>fixed</code> — Value 1</li>
+<li><code>fixed</code> — Value 2</li>
+</ul>
+<p>Returns — <code>fixed</code></p>
+<pre class="hljs"><code><span class="hljs-function">native fixed <span class="hljs-title">MaxF</span><span class="hljs-params">(fixed x1, fixed x2)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#math-conditionals">Math / Conditionals</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/min-i">Minimum (Integer)</a></strong> — ( MinI )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/min-f">Minimum (Real)</a></strong> — ( MinF )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/max-i">Maximum (Integer)</a></strong> — ( MaxI )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/max-f">Maximum (Real)</a></strong> — ( MaxF )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/tarcade.sc2map/MapScript.galaxy#L1177">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1177</span>
+MaxF(gf_ConvertShooterXToMapX(<span class="hljs-number">5.0</span>), MinF(gf_ConvertShooterXToMapX(<span class="hljs-number">15.0</span>), lv_xNew))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2985</span>
+MaxF(lv_xLeft, MinF(lv_xRight, PointGetX(lv_center)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2986</span>
+MaxF(lv_yBottom, MinF(lv_yTop, PointGetY(lv_center)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4423</span>
+MaxF((lv_wavePeriod - <span class="hljs-number">150.0</span>), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4479</span>
+MaxF((lv_wavePeriod - <span class="hljs-number">150.0</span>), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7075</span>
+MaxF(UnitGetPropertyFixed(gv_tHEONEBROODMOTHER, c_unitPropLife, c_unitPropCurrent), (gv_queenHP * <span class="hljs-number">0.75</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7169</span>
+MaxF(UnitGetPropertyFixed(gv_tHEONEBROODMOTHER, c_unitPropLife, c_unitPropCurrent), (gv_queenHP * <span class="hljs-number">0.5</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7219</span>
+MaxF(UnitGetPropertyFixed(gv_tHEONEBROODMOTHER, c_unitPropLife, c_unitPropCurrent), (gv_queenHP * <span class="hljs-number">0.35</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1177</span>
+MaxF(gf_ConvertShooterXToMapX(<span class="hljs-number">5.0</span>), MinF(gf_ConvertShooterXToMapX(<span class="hljs-number">15.0</span>), lv_xNew))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2985</span>
+MaxF(lv_xLeft, MinF(lv_xRight, PointGetX(lv_center)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2986</span>
+MaxF(lv_yBottom, MinF(lv_yTop, PointGetY(lv_center)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4423</span>
+MaxF((lv_wavePeriod - <span class="hljs-number">150.0</span>), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4479</span>
+MaxF((lv_wavePeriod - <span class="hljs-number">150.0</span>), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7075</span>
+MaxF(UnitGetPropertyFixed(gv_tHEONEBROODMOTHER, c_unitPropLife, c_unitPropCurrent), (gv_queenHP * <span class="hljs-number">0.75</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7169</span>
+MaxF(UnitGetPropertyFixed(gv_tHEONEBROODMOTHER, c_unitPropLife, c_unitPropCurrent), (gv_queenHP * <span class="hljs-number">0.5</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7219</span>
+MaxF(UnitGetPropertyFixed(gv_tHEONEBROODMOTHER, c_unitPropLife, c_unitPropCurrent), (gv_queenHP * <span class="hljs-number">0.35</span>))
+</code></pre>
+<h4 id="campaignslibertystorysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertystorysc2campaign">#</a> campaigns/libertystory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/libertystory.sc2campaign/base.sc2data/TriggerLibs/CampaignLib.galaxy#L1682">CampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1682</span>
+MaxF((lv_ret - lv_gap), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11790</span>
+MaxF(lv_waitDuration, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11922</span>
+MaxF(lv_waitDuration, <span class="hljs-number">0.0</span>)
+</code></pre>
+<h4 id="campaignsswarmsc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmsc2campaign">#</a> campaigns/swarm.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarm.sc2campaign/base.sc2maps/maps/campaign/swarm/zzerus01.sc2map/MapScript.galaxy#L4409">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4409</span>
+MaxF((lv_life - <span class="hljs-number">0.5</span>), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4409</span>
+MaxF((lv_life - <span class="hljs-number">0.5</span>), <span class="hljs-number">0.0</span>)
+</code></pre>
+<h4 id="campaignsswarmstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmstorysc2campaign">#</a> campaigns/swarmstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstory.sc2campaign/base.sc2data/TriggerLibs/SwarmCampaignLib.galaxy#L4489">SwarmCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4489</span>
+MaxF(PlayerGetPropertyFixed(lp_player, c_playerPropDamageDealtTime), PlayerGetPropertyFixed(lp_player, c_playerPropDamageTakenTime))
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignMissionLib.galaxy#L2538">VoidCampaignMissionLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2538</span>
+MaxF(PlayerGetPropertyFixed(lp_player, c_playerPropDamageDealtTime), PlayerGetPropertyFixed(lp_player, c_playerPropDamageTakenTime))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4838</span>
+MaxF((<span class="hljs-number">1</span>-(lv_distance/<span class="hljs-number">50</span>)), <span class="hljs-number">0.0</span>)
+</code></pre>
+<h4 id="modscoresc2mod"><a class="markdownIt-Anchor" href="#modscoresc2mod">#</a> mods/core.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/core.sc2mod/base.sc2data/TriggerLibs/NativeLib.galaxy#L2042">NativeLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2042</span>
+MaxF(lp_duration, <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2089</span>
+MaxF(lp_duration, <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1732</span>
+MaxF(lp_duration, <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1779</span>
+MaxF(lp_duration, <span class="hljs-number">1.5</span>)
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodscoopdeadmansstandstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodscoopdeadmansstandstormmod">#</a> mods/heroesbrawlmods/brawlmapmods/coop/deadmansstand.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/coop/deadmansstand.stormmod/base.stormdata/LibPEB1.galaxy#L12163">LibPEB1.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L12163</span>
+MaxF(<span class="hljs-number">0.0</span>, libUIUI_gf_HeroesGameTime())
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodslunarfestivalstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodslunarfestivalstormmod">#</a> mods/heroesbrawlmods/brawlmapmods/lunarfestival.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/lunarfestival.stormmod/base.stormdata/LibLNYF.galaxy#L1511">LibLNYF.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1511</span>
+MaxF((libLNYF_gv_movement.lv_speed[autoE34AC8EB_var] - <span class="hljs-number">1.0</span>), <span class="hljs-number">4.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1512</span>
+MaxF((libLNYF_gv_movement.lv_speed[autoE34AC8EB_var] - <span class="hljs-number">1.0</span>), <span class="hljs-number">4.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1513</span>
+MaxF((libLNYF_gv_movement.lv_speed[autoE34AC8EB_var] - <span class="hljs-number">1.0</span>), <span class="hljs-number">4.0</span>)
+</code></pre>
+<h4 id="modsheroesdatastormmod"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/AILib.galaxy#L2245">AILib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2245</span>
+MaxF(libAIAI_gv_aIGateNearbyRange, (lv_offsetFromEdge + (<span class="hljs-number">0.5</span> * lv_originalDistance)))
+</code></pre>
+<h4 id="modsheroesdatastormmod-2"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-2">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/GameDataHelperLib.galaxy#L25961">GameDataHelperLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L25961</span>
+MaxF(lv_newCooldownAmount, <span class="hljs-number">0.1</span>)
+</code></pre>
+<h4 id="modsheroesdatastormmod-3"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-3">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/GameLib.galaxy#L6662">GameLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L6662</span>
+MaxF((lp_initialRespawnTime - libGame_gv_heroDeathRespawnCueSoundTiming), <span class="hljs-number">0.0625</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6803</span>
+MaxF((lp_newRespawnTimerDuration - libGame_gv_heroDeathRespawnCueSoundTiming), <span class="hljs-number">0.0625</span>)
+</code></pre>
+<h4 id="modsheroesdatastormmod-4"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-4">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/HeroesLib.galaxy#L1707">HeroesLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1707</span>
+MaxF(<span class="hljs-number">7.0</span>, (lv_deathTime / <span class="hljs-number">2.0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1710</span>
+MaxF(<span class="hljs-number">7.0</span>, (lv_deathTime / <span class="hljs-number">2.0</span>))
+</code></pre>
+<h4 id="modsheroesdatastormmod-5"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-5">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/StartingExperienceLib.galaxy#L444">StartingExperienceLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L444</span>
+MaxF(PlayerGetPropertyFixed(lp_player, c_playerPropDamageTakenTime), PlayerGetPropertyFixed(lp_player, c_playerPropDamageDealtTime))
+</code></pre>
+<h4 id="modsheroesdatastormmod-6"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-6">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/SupportLib.galaxy#L8131">SupportLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L8131</span>
+MaxF((TimerGetRemaining(libGame_gv_jungleWatchTowerStartTimer)-lv_requestedTimeChange*<span class="hljs-number">60</span>), <span class="hljs-number">0.0625</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8136</span>
+MaxF((TimerGetRemaining(libGame_gv_xPTrickleStartTimer)-lv_requestedTimeChange*<span class="hljs-number">60</span>), <span class="hljs-number">0.0625</span>)
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodsbraxisholdoutstormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodsbraxisholdoutstormmod">#</a> mods/heroesmapmods/battlegroundmapmods/braxisholdout.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/braxisholdout.stormmod/base.stormdata/LibSCHO.galaxy#L2946">LibSCHO.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2946</span>
+MaxF(libSCHO_gv_mMHO_TotalZergHP[libGame_gv_teamOrderIndex_C], libSCHO_gv_mMHO_TotalZergHP[libGame_gv_teamChaosIndex_C])
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2947</span>
+MaxF(libSCHO_gv_mMHO_TotalZergHP[libGame_gv_teamOrderIndex_C], libSCHO_gv_mMHO_TotalZergHP[libGame_gv_teamChaosIndex_C])
+</code></pre>
+<h4 id="modsmissionpackscampaigncommonsc2mod"><a class="markdownIt-Anchor" href="#modsmissionpackscampaigncommonsc2mod">#</a> mods/missionpacks/campaigncommon.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/campaigncommon.sc2mod/base.sc2data/LibCMMI.galaxy#L91">LibCMMI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L91</span>
+MaxF(PlayerGetPropertyFixed(lp_player, c_playerPropDamageDealtTime), PlayerGetPropertyFixed(lp_player, c_playerPropDamageTakenTime))
+</code></pre>
+<h4 id="modsnovastoryassetssc2mod"><a class="markdownIt-Anchor" href="#modsnovastoryassetssc2mod">#</a> mods/novastoryassets.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/novastoryassets.sc2mod/base3.sc2maps/maps/campaign/nova/nova09.sc2map/MapScript.galaxy#L4485">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4485</span>
+MaxF((<span class="hljs-number">1</span>-(lv_distance/<span class="hljs-number">50</span>)), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4485</span>
+MaxF((<span class="hljs-number">1</span>-(lv_distance/<span class="hljs-number">50</span>)), <span class="hljs-number">0.0</span>)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOMI.galaxy#L780">LibCOMI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L780</span>
+MaxF(<span class="hljs-number">0.0</span>, <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1555</span>
+MaxF(<span class="hljs-number">0.5</span>, UnitTypeGetProperty(UnitGetType(lv_indexGroundUnit), c_unitPropSuppliesUsed))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1896</span>
+MaxF(<span class="hljs-number">0.5</span>, UnitTypeGetProperty(UnitGetType(lv_dropUnit), c_unitPropSuppliesUsed))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3756</span>
+MaxF(lp_thinkPeriod, <span class="hljs-number">0.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5480</span>
+MaxF((lv_baseenergyregen + (libCOMI_gv_cM_Mengsk_EnergyRegenRoyalGuard + libCOMI_gv_cM_Mengsk_EnergyRegenTrooper)), <span class="hljs-number">0.01</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6546</span>
+MaxF(lv_cooldownTime, <span class="hljs-number">10.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9194</span>
+MaxF(PlayerGetPropertyFixed(lp_player, c_playerPropDamageDealtTime), PlayerGetPropertyFixed(lp_player, c_playerPropDamageTakenTime))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10389</span>
+MaxF(lv_minimumrevivedelay, TimerGetRemaining(lv_remindertimer))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L22167</span>
+MaxF(Round((lv_xp / lv_veterancount)), lv_minimumearnedxp)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L25323</span>
+MaxF((<span class="hljs-number">1</span>-(lv_distance/<span class="hljs-number">50</span>)), <span class="hljs-number">0.0</span>)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod-2"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod-2">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOMU.galaxy#L5069">LibCOMU.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L5069</span>
+MaxF(lv_remainingpercentage, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12907</span>
+MaxF(libCOMU_gv_cT_SharedSupplyIndividual[lv_indexPlayer], <span class="hljs-number">1.0</span>)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod-3"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod-3">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOUI.galaxy#L5986">LibCOUI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L5986</span>
+MaxF(libNtve_gf_WidthOfRegion(RegionPlayableMap()), libNtve_gf_HeightOfRegion(RegionPlayableMap()))
+</code></pre>
+<h4 id="modsvoidprologuesc2mod"><a class="markdownIt-Anchor" href="#modsvoidprologuesc2mod">#</a> mods/voidprologue.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/voidprologue.sc2mod/base.sc2data/LibA3DDD02B.galaxy#L3382">LibA3DDD02B.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3382</span>
+MaxF(PlayerGetPropertyFixed(lp_player, c_playerPropDamageDealtTime), PlayerGetPropertyFixed(lp_player, c_playerPropDamageTakenTime))
+</code></pre>
+<h4 id="modswarcoopwarclassicsystemsc2mod"><a class="markdownIt-Anchor" href="#modswarcoopwarclassicsystemsc2mod">#</a> mods/warcoop/warclassicsystem.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/warcoop/warclassicsystem.sc2mod/base.sc2data/TriggerLibs/WarClassicSystem.galaxy#L39">WarClassicSystem.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L39</span>
+MaxF(UserDataGetFixed(<span class="hljs-string">"MiscData"</span>, <span class="hljs-string">"Misc"</span>, <span class="hljs-string">"Creep - Max Camp Radius"</span>, <span class="hljs-number">1</span>), <span class="hljs-number">0.0625</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,419 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Chat Message / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Chat Message"/>
+                <meta property="og:description" content="This event fires when the specified chat message is typed by the specified player.  If exact match is selected, then the string the player enters must be identical to the specified string for the event to fire.  If partial match is selected, then the event will fire if the player enters the specified string plus any number of additional characters after it.  Use the &quot;Chat String&quot; function to refer to the message being entered.  Use &quot;Triggering Player&quot; to get the player that typed the message."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="chat-message"><a class="markdownIt-Anchor" href="#chat-message">#</a> Chat Message</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Player <strong>p</strong> types a chat message containing <strong>s</strong>, matching <strong>exact|Exactly/Partially</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Event</code></p>
+</blockquote>
+<p>This event fires when the specified chat message is typed by the specified player.  If exact match is selected, then the string the player enters must be identical to the specified string for the event to fire.  If partial match is selected, then the event will fire if the player enters the specified string plus any number of additional characters after it.  Use the <em>“Chat String”</em> function to refer to the message being entered.  Use <em>“Triggering Player”</em> to get the player that typed the message.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> — Player</li>
+<li><code>string</code> — Text</li>
+<li><code>bool</code> <em>[ preset::<a href="/galaxy/reference/preset-chat-match-option">Chat_Match_Option</a> ]</em> — Exact</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">TriggerAddEventChatMessage</span><span class="hljs-params">(
+	trigger t,
+	<span class="hljs-keyword">int</span> player,
+	<span class="hljs-built_in">string</span> inText,
+	<span class="hljs-keyword">bool</span> exact,
+)</span></span>;
+</code></pre>
+<h3 id="event-parameters"><a class="markdownIt-Anchor" href="#event-parameters">#</a> Event parameters</h3>
+<ul>
+<li><a href="/galaxy/reference/game-is-debug-option-set">Game Is Debug Option Set</a> — GameIsDebugOptionSet</li>
+<li><a href="/galaxy/reference/event-chat-message">Chat String</a> — EventChatMessage</li>
+<li><a href="/galaxy/reference/event-game-user">Triggering Game User</a> — EventGameUser</li>
+<li><a href="/galaxy/reference/event-player">Triggering Player</a> — EventPlayer</li>
+</ul>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#game-chat-and-console">Game / Chat And Console</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-chat-message">Chat Message</a></strong> — ( TriggerAddEventChatMessage )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-cheat-used">Cheat Used</a></strong> — ( TriggerAddEventCheatUsed )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> — <strong><a href="/galaxy/reference/event-chat-message">Chat String</a></strong> — ( EventChatMessage )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-game-cheat-type">GameCheatType</a> ]</em> — <strong><a href="/galaxy/reference/event-cheat-used">Cheat Type Used</a></strong> — ( EventCheatUsed )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/console-command">Console Command</a></strong> — ( ConsoleCommand )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/game-cheats-enabled">Cheats Enabled</a></strong> — ( GameCheatsEnabled )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/game-cheat-allow">Allow Cheat</a></strong> — ( GameCheatAllow )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/tarcade.sc2map/MapScript.galaxy#L4160">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4160</span>
+TriggerAddEventChatMessage(gt_Debug_Sin, <span class="hljs-number">1</span>, <span class="hljs-string">"sine"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4186</span>
+TriggerAddEventChatMessage(gt_Debug_LeaveBehind, <span class="hljs-number">1</span>, <span class="hljs-string">"behind"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4212</span>
+TriggerAddEventChatMessage(gt_Debug_MoveBG, <span class="hljs-number">1</span>, <span class="hljs-string">"-mb"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4252</span>
+TriggerAddEventChatMessage(gt_Debug_BOSS, <span class="hljs-number">1</span>, <span class="hljs-string">"-BOSS"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4292</span>
+TriggerAddEventChatMessage(gt_Debug_LEVELCLEAR, <span class="hljs-number">1</span>, <span class="hljs-string">"-LEVELCLEAR"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4323</span>
+TriggerAddEventChatMessage(gt_Debug_Bonus, <span class="hljs-number">1</span>, <span class="hljs-string">"-BONUS"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4355</span>
+TriggerAddEventChatMessage(gt_Debug_PowerUp, <span class="hljs-number">1</span>, <span class="hljs-string">"-pu"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4382</span>
+TriggerAddEventChatMessage(gt_Debug_Life, c_playerAny, <span class="hljs-string">"-LIFE"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4410</span>
+TriggerAddEventChatMessage(gt_Debug_Cineamtic, c_playerAny, <span class="hljs-string">"-end"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4436</span>
+TriggerAddEventChatMessage(gt_Debug_SS, c_playerAny, <span class="hljs-string">"-ss"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1225</span>
+TriggerAddEventChatMessage(gt_DEBUGShortenTime, c_playerAny, <span class="hljs-string">"short"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L15320</span>
+TriggerAddEventChatMessage(gt_DebugEnabledLookAt, <span class="hljs-number">1</span>, <span class="hljs-string">"ENABLELOOKAT"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L15347</span>
+TriggerAddEventChatMessage(gt_DebugDisabledLookAt, <span class="hljs-number">1</span>, <span class="hljs-string">"DISABLELOOKAT"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L17609</span>
+TriggerAddEventChatMessage(gt_EnableDebug, <span class="hljs-number">1</span>, <span class="hljs-string">"enabledebug"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L17635</span>
+TriggerAddEventChatMessage(gt_DisableDebug, <span class="hljs-number">1</span>, <span class="hljs-string">"disabledebug"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L17805</span>
+TriggerAddEventChatMessage(gt_TerranUptheNight, c_playerAny, <span class="hljs-string">"OverEngineeredCodPiece"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L18065</span>
+TriggerAddEventChatMessage(gt_DebugROOM, <span class="hljs-number">1</span>, <span class="hljs-string">"ROOM"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L18091</span>
+TriggerAddEventChatMessage(gt_DebugROOMCHEAT, <span class="hljs-number">1</span>, <span class="hljs-string">"ROOMCHEAT"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L18125</span>
+TriggerAddEventChatMessage(gt_DebugTESTCAMERA, <span class="hljs-number">1</span>, <span class="hljs-string">"TESTCAM"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L18154</span>
+TriggerAddEventChatMessage(gt_DebugGAMECAMERA, <span class="hljs-number">1</span>, <span class="hljs-string">"GAMECAMERA"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L18180</span>
+TriggerAddEventChatMessage(gt_DebugGLOBALVIEW, <span class="hljs-number">1</span>, <span class="hljs-string">"GLOBALVIEW"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4160</span>
+TriggerAddEventChatMessage(gt_Debug_Sin, <span class="hljs-number">1</span>, <span class="hljs-string">"sine"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4186</span>
+TriggerAddEventChatMessage(gt_Debug_LeaveBehind, <span class="hljs-number">1</span>, <span class="hljs-string">"behind"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4212</span>
+TriggerAddEventChatMessage(gt_Debug_MoveBG, <span class="hljs-number">1</span>, <span class="hljs-string">"-mb"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4252</span>
+TriggerAddEventChatMessage(gt_Debug_BOSS, <span class="hljs-number">1</span>, <span class="hljs-string">"-BOSS"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4292</span>
+TriggerAddEventChatMessage(gt_Debug_LEVELCLEAR, <span class="hljs-number">1</span>, <span class="hljs-string">"-LEVELCLEAR"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4323</span>
+TriggerAddEventChatMessage(gt_Debug_Bonus, <span class="hljs-number">1</span>, <span class="hljs-string">"-BONUS"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4355</span>
+TriggerAddEventChatMessage(gt_Debug_PowerUp, <span class="hljs-number">1</span>, <span class="hljs-string">"-pu"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4382</span>
+TriggerAddEventChatMessage(gt_Debug_Life, c_playerAny, <span class="hljs-string">"-LIFE"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4410</span>
+TriggerAddEventChatMessage(gt_Debug_Cineamtic, c_playerAny, <span class="hljs-string">"-end"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4436</span>
+TriggerAddEventChatMessage(gt_Debug_SS, c_playerAny, <span class="hljs-string">"-ss"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1225</span>
+TriggerAddEventChatMessage(gt_DEBUGShortenTime, c_playerAny, <span class="hljs-string">"short"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L15320</span>
+TriggerAddEventChatMessage(gt_DebugEnabledLookAt, <span class="hljs-number">1</span>, <span class="hljs-string">"ENABLELOOKAT"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L15347</span>
+TriggerAddEventChatMessage(gt_DebugDisabledLookAt, <span class="hljs-number">1</span>, <span class="hljs-string">"DISABLELOOKAT"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L17609</span>
+TriggerAddEventChatMessage(gt_EnableDebug, <span class="hljs-number">1</span>, <span class="hljs-string">"enabledebug"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L17635</span>
+TriggerAddEventChatMessage(gt_DisableDebug, <span class="hljs-number">1</span>, <span class="hljs-string">"disabledebug"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L17805</span>
+TriggerAddEventChatMessage(gt_TerranUptheNight, c_playerAny, <span class="hljs-string">"OverEngineeredCodPiece"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L18065</span>
+TriggerAddEventChatMessage(gt_DebugROOM, <span class="hljs-number">1</span>, <span class="hljs-string">"ROOM"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L18091</span>
+TriggerAddEventChatMessage(gt_DebugROOMCHEAT, <span class="hljs-number">1</span>, <span class="hljs-string">"ROOMCHEAT"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L18125</span>
+TriggerAddEventChatMessage(gt_DebugTESTCAMERA, <span class="hljs-number">1</span>, <span class="hljs-string">"TESTCAM"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L18154</span>
+TriggerAddEventChatMessage(gt_DebugGAMECAMERA, <span class="hljs-number">1</span>, <span class="hljs-string">"GAMECAMERA"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L18180</span>
+TriggerAddEventChatMessage(gt_DebugGLOBALVIEW, <span class="hljs-number">1</span>, <span class="hljs-string">"GLOBALVIEW"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="campaignslibertystorysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertystorysc2campaign">#</a> campaigns/libertystory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/libertystory.sc2campaign/base.sc2data/TriggerLibs/CampaignLib.galaxy#L12001">CampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L12001</span>
+TriggerAddEventChatMessage(libCamp_gt_chatbubbledebug, <span class="hljs-number">1</span>, <span class="hljs-string">"-cb"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12784</span>
+TriggerAddEventChatMessage(libCamp_gt_Debug_Preloading, <span class="hljs-number">1</span>, <span class="hljs-string">"-preload"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13025</span>
+TriggerAddEventChatMessage(libCamp_gt_TS_FlyingOutHouse, c_playerAny, <span class="hljs-string">"OUTHOUSE"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13052</span>
+TriggerAddEventChatMessage(libCamp_gt_TS_TerranUpTheNight, c_playerAny, <span class="hljs-string">"OverEngineeredCodPiece"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13081</span>
+TriggerAddEventChatMessage(libCamp_gt_TS_Temp, c_playerAny, <span class="hljs-string">"-ts"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13423</span>
+TriggerAddEventChatMessage(libCamp_gt_TS_DebugPROGRESSDevelop, c_playerAny, <span class="hljs-string">"PROGRESS"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13549</span>
+TriggerAddEventChatMessage(libCamp_gt_TS_DebugResearchPanel, <span class="hljs-number">1</span>, <span class="hljs-string">"RESEARCHS"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13767</span>
+TriggerAddEventChatMessage(libCamp_gt_TS_DebugMercenaryPanel, <span class="hljs-number">1</span>, <span class="hljs-string">"MERCENARY"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L14036</span>
+TriggerAddEventChatMessage(libCamp_gt_DebugBUYTECH, <span class="hljs-number">1</span>, <span class="hljs-string">"TECH"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L14037</span>
+TriggerAddEventChatMessage(libCamp_gt_DebugBUYTECH, <span class="hljs-number">1</span>, <span class="hljs-string">"BUYTECH"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="campaignsswarmsc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmsc2campaign">#</a> campaigns/swarm.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarm.sc2campaign/base.sc2maps/maps/campaign/voidprologue/voidprologue03.sc2map/MapScript.galaxy#L1332">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1332</span>
+TriggerAddEventChatMessage(gt_DEBUGS2, c_playerAny, <span class="hljs-string">"s2"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1333</span>
+TriggerAddEventChatMessage(gt_DEBUGS2, c_playerAny, <span class="hljs-string">"stage2"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1390</span>
+TriggerAddEventChatMessage(gt_DEBUGS3, c_playerAny, <span class="hljs-string">"s3"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1391</span>
+TriggerAddEventChatMessage(gt_DEBUGS3, c_playerAny, <span class="hljs-string">"stage3"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1158</span>
+TriggerAddEventChatMessage(gt_CHEAT100Eggs, gv_pLAYER_01_USER, <span class="hljs-string">"s2"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1159</span>
+TriggerAddEventChatMessage(gt_CHEAT100Eggs, gv_pLAYER_01_USER, <span class="hljs-string">"100eggs"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1462</span>
+TriggerAddEventChatMessage(gt_DEBUGMidCine, c_playerAny, <span class="hljs-string">"s2"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1463</span>
+TriggerAddEventChatMessage(gt_DEBUGMidCine, c_playerAny, <span class="hljs-string">"Stage2"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1723</span>
+TriggerAddEventChatMessage(gt_DEBUGStage2, c_playerAny, <span class="hljs-string">"Stage2"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1724</span>
+TriggerAddEventChatMessage(gt_DEBUGStage2, c_playerAny, <span class="hljs-string">"S2"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1755</span>
+TriggerAddEventChatMessage(gt_DEBUGStartBlizzard, c_playerAny, <span class="hljs-string">"blizzardgo"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1786</span>
+TriggerAddEventChatMessage(gt_DEBUGStartSnow, c_playerAny, <span class="hljs-string">"snowgo"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1815</span>
+TriggerAddEventChatMessage(gt_DEBUGStopSnow, c_playerAny, <span class="hljs-string">"snowdie"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1322</span>
+TriggerAddEventChatMessage(gt_DEBUGSkiptoPart2, c_playerAny, <span class="hljs-string">"s2"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1378</span>
+TriggerAddEventChatMessage(gt_DEBUGSkiptoPart3, c_playerAny, <span class="hljs-string">"s3"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1356</span>
+TriggerAddEventChatMessage(gt_DEBUGStage2, c_playerAny, <span class="hljs-string">"s2"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L978</span>
+TriggerAddEventChatMessage(gt_S2, c_playerAny, <span class="hljs-string">"s2"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1507</span>
+TriggerAddEventChatMessage(gt_DEBUGStage2, c_playerAny, <span class="hljs-string">"s2"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1567</span>
+TriggerAddEventChatMessage(gt_DEBUGStage4, c_playerAny, <span class="hljs-string">"s4"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1622</span>
+TriggerAddEventChatMessage(gt_DEBUGStage6, c_playerAny, <span class="hljs-string">"s6"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1650</span>
+TriggerAddEventChatMessage(gt_DEBUGStage357, c_playerAny, <span class="hljs-string">"s3"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1651</span>
+TriggerAddEventChatMessage(gt_DEBUGStage357, c_playerAny, <span class="hljs-string">"s5"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1652</span>
+TriggerAddEventChatMessage(gt_DEBUGStage357, c_playerAny, <span class="hljs-string">"s7"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1598</span>
+TriggerAddEventChatMessage(gt_DebugStage2, c_playerAny, <span class="hljs-string">"s2"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1492</span>
+TriggerAddEventChatMessage(gt_DEBUGStartS02, c_playerAny, <span class="hljs-string">"s2"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1538</span>
+TriggerAddEventChatMessage(gt_DEBUGStartS03, c_playerAny, <span class="hljs-string">"s3"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1590</span>
+TriggerAddEventChatMessage(gt_DEBUGStartS04, c_playerAny, <span class="hljs-string">"s4"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1723</span>
+TriggerAddEventChatMessage(gt_DEBUGStartArchangelBossFight, c_playerAny, <span class="hljs-string">"boss"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1724</span>
+TriggerAddEventChatMessage(gt_DEBUGStartArchangelBossFight, c_playerAny, <span class="hljs-string">"s5"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1599</span>
+TriggerAddEventChatMessage(gt_DEBUG_SkipTimer, c_playerAny, <span class="hljs-string">"s2"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1731</span>
+TriggerAddEventChatMessage(gt_Debug_FirstBaseSetup, c_playerAny, <span class="hljs-string">"s2"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1761</span>
+TriggerAddEventChatMessage(gt_Debug_FullPower, c_playerAny, <span class="hljs-string">"FullPower"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1798</span>
+TriggerAddEventChatMessage(gt_Debug_Experience, c_playerAny, <span class="hljs-string">"EXPGAINED"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1328</span>
+TriggerAddEventChatMessage(gt_DEBUGStage2, c_playerAny, <span class="hljs-string">"s2"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2433</span>
+TriggerAddEventChatMessage(gt_DEBUGBrakkAttakk, c_playerAny, <span class="hljs-string">"S2"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2434</span>
+TriggerAddEventChatMessage(gt_DEBUGBrakkAttakk, c_playerAny, <span class="hljs-string">"Stage2"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1218</span>
+TriggerAddEventChatMessage(gt_DEBUGMidCinematic, c_playerAny, <span class="hljs-string">"mid"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1219</span>
+TriggerAddEventChatMessage(gt_DEBUGMidCinematic, c_playerAny, <span class="hljs-string">"s2"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2193</span>
+TriggerAddEventChatMessage(gt_DEBUGYagdraBoss, c_playerAny, <span class="hljs-string">"Yagdra"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2194</span>
+TriggerAddEventChatMessage(gt_DEBUGYagdraBoss, c_playerAny, <span class="hljs-string">"s2"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2306</span>
+TriggerAddEventChatMessage(gt_DEBUGKraithBoss, c_playerAny, <span class="hljs-string">"Kraith"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2307</span>
+TriggerAddEventChatMessage(gt_DEBUGKraithBoss, c_playerAny, <span class="hljs-string">"s3"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2444</span>
+TriggerAddEventChatMessage(gt_DEBUGSlivanBoss, c_playerAny, <span class="hljs-string">"Slivan"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2445</span>
+TriggerAddEventChatMessage(gt_DEBUGSlivanBoss, c_playerAny, <span class="hljs-string">"s4"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2584</span>
+TriggerAddEventChatMessage(gt_DEBUGZurvanBoss, c_playerAny, <span class="hljs-string">"Zurvan"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2585</span>
+TriggerAddEventChatMessage(gt_DEBUGZurvanBoss, c_playerAny, <span class="hljs-string">"s5"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L771</span>
+TriggerAddEventChatMessage(gt_DebugHunter, c_playerAny, <span class="hljs-string">"EVO2"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L772</span>
+TriggerAddEventChatMessage(gt_DebugHunter, c_playerAny, <span class="hljs-string">"s2"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,402 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Convert Player To Player Group / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Convert Player To Player Group"/>
+                <meta property="og:description" content="Returns a player group containing the specified player.  This allows you to call a specific player as a player group parameter in triggers.
+
+Returns: playergroup"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="convert-player-to-player-group"><a class="markdownIt-Anchor" href="#convert-player-to-player-group">#</a> Convert Player To Player Group</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Player group(<strong>p</strong>)<br>
+<em>Flags</em> — <code>Native</code> | <code>Function</code></p>
+</blockquote>
+<p>Returns a player group containing the specified player.  This allows you to call a specific player as a player group parameter in triggers.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> — Player</li>
+</ul>
+<p>Returns — <code>playergroup</code></p>
+<pre class="hljs"><code><span class="hljs-function">native playergroup <span class="hljs-title">PlayerGroupSingle</span><span class="hljs-params">(<span class="hljs-keyword">int</span> inPlayer)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#player-group-useful-player-groups">Player Group / Useful Player Groups</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>playergroup</code> — <strong><a href="/galaxy/reference/player-group-all">All Players</a></strong> — ( PlayerGroupAll )</li>
+<li><em><strong>[F]</strong></em> — <code>playergroup</code> — <strong><a href="/galaxy/reference/player-group-empty">Empty Player Group</a></strong> — ( PlayerGroupEmpty )</li>
+<li><em><strong>[F]</strong></em> — <code>playergroup</code> — <strong><a href="/galaxy/reference/player-group-active">Active Players</a></strong> — ( PlayerGroupActive )</li>
+<li><em><strong>[F]</strong></em> — <code>playergroup</code> — <strong><a href="/galaxy/reference/player-group-alliance">Allies/Enemies Of Player</a></strong> — ( PlayerGroupAlliance )</li>
+<li><em><strong>[F]</strong></em> — <code>playergroup</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-allies-enemies-of-player-count-inactive-and-self">Allies/Enemies Of Player (Count Inactive And Self)</a></strong> — ( libNtve_gf_AlliesEnemiesOfPlayerCountInactiveAndSelf )</li>
+<li><em><strong>[F]</strong></em> — <code>playergroup</code> — <strong><a href="/galaxy/reference/player-group-single">Convert Player To Player Group</a></strong> — ( PlayerGroupSingle )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/challenges/advancedcommand.sc2map/MapScript.galaxy#L155">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L155</span>
+PlayerGroupSingle(gv_pLAYER_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1198</span>
+PlayerGroupSingle(<span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1633</span>
+PlayerGroupSingle(gv_pLAYER_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1635</span>
+PlayerGroupSingle(gv_pLAYER_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2586</span>
+PlayerGroupSingle(gv_pLAYER_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1467</span>
+PlayerGroupSingle(gv_pLAYER_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L716</span>
+PlayerGroupSingle(gv_pLAYER_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1333</span>
+PlayerGroupSingle(gv_pLAYER_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1199</span>
+PlayerGroupSingle(gv_pLAYER_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1200</span>
+PlayerGroupSingle(gv_pLAYER_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1483</span>
+PlayerGroupSingle(gv_pLAYER_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2427</span>
+PlayerGroupSingle(gv_pLAYER_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1192</span>
+PlayerGroupSingle(gv_pLAYER_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1544</span>
+PlayerGroupSingle(gv_pLAYER_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2572</span>
+PlayerGroupSingle(gv_pLAYER_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1184</span>
+PlayerGroupSingle(gv_pLAYER_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L355</span>
+PlayerGroupSingle(gv_p1_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2443</span>
+PlayerGroupSingle(gv_p1_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4304</span>
+PlayerGroupSingle(gv_p1_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6333</span>
+PlayerGroupSingle(gv_p1_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1837</span>
+PlayerGroupSingle(gv_pLAYER_01_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2899</span>
+PlayerGroupSingle(gv_pLAYER_01_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2900</span>
+PlayerGroupSingle(gv_pLAYER_01_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1013</span>
+PlayerGroupSingle(gv_pLAYER01_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1019</span>
+PlayerGroupSingle(gv_pLAYER01_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1025</span>
+PlayerGroupSingle(gv_pLAYER01_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1171</span>
+PlayerGroupSingle(gv_pLAYER01_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2043</span>
+PlayerGroupSingle(gv_pLAYER01_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2140</span>
+PlayerGroupSingle(gv_pLAYER01_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2235</span>
+PlayerGroupSingle(gv_pLAYER01_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3933</span>
+PlayerGroupSingle(gv_pLAYER01_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3934</span>
+PlayerGroupSingle(gv_pLAYER01_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L955</span>
+PlayerGroupSingle(gv_p02_ZERG_EAST)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2920</span>
+PlayerGroupSingle(gv_p01_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3182</span>
+PlayerGroupSingle(gv_p01_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3183</span>
+PlayerGroupSingle(gv_p01_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3184</span>
+PlayerGroupSingle(gv_p01_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4313</span>
+PlayerGroupSingle(gv_pLAYER_01_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4329</span>
+PlayerGroupSingle(gv_pLAYER_01_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4343</span>
+PlayerGroupSingle(gv_pLAYER_01_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4356</span>
+PlayerGroupSingle(gv_pLAYER_01_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4369</span>
+PlayerGroupSingle(gv_pLAYER_01_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4376</span>
+PlayerGroupSingle(gv_pLAYER_01_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4383</span>
+PlayerGroupSingle(gv_pLAYER_01_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4426</span>
+PlayerGroupSingle(gv_pLAYER_01_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4436</span>
+PlayerGroupSingle(gv_pLAYER_01_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4482</span>
+PlayerGroupSingle(gv_pLAYER_01_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L999</span>
+PlayerGroupSingle(gv_p01_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3422</span>
+PlayerGroupSingle(gv_p01_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1225</span>
+PlayerGroupSingle(gv_p01_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1412</span>
+PlayerGroupSingle(gv_odinAIPlayerTarget)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1443</span>
+PlayerGroupSingle(gv_p01_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1448</span>
+PlayerGroupSingle(gv_p01_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1678</span>
+PlayerGroupSingle(gv_odinAIPlayerTarget)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1896</span>
+PlayerGroupSingle(gv_p02_TYCHUS)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1897</span>
+PlayerGroupSingle(gv_p02_TYCHUS)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1898</span>
+PlayerGroupSingle(gv_p02_TYCHUS)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1899</span>
+PlayerGroupSingle(gv_p02_TYCHUS)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1900</span>
+PlayerGroupSingle(gv_p02_TYCHUS)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2706</span>
+PlayerGroupSingle(<span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2709</span>
+PlayerGroupSingle(<span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2712</span>
+PlayerGroupSingle(<span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4076</span>
+PlayerGroupSingle(gv_p01_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4077</span>
+PlayerGroupSingle(gv_p01_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4078</span>
+PlayerGroupSingle(gv_p01_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6360</span>
+PlayerGroupSingle(gv_p01_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6369</span>
+PlayerGroupSingle(gv_p01_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6378</span>
+PlayerGroupSingle(gv_p01_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6465</span>
+PlayerGroupSingle(gv_p01_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5897</span>
+PlayerGroupSingle(gv_p01_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L331</span>
+PlayerGroupSingle(gv_pLAYER_01_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1970</span>
+PlayerGroupSingle(gv_pLAYER01_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1972</span>
+PlayerGroupSingle(gv_pLAYER01_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2048</span>
+PlayerGroupSingle(gv_pLAYER01_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2050</span>
+PlayerGroupSingle(gv_pLAYER01_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2137</span>
+PlayerGroupSingle(gv_pLAYER01_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2139</span>
+PlayerGroupSingle(gv_pLAYER01_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2569</span>
+PlayerGroupSingle(gv_pLAYER01_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2629</span>
+PlayerGroupSingle(gv_pLAYER01_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2712</span>
+PlayerGroupSingle(gv_pLAYER01_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L18212</span>
+PlayerGroupSingle(lv_p)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L808</span>
+PlayerGroupSingle(gv_p01_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L870</span>
+PlayerGroupSingle(gv_p01_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5133</span>
+PlayerGroupSingle(gv_p01_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2118</span>
+PlayerGroupSingle(gv_p1_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2550</span>
+PlayerGroupSingle(gv_p1_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3063</span>
+PlayerGroupSingle(gv_p1_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4293</span>
+PlayerGroupSingle(gv_p1_USER)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3224</span>
+PlayerGroupSingle(gv_p3_DOMINION_RED)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3225</span>
+PlayerGroupSingle(gv_p3_DOMINION_RED)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3226</span>
+PlayerGroupSingle(gv_p4_DOMINION_PURPLE)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3227</span>
+PlayerGroupSingle(gv_p3_DOMINION_RED)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3323</span>
+PlayerGroupSingle(gv_p5_DOMINION_GREY)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3333</span>
+PlayerGroupSingle(gv_p4_DOMINION_PURPLE)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3340</span>
+PlayerGroupSingle(gv_p3_DOMINION_RED)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3550</span>
+PlayerGroupSingle(gv_p2_RAYNOR_LIGHTBLUE)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3615</span>
+PlayerGroupSingle(gv_p2_RAYNOR_LIGHTBLUE)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3697</span>
+PlayerGroupSingle(gv_p2_RAYNOR_LIGHTBLUE)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L954</span>
+PlayerGroupSingle(<span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L958</span>
+PlayerGroupSingle(gv_p1_USER)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

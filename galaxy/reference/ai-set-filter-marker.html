@@ -1,0 +1,229 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Tactical AI Filter Markers / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Tactical AI Filter Markers"/>
+                <meta property="og:description" content="If a &quot;marker per life&quot; has not been set then a counting marker may be used. A counting marker ensures the indicated range of tactical AI markers exist on a candidate or else the unit will be filtered out. A range of 0 to 1 will prevent more than one unit from casting on the same target at the same time."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="tactical-ai-filter-markers"><a class="markdownIt-Anchor" href="#tactical-ai-filter-markers">#</a> Tactical AI Filter Markers</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Tactical AI Filter - Remove from <strong>filter</strong> all units that have less than <strong>min</strong> or more than <strong>max</strong> of <strong>marker</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>If a <em>“marker per life”</em> has not been set then a counting marker may be used. A counting marker ensures the indicated range of tactical AI markers exist on a candidate or else the unit will be filtered out. A range of 0 to 1 will prevent more than one unit from casting on the same target at the same time.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>aifilter</code> — Filter</li>
+<li><code>int</code> — Min</li>
+<li><code>int</code> — Max</li>
+<li><code>marker</code> — Marker</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">AISetFilterMarker</span><span class="hljs-params">(
+	aifilter filter,
+	<span class="hljs-keyword">int</span> min,
+	<span class="hljs-keyword">int</span> max,
+	marker m,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#ai-advanced-filters-actions">AI Advanced / Filters / Actions</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-set-filter-alliance">Tactical AI Filter Alliance</a></strong> — ( AISetFilterAlliance )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-set-filter-marker">Tactical AI Filter Markers</a></strong> — ( AISetFilterMarker )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-set-filter-self">Tactical AI Filter Remove Self</a></strong> — ( AISetFilterSelf )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-set-filter-range">Tactical AI Filter Range</a></strong> — ( AISetFilterRange )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-set-filter-in-combat">Tactical AI Filter In Combat</a></strong> — ( AISetFilterInCombat )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-set-filter-melee">Tactical AI Filter Melee</a></strong> — ( AISetFilterMelee )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-set-filter-life">Tactical AI Filter Life</a></strong> — ( AISetFilterLife )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-set-filter-life-lost">Tactical AI Filter Life Lost</a></strong> — ( AISetFilterLifeLost )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-set-filter-life-sort-reference">Tactical AI Filter Life Sort Reference</a></strong> — ( AISetFilterLifeSortReference )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-set-filter-life-mod">Tactical AI Filter Life Modifier</a></strong> — ( AISetFilterLifeMod )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-set-filter-life-per-marker">Tactical AI Filter Life Per Marker</a></strong> — ( AISetFilterLifePerMarker )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-set-filter-plane">Tactical AI Filter Movement Plane</a></strong> — ( AISetFilterPlane )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-set-filter-bits">Tactical AI Filter Unit Filter</a></strong> — ( AISetFilterBits )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-set-filter-shields">Tactical AI Filter Shields</a></strong> — ( AISetFilterShields )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-set-filter-energy">Tactical AI Filter Energy</a></strong> — ( AISetFilterEnergy )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignsvoidsc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidsc2campaign">#</a> campaigns/void.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/void.sc2campaign/base.sc2data/TriggerLibs/Tactical/TactCampAI.galaxy#L845">TactCampAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L845</span>
+AISetFilterMarker(filter, c_noMarkersMin, c_noMarkersMax, mark)
+</code></pre>
+<h4 id="modscoresc2mod"><a class="markdownIt-Anchor" href="#modscoresc2mod">#</a> mods/core.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/core.sc2mod/base.sc2data/TriggerLibs/Tactical/TactProtAI.galaxy#L813">TactProtAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L813</span>
+AISetFilterMarker(filter, c_noMarkersMin, c_noMarkersMax, mark)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1564</span>
+AISetFilterMarker(filter, c_noMarkersMin, c_noMarkersMax, mark)
+</code></pre>
+<h4 id="modscoresc2mod-2"><a class="markdownIt-Anchor" href="#modscoresc2mod-2">#</a> mods/core.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/core.sc2mod/base.sc2data/TriggerLibs/Tactical/TactTerrAI.galaxy#L51">TactTerrAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L51</span>
+AISetFilterMarker(filter, c_noMarkersMin, c_noMarkersMax, mark)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1168</span>
+AISetFilterMarker(filter, c_noMarkersMin, c_noMarkersMax, mark)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1188</span>
+AISetFilterMarker(filter, c_noMarkersMin, c_noMarkersMax, mark)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1236</span>
+AISetFilterMarker(filter, c_noMarkersMin, c_noMarkersMax, mark)
+</code></pre>
+<h4 id="modscoresc2mod-3"><a class="markdownIt-Anchor" href="#modscoresc2mod-3">#</a> mods/core.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/core.sc2mod/base.sc2data/TriggerLibs/Tactical/TactZergAI.galaxy#L34">TactZergAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L34</span>
+AISetFilterMarker(filter, c_noMarkersMin, c_noMarkersMax, mark)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L311</span>
+AISetFilterMarker(filter, c_noMarkersMin, c_noMarkersMax, mark)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L493</span>
+AISetFilterMarker(filter, c_noMarkersMin, c_noMarkersMax, mark)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L503</span>
+AISetFilterMarker(filter, c_noMarkersMin, c_noMarkersMax, gameMark)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L534</span>
+AISetFilterMarker(filter, c_noMarkersMin, c_noMarkersMax, gameMark)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L965</span>
+AISetFilterMarker(filter, c_noMarkersMin, c_noMarkersMax, mark)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1038</span>
+AISetFilterMarker(filter, c_noMarkersMin, c_noMarkersMax, mark)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/TriggerLibs/Tactical/TactCampAI.galaxy#L80">TactCampAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L80</span>
+AISetFilterMarker(filter, c_noMarkersMin, c_noMarkersMax, mark)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L221</span>
+AISetFilterMarker(filter, c_noMarkersMin, c_noMarkersMax, mark)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1655</span>
+AISetFilterMarker(filter, c_noMarkersMin, c_noMarkersMax, mark)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod-2"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod-2">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/TriggerLibs/Tactical/TactProtAI.galaxy#L1558">TactProtAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1558</span>
+AISetFilterMarker(filter, c_noMarkersMin, c_noMarkersMax, mark)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod-3"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod-3">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/TriggerLibs/Tactical/TactTerrAI.galaxy#L56">TactTerrAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L56</span>
+AISetFilterMarker(filter, c_noMarkersMin, c_noMarkersMax, mark)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1141</span>
+AISetFilterMarker(filter, c_noMarkersMin, c_noMarkersMax, mark)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1161</span>
+AISetFilterMarker(filter, c_noMarkersMin, c_noMarkersMax, mark)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1208</span>
+AISetFilterMarker(filter, c_noMarkersMin, c_noMarkersMax, mark)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod-4"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod-4">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/TriggerLibs/Tactical/TactZergAI.galaxy#L32">TactZergAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L32</span>
+AISetFilterMarker(filter, c_noMarkersMin, c_noMarkersMax, mark)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L383</span>
+AISetFilterMarker(filter, c_noMarkersMin, c_noMarkersMax, mark)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L704</span>
+AISetFilterMarker(filter, c_noMarkersMin, c_noMarkersMax, mark)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L714</span>
+AISetFilterMarker(filter, c_noMarkersMin, c_noMarkersMax, gameMark)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L745</span>
+AISetFilterMarker(filter, c_noMarkersMin, c_noMarkersMax, gameMark)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1174</span>
+AISetFilterMarker(filter, c_noMarkersMin, c_noMarkersMax, mark)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1247</span>
+AISetFilterMarker(filter, c_noMarkersMin, c_noMarkersMax, mark)
+</code></pre>
+<h4 id="modswarcoopwarclassicsystemsc2mod"><a class="markdownIt-Anchor" href="#modswarcoopwarclassicsystemsc2mod">#</a> mods/warcoop/warclassicsystem.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/warcoop/warclassicsystem.sc2mod/base.sc2data/TriggerLibs/Tactical/TacticalAIWar3.galaxy#L143">TacticalAIWar3.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L143</span>
+AISetFilterMarker(filter, c_noMarkersMin, c_noMarkersMax, mark)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L192</span>
+AISetFilterMarker(filterKillable, c_noMarkersMin, c_noMarkersMax, mark)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L193</span>
+AISetFilterMarker(filterKillableBonus, c_noMarkersMin, c_noMarkersMax, mark)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

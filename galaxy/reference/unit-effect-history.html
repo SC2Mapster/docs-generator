@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Effect History Of Unit / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Effect History Of Unit"/>
+                <meta property="og:description" content="Returns an Effect History object that can be used to inspect the history of effects for a unit.  In order for a unit to register effects to its history, the unit must specify an Effect History Limit value, and any effects you want to track must specify a Caster History value.  The Caster History value specifies the category under which you want to track the effect.  You can use Effect History Entry Type to query the category for an Effect History entry.  A max count of 0 (the default) will get all available entries.
+
+Returns: effecthistory"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="effect-history-of-unit"><a class="markdownIt-Anchor" href="#effect-history-of-unit">#</a> Effect History Of Unit</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Effect History of Unit <strong>unit</strong> with <strong>maxCount</strong> entries.<br>
+<em>Flags</em> — <code>Native</code> | <code>Function</code></p>
+</blockquote>
+<p>Returns an Effect History object that can be used to inspect the history of effects for a unit.  In order for a unit to register effects to its history, the unit must specify an Effect History Limit value, and any effects you want to track must specify a Caster History value.  The Caster History value specifies the category under which you want to track the effect.  You can use Effect History Entry Type to query the category for an Effect History entry.  A max count of 0 (the default) will get all available entries.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>unit</code> — Unit</li>
+<li><code>int</code> — Max Count</li>
+</ul>
+<p>Returns — <code>effecthistory</code></p>
+<pre class="hljs"><code><span class="hljs-function">native effecthistory <span class="hljs-title">UnitEffectHistory</span><span class="hljs-params">(
+	unit inUnit,
+	<span class="hljs-keyword">int</span> inMaxCount,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#effect-history">Effect History</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/effect-history-count">Effect History Count</a></strong> — ( EffectHistoryCount )</li>
+<li><em><strong>[F]</strong></em> — <code>effecthistory</code> — <strong><a href="/galaxy/reference/unit-effect-history">Effect History Of Unit</a></strong> — ( UnitEffectHistory )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="modsheroesdatastormmod"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/GameLib.galaxy#L1887">GameLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1887</span>
+UnitEffectHistory(lp_playerHero, libGame_gv_deathRecap_MaxEffectsInHistory_C)
+</code></pre>
+<h4 id="modsheroesdatastormmod-2"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-2">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/UILib.galaxy#L9346">UILib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L9346</span>
+UnitEffectHistory(lv_unit, <span class="hljs-number">0</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

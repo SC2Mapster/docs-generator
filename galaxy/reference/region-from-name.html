@@ -1,0 +1,401 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Region From Name / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Region From Name"/>
+                <meta property="og:description" content="Returns a pre-placed region with the given name.
+
+Returns: region"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="region-from-name"><a class="markdownIt-Anchor" href="#region-from-name">#</a> Region From Name</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Region named <strong>name</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Function</code></p>
+</blockquote>
+<p>Returns a pre-placed region with the given name.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>string</code> — Name</li>
+</ul>
+<p>Returns — <code>region</code></p>
+<pre class="hljs"><code><span class="hljs-function">native region <span class="hljs-title">RegionFromName</span><span class="hljs-params">(<span class="hljs-built_in">string</span> name)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#region-useful-regions">Region / Useful Regions</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>region</code> — <strong><a href="/galaxy/reference/region-empty">Empty Region</a></strong> — ( RegionEmpty )</li>
+<li><em><strong>[F]</strong></em> — <code>region</code> — <strong><a href="/galaxy/reference/region-entire-map">Entire Map</a></strong> — ( RegionEntireMap )</li>
+<li><em><strong>[F]</strong></em> — <code>region</code> — <strong><a href="/galaxy/reference/region-playable-map">Playable Map Area</a></strong> — ( RegionPlayableMap )</li>
+<li><em><strong>[F]</strong></em> — <code>region</code> — <strong><a href="/galaxy/reference/region-from-name">Region From Name</a></strong> — ( RegionFromName )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/region-playable-map-set">Set Playable Map Area</a></strong> — ( RegionPlayableMapSet )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignsswarmsc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmsc2campaign">#</a> campaigns/swarm.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarm.sc2campaign/base.sc2maps/maps/campaign/voidprologue/voidprologue02.sc2map/MapScript.galaxy#L1718">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1718</span>
+RegionFromName((<span class="hljs-string">"Fissure "</span> + IntToString((gv_coreOnCycle + <span class="hljs-number">1</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1728</span>
+RegionFromName((<span class="hljs-string">"Fissure "</span> + IntToString(gv_extraCycleTracker)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1859</span>
+RegionFromName((<span class="hljs-string">"Bonus Objective Activate "</span> + IntToString(lv_bonusIndex)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1864</span>
+RegionFromName((<span class="hljs-string">"Bonus Objective Activate "</span> + IntToString(lv_bonusIndex)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1866</span>
+RegionFromName((<span class="hljs-string">"Bonus Objective Activate "</span> + IntToString(lv_bonusIndex)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1873</span>
+RegionFromName((<span class="hljs-string">"Bonus Objective Activate "</span> + IntToString(lv_bonusIndex)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1937</span>
+RegionFromName((<span class="hljs-string">"Bonus Objective Activate "</span> + IntToString(lv_bonusIndex)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1992</span>
+RegionFromName((<span class="hljs-string">"Bonus Objective Activate "</span> + IntToString(lv_bonusIndex)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1994</span>
+RegionFromName((<span class="hljs-string">"Bonus Objective Activate "</span> + IntToString(lv_bonusIndex)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1718</span>
+RegionFromName((<span class="hljs-string">"Fissure "</span> + IntToString((gv_coreOnCycle + <span class="hljs-number">1</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1728</span>
+RegionFromName((<span class="hljs-string">"Fissure "</span> + IntToString(gv_extraCycleTracker)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1859</span>
+RegionFromName((<span class="hljs-string">"Bonus Objective Activate "</span> + IntToString(lv_bonusIndex)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1864</span>
+RegionFromName((<span class="hljs-string">"Bonus Objective Activate "</span> + IntToString(lv_bonusIndex)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1866</span>
+RegionFromName((<span class="hljs-string">"Bonus Objective Activate "</span> + IntToString(lv_bonusIndex)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1873</span>
+RegionFromName((<span class="hljs-string">"Bonus Objective Activate "</span> + IntToString(lv_bonusIndex)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1937</span>
+RegionFromName((<span class="hljs-string">"Bonus Objective Activate "</span> + IntToString(lv_bonusIndex)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1992</span>
+RegionFromName((<span class="hljs-string">"Bonus Objective Activate "</span> + IntToString(lv_bonusIndex)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1994</span>
+RegionFromName((<span class="hljs-string">"Bonus Objective Activate "</span> + IntToString(lv_bonusIndex)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1668</span>
+RegionFromName((<span class="hljs-string">"MoveRegion 0"</span> + IntToString(lv_i)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1672</span>
+RegionFromName((<span class="hljs-string">"MoveRegion "</span> + IntToString(lv_i)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1017</span>
+RegionFromName((<span class="hljs-string">"Raynor Base "</span> + IntToString(lp_base) + <span class="hljs-string">" Patrol Stabilizer "</span> + IntToString(lp_stabilizer)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1024</span>
+RegionFromName((<span class="hljs-string">"Raynor Base "</span> + IntToString(lp_base) + <span class="hljs-string">" Patrol Stabilizer "</span> + IntToString(lp_stabilizer)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1031</span>
+RegionFromName((<span class="hljs-string">"Raynor Base "</span> + IntToString(lp_base) + <span class="hljs-string">" Patrol Stabilizer "</span> + IntToString(lp_stabilizer)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1815</span>
+RegionFromName((<span class="hljs-string">"Hull Breach "</span> + IntToString(lv_index)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2329</span>
+RegionFromName((<span class="hljs-string">"Stabilizer "</span> + IntToString(lv_index)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2330</span>
+RegionFromName((<span class="hljs-string">"Generator Secure Zone "</span> + IntToString(lv_index)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2809</span>
+RegionFromName((<span class="hljs-string">"Scrambler Region "</span> + IntToString(lv_index)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3248</span>
+RegionFromName((<span class="hljs-string">"Exploding Cliff Building "</span> + IntToString(lv_index)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3252</span>
+RegionFromName((<span class="hljs-string">"Damaged Cliff Building "</span> + IntToString(lv_index)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3256</span>
+RegionFromName((<span class="hljs-string">"Korhal Debris "</span> + IntToString(lv_index)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1862</span>
+RegionFromName((<span class="hljs-string">"Enemy Camp "</span> + IntToString(lv_enemyCampIndex)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1888</span>
+RegionFromName((<span class="hljs-string">"Enemy Camp "</span> + IntToString(lv_enemyCampIndex)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L674</span>
+RegionFromName((<span class="hljs-string">"Glacius Assault Region "</span> + IntToString(lp_region)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L537</span>
+RegionFromName((<span class="hljs-string">"Cybros Lock Area 0"</span> + IntToString((gv_objectiveStasisLocksCurrent + <span class="hljs-number">1</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4434</span>
+RegionFromName((<span class="hljs-string">"Zerg Wander Region 0"</span> + IntToString(lv_i)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2428</span>
+RegionFromName((<span class="hljs-string">"Purifier Spawn Reveal "</span> + IntToString(lv_regionIndex)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2504</span>
+RegionFromName((<span class="hljs-string">"Power Line 0"</span> + IntToString(lv_powerInhibitorIndex)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2507</span>
+RegionFromName((<span class="hljs-string">"Power Line "</span> + IntToString(lv_powerInhibitorIndex)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6449</span>
+RegionFromName((<span class="hljs-string">"Activate Stasis Pods "</span> + IntToString(gv_midContainmentIndex)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6748</span>
+RegionFromName((<span class="hljs-string">"Purifier Spawn Reveal "</span> + IntToString(lv_regionIndex)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1376</span>
+RegionFromName((<span class="hljs-string">"Capture Region "</span> + IntToString(lv_index)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1377</span>
+RegionFromName((<span class="hljs-string">"First Capture "</span> + IntToString(lv_index)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1378</span>
+RegionFromName((<span class="hljs-string">"Defense Region "</span> + IntToString(lv_index)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1379</span>
+RegionFromName((<span class="hljs-string">"Mechanism Reveal "</span> + IntToString(lv_index)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1380</span>
+RegionFromName((<span class="hljs-string">"Mechanism "</span> + IntToString(lv_index)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1383</span>
+RegionFromName((<span class="hljs-string">"Mechanism "</span> + IntToString(lv_index) + <span class="hljs-string">" Bullies - Stage 1"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1384</span>
+RegionFromName((<span class="hljs-string">"Mechanism "</span> + IntToString(lv_index) + <span class="hljs-string">" Bullies - Stage 2"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1385</span>
+RegionFromName((<span class="hljs-string">"Mechanism "</span> + IntToString(lv_index) + <span class="hljs-string">" Bullies - Stage 3"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2193</span>
+RegionFromName((<span class="hljs-string">"Gate "</span> + IntToString(lv_i)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7064</span>
+RegionFromName((<span class="hljs-string">"Autoreveal "</span> + IntToString(lv_i)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1523</span>
+RegionFromName((<span class="hljs-string">"Blackout Large 1-"</span> + IntToString(lv_i)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1524</span>
+RegionFromName((<span class="hljs-string">"Blackout Large 1-"</span> + IntToString(lv_i)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1528</span>
+RegionFromName((<span class="hljs-string">"Blackout Small 1-"</span> + IntToString(lv_i)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1529</span>
+RegionFromName((<span class="hljs-string">"Blackout Small 1-"</span> + IntToString(lv_i)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1535</span>
+RegionFromName((<span class="hljs-string">"Blackout Large 2-"</span> + IntToString(lv_i)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1536</span>
+RegionFromName((<span class="hljs-string">"Blackout Large 2-"</span> + IntToString(lv_i)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1542</span>
+RegionFromName((<span class="hljs-string">"Blackout Large 3-"</span> + IntToString(lv_i)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1543</span>
+RegionFromName((<span class="hljs-string">"Blackout Large 3-"</span> + IntToString(lv_i)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1547</span>
+RegionFromName((<span class="hljs-string">"Blackout Small 3-"</span> + IntToString(lv_i)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1548</span>
+RegionFromName((<span class="hljs-string">"Blackout Small 3-"</span> + IntToString(lv_i)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1668</span>
+RegionFromName((<span class="hljs-string">"MoveRegion 0"</span> + IntToString(lv_i)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1672</span>
+RegionFromName((<span class="hljs-string">"MoveRegion "</span> + IntToString(lv_i)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1017</span>
+RegionFromName((<span class="hljs-string">"Raynor Base "</span> + IntToString(lp_base) + <span class="hljs-string">" Patrol Stabilizer "</span> + IntToString(lp_stabilizer)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1024</span>
+RegionFromName((<span class="hljs-string">"Raynor Base "</span> + IntToString(lp_base) + <span class="hljs-string">" Patrol Stabilizer "</span> + IntToString(lp_stabilizer)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1031</span>
+RegionFromName((<span class="hljs-string">"Raynor Base "</span> + IntToString(lp_base) + <span class="hljs-string">" Patrol Stabilizer "</span> + IntToString(lp_stabilizer)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1815</span>
+RegionFromName((<span class="hljs-string">"Hull Breach "</span> + IntToString(lv_index)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2329</span>
+RegionFromName((<span class="hljs-string">"Stabilizer "</span> + IntToString(lv_index)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2330</span>
+RegionFromName((<span class="hljs-string">"Generator Secure Zone "</span> + IntToString(lv_index)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2809</span>
+RegionFromName((<span class="hljs-string">"Scrambler Region "</span> + IntToString(lv_index)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3248</span>
+RegionFromName((<span class="hljs-string">"Exploding Cliff Building "</span> + IntToString(lv_index)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3252</span>
+RegionFromName((<span class="hljs-string">"Damaged Cliff Building "</span> + IntToString(lv_index)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3256</span>
+RegionFromName((<span class="hljs-string">"Korhal Debris "</span> + IntToString(lv_index)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1862</span>
+RegionFromName((<span class="hljs-string">"Enemy Camp "</span> + IntToString(lv_enemyCampIndex)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1888</span>
+RegionFromName((<span class="hljs-string">"Enemy Camp "</span> + IntToString(lv_enemyCampIndex)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L674</span>
+RegionFromName((<span class="hljs-string">"Glacius Assault Region "</span> + IntToString(lp_region)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L537</span>
+RegionFromName((<span class="hljs-string">"Cybros Lock Area 0"</span> + IntToString((gv_objectiveStasisLocksCurrent + <span class="hljs-number">1</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4434</span>
+RegionFromName((<span class="hljs-string">"Zerg Wander Region 0"</span> + IntToString(lv_i)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2428</span>
+RegionFromName((<span class="hljs-string">"Purifier Spawn Reveal "</span> + IntToString(lv_regionIndex)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2504</span>
+RegionFromName((<span class="hljs-string">"Power Line 0"</span> + IntToString(lv_powerInhibitorIndex)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2507</span>
+RegionFromName((<span class="hljs-string">"Power Line "</span> + IntToString(lv_powerInhibitorIndex)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6449</span>
+RegionFromName((<span class="hljs-string">"Activate Stasis Pods "</span> + IntToString(gv_midContainmentIndex)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6748</span>
+RegionFromName((<span class="hljs-string">"Purifier Spawn Reveal "</span> + IntToString(lv_regionIndex)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1376</span>
+RegionFromName((<span class="hljs-string">"Capture Region "</span> + IntToString(lv_index)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1377</span>
+RegionFromName((<span class="hljs-string">"First Capture "</span> + IntToString(lv_index)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1378</span>
+RegionFromName((<span class="hljs-string">"Defense Region "</span> + IntToString(lv_index)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1379</span>
+RegionFromName((<span class="hljs-string">"Mechanism Reveal "</span> + IntToString(lv_index)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1380</span>
+RegionFromName((<span class="hljs-string">"Mechanism "</span> + IntToString(lv_index)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1383</span>
+RegionFromName((<span class="hljs-string">"Mechanism "</span> + IntToString(lv_index) + <span class="hljs-string">" Bullies - Stage 1"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1384</span>
+RegionFromName((<span class="hljs-string">"Mechanism "</span> + IntToString(lv_index) + <span class="hljs-string">" Bullies - Stage 2"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1385</span>
+RegionFromName((<span class="hljs-string">"Mechanism "</span> + IntToString(lv_index) + <span class="hljs-string">" Bullies - Stage 3"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2193</span>
+RegionFromName((<span class="hljs-string">"Gate "</span> + IntToString(lv_i)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7064</span>
+RegionFromName((<span class="hljs-string">"Autoreveal "</span> + IntToString(lv_i)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1523</span>
+RegionFromName((<span class="hljs-string">"Blackout Large 1-"</span> + IntToString(lv_i)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1524</span>
+RegionFromName((<span class="hljs-string">"Blackout Large 1-"</span> + IntToString(lv_i)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1528</span>
+RegionFromName((<span class="hljs-string">"Blackout Small 1-"</span> + IntToString(lv_i)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1529</span>
+RegionFromName((<span class="hljs-string">"Blackout Small 1-"</span> + IntToString(lv_i)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1535</span>
+RegionFromName((<span class="hljs-string">"Blackout Large 2-"</span> + IntToString(lv_i)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1536</span>
+RegionFromName((<span class="hljs-string">"Blackout Large 2-"</span> + IntToString(lv_i)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1542</span>
+RegionFromName((<span class="hljs-string">"Blackout Large 3-"</span> + IntToString(lv_i)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1543</span>
+RegionFromName((<span class="hljs-string">"Blackout Large 3-"</span> + IntToString(lv_i)))
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

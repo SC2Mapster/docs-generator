@@ -1,0 +1,314 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Power Level / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Power Level"/>
+                <meta property="og:description" content="Returns the power level provided to a player at the specified point.
+
+Returns: int"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="power-level"><a class="markdownIt-Anchor" href="#power-level">#</a> Power Level</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Power level for <strong>inPlayer</strong> at <strong>inPosition</strong> with <strong>inType</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Function</code></p>
+</blockquote>
+<p>Returns the power level provided to a player at the specified point.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> — Player</li>
+<li><code>point</code> — Position</li>
+<li><code>string</code> — Type</li>
+</ul>
+<p>Returns — <code>int</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">int</span> <span class="hljs-title">PowerLevel</span><span class="hljs-params">(
+	<span class="hljs-keyword">int</span> inPlayer,
+	point inPos,
+	<span class="hljs-built_in">string</span> inLink,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#environment-creep-and-power">Environment / Creep And Power</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/creep-set-speed">Set Creep Speed</a></strong> — ( CreepSetSpeed )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/creep-modify">Modify Creep</a></strong> — ( CreepModify )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/creep-is-present">Creep Is Present</a></strong> — ( CreepIsPresent )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/creep-adjacent">Creep Adjacent</a></strong> — ( CreepAdjacent )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/power-level-deprecated">FunctionDef/Name/lib_Ntve_00000250</a></strong> — ( PowerLevel )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/power-level">Power Level</a></strong> — ( PowerLevel )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/power-is-provided-by-deprecated">FunctionDef/Name/lib_Ntve_00000251</a></strong> — ( PowerIsProvidedBy )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/power-is-provided-by">Power Is Provided By</a></strong> — ( PowerIsProvidedBy )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/tzeratul02.sc2map/MapScript.galaxy#L2198">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2198</span>
+PowerLevel(gv_p1_USER, UnitGetPosition(UnitFromId(<span class="hljs-number">25</span>)), <span class="hljs-string">"PowerSource"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2232</span>
+PowerLevel(gv_p1_USER, UnitGetPosition(UnitFromId(<span class="hljs-number">17</span>)), <span class="hljs-string">"PowerSource"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2266</span>
+PowerLevel(gv_p1_USER, UnitGetPosition(UnitFromId(<span class="hljs-number">10</span>)), <span class="hljs-string">"PowerSource"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2300</span>
+PowerLevel(gv_p1_USER, UnitGetPosition(UnitFromId(<span class="hljs-number">162</span>)), <span class="hljs-string">"PowerSource"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2334</span>
+PowerLevel(gv_p1_USER, UnitGetPosition(UnitFromId(<span class="hljs-number">11</span>)), <span class="hljs-string">"PowerSource"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2368</span>
+PowerLevel(gv_p1_USER, UnitGetPosition(UnitFromId(<span class="hljs-number">199</span>)), <span class="hljs-string">"PowerSource"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3038</span>
+PowerLevel(gv_p1_USER, UnitGetPosition(UnitFromId(<span class="hljs-number">43</span>)), <span class="hljs-string">"PowerSource"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3080</span>
+PowerLevel(gv_p1_USER, UnitGetPosition(UnitFromId(<span class="hljs-number">563</span>)), <span class="hljs-string">"PowerSource"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3124</span>
+PowerLevel(gv_p1_USER, UnitGetPosition(UnitFromId(<span class="hljs-number">179</span>)), <span class="hljs-string">"PowerSource"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1218</span>
+PowerLevel(gv_p01_USER, UnitGetPosition(UnitFromId(<span class="hljs-number">88</span>)), <span class="hljs-string">"PowerSource"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1263</span>
+PowerLevel(gv_p01_USER, UnitGetPosition(UnitFromId(<span class="hljs-number">173</span>)), <span class="hljs-string">"PowerSource"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1313</span>
+PowerLevel(gv_p01_USER, UnitGetPosition(UnitFromId(<span class="hljs-number">287</span>)), <span class="hljs-string">"PowerSource"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1362</span>
+PowerLevel(gv_p01_USER, UnitGetPosition(UnitFromId(<span class="hljs-number">285</span>)), <span class="hljs-string">"PowerSource"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1406</span>
+PowerLevel(gv_p01_USER, UnitGetPosition(UnitFromId(<span class="hljs-number">29</span>)), <span class="hljs-string">"PowerSource"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1446</span>
+PowerLevel(gv_p01_USER, UnitGetPosition(UnitFromId(<span class="hljs-number">170</span>)), <span class="hljs-string">"PowerSource"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1486</span>
+PowerLevel(gv_p01_USER, UnitGetPosition(UnitFromId(<span class="hljs-number">174</span>)), <span class="hljs-string">"PowerSource"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2198</span>
+PowerLevel(gv_p1_USER, UnitGetPosition(UnitFromId(<span class="hljs-number">25</span>)), <span class="hljs-string">"PowerSource"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2232</span>
+PowerLevel(gv_p1_USER, UnitGetPosition(UnitFromId(<span class="hljs-number">17</span>)), <span class="hljs-string">"PowerSource"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2266</span>
+PowerLevel(gv_p1_USER, UnitGetPosition(UnitFromId(<span class="hljs-number">10</span>)), <span class="hljs-string">"PowerSource"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2300</span>
+PowerLevel(gv_p1_USER, UnitGetPosition(UnitFromId(<span class="hljs-number">162</span>)), <span class="hljs-string">"PowerSource"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2334</span>
+PowerLevel(gv_p1_USER, UnitGetPosition(UnitFromId(<span class="hljs-number">11</span>)), <span class="hljs-string">"PowerSource"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2368</span>
+PowerLevel(gv_p1_USER, UnitGetPosition(UnitFromId(<span class="hljs-number">199</span>)), <span class="hljs-string">"PowerSource"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3038</span>
+PowerLevel(gv_p1_USER, UnitGetPosition(UnitFromId(<span class="hljs-number">43</span>)), <span class="hljs-string">"PowerSource"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3080</span>
+PowerLevel(gv_p1_USER, UnitGetPosition(UnitFromId(<span class="hljs-number">563</span>)), <span class="hljs-string">"PowerSource"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3124</span>
+PowerLevel(gv_p1_USER, UnitGetPosition(UnitFromId(<span class="hljs-number">179</span>)), <span class="hljs-string">"PowerSource"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1218</span>
+PowerLevel(gv_p01_USER, UnitGetPosition(UnitFromId(<span class="hljs-number">88</span>)), <span class="hljs-string">"PowerSource"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1263</span>
+PowerLevel(gv_p01_USER, UnitGetPosition(UnitFromId(<span class="hljs-number">173</span>)), <span class="hljs-string">"PowerSource"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1313</span>
+PowerLevel(gv_p01_USER, UnitGetPosition(UnitFromId(<span class="hljs-number">287</span>)), <span class="hljs-string">"PowerSource"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1362</span>
+PowerLevel(gv_p01_USER, UnitGetPosition(UnitFromId(<span class="hljs-number">285</span>)), <span class="hljs-string">"PowerSource"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1406</span>
+PowerLevel(gv_p01_USER, UnitGetPosition(UnitFromId(<span class="hljs-number">29</span>)), <span class="hljs-string">"PowerSource"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1446</span>
+PowerLevel(gv_p01_USER, UnitGetPosition(UnitFromId(<span class="hljs-number">170</span>)), <span class="hljs-string">"PowerSource"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1486</span>
+PowerLevel(gv_p01_USER, UnitGetPosition(UnitFromId(<span class="hljs-number">174</span>)), <span class="hljs-string">"PowerSource"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2532</span>
+PowerLevel(gv_pLAYER_01_USER, UnitGetPosition(UnitGroupUnit(gv_tBuildPylonGateways, <span class="hljs-number">1</span>)), <span class="hljs-string">"PowerSource"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2536</span>
+PowerLevel(gv_pLAYER_01_USER, UnitGetPosition(UnitGroupUnit(gv_tBuildPylonGateways, <span class="hljs-number">2</span>)), <span class="hljs-string">"PowerSource"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3768</span>
+PowerLevel(gv_pLAYER_01_USER, UnitGetPosition(UnitGroupUnit(gv_tBuildPylonGateways, <span class="hljs-number">1</span>)), <span class="hljs-string">"PowerSource"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3768</span>
+PowerLevel(gv_pLAYER_01_USER, UnitGetPosition(UnitGroupUnit(gv_tBuildPylonGateways, <span class="hljs-number">2</span>)), <span class="hljs-string">"PowerSource"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1350</span>
+PowerLevel(gv_pLAYER_01_USER, UnitGetPosition(UnitFromId(<span class="hljs-number">457</span>)), <span class="hljs-string">"PowerSource"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1350</span>
+PowerLevel(gv_pLAYER_01_USER, UnitGetPosition(UnitFromId(<span class="hljs-number">439</span>)), <span class="hljs-string">"PowerSource"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1350</span>
+PowerLevel(gv_pLAYER_01_USER, UnitGetPosition(UnitFromId(<span class="hljs-number">538</span>)), <span class="hljs-string">"PowerSource"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2190</span>
+PowerLevel(gv_pLAYER_01_USER, UnitGetPosition(gv_warpGate01), <span class="hljs-string">"PowerSource"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2198</span>
+PowerLevel(gv_pLAYER_01_USER, UnitGetPosition(gv_warpGate02), <span class="hljs-string">"PowerSource"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2206</span>
+PowerLevel(gv_pLAYER_01_USER, UnitGetPosition(gv_warpGate03), <span class="hljs-string">"PowerSource"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2481</span>
+PowerLevel(gv_pLAYER_08_NERAZIM, PointFromId(<span class="hljs-number">1477</span>), <span class="hljs-string">"PowerSource"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2481</span>
+PowerLevel(gv_pLAYER_08_NERAZIM, PointFromId(<span class="hljs-number">1478</span>), <span class="hljs-string">"PowerSource"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2586</span>
+PowerLevel(gv_pLAYER_09_TALDARIM, PointFromId(<span class="hljs-number">1479</span>), <span class="hljs-string">"PowerSource"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2586</span>
+PowerLevel(gv_pLAYER_09_TALDARIM, PointFromId(<span class="hljs-number">1480</span>), <span class="hljs-string">"PowerSource"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2689</span>
+PowerLevel(gv_pLAYER_10_PURIFIER, PointFromId(<span class="hljs-number">1481</span>), <span class="hljs-string">"PowerSource"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2689</span>
+PowerLevel(gv_pLAYER_10_PURIFIER, PointFromId(<span class="hljs-number">1482</span>), <span class="hljs-string">"PowerSource"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1775</span>
+PowerLevel(gv_pLAYER_01_USER, UnitGetPosition(auto24921BCC_var), <span class="hljs-string">"PowerSource"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1816</span>
+PowerLevel(gv_pLAYER_01_USER, UnitGetPosition(autoC012A80F_var), <span class="hljs-string">"PowerSource"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2532</span>
+PowerLevel(gv_pLAYER_01_USER, UnitGetPosition(UnitGroupUnit(gv_tBuildPylonGateways, <span class="hljs-number">1</span>)), <span class="hljs-string">"PowerSource"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2536</span>
+PowerLevel(gv_pLAYER_01_USER, UnitGetPosition(UnitGroupUnit(gv_tBuildPylonGateways, <span class="hljs-number">2</span>)), <span class="hljs-string">"PowerSource"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3768</span>
+PowerLevel(gv_pLAYER_01_USER, UnitGetPosition(UnitGroupUnit(gv_tBuildPylonGateways, <span class="hljs-number">1</span>)), <span class="hljs-string">"PowerSource"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3768</span>
+PowerLevel(gv_pLAYER_01_USER, UnitGetPosition(UnitGroupUnit(gv_tBuildPylonGateways, <span class="hljs-number">2</span>)), <span class="hljs-string">"PowerSource"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1350</span>
+PowerLevel(gv_pLAYER_01_USER, UnitGetPosition(UnitFromId(<span class="hljs-number">457</span>)), <span class="hljs-string">"PowerSource"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1350</span>
+PowerLevel(gv_pLAYER_01_USER, UnitGetPosition(UnitFromId(<span class="hljs-number">439</span>)), <span class="hljs-string">"PowerSource"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1350</span>
+PowerLevel(gv_pLAYER_01_USER, UnitGetPosition(UnitFromId(<span class="hljs-number">538</span>)), <span class="hljs-string">"PowerSource"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2190</span>
+PowerLevel(gv_pLAYER_01_USER, UnitGetPosition(gv_warpGate01), <span class="hljs-string">"PowerSource"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2198</span>
+PowerLevel(gv_pLAYER_01_USER, UnitGetPosition(gv_warpGate02), <span class="hljs-string">"PowerSource"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2206</span>
+PowerLevel(gv_pLAYER_01_USER, UnitGetPosition(gv_warpGate03), <span class="hljs-string">"PowerSource"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2481</span>
+PowerLevel(gv_pLAYER_08_NERAZIM, PointFromId(<span class="hljs-number">1477</span>), <span class="hljs-string">"PowerSource"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2481</span>
+PowerLevel(gv_pLAYER_08_NERAZIM, PointFromId(<span class="hljs-number">1478</span>), <span class="hljs-string">"PowerSource"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2586</span>
+PowerLevel(gv_pLAYER_09_TALDARIM, PointFromId(<span class="hljs-number">1479</span>), <span class="hljs-string">"PowerSource"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2586</span>
+PowerLevel(gv_pLAYER_09_TALDARIM, PointFromId(<span class="hljs-number">1480</span>), <span class="hljs-string">"PowerSource"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2689</span>
+PowerLevel(gv_pLAYER_10_PURIFIER, PointFromId(<span class="hljs-number">1481</span>), <span class="hljs-string">"PowerSource"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2689</span>
+PowerLevel(gv_pLAYER_10_PURIFIER, PointFromId(<span class="hljs-number">1482</span>), <span class="hljs-string">"PowerSource"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1775</span>
+PowerLevel(gv_pLAYER_01_USER, UnitGetPosition(auto24921BCC_var), <span class="hljs-string">"PowerSource"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1816</span>
+PowerLevel(gv_pLAYER_01_USER, UnitGetPosition(autoC012A80F_var), <span class="hljs-string">"PowerSource"</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

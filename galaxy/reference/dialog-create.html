@@ -1,0 +1,422 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Create Dialog / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Create Dialog"/>
+                <meta property="og:description" content="Creates a dialog box of specified width, height, position on the screen with offsets
+
+Returns: dialog [ dialog ]"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="create-dialog"><a class="markdownIt-Anchor" href="#create-dialog">#</a> Create Dialog</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Create a <strong>modal</strong> dialog of size (<strong>width</strong>, <strong>height</strong>) at (<strong>offsetX</strong>, <strong>offsetY</strong>) relative to <strong>anchor</strong> of screen<br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Creates a dialog box of specified width, height, position on the screen with offsets</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> — Width</li>
+<li><code>int</code> — Height</li>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-anchor">Anchor</a> ]</em> — Anchor</li>
+<li><code>int</code> — OffsetX</li>
+<li><code>int</code> — OffsetY</li>
+<li><code>bool</code> <em>[ preset::<a href="/galaxy/reference/preset-modal-nonmodal-option">ModalNonmodalOption</a> ]</em> — Modal</li>
+</ul>
+<p>Returns — <code>int</code> <em>[ dialog ]</em></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">int</span> <span class="hljs-title">DialogCreate</span><span class="hljs-params">(
+	<span class="hljs-keyword">int</span> width,
+	<span class="hljs-keyword">int</span> height,
+	<span class="hljs-keyword">int</span> anchor,
+	<span class="hljs-keyword">int</span> offsetX,
+	<span class="hljs-keyword">int</span> offsetY,
+	<span class="hljs-keyword">bool</span> modal,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#dialog-dialogs">Dialog / Dialogs</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ dialog ]</em> — <strong><a href="/galaxy/reference/dialog-create">Create Dialog</a></strong> — ( DialogCreate )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/dialog-set-visible">Show/Hide Dialog</a></strong> — ( DialogSetVisible )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/dialog-set-title">Set Dialog Title</a></strong> — ( DialogSetTitle )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ dialog ]</em> — <strong><a href="/galaxy/reference/dialog-last-created">Last Created Dialog</a></strong> — ( DialogLastCreated )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/dialog-is-visible">Dialog Is Visible</a></strong> — ( DialogIsVisible )</li>
+<li><em><strong>[F]</strong></em> — <code>text</code> — <strong><a href="/galaxy/reference/dialog-get-title">Dialog Title</a></strong> — ( DialogGetTitle )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/challenges/protosscombat.sc2map/MapScript.galaxy#L1661">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1661</span>
+DialogCreate(<span class="hljs-number">500</span>, <span class="hljs-number">400</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L965</span>
+DialogCreate(<span class="hljs-number">500</span>, <span class="hljs-number">400</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1002</span>
+DialogCreate(<span class="hljs-number">500</span>, <span class="hljs-number">400</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L434</span>
+DialogCreate(<span class="hljs-number">500</span>, <span class="hljs-number">400</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L530</span>
+DialogCreate(<span class="hljs-number">500</span>, <span class="hljs-number">400</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L792</span>
+DialogCreate(<span class="hljs-number">500</span>, <span class="hljs-number">400</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1509</span>
+DialogCreate(<span class="hljs-number">500</span>, <span class="hljs-number">400</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1570</span>
+DialogCreate(<span class="hljs-number">500</span>, <span class="hljs-number">400</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3546</span>
+DialogCreate(<span class="hljs-number">1000</span>, <span class="hljs-number">100</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3578</span>
+DialogCreate((gv_bossHPBarWidth + <span class="hljs-number">0</span>), lv_barHight, c_anchorTopRight, <span class="hljs-number">10</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3601</span>
+DialogCreate(<span class="hljs-number">400</span>, <span class="hljs-number">30</span>, c_anchorTopRight, <span class="hljs-number">10</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3626</span>
+DialogCreate((gv_unitHPBarWidth + <span class="hljs-number">0</span>), lv_barHight, c_anchorTopRight, <span class="hljs-number">10</span>, <span class="hljs-number">55</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3649</span>
+DialogCreate(<span class="hljs-number">400</span>, <span class="hljs-number">30</span>, c_anchorTopRight, <span class="hljs-number">10</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3678</span>
+DialogCreate(<span class="hljs-number">10</span>, <span class="hljs-number">10</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3898</span>
+DialogCreate(<span class="hljs-number">2119</span>, <span class="hljs-number">1200</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8496</span>
+DialogCreate(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2954</span>
+DialogCreate(<span class="hljs-number">500</span>, <span class="hljs-number">400</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2322</span>
+DialogCreate(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2609</span>
+DialogCreate(<span class="hljs-number">800</span>, <span class="hljs-number">600</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3452</span>
+DialogCreate(<span class="hljs-number">2119</span>, <span class="hljs-number">1200</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3947</span>
+DialogCreate(<span class="hljs-number">1600</span>, <span class="hljs-number">1200</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4730</span>
+DialogCreate(<span class="hljs-number">100</span>, <span class="hljs-number">100</span>, c_anchorCenter, <span class="hljs-number">-50</span>, <span class="hljs-number">-50</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4809</span>
+DialogCreate(<span class="hljs-number">100</span>, <span class="hljs-number">100</span>, c_anchorCenter, <span class="hljs-number">-50</span>, <span class="hljs-number">-50</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5078</span>
+DialogCreate(<span class="hljs-number">2048</span>, <span class="hljs-number">1026</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10382</span>
+DialogCreate(<span class="hljs-number">1400</span>, <span class="hljs-number">400</span>, c_anchorBottom, <span class="hljs-number">0</span>, <span class="hljs-number">400</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10385</span>
+DialogCreate(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10670</span>
+DialogCreate(lp_width, lp_height, lp_anchor, lp_offsetX, lp_offsetY, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1248</span>
+DialogCreate(<span class="hljs-number">210</span>, <span class="hljs-number">90</span>, c_anchorLeft, <span class="hljs-number">42</span>, <span class="hljs-number">160</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1259</span>
+DialogCreate(<span class="hljs-number">1120</span>, <span class="hljs-number">1200</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3546</span>
+DialogCreate(<span class="hljs-number">1000</span>, <span class="hljs-number">100</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3578</span>
+DialogCreate((gv_bossHPBarWidth + <span class="hljs-number">0</span>), lv_barHight, c_anchorTopRight, <span class="hljs-number">10</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3601</span>
+DialogCreate(<span class="hljs-number">400</span>, <span class="hljs-number">30</span>, c_anchorTopRight, <span class="hljs-number">10</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3626</span>
+DialogCreate((gv_unitHPBarWidth + <span class="hljs-number">0</span>), lv_barHight, c_anchorTopRight, <span class="hljs-number">10</span>, <span class="hljs-number">55</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3649</span>
+DialogCreate(<span class="hljs-number">400</span>, <span class="hljs-number">30</span>, c_anchorTopRight, <span class="hljs-number">10</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3678</span>
+DialogCreate(<span class="hljs-number">10</span>, <span class="hljs-number">10</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3898</span>
+DialogCreate(<span class="hljs-number">2119</span>, <span class="hljs-number">1200</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8496</span>
+DialogCreate(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2954</span>
+DialogCreate(<span class="hljs-number">500</span>, <span class="hljs-number">400</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2322</span>
+DialogCreate(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2609</span>
+DialogCreate(<span class="hljs-number">800</span>, <span class="hljs-number">600</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3452</span>
+DialogCreate(<span class="hljs-number">2119</span>, <span class="hljs-number">1200</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3947</span>
+DialogCreate(<span class="hljs-number">1600</span>, <span class="hljs-number">1200</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4730</span>
+DialogCreate(<span class="hljs-number">100</span>, <span class="hljs-number">100</span>, c_anchorCenter, <span class="hljs-number">-50</span>, <span class="hljs-number">-50</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4809</span>
+DialogCreate(<span class="hljs-number">100</span>, <span class="hljs-number">100</span>, c_anchorCenter, <span class="hljs-number">-50</span>, <span class="hljs-number">-50</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5078</span>
+DialogCreate(<span class="hljs-number">2048</span>, <span class="hljs-number">1026</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10382</span>
+DialogCreate(<span class="hljs-number">1400</span>, <span class="hljs-number">400</span>, c_anchorBottom, <span class="hljs-number">0</span>, <span class="hljs-number">400</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10385</span>
+DialogCreate(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10670</span>
+DialogCreate(lp_width, lp_height, lp_anchor, lp_offsetX, lp_offsetY, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1248</span>
+DialogCreate(<span class="hljs-number">210</span>, <span class="hljs-number">90</span>, c_anchorLeft, <span class="hljs-number">42</span>, <span class="hljs-number">160</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1259</span>
+DialogCreate(<span class="hljs-number">1120</span>, <span class="hljs-number">1200</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L434</span>
+DialogCreate(<span class="hljs-number">500</span>, <span class="hljs-number">400</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1661</span>
+DialogCreate(<span class="hljs-number">500</span>, <span class="hljs-number">400</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L965</span>
+DialogCreate(<span class="hljs-number">500</span>, <span class="hljs-number">400</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1002</span>
+DialogCreate(<span class="hljs-number">500</span>, <span class="hljs-number">400</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L530</span>
+DialogCreate(<span class="hljs-number">500</span>, <span class="hljs-number">400</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L792</span>
+DialogCreate(<span class="hljs-number">500</span>, <span class="hljs-number">400</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1509</span>
+DialogCreate(<span class="hljs-number">500</span>, <span class="hljs-number">400</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1570</span>
+DialogCreate(<span class="hljs-number">500</span>, <span class="hljs-number">400</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="campaignslibertystorysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertystorysc2campaign">#</a> campaigns/libertystory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/libertystory.sc2campaign/base.sc2data/TriggerLibs/CampaignLib.galaxy#L1823">CampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1823</span>
+DialogCreate(FixedToInt(lv_w), FixedToInt(lv_h), lp_anchor, lv_x, lv_y, lp_modal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1950</span>
+DialogCreate(lp_width, lp_height, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2029</span>
+DialogCreate(<span class="hljs-number">1000</span>, <span class="hljs-number">600</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5672</span>
+DialogCreate(<span class="hljs-number">500</span>, <span class="hljs-number">50</span>, c_anchorBottom, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5681</span>
+DialogCreate(<span class="hljs-number">1600</span>, <span class="hljs-number">400</span>, c_anchorBottom, <span class="hljs-number">0</span>, <span class="hljs-number">70</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10570</span>
+DialogCreate(<span class="hljs-number">1500</span>, <span class="hljs-number">1100</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10947</span>
+DialogCreate(<span class="hljs-number">1500</span>, <span class="hljs-number">420</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11027</span>
+DialogCreate(<span class="hljs-number">900</span>, <span class="hljs-number">600</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11071</span>
+DialogCreate(<span class="hljs-number">800</span>, <span class="hljs-number">400</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13476</span>
+DialogCreate(<span class="hljs-number">400</span>, <span class="hljs-number">50</span>, c_anchorTop, <span class="hljs-number">-500</span>, <span class="hljs-number">140</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="campaignsswarmsc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmsc2campaign">#</a> campaigns/swarm.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarm.sc2campaign/base.sc2maps/maps/campaign/voidprologue/voidprologue03.sc2map/MapScript.galaxy#L5065">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L5065</span>
+DialogCreate(<span class="hljs-number">500</span>, <span class="hljs-number">400</span>, c_anchorTop, <span class="hljs-number">0</span>, <span class="hljs-number">60</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2346</span>
+DialogCreate(<span class="hljs-number">210</span>, <span class="hljs-number">75</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9861</span>
+DialogCreate(<span class="hljs-number">500</span>, <span class="hljs-number">400</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6409</span>
+DialogCreate(gv_buttonSizeWidth, gv_buttonSizeHeight, c_anchorCenter, gv_button1stPositionX, gv_button1stPositionY, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6424</span>
+DialogCreate(gv_buttonSizeWidth, gv_buttonSizeHeight, c_anchorCenter, gv_button2ndPositionX, gv_button2ndPositionY, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L761</span>
+DialogCreate(<span class="hljs-number">1600</span>, <span class="hljs-number">1200</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L720</span>
+DialogCreate(<span class="hljs-number">500</span>, <span class="hljs-number">400</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2843</span>
+DialogCreate(<span class="hljs-number">350</span>, <span class="hljs-number">132</span>, c_anchorTopRight, <span class="hljs-number">10</span>, <span class="hljs-number">70</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2346</span>
+DialogCreate(<span class="hljs-number">210</span>, <span class="hljs-number">75</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9861</span>
+DialogCreate(<span class="hljs-number">500</span>, <span class="hljs-number">400</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6409</span>
+DialogCreate(gv_buttonSizeWidth, gv_buttonSizeHeight, c_anchorCenter, gv_button1stPositionX, gv_button1stPositionY, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6424</span>
+DialogCreate(gv_buttonSizeWidth, gv_buttonSizeHeight, c_anchorCenter, gv_button2ndPositionX, gv_button2ndPositionY, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L761</span>
+DialogCreate(<span class="hljs-number">1600</span>, <span class="hljs-number">1200</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L720</span>
+DialogCreate(<span class="hljs-number">500</span>, <span class="hljs-number">400</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2843</span>
+DialogCreate(<span class="hljs-number">350</span>, <span class="hljs-number">132</span>, c_anchorTopRight, <span class="hljs-number">10</span>, <span class="hljs-number">70</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5065</span>
+DialogCreate(<span class="hljs-number">500</span>, <span class="hljs-number">400</span>, c_anchorTop, <span class="hljs-number">0</span>, <span class="hljs-number">60</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="campaignsswarmstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmstorysc2campaign">#</a> campaigns/swarmstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstory.sc2campaign/base.sc2data/TriggerLibs/SwarmCampaignLib.galaxy#L570">SwarmCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L570</span>
+DialogCreate(<span class="hljs-number">500</span>, <span class="hljs-number">400</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1480</span>
+DialogCreate(<span class="hljs-number">500</span>, <span class="hljs-number">400</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2033</span>
+DialogCreate(<span class="hljs-number">1600</span>, <span class="hljs-number">1200</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4420</span>
+DialogCreate(<span class="hljs-number">1000</span>, <span class="hljs-number">400</span>, c_anchorRight, <span class="hljs-number">-200</span>, (libSwaC_gv_zS_AchievementPosition + <span class="hljs-number">200</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6708</span>
+DialogCreate(<span class="hljs-number">500</span>, <span class="hljs-number">400</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7404</span>
+DialogCreate(<span class="hljs-number">500</span>, <span class="hljs-number">400</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8421</span>
+DialogCreate(<span class="hljs-number">400</span>, <span class="hljs-number">400</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8482</span>
+DialogCreate(<span class="hljs-number">1920</span>, <span class="hljs-number">1200</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8868</span>
+DialogCreate(<span class="hljs-number">1920</span>, <span class="hljs-number">1200</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9299</span>
+DialogCreate(<span class="hljs-number">500</span>, <span class="hljs-number">400</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="campaignsswarmstoryutilsc2mod"><a class="markdownIt-Anchor" href="#campaignsswarmstoryutilsc2mod">#</a> campaigns/swarmstoryutil.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstoryutil.sc2mod/base.sc2data/Lib281DEC45.galaxy#L813">Lib281DEC45.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L813</span>
+DialogCreate(<span class="hljs-number">500</span>, <span class="hljs-number">400</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5031</span>
+DialogCreate(<span class="hljs-number">400</span>, <span class="hljs-number">400</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5941</span>
+DialogCreate(<span class="hljs-number">500</span>, <span class="hljs-number">400</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6300</span>
+DialogCreate(<span class="hljs-number">1620</span>, <span class="hljs-number">1220</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6656</span>
+DialogCreate(<span class="hljs-number">1620</span>, <span class="hljs-number">1220</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7265</span>
+DialogCreate(<span class="hljs-number">750</span>, <span class="hljs-number">850</span>, c_anchorCenter, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

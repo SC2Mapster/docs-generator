@@ -1,0 +1,163 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Clear Control Group / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Clear Control Group"/>
+                <meta property="og:description" content="Removes all units from a control group for a player."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="clear-control-group"><a class="markdownIt-Anchor" href="#clear-control-group">#</a> Clear Control Group</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Clear control group <strong>controlGroup|Group Number</strong> for player <strong>player</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Removes all units from a control group for a player.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> — Player</li>
+<li><code>int</code> — Control Group</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">UnitControlGroupClear</span><span class="hljs-params">(
+	<span class="hljs-keyword">int</span> inPlayer,
+	<span class="hljs-keyword">int</span> inGroup,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#selection-control-groups">Selection / Control Groups</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>unitgroup</code> — <strong><a href="/galaxy/reference/unit-control-group">Control Group Units</a></strong> — ( UnitControlGroup )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-copy-unit-control-groups">Copy Unit Control Groups</a></strong> — ( libNtve_gf_CopyUnitControlGroups )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-control-group-add-unit">Add Unit To Control Group</a></strong> — ( UnitControlGroupAddUnit )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-control-group-add-units">Add Unit Group To Control Group</a></strong> — ( UnitControlGroupAddUnits )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-control-group-remove-unit">Remove Unit From Control Group</a></strong> — ( UnitControlGroupRemoveUnit )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-control-group-remove-units">Remove Unit Group From Control Group</a></strong> — ( UnitControlGroupRemoveUnits )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-control-group-clear">Clear Control Group</a></strong> — ( UnitControlGroupClear )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignsswarmsc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmsc2campaign">#</a> campaigns/swarm.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarm.sc2campaign/base.sc2maps/maps/campaign/swarm/zhybrid03.sc2map/MapScript.galaxy#L5380">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L5380</span>
+UnitControlGroupClear(gv_pLAYER_01_USER, auto9CE5C92E_var)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5380</span>
+UnitControlGroupClear(gv_pLAYER_01_USER, auto9CE5C92E_var)
+</code></pre>
+<h4 id="modsheroesdatastormmod"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/GameDataHelperLib.galaxy#L1864">GameDataHelperLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1864</span>
+UnitControlGroupClear(lv_lVPlayer, <span class="hljs-number">3</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1884</span>
+UnitControlGroupClear(lv_lVPlayer, <span class="hljs-number">2</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1900</span>
+UnitControlGroupClear(lv_lVPlayer, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13024</span>
+UnitControlGroupClear(lv_lVPlayer, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13025</span>
+UnitControlGroupClear(lv_lVPlayer, <span class="hljs-number">2</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13026</span>
+UnitControlGroupClear(lv_lVPlayer, <span class="hljs-number">3</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13027</span>
+UnitControlGroupClear(lv_lVPlayer, <span class="hljs-number">4</span>)
+</code></pre>
+<h4 id="modsheromodssamurostormmod"><a class="markdownIt-Anchor" href="#modsheromodssamurostormmod">#</a> mods/heromods/samuro.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heromods/samuro.stormmod/base.stormdata/LibHSAM.galaxy#L498">LibHSAM.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L498</span>
+UnitControlGroupClear(libGame_gf_DebugHeroSwappedPlayer(), <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L542</span>
+UnitControlGroupClear(lv_Samuro, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L543</span>
+UnitControlGroupClear(lv_Samuro, <span class="hljs-number">2</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L544</span>
+UnitControlGroupClear(lv_Samuro, <span class="hljs-number">3</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L545</span>
+UnitControlGroupClear(lv_Samuro, <span class="hljs-number">4</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L658</span>
+UnitControlGroupClear(lv_samuroPlayer, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L659</span>
+UnitControlGroupClear(lv_samuroPlayer, <span class="hljs-number">2</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L660</span>
+UnitControlGroupClear(lv_samuroPlayer, <span class="hljs-number">3</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L661</span>
+UnitControlGroupClear(lv_samuroPlayer, <span class="hljs-number">4</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

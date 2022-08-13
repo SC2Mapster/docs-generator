@@ -1,0 +1,415 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Play Soundtrack / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Play Soundtrack"/>
+                <meta property="og:description" content="Plays a soundtrack for the specified player group.  If the Make Default parameter is set to Do, then the default soundtrack will be set to this soundtrack.  If this soundtrack is not continuous, it will repeat from the beginning when it ends, after the delay time."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="play-soundtrack"><a class="markdownIt-Anchor" href="#play-soundtrack">#</a> Play Soundtrack</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Play <strong>category</strong> <strong>soundtrackID|Soundtrack</strong> (<strong>index</strong>) for <strong>players</strong> (with cue <strong>cue</strong>) and <strong>makeDefault</strong> make default<br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Plays a soundtrack for the specified player group.  If the Make Default parameter is set to Do, then the default soundtrack will be set to this soundtrack.  If this soundtrack is not continuous, it will repeat from the beginning when it ends, after the delay time.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>playergroup</code> — Players</li>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-soundtrack-category">SoundtrackCategory</a> ]</em> — Category</li>
+<li><code>string</code> <em>[ gamelink::Soundtrack ]</em> — Soundtrack ID</li>
+<li><code>int</code> — Cue</li>
+<li><code>int</code> — Index</li>
+<li><code>bool</code> <em>[ preset::<a href="/galaxy/reference/preset-do-do-not-option">Do_Do_Not_Option</a> ]</em> — Make Default</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">SoundtrackPlay</span><span class="hljs-params">(
+	playergroup players,
+	<span class="hljs-keyword">int</span> category,
+	<span class="hljs-built_in">string</span> soundtrack,
+	<span class="hljs-keyword">int</span> cue,
+	<span class="hljs-keyword">int</span> index,
+	<span class="hljs-keyword">bool</span> makeDefault,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#sound-soundtracks">Sound / Soundtracks</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/soundtrack-play">Play Soundtrack</a></strong> — ( SoundtrackPlay )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/soundtrack-pause">Pause Soundtrack</a></strong> — ( SoundtrackPause )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/soundtrack-stop-current">Stop Soundtrack (Current)</a></strong> — ( SoundtrackStopCurrent )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/soundtrack-stop">Stop Soundtrack (Current &amp; Queued)</a></strong> — ( SoundtrackStop )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/soundtrack-wait">Wait For Soundtrack</a></strong> — ( SoundtrackWait )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/soundtrack-default">Set Default Soundtrack</a></strong> — ( SoundtrackDefault )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/soundtrack-set-continuous">Enable/Disable Soundtrack Continuous</a></strong> — ( SoundtrackSetContinuous )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/soundtrack-set-delay">Set Soundtrack Delay</a></strong> — ( SoundtrackSetDelay )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/soundtrack-set-shuffle">Enable/Disable Soundtrack Shuffle</a></strong> — ( SoundtrackSetShuffle )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/tarcade.sc2map/MapScript.galaxy#L594">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L594</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"LostViking_MusicGameLoop"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3198</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"LostViking_MusicBossFightIntro"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3208</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"LostViking_MusicBossFightLoop"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4092</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"LostViking_MusicLevelStartIntro"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4753</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"LostViking_MusicBossKilled"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5264</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"LostViking_MusicBossKilled"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5746</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"LostViking_MusicBossKilled"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8868</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"LostViking_MusicVictory"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L895</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"THanson01MusicIntro"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2288</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"THanson01MusicAlt"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4116</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryAmbience, <span class="hljs-string">"Ambience_Hanson01Night"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6336</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"THanson01MusicOutro"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1486</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"THanson02MusicEventB"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1488</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"THanson01MusicMain"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1489</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryAmbience, <span class="hljs-string">"Ambience_Meinhoff"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1509</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"THanson02MusicEventA"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1511</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"THanson02MusicAlt"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1512</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryAmbience, <span class="hljs-string">"Ambience_Hanson02Night"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2616</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"THanson02MusicSwann"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5402</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"THanson02MusicOutro"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1122</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"THanson03AMusicEventB"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1157</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"THanson03AMusicEventA"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5036</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"THanson03AMusicEventC"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6661</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"THanson03AMusicOutro"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3516</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"THanson03BMusicOutro"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4540</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"THanson03BMusicIntro"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L807</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"THorner01MusicIntro"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3587</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"THorner01MusicEventA"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3597</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"THorner01MusicEventA"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3607</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"THorner01MusicEventA"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3617</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"THorner01MusicEventA"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3627</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"THorner01MusicEventA"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3638</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"THorner01MusicEventA"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3648</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"THorner01MusicEventA"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5927</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"THorner01MusicOutro"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L939</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"THorner02MusicIntro"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5487</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"THorner02MusicEventA"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5757</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"THorner02MusicOutro"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L533</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"THorner03MusicIntro"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1213</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"THorner03MusicAlt"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3474</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"THorner03MusicSwann"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5522</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"THorner03MusicEventA"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5864</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"THorner03MusicOutro"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2809</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"THorner04MusicSwann"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5409</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"THorner04MusicEventB"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6348</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"THorner04MusicIntro"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6618</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"THorner04MusicEventA"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7127</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"THorner04MusicOutro"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2951</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"THorner05SMusicEventA"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3865</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"THorner05SMusicEventA"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4689</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"THorner05SMusicEventA"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5130</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"THorner05SMusicEventA"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5485</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"THorner05SMusicEventE"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5625</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"THorner05SMusicEventA"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11299</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"THorner05SMusicIntro"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11636</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"THorner05SMusicEventB"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12013</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"THorner05SMusicEventC"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12223</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"THorner05SMusicEventD"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L575</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"TRaynor01MusicIntro"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1771</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"TRaynor01MusicEventA"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5582</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"TRaynor01MusicEventB"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5822</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"TRaynor01MusicOutro"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L610</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"TRaynor02MusicMain"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4922</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"TRaynor02MusicOutro"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L881</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"TRaynor03MusicMain2"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L999</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"TRaynor03MusicEventA"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1447</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"TRaynor03MusicMain3"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3505</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"TRaynor03MusicMain3"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5194</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"TRaynor03MusicOutro"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L17788</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"EasterEggMusic_TerranUpTheNight"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L28655</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"TRaynor01MusicBriefing"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L28790</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"TRaynor02MusicBriefing"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L28930</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"TRaynor03MusicBriefing"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L29100</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"THanson01MusicBriefing"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L29250</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"THanson02MusicBriefing"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L29468</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"THanson03AMusicBriefing"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L29478</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"THanson03AMusicBriefing"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L29642</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"THanson03BMusicBriefing"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L29807</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"THorner01MusicBriefing"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2770</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"TTosh01MusicEventA"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5216</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"TTosh01MusicOutro"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1263</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"TTosh02MusicEventA"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4292</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"TTosh02MusicOutro"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L390</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"TTosh03AMusicEventA"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2098</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"TTosh03AMusicEventB"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2469</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"TTosh03AMusicEventB"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5298</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"TTosh03AMusicOutro"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2698</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"TTosh03BMusicEventB"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5995</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"TTosh03BMusicEventA"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6276</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"TTosh03BMusicEventC"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6498</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"TTosh03BMusicOutro"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1597</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"TTychus01MusicSwann"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1845</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"TTychus01MusicAlt"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5088</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"TTychus01MusicOutro"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5218</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"TTychus02MusicAlt"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5435</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"TTychus02MusicMain"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5797</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"TTychus02MusicOutro"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L960</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"TTychus03MusicIntro"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2888</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"TTychus03MusicEventA"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2928</span>
+SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, <span class="hljs-string">"TTychus03MusicEventB"</span>, c_soundtrackCueAny, c_soundtrackIndexAny, <span class="hljs-literal">false</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

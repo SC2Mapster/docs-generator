@@ -1,0 +1,409 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Set Leaderboard Item Text / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Set Leaderboard Item Text"/>
+                <meta property="og:description" content="Sets the text of a leaderboard item."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="set-leaderboard-item-text"><a class="markdownIt-Anchor" href="#set-leaderboard-item-text">#</a> Set Leaderboard Item Text</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Set <strong>board|Leaderboard</strong> item text at column <strong>column</strong> and row <strong>row</strong> to <strong>text</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Sets the text of a leaderboard item.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-board">Board</a> ]</em> — Board</li>
+<li><code>int</code> — Column</li>
+<li><code>int</code> — Row</li>
+<li><code>text</code> — Text</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">BoardItemSetText</span><span class="hljs-params">(
+	<span class="hljs-keyword">int</span> inBoard,
+	<span class="hljs-keyword">int</span> inCol,
+	<span class="hljs-keyword">int</span> inRow,
+	text inText,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#leaderboard-leaderboard-items">Leaderboard / Leaderboard Items</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/board-item-set-text">Set Leaderboard Item Text</a></strong> — ( BoardItemSetText )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/board-item-set-text-color">Set Leaderboard Item Text Color</a></strong> — ( BoardItemSetTextColor )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/board-item-set-sort-value">Set Leaderboard Item Sort Order</a></strong> — ( BoardItemSetSortValue )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/board-item-set-icon">Set Leaderboard Item Icon</a></strong> — ( BoardItemSetIcon )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/board-item-set-background-color">Set Leaderboard Item Background Color</a></strong> — ( BoardItemSetBackgroundColor )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/board-item-set-font-size">Set Leaderboard Item Font Size</a></strong> — ( BoardItemSetFontSize )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/board-item-set-alignment">Set Leaderboard Item Alignment</a></strong> — ( BoardItemSetAlignment )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/challenges/advancedcommand.sc2map/MapScript.galaxy#L632">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L632</span>
+BoardItemSetText(gv_board, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, (StringExternal(<span class="hljs-string">"Param/Value/4BC10C45"</span>) + IntToText(gv_finalScore) + StringExternal(<span class="hljs-string">"Param/Value/238ED619"</span>) + IntToText(gv_winningScoreBronze)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1012</span>
+BoardItemSetText(gv_board, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, (StringExternal(<span class="hljs-string">"Param/Value/B7593957"</span>) + IntToText(gv_finalScore) + StringExternal(<span class="hljs-string">"Param/Value/D5FBB5BF"</span>) + IntToText(gv_winningScoreBronze)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1019</span>
+BoardItemSetText(gv_board, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, (StringExternal(<span class="hljs-string">"Param/Value/E11829E5"</span>) + IntToText(gv_finalScore) + StringExternal(<span class="hljs-string">"Param/Value/2FC6682E"</span>) + IntToText(gv_winningScoreSilver)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1026</span>
+BoardItemSetText(gv_board, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, (StringExternal(<span class="hljs-string">"Param/Value/891F42D1"</span>) + IntToText(gv_finalScore) + StringExternal(<span class="hljs-string">"Param/Value/EE0B110F"</span>) + IntToText(gv_winningScoreGold)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1033</span>
+BoardItemSetText(gv_board, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, (StringExternal(<span class="hljs-string">"Param/Value/99F92FE7"</span>) + IntToText(gv_finalScore) + StringExternal(<span class="hljs-string">"Param/Value/E98A4104"</span>) + IntToText(gv_winningScoreGold)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L981</span>
+BoardItemSetText(gv_board, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, (StringExternal(<span class="hljs-string">"Param/Value/E728850E"</span>) + StringExternal(<span class="hljs-string">"Param/Value/DFF179EF"</span>) + IntToText(gv_lostUnitsRound1) + StringExternal(<span class="hljs-string">"Param/Value/B4AC2693"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L982</span>
+BoardItemSetText(gv_board, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, (StringExternal(<span class="hljs-string">"Param/Value/941515DA"</span>) + StringExternal(<span class="hljs-string">"Param/Value/A8BFDA4B"</span>) + IntToText(gv_lostUnitsRound2) + StringExternal(<span class="hljs-string">"Param/Value/5ACB1D36"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L983</span>
+BoardItemSetText(gv_board, <span class="hljs-number">1</span>, <span class="hljs-number">3</span>, (StringExternal(<span class="hljs-string">"Param/Value/EE7C18BE"</span>) + StringExternal(<span class="hljs-string">"Param/Value/1615E2C0"</span>) + IntToText(gv_lostUnitsRound3) + StringExternal(<span class="hljs-string">"Param/Value/2159ECA9"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L984</span>
+BoardItemSetText(gv_board, <span class="hljs-number">1</span>, <span class="hljs-number">4</span>, (StringExternal(<span class="hljs-string">"Param/Value/E2C896FB"</span>) + StringExternal(<span class="hljs-string">"Param/Value/CD4BA6DE"</span>) + IntToText(gf_TotalScore()) + StringExternal(<span class="hljs-string">"Param/Value/7B55395B"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1142</span>
+BoardItemSetText(gv_board, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, (StringExternal(<span class="hljs-string">"Param/Value/9208B1C4"</span>) + StringExternal(<span class="hljs-string">"Param/Value/640E2EC3"</span>) + IntToText(gv_lostUnitsRound1) + StringExternal(<span class="hljs-string">"Param/Value/C1779FF7"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1143</span>
+BoardItemSetText(gv_board, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, (StringExternal(<span class="hljs-string">"Param/Value/DB170D14"</span>) + StringExternal(<span class="hljs-string">"Param/Value/097F1291"</span>) + IntToText(gv_lostUnitsRound2) + StringExternal(<span class="hljs-string">"Param/Value/E7089846"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1144</span>
+BoardItemSetText(gv_board, <span class="hljs-number">1</span>, <span class="hljs-number">3</span>, (StringExternal(<span class="hljs-string">"Param/Value/3F26673D"</span>) + StringExternal(<span class="hljs-string">"Param/Value/2523CBBB"</span>) + IntToText(gv_lostUnitsRound3) + StringExternal(<span class="hljs-string">"Param/Value/45A2332C"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1145</span>
+BoardItemSetText(gv_board, <span class="hljs-number">1</span>, <span class="hljs-number">4</span>, (StringExternal(<span class="hljs-string">"Param/Value/C6C33E80"</span>) + StringExternal(<span class="hljs-string">"Param/Value/5630EFC1"</span>) + IntToText(gf_TotalScore()) + StringExternal(<span class="hljs-string">"Param/Value/35409BBE"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1322</span>
+BoardItemSetText(gv_board, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, (StringExternal(<span class="hljs-string">"Param/Value/4C0B3427"</span>) + StringExternal(<span class="hljs-string">"Param/Value/A02D25ED"</span>) + IntToText(gv_lostUnitsRound1) + StringExternal(<span class="hljs-string">"Param/Value/325D5437"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1323</span>
+BoardItemSetText(gv_board, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, (StringExternal(<span class="hljs-string">"Param/Value/1B756577"</span>) + StringExternal(<span class="hljs-string">"Param/Value/46A577DC"</span>) + IntToText(gv_lostUnitsRound2) + StringExternal(<span class="hljs-string">"Param/Value/DA8D8DFC"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1271</span>
+BoardItemSetText(gv_board, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, (StringExternal(<span class="hljs-string">"Param/Value/FB655670"</span>) + IntToText(gv_finalScore) + StringExternal(<span class="hljs-string">"Param/Value/9914932F"</span>) + IntToText(gv_winningScoreBronze)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1277</span>
+BoardItemSetText(gv_board, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, (StringExternal(<span class="hljs-string">"Param/Value/98013F0A"</span>) + IntToText(gv_finalScore) + StringExternal(<span class="hljs-string">"Param/Value/BF7A1606"</span>) + IntToText(gv_winningScoreSilver)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1283</span>
+BoardItemSetText(gv_board, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, (StringExternal(<span class="hljs-string">"Param/Value/ADDA9ACE"</span>) + IntToText(gv_finalScore) + StringExternal(<span class="hljs-string">"Param/Value/59B47421"</span>) + IntToText(gv_winningScoreGold)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1289</span>
+BoardItemSetText(gv_board, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, (StringExternal(<span class="hljs-string">"Param/Value/F3005C12"</span>) + IntToText(gv_finalScore) + StringExternal(<span class="hljs-string">"Param/Value/FA7C1758"</span>) + IntToText(gv_winningScoreGold)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1063</span>
+BoardItemSetText(BoardLastCreated(), c_boardColGroups, <span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/783C4293"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1068</span>
+BoardItemSetText(BoardLastCreated(), <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/A52238A3"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1069</span>
+BoardItemSetText(BoardLastCreated(), <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/5D2B069A"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1070</span>
+BoardItemSetText(BoardLastCreated(), <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, StringExternal(<span class="hljs-string">"Param/Value/F9C48E46"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1071</span>
+BoardItemSetText(BoardLastCreated(), <span class="hljs-number">2</span>, <span class="hljs-number">2</span>, IntToText(gv_totalPlayerDeaths))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1089</span>
+BoardItemSetText(gv_leaderboard, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, IntToText(gv_zerglingWaveSize))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1090</span>
+BoardItemSetText(gv_leaderboard, <span class="hljs-number">2</span>, <span class="hljs-number">2</span>, IntToText(gv_totalPlayerDeaths))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1118</span>
+BoardItemSetText(BoardLastCreated(), c_boardColGroups, <span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/F20F9865"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1123</span>
+BoardItemSetText(BoardLastCreated(), <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/E0D7D5EA"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1124</span>
+BoardItemSetText(BoardLastCreated(), <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, IntToText(gv_protossStructures))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L933</span>
+BoardItemSetText(gv_board, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, (StringExternal(<span class="hljs-string">"Param/Value/F14C4A6D"</span>) + StringExternal(<span class="hljs-string">"Param/Value/F6045B84"</span>) + IntToText(gv_lostUnitsRound1) + StringExternal(<span class="hljs-string">"Param/Value/347EC643"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L934</span>
+BoardItemSetText(gv_board, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, (StringExternal(<span class="hljs-string">"Param/Value/5A34E487"</span>) + StringExternal(<span class="hljs-string">"Param/Value/54B7E35C"</span>) + IntToText(gv_lostUnitsRound2) + StringExternal(<span class="hljs-string">"Param/Value/2CDF2CFE"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L935</span>
+BoardItemSetText(gv_board, <span class="hljs-number">1</span>, <span class="hljs-number">3</span>, (StringExternal(<span class="hljs-string">"Param/Value/048D4E31"</span>) + StringExternal(<span class="hljs-string">"Param/Value/9550C7D6"</span>) + IntToText(gv_lostUnitsRound3) + StringExternal(<span class="hljs-string">"Param/Value/4967CFEE"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L936</span>
+BoardItemSetText(gv_board, <span class="hljs-number">1</span>, <span class="hljs-number">4</span>, (StringExternal(<span class="hljs-string">"Param/Value/98203B66"</span>) + StringExternal(<span class="hljs-string">"Param/Value/F2F366E8"</span>) + IntToText(gf_TotalScore()) + StringExternal(<span class="hljs-string">"Param/Value/0DE2D362"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1092</span>
+BoardItemSetText(gv_board, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, (StringExternal(<span class="hljs-string">"Param/Value/B01B9495"</span>) + StringExternal(<span class="hljs-string">"Param/Value/15E0E538"</span>) + IntToText(gv_lostUnitsRound1) + StringExternal(<span class="hljs-string">"Param/Value/743ECC0A"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1093</span>
+BoardItemSetText(gv_board, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, (StringExternal(<span class="hljs-string">"Param/Value/87E2C61A"</span>) + StringExternal(<span class="hljs-string">"Param/Value/463417F5"</span>) + IntToText(gv_lostUnitsRound2) + StringExternal(<span class="hljs-string">"Param/Value/5A728B51"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1094</span>
+BoardItemSetText(gv_board, <span class="hljs-number">1</span>, <span class="hljs-number">3</span>, (StringExternal(<span class="hljs-string">"Param/Value/0559F06B"</span>) + StringExternal(<span class="hljs-string">"Param/Value/370305A7"</span>) + IntToText(gv_lostUnitsRound3) + StringExternal(<span class="hljs-string">"Param/Value/0F20A46A"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1095</span>
+BoardItemSetText(gv_board, <span class="hljs-number">1</span>, <span class="hljs-number">4</span>, (StringExternal(<span class="hljs-string">"Param/Value/4B0FB35F"</span>) + StringExternal(<span class="hljs-string">"Param/Value/0E9208D2"</span>) + IntToText(gf_TotalScore()) + StringExternal(<span class="hljs-string">"Param/Value/34FE0DC3"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1259</span>
+BoardItemSetText(gv_board, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, (StringExternal(<span class="hljs-string">"Param/Value/30CBAF3F"</span>) + StringExternal(<span class="hljs-string">"Param/Value/835B7A1B"</span>) + IntToText(gv_lostUnitsRound1) + StringExternal(<span class="hljs-string">"Param/Value/87394305"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1260</span>
+BoardItemSetText(gv_board, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, (StringExternal(<span class="hljs-string">"Param/Value/E4A93D35"</span>) + StringExternal(<span class="hljs-string">"Param/Value/0314EDF2"</span>) + IntToText(gv_lostUnitsRound2) + StringExternal(<span class="hljs-string">"Param/Value/CDCC1249"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1015</span>
+BoardItemSetText(gv_board, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, (StringExternal(<span class="hljs-string">"Param/Value/B6A13F2B"</span>) + IntToText(gv_finalScore) + StringExternal(<span class="hljs-string">"Param/Value/C97AF1B5"</span>) + IntToText(gv_winningScoreBronze)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1020</span>
+BoardItemSetText(gv_board, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, (StringExternal(<span class="hljs-string">"Param/Value/5C749934"</span>) + IntToText(gv_finalScore) + StringExternal(<span class="hljs-string">"Param/Value/E56AFE3B"</span>) + IntToText(gv_winningScoreSilver)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1025</span>
+BoardItemSetText(gv_board, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, (StringExternal(<span class="hljs-string">"Param/Value/A96F3604"</span>) + IntToText(gv_finalScore) + StringExternal(<span class="hljs-string">"Param/Value/8406CBEB"</span>) + IntToText(gv_winningScoreGold)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1030</span>
+BoardItemSetText(gv_board, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, (StringExternal(<span class="hljs-string">"Param/Value/23360942"</span>) + IntToText(gv_finalScore) + StringExternal(<span class="hljs-string">"Param/Value/2C84ED68"</span>) + IntToText(gv_winningScoreGold)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L994</span>
+BoardItemSetText(gv_board, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, (StringExternal(<span class="hljs-string">"Param/Value/5791DDA9"</span>) + StringExternal(<span class="hljs-string">"Param/Value/2025044D"</span>) + IntToText(gv_lostUnitsRound1) + StringExternal(<span class="hljs-string">"Param/Value/963C4221"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L995</span>
+BoardItemSetText(gv_board, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, (StringExternal(<span class="hljs-string">"Param/Value/744E7EC6"</span>) + StringExternal(<span class="hljs-string">"Param/Value/D01B8061"</span>) + IntToText(gv_lostUnitsRound2) + StringExternal(<span class="hljs-string">"Param/Value/55F06245"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L996</span>
+BoardItemSetText(gv_board, <span class="hljs-number">1</span>, <span class="hljs-number">3</span>, (StringExternal(<span class="hljs-string">"Param/Value/AE2F0FA6"</span>) + StringExternal(<span class="hljs-string">"Param/Value/0D651FA9"</span>) + IntToText(gv_lostUnitsRound3) + StringExternal(<span class="hljs-string">"Param/Value/FF52E48B"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L997</span>
+BoardItemSetText(gv_board, <span class="hljs-number">1</span>, <span class="hljs-number">4</span>, (StringExternal(<span class="hljs-string">"Param/Value/9DD0648D"</span>) + StringExternal(<span class="hljs-string">"Param/Value/1C5B1550"</span>) + IntToText(gf_TotalScore()) + StringExternal(<span class="hljs-string">"Param/Value/5011C26D"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1163</span>
+BoardItemSetText(gv_board, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, (StringExternal(<span class="hljs-string">"Param/Value/4FB740AD"</span>) + StringExternal(<span class="hljs-string">"Param/Value/67296021"</span>) + IntToText(gv_lostUnitsRound1) + StringExternal(<span class="hljs-string">"Param/Value/84231775"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1164</span>
+BoardItemSetText(gv_board, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, (StringExternal(<span class="hljs-string">"Param/Value/13F21641"</span>) + StringExternal(<span class="hljs-string">"Param/Value/B5F94917"</span>) + IntToText(gv_lostUnitsRound2) + StringExternal(<span class="hljs-string">"Param/Value/30DCED3D"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1165</span>
+BoardItemSetText(gv_board, <span class="hljs-number">1</span>, <span class="hljs-number">3</span>, (StringExternal(<span class="hljs-string">"Param/Value/DC44C7A6"</span>) + StringExternal(<span class="hljs-string">"Param/Value/ABB241FC"</span>) + IntToText(gv_lostUnitsRound3) + StringExternal(<span class="hljs-string">"Param/Value/C18BD0AB"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1166</span>
+BoardItemSetText(gv_board, <span class="hljs-number">1</span>, <span class="hljs-number">4</span>, (StringExternal(<span class="hljs-string">"Param/Value/11BE181E"</span>) + StringExternal(<span class="hljs-string">"Param/Value/034AA689"</span>) + IntToText(gf_TotalScore()) + StringExternal(<span class="hljs-string">"Param/Value/2DFBB445"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1333</span>
+BoardItemSetText(gv_board, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, (StringExternal(<span class="hljs-string">"Param/Value/139BF97C"</span>) + StringExternal(<span class="hljs-string">"Param/Value/2006508B"</span>) + IntToText(gv_lostUnitsRound1) + StringExternal(<span class="hljs-string">"Param/Value/F1A78017"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1334</span>
+BoardItemSetText(gv_board, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, (StringExternal(<span class="hljs-string">"Param/Value/6BE8407A"</span>) + StringExternal(<span class="hljs-string">"Param/Value/97610913"</span>) + IntToText(gv_lostUnitsRound2) + StringExternal(<span class="hljs-string">"Param/Value/9048E5E4"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L974</span>
+BoardItemSetText(gv_board, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, (StringExternal(<span class="hljs-string">"Param/Value/577BFAFF"</span>) + IntToText(gv_finalScore) + StringExternal(<span class="hljs-string">"Param/Value/B8D13D82"</span>) + IntToText(gv_winningScoreBronze)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L979</span>
+BoardItemSetText(gv_board, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, (StringExternal(<span class="hljs-string">"Param/Value/49CA5CD5"</span>) + IntToText(gv_finalScore) + StringExternal(<span class="hljs-string">"Param/Value/37365B13"</span>) + IntToText(gv_winningScoreSilver)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L984</span>
+BoardItemSetText(gv_board, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, (StringExternal(<span class="hljs-string">"Param/Value/E29E5810"</span>) + IntToText(gv_finalScore) + StringExternal(<span class="hljs-string">"Param/Value/F574EB5D"</span>) + IntToText(gv_winningScoreGold)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L989</span>
+BoardItemSetText(gv_board, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, (StringExternal(<span class="hljs-string">"Param/Value/40C3E1EA"</span>) + IntToText(gv_finalScore) + StringExternal(<span class="hljs-string">"Param/Value/4FC6DBCD"</span>) + IntToText(gv_winningScoreGold)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1358</span>
+BoardItemSetText(gv_merc_Contract_Price_Board, <span class="hljs-number">1</span>, c_boardRowHeader, (StringExternal(<span class="hljs-string">"Param/Value/B4F093E9"</span>) + IntToText(gv_mERC_CONTRACT_PRICE) + StringExternal(<span class="hljs-string">"Param/Value/7B4624DB"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1360</span>
+BoardItemSetText(gv_merc_Contract_Price_Board, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, (StringExternal(<span class="hljs-string">"Param/Value/DB71EC73"</span>) + IntToText(PlayerGetPropertyInt(gv_p01_USER, c_playerPropMinerals))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1366</span>
+BoardItemSetText(gv_merc_Contract_Price_Board, <span class="hljs-number">1</span>, <span class="hljs-number">3</span>, (StringExternal(<span class="hljs-string">"Param/Value/A79B6B3E"</span>) + IntToText(gv_oRLANS_MINERAL_COUNT)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1409</span>
+BoardItemSetText(gv_merc_Contract_Price_Board, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, (StringExternal(<span class="hljs-string">"Param/Value/BC8609EA"</span>) + IntToText(PlayerGetPropertyInt(gv_p01_USER, c_playerPropMinerals))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1410</span>
+BoardItemSetText(gv_merc_Contract_Price_Board, <span class="hljs-number">1</span>, <span class="hljs-number">3</span>, (StringExternal(<span class="hljs-string">"Param/Value/92B49FB8"</span>) + IntToText(gv_oRLANS_MINERAL_COUNT)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L499</span>
+BoardItemSetText(gv_uploadBoard, <span class="hljs-number">2</span>, lp_index, (lv_text1 + lv_text2 + lv_text3))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L513</span>
+BoardItemSetText(gv_uploadBoard, <span class="hljs-number">2</span>, lp_index, StringExternal(<span class="hljs-string">"Param/Value/8F385175"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2659</span>
+BoardItemSetText(gv_uploadBoard, c_boardColGroups, <span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/4F602271"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2660</span>
+BoardItemSetText(gv_uploadBoard, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/D9C73D1B"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2661</span>
+BoardItemSetText(gv_uploadBoard, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/FCB0FE8A"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2662</span>
+BoardItemSetText(gv_uploadBoard, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, StringExternal(<span class="hljs-string">"Param/Value/CCA9A3B1"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2663</span>
+BoardItemSetText(gv_uploadBoard, <span class="hljs-number">2</span>, <span class="hljs-number">2</span>, StringExternal(<span class="hljs-string">"Param/Value/7B98881E"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2664</span>
+BoardItemSetText(gv_uploadBoard, <span class="hljs-number">1</span>, <span class="hljs-number">3</span>, StringExternal(<span class="hljs-string">"Param/Value/47D958C6"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2665</span>
+BoardItemSetText(gv_uploadBoard, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, StringExternal(<span class="hljs-string">"Param/Value/9293FAA1"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1337</span>
+BoardItemSetText(gv_mineralBoard, c_boardColGroups, <span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/CE8A3BEC"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1338</span>
+BoardItemSetText(gv_mineralBoard, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/480399D2"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1339</span>
+BoardItemSetText(gv_mineralBoard, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, IntToText(PlayerGetPropertyInt(gv_p01_USER, c_playerPropMinerals)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1340</span>
+BoardItemSetText(gv_mineralBoard, <span class="hljs-number">3</span>, <span class="hljs-number">1</span>, (StringExternal(<span class="hljs-string">"Param/Value/1ED6C969"</span>) + IntToText(gv_objectiveMineralsQuota)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1362</span>
+BoardItemSetText(gv_mineralBoard, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, IntToText(gv_objectiveMineralsQuota))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1363</span>
+BoardItemSetText(gv_mineralBoard, <span class="hljs-number">3</span>, <span class="hljs-number">1</span>, (StringExternal(<span class="hljs-string">"Param/Value/7290E156"</span>) + IntToText(gv_objectiveMineralsQuota)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1366</span>
+BoardItemSetText(gv_mineralBoard, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, IntToText(PlayerGetPropertyInt(gv_p01_USER, c_playerPropMinerals)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1367</span>
+BoardItemSetText(gv_mineralBoard, <span class="hljs-number">3</span>, <span class="hljs-number">1</span>, (StringExternal(<span class="hljs-string">"Param/Value/9E245720"</span>) + IntToText(gv_objectiveMineralsQuota)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1032</span>
+BoardItemSetText(gv_platformSpectresBOARD, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/6C46AD80"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1057</span>
+BoardItemSetText(gv_platformSpectresBOARD, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, (StringExternal(<span class="hljs-string">"Param/Value/FB096F2C"</span>) + IntToText(gv_platform1Spectres) + StringExternal(<span class="hljs-string">"Param/Value/E908D262"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1060</span>
+BoardItemSetText(gv_platformSpectresBOARD, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, (StringExternal(<span class="hljs-string">"Param/Value/279447FD"</span>) + IntToText(gv_platform2Spectres) + StringExternal(<span class="hljs-string">"Param/Value/282E6995"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1063</span>
+BoardItemSetText(gv_platformSpectresBOARD, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, (StringExternal(<span class="hljs-string">"Param/Value/C6DC3959"</span>) + IntToText(gv_platform3Spectres) + StringExternal(<span class="hljs-string">"Param/Value/D190E0C0"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4089</span>
+BoardItemSetText(gv_leaderBoardDrops, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, (StringExternal(<span class="hljs-string">"Param/Value/61E67D35"</span>) + IntToText(gv_dropPodsRemaining)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1188</span>
+BoardItemSetText(gv_artifactBoard, <span class="hljs-number">1</span>, c_boardRowHeader, StringExternal(<span class="hljs-string">"Param/Value/9C83DB5C"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1200</span>
+BoardItemSetText(gv_artifactBoard, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, (StringExternal(<span class="hljs-string">"Param/Value/DE6AFFF6"</span>) + FixedToText(gf_ArtifactChargePercent(), <span class="hljs-number">1</span>) + StringExternal(<span class="hljs-string">"Param/Value/F2914021"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1210</span>
+BoardItemSetText(gv_artifactBoard, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, (StringExternal(<span class="hljs-string">"Param/Value/CE5FAE7A"</span>) + FixedToText(gf_ArtifactChargePercent(), <span class="hljs-number">1</span>) + StringExternal(<span class="hljs-string">"Param/Value/CEEF6569"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L788</span>
+BoardItemSetText(gv_leaderboard, <span class="hljs-number">1</span>, c_boardRowHeader, StringExternal(<span class="hljs-string">"Param/Value/48D05F48"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L789</span>
+BoardItemSetText(gv_leaderboard, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, IntToText(gv_killCount))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L865</span>
+BoardItemSetText(gv_leaderboard, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, IntToText(gv_killCount))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1358</span>
+BoardItemSetText(gv_merc_Contract_Price_Board, <span class="hljs-number">1</span>, c_boardRowHeader, (StringExternal(<span class="hljs-string">"Param/Value/B4F093E9"</span>) + IntToText(gv_mERC_CONTRACT_PRICE) + StringExternal(<span class="hljs-string">"Param/Value/7B4624DB"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1360</span>
+BoardItemSetText(gv_merc_Contract_Price_Board, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, (StringExternal(<span class="hljs-string">"Param/Value/DB71EC73"</span>) + IntToText(PlayerGetPropertyInt(gv_p01_USER, c_playerPropMinerals))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1366</span>
+BoardItemSetText(gv_merc_Contract_Price_Board, <span class="hljs-number">1</span>, <span class="hljs-number">3</span>, (StringExternal(<span class="hljs-string">"Param/Value/A79B6B3E"</span>) + IntToText(gv_oRLANS_MINERAL_COUNT)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1409</span>
+BoardItemSetText(gv_merc_Contract_Price_Board, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, (StringExternal(<span class="hljs-string">"Param/Value/BC8609EA"</span>) + IntToText(PlayerGetPropertyInt(gv_p01_USER, c_playerPropMinerals))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1410</span>
+BoardItemSetText(gv_merc_Contract_Price_Board, <span class="hljs-number">1</span>, <span class="hljs-number">3</span>, (StringExternal(<span class="hljs-string">"Param/Value/92B49FB8"</span>) + IntToText(gv_oRLANS_MINERAL_COUNT)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L499</span>
+BoardItemSetText(gv_uploadBoard, <span class="hljs-number">2</span>, lp_index, (lv_text1 + lv_text2 + lv_text3))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L513</span>
+BoardItemSetText(gv_uploadBoard, <span class="hljs-number">2</span>, lp_index, StringExternal(<span class="hljs-string">"Param/Value/8F385175"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2659</span>
+BoardItemSetText(gv_uploadBoard, c_boardColGroups, <span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/4F602271"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2660</span>
+BoardItemSetText(gv_uploadBoard, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/D9C73D1B"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2661</span>
+BoardItemSetText(gv_uploadBoard, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/FCB0FE8A"</span>))
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,146 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Kick From Game / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Kick From Game"/>
+                <meta property="og:description" content="Kicks every player in the specified player group from the game"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="kick-from-game"><a class="markdownIt-Anchor" href="#kick-from-game">#</a> Kick From Game</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Kick <strong>playerGroup</strong> from the game<br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Kicks every player in the specified player group from the game</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>playergroup</code> —  Player Group</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">KickFromGame</span><span class="hljs-params">(playergroup inPlayerGroup)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#game-transitions">Game / Transitions</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/game-set-next-campaign-index">GameSetNextCampaignIndex</a></strong> — ( GameSetNextCampaignIndex )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/game-over">End Game For Player</a></strong> — ( GameOver )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/restart-game">Restart Game</a></strong> — ( RestartGame )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/kick-from-game">Kick From Game</a></strong> — ( KickFromGame )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/game-set-next-map">Set Next Map</a></strong> — ( GameSetNextMap )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/game-set-transition-map">Set Transition Map</a></strong> — ( GameSetTransitionMap )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/set-next-mission-difficulty">Set Next Mission Difficulty</a></strong> — ( SetNextMissionDifficulty )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/game-is-transition-map">Game Is Transitioned</a></strong> — ( GameIsTransitionMap )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="modsheroesbrawlmodsarenamodemodsarenamodestormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsarenamodemodsarenamodestormmod">#</a> mods/heroesbrawlmods/arenamodemods/arenamode.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/arenamodemods/arenamode.stormmod/base.stormdata/LibAREN.galaxy#L969">LibAREN.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L969</span>
+KickFromGame(PlayerGroupAll())
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodscoopdeadmansstandstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodscoopdeadmansstandstormmod">#</a> mods/heroesbrawlmods/brawlmapmods/coop/deadmansstand.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/coop/deadmansstand.stormmod/base.stormdata/LibPEB1.galaxy#L4036">LibPEB1.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4036</span>
+KickFromGame(PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4066</span>
+KickFromGame(PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12084</span>
+KickFromGame(PlayerGroupSingle(EventPlayer()))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2189</span>
+KickFromGame(PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10197</span>
+KickFromGame(PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11249</span>
+KickFromGame(PlayerGroupSingle(EventPlayer()))
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodscooppvemodstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodscooppvemodstormmod">#</a> mods/heroesbrawlmods/brawlmapmods/coop/pvemod.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/coop/pvemod.stormmod/base.stormdata/LibPVEM.galaxy#L1484">LibPVEM.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1484</span>
+KickFromGame(PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2756</span>
+KickFromGame(PlayerGroupAll())
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodslunarfestivalstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodslunarfestivalstormmod">#</a> mods/heroesbrawlmods/brawlmapmods/lunarfestival.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/lunarfestival.stormmod/base.stormdata/LibLNYF.galaxy#L274">LibLNYF.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L274</span>
+KickFromGame(PlayerGroupAll())
+</code></pre>
+<h4 id="modsheroesdatastormmod"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/GameLib.galaxy#L566">GameLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L566</span>
+KickFromGame(libCore_gv_playerGroupFromPlayer[lp_player])
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5706</span>
+KickFromGame(PlayerGroupAll())
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

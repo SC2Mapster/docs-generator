@@ -1,0 +1,412 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Periodic Event / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Periodic Event"/>
+                <meta property="og:description" content="This event fires periodically whenever the time specified elapses."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="periodic-event"><a class="markdownIt-Anchor" href="#periodic-event">#</a> Periodic Event</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Every <strong>dur|Time</strong> seconds of <strong>timeType|Real/Game/AI Time</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Event</code></p>
+</blockquote>
+<p>This event fires periodically whenever the time specified elapses.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>fixed</code> — Duration</li>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-time-type">TimeType</a> ]</em> — Time Type</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">TriggerAddEventTimePeriodic</span><span class="hljs-params">(
+	trigger inTrigger,
+	fixed inTime,
+	<span class="hljs-keyword">int</span> inTimeType,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#timer-timers">Timer / Timers</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/set-score-timer">Set Score Timer</a></strong> — ( SetScoreTimer )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-time-elapsed">Time Elapsed</a></strong> — ( TriggerAddEventTimeElapsed )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-time-periodic">Periodic Event</a></strong> — ( TriggerAddEventTimePeriodic )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/timer-start">Start Timer</a></strong> — ( TimerStart )</li>
+<li><em><strong>[F]</strong></em> — <code>timer</code> — <strong><a href="/galaxy/reference/timer-last-started">Last Started Timer</a></strong> — ( TimerLastStarted )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/timer-restart">Restart Timer</a></strong> — ( TimerRestart )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/timer-pause">Pause/Unpause Timer</a></strong> — ( TimerPause )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-stop-timer">Stop Timer</a></strong> — ( libNtve_gf_StopTimer )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/timer-is-paused">Timer Is Paused</a></strong> — ( TimerIsPaused )</li>
+<li><em><strong>[F]</strong></em> — <code>timer</code> — <strong><a href="/galaxy/reference/timer-create">New Timer</a></strong> — ( TimerCreate )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/timer-get-duration">Duration Of Timer</a></strong> — ( TimerGetDuration )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-timer">Timer Expires</a></strong> — ( TriggerAddEventTimer )</li>
+<li><em><strong>[F]</strong></em> — <code>timer</code> — <strong><a href="/galaxy/reference/event-timer">Triggering Timer</a></strong> — ( EventTimer )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/challenges/advancedcommand.sc2map/MapScript.galaxy#L567">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L567</span>
+TriggerAddEventTimePeriodic(gt_DisplayMultikillMessage, <span class="hljs-number">0.5</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L637</span>
+TriggerAddEventTimePeriodic(gt_DisplayMultikillMessage, <span class="hljs-number">1.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1113</span>
+TriggerAddEventTimePeriodic(gt_TimerWindowWarningYellow, <span class="hljs-number">0.2</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1159</span>
+TriggerAddEventTimePeriodic(gt_TimerWindowWarningRed, <span class="hljs-number">0.2</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1424</span>
+TriggerAddEventTimePeriodic(gt_Victory, <span class="hljs-number">0.5</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L971</span>
+TriggerAddEventTimePeriodic(gt_TimerWindowWarning, <span class="hljs-number">0.2</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1063</span>
+TriggerAddEventTimePeriodic(gt_TrackTimeLeft, <span class="hljs-number">0.5</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1437</span>
+TriggerAddEventTimePeriodic(gt_FinishDefeatNoUnits, <span class="hljs-number">1.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L871</span>
+TriggerAddEventTimePeriodic(gt_ProtossChronoBoost, <span class="hljs-number">1.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1241</span>
+TriggerAddEventTimePeriodic(gt_UnlimitedAIResources, <span class="hljs-number">5.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L560</span>
+TriggerAddEventTimePeriodic(gt_DisplayMultikillMessage, <span class="hljs-number">0.1</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1241</span>
+TriggerAddEventTimePeriodic(gt_FinishUnitsDead, <span class="hljs-number">0.5</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L557</span>
+TriggerAddEventTimePeriodic(gt_DisplayMultikillMessage, <span class="hljs-number">0.1</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1130</span>
+TriggerAddEventTimePeriodic(gt_Finish, <span class="hljs-number">0.5</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6038</span>
+TriggerAddEventTimePeriodic(gt_TerraTronSawBehavior, <span class="hljs-number">0.0625</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7520</span>
+TriggerAddEventTimePeriodic(gt_FighterAttack, <span class="hljs-number">0.375</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7748</span>
+TriggerAddEventTimePeriodic(gt_FighterMove, <span class="hljs-number">0.0625</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1144</span>
+TriggerAddEventTimePeriodic(gt_MarineConstantRespawn, <span class="hljs-number">10.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1181</span>
+TriggerAddEventTimePeriodic(gt_ZergontheLoose, <span class="hljs-number">1.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1218</span>
+TriggerAddEventTimePeriodic(gt_ZergontheLoose2, <span class="hljs-number">1.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2544</span>
+TriggerAddEventTimePeriodic(gt_ConvoyMovement, <span class="hljs-number">0.5</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2708</span>
+TriggerAddEventTimePeriodic(gt_PlayerIsInCombatIndicatorDiminish, <span class="hljs-number">1.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3909</span>
+TriggerAddEventTimePeriodic(gt_WaveOverLogic, <span class="hljs-number">1.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4459</span>
+TriggerAddEventTimePeriodic(gt_DoomsdayZergAI, <span class="hljs-number">1.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4861</span>
+TriggerAddEventTimePeriodic(gt_DefeatBaseDead, <span class="hljs-number">1.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4907</span>
+TriggerAddEventTimePeriodic(gt_DefeatTacticalPhase, <span class="hljs-number">1.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5027</span>
+TriggerAddEventTimePeriodic(gt_DefeatTooManyColonistsDie, <span class="hljs-number">0.1</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1431</span>
+TriggerAddEventTimePeriodic(gt_InfestorBehavior, <span class="hljs-number">1.0</span>, c_timeAI)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1649</span>
+TriggerAddEventTimePeriodic(gt_SolarCombustionCheck, <span class="hljs-number">1.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1853</span>
+TriggerAddEventTimePeriodic(gt_ShowRemainingInfestedStructures, <span class="hljs-number">1.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1949</span>
+TriggerAddEventTimePeriodic(gt_InfestationFirstSight, <span class="hljs-number">1.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2027</span>
+TriggerAddEventTimePeriodic(gt_NightDefenderReaction, <span class="hljs-number">1.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2761</span>
+TriggerAddEventTimePeriodic(gt_RefugeeBehavior, <span class="hljs-number">30.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4292</span>
+TriggerAddEventTimePeriodic(gt_VictoryInfestationPurged, <span class="hljs-number">1.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4383</span>
+TriggerAddEventTimePeriodic(gt_DefeatBaseDestroyed, <span class="hljs-number">1.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1821</span>
+TriggerAddEventTimePeriodic(gt_PurifierUsesVortex, <span class="hljs-number">0.25</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2698</span>
+TriggerAddEventTimePeriodic(gt_TerrorFleetPing, <span class="hljs-number">0.25</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2980</span>
+TriggerAddEventTimePeriodic(gt_ColonistBehavioratBaseBeta, <span class="hljs-number">3.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3059</span>
+TriggerAddEventTimePeriodic(gt_ColonistBehavioratBaseGamma, <span class="hljs-number">2.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3135</span>
+TriggerAddEventTimePeriodic(gt_ColonistBehavioratBaseOmega, <span class="hljs-number">2.5</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5361</span>
+TriggerAddEventTimePeriodic(gt_DefeatBaseDead, <span class="hljs-number">1.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1794</span>
+TriggerAddEventTimePeriodic(gt_ColonyCleansedQ, <span class="hljs-number">0.5</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2090</span>
+TriggerAddEventTimePeriodic(gt_EggSpawnerGrow, <span class="hljs-number">0.1</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2195</span>
+TriggerAddEventTimePeriodic(gt_FeederlingSpawner, <span class="hljs-number">2.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2253</span>
+TriggerAddEventTimePeriodic(gt_FeederlingMover, <span class="hljs-number">0.5</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2303</span>
+TriggerAddEventTimePeriodic(gt_VirophageProjectileVomiting, <span class="hljs-number">10.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2404</span>
+TriggerAddEventTimePeriodic(gt_MoveColonists, <span class="hljs-number">2.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2529</span>
+TriggerAddEventTimePeriodic(gt_ColonistUnload, <span class="hljs-number">1.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2628</span>
+TriggerAddEventTimePeriodic(gt_BaseSouthHatcheryClearedQ, <span class="hljs-number">1.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2700</span>
+TriggerAddEventTimePeriodic(gt_BaseNorthHatcheryClearedQ, <span class="hljs-number">1.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2772</span>
+TriggerAddEventTimePeriodic(gt_BaseEastHatcheryClearedQ, <span class="hljs-number">1.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2163</span>
+TriggerAddEventTimePeriodic(gt_TrainMovement, <span class="hljs-number">0.25</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5114</span>
+TriggerAddEventTimePeriodic(gt_DefeatBaseDead, <span class="hljs-number">1.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1331</span>
+TriggerAddEventTimePeriodic(gt_SuperCraneActivation, <span class="hljs-number">30.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1417</span>
+TriggerAddEventTimePeriodic(gt_UpdateContractWindow, <span class="hljs-number">0.25</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1476</span>
+TriggerAddEventTimePeriodic(gt_PlayerBuysContract, <span class="hljs-number">0.5</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1514</span>
+TriggerAddEventTimePeriodic(gt_MiraHanDestroyed, <span class="hljs-number">1.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1870</span>
+TriggerAddEventTimePeriodic(gt_JunkerNESpawn, <span class="hljs-number">180.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2075</span>
+TriggerAddEventTimePeriodic(gt_JunkerSSpawn, <span class="hljs-number">205.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2539</span>
+TriggerAddEventTimePeriodic(gt_RespawnableScrapSalvaged3x3Site11, <span class="hljs-number">0.2</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2597</span>
+TriggerAddEventTimePeriodic(gt_RespawnableScrapSalvaged3x3Site12, <span class="hljs-number">0.2</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2655</span>
+TriggerAddEventTimePeriodic(gt_RespawnableScrapSalvaged3x3Site21, <span class="hljs-number">0.2</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2713</span>
+TriggerAddEventTimePeriodic(gt_RespawnableScrapSalvaged3x3Site22, <span class="hljs-number">0.2</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1010</span>
+TriggerAddEventTimePeriodic(gt_TychusMove1Q, <span class="hljs-number">0.25</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1043</span>
+TriggerAddEventTimePeriodic(gt_TychusMove2, <span class="hljs-number">0.25</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1075</span>
+TriggerAddEventTimePeriodic(gt_TychusMove3, <span class="hljs-number">0.25</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1151</span>
+TriggerAddEventTimePeriodic(gt_DefeatEscortingUnitsDead, <span class="hljs-number">1.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1320</span>
+TriggerAddEventTimePeriodic(gt_OdinLowHealthWarning, <span class="hljs-number">0.5</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1358</span>
+TriggerAddEventTimePeriodic(gt_OdinHealthLowWarnPlayer, <span class="hljs-number">1.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1649</span>
+TriggerAddEventTimePeriodic(gt_AfterWraithIntroQ, <span class="hljs-number">0.25</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1764</span>
+TriggerAddEventTimePeriodic(gt_WraithGetsClosetoDetectorQ, <span class="hljs-number">0.25</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2155</span>
+TriggerAddEventTimePeriodic(gt_P04BaseDestroyed, <span class="hljs-number">1.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2212</span>
+TriggerAddEventTimePeriodic(gt_OdinDonewithP04Base, <span class="hljs-number">0.5</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1525</span>
+TriggerAddEventTimePeriodic(gt_CityAmbienceNorthSideVehicles, <span class="hljs-number">50.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1655</span>
+TriggerAddEventTimePeriodic(gt_CityAmbienceSESideVehicles, <span class="hljs-number">40.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1806</span>
+TriggerAddEventTimePeriodic(gt_CityAmbienceSWSideVehicles, <span class="hljs-number">50.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1865</span>
+TriggerAddEventTimePeriodic(gt_CityAmbienceWestSideBlimp, <span class="hljs-number">105.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1924</span>
+TriggerAddEventTimePeriodic(gt_CityAmbienceEastSideBlimp, <span class="hljs-number">105.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2159</span>
+TriggerAddEventTimePeriodic(gt_OdinStompsStuff, <span class="hljs-number">0.25</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2268</span>
+TriggerAddEventTimePeriodic(gt_SecretDocumentsRetrievedUnlockHorner05S, <span class="hljs-number">0.25</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4669</span>
+TriggerAddEventTimePeriodic(gt_DefeatBaseDead, <span class="hljs-number">1.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1211</span>
+TriggerAddEventTimePeriodic(gt_TerminalUseSafety, <span class="hljs-number">0.2</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2632</span>
+TriggerAddEventTimePeriodic(gt_ScientistsRunFromPlayer, <span class="hljs-number">1.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2688</span>
+TriggerAddEventTimePeriodic(gt_ScientistsRunFromBrutalisk, <span class="hljs-number">1.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2744</span>
+TriggerAddEventTimePeriodic(gt_ScientistsRunFromHybrid, <span class="hljs-number">1.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2962</span>
+TriggerAddEventTimePeriodic(gt_Computer01TurretGunsEnter, <span class="hljs-number">0.2</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3017</span>
+TriggerAddEventTimePeriodic(gt_Computer01TurretGunsLeave, <span class="hljs-number">0.2</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3875</span>
+TriggerAddEventTimePeriodic(gt_Computer02Enter, <span class="hljs-number">0.2</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3917</span>
+TriggerAddEventTimePeriodic(gt_Computer02Leave, <span class="hljs-number">0.2</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4518</span>
+TriggerAddEventTimePeriodic(gt_MoveAreaLab02DominionAllDead, <span class="hljs-number">2.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4699</span>
+TriggerAddEventTimePeriodic(gt_Computer04Enter, <span class="hljs-number">0.2</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1013</span>
+TriggerAddEventTimePeriodic(gt_CrazyOldLadyMove, <span class="hljs-number">5.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1976</span>
+TriggerAddEventTimePeriodic(gt_RiksvilleTownRevealCheck, <span class="hljs-number">1.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2377</span>
+TriggerAddEventTimePeriodic(gt_EscapeRevealCheck, <span class="hljs-number">1.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3027</span>
+TriggerAddEventTimePeriodic(gt_DominionCompoundWarningLights, <span class="hljs-number">1.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3503</span>
+TriggerAddEventTimePeriodic(gt_PlayHoloboard01Q, <span class="hljs-number">3.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3564</span>
+TriggerAddEventTimePeriodic(gt_PlayHoloboard02Q, <span class="hljs-number">1.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3631</span>
+TriggerAddEventTimePeriodic(gt_PlayHoloboard03Q, <span class="hljs-number">1.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3699</span>
+TriggerAddEventTimePeriodic(gt_PlayHoloboard04Q, <span class="hljs-number">1.0</span>, c_timeGame)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3760</span>
+TriggerAddEventTimePeriodic(gt_PlayHoloboard05Q, <span class="hljs-number">3.0</span>, c_timeGame)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

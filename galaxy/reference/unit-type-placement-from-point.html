@@ -1,0 +1,217 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Find Placement From Point For Unit Type / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Find Placement From Point For Unit Type"/>
+                <meta property="og:description" content="native point UnitTypePlacementFromPoint(string inType, int inPlayer, point inSource, fixed inRange);"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="find-placement-from-point-for-unit-type"><a class="markdownIt-Anchor" href="#find-placement-from-point-for-unit-type">#</a> Find Placement From Point For Unit Type</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Find Placement From <strong>source</strong> Point For Unit Type <strong>unitType</strong> And Player <strong>player</strong> With Range <strong>range</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Function</code></p>
+</blockquote>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>string</code> <em>[ gamelink::Unit ]</em> — Unit Type</li>
+<li><code>int</code> — Player</li>
+<li><code>point</code> — Source</li>
+<li><code>fixed</code> — Range</li>
+</ul>
+<p>Returns — <code>point</code></p>
+<pre class="hljs"><code><span class="hljs-function">native point <span class="hljs-title">UnitTypePlacementFromPoint</span><span class="hljs-params">(
+	<span class="hljs-built_in">string</span> inType,
+	<span class="hljs-keyword">int</span> inPlayer,
+	point inSource,
+	fixed inRange,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#unit-placement">Unit / Placement</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/unit-type-move-blockers-from-point">Move Blockers From Point For Unit Type</a></strong> — ( UnitTypeMoveBlockersFromPoint )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/unit-type-move-blockers-from-unit">Move Blockers From Unit For Unit Type</a></strong> — ( UnitTypeMoveBlockersFromUnit )</li>
+<li><em><strong>[F]</strong></em> — <code>point</code> — <strong><a href="/galaxy/reference/unit-type-placement-from-point">Find Placement From Point For Unit Type</a></strong> — ( UnitTypePlacementFromPoint )</li>
+<li><em><strong>[F]</strong></em> — <code>point</code> — <strong><a href="/galaxy/reference/unit-type-placement-from-unit">Find Placement From Unit For Unit Type</a></strong> — ( UnitTypePlacementFromUnit )</li>
+<li><em><strong>[F]</strong></em> — <code>point</code> — <strong><a href="/galaxy/reference/unit-type-placement-tests-from-point">Find Placement From Point For Unit Type With Tests</a></strong> — ( UnitTypePlacementTestsFromPoint )</li>
+<li><em><strong>[F]</strong></em> — <code>point</code> — <strong><a href="/galaxy/reference/unit-type-placement-tests-from-unit">Find Placement From Unit For Unit Type With Tests</a></strong> — ( UnitTypePlacementTestsFromUnit )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignsswarmsc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmsc2campaign">#</a> campaigns/swarm.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarm.sc2campaign/base.sc2maps/maps/campaign/swarm/zkorhal01.sc2map/MapScript.galaxy#L799">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L799</span>
+UnitTypePlacementFromPoint(<span class="hljs-string">"KorhalSporeCannon"</span>, UnitGetOwner(autoEACA5FB9_var), lp_dROP_LOCATION, <span class="hljs-number">4.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L799</span>
+UnitTypePlacementFromPoint(<span class="hljs-string">"KorhalSporeCannon"</span>, UnitGetOwner(autoEACA5FB9_var), lp_dROP_LOCATION, <span class="hljs-number">4.0</span>)
+</code></pre>
+<h4 id="campaignsswarmstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmstorysc2campaign">#</a> campaigns/swarmstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstory.sc2campaign/base.sc2data/TriggerLibs/SwarmCampaignLib.galaxy#L1296">SwarmCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1296</span>
+UnitTypePlacementFromPoint(lp_buildingType, UnitGetOwner(autoEFB1326A_var), lp_landingPoint, <span class="hljs-number">4.0</span>)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignMissionLib.galaxy#L3332">VoidCampaignMissionLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3332</span>
+UnitTypePlacementFromPoint(lp_buildingType, UnitGetOwner(auto5CF01D86_var), lp_landingPoint, <span class="hljs-number">4.0</span>)
+</code></pre>
+<h4 id="modsheroesdatastormmod"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/GameDataHelperLib.galaxy#L5171">GameDataHelperLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L5171</span>
+UnitTypePlacementFromPoint(lv_typeofCopiedUnit, lv_abathurPlayer, UnitGetPosition(libGame_gv_players[lv_ownerofTarget].lv_activeVehicle), <span class="hljs-number">35.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5174</span>
+UnitTypePlacementFromPoint(lv_typeofCopiedUnit, lv_abathurPlayer, UnitGetPosition(lv_target), <span class="hljs-number">35.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6663</span>
+UnitTypePlacementFromPoint(<span class="hljs-string">"AnubarakBeetleSpitBeetle"</span>, lv_player, UnitGetPosition(lv_unit), <span class="hljs-number">20.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6666</span>
+UnitTypePlacementFromPoint(<span class="hljs-string">"AnubarakBeetleSpitBeetle"</span>, lv_player, UnitGetPosition(lv_unit), <span class="hljs-number">20.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6962</span>
+UnitTypePlacementFromPoint(<span class="hljs-string">"AzmodanDemonicInvasionDemonGrunt"</span>, lv_player, EventPlayerEffectUsedPoint(c_effectLocationTargetPoint), <span class="hljs-number">10.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L14533</span>
+UnitTypePlacementFromPoint(lv_vikingType, UnitGetOwner(EventUnit()), UnitGetPosition(lv_cairn), <span class="hljs-number">3.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19111</span>
+UnitTypePlacementFromPoint(UnitGetType(lv_misha), lv_rexxarPlayer, lv_targetPoint, <span class="hljs-number">500.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L23522</span>
+UnitTypePlacementFromPoint(<span class="hljs-string">"TinkerSalvageScrap"</span>, lv_player, EventPlayerEffectUsedPoint(c_effectLocationTargetPoint), <span class="hljs-number">5.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L25531</span>
+UnitTypePlacementFromPoint(UnitGetType(EventPlayerEffectUsedUnit(c_effectUnitCaster)), UnitGetOwner(EventPlayerEffectUsedUnit(c_effectUnitCaster)), EventPlayerEffectUsedPoint(c_effectLocationTargetPoint), <span class="hljs-number">15.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L25789</span>
+UnitTypePlacementFromPoint(UnitGetType(lv_unit), lv_player, lv_point, <span class="hljs-number">5.0</span>)
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodsbraxisholdoutstormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodsbraxisholdoutstormmod">#</a> mods/heroesmapmods/battlegroundmapmods/braxisholdout.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/braxisholdout.stormmod/base.stormdata/LibSCHO.galaxy#L2511">LibSCHO.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2511</span>
+UnitTypePlacementFromPoint(<span class="hljs-string">"ZergUltralisk"</span>, lp_dropPodOwner, lp_dropPodPosition, lv_pathablePointSearchRadius_C)
+</code></pre>
+<h4 id="modsmissionpacksnovacampaignsc2mod"><a class="markdownIt-Anchor" href="#modsmissionpacksnovacampaignsc2mod">#</a> mods/missionpacks/novacampaign.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/novacampaign.sc2mod/base.sc2data/LibNCMI.galaxy#L3495">LibNCMI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3495</span>
+UnitTypePlacementFromPoint(lp_buildingType, UnitGetOwner(UnitGroupLoopCurrent()), lp_landingPoint, <span class="hljs-number">4.0</span>)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOMI.galaxy#L4752">LibCOMI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4752</span>
+UnitTypePlacementFromPoint(<span class="hljs-string">"FenixDragoon"</span>, lp_player, lp_targetPoint, <span class="hljs-number">500.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4755</span>
+UnitTypePlacementFromPoint(<span class="hljs-string">"FenixDragoon"</span>, lp_player, lp_targetPoint, <span class="hljs-number">500.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6790</span>
+UnitTypePlacementFromPoint(<span class="hljs-string">"ZeratulCoop"</span>, libCOMI_gv_cM_ZeratulPlayer, lv_artifactOrigin, <span class="hljs-number">500.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6836</span>
+UnitTypePlacementFromPoint(<span class="hljs-string">"ZeratulArtifactPickup1"</span>, libCOMI_gv_cM_ZeratulPlayer, lv_artifactOrigin, <span class="hljs-number">500.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6884</span>
+UnitTypePlacementFromPoint(<span class="hljs-string">"ZeratulCoop"</span>, libCOMI_gv_cM_ZeratulPlayer, lv_artifactOrigin, <span class="hljs-number">500.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6942</span>
+UnitTypePlacementFromPoint(<span class="hljs-string">"ZeratulArtifactPickup1"</span>, libCOMI_gv_cM_ZeratulPlayer, lv_artifactOrigin, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11299</span>
+UnitTypePlacementFromPoint(lp_buildingType, UnitGetOwner(auto5CF01D86_var), lp_landingPoint, <span class="hljs-number">4.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L23139</span>
+UnitTypePlacementFromPoint(UnitGetType(auto33602D3D_var), UnitGetOwner(auto33602D3D_var), lv_unloadPoint, <span class="hljs-number">5.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L25864</span>
+UnitTypePlacementFromPoint(UnitGetType(auto7BF82D02_var), UnitGetOwner(auto7BF82D02_var), lv_unloadPoint, <span class="hljs-number">5.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L27195</span>
+UnitTypePlacementFromPoint(UnitGetType(autoF8BB9D10_var), UnitGetOwner(autoF8BB9D10_var), PlayerStartLocation(UnitGetOwner(lv_voidseeker)), <span class="hljs-number">10.0</span>)
+</code></pre>
+<h4 id="modsvoidprologuesc2mod"><a class="markdownIt-Anchor" href="#modsvoidprologuesc2mod">#</a> mods/voidprologue.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/voidprologue.sc2mod/base.sc2data/LibA3DDD02B.galaxy#L984">LibA3DDD02B.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L984</span>
+UnitTypePlacementFromPoint(lp_buildingType, UnitGetOwner(autoEFB1326A_var), lp_landingPoint, <span class="hljs-number">4.0</span>)
+</code></pre>
+<h4 id="modswarcoopprogressionequipmentssc2mod"><a class="markdownIt-Anchor" href="#modswarcoopprogressionequipmentssc2mod">#</a> mods/warcoop/progression/equipments.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/warcoop/progression/equipments.sc2mod/base.sc2data/LibPEqu.galaxy#L68">LibPEqu.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L68</span>
+UnitTypePlacementFromPoint(UnitGetType(lv_attacker), lv_attackingowner, UnitGetPosition(lv_defender), <span class="hljs-number">10.0</span>)
+</code></pre>
+<h4 id="modswarcoopwarclassicsystemsc2mod"><a class="markdownIt-Anchor" href="#modswarcoopwarclassicsystemsc2mod">#</a> mods/warcoop/warclassicsystem.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/warcoop/warclassicsystem.sc2mod/base.sc2data/TriggerLibs/WarClassicSystem.galaxy#L309">WarClassicSystem.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L309</span>
+UnitTypePlacementFromPoint(UnitGetType(lv_worker), lv_p, lv_creationOffset, <span class="hljs-number">20.0</span>)
+</code></pre>
+<h4 id="modswarcoopwarcoopdatasc2mod"><a class="markdownIt-Anchor" href="#modswarcoopwarcoopdatasc2mod">#</a> mods/warcoop/warcoopdata.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/warcoop/warcoopdata.sc2mod/base.sc2data/TriggerLibs/WarCoopData.galaxy#L2262">WarCoopData.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2262</span>
+UnitTypePlacementFromPoint(UnitGetType(lv_worker), lv_player, lv_creationOffset, <span class="hljs-number">10.0</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

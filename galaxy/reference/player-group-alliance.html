@@ -1,0 +1,267 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Allies/Enemies Of Player / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Allies/Enemies Of Player"/>
+                <meta property="og:description" content="Returns all players that are considered allies or enemies, determined by the Alliance parameter, of the specified player.
+
+Returns: playergroup"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="alliesenemies-of-player"><a class="markdownIt-Anchor" href="#alliesenemies-of-player">#</a> Allies/Enemies Of Player</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — <strong>alliance|Allies/Enemies</strong> of player <strong>player</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Function</code></p>
+</blockquote>
+<p>Returns all players that are considered allies or enemies, determined by the Alliance parameter, of the specified player.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-player-alliance">PlayerAlliance</a> ]</em> — Alliance</li>
+<li><code>int</code> — Player</li>
+</ul>
+<p>Returns — <code>playergroup</code></p>
+<pre class="hljs"><code><span class="hljs-function">native playergroup <span class="hljs-title">PlayerGroupAlliance</span><span class="hljs-params">(
+	<span class="hljs-keyword">int</span> inType,
+	<span class="hljs-keyword">int</span> inPlayer,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#player-group-useful-player-groups">Player Group / Useful Player Groups</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>playergroup</code> — <strong><a href="/galaxy/reference/player-group-all">All Players</a></strong> — ( PlayerGroupAll )</li>
+<li><em><strong>[F]</strong></em> — <code>playergroup</code> — <strong><a href="/galaxy/reference/player-group-empty">Empty Player Group</a></strong> — ( PlayerGroupEmpty )</li>
+<li><em><strong>[F]</strong></em> — <code>playergroup</code> — <strong><a href="/galaxy/reference/player-group-active">Active Players</a></strong> — ( PlayerGroupActive )</li>
+<li><em><strong>[F]</strong></em> — <code>playergroup</code> — <strong><a href="/galaxy/reference/player-group-alliance">Allies/Enemies Of Player</a></strong> — ( PlayerGroupAlliance )</li>
+<li><em><strong>[F]</strong></em> — <code>playergroup</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-allies-enemies-of-player-count-inactive-and-self">Allies/Enemies Of Player (Count Inactive And Self)</a></strong> — ( libNtve_gf_AlliesEnemiesOfPlayerCountInactiveAndSelf )</li>
+<li><em><strong>[F]</strong></em> — <code>playergroup</code> — <strong><a href="/galaxy/reference/player-group-single">Convert Player To Player Group</a></strong> — ( PlayerGroupSingle )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="modsheroesbrawlmodsarenamodemodsgardenarenastormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsarenamodemodsgardenarenastormmod">#</a> mods/heroesbrawlmods/arenamodemods/gardenarena.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/arenamodemods/gardenarena.stormmod/base.stormdata/LibAMGT.galaxy#L1748">LibAMGT.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1748</span>
+PlayerGroupAlliance(c_playerGroupAlly, libNtve_gf_KillingPlayer())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1749</span>
+PlayerGroupAlliance(c_playerGroupEnemy, libNtve_gf_KillingPlayer())
+</code></pre>
+<h4 id="modsheroesbrawlmodsarenamodemodspunisherarenastormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsarenamodemodspunisherarenastormmod">#</a> mods/heroesbrawlmods/arenamodemods/punisherarena.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/arenamodemods/punisherarena.stormmod/base.stormdata/LibAMPU.galaxy#L1815">LibAMPU.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1815</span>
+PlayerGroupAlliance(c_playerGroupAlly, lv_player)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1816</span>
+PlayerGroupAlliance(c_playerGroupEnemy, lv_player)
+</code></pre>
+<h4 id="modsheroesdatastormmod"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/GameLib.galaxy#L563">GameLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L563</span>
+PlayerGroupAlliance(c_playerGroupAlly, lp_player)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9438</span>
+PlayerGroupAlliance(c_playerGroupAlly, lp_killingPlayer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10493</span>
+PlayerGroupAlliance(c_playerGroupEnemy, lv_player)
+</code></pre>
+<h4 id="modsheroesdatastormmod-2"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-2">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/HeroesLib.galaxy#L2281">HeroesLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2281</span>
+PlayerGroupAlliance(c_playerGroupAlly, UnitGetOwner(lp_deadUnit))
+</code></pre>
+<h4 id="modsheroesdatastormmod-3"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-3">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/MapMechanicsLib.galaxy#L3794">MapMechanicsLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3794</span>
+PlayerGroupAlliance(c_playerGroupAlly, lp_computerPlayer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3801</span>
+PlayerGroupAlliance(c_playerGroupEnemy, lp_computerPlayer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3809</span>
+PlayerGroupAlliance(c_playerGroupAlly, lp_computerPlayer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3810</span>
+PlayerGroupAlliance(c_playerGroupAlly, lp_computerPlayer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3823</span>
+PlayerGroupAlliance(c_playerGroupEnemy, lp_computerPlayer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3824</span>
+PlayerGroupAlliance(c_playerGroupEnemy, lp_computerPlayer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7347</span>
+PlayerGroupAlliance(c_playerGroupAlly, lv_owner)
+</code></pre>
+<h4 id="modsheroesdatastormmod-4"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-4">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/UILib.galaxy#L2880">UILib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2880</span>
+PlayerGroupAlliance(c_playerGroupEnemy, lv_itPlayer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3520</span>
+PlayerGroupAlliance(c_playerGroupAlly, lp_player)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3633</span>
+PlayerGroupAlliance(c_playerGroupAlly, lp_player)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5670</span>
+PlayerGroupAlliance(c_playerGroupAlly, lp_player)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5671</span>
+PlayerGroupAlliance(c_playerGroupEnemy, lp_player)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5951</span>
+PlayerGroupAlliance(c_playerGroupAlly, lp_player)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5953</span>
+PlayerGroupAlliance(c_playerGroupEnemy, lp_player)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L14448</span>
+PlayerGroupAlliance(c_playerGroupEnemy, lv_i_Player)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L14454</span>
+PlayerGroupAlliance(c_playerGroupEnemy, lv_i_Player)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L14454</span>
+PlayerGroupAlliance(c_playerGroupEnemy, lv_i_Player)
+</code></pre>
+<h4 id="modsheromodsalarakstormmod"><a class="markdownIt-Anchor" href="#modsheromodsalarakstormmod">#</a> mods/heromods/alarak.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heromods/alarak.stormmod/base.stormdata/LibHALA.galaxy#L484">LibHALA.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L484</span>
+PlayerGroupAlliance(c_playerGroupAlly, lv_deadUnitOwner)
+</code></pre>
+<h4 id="modslibertysc2mod"><a class="markdownIt-Anchor" href="#modslibertysc2mod">#</a> mods/liberty.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/liberty.sc2mod/base.sc2data/TriggerLibs/LibertyLib.galaxy#L83">LibertyLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L83</span>
+PlayerGroupAlliance(c_playerGroupAlly, lp_player)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L185</span>
+PlayerGroupAlliance(c_playerGroupAlly, lp_player)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOMI.galaxy#L13078">LibCOMI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L13078</span>
+PlayerGroupAlliance(c_playerGroupEnemy, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13127</span>
+PlayerGroupAlliance(c_playerGroupEnemy, <span class="hljs-number">1</span>)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod-2"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod-2">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOMU.galaxy#L424">LibCOMU.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L424</span>
+PlayerGroupAlliance(c_playerGroupEnemy, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L440</span>
+PlayerGroupAlliance(c_playerGroupEnemy, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L456</span>
+PlayerGroupAlliance(c_playerGroupEnemy, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L471</span>
+PlayerGroupAlliance(c_playerGroupEnemy, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L501</span>
+PlayerGroupAlliance(c_playerGroupEnemy, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L523</span>
+PlayerGroupAlliance(c_playerGroupEnemy, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L548</span>
+PlayerGroupAlliance(c_playerGroupEnemy, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L584</span>
+PlayerGroupAlliance(c_playerGroupEnemy, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L627</span>
+PlayerGroupAlliance(c_playerGroupEnemy, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L660</span>
+PlayerGroupAlliance(c_playerGroupEnemy, <span class="hljs-number">1</span>)
+</code></pre>
+<h4 id="modswarcoopwarclassicsc2mod"><a class="markdownIt-Anchor" href="#modswarcoopwarclassicsc2mod">#</a> mods/warcoop/warclassic.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/warcoop/warclassic.sc2mod/base.sc2data/TriggerLibs/WarClassic.galaxy#L1065">WarClassic.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1065</span>
+PlayerGroupAlliance(c_playerGroupAlly, lv_p)
+</code></pre>
+<h4 id="modswarcoopwarclassicsystemsc2mod"><a class="markdownIt-Anchor" href="#modswarcoopwarclassicsystemsc2mod">#</a> mods/warcoop/warclassicsystem.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/warcoop/warclassicsystem.sc2mod/base.sc2data/TriggerLibs/WarClassicSystem.galaxy#L1294">WarClassicSystem.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1294</span>
+PlayerGroupAlliance(c_playerGroupEnemy, UnitGetOwner(lv_caster))
+</code></pre>
+<h4 id="modswarcoopwarmeleeaisc2mod"><a class="markdownIt-Anchor" href="#modswarcoopwarmeleeaisc2mod">#</a> mods/warcoop/warmeleeai.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/warcoop/warmeleeai.sc2mod/base.sc2data/TriggerLibs/MeleeWaveAI.galaxy#L62">MeleeWaveAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L62</span>
+PlayerGroupAlliance(c_playerGroupEnemy, player)
+</code></pre>
+<h4 id="modswarcoopwarmeleeaisc2mod-2"><a class="markdownIt-Anchor" href="#modswarcoopwarmeleeaisc2mod-2">#</a> mods/warcoop/warmeleeai.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/warcoop/warmeleeai.sc2mod/base.sc2data/TriggerLibs/Orc/Orc.galaxy#L438">Orc.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L438</span>
+PlayerGroupAlliance(c_playerGroupEnemy, player)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L504</span>
+PlayerGroupAlliance(c_playerGroupEnemy, player)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

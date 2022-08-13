@@ -1,0 +1,184 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Show Text Crawl / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Show Text Crawl"/>
+                <meta property="og:description" content="Displays text that types out one character at a time over the specified duration."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="show-text-crawl"><a class="markdownIt-Anchor" href="#show-text-crawl">#</a> Show Text Crawl</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Display text crawl for <strong>players</strong> with title <strong>title</strong>, text <strong>text</strong>, and max duration <strong>maxTime</strong> seconds (play <strong>birthSound</strong> once, and loop <strong>typeSound</strong> as characters type)<br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Displays text that types out one character at a time over the specified duration.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>playergroup</code> — Players</li>
+<li><code>text</code> — Title</li>
+<li><code>text</code> — Text</li>
+<li><code>fixed</code> — Max Time</li>
+<li><code>soundlink</code> — Birth Sound</li>
+<li><code>soundlink</code> — Type Sound</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">UIShowTextCrawl</span><span class="hljs-params">(
+	playergroup inPlayers,
+	text inTitle,
+	text inText,
+	fixed inMaxTime,
+	soundlink inBirthSoundLink,
+	soundlink inTypeSoundLink,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#ui-text">UI / Text</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>text</code> — <strong><a href="/galaxy/reference/ui-hot-key-string">Hot Key String</a></strong> — ( UIHotKeyString )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ui-display-message">Text Message</a></strong> — ( UIDisplayMessage )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ui-clear-messages">Clear Text Messages</a></strong> — ( UIClearMessages )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ui-show-cinematic-text">Show Cinematic Text</a></strong> — ( UIShowCinematicText )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ui-hide-cinematic-text">Hide Cinematic Text</a></strong> — ( UIHideCinematicText )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ui-show-text-crawl">Show Text Crawl</a></strong> — ( UIShowTextCrawl )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ui-hide-text-crawl">Hide Text Crawl</a></strong> — ( UIHideTextCrawl )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-ui-error-message">Error Message</a></strong> — ( libNtve_gf_UIErrorMessage )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/tstory01.sc2map/MapScript.galaxy#L27165">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L27165</span>
+UIShowTextCrawl(PlayerGroupAll(), lv_title, lv_timestamp, <span class="hljs-number">6.0</span>, SoundLink(<span class="hljs-string">"Silent"</span>, <span class="hljs-number">-1</span>), SoundLink(<span class="hljs-string">"TextCrawlType"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L30676</span>
+UIShowTextCrawl(PlayerGroupAll(), ConversationDataStateText(<span class="hljs-string">"Timestamps|Horner05S_Briefing"</span>, <span class="hljs-string">"Title"</span>), ConversationDataStateText(<span class="hljs-string">"Timestamps|Horner05S_Briefing"</span>, <span class="hljs-string">"Description"</span>), <span class="hljs-number">5.0</span>, SoundLink(<span class="hljs-string">"Silent"</span>, <span class="hljs-number">-1</span>), SoundLink(<span class="hljs-string">"TextCrawlType"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L30854</span>
+UIShowTextCrawl(PlayerGroupAll(), ConversationDataStateText(<span class="hljs-string">"Timestamps|Tosh01_Briefing"</span>, <span class="hljs-string">"Title"</span>), ConversationDataStateText(<span class="hljs-string">"Timestamps|Tosh01_Briefing"</span>, <span class="hljs-string">"Description"</span>), <span class="hljs-number">5.0</span>, SoundLink(<span class="hljs-string">"Silent"</span>, <span class="hljs-number">-1</span>), SoundLink(<span class="hljs-string">"TextCrawlType"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L27165</span>
+UIShowTextCrawl(PlayerGroupAll(), lv_title, lv_timestamp, <span class="hljs-number">6.0</span>, SoundLink(<span class="hljs-string">"Silent"</span>, <span class="hljs-number">-1</span>), SoundLink(<span class="hljs-string">"TextCrawlType"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L30676</span>
+UIShowTextCrawl(PlayerGroupAll(), ConversationDataStateText(<span class="hljs-string">"Timestamps|Horner05S_Briefing"</span>, <span class="hljs-string">"Title"</span>), ConversationDataStateText(<span class="hljs-string">"Timestamps|Horner05S_Briefing"</span>, <span class="hljs-string">"Description"</span>), <span class="hljs-number">5.0</span>, SoundLink(<span class="hljs-string">"Silent"</span>, <span class="hljs-number">-1</span>), SoundLink(<span class="hljs-string">"TextCrawlType"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L30854</span>
+UIShowTextCrawl(PlayerGroupAll(), ConversationDataStateText(<span class="hljs-string">"Timestamps|Tosh01_Briefing"</span>, <span class="hljs-string">"Title"</span>), ConversationDataStateText(<span class="hljs-string">"Timestamps|Tosh01_Briefing"</span>, <span class="hljs-string">"Description"</span>), <span class="hljs-number">5.0</span>, SoundLink(<span class="hljs-string">"Silent"</span>, <span class="hljs-number">-1</span>), SoundLink(<span class="hljs-string">"TextCrawlType"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<h4 id="campaignsswarmstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmstorysc2campaign">#</a> campaigns/swarmstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstory.sc2campaign/base.sc2data/TriggerLibs/SwarmCampaignLib.galaxy#L19695">SwarmCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L19695</span>
+UIShowTextCrawl(PlayerGroupAll(), lv_title, lv_timestamp, UserDataGetFixed(<span class="hljs-string">"ConversationTimestamps"</span>, libSwaC_gv_zS_CutsceneTimestamp, <span class="hljs-string">"FlashDuration"</span>, <span class="hljs-number">1</span>), SoundLink(<span class="hljs-string">"Silent"</span>, <span class="hljs-number">-1</span>), SoundLink(<span class="hljs-string">"TextCrawlType"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19725</span>
+UIShowTextCrawl(PlayerGroupAll(), lv_title, lv_timestamp, UserDataGetFixed(<span class="hljs-string">"ConversationTimestamps"</span>, libSwaC_gv_zS_CutsceneTimestamp, <span class="hljs-string">"FlashDuration"</span>, <span class="hljs-number">1</span>), SoundLink(<span class="hljs-string">"Silent"</span>, <span class="hljs-number">-1</span>), SoundLink(<span class="hljs-string">"TextCrawlType"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<h4 id="campaignsvoidsc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidsc2campaign">#</a> campaigns/void.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/void.sc2campaign/base.sc2maps/maps/campaign/void/paiur04.sc2map/MapScript.galaxy#L9732">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L9732</span>
+UIShowTextCrawl(PlayerGroupAll(), StringExternal(<span class="hljs-string">"Param/Value/37EFB928"</span>), StringExternal(<span class="hljs-string">"Param/Value/7CD26FB0"</span>), <span class="hljs-number">8.0</span>, SoundLink(<span class="hljs-string">"TextCrawlType"</span>, <span class="hljs-number">-1</span>), SoundLink(<span class="hljs-string">"UI_ObjectiveText"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10103</span>
+UIShowTextCrawl(PlayerGroupAll(), StringExternal(<span class="hljs-string">"Param/Value/9D1081B9"</span>), StringExternal(<span class="hljs-string">"Param/Value/9E9AF8AB"</span>), <span class="hljs-number">8.0</span>, SoundLink(<span class="hljs-string">"TextCrawlType"</span>, <span class="hljs-number">-1</span>), SoundLink(<span class="hljs-string">"UI_ObjectiveText"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10553</span>
+UIShowTextCrawl(PlayerGroupAll(), StringExternal(<span class="hljs-string">"Param/Value/E4EF3779"</span>), StringExternal(<span class="hljs-string">"Param/Value/49B58E8D"</span>), <span class="hljs-number">8.0</span>, SoundLink(<span class="hljs-string">"TextCrawlType"</span>, <span class="hljs-number">-1</span>), SoundLink(<span class="hljs-string">"UI_ObjectiveText"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9732</span>
+UIShowTextCrawl(PlayerGroupAll(), StringExternal(<span class="hljs-string">"Param/Value/37EFB928"</span>), StringExternal(<span class="hljs-string">"Param/Value/7CD26FB0"</span>), <span class="hljs-number">8.0</span>, SoundLink(<span class="hljs-string">"TextCrawlType"</span>, <span class="hljs-number">-1</span>), SoundLink(<span class="hljs-string">"UI_ObjectiveText"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10103</span>
+UIShowTextCrawl(PlayerGroupAll(), StringExternal(<span class="hljs-string">"Param/Value/9D1081B9"</span>), StringExternal(<span class="hljs-string">"Param/Value/9E9AF8AB"</span>), <span class="hljs-number">8.0</span>, SoundLink(<span class="hljs-string">"TextCrawlType"</span>, <span class="hljs-number">-1</span>), SoundLink(<span class="hljs-string">"UI_ObjectiveText"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10553</span>
+UIShowTextCrawl(PlayerGroupAll(), StringExternal(<span class="hljs-string">"Param/Value/E4EF3779"</span>), StringExternal(<span class="hljs-string">"Param/Value/49B58E8D"</span>), <span class="hljs-number">8.0</span>, SoundLink(<span class="hljs-string">"TextCrawlType"</span>, <span class="hljs-number">-1</span>), SoundLink(<span class="hljs-string">"UI_ObjectiveText"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignLib.galaxy#L10340">VoidCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L10340</span>
+UIShowTextCrawl(PlayerGroupAll(), lv_title, lv_timestamp, UserDataGetFixed(<span class="hljs-string">"Timestamps"</span>, libVoiC_gv_pC_CutsceneTimestamp, <span class="hljs-string">"FlashDuration"</span>, <span class="hljs-number">1</span>), SoundLink(<span class="hljs-string">"Silent"</span>, <span class="hljs-number">-1</span>), SoundLink(<span class="hljs-string">"UI_Void_TextCallout"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10370</span>
+UIShowTextCrawl(PlayerGroupAll(), lv_title, lv_timestamp, UserDataGetFixed(<span class="hljs-string">"Timestamps"</span>, libVoiC_gv_pC_CutsceneTimestamp, <span class="hljs-string">"FlashDuration"</span>, <span class="hljs-number">1</span>), SoundLink(<span class="hljs-string">"Silent"</span>, <span class="hljs-number">-1</span>), SoundLink(<span class="hljs-string">"TextCrawlType"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<h4 id="modsmissionpackscampaigncommonsc2mod"><a class="markdownIt-Anchor" href="#modsmissionpackscampaigncommonsc2mod">#</a> mods/missionpacks/campaigncommon.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/campaigncommon.sc2mod/base.sc2data/LibComC.galaxy#L4435">LibComC.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4435</span>
+UIShowTextCrawl(PlayerGroupAll(), lv_title, lv_timestamp, UserDataGetFixed(<span class="hljs-string">"Timestamps"</span>, libComC_gv_cC_CutsceneTimestamp, <span class="hljs-string">"FlashDuration"</span>, <span class="hljs-number">1</span>), SoundLink(<span class="hljs-string">"Silent"</span>, <span class="hljs-number">-1</span>), SoundLink(<span class="hljs-string">"UI_Void_TextCallout"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4464</span>
+UIShowTextCrawl(PlayerGroupAll(), lv_title, lv_timestamp, UserDataGetFixed(<span class="hljs-string">"Timestamps"</span>, libComC_gv_cC_CutsceneTimestamp, <span class="hljs-string">"FlashDuration"</span>, <span class="hljs-number">1</span>), SoundLink(<span class="hljs-string">"Silent"</span>, <span class="hljs-number">-1</span>), SoundLink(<span class="hljs-string">"TextCrawlType"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<h4 id="modsvoidprologuesc2mod"><a class="markdownIt-Anchor" href="#modsvoidprologuesc2mod">#</a> mods/voidprologue.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/voidprologue.sc2mod/base.sc2data/LibA3DDD02B.galaxy#L8756">LibA3DDD02B.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L8756</span>
+UIShowTextCrawl(PlayerGroupAll(), lv_title, lv_timestamp, UserDataGetFixed(<span class="hljs-string">"ConversationTimestamps"</span>, libA3DDD02B_gv_pP_CutsceneTimestamp, <span class="hljs-string">"FlashDuration"</span>, <span class="hljs-number">1</span>), SoundLink(<span class="hljs-string">"Silent"</span>, <span class="hljs-number">-1</span>), SoundLink(<span class="hljs-string">"TextCrawlType"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8786</span>
+UIShowTextCrawl(PlayerGroupAll(), lv_title, lv_timestamp, UserDataGetFixed(<span class="hljs-string">"ConversationTimestamps"</span>, libA3DDD02B_gv_pP_CutsceneTimestamp, <span class="hljs-string">"FlashDuration"</span>, <span class="hljs-number">1</span>), SoundLink(<span class="hljs-string">"Silent"</span>, <span class="hljs-number">-1</span>), SoundLink(<span class="hljs-string">"TextCrawlType"</span>, <span class="hljs-number">-1</span>))
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

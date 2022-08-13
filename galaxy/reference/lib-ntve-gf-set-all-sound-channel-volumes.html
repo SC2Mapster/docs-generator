@@ -1,0 +1,435 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Set All Sound Channel Volumes / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Set All Sound Channel Volumes"/>
+                <meta property="og:description" content="Sets the volume for all sound channels for the specified player group."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="set-all-sound-channel-volumes"><a class="markdownIt-Anchor" href="#set-all-sound-channel-volumes">#</a> Set All Sound Channel Volumes</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Set all sound channel volumes for <strong>mode</strong> over <strong>duration</strong> seconds for <strong>players</strong><br>
+<em>Flags</em> — <code>Action</code></p>
+</blockquote>
+<p>Sets the volume for all sound channels for the specified player group.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-volume-channel-mode">VolumeChannelMode</a> ]</em> — Mode</li>
+<li><code>playergroup</code> — Players</li>
+<li><code>fixed</code> — Duration</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">libNtve_gf_SetAllSoundChannelVolumes</span><span class="hljs-params">(
+	<span class="hljs-keyword">int</span> lp_mode,
+	playergroup lp_players,
+	fixed lp_duration,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#sound-sound-channels">Sound / Sound Channels</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-channel-mute">Mute/Unmute Sound Channel</a></strong> — ( SoundChannelMute )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-channel-pause">Pause Sound Channel</a></strong> — ( SoundChannelPause )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-channel-stop">Stop Sound Channel</a></strong> — ( SoundChannelStop )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-channel-set-volume">Set Sound Channel Volume</a></strong> — ( SoundChannelSetVolume )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-set-all-sound-channel-volumes">Set All Sound Channel Volumes</a></strong> — ( libNtve_gf_SetAllSoundChannelVolumes )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-channel-dspinsert">Insert Sound Channel Digital Effect</a></strong> — ( SoundChannelDSPInsert )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-channel-dspremove">Remove Sound Channel Digital Effect</a></strong> — ( SoundChannelDSPRemove )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/challenges/advancedcommand.sc2map/MapScript.galaxy#L1358">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1358</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Speech, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1655</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Speech, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7555</span>
+libNtve_gf_SetAllSoundChannelVolumes(<span class="hljs-number">1</span>, PlayerGroupAll(), <span class="hljs-number">0.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7558</span>
+libNtve_gf_SetAllSoundChannelVolumes(<span class="hljs-number">2</span>, PlayerGroupAll(), <span class="hljs-number">1.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5012</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Game, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2642</span>
+libNtve_gf_SetAllSoundChannelVolumes(lp_mode, PlayerGroupAll(), <span class="hljs-number">0.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2659</span>
+libNtve_gf_SetAllSoundChannelVolumes(lp_mode, PlayerGroupAll(), <span class="hljs-number">0.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6606</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Game, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7555</span>
+libNtve_gf_SetAllSoundChannelVolumes(<span class="hljs-number">1</span>, PlayerGroupAll(), <span class="hljs-number">0.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7558</span>
+libNtve_gf_SetAllSoundChannelVolumes(<span class="hljs-number">2</span>, PlayerGroupAll(), <span class="hljs-number">1.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5012</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Game, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2642</span>
+libNtve_gf_SetAllSoundChannelVolumes(lp_mode, PlayerGroupAll(), <span class="hljs-number">0.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2659</span>
+libNtve_gf_SetAllSoundChannelVolumes(lp_mode, PlayerGroupAll(), <span class="hljs-number">0.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6606</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Game, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1358</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Speech, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1655</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Speech, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<h4 id="campaignslibertystorysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertystorysc2campaign">#</a> campaigns/libertystory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/libertystory.sc2campaign/base.sc2data/TriggerLibs/CampaignLib.galaxy#L835">CampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L835</span>
+libNtve_gf_SetAllSoundChannelVolumes(lp_mode, PlayerGroupAll(), <span class="hljs-number">2.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L839</span>
+libNtve_gf_SetAllSoundChannelVolumes(lp_mode, PlayerGroupAll(), <span class="hljs-number">1.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10215</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Cinematic, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<h4 id="campaignsswarmstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmstorysc2campaign">#</a> campaigns/swarmstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstory.sc2campaign/base.sc2data/TriggerLibs/SwarmCampaignLib.galaxy#L3733">SwarmCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3733</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Game, PlayerGroupAll(), <span class="hljs-number">1.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3737</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Game, PlayerGroupAll(), <span class="hljs-number">0.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3741</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Game, PlayerGroupAll(), <span class="hljs-number">0.25</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3783</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Game, PlayerGroupAll(), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3788</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Speech, PlayerGroupAll(), <span class="hljs-number">2.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3870</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Victory, PlayerGroupAll(), <span class="hljs-number">1.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3881</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Victory, PlayerGroupAll(), <span class="hljs-number">1.0</span>)
+</code></pre>
+<h4 id="campaignsswarmstoryutilsc2mod"><a class="markdownIt-Anchor" href="#campaignsswarmstoryutilsc2mod">#</a> campaigns/swarmstoryutil.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstoryutil.sc2mod/base.sc2data/Lib281DEC45.galaxy#L2449">Lib281DEC45.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2449</span>
+libNtve_gf_SetAllSoundChannelVolumes(lp_mode, PlayerGroupAll(), lp_duration)
+</code></pre>
+<h4 id="campaignsvoidsc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidsc2campaign">#</a> campaigns/void.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/void.sc2campaign/base.sc2maps/maps/campaign/sc2tutorial.sc2map/MapScript.galaxy#L1721">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1721</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Game, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3898</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Speech, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3900</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Game, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3930</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Speech, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3932</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Game, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3939</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Speech, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3944</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Game, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3974</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Speech, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3976</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Game, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4058</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Speech, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2163</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Speech, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2175</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Game, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2203</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Speech, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2205</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Game, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2237</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Speech, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2239</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Game, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2894</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Speech, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2898</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Game, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2919</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Speech, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2923</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Game, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1721</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Game, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3898</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Speech, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3900</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Game, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3930</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Speech, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3932</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Game, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3939</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Speech, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3944</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Game, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3974</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Speech, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3976</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Game, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4058</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Speech, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2163</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Speech, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2175</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Game, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2203</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Speech, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2205</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Game, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2237</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Speech, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2239</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Game, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2894</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Speech, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2898</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Game, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2919</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Speech, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2923</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Game, PlayerGroupAll(), <span class="hljs-number">0.0</span>)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignLib.galaxy#L8566">VoidCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L8566</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Game, PlayerGroupAll(), <span class="hljs-number">1.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8570</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Game, PlayerGroupAll(), <span class="hljs-number">0.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8574</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Game, PlayerGroupAll(), <span class="hljs-number">0.25</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8616</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Game, PlayerGroupAll(), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8621</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Speech, PlayerGroupAll(), <span class="hljs-number">2.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8703</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Victory, PlayerGroupAll(), <span class="hljs-number">1.0</span>)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign-2"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign-2">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignStoryLib.galaxy#L1033">VoidCampaignStoryLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1033</span>
+libNtve_gf_SetAllSoundChannelVolumes(lp_mode, PlayerGroupAll(), lp_duration)
+</code></pre>
+<h4 id="modscoresc2mod"><a class="markdownIt-Anchor" href="#modscoresc2mod">#</a> mods/core.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/core.sc2mod/base.sc2data/TriggerLibs/NativeLib.galaxy#L2042">NativeLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2042</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Cinematic, lv_validPlayers, MaxF(lp_duration, <span class="hljs-number">1.5</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2089</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Game, lv_validPlayers, MaxF(lp_duration, <span class="hljs-number">1.5</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1732</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Cinematic, lv_validPlayers, MaxF(lp_duration, <span class="hljs-number">1.5</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1779</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Game, lv_validPlayers, MaxF(lp_duration, <span class="hljs-number">1.5</span>))
+</code></pre>
+<h4 id="modsheroesdatastormmod"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/GameLib.galaxy#L10282">GameLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L10282</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Game, libCore_gv_playerGroupFromPlayer[lp_player], <span class="hljs-number">0.0</span>)
+</code></pre>
+<h4 id="modsheroesdatastormmod-2"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-2">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/HeroesLib.galaxy#L3423">HeroesLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3423</span>
+libNtve_gf_SetAllSoundChannelVolumes(lp_mode, lp_players, <span class="hljs-number">2.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3429</span>
+libNtve_gf_SetAllSoundChannelVolumes(lp_mode, lp_players, <span class="hljs-number">1.0</span>)
+</code></pre>
+<h4 id="modsheroesdatastormmod-3"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-3">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/UILib.galaxy#L1345">UILib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1345</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Game, PlayerGroupSingle(lp_player), <span class="hljs-number">1.5</span>)
+</code></pre>
+<h4 id="modslibertysc2mod"><a class="markdownIt-Anchor" href="#modslibertysc2mod">#</a> mods/liberty.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/liberty.sc2mod/base.sc2data/TriggerLibs/LibertyLib.galaxy#L589">LibertyLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L589</span>
+libNtve_gf_SetAllSoundChannelVolumes(lp_mode, lp_players, <span class="hljs-number">2.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L593</span>
+libNtve_gf_SetAllSoundChannelVolumes(lp_mode, lp_players, <span class="hljs-number">1.0</span>)
+</code></pre>
+<h4 id="modsmissionpackscampaigncommonsc2mod"><a class="markdownIt-Anchor" href="#modsmissionpackscampaigncommonsc2mod">#</a> mods/missionpacks/campaigncommon.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/campaigncommon.sc2mod/base.sc2data/LibComC.galaxy#L3987">LibComC.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3987</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Game, PlayerGroupAll(), <span class="hljs-number">1.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3991</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Game, PlayerGroupAll(), <span class="hljs-number">0.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3995</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Game, PlayerGroupAll(), <span class="hljs-number">0.25</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4037</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Game, PlayerGroupAll(), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4042</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Speech, PlayerGroupAll(), <span class="hljs-number">2.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4124</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Victory, PlayerGroupAll(), <span class="hljs-number">1.0</span>)
+</code></pre>
+<h4 id="modsmissionpacksnovacampaignsc2mod"><a class="markdownIt-Anchor" href="#modsmissionpacksnovacampaignsc2mod">#</a> mods/missionpacks/novacampaign.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/novacampaign.sc2mod/base.sc2data/LibNCST.galaxy#L931">LibNCST.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L931</span>
+libNtve_gf_SetAllSoundChannelVolumes(lp_mode, PlayerGroupAll(), lp_duration)
+</code></pre>
+<h4 id="modsnovastoryassetssc2mod"><a class="markdownIt-Anchor" href="#modsnovastoryassetssc2mod">#</a> mods/novastoryassets.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/novastoryassets.sc2mod/base.sc2maps/maps/campaign/nova/nova03.sc2map/MapScript.galaxy#L9652">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L9652</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Game, PlayerGroupAll(), <span class="hljs-number">1.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9704</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Speech, PlayerGroupAll(), <span class="hljs-number">0.25</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9709</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Game, PlayerGroupAll(), <span class="hljs-number">1.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9726</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Speech, PlayerGroupAll(), <span class="hljs-number">0.25</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9746</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Game, PlayerGroupAll(), <span class="hljs-number">1.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9652</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Game, PlayerGroupAll(), <span class="hljs-number">1.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9704</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Speech, PlayerGroupAll(), <span class="hljs-number">0.25</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9709</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Game, PlayerGroupAll(), <span class="hljs-number">1.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9726</span>
+libNtve_gf_SetAllSoundChannelVolumes(libNtve_ge_VolumeChannelMode_Speech, PlayerGroupAll(), <span class="hljs-number">0.25</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

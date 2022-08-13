@@ -1,0 +1,234 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Set Data Conversation State / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Set Data Conversation State"/>
+                <meta property="og:description" content="Sets a conversation state to an integer."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="set-data-conversation-state"><a class="markdownIt-Anchor" href="#set-data-conversation-state">#</a> Set Data Conversation State</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Set conversation <strong>stateIndex|State</strong> to <strong>value</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Sets a conversation state to an integer.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>string</code> <em>[ convstateindex ]</em> — State Index</li>
+<li><code>int</code> — Value</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">ConversationDataStateSetValue</span><span class="hljs-params">(
+	<span class="hljs-built_in">string</span> stateIndex,
+	<span class="hljs-keyword">int</span> value,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#conversation-data-conversations">Conversation / Data Conversations</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/conversation-data-state-set-value">Set Data Conversation State</a></strong> — ( ConversationDataStateSetValue )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/conversation-data-register-portrait">Set Data Conversation Portrait</a></strong> — ( ConversationDataRegisterPortrait )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/conversation-data-register-unit">Set Data Conversation Unit</a></strong> — ( ConversationDataRegisterUnit )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/conversation-data-register-camera">Set Data Conversation Camera</a></strong> — ( ConversationDataRegisterCamera )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/conversation-data-run">Run Data Conversation</a></strong> — ( ConversationDataRun )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/conversation-data-stop">Stop Data Conversation</a></strong> — ( ConversationDataStop )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-conversation-state-changed">Data Conversation State Changed</a></strong> — ( TriggerAddEventConversationStateChanged )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> <em>[ convstateindex ]</em> — <strong><a href="/galaxy/reference/event-conversation-state">Triggering Conversation State</a></strong> — ( EventConversationState )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/tarcade.sc2map/MapScript.galaxy#L3362">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3362</span>
+ConversationDataStateSetValue(<span class="hljs-string">"ArcadeGameVariables|HiScore"</span>, gv_highScore)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2260</span>
+ConversationDataStateSetValue(<span class="hljs-string">"StoryState|HornerSecretMissionOn"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6108</span>
+ConversationDataStateSetValue(<span class="hljs-string">"CharacterLocationStatus|TychusInCantina"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6111</span>
+ConversationDataStateSetValue(<span class="hljs-string">"CharacterLocationStatus|TychusInCantina"</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6114</span>
+ConversationDataStateSetValue(<span class="hljs-string">"CharacterLocationStatus|HansonInLab"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6117</span>
+ConversationDataStateSetValue(<span class="hljs-string">"CharacterLocationStatus|HansonInLab"</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6120</span>
+ConversationDataStateSetValue(<span class="hljs-string">"CharacterLocationStatus|ToshInCantina"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6123</span>
+ConversationDataStateSetValue(<span class="hljs-string">"CharacterLocationStatus|ToshInCantina"</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10632</span>
+ConversationDataStateSetValue(libCamp_gf_MissionPitches(lv_indexMission), <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10635</span>
+ConversationDataStateSetValue(libCamp_gf_MissionPitches(gv_zPlanetPanel_Mission), <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12576</span>
+ConversationDataStateSetValue(<span class="hljs-string">"SceneExtraObjects|Terran07TrophyHanson03A"</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12577</span>
+ConversationDataStateSetValue(<span class="hljs-string">"SceneExtraObjects|Terran07TrophyHanson03B"</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3362</span>
+ConversationDataStateSetValue(<span class="hljs-string">"ArcadeGameVariables|HiScore"</span>, gv_highScore)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2260</span>
+ConversationDataStateSetValue(<span class="hljs-string">"StoryState|HornerSecretMissionOn"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6108</span>
+ConversationDataStateSetValue(<span class="hljs-string">"CharacterLocationStatus|TychusInCantina"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6111</span>
+ConversationDataStateSetValue(<span class="hljs-string">"CharacterLocationStatus|TychusInCantina"</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6114</span>
+ConversationDataStateSetValue(<span class="hljs-string">"CharacterLocationStatus|HansonInLab"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6117</span>
+ConversationDataStateSetValue(<span class="hljs-string">"CharacterLocationStatus|HansonInLab"</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6120</span>
+ConversationDataStateSetValue(<span class="hljs-string">"CharacterLocationStatus|ToshInCantina"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6123</span>
+ConversationDataStateSetValue(<span class="hljs-string">"CharacterLocationStatus|ToshInCantina"</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10632</span>
+ConversationDataStateSetValue(libCamp_gf_MissionPitches(lv_indexMission), <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10635</span>
+ConversationDataStateSetValue(libCamp_gf_MissionPitches(gv_zPlanetPanel_Mission), <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12576</span>
+ConversationDataStateSetValue(<span class="hljs-string">"SceneExtraObjects|Terran07TrophyHanson03A"</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12577</span>
+ConversationDataStateSetValue(<span class="hljs-string">"SceneExtraObjects|Terran07TrophyHanson03B"</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<h4 id="campaignslibertystorysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertystorysc2campaign">#</a> campaigns/libertystory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/libertystory.sc2campaign/base.sc2data/TriggerLibs/CampaignLib.galaxy#L671">CampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L671</span>
+ConversationDataStateSetValue(<span class="hljs-string">"StoryTips|KeyboardShortcuts"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L751</span>
+ConversationDataStateSetValue(<span class="hljs-string">"StoryTips|EngineeringBay2"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L757</span>
+ConversationDataStateSetValue(<span class="hljs-string">"StoryTips|EngineeringBay3"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L763</span>
+ConversationDataStateSetValue(<span class="hljs-string">"StoryTips|ArmoryLevel2"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L769</span>
+ConversationDataStateSetValue(<span class="hljs-string">"StoryTips|ArmoryLevel3"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L779</span>
+ConversationDataStateSetValue(lp_convoState, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3088</span>
+ConversationDataStateSetValue(ConversationDataStateIndex(<span class="hljs-string">"MissionAvailable"</span>, (lp_mission)), lp_age)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3091</span>
+ConversationDataStateSetValue(ConversationDataStateIndex(<span class="hljs-string">"MissionCompleted"</span>, (lp_mission)), lp_age)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3340</span>
+ConversationDataStateSetValue(ConversationDataStateIndex(<span class="hljs-string">"MissionLast"</span>, (lv_indexMission)), <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3343</span>
+ConversationDataStateSetValue(ConversationDataStateIndex(<span class="hljs-string">"MissionLast"</span>, (lv_indexMission)), <span class="hljs-number">0</span>)
+</code></pre>
+<h4 id="campaignsswarmstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmstorysc2campaign">#</a> campaigns/swarmstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstory.sc2campaign/base.sc2data/TriggerLibs/SwarmCampaignLib.galaxy#L5352">SwarmCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L5352</span>
+ConversationDataStateSetValue(<span class="hljs-string">"MissionsCompleted"</span>, libSwaC_gf_NumberOfMissions(libSwaC_ge_MissionCountOptions_Completed))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5982</span>
+ConversationDataStateSetValue(<span class="hljs-string">"MissionsCompleted"</span>, libSwaC_gf_NumberOfMissions(libSwaC_ge_MissionCountOptions_Completed))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L22045</span>
+ConversationDataStateSetValue(<span class="hljs-string">"MissionsCompleted"</span>, libSwaC_gf_NumberOfMissions(libSwaC_ge_MissionCountOptions_Completed))
+</code></pre>
+<h4 id="campaignsswarmstoryutilsc2mod"><a class="markdownIt-Anchor" href="#campaignsswarmstoryutilsc2mod">#</a> campaigns/swarmstoryutil.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstoryutil.sc2mod/base.sc2data/Lib281DEC45.galaxy#L399">Lib281DEC45.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L399</span>
+ConversationDataStateSetValue(<span class="hljs-string">"TemporaryStoryStates|FirstDoWJustPlayed"</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<h4 id="modswarcoopwarcoopdatasc2mod"><a class="markdownIt-Anchor" href="#modswarcoopwarcoopdatasc2mod">#</a> mods/warcoop/warcoopdata.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/warcoop/warcoopdata.sc2mod/base.sc2data/TriggerLibs/WarCoopData.galaxy#L2429">WarCoopData.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2429</span>
+ConversationDataStateSetValue(lp_conversationState, lp_conversationStateIndex)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2431</span>
+ConversationDataStateSetValue(lp_conversationState, <span class="hljs-number">0</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

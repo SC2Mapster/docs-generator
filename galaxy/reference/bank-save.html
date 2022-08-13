@@ -1,0 +1,297 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Save Bank / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Save Bank"/>
+                <meta property="og:description" content="Saves the specified bank file, allowing you to access stored values later. If a bank is not saved, any changes made to it will be lost when the mission ends."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="save-bank"><a class="markdownIt-Anchor" href="#save-bank">#</a> Save Bank</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Save bank <strong>bank</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Saves the specified bank file, allowing you to access stored values later. If a bank is not saved, any changes made to it will be lost when the mission ends.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>bank</code> — Bank</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">BankSave</span><span class="hljs-params">(bank b)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#bank-bank-management">Bank / Bank Management</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>bank</code> — <strong><a href="/galaxy/reference/bank-load">Open Bank</a></strong> — ( BankLoad )</li>
+<li><em><strong>[F]</strong></em> — <code>bank</code> — <strong><a href="/galaxy/reference/bank-last-created">Last Opened Bank</a></strong> — ( BankLastCreated )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/bank-reload">Reload Bank</a></strong> — ( BankReload )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/bank-save">Save Bank</a></strong> — ( BankSave )</li>
+<li><em><strong>[F]</strong></em> — <code>bank</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-bank-preload">Preload Bank</a></strong> — (  )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/bank-wait">Wait For Bank</a></strong> — ( BankWait )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/tstory01.sc2map/MapScript.galaxy#L17655">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L17655</span>
+BankSave(BankLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L936</span>
+BankSave(BankLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L17655</span>
+BankSave(BankLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L936</span>
+BankSave(BankLastCreated())
+</code></pre>
+<h4 id="campaignslibertystorysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertystorysc2campaign">#</a> campaigns/libertystory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/libertystory.sc2campaign/base.sc2data/TriggerLibs/CampaignLib.galaxy#L8479">CampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L8479</span>
+BankSave(BankLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8584</span>
+BankSave(BankLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9477</span>
+BankSave(libCamp_gv_tS_MissionBanks[(lv_indexMission)])
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9513</span>
+BankSave(BankLastCreated())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9857</span>
+BankSave(libCamp_gv_cP_Bank)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11217</span>
+BankSave(BankLastCreated())
+</code></pre>
+<h4 id="campaignsswarmstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmstorysc2campaign">#</a> campaigns/swarmstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstory.sc2campaign/base.sc2data/TriggerLibs/SwarmCampaignLib.galaxy#L13413">SwarmCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L13413</span>
+BankSave(libSwaC_gv_zS_ArmyTechBank)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13442</span>
+BankSave(libSwaC_gv_zS_ArmyTechBank)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13466</span>
+BankSave(libSwaC_gv_zS_ArmyTechBank)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13662</span>
+BankSave(libSwaC_gv_zS_ArchivesBank)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13777</span>
+BankSave(libSwaC_gv_zS_CampaignBank)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13941</span>
+BankSave(libSwaC_gf_StoryBank())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19581</span>
+BankSave(libSwaC_gv_zS_CampaignStatsBank)
+</code></pre>
+<h4 id="campaignsswarmstoryutilsc2mod"><a class="markdownIt-Anchor" href="#campaignsswarmstoryutilsc2mod">#</a> campaigns/swarmstoryutil.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstoryutil.sc2mod/base.sc2data/Lib281DEC45.galaxy#L539">Lib281DEC45.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L539</span>
+BankSave(lv_storyBank)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8514</span>
+BankSave(libSwaC_gf_StoryBank())
+</code></pre>
+<h4 id="campaignsvoidsc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidsc2campaign">#</a> campaigns/void.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/void.sc2campaign/base.sc2maps/maps/campaign/sc2tutorial.sc2map/MapScript.galaxy#L5474">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L5474</span>
+BankSave(gv_tutorialBankSave)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9445</span>
+BankSave(gv_tutorialBankSave)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L15203</span>
+BankSave(gv_tutorialBankSave)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L18960</span>
+BankSave(gv_tutorialBankSave)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5474</span>
+BankSave(gv_tutorialBankSave)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9445</span>
+BankSave(gv_tutorialBankSave)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L15203</span>
+BankSave(gv_tutorialBankSave)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L18960</span>
+BankSave(gv_tutorialBankSave)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignLib.galaxy#L870">VoidCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L870</span>
+BankSave(libVoiC_gf_StoryBank())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7342</span>
+BankSave(libVoiC_gv_pC_ArmyTechBank)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7366</span>
+BankSave(libVoiC_gv_pC_ArmyTechBank)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7512</span>
+BankSave(libVoiC_gv_pC_ArchivesBank)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7650</span>
+BankSave(libVoiC_gv_pC_CampaignBank)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7715</span>
+BankSave(libVoiC_gv_pC_ArmyTechBank)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7840</span>
+BankSave(libVoiC_gf_StoryBank())
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign-2"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign-2">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignStoryLib.galaxy#L751">VoidCampaignStoryLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L751</span>
+BankSave(lv_storyBank)
+</code></pre>
+<h4 id="modschallengessc2mod"><a class="markdownIt-Anchor" href="#modschallengessc2mod">#</a> mods/challenges.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/challenges.sc2mod/base.sc2data/LibChal.galaxy#L1867">LibChal.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1867</span>
+BankSave(libChal_gv_cHL_DefaultChallengeBank)
+</code></pre>
+<h4 id="modsheroesdatastormmod"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/GameLib.galaxy#L12657">GameLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L12657</span>
+BankSave(libGame_gv_players[lv_itPlayer].lv_bankData.lv_bank)
+</code></pre>
+<h4 id="modsheroesdatastormmod-2"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-2">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/StartingExperienceLib.galaxy#L1368">StartingExperienceLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1368</span>
+BankSave(libGame_gv_players[libStEx_gv_sE_Player].lv_bankData.lv_bank)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2553</span>
+BankSave(libGame_gv_players[libStEx_gv_sE_Player].lv_bankData.lv_bank)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2844</span>
+BankSave(libGame_gv_players[libStEx_gv_sE_Player].lv_bankData.lv_bank)
+</code></pre>
+<h4 id="modsheroesdatastormmod-3"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-3">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/UILib.galaxy#L2033">UILib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2033</span>
+BankSave(lv_localBank)
+</code></pre>
+<h4 id="modsmissionpackscampaigncommonsc2mod"><a class="markdownIt-Anchor" href="#modsmissionpackscampaigncommonsc2mod">#</a> mods/missionpacks/campaigncommon.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/campaigncommon.sc2mod/base.sc2data/LibComC.galaxy#L3401">LibComC.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3401</span>
+BankSave(libComC_gv_cC_ArmyTechBank)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3423</span>
+BankSave(libComC_gv_cC_ArmyTechBank)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3559</span>
+BankSave(libComC_gv_cC_ArchivesBank)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3705</span>
+BankSave(libComC_gv_NC_CampaignBank)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3755</span>
+BankSave(libComC_gv_cC_ArmyTechBank)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3823</span>
+BankSave(libComC_gf_CC_StoryBank())
+</code></pre>
+<h4 id="modsmissionpacksnovacampaignsc2mod"><a class="markdownIt-Anchor" href="#modsmissionpacksnovacampaignsc2mod">#</a> mods/missionpacks/novacampaign.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/novacampaign.sc2mod/base.sc2data/LibNCST.galaxy#L664">LibNCST.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L664</span>
+BankSave(lv_storyBank)
+</code></pre>
+<h4 id="modsmissionpacksnovacampaignsc2mod-2"><a class="markdownIt-Anchor" href="#modsmissionpacksnovacampaignsc2mod-2">#</a> mods/missionpacks/novacampaign.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/novacampaign.sc2mod/base.sc2data/LibNovC.galaxy#L781">LibNovC.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L781</span>
+BankSave(libComC_gf_CC_StoryBank())
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOOC.galaxy#L4787">LibCOOC.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4787</span>
+BankSave(libCOOC_gv_cC_CoopBank[lp_player])
+</code></pre>
+<h4 id="modsvoidprologuesc2mod"><a class="markdownIt-Anchor" href="#modsvoidprologuesc2mod">#</a> mods/voidprologue.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/voidprologue.sc2mod/base.sc2data/LibA3DDD02B.galaxy#L6511">LibA3DDD02B.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L6511</span>
+BankSave(libA3DDD02B_gv_pC_ArchivesBank)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6623</span>
+BankSave(libA3DDD02B_gv_pP_CampaignBank)
+</code></pre>
+<h4 id="modswarcoopwarcoopdatasc2mod"><a class="markdownIt-Anchor" href="#modswarcoopwarcoopdatasc2mod">#</a> mods/warcoop/warcoopdata.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/warcoop/warcoopdata.sc2mod/base.sc2data/TriggerLibs/WarCoopData.galaxy#L666">WarCoopData.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L666</span>
+BankSave(libWCdr_gv_w3CBank[lp_player])
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L822</span>
+BankSave(libWCdr_gv_w3CBank[lp_player])
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L829</span>
+BankSave(libWCdr_gv_w3CBank[lp_player])
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

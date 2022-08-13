@@ -1,0 +1,331 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Unit Loads/Unloads Cargo / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Unit Loads/Unloads Cargo"/>
+                <meta property="og:description" content="This event fires when a unit loads or unloads cargo.  Use &quot;Triggering Cargo Unit&quot; to get the unit that was loaded or unloaded.  Use &quot;Triggering Player&quot; to get the owner of the transport unit.  Use &quot;Triggering Unit&quot; to get the transport unit."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="unit-loadsunloads-cargo"><a class="markdownIt-Anchor" href="#unit-loadsunloads-cargo">#</a> Unit Loads/Unloads Cargo</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — <strong>unit</strong> <strong>state|Loads/Unloads</strong> cargo<br>
+<em>Flags</em> — <code>Native</code> | <code>Event</code></p>
+</blockquote>
+<p>This event fires when a unit loads or unloads cargo.  Use <em>“Triggering Cargo Unit”</em> to get the unit that was loaded or unloaded.  Use <em>“Triggering Player”</em> to get the owner of the transport unit.  Use <em>“Triggering Unit”</em> to get the transport unit.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>unitref</code> <em>[ unit ]</em> — Unit</li>
+<li><code>bool</code> <em>[ preset::<a href="/galaxy/reference/preset-cargo-load-unload-state">CargoLoadUnloadState</a> ]</em> — State</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">TriggerAddEventUnitCargo</span><span class="hljs-params">(
+	trigger t,
+	unitref u,
+	<span class="hljs-keyword">bool</span> state,
+)</span></span>;
+</code></pre>
+<h3 id="event-parameters"><a class="markdownIt-Anchor" href="#event-parameters">#</a> Event parameters</h3>
+<ul>
+<li><a href="/galaxy/reference/event-game-user">Triggering Game User</a> — EventGameUser</li>
+<li><a href="/galaxy/reference/event-player">Triggering Player</a> — EventPlayer</li>
+<li><a href="/galaxy/reference/event-unit">Triggering Unit</a> — EventUnit</li>
+<li><a href="/galaxy/reference/event-unit-cargo">Triggering Cargo Unit</a> — EventUnitCargo</li>
+</ul>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#unit-cargo">Unit / Cargo</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-put-in-transport">Put Unit InTransport</a></strong> — ( UnitPutInTransport )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-cargo-create">Create Cargo Units</a></strong> — ( UnitCargoCreate )</li>
+<li><em><strong>[F]</strong></em> — <code>unit</code> — <strong><a href="/galaxy/reference/unit-cargo-last-created">Last Created Cargo Unit</a></strong> — ( UnitCargoLastCreated )</li>
+<li><em><strong>[F]</strong></em> — <code>unitgroup</code> — <strong><a href="/galaxy/reference/unit-cargo-last-created-group">Last Created Cargo Units</a></strong> — ( UnitCargoLastCreatedGroup )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-unit-is-inside-transport">Unit Is Cargo</a></strong> — ( libNtve_gf_UnitIsInsideTransport )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-unit-is-inside-unit-transport">Unit Is Inside Unit Transport</a></strong> — ( libNtve_gf_UnitIsInsideUnitTransport )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-unit-is-inside-player-transport">Unit Is Inside Player Transport</a></strong> — ( libNtve_gf_UnitIsInsidePlayerTransport )</li>
+<li><em><strong>[F]</strong></em> — <code>unit</code> — <strong><a href="/galaxy/reference/unit-cargo">Cargo Unit In Transport</a></strong> — ( UnitCargo )</li>
+<li><em><strong>[F]</strong></em> — <code>unitgroup</code> — <strong><a href="/galaxy/reference/unit-cargo-group">Cargo Units In Transport</a></strong> — ( UnitCargoGroup )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/unit-cargo-value">Transport Property Of Unit</a></strong> — ( UnitCargoValue )</li>
+<li><em><strong>[F]</strong></em> — <code>unit</code> — <strong><a href="/galaxy/reference/unit-transport">Transport Of Unit</a></strong> — ( UnitTransport )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-unit-cargo">Unit Loads/Unloads Cargo</a></strong> — ( TriggerAddEventUnitCargo )</li>
+<li><em><strong>[F]</strong></em> — <code>unit</code> — <strong><a href="/galaxy/reference/event-unit-cargo">Triggering Cargo Unit</a></strong> — ( EventUnitCargo )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/thanson01.sc2map/MapScript.galaxy#L1097">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1097</span>
+TriggerAddEventUnitCargo(gt_FirebatMove, null, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3795</span>
+TriggerAddEventUnitCargo(gt_Convoyloadsintocolonyship, UnitRefFromUnit(UnitFromId(<span class="hljs-number">1483</span>)), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3796</span>
+TriggerAddEventUnitCargo(gt_Convoyloadsintocolonyship, UnitRefFromUnit(UnitFromId(<span class="hljs-number">1403</span>)), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3797</span>
+TriggerAddEventUnitCargo(gt_Convoyloadsintocolonyship, UnitRefFromUnit(UnitFromId(<span class="hljs-number">698</span>)), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3798</span>
+TriggerAddEventUnitCargo(gt_Convoyloadsintocolonyship, UnitRefFromUnit(UnitFromId(<span class="hljs-number">693</span>)), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3567</span>
+TriggerAddEventUnitCargo(gt_RemoveLoadingColonist, null, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2556</span>
+TriggerAddEventUnitCargo(gt_ColonistWalkDontRun, null, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1409</span>
+TriggerAddEventUnitCargo(gt_RemoveGarrisonedCivilians, null, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2873</span>
+TriggerAddEventUnitCargo(gt_ThorChangesOwner, null, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5527</span>
+TriggerAddEventUnitCargo(gt_Computer05DropshipPurge, null, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11534</span>
+TriggerAddEventUnitCargo(gt_DropshipCargoMove, null, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5227</span>
+TriggerAddEventUnitCargo(gt_IntroCargoUnload, null, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1117</span>
+TriggerAddEventUnitCargo(gt_SupplySafetyTXT, null, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1305</span>
+TriggerAddEventUnitCargo(gt_SCVSafetyTXT, null, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1409</span>
+TriggerAddEventUnitCargo(gt_SCVCargoUnload, null, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1712</span>
+TriggerAddEventUnitCargo(gt_RemoveBunkerTextTags, null, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L807</span>
+TriggerAddEventUnitCargo(gt_MMDropoff, UnitRefFromUnit(UnitFromId(<span class="hljs-number">317</span>)), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1071</span>
+TriggerAddEventUnitCargo(gt_SiegeTankDropoff, null, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3603</span>
+TriggerAddEventUnitCargo(gt_AIP6CargoDropSuicide, null, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6424</span>
+TriggerAddEventUnitCargo(gt_Dropship01Purge, null, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6461</span>
+TriggerAddEventUnitCargo(gt_Dropship01UnitPerimeter1, null, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6498</span>
+TriggerAddEventUnitCargo(gt_Dropship01UnitPerimeter2, null, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6534</span>
+TriggerAddEventUnitCargo(gt_Dropship01UnitPerimeter3, null, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6570</span>
+TriggerAddEventUnitCargo(gt_Dropship01UnitPerimeter4, null, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6606</span>
+TriggerAddEventUnitCargo(gt_Dropship01UnitPerimeter5, null, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6642</span>
+TriggerAddEventUnitCargo(gt_Dropship01UnitPerimeter6, null, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L918</span>
+TriggerAddEventUnitCargo(gt_ChangeOwnerofZeratul, null, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1097</span>
+TriggerAddEventUnitCargo(gt_FirebatMove, null, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3795</span>
+TriggerAddEventUnitCargo(gt_Convoyloadsintocolonyship, UnitRefFromUnit(UnitFromId(<span class="hljs-number">1483</span>)), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3796</span>
+TriggerAddEventUnitCargo(gt_Convoyloadsintocolonyship, UnitRefFromUnit(UnitFromId(<span class="hljs-number">1403</span>)), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3797</span>
+TriggerAddEventUnitCargo(gt_Convoyloadsintocolonyship, UnitRefFromUnit(UnitFromId(<span class="hljs-number">698</span>)), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3798</span>
+TriggerAddEventUnitCargo(gt_Convoyloadsintocolonyship, UnitRefFromUnit(UnitFromId(<span class="hljs-number">693</span>)), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3567</span>
+TriggerAddEventUnitCargo(gt_RemoveLoadingColonist, null, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2556</span>
+TriggerAddEventUnitCargo(gt_ColonistWalkDontRun, null, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1409</span>
+TriggerAddEventUnitCargo(gt_RemoveGarrisonedCivilians, null, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2873</span>
+TriggerAddEventUnitCargo(gt_ThorChangesOwner, null, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5527</span>
+TriggerAddEventUnitCargo(gt_Computer05DropshipPurge, null, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11534</span>
+TriggerAddEventUnitCargo(gt_DropshipCargoMove, null, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5227</span>
+TriggerAddEventUnitCargo(gt_IntroCargoUnload, null, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1117</span>
+TriggerAddEventUnitCargo(gt_SupplySafetyTXT, null, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1305</span>
+TriggerAddEventUnitCargo(gt_SCVSafetyTXT, null, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1409</span>
+TriggerAddEventUnitCargo(gt_SCVCargoUnload, null, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1712</span>
+TriggerAddEventUnitCargo(gt_RemoveBunkerTextTags, null, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L807</span>
+TriggerAddEventUnitCargo(gt_MMDropoff, UnitRefFromUnit(UnitFromId(<span class="hljs-number">317</span>)), <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1071</span>
+TriggerAddEventUnitCargo(gt_SiegeTankDropoff, null, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3603</span>
+TriggerAddEventUnitCargo(gt_AIP6CargoDropSuicide, null, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6424</span>
+TriggerAddEventUnitCargo(gt_Dropship01Purge, null, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6461</span>
+TriggerAddEventUnitCargo(gt_Dropship01UnitPerimeter1, null, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6498</span>
+TriggerAddEventUnitCargo(gt_Dropship01UnitPerimeter2, null, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6534</span>
+TriggerAddEventUnitCargo(gt_Dropship01UnitPerimeter3, null, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6570</span>
+TriggerAddEventUnitCargo(gt_Dropship01UnitPerimeter4, null, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6606</span>
+TriggerAddEventUnitCargo(gt_Dropship01UnitPerimeter5, null, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6642</span>
+TriggerAddEventUnitCargo(gt_Dropship01UnitPerimeter6, null, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L918</span>
+TriggerAddEventUnitCargo(gt_ChangeOwnerofZeratul, null, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8216</span>
+TriggerAddEventUnitCargo(gt_TramUnitUnloadedBehavior, null, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8216</span>
+TriggerAddEventUnitCargo(gt_TramUnitUnloadedBehavior, null, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5477</span>
+TriggerAddEventUnitCargo(gt_S3UnitUnloadedFromDropship, null, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7526</span>
+TriggerAddEventUnitCargo(gt_StatsMedivacUnloads, null, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5477</span>
+TriggerAddEventUnitCargo(gt_S3UnitUnloadedFromDropship, null, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7526</span>
+TriggerAddEventUnitCargo(gt_StatsMedivacUnloads, null, <span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="modsheroesdatastormmod"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/GameDataHelperLib.galaxy#L16061">GameDataHelperLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L16061</span>
+TriggerAddEventUnitCargo(libGDHL_gt_HeroMedicMedivacDropshipLoadEvent, null, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L16131</span>
+TriggerAddEventUnitCargo(libGDHL_gt_HeroMedicMedivacDropshipUnloadEvent, null, <span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="modsheromodsdvastormmod"><a class="markdownIt-Anchor" href="#modsheromodsdvastormmod">#</a> mods/heromods/dva.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heromods/dva.stormmod/base.stormdata/LibHDVA.galaxy#L678">LibHDVA.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L678</span>
+TriggerAddEventUnitCargo(libHDVA_gt_DVaCargoUnloadedSelectionControl, null, <span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="modsnovastoryassetssc2mod"><a class="markdownIt-Anchor" href="#modsnovastoryassetssc2mod">#</a> mods/novastoryassets.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/novastoryassets.sc2mod/base2.sc2maps/maps/campaign/nova/nova04.sc2map/MapScript.galaxy#L2255">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2255</span>
+TriggerAddEventUnitCargo(gt_ReigelSCVStopper, null, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2308</span>
+TriggerAddEventUnitCargo(gt_ReigelSupplyDepotBuilder, null, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2255</span>
+TriggerAddEventUnitCargo(gt_ReigelSCVStopper, null, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2308</span>
+TriggerAddEventUnitCargo(gt_ReigelSupplyDepotBuilder, null, <span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOMI.galaxy#L17380">LibCOMI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L17380</span>
+TriggerAddEventUnitCargo(libCOMI_gt_CM_DehakaGlevigTimerAdjustments, null, <span class="hljs-literal">true</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

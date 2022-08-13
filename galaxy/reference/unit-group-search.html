@@ -1,0 +1,293 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Units Near Point Matching Condition / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Units Near Point Matching Condition"/>
+                <meta property="og:description" content="Returns a unit group containing all units that match the specified filters within the radius of the specified point.  The player parameter determines the player used for the Unit Filter comparisons.  For example, if you specify Enemy in the Unit Filter, it will get units that are an enemy to the specified player.
+
+Returns: unitgroup"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="units-near-point-matching-condition"><a class="markdownIt-Anchor" href="#units-near-point-matching-condition">#</a> Units Near Point Matching Condition</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — <strong>type</strong> units within <strong>radius</strong> of <strong>reg</strong> where player <strong>player</strong> matches filter <strong>unitFilter</strong>, with at most <strong>count</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Function</code></p>
+</blockquote>
+<p>Returns a unit group containing all units that match the specified filters within the radius of the specified point.  The player parameter determines the player used for the Unit Filter comparisons.  For example, if you specify Enemy in the Unit Filter, it will get units that are an enemy to the specified player.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>string</code> <em>[ gamelink::Unit ]</em> — Unit Type</li>
+<li><code>int</code> — Player</li>
+<li><code>point</code> — Point</li>
+<li><code>fixed</code> — Radius</li>
+<li><code>unitfilter</code> — Unit Filter</li>
+<li><code>int</code> — Count</li>
+</ul>
+<p>Returns — <code>unitgroup</code></p>
+<pre class="hljs"><code><span class="hljs-function">native unitgroup <span class="hljs-title">UnitGroupSearch</span><span class="hljs-params">(
+	<span class="hljs-built_in">string</span> type,
+	<span class="hljs-keyword">int</span> player,
+	point p,
+	fixed radius,
+	unitfilter filter,
+	<span class="hljs-keyword">int</span> maxCount,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#unit-group-useful-unit-groups">Unit Group / Useful Unit Groups</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>unitgroup</code> — <strong><a href="/galaxy/reference/unit-group-empty">Empty Unit Group</a></strong> — ( UnitGroupEmpty )</li>
+<li><em><strong>[F]</strong></em> — <code>unitgroup</code> — <strong><a href="/galaxy/reference/unit-group-idle">Idle Units For Player</a></strong> — ( UnitGroupIdle )</li>
+<li><em><strong>[F]</strong></em> — <code>unitgroup</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-convert-unit-to-unit-group">Convert Unit To Unit Group</a></strong> — ( libNtve_gf_ConvertUnitToUnitGroup )</li>
+<li><em><strong>[F]</strong></em> — <code>unitgroup</code> — <strong><a href="/galaxy/reference/unit-group">Units In Region Matching Condition</a></strong> — ( UnitGroup )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/unit-count">Unit Count In Region Matching Condition</a></strong> — ( UnitCount )</li>
+<li><em><strong>[F]</strong></em> — <code>unitgroup</code> — <strong><a href="/galaxy/reference/unit-group-search">Units Near Point Matching Condition</a></strong> — ( UnitGroupSearch )</li>
+<li><em><strong>[F]</strong></em> — <code>unitgroup</code> — <strong><a href="/galaxy/reference/unit-group-alliance">Units In Region With Alliance To Player</a></strong> — ( UnitGroupAlliance )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/unit-count-alliance">Unit Count In Region With Alliance To Player</a></strong> — ( UnitCountAlliance )</li>
+<li><em><strong>[F]</strong></em> — <code>unitgroup</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-units-in-region-with-alliance-to-player-matching-condition">Units In Region With Alliance To Player Matching Condition</a></strong> — ( libNtve_gf_UnitsInRegionWithAllianceToPlayerMatchingCondition )</li>
+<li><em><strong>[F]</strong></em> — <code>unitgroup</code> — <strong><a href="/galaxy/reference/unit-group-filter-player">Units In Unit Group For Player</a></strong> — ( UnitGroupFilterPlayer )</li>
+<li><em><strong>[F]</strong></em> — <code>unitgroup</code> — <strong><a href="/galaxy/reference/unit-group-filter">Units In Unit Group Matching Condition</a></strong> — ( UnitGroupFilter )</li>
+<li><em><strong>[F]</strong></em> — <code>unitgroup</code> — <strong><a href="/galaxy/reference/unit-group-filter-plane">Units In Unit Group Targetable As</a></strong> — ( UnitGroupFilterPlane )</li>
+<li><em><strong>[F]</strong></em> — <code>unitgroup</code> — <strong><a href="/galaxy/reference/unit-group-filter-alliance">Units In Unit Group With Alliance</a></strong> — ( UnitGroupFilterAlliance )</li>
+<li><em><strong>[F]</strong></em> — <code>unitgroup</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-units-in-unit-group-with-custom-value">Units In Unit Group With Custom Value</a></strong> — ( libNtve_gf_UnitsInUnitGroupWithCustomValue )</li>
+<li><em><strong>[F]</strong></em> — <code>unitgroup</code> — <strong><a href="/galaxy/reference/unit-group-filter-region">Units In Unit Group Within Region</a></strong> — ( UnitGroupFilterRegion )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="modscoresc2mod"><a class="markdownIt-Anchor" href="#modscoresc2mod">#</a> mods/core.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/core.sc2mod/base.sc2data/TriggerLibs/Tactical/TactProtAI.galaxy#L842">TactProtAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L842</span>
+UnitGroupSearch(c_PU_HighTemplar, player, UnitGetPosition(aiUnit), <span class="hljs-number">5.0</span>, UnitFilter((<span class="hljs-number">1</span> &lt;&lt; c_targetFilterSelf), <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>), c_noMaxCount)
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodscooppvebrawlmodstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodscooppvebrawlmodstormmod">#</a> mods/heroesbrawlmods/brawlmapmods/coop/pvebrawlmod.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/coop/pvebrawlmod.stormmod/base.stormdata/LibPVEB.galaxy#L186">LibPVEB.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L186</span>
+UnitGroupSearch(null, lp_killedUnitPlayer, UnitGetPosition(lp_killedUnit), libCore_gv_bALXPRadius, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterPlayer) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterAlly) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterNeutral) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))), <span class="hljs-number">0</span>)
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodscooppvemodstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodscooppvemodstormmod">#</a> mods/heroesbrawlmods/brawlmapmods/coop/pvemod.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/coop/pvemod.stormmod/base.stormdata/LibPVEM.galaxy#L1170">LibPVEM.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1170</span>
+UnitGroupSearch(null, lp_killedUnitPlayer, UnitGetPosition(lp_killedUnit), libCore_gv_bALXPRadius, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterPlayer) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterAlly) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterNeutral) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))), <span class="hljs-number">0</span>)
+</code></pre>
+<h4 id="modsheroesdatastormmod"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/AILib.galaxy#L215">AILib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L215</span>
+UnitGroupSearch(null, c_playerAny, Point(<span class="hljs-number">0.0</span>, <span class="hljs-number">0.0</span>), <span class="hljs-number">300.0</span>, UnitFilter((<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMinion), <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterCreep) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterHeroic) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterBenign - <span class="hljs-number">32</span>))), <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L241</span>
+UnitGroupSearch(null, c_playerAny, Point(<span class="hljs-number">0.0</span>, <span class="hljs-number">0.0</span>), <span class="hljs-number">300.0</span>, UnitFilter((<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMinion), <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterCreep) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterHeroic) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterBenign - <span class="hljs-number">32</span>))), <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L250</span>
+UnitGroupSearch(null, c_playerAny, Point(<span class="hljs-number">0.0</span>, <span class="hljs-number">0.0</span>), <span class="hljs-number">300.0</span>, UnitFilter((<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMinion), <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterCreep) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterHeroic) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterBenign - <span class="hljs-number">32</span>))), <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2252</span>
+UnitGroupSearch(null, lp_selfPlayer, lv_centerPoint, lv_searchRadius, libAIAI_gv_uF_MinionAI_GetNearestEnemyStructure, <span class="hljs-number">0</span>)
+</code></pre>
+<h4 id="modsheroesdatastormmod-2"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-2">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/GameDataHelperLib.galaxy#L5754">GameDataHelperLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L5754</span>
+UnitGroupSearch(<span class="hljs-string">"AbathurEvolvedMonstrosity"</span>, lv_abathurPlayer, UnitGetPosition(libGame_gf_SpecialCaseUnitParticipatedInNPCTakedownMinion()), libCore_gv_bALXPRadius, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))), <span class="hljs-number">0</span>)
+</code></pre>
+<h4 id="modsheroesdatastormmod-3"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-3">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/GameLib.galaxy#L6187">GameLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L6187</span>
+UnitGroupSearch(null, lp_killingPlayer, UnitGetPosition(lp_deadHero), libCore_gv_bALHeroKillXPRadius, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterNeutral) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterEnemy) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterCreep) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))), <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6191</span>
+UnitGroupSearch(null, lv_deadPlayer, UnitGetPosition(lp_deadHero), libCore_gv_bALHeroKillXPRadius, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterPlayer) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterAlly) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterNeutral) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterCreep) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))), <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7103</span>
+UnitGroupSearch(null, lp_deadPlayer, UnitGetPosition(lp_deadHero), libCore_gv_bALHeroKillXPRadius, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterPlayer) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterNeutral) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterEnemy) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))), <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8982</span>
+UnitGroupSearch(null, lp_killingPlayer, UnitGetPosition(lp_killedUnit), libCore_gv_bALXPRadius, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterNeutral) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterEnemy) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterCreep) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))), <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8983</span>
+UnitGroupSearch(null, lp_killingPlayer, UnitGetPosition(lp_killedUnit), libCore_gv_bALXPRadius, libCore_gv_filtersHeroicEnemy, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8994</span>
+UnitGroupSearch(null, lp_killedUnitPlayer, UnitGetPosition(lp_killedUnit), libCore_gv_bALXPRadius, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterPlayer) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterAlly) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterNeutral) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterCreep) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))), <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L14074</span>
+UnitGroupSearch(null, UnitGetOwner(libGame_gv_teams[lv_itTeamNumber].lv_core), UnitGetPosition(libGame_gv_teams[lv_itTeamNumber].lv_core), libGame_gv_towerCoreUnderAttackScanRange, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterPlayer) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterAlly) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterNeutral) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))), <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L15134</span>
+UnitGroupSearch(null, lv_killedPlayer, UnitGetPosition(libGame_gv_players[lv_killedPlayer].lv_heroUnit), libGame_gv_teamfightTrackingRadius, UnitFilter((<span class="hljs-number">1</span> &lt;&lt; c_targetFilterHeroic), <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterNeutral) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterEnemy) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterCreep) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))), <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L15260</span>
+UnitGroupSearch(null, lv_playerIterator, UnitGetPosition(libGame_gv_players[lv_playerIterator].lv_heroUnit), libGame_gv_teamfightTrackingRadius, UnitFilter((<span class="hljs-number">1</span> &lt;&lt; c_targetFilterHeroic), <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterNeutral) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterEnemy) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterCreep) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))), <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L15262</span>
+UnitGroupSearch(null, lv_playerIterator, UnitGetPosition(libGame_gv_players[lv_playerIterator].lv_heroUnit), libGame_gv_teamfightTrackingRadius, UnitFilter((<span class="hljs-number">1</span> &lt;&lt; c_targetFilterHeroic), <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterPlayer) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterAlly) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterNeutral), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>))), <span class="hljs-number">0</span>)
+</code></pre>
+<h4 id="modsheroesdatastormmod-4"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-4">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/MapMechanicsLib.galaxy#L1744">MapMechanicsLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1744</span>
+UnitGroupSearch(null, lp_owner, libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampCaptainSpawnPoint, lv_captureRadiusScoreCredit, libCore_gv_filtersHeroicAllyorPlayerandnotHallucinationorBenign, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1751</span>
+UnitGroupSearch(<span class="hljs-string">"HeroGall"</span>, lp_owner, libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampCaptainSpawnPoint, lv_captureRadiusScoreCredit, libCore_gv_filtersHeroicjustexcludingMissile, <span class="hljs-number">0</span>)
+</code></pre>
+<h4 id="modsheroesdatastormmod-5"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-5">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/SoundLib.galaxy#L497">SoundLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L497</span>
+UnitGroupSearch(null, lp_player, lv_positionOfHeroUnit, libSond_gv_heroVO_HeroIntroLineAllyCheckRadius_C, libCore_gv_filtersHeroicAllyandnotHallucination, <span class="hljs-number">0</span>)
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodsbattlefieldofeternitystormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodsbattlefieldofeternitystormmod">#</a> mods/heroesmapmods/battlegroundmapmods/battlefieldofeternity.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/battlefieldofeternity.stormmod/base.stormdata/LibMLBD.galaxy#L2162">LibMLBD.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2162</span>
+UnitGroupSearch(null, UnitGetOwner(lp_castingUnit), UnitGetPosition(lp_castingUnit), libMLBD_gv_mMBOEExplosionsMaxRange, UnitFilter((<span class="hljs-number">1</span> &lt;&lt; c_targetFilterVisible), <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterPlayer) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterAlly) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterNeutral) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterImmuneToAOE) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterUser1) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterCloaked), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterInvulnerable - <span class="hljs-number">32</span>))), <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2328</span>
+UnitGroupSearch(null, UnitGetOwner(lp_bossUnit), UnitGetPosition(lp_bossUnit), libCore_gv_bALXPRadius, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterPlayer) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterAlly) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterNeutral) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterCreep) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))), <span class="hljs-number">0</span>)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOMI.galaxy#L28000">LibCOMI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L28000</span>
+UnitGroupSearch(null, <span class="hljs-number">0</span>, UnitGetPosition(lv_nexus), <span class="hljs-number">10.0</span>, UnitFilter((<span class="hljs-number">1</span> &lt;&lt; c_targetFilterRawResource), <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterAlly) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterNeutral) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterEnemy) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))), <span class="hljs-number">0</span>)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod-2"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod-2">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/TriggerLibs/Tactical/TactProtAI.galaxy#L819">TactProtAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L819</span>
+UnitGroupSearch(c_PU_HighTemplar, player, UnitGetPosition(aiUnit), <span class="hljs-number">5.0</span>, UnitFilter((<span class="hljs-number">1</span> &lt;&lt; c_targetFilterSelf), <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>), c_noMaxCount)
+</code></pre>
+<h4 id="modswarcoopwarclassicsystemsc2mod"><a class="markdownIt-Anchor" href="#modswarcoopwarclassicsystemsc2mod">#</a> mods/warcoop/warclassicsystem.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/warcoop/warclassicsystem.sc2mod/base.sc2data/TriggerLibs/WarClassicSystem.galaxy#L235">WarClassicSystem.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L235</span>
+UnitGroupSearch(null, <span class="hljs-number">15</span>, lv_startloc, <span class="hljs-number">20.0</span>, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterAlly) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterNeutral) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterEnemy) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))), <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L269</span>
+UnitGroupSearch(<span class="hljs-string">"ngol"</span>, c_playerAny, lv_startloc, <span class="hljs-number">20.0</span>, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))), <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L270</span>
+UnitGroupSearch(null, c_playerAny, lv_startloc, <span class="hljs-number">20.0</span>, UnitFilter((<span class="hljs-number">1</span> &lt;&lt; c_targetFilterHarvestableResource), <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterInvulnerable - <span class="hljs-number">32</span>))), <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L272</span>
+UnitGroupSearch(null, <span class="hljs-number">15</span>, lv_startloc, <span class="hljs-number">20.0</span>, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterAlly) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterNeutral) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterEnemy) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))), <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L279</span>
+UnitGroupSearch(<span class="hljs-string">"egol"</span>, lv_p, lv_startloc, <span class="hljs-number">20.0</span>, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterAlly) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterNeutral) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterEnemy) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>))), <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L301</span>
+UnitGroupSearch(<span class="hljs-string">"ugho"</span>, lv_p, lv_startloc, <span class="hljs-number">20.0</span>, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterAlly) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterNeutral) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterEnemy) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))), <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L302</span>
+UnitGroupSearch(null, lv_p, lv_startloc, <span class="hljs-number">20.0</span>, UnitFilter((<span class="hljs-number">1</span> &lt;&lt; c_targetFilterWorker), <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterAlly) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterNeutral) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterEnemy) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))), <span class="hljs-number">0</span>)
+</code></pre>
+<h4 id="modswarcoopwarclassicsystemsc2mod-2"><a class="markdownIt-Anchor" href="#modswarcoopwarclassicsystemsc2mod-2">#</a> mods/warcoop/warclassicsystem.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/warcoop/warclassicsystem.sc2mod/base.sc2data/TriggerLibs/WarClassicTactical.galaxy#L492">WarClassicTactical.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L492</span>
+UnitGroupSearch(null, lp_owner, UnitGetPosition(lp_aIUnit), libGAwT_gf_AIEffectAbilSearchRadius(lp_owner, lp_aIUnit, lp_abil, lv_level, <span class="hljs-literal">true</span>), libGAwT_gf_AIEffectAbilSearchUnitFilter(lp_owner, lp_aIUnit, lp_abil, lv_level), <span class="hljs-number">0</span>)
+</code></pre>
+<h4 id="modswarcoopwarclassicsystemsc2mod-3"><a class="markdownIt-Anchor" href="#modswarcoopwarclassicsystemsc2mod-3">#</a> mods/warcoop/warclassicsystem.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/warcoop/warclassicsystem.sc2mod/base.sc2data/TriggerLibs/Tactical/TacticalAIWar3.galaxy#L88">TacticalAIWar3.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L88</span>
+UnitGroupSearch(null,player,goal,<span class="hljs-number">20</span>,GAw3_UnitTownFilter,<span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L245</span>
+UnitGroupSearch(null, player, pos, range, EnemyEtherealFilter,<span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L248</span>
+UnitGroupSearch(null, player, pos, range, EnemyInvisibleFilter,<span class="hljs-number">0</span>)
+</code></pre>
+<h4 id="modswarcoopwarcoopdatasc2mod"><a class="markdownIt-Anchor" href="#modswarcoopwarcoopdatasc2mod">#</a> mods/warcoop/warcoopdata.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/warcoop/warcoopdata.sc2mod/base.sc2data/TriggerLibs/WarCoopData.galaxy#L2195">WarCoopData.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2195</span>
+UnitGroupSearch(null, <span class="hljs-number">15</span>, PlayerStartLocation(lv_player), <span class="hljs-number">10.0</span>, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterAlly) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterNeutral) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterEnemy) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))), <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2235</span>
+UnitGroupSearch(<span class="hljs-string">"ngol"</span>, c_playerAny, lv_startingLocation, <span class="hljs-number">10.0</span>, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))), <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2236</span>
+UnitGroupSearch(null, c_playerAny, lv_startingLocation, <span class="hljs-number">10.0</span>, UnitFilter((<span class="hljs-number">1</span> &lt;&lt; c_targetFilterHarvestableResource), <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterInvulnerable - <span class="hljs-number">32</span>))), <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2253</span>
+UnitGroupSearch(<span class="hljs-string">"ugho"</span>, lv_player, lv_startingLocation, <span class="hljs-number">10.0</span>, UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterAlly) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterNeutral) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterEnemy) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))), <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2254</span>
+UnitGroupSearch(null, lv_player, lv_startingLocation, <span class="hljs-number">10.0</span>, UnitFilter((<span class="hljs-number">1</span> &lt;&lt; c_targetFilterWorker), <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterAlly) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterNeutral) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterEnemy) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))), <span class="hljs-number">0</span>)
+</code></pre>
+<h4 id="modswarcoopwarmeleeaisc2mod"><a class="markdownIt-Anchor" href="#modswarcoopwarmeleeaisc2mod">#</a> mods/warcoop/warmeleeai.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/warcoop/warmeleeai.sc2mod/base.sc2data/TriggerLibs/Common_ai.galaxy#L68">Common_ai.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L68</span>
+UnitGroupSearch(<span class="hljs-string">"ngol"</span>, player, loc, <span class="hljs-number">20.0</span>,UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterPlayer) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterAlly) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterEnemy),<span class="hljs-number">0</span>),<span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L88</span>
+UnitGroupSearch(<span class="hljs-string">"ngol"</span>, player, loc, <span class="hljs-number">20.0</span>,UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterPlayer) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterAlly) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterEnemy),<span class="hljs-number">0</span>),<span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L105</span>
+UnitGroupSearch(<span class="hljs-string">"ngol"</span>, player, loc, <span class="hljs-number">20.0</span>,UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterPlayer) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterAlly) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterEnemy),<span class="hljs-number">0</span>),<span class="hljs-number">0</span>)
+</code></pre>
+<h4 id="modswarcoopwarmeleeaisc2mod-2"><a class="markdownIt-Anchor" href="#modswarcoopwarmeleeaisc2mod-2">#</a> mods/warcoop/warmeleeai.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/warcoop/warmeleeai.sc2mod/base.sc2data/TriggerLibs/MeleeWaveAI.galaxy#L89">MeleeWaveAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L89</span>
+UnitGroupSearch(null, GAw3_AICreepPlayer, UnitGetPosition(creep), GAw3_CreepCampBoundary, GAw3_AICreepfilter, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L104</span>
+UnitGroupSearch(null, GAw3_AICreepPlayer, UnitGetPosition(creep), GAw3_CreepCampBoundary, GAw3_AICreepfilter, <span class="hljs-number">0</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

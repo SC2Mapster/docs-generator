@@ -1,0 +1,234 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>String With Search Replacement / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: String With Search Replacement"/>
+                <meta property="og:description" content="Replaces one or more occcurrences of a substring inside a string.
+
+Returns: string"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="string-with-search-replacement"><a class="markdownIt-Anchor" href="#string-with-search-replacement">#</a> String With Search Replacement</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — <strong>string</strong> with up to <strong>count</strong> <strong>findString</strong> replaced by <strong>replaceString</strong> (<strong>sensitivity|Sensitive/Insensitive</strong> to case)<br>
+<em>Flags</em> — <code>Native</code> | <code>Function</code></p>
+</blockquote>
+<p>Replaces one or more occcurrences of a substring inside a string.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>string</code> — String</li>
+<li><code>string</code> — Find String</li>
+<li><code>string</code> — Replace String</li>
+<li><code>int</code> — Count</li>
+<li><code>bool</code> <em>[ preset::<a href="/galaxy/reference/preset-string-case-sensitivity">String_Case_Sensitivity</a> ]</em> — Sensitivity</li>
+</ul>
+<p>Returns — <code>string</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-built_in">string</span> <span class="hljs-title">StringReplaceWord</span><span class="hljs-params">(
+	<span class="hljs-built_in">string</span> s,
+	<span class="hljs-built_in">string</span> word,
+	<span class="hljs-built_in">string</span> replace,
+	<span class="hljs-keyword">int</span> maxCount,
+	<span class="hljs-keyword">bool</span> caseSens,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#string-substrings">String / Substrings</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>string</code> — <strong><a href="/galaxy/reference/string-word">Word Of String</a></strong> — ( StringWord )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> — <strong><a href="/galaxy/reference/string-sub">Substring</a></strong> — ( StringSub )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/string-find">Position Of Substring</a></strong> — ( StringFind )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/string-contains">String Containment</a></strong> — ( StringContains )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> — <strong><a href="/galaxy/reference/string-replace">String With Indexed Replacement</a></strong> — ( StringReplace )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> — <strong><a href="/galaxy/reference/string-replace-word">String With Search Replacement</a></strong> — ( StringReplaceWord )</li>
+<li><em><strong>[F]</strong></em> — <code>text</code> — <strong><a href="/galaxy/reference/text-replace-word">Text With Search Replacement</a></strong> — ( TextReplaceWord )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignsswarmstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmstorysc2campaign">#</a> campaigns/swarmstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstory.sc2campaign/base.sc2data/TriggerLibs/SwarmCampaignLib.galaxy#L13218">SwarmCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L13218</span>
+StringReplaceWord(lv_offsetString, <span class="hljs-string">","</span>, <span class="hljs-string">" "</span>, <span class="hljs-number">1</span>, c_stringCase)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignLib.galaxy#L6870">VoidCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L6870</span>
+StringReplaceWord(lv_offsetString, <span class="hljs-string">","</span>, <span class="hljs-string">" "</span>, <span class="hljs-number">1</span>, c_stringCase)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign-2"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign-2">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignMissionLib.galaxy#L1102">VoidCampaignMissionLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1102</span>
+StringReplaceWord(lp_command, <span class="hljs-string">" "</span>, <span class="hljs-string">""</span>, c_stringReplaceAll, c_stringCase)
+</code></pre>
+<h4 id="modscoresc2mod"><a class="markdownIt-Anchor" href="#modscoresc2mod">#</a> mods/core.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/core.sc2mod/base.sc2data/TriggerLibs/NativeLib.galaxy#L1410">NativeLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1410</span>
+StringReplaceWord(lp_animation, <span class="hljs-string">" "</span>, <span class="hljs-string">","</span>, <span class="hljs-number">0</span>, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1461</span>
+StringReplaceWord(lp_animation, <span class="hljs-string">" "</span>, <span class="hljs-string">","</span>, <span class="hljs-number">0</span>, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1562</span>
+StringReplaceWord(lp_prop, <span class="hljs-string">" "</span>, <span class="hljs-string">","</span>, <span class="hljs-number">0</span>, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1582</span>
+StringReplaceWord(lp_prop, <span class="hljs-string">" "</span>, <span class="hljs-string">","</span>, <span class="hljs-number">0</span>, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1583</span>
+StringReplaceWord(lp_blendInAnimation, <span class="hljs-string">" "</span>, <span class="hljs-string">","</span>, <span class="hljs-number">0</span>, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1584</span>
+StringReplaceWord(lp_blendOutAnimation, <span class="hljs-string">" "</span>, <span class="hljs-string">","</span>, <span class="hljs-number">0</span>, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1600</span>
+StringReplaceWord(lp_prop, <span class="hljs-string">" "</span>, <span class="hljs-string">","</span>, <span class="hljs-number">0</span>, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5544</span>
+StringReplaceWord(lp_targetFilterString, <span class="hljs-string">","</span>, <span class="hljs-string">" "</span>, <span class="hljs-number">0</span>, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5545</span>
+StringReplaceWord(lv_newTargetFilterString, <span class="hljs-string">";"</span>, <span class="hljs-string">" DIV "</span>, <span class="hljs-number">0</span>, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1219</span>
+StringReplaceWord(lp_animation, <span class="hljs-string">" "</span>, <span class="hljs-string">","</span>, <span class="hljs-number">0</span>, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1270</span>
+StringReplaceWord(lp_animation, <span class="hljs-string">" "</span>, <span class="hljs-string">","</span>, <span class="hljs-number">0</span>, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1371</span>
+StringReplaceWord(lp_prop, <span class="hljs-string">" "</span>, <span class="hljs-string">","</span>, <span class="hljs-number">0</span>, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1391</span>
+StringReplaceWord(lp_prop, <span class="hljs-string">" "</span>, <span class="hljs-string">","</span>, <span class="hljs-number">0</span>, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1392</span>
+StringReplaceWord(lp_blendInAnimation, <span class="hljs-string">" "</span>, <span class="hljs-string">","</span>, <span class="hljs-number">0</span>, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1393</span>
+StringReplaceWord(lp_blendOutAnimation, <span class="hljs-string">" "</span>, <span class="hljs-string">","</span>, <span class="hljs-number">0</span>, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1409</span>
+StringReplaceWord(lp_prop, <span class="hljs-string">" "</span>, <span class="hljs-string">","</span>, <span class="hljs-number">0</span>, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4736</span>
+StringReplaceWord(lp_targetFilterString, <span class="hljs-string">","</span>, <span class="hljs-string">" "</span>, <span class="hljs-number">0</span>, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4737</span>
+StringReplaceWord(lv_newTargetFilterString, <span class="hljs-string">";"</span>, <span class="hljs-string">" DIV "</span>, <span class="hljs-number">0</span>, c_stringCase)
+</code></pre>
+<h4 id="modsheroesdatastormmod"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/GameLib.galaxy#L5835">GameLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L5835</span>
+StringReplaceWord(lv_offsetString, <span class="hljs-string">","</span>, <span class="hljs-string">" "</span>, c_stringReplaceAll, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5968</span>
+StringReplaceWord(lv_offsetString, <span class="hljs-string">","</span>, <span class="hljs-string">" "</span>, c_stringReplaceAll, c_stringCase)
+</code></pre>
+<h4 id="modsheroesdatastormmod-2"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-2">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/SupportLib.galaxy#L5386">SupportLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L5386</span>
+StringReplaceWord(lv_chatString, <span class="hljs-string">"Hero"</span>, <span class="hljs-string">""</span>, c_stringReplaceAll, c_stringNoCase)
+</code></pre>
+<h4 id="modsheromodsalarakstormmod"><a class="markdownIt-Anchor" href="#modsheromodsalarakstormmod">#</a> mods/heromods/alarak.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heromods/alarak.stormmod/base.stormdata/LibHALA.galaxy#L798">LibHALA.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L798</span>
+StringReplaceWord(lv_effectString, <span class="hljs-string">"AlarakLightningSurgeSearch"</span>, <span class="hljs-string">""</span>, c_stringReplaceAll, c_stringCase)
+</code></pre>
+<h4 id="modsmissionpackscampaigncommonsc2mod"><a class="markdownIt-Anchor" href="#modsmissionpackscampaigncommonsc2mod">#</a> mods/missionpacks/campaigncommon.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/campaigncommon.sc2mod/base.sc2data/LibComC.galaxy#L3024">LibComC.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3024</span>
+StringReplaceWord(lv_offsetString, <span class="hljs-string">","</span>, <span class="hljs-string">" "</span>, <span class="hljs-number">1</span>, c_stringCase)
+</code></pre>
+<h4 id="modsmissionpacksnovacampaignsc2mod"><a class="markdownIt-Anchor" href="#modsmissionpacksnovacampaignsc2mod">#</a> mods/missionpacks/novacampaign.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/novacampaign.sc2mod/base.sc2data/LibNCMI.galaxy#L2113">LibNCMI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2113</span>
+StringReplaceWord(lp_command, <span class="hljs-string">" "</span>, <span class="hljs-string">""</span>, c_stringReplaceAll, c_stringCase)
+</code></pre>
+<h4 id="modsvoidprologuesc2mod"><a class="markdownIt-Anchor" href="#modsvoidprologuesc2mod">#</a> mods/voidprologue.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/voidprologue.sc2mod/base.sc2data/LibA3DDD02B.galaxy#L6340">LibA3DDD02B.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L6340</span>
+StringReplaceWord(lv_offsetString, <span class="hljs-string">","</span>, <span class="hljs-string">" "</span>, <span class="hljs-number">1</span>, c_stringCase)
+</code></pre>
+<h4 id="modswarcoopwarclassicsc2mod"><a class="markdownIt-Anchor" href="#modswarcoopwarclassicsc2mod">#</a> mods/warcoop/warclassic.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/warcoop/warclassic.sc2mod/base.sc2data/TriggerLibs/WarClassic.galaxy#L91">WarClassic.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L91</span>
+StringReplaceWord(<span class="hljs-built_in">set</span>,head,<span class="hljs-string">""</span>,<span class="hljs-number">1</span>,c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L104</span>
+StringReplaceWord(<span class="hljs-built_in">set</span>,head,<span class="hljs-string">""</span>,<span class="hljs-number">1</span>,c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L118</span>
+StringReplaceWord(<span class="hljs-built_in">set</span>,head,<span class="hljs-string">""</span>,<span class="hljs-number">1</span>,c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L119</span>
+StringReplaceWord(body,entry+<span class="hljs-string">" "</span>,<span class="hljs-string">""</span>,<span class="hljs-number">1</span>,c_stringCase)
+</code></pre>
+<h4 id="modswarcoopwarcoopdatasc2mod"><a class="markdownIt-Anchor" href="#modswarcoopwarcoopdatasc2mod">#</a> mods/warcoop/warcoopdata.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/warcoop/warcoopdata.sc2mod/base.sc2data/TriggerLibs/WarCoopData.galaxy#L2107">WarCoopData.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2107</span>
+StringReplaceWord(lv_newLink, lv_raceToken, <span class="hljs-string">""</span>, c_stringReplaceAll, c_stringCase)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

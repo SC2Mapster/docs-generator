@@ -1,0 +1,334 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Set Difficulty Parameter / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Set Difficulty Parameter"/>
+                <meta property="og:description" content="Enables or disables a particular difficulty parameter for a player."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="set-difficulty-parameter"><a class="markdownIt-Anchor" href="#set-difficulty-parameter">#</a> Set Difficulty Parameter</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — <strong>state|Enable/Disable</strong> <strong>index</strong> for player <strong>player</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Enables or disables a particular difficulty parameter for a player.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> — Player</li>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-ai-difficulty-index">AIDifficultyIndex</a> ]</em> — Index</li>
+<li><code>bool</code> <em>[ preset::<a href="/galaxy/reference/preset-enable-disable-option">Enable_Disable_Option</a> ]</em> — State</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">AISetDifficulty</span><span class="hljs-params">(
+	<span class="hljs-keyword">int</span> player,
+	<span class="hljs-keyword">int</span> index,
+	<span class="hljs-keyword">bool</span> state,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#ai-advanced-difficulty-actions">AI Advanced / Difficulty / Actions</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ai-set-difficulty">Set Difficulty Parameter</a></strong> — ( AISetDifficulty )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/challenges/rushdefense.sc2map/MapScript.galaxy#L1205">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1205</span>
+AISetDifficulty(PlayerGroupLoopCurrent(), c_diffNormalTargetPrio, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2897</span>
+AISetDifficulty(gv_pLAYER_03_INFESTED_REFUGEES, c_diffPressForward, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2898</span>
+AISetDifficulty(gv_pLAYER_04_INFESTEDREFUGEES, c_diffPressForward, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L671</span>
+AISetDifficulty(gv_pLAYER_02_DOMINION, c_diffRepairDamage, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L677</span>
+AISetDifficulty(gv_pLAYER_02_DOMINION, c_diffRepairDamage, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L913</span>
+AISetDifficulty(gv_p3_DOMINION_RED, c_diffPressForward, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2897</span>
+AISetDifficulty(gv_pLAYER_03_INFESTED_REFUGEES, c_diffPressForward, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2898</span>
+AISetDifficulty(gv_pLAYER_04_INFESTEDREFUGEES, c_diffPressForward, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L671</span>
+AISetDifficulty(gv_pLAYER_02_DOMINION, c_diffRepairDamage, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L677</span>
+AISetDifficulty(gv_pLAYER_02_DOMINION, c_diffRepairDamage, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L913</span>
+AISetDifficulty(gv_p3_DOMINION_RED, c_diffPressForward, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1205</span>
+AISetDifficulty(PlayerGroupLoopCurrent(), c_diffNormalTargetPrio, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7032</span>
+AISetDifficulty(gv_pLAYER_02_ZERG, c_diffNormalVision, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4554</span>
+AISetDifficulty(gv_PLAYER_07_DOMINION_GREEN22, c_diffAutoLoadBunkers, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4555</span>
+AISetDifficulty(gv_PLAYER_07_DOMINION_GREEN22, c_diffRepairDamage, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7032</span>
+AISetDifficulty(gv_pLAYER_02_ZERG, c_diffNormalVision, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4554</span>
+AISetDifficulty(gv_PLAYER_07_DOMINION_GREEN22, c_diffAutoLoadBunkers, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4555</span>
+AISetDifficulty(gv_PLAYER_07_DOMINION_GREEN22, c_diffRepairDamage, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4368</span>
+AISetDifficulty(gv_pLAYER_02_DOMINION, c_diffAutoLoadBunkers, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4369</span>
+AISetDifficulty(gv_pLAYER_02_DOMINION2, c_diffAutoLoadBunkers, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4370</span>
+AISetDifficulty(gv_pLAYER_02_DOMINION, c_diffRepairDamage, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4371</span>
+AISetDifficulty(gv_pLAYER_02_DOMINION2, c_diffRepairDamage, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4368</span>
+AISetDifficulty(gv_pLAYER_02_DOMINION, c_diffAutoLoadBunkers, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4369</span>
+AISetDifficulty(gv_pLAYER_02_DOMINION2, c_diffAutoLoadBunkers, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4370</span>
+AISetDifficulty(gv_pLAYER_02_DOMINION, c_diffRepairDamage, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4371</span>
+AISetDifficulty(gv_pLAYER_02_DOMINION2, c_diffRepairDamage, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignMissionLib.galaxy#L2116">VoidCampaignMissionLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2116</span>
+AISetDifficulty(lp_player, c_diffAvoidMindControlled, <span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="modscoresc2mod"><a class="markdownIt-Anchor" href="#modscoresc2mod">#</a> mods/core.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/core.sc2mod/base.sc2data/TriggerLibs/BaseAI.galaxy#L114">BaseAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L114</span>
+AISetDifficulty(player, c_diffRepairDamage, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L115</span>
+AISetDifficulty(player, c_diffOptimizeGas, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L116</span>
+AISetDifficulty(player, c_diffDefendWithPeons, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L117</span>
+AISetDifficulty(player, c_diffEnableDangerMap, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L118</span>
+AISetDifficulty(player, c_diffNormalTargetPrio, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L119</span>
+AISetDifficulty(player, c_diffAllowResourceReq, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L120</span>
+AISetDifficulty(player, c_diffAdvancedRetreatLogic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L121</span>
+AISetDifficulty(player, c_diffSupportsBeacons, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L122</span>
+AISetDifficulty(player, c_diffAutoBuildPrereqs, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L123</span>
+AISetDifficulty(player, c_diffAllowBuildInDanger, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="modslibertysc2mod"><a class="markdownIt-Anchor" href="#modslibertysc2mod">#</a> mods/liberty.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/liberty.sc2mod/base.sc2data/TriggerLibs/Terran/TerranHigh.galaxy#L858">TerranHigh.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L858</span>
+AISetDifficulty(player, c_diffEarlyGameRepair, <span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="modsmissionpacksnovacampaignsc2mod"><a class="markdownIt-Anchor" href="#modsmissionpacksnovacampaignsc2mod">#</a> mods/missionpacks/novacampaign.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/novacampaign.sc2mod/base.sc2data/LibNCMI.galaxy#L2788">LibNCMI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2788</span>
+AISetDifficulty(lp_player, c_diffAvoidMindControlled, <span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="modsnovastoryassetssc2mod"><a class="markdownIt-Anchor" href="#modsnovastoryassetssc2mod">#</a> mods/novastoryassets.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/novastoryassets.sc2mod/base.sc2maps/maps/campaign/nova/nova03.sc2map/MapScript.galaxy#L7408">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L7408</span>
+AISetDifficulty(gv_pLAYER_06_DEFENDERSOFMAN, c_diffAutoLoadBunkers, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7409</span>
+AISetDifficulty(gv_pLAYER_06_DEFENDERSOFMAN, c_diffRepairDamage, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7410</span>
+AISetDifficulty(gv_pLAYER_06_DEFENDERSOFMAN, c_diffEarlyGameRepair, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7408</span>
+AISetDifficulty(gv_pLAYER_06_DEFENDERSOFMAN, c_diffAutoLoadBunkers, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7409</span>
+AISetDifficulty(gv_pLAYER_06_DEFENDERSOFMAN, c_diffRepairDamage, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7410</span>
+AISetDifficulty(gv_pLAYER_06_DEFENDERSOFMAN, c_diffEarlyGameRepair, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOMI.galaxy#L12843">LibCOMI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L12843</span>
+AISetDifficulty(autoE85E0ABA_var, c_diffTargetSpawners, libCOMI_gv_cM_DebugAITargetSpawners)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod-2"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod-2">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/TriggerLibs/BaseAI.galaxy#L150">BaseAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L150</span>
+AISetDifficulty(player, c_diffRepairDamage, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L151</span>
+AISetDifficulty(player, c_diffOptimizeGas, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L152</span>
+AISetDifficulty(player, c_diffDefendWithPeons, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L153</span>
+AISetDifficulty(player, c_diffEnableDangerMap, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L154</span>
+AISetDifficulty(player, c_diffNormalTargetPrio, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L155</span>
+AISetDifficulty(player, c_diffAllowResourceReq, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L156</span>
+AISetDifficulty(player, c_diffAdvancedRetreatLogic, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L157</span>
+AISetDifficulty(player, c_diffSupportsBeacons, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L158</span>
+AISetDifficulty(player, c_diffAutoBuildPrereqs, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L159</span>
+AISetDifficulty(player, c_diffAllowBuildInDanger, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="modsswarmsc2mod"><a class="markdownIt-Anchor" href="#modsswarmsc2mod">#</a> mods/swarm.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/swarm.sc2mod/base.sc2data/TriggerLibs/Terran/TerranHigh.galaxy#L858">TerranHigh.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L858</span>
+AISetDifficulty(player, c_diffEarlyGameRepair, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L861</span>
+AISetDifficulty(player, c_diffEarlyGameRepair, <span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="modswarcoopwarcoopdatasc2mod"><a class="markdownIt-Anchor" href="#modswarcoopwarcoopdatasc2mod">#</a> mods/warcoop/warcoopdata.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/warcoop/warcoopdata.sc2mod/base.sc2data/TriggerLibs/WarCoopData.galaxy#L2691">WarCoopData.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2691</span>
+AISetDifficulty(lv_player, c_diffWaveLeashing, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2692</span>
+AISetDifficulty(lv_player, c_diffFleeDanger, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2693</span>
+AISetDifficulty(lv_player, c_diffPressForward, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="modswarcoopwarmeleeaisc2mod"><a class="markdownIt-Anchor" href="#modswarcoopwarmeleeaisc2mod">#</a> mods/warcoop/warmeleeai.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/warcoop/warmeleeai.sc2mod/base.sc2data/LibW3AI.galaxy#L50">LibW3AI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L50</span>
+AISetDifficulty(lv_p, c_diffRepairDamage, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L51</span>
+AISetDifficulty(lv_p, c_diffEarlyGameRepair, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L52</span>
+AISetDifficulty(lv_p, c_diffEnableDangerMap, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L53</span>
+AISetDifficulty(lv_p, c_diffSetRallyPoints, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L54</span>
+AISetDifficulty(lv_p, c_diffFleeDamage, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L55</span>
+AISetDifficulty(lv_p, c_diffFleeDanger, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L56</span>
+AISetDifficulty(lv_p, c_diffAutoTransport, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L57</span>
+AISetDifficulty(lv_p, c_diffNormalVision, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L58</span>
+AISetDifficulty(lv_p, c_diffLimitAPM, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L228</span>
+AISetDifficulty(lv_p, c_diffAllowResourceReq, <span class="hljs-literal">false</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

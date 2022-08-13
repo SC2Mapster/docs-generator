@@ -1,0 +1,409 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Set Alliance / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Set Alliance"/>
+                <meta property="og:description" content="Sets alliance settings between two players.  This action will determined how two players treat each other, such as whether or not their units fight.  Pushable means that one player&#39;s units are allowed to push another player&#39;s units out of the way if they are trying to path through them."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="set-alliance"><a class="markdownIt-Anchor" href="#set-alliance">#</a> Set Alliance</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Make player <strong>sourcePlayer</strong> and player <strong>targetPlayer</strong> treat each other as <strong>alliance</strong><br>
+<em>Flags</em> — <code>Action</code></p>
+</blockquote>
+<p>Sets alliance settings between two players.  This action will determined how two players treat each other, such as whether or not their units fight.  Pushable means that one player*“s units are allowed to push another player”*s units out of the way if they are trying to path through them.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> — Source Player</li>
+<li><code>int</code> — Target Player</li>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-alliance-setting">AllianceSetting</a> ]</em> — Alliance Setting</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">libNtve_gf_SetAlliance</span><span class="hljs-params">(
+	<span class="hljs-keyword">int</span> lp_sourcePlayer,
+	<span class="hljs-keyword">int</span> lp_targetPlayer,
+	<span class="hljs-keyword">int</span> lp_alliance,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#player-alliances">Player / Alliances</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-player-alliance-change">Player Changes Alliances</a></strong> — ( TriggerAddEventPlayerAllianceChange )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-set-alliance">Set Alliance</a></strong> — ( libNtve_gf_SetAlliance )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-set-alliance-one-way">Set Alliance (One-Way)</a></strong> — ( libNtve_gf_SetAllianceOneWay )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/player-set-alliance">Set Alliance Aspect</a></strong> — ( PlayerSetAlliance )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-set-player-group-alliance">Set Alliance For Player Group</a></strong> — ( libNtve_gf_SetPlayerGroupAlliance )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-set-alliance-between-two-player-groups">Set Alliance Between Two Player Groups</a></strong> — ( libNtve_gf_SetAllianceBetweenTwoPlayerGroups )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-set-alliance-aspect-for-player-group">Set Alliance Aspect For Player Group</a></strong> — ( libNtve_gf_SetAllianceAspectForPlayerGroup )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/player-get-alliance">Alliance Aspect</a></strong> — ( PlayerGetAlliance )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-player-is-enemy">Get Relationship Between Players</a></strong> — ( libNtve_gf_PlayerIsEnemy )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/challenges/advancedcommand.sc2map/MapScript.galaxy#L184">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L184</span>
+libNtve_gf_SetAlliance(gv_pLAYER_USER, gv_pLAYER_ALLY, libNtve_ge_AllianceSetting_AllyWithSharedVision)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L185</span>
+libNtve_gf_SetAlliance(gv_pLAYER_USER, gv_pLAYER_COMPUTER2, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L186</span>
+libNtve_gf_SetAlliance(gv_pLAYER_COMPUTER1, gv_pLAYER_COMPUTER2, libNtve_ge_AllianceSetting_Ally)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L509</span>
+libNtve_gf_SetAlliance(gv_pLAYER_USER, gv_pLAYER_COMPUTER2, libNtve_ge_AllianceSetting_AllyWithSharedVision)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L510</span>
+libNtve_gf_SetAlliance(gv_pLAYER_USER, gv_pLAYER_COMPUTER2, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L511</span>
+libNtve_gf_SetAlliance(gv_pLAYER_USER, gv_pLAYER_BOARD, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L512</span>
+libNtve_gf_SetAlliance(gv_pLAYER_COMPUTER1, gv_pLAYER_COMPUTER2, libNtve_ge_AllianceSetting_Ally)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L513</span>
+libNtve_gf_SetAlliance(gv_pLAYER_COMPUTER1, gv_pLAYER_BOARD, libNtve_ge_AllianceSetting_Ally)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1594</span>
+libNtve_gf_SetAlliance(gv_pLAYER_USER, gv_pLAYER_COMPUTER1, libNtve_ge_AllianceSetting_AllyWithSharedVision)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1595</span>
+libNtve_gf_SetAlliance(gv_pLAYER_USER, gv_pLAYER_COMPUTER2, libNtve_ge_AllianceSetting_AllyWithSharedVision)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1613</span>
+libNtve_gf_SetAlliance(gv_pLAYER_USER, gv_pLAYER_COMPUTER1, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1614</span>
+libNtve_gf_SetAlliance(gv_pLAYER_USER, gv_pLAYER_COMPUTER2, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L212</span>
+libNtve_gf_SetAlliance(gv_pLAYER_COMPUTER1, <span class="hljs-number">0</span>, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L273</span>
+libNtve_gf_SetAlliance(gv_pLAYER_COMPUTER1, gv_pLAYER_COMPUTER2, libNtve_ge_AllianceSetting_Ally)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L274</span>
+libNtve_gf_SetAlliance(gv_pLAYER_USER, gv_pLAYER_COMPUTER2, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L692</span>
+libNtve_gf_SetAlliance(gv_pLAYER_COMPUTER1, <span class="hljs-number">0</span>, libNtve_ge_AllianceSetting_Neutral)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L211</span>
+libNtve_gf_SetAlliance(gv_pLAYER_USER, gv_pLAYER_ENEMY, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L331</span>
+libNtve_gf_SetAlliance(gv_p2_ENEMY_ZERG, gv_p3_ENEMY_PROTOSS, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L473</span>
+libNtve_gf_SetAlliance(gv_pLAYER_USER, gv_pLAYER_BOARD, libNtve_ge_AllianceSetting_EnemyWithSharedVision)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L474</span>
+libNtve_gf_SetAlliance(gv_pLAYER_COMPUTER1, gv_pLAYER_BOARD, libNtve_ge_AllianceSetting_Ally)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L942</span>
+libNtve_gf_SetAlliance(gv_pLAYER_USER, gv_pLAYER_COMPUTER1, libNtve_ge_AllianceSetting_AllyWithSharedVision)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L993</span>
+libNtve_gf_SetAlliance(gv_pLAYER_USER, gv_pLAYER_COMPUTER1, libNtve_ge_AllianceSetting_AllyWithSharedVision)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1003</span>
+libNtve_gf_SetAlliance(gv_pLAYER_USER, gv_pLAYER_COMPUTER1, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1014</span>
+libNtve_gf_SetAlliance(gv_pLAYER_USER, gv_pLAYER_COMPUTER1, libNtve_ge_AllianceSetting_AllyWithSharedVision)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1023</span>
+libNtve_gf_SetAlliance(gv_pLAYER_USER, gv_pLAYER_COMPUTER1, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1035</span>
+libNtve_gf_SetAlliance(gv_pLAYER_USER, gv_pLAYER_COMPUTER1, libNtve_ge_AllianceSetting_AllyWithSharedVision)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1044</span>
+libNtve_gf_SetAlliance(gv_pLAYER_USER, gv_pLAYER_COMPUTER1, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1104</span>
+libNtve_gf_SetAlliance(gv_pLAYER_USER, gv_pLAYER_COMPUTER1, libNtve_ge_AllianceSetting_AllyWithSharedVision)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L519</span>
+libNtve_gf_SetAlliance(gv_pLAYER_USER, gv_pLAYER_BOARD, <span class="hljs-number">6</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L520</span>
+libNtve_gf_SetAlliance(gv_pLAYER_COMPUTER1, gv_pLAYER_BOARD, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1007</span>
+libNtve_gf_SetAlliance(gv_pLAYER_USER, gv_pLAYER_COMPUTER1, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1071</span>
+libNtve_gf_SetAlliance(gv_pLAYER_USER, gv_pLAYER_COMPUTER1, <span class="hljs-number">5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1082</span>
+libNtve_gf_SetAlliance(gv_pLAYER_USER, gv_pLAYER_COMPUTER1, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1091</span>
+libNtve_gf_SetAlliance(gv_pLAYER_USER, gv_pLAYER_COMPUTER1, <span class="hljs-number">5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1102</span>
+libNtve_gf_SetAlliance(gv_pLAYER_USER, gv_pLAYER_COMPUTER1, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1111</span>
+libNtve_gf_SetAlliance(gv_pLAYER_USER, gv_pLAYER_COMPUTER1, <span class="hljs-number">5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1175</span>
+libNtve_gf_SetAlliance(gv_pLAYER_USER, gv_pLAYER_COMPUTER1, <span class="hljs-number">1</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1241</span>
+libNtve_gf_SetAlliance(gv_pLAYER_USER, gv_pLAYER_COMPUTER1, <span class="hljs-number">5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L183</span>
+libNtve_gf_SetAlliance(gv_pLAYER_USER, gv_pLAYER_COMPUTER1, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L560</span>
+libNtve_gf_SetAlliance(gv_p1_USER, gv_p2_ZERG_ORANGE_NW, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L561</span>
+libNtve_gf_SetAlliance(gv_p1_USER, gv_p3_ZERG_LIGHTBLUE_SE, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L562</span>
+libNtve_gf_SetAlliance(gv_p1_USER, gv_p4_COLONISTS, libNtve_ge_AllianceSetting_Ally)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L563</span>
+libNtve_gf_SetAlliance(gv_p1_USER, gv_p5_ZERG_TACTICALPHASE, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L564</span>
+libNtve_gf_SetAlliance(gv_p1_USER, gv_p6_ZERG_NOAIPREPLACED, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L565</span>
+libNtve_gf_SetAlliance(gv_p2_ZERG_ORANGE_NW, gv_p3_ZERG_LIGHTBLUE_SE, libNtve_ge_AllianceSetting_AllyWithSharedVisionAndPushable)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L566</span>
+libNtve_gf_SetAlliance(gv_p2_ZERG_ORANGE_NW, gv_p4_COLONISTS, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L567</span>
+libNtve_gf_SetAlliance(gv_p2_ZERG_ORANGE_NW, gv_p5_ZERG_TACTICALPHASE, libNtve_ge_AllianceSetting_NeutralWithSharedVisionAndPushable)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L568</span>
+libNtve_gf_SetAlliance(gv_p2_ZERG_ORANGE_NW, gv_p6_ZERG_NOAIPREPLACED, libNtve_ge_AllianceSetting_NeutralWithSharedVisionAndPushable)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L569</span>
+libNtve_gf_SetAlliance(gv_p3_ZERG_LIGHTBLUE_SE, gv_p4_COLONISTS, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L534</span>
+libNtve_gf_SetAlliance(gv_pLAYER_01_USER, gv_pLAYER_02_REFUGEES, libNtve_ge_AllianceSetting_Neutral)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L535</span>
+libNtve_gf_SetAlliance(gv_pLAYER_01_USER, gv_pLAYER_03_INFESTED_REFUGEES, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L536</span>
+libNtve_gf_SetAlliance(gv_pLAYER_01_USER, gv_pLAYER_04_INFESTEDREFUGEES, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L537</span>
+libNtve_gf_SetAlliance(gv_pLAYER_01_USER, gv_pLAYER_05_REFUGEES, libNtve_ge_AllianceSetting_AllyWithSharedVisionAndPushable)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L538</span>
+libNtve_gf_SetAlliance(gv_pLAYER_01_USER, gv_pLAYER_06_INFESTORS, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L539</span>
+libNtve_gf_SetAlliance(gv_pLAYER_01_USER, gv_pLAYER_08_SWANN, libNtve_ge_AllianceSetting_Ally)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L540</span>
+libNtve_gf_SetAlliance(gv_pLAYER_02_REFUGEES, gv_pLAYER_05_REFUGEES, libNtve_ge_AllianceSetting_Neutral)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L541</span>
+libNtve_gf_SetAlliance(gv_pLAYER_02_REFUGEES, gv_pLAYER_06_INFESTORS, libNtve_ge_AllianceSetting_NeutralWithSharedVision)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L542</span>
+libNtve_gf_SetAlliance(gv_pLAYER_02_REFUGEES, gv_pLAYER_08_SWANN, libNtve_ge_AllianceSetting_Neutral)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L543</span>
+libNtve_gf_SetAlliance(gv_pLAYER_03_INFESTED_REFUGEES, gv_pLAYER_02_REFUGEES, libNtve_ge_AllianceSetting_NeutralWithSharedVision)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L501</span>
+libNtve_gf_SetAlliance(gv_pLAYER01_USER, gv_pLAYER02_PROTOSS, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L502</span>
+libNtve_gf_SetAlliance(gv_pLAYER01_USER, gv_pLAYER03_COLONIST, libNtve_ge_AllianceSetting_Ally)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L503</span>
+libNtve_gf_SetAlliance(gv_pLAYER01_USER, gv_pLAYER04_PURIFIER, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L504</span>
+libNtve_gf_SetAlliance(gv_pLAYER01_USER, gv_pLAYER05_COLONISTSTRUCTURES, libNtve_ge_AllianceSetting_Neutral)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L505</span>
+libNtve_gf_SetAlliance(gv_pLAYER01_USER, gv_pLAYER06_TERRORFLEET, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L506</span>
+libNtve_gf_SetAlliance(gv_pLAYER01_USER, gv_pLAYER07_RESOURCES, libNtve_ge_AllianceSetting_Neutral)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L507</span>
+libNtve_gf_SetAlliance(gv_pLAYER02_PROTOSS, gv_pLAYER04_PURIFIER, libNtve_ge_AllianceSetting_AllyWithSharedVisionAndPushable)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L508</span>
+libNtve_gf_SetAlliance(gv_pLAYER02_PROTOSS, gv_pLAYER03_COLONIST, libNtve_ge_AllianceSetting_Neutral)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L509</span>
+libNtve_gf_SetAlliance(gv_pLAYER02_PROTOSS, gv_pLAYER05_COLONISTSTRUCTURES, libNtve_ge_AllianceSetting_Neutral)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L510</span>
+libNtve_gf_SetAlliance(gv_pLAYER02_PROTOSS, gv_pLAYER06_TERRORFLEET, libNtve_ge_AllianceSetting_AllyWithSharedVisionAndPushable)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L947</span>
+libNtve_gf_SetAlliance(gv_p01_USER, gv_p02_ZERG_EAST, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L948</span>
+libNtve_gf_SetAlliance(gv_p01_USER, gv_p03_VIROPHAGE, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L949</span>
+libNtve_gf_SetAlliance(gv_p01_USER, gv_p04_ZERG_NORTH, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L950</span>
+libNtve_gf_SetAlliance(gv_p01_USER, gv_p05_COLONIST, libNtve_ge_AllianceSetting_Neutral)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L951</span>
+libNtve_gf_SetAlliance(gv_p01_USER, gv_p06_COLONIST, libNtve_ge_AllianceSetting_Neutral)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L952</span>
+libNtve_gf_SetAlliance(gv_p01_USER, gv_p07_ZERG_INFESTED, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L953</span>
+libNtve_gf_SetAlliance(gv_p01_USER, gv_p08_ZERG_SOUTH, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L954</span>
+libNtve_gf_SetAlliance(gv_p05_COLONIST, gv_p06_COLONIST, libNtve_ge_AllianceSetting_AllyWithSharedVisionAndPushable)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L961</span>
+libNtve_gf_SetAlliance(gv_p05_COLONIST, gv_p02_ZERG_EAST, libNtve_ge_AllianceSetting_Neutral)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L962</span>
+libNtve_gf_SetAlliance(gv_p05_COLONIST, gv_p03_VIROPHAGE, libNtve_ge_AllianceSetting_Neutral)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L669</span>
+libNtve_gf_SetAlliance(gv_pLAYER_01_USER, gv_pLAYER_02_DOMINION, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L670</span>
+libNtve_gf_SetAlliance(gv_pLAYER_01_USER, gv_pLAYER_03_DOMINION, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L671</span>
+libNtve_gf_SetAlliance(gv_pLAYER_01_USER, gv_pLAYER_04_DOMINION, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L672</span>
+libNtve_gf_SetAlliance(gv_pLAYER_01_USER, gv_pLAYER_06_TRAIN, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L673</span>
+libNtve_gf_SetAlliance(gv_pLAYER_01_USER, gv_pLAYER_05_ABANDONEDVEHICLES, libNtve_ge_AllianceSetting_Neutral)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L674</span>
+libNtve_gf_SetAlliance(gv_pLAYER_01_USER, gv_pLAYER_07_DEFILERBONESAMPLE, libNtve_ge_AllianceSetting_Neutral)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L675</span>
+libNtve_gf_SetAlliance(gv_pLAYER_02_DOMINION, gv_pLAYER_03_DOMINION, libNtve_ge_AllianceSetting_AllyWithSharedVisionAndPushable)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L676</span>
+libNtve_gf_SetAlliance(gv_pLAYER_02_DOMINION, gv_pLAYER_04_DOMINION, libNtve_ge_AllianceSetting_AllyWithSharedVisionAndPushable)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L677</span>
+libNtve_gf_SetAlliance(gv_pLAYER_02_DOMINION, gv_pLAYER_06_TRAIN, libNtve_ge_AllianceSetting_AllyWithSharedVisionAndPushable)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L678</span>
+libNtve_gf_SetAlliance(gv_pLAYER_02_DOMINION, gv_pLAYER_05_ABANDONEDVEHICLES, libNtve_ge_AllianceSetting_Neutral)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L457</span>
+libNtve_gf_SetAlliance(gv_p01_USER, gv_p02_ORLAN_ENEMY, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L458</span>
+libNtve_gf_SetAlliance(gv_p01_USER, gv_p03_MIRA_HAN, libNtve_ge_AllianceSetting_Neutral)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L459</span>
+libNtve_gf_SetAlliance(gv_p01_USER, gv_p04_DOMINION, libNtve_ge_AllianceSetting_Enemy)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L460</span>
+libNtve_gf_SetAlliance(gv_p01_USER, gv_p05_SCRAP, libNtve_ge_AllianceSetting_Neutral)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L461</span>
+libNtve_gf_SetAlliance(gv_p01_USER, gv_p06_JUNKERS, libNtve_ge_AllianceSetting_Neutral)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L462</span>
+libNtve_gf_SetAlliance(gv_p01_USER, gv_p07_DERELICT_STRUCTURES, libNtve_ge_AllianceSetting_Neutral)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L463</span>
+libNtve_gf_SetAlliance(gv_p01_USER, gv_p08_RAYNOR_COMP, libNtve_ge_AllianceSetting_AllyWithSharedVision)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L464</span>
+libNtve_gf_SetAlliance(gv_p01_USER, gv_p09_PROTOSS_RELICS, libNtve_ge_AllianceSetting_Neutral)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L465</span>
+libNtve_gf_SetAlliance(gv_p02_ORLAN_ENEMY, gv_p03_MIRA_HAN, libNtve_ge_AllianceSetting_Neutral)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L466</span>
+libNtve_gf_SetAlliance(gv_p02_ORLAN_ENEMY, gv_p04_DOMINION, libNtve_ge_AllianceSetting_AllyWithSharedVisionAndPushable)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L351</span>
+libNtve_gf_SetAlliance(gv_p01_USER, gv_p02_TYCHUS, libNtve_ge_AllianceSetting_AllyWithSharedVision)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

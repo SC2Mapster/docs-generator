@@ -1,0 +1,467 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Create Dialog Item From Template / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Create Dialog Item From Template"/>
+                <meta property="og:description" content="Creates a dialog item, of the specified type, using the specified template for the specified dialog.  Dialog item templates are preset, and cannot be user defined.  A new dialog item will always be anchored to the top left of its parent dialog, with no offset.  It can be moved and resized using the &quot;Move Dialog Item&quot; and &quot;Set Dialog Item Size&quot; actions.   Flash dialog items will only work on Blizzard maps.
+
+Returns: control [ control ]"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="create-dialog-item-from-template"><a class="markdownIt-Anchor" href="#create-dialog-item-from-template">#</a> Create Dialog Item From Template</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Create a <strong>type</strong> for dialog <strong>dialog</strong> using the template <strong>template</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Creates a dialog item, of the specified type, using the specified template for the specified dialog.  Dialog item templates are preset, and cannot be user defined.  A new dialog item will always be anchored to the top left of its parent dialog, with no offset.  It can be moved and resized using the <em>“Move Dialog Item”</em> and <em>“Set Dialog Item Size”</em> actions.   Flash dialog items will only work on Blizzard maps.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> <em>[ dialog ]</em> — Dialog</li>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-control-type">ControlType</a> ]</em> — Type</li>
+<li><code>string</code> <em>[ layoutframe ]</em> — Template</li>
+</ul>
+<p>Returns — <code>int</code> <em>[ control ]</em></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">int</span> <span class="hljs-title">DialogControlCreateFromTemplate</span><span class="hljs-params">(
+	<span class="hljs-keyword">int</span> dialog,
+	<span class="hljs-keyword">int</span> type,
+	<span class="hljs-built_in">string</span> inTemplate,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#dialog-dialog-items">Dialog / Dialog Items</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ control ]</em> — <strong><a href="/galaxy/reference/dialog-control-create">Create Dialog Item</a></strong> — ( DialogControlCreate )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ control ]</em> — <strong><a href="/galaxy/reference/dialog-control-create-in-panel">Create Dialog Item In Panel</a></strong> — ( DialogControlCreateInPanel )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ control ]</em> — <strong><a href="/galaxy/reference/dialog-control-create-from-template">Create Dialog Item From Template</a></strong> — ( DialogControlCreateFromTemplate )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ control ]</em> — <strong><a href="/galaxy/reference/dialog-control-create-in-panel-from-template">Create Dialog Item In Panel From Template</a></strong> — ( DialogControlCreateInPanelFromTemplate )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ control ]</em> — <strong><a href="/galaxy/reference/dialog-control-hookup">Hookup Dialog Item</a></strong> — ( DialogControlHookup )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ control ]</em> — <strong><a href="/galaxy/reference/dialog-control-hookup-standard">Hookup Standard Dialog Item</a></strong> — ( DialogControlHookupStandard )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ control ]</em> — <strong><a href="/galaxy/reference/dialog-control-hookup-unit-status">Hookup Unit Status Dialog Item</a></strong> — ( DialogControlHookupUnitStatus )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/dialog-control-set-visible">Show/Hide Dialog Item</a></strong> — ( DialogControlSetVisible )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/dialog-control-set-enabled">Enable/Disable Dialog Item</a></strong> — ( DialogControlSetEnabled )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-set-dialog-item-text">Set Dialog Item Text</a></strong> — ( libNtve_gf_SetDialogItemText )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/dialog-control-set-observed-type">Set Dialog Item Observed Type</a></strong> — ( DialogControlSetObservedType )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ control ]</em> — <strong><a href="/galaxy/reference/dialog-control-last-created">Last Created Dialog Item</a></strong> — ( DialogControlLastCreated )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/dialog-control-is-visible">Dialog Item Is Visible</a></strong> — ( DialogControlIsVisible )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/dialog-control-is-enabled">Dialog Item Is Enabled</a></strong> — ( DialogControlIsEnabled )</li>
+<li><em><strong>[F]</strong></em> — <code>text</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-dialog-item-text">Dialog Item Text</a></strong> — ( libNtve_gf_DialogItemText )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-dialog-control">Dialog Item Is Used</a></strong> — ( TriggerAddEventDialogControl )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ control ]</em> — <strong><a href="/galaxy/reference/event-dialog-control">Used Dialog Item</a></strong> — ( EventDialogControl )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-control-event-type">ControlEventType</a> ]</em> — <strong><a href="/galaxy/reference/event-dialog-control-event-type">Dialog Item Event Type</a></strong> — ( EventDialogControlEventType )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-mouse-button">MouseButton</a> ]</em> — <strong><a href="/galaxy/reference/event-dialog-control-mouse-button">Dialog Item Mouse Button</a></strong> — ( EventDialogControlMouseButton )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/tstory01.sc2map/MapScript.galaxy#L10422">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L10422</span>
+DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypeButton, <span class="hljs-string">"CampaignTemplates/CampaignActionButtonTemplate"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10430</span>
+DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypePulldown, <span class="hljs-string">"TriggerDialogFrame/DifficultyPulldownTemplate"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13783</span>
+DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypeButton, <span class="hljs-string">"TriggerDialogFrame/CampaignButton"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10422</span>
+DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypeButton, <span class="hljs-string">"CampaignTemplates/CampaignActionButtonTemplate"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10430</span>
+DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypePulldown, <span class="hljs-string">"TriggerDialogFrame/DifficultyPulldownTemplate"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13783</span>
+DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypeButton, <span class="hljs-string">"TriggerDialogFrame/CampaignButton"</span>)
+</code></pre>
+<h4 id="campaignslibertystorysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertystorysc2campaign">#</a> campaigns/libertystory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/libertystory.sc2campaign/base.sc2data/TriggerLibs/CampaignLib.galaxy#L2033">CampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2033</span>
+DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypePanel, <span class="hljs-string">"CampaignTrialDialog/CampaignTrialDialogTemplate"</span>)
+</code></pre>
+<h4 id="campaignsswarmsc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmsc2campaign">#</a> campaigns/swarm.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarm.sc2campaign/base.sc2maps/maps/campaign/swarm/zexpedition02.sc2map/MapScript.galaxy#L2350">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2350</span>
+DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypePanel, <span class="hljs-string">"HotS_GameUnitFrame/SmallProgressUnitFrameTemplate"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9865</span>
+DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypePanel, <span class="hljs-string">"HotS_CampaignIntro/CampaignIntroPanel"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6412</span>
+DialogControlCreateFromTemplate(gv_dialogSecurityComputer_ReleaseZerg, c_triggerControlTypePanel, <span class="hljs-string">"HotS_GameUnitFrame/LabGreenButtonTemplate"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6427</span>
+DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypePanel, <span class="hljs-string">"HotS_GameUnitFrame/LabGreenButtonTemplate"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L724</span>
+DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypeImage, <span class="hljs-string">"HotS_FullscreenImage/FullscreenImageTemplate"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2846</span>
+DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypeButton, <span class="hljs-string">"HotS_SwarmTemplates/HotS_LargeOrangeButtonTemplate"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2350</span>
+DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypePanel, <span class="hljs-string">"HotS_GameUnitFrame/SmallProgressUnitFrameTemplate"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9865</span>
+DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypePanel, <span class="hljs-string">"HotS_CampaignIntro/CampaignIntroPanel"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6412</span>
+DialogControlCreateFromTemplate(gv_dialogSecurityComputer_ReleaseZerg, c_triggerControlTypePanel, <span class="hljs-string">"HotS_GameUnitFrame/LabGreenButtonTemplate"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6427</span>
+DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypePanel, <span class="hljs-string">"HotS_GameUnitFrame/LabGreenButtonTemplate"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L724</span>
+DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypeImage, <span class="hljs-string">"HotS_FullscreenImage/FullscreenImageTemplate"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2846</span>
+DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypeButton, <span class="hljs-string">"HotS_SwarmTemplates/HotS_LargeOrangeButtonTemplate"</span>)
+</code></pre>
+<h4 id="campaignsswarmstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmstorysc2campaign">#</a> campaigns/swarmstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstory.sc2campaign/base.sc2data/TriggerLibs/SwarmCampaignLib.galaxy#L4425">SwarmCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4425</span>
+DialogControlCreateFromTemplate(lv_achievementDialog, c_triggerControlTypePanel, <span class="hljs-string">"HotS_Mission/AchievementFrameDebugTemplate"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7408</span>
+DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypePanel, <span class="hljs-string">"EggRoom/EggRoomTemplate"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8424</span>
+DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypePanel, <span class="hljs-string">"HotS_Callouts/UnitCalloutArmyFrameLeftTemplate"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8429</span>
+DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypePanel, <span class="hljs-string">"HotS_Callouts/UnitCalloutArmyFrameRightTemplate"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8486</span>
+DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypePanel, <span class="hljs-string">"ArmyCustomization/UnitPanelTemplate"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8872</span>
+DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypePanel, <span class="hljs-string">"ArmyCustomization/CategoryPanelTemplate"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9408</span>
+DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypePanel, <span class="hljs-string">"HotS_BonusMissionSelection/MissionPanelTemplate"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9644</span>
+DialogControlCreateFromTemplate(libSwaC_gv_zS_ArmyCustomArchivesDialog, c_triggerControlTypePanel, <span class="hljs-string">"HotS_ArmyUpgradeDialog/ArmyUpgradeDialog"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11470</span>
+DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypePanel, <span class="hljs-string">"HotS_KerriganCustomizationPanel/KerriganCustomizationPanelTemplate"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L14264</span>
+DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypePanel, <span class="hljs-string">"HotS_ScoreScreen/ScoreScreenTemplate"</span>)
+</code></pre>
+<h4 id="campaignsswarmstoryutilsc2mod"><a class="markdownIt-Anchor" href="#campaignsswarmstoryutilsc2mod">#</a> campaigns/swarmstoryutil.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstoryutil.sc2mod/base.sc2data/Lib281DEC45.galaxy#L5035">Lib281DEC45.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L5035</span>
+DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypePanel, <span class="hljs-string">"HotS_Callouts/UnitCalloutStoryFrameLeftTemplate"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5040</span>
+DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypePanel, <span class="hljs-string">"HotS_Callouts/UnitCalloutStoryFrameRightTemplate"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6304</span>
+DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypePanel, <span class="hljs-string">"HotS_TravelPanel/TravelPanelTemplate"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6660</span>
+DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypePanel, <span class="hljs-string">"HotS_MissionPanel/MissionPanelTemplate"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7100</span>
+DialogControlCreateFromTemplate(lib281DEC45_gv_zSS_ScreenDialog, c_triggerControlTypePanel, <span class="hljs-string">"StorySet/StorySetTemplate"</span>)
+</code></pre>
+<h4 id="campaignsvoidsc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidsc2campaign">#</a> campaigns/void.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/void.sc2campaign/base.sc2maps/maps/campaign/sc2tutorial.sc2map/MapScript.galaxy#L2190">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2190</span>
+DialogControlCreateFromTemplate(gv_zergSelectArmyF2Directive, c_triggerControlTypePanel, <span class="hljs-string">"LotV_TutorialUI/TutorialArmySelectDirective"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2573</span>
+DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypePanel, <span class="hljs-string">"LotV_TutorialUI/VictoryUI"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2656</span>
+DialogControlCreateFromTemplate(gv_friendlyFireDirective, c_triggerControlTypePanel, <span class="hljs-string">"LotV_TutorialUI/TutorialFriendlyFireDirective"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2667</span>
+DialogControlCreateFromTemplate(gv_moveOrderDirective, c_triggerControlTypePanel, <span class="hljs-string">"LotV_TutorialUI/TutorialMoveOrderDirective"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2678</span>
+DialogControlCreateFromTemplate(gv_supplyHelperUI, c_triggerControlTypePanel, <span class="hljs-string">"LotV_TutorialUI/TutorialSupplyHelperDirective"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2190</span>
+DialogControlCreateFromTemplate(gv_zergSelectArmyF2Directive, c_triggerControlTypePanel, <span class="hljs-string">"LotV_TutorialUI/TutorialArmySelectDirective"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2573</span>
+DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypePanel, <span class="hljs-string">"LotV_TutorialUI/VictoryUI"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2656</span>
+DialogControlCreateFromTemplate(gv_friendlyFireDirective, c_triggerControlTypePanel, <span class="hljs-string">"LotV_TutorialUI/TutorialFriendlyFireDirective"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2667</span>
+DialogControlCreateFromTemplate(gv_moveOrderDirective, c_triggerControlTypePanel, <span class="hljs-string">"LotV_TutorialUI/TutorialMoveOrderDirective"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2678</span>
+DialogControlCreateFromTemplate(gv_supplyHelperUI, c_triggerControlTypePanel, <span class="hljs-string">"LotV_TutorialUI/TutorialSupplyHelperDirective"</span>)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignLib.galaxy#L1615">VoidCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1615</span>
+DialogControlCreateFromTemplate(lv_achievementDialog, c_triggerControlTypePanel, <span class="hljs-string">"LotV_Debug/AchievementFrameDebugTemplate"</span>)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign-2"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign-2">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignStoryLib.galaxy#L4363">VoidCampaignStoryLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4363</span>
+DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypePanel, <span class="hljs-string">"LotV_StorySet/UnitCalloutRightTemplate"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4366</span>
+DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypePanel, <span class="hljs-string">"LotV_StorySet/UnitCalloutLeftTemplate"</span>)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign-3"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign-3">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignUILib.galaxy#L587">VoidCampaignUILib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L587</span>
+DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypePanel, <span class="hljs-string">"LotV_ArmyUpgradeUI/ArmyUpgradeTemplate"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2290</span>
+DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypePanel, <span class="hljs-string">"LotV_ShipUpgradeUI/ShipUpgradeTemplate"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4349</span>
+DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypePanel, <span class="hljs-string">"HotS_GameUnitFrame/SmallProgressUnitFrameTemplate"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5124</span>
+DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypePanel, <span class="hljs-string">"LotV_GameUI/SoATargetingUITemplate"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5146</span>
+DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypePortrait, <span class="hljs-string">"LotV_GameUI/SoAOverlayTemplate"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5319</span>
+DialogControlCreateFromTemplate(lv_creditsDialog, c_triggerControlTypePanel, <span class="hljs-string">"LotV_VoidCredits/VoidCreditsTemplate"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5340</span>
+DialogControlCreateFromTemplate(libVCUI_gv_pU_LoreCreditsDialog, c_triggerControlTypePanel, <span class="hljs-string">"LotV_LoreCredits/LoreCreditsTemplate"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5375</span>
+DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypePanel, <span class="hljs-string">"HotS_ScoreScreen/ScoreScreenTemplate"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5563</span>
+DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypePanel, <span class="hljs-string">"VoidShared_ScoreScreen/ScoreScreenTemplate"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6864</span>
+DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypePanel, <span class="hljs-string">"LotV_StorySet/StorySetTemplate"</span>)
+</code></pre>
+<h4 id="modschallengessc2mod"><a class="markdownIt-Anchor" href="#modschallengessc2mod">#</a> mods/challenges.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/challenges.sc2mod/base.sc2data/LibChal.galaxy#L531">LibChal.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L531</span>
+DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypeButton, <span class="hljs-string">"TriggerDialogFrame/TriggerControlRightChallengeButton"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L542</span>
+DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypeButton, <span class="hljs-string">"TriggerDialogFrame/TriggerControlLeftChallengeButton"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1121</span>
+DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypeButton, <span class="hljs-string">"TriggerDialogFrame/TriggerControlRightChallengeButton"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1132</span>
+DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypeButton, <span class="hljs-string">"TriggerDialogFrame/TriggerControlLeftChallengeButton"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1666</span>
+DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypeButton, <span class="hljs-string">"TriggerDialogFrame/TriggerControlRightChallengeButton"</span>)
+</code></pre>
+<h4 id="modsheroesstormmod"><a class="markdownIt-Anchor" href="#modsheroesstormmod">#</a> mods/heroes.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroes.stormmod/base.stormmaps/maps/heroes/singleplayermaps/startingexperience/tutorial01.stormmap/MapScript.galaxy#L3240">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3240</span>
+DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypePanel, <span class="hljs-string">"TopBar/TopBarPanelTemplate"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8680</span>
+DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypePanel, <span class="hljs-string">"Tutorial01_GameUI/VTutorialXPFrame"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9484</span>
+DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypePanel, <span class="hljs-string">"Tutorial01_GameUI/VTutorialXPFrame"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3240</span>
+DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypePanel, <span class="hljs-string">"TopBar/TopBarPanelTemplate"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8680</span>
+DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypePanel, <span class="hljs-string">"Tutorial01_GameUI/VTutorialXPFrame"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9484</span>
+DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypePanel, <span class="hljs-string">"Tutorial01_GameUI/VTutorialXPFrame"</span>)
+</code></pre>
+<h4 id="modsheroesbrawlmodsarenamodemodsarenamodestormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsarenamodemodsarenamodestormmod">#</a> mods/heroesbrawlmods/arenamodemods/arenamode.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/arenamodemods/arenamode.stormmod/base.stormdata/LibAREN.galaxy#L1407">LibAREN.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1407</span>
+DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypePanel, lp_template)
+</code></pre>
+<h4 id="modsheroesbrawlmodsarenamodemodsattackdefendstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsarenamodemodsattackdefendstormmod">#</a> mods/heroesbrawlmods/arenamodemods/attackdefend.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/arenamodemods/attackdefend.stormmod/base.stormdata/LibAtDe.galaxy#L794">LibAtDe.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L794</span>
+DialogControlCreateFromTemplate(libAtDe_gv_mAtD_TeamInstructions[libAtDe_gv_attackDefend.lv_attackingTeam].lv_instructionDialog, c_triggerControlTypePanel, <span class="hljs-string">"BlackheartsRevenge_LoadingAttackers/ScreenMapLoading_BlackheartsBay"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L810</span>
+DialogControlCreateFromTemplate(libAtDe_gv_mAtD_TeamInstructions[libAtDe_gv_attackDefend.lv_defendingTeam].lv_instructionDialog, c_triggerControlTypePanel, <span class="hljs-string">"BlackheartsRevenge_LoadingDefenders/ScreenMapLoading_BlackheartsBay"</span>)
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodscooppvebrawlmodstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodscooppvebrawlmodstormmod">#</a> mods/heroesbrawlmods/brawlmapmods/coop/pvebrawlmod.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/coop/pvebrawlmod.stormmod/base.stormdata/LibPVEB.galaxy#L2407">LibPVEB.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2407</span>
+DialogControlCreateFromTemplate(libPVEB_gv_pvEResurrectRevivingDialog[lv_targetPlayer].lv_panel, c_triggerControlTypeLabel, <span class="hljs-string">"Auriel/AurielResurrectionNotificationTemplate"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2488</span>
+DialogControlCreateFromTemplate(libPVEB_gv_pvEResurrectRevivingDialog[lv_targetPlayer].lv_panel, c_triggerControlTypeLabel, <span class="hljs-string">"Auriel/AurielResurrectionNotificationTemplate"</span>)
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodscooppvebrawluimodstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodscooppvebrawluimodstormmod">#</a> mods/heroesbrawlmods/brawlmapmods/coop/pvebrawluimod.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/coop/pvebrawluimod.stormmod/base.stormdata/LibPBUI.galaxy#L229">LibPBUI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L229</span>
+DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypePanel, <span class="hljs-string">"PVEBrawlCurateHeroSelection/CurateHeroSelectionPanelTemplate"</span>)
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodscooppvemodstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodscooppvemodstormmod">#</a> mods/heroesbrawlmods/brawlmapmods/coop/pvemod.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/coop/pvemod.stormmod/base.stormdata/LibPVEM.galaxy#L1960">LibPVEM.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1960</span>
+DialogControlCreateFromTemplate(libPVEM_gv_pvEResurrectRevivingDialog[lv_targetPlayer].lv_panel, c_triggerControlTypeLabel, <span class="hljs-string">"Auriel/AurielResurrectionNotificationTemplate"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2045</span>
+DialogControlCreateFromTemplate(libPVEM_gv_pvEResurrectRevivingDialog[lv_targetPlayer].lv_panel, c_triggerControlTypeLabel, <span class="hljs-string">"Auriel/AurielResurrectionNotificationTemplate"</span>)
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodscooppvemodstormmod-2"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodscooppvemodstormmod-2">#</a> mods/heroesbrawlmods/brawlmapmods/coop/pvemod.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/coop/pvemod.stormmod/base.stormdata/LibPVEU.galaxy#L256">LibPVEU.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L256</span>
+DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypePanel, <span class="hljs-string">"PVECurateHeroSelection/CurateHeroSelectionPanelTemplate"</span>)
+</code></pre>
+<h4 id="modsheroesbrawlmodsheroselectionmodsingameheroselectionstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsheroselectionmodsingameheroselectionstormmod">#</a> mods/heroesbrawlmods/heroselectionmods/ingameheroselection.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/heroselectionmods/ingameheroselection.stormmod/base.stormdata/LibIGHS.galaxy#L834">LibIGHS.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L834</span>
+DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypePanel, <span class="hljs-string">"ArenaModePickHeroUI/ArenaPickHeroPanelTemplate"</span>)
+</code></pre>
+<h4 id="modsheroesdatastormmod"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/StartingExperienceLib.galaxy#L216">StartingExperienceLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L216</span>
+DialogControlCreateFromTemplate(libStEx_gv_sE_HintMsgDialog, c_triggerControlTypePanel, <span class="hljs-string">"TutorialUI/TutorialTextBoxTemplate"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L287</span>
+DialogControlCreateFromTemplate(libStEx_gv_sE_VOMsgDialog, c_triggerControlTypePanel, <span class="hljs-string">"TutorialUI/TutorialTextBoxTemplate"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2039</span>
+DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypeButton, <span class="hljs-string">"StandardTemplates/StandardButtonSmallTemplate"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2043</span>
+DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypeButton, <span class="hljs-string">"StandardTemplates/StandardButtonSmallTemplate"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2047</span>
+DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypeButton, <span class="hljs-string">"StandardTemplates/StandardButtonSmallTemplate"</span>)
+</code></pre>
+<h4 id="modsheroesdatastormmod-2"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-2">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/SupportLib.galaxy#L850">SupportLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L850</span>
+DialogControlCreateFromTemplate(libSprt_gv_qACheatsControlsPanel.lv_mainDialog, c_triggerControlTypeButton, <span class="hljs-string">"GameMenuDialog/GameMenuButtonTemplate/Button"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L857</span>
+DialogControlCreateFromTemplate(libSprt_gv_qACheatsControlsPanel.lv_mainDialog, c_triggerControlTypeButton, <span class="hljs-string">"GameMenuDialog/GameMenuButtonTemplate/Button"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L864</span>
+DialogControlCreateFromTemplate(libSprt_gv_qACheatsControlsPanel.lv_mainDialog, c_triggerControlTypeButton, <span class="hljs-string">"GameMenuDialog/GameMenuButtonTemplate/Button"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L903</span>
+DialogControlCreateFromTemplate(libSprt_gv_qACheatsControlsPanel.lv_mainDialog, c_triggerControlTypeLabel, <span class="hljs-string">"InputOptionsPanel/InputLabelTemplate"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L910</span>
+DialogControlCreateFromTemplate(libSprt_gv_qACheatsControlsPanel.lv_mainDialog, c_triggerControlTypeLabel, <span class="hljs-string">"InputOptionsPanel/InputLabelTemplate"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L917</span>
+DialogControlCreateFromTemplate(libSprt_gv_qACheatsControlsPanel.lv_mainDialog, c_triggerControlTypeLabel, <span class="hljs-string">"InputOptionsPanel/InputLabelTemplate"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L927</span>
+DialogControlCreateFromTemplate(libSprt_gv_qACheatsControlsPanel.lv_mainDialog, c_triggerControlTypeLabel, <span class="hljs-string">"InputOptionsPanel/InputLabelTemplate"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L934</span>
+DialogControlCreateFromTemplate(libSprt_gv_qACheatsControlsPanel.lv_mainDialog, c_triggerControlTypeLabel, <span class="hljs-string">"InputOptionsPanel/InputLabelTemplate"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L941</span>
+DialogControlCreateFromTemplate(libSprt_gv_qACheatsControlsPanel.lv_mainDialog, c_triggerControlTypeLabel, <span class="hljs-string">"InputOptionsPanel/InputLabelTemplate"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L951</span>
+DialogControlCreateFromTemplate(libSprt_gv_qACheatsControlsPanel.lv_mainDialog, c_triggerControlTypeLabel, <span class="hljs-string">"InputOptionsPanel/InputLabelTemplate"</span>)
+</code></pre>
+<h4 id="modsheromodsaurielstormmod"><a class="markdownIt-Anchor" href="#modsheromodsaurielstormmod">#</a> mods/heromods/auriel.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heromods/auriel.stormmod/base.stormdata/LibHAUR.galaxy#L1874">LibHAUR.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1874</span>
+DialogControlCreateFromTemplate(libHAUR_gv_heroAurielResurrectRevivingDialog[lv_targetPlayer], c_triggerControlTypeLabel, <span class="hljs-string">"Auriel/AurielResurrectionNotificationTemplate"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1982</span>
+DialogControlCreateFromTemplate(libHAUR_gv_heroAurielResurrectRevivingDialog[lv_targetPlayer], c_triggerControlTypeLabel, <span class="hljs-string">"Auriel/AurielResurrectionNotificationTemplate"</span>)
+</code></pre>
+<h4 id="modsmissionpackscampaigncommonsc2mod"><a class="markdownIt-Anchor" href="#modsmissionpackscampaigncommonsc2mod">#</a> mods/missionpacks/campaigncommon.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/campaigncommon.sc2mod/base.sc2data/LibComC.galaxy#L106">LibComC.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L106</span>
+DialogControlCreateFromTemplate(lv_achievementDialog, c_triggerControlTypePanel, <span class="hljs-string">"LotV_Debug/AchievementFrameDebugTemplate"</span>)
+</code></pre>
+<h4 id="modsmissionpacksnovacampaignsc2mod"><a class="markdownIt-Anchor" href="#modsmissionpacksnovacampaignsc2mod">#</a> mods/missionpacks/novacampaign.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/novacampaign.sc2mod/base.sc2data/LibNCST.galaxy#L3707">LibNCST.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3707</span>
+DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypePanel, <span class="hljs-string">"LotV_StorySet/UnitCalloutRightTemplate"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3710</span>
+DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypePanel, <span class="hljs-string">"LotV_StorySet/UnitCalloutLeftTemplate"</span>)
+</code></pre>
+<h4 id="modsmissionpacksnovacampaignsc2mod-2"><a class="markdownIt-Anchor" href="#modsmissionpacksnovacampaignsc2mod-2">#</a> mods/missionpacks/novacampaign.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/novacampaign.sc2mod/base.sc2data/LibNCUI.galaxy#L902">LibNCUI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L902</span>
+DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypePanel, <span class="hljs-string">"NovaMissionPreview/MissionPreviewPanel"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1632</span>
+DialogControlCreateFromTemplate(libNCUI_gv_nU_UpgradesDialog, c_triggerControlTypePanel, <span class="hljs-string">"NovaMissionUpgrades/MissionUpgradesPanel"</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

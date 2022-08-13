@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Attach Model To Actor (Deprecated) / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Attach Model To Actor (Deprecated)"/>
+                <meta property="og:description" content="Creates a generic actor with the specified model attached to an actor at the specified attach point. Use &quot;Last Created Actor&quot; to get the attached model&#39;s actor.
+
+Returns: actor"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="attach-model-to-actor-deprecated"><a class="markdownIt-Anchor" href="#attach-model-to-actor-deprecated">#</a> Attach Model To Actor (Deprecated)</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Attach <strong>model</strong> to <strong>attachPoint</strong> on <strong>actor</strong><br>
+<em>Flags</em> — <code>Action</code> | <code>Hidden</code></p>
+</blockquote>
+<p>Creates a generic actor with the specified model attached to an actor at the specified attach point. Use <em>“Last Created Actor”</em> to get the attached model’s actor.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>actor</code> — Actor</li>
+<li><code>string</code> <em>[ gamelink::Model ]</em> — Model</li>
+<li><code>string</code> <em>[ preset::<a href="/galaxy/reference/preset-attach-points">AttachPoints</a> ]</em> — AttachPoint</li>
+</ul>
+<p>Returns — <code>actor</code></p>
+<pre class="hljs"><code><span class="hljs-function">actor <span class="hljs-title">libNtve_gf_AttachModelToActor</span><span class="hljs-params">(
+	actor lp_actor,
+	<span class="hljs-built_in">string</span> lp_model,
+	<span class="hljs-built_in">string</span> lp_attachPoint,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#actor-deprecated">Actor / Deprecated</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>actor</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-attach-model-to-actor">Attach Model To Actor (Deprecated)</a></strong> — ( libNtve_gf_AttachModelToActor )</li>
+<li><em><strong>[F]</strong></em> — <code>actorscope</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-last-created-actor-scope">Last Created Actor Scope (Deprecated)</a></strong> — ( libNtve_gf_LastCreatedActorScope )</li>
+<li><em><strong>[F]</strong></em> — <code>actor</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-last-created-actor">Last Created Actor (Deprecated)</a></strong> — ( libNtve_gf_LastCreatedActor )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignsswarmsc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmsc2campaign">#</a> campaigns/swarm.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarm.sc2campaign/base.sc2maps/maps/campaign/swarm/zlab02.sc2map/MapScript.galaxy#L11530">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L11530</span>
+libNtve_gf_AttachModelToActor(ActorFromDoodad(DoodadFromId(<span class="hljs-number">1717</span>)), <span class="hljs-string">"KerriganGhostLab"</span>, <span class="hljs-string">"Ref_Hardpoint"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11533</span>
+libNtve_gf_AttachModelToActor(ActorFromDoodad(DoodadFromId(<span class="hljs-number">1717</span>)), <span class="hljs-string">"RaynorLab"</span>, <span class="hljs-string">"Ref_Hardpoint 01"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11550</span>
+libNtve_gf_AttachModelToActor(ActorFromDoodad(DoodadFromId(<span class="hljs-number">47</span>)), <span class="hljs-string">"KerriganGhostLab"</span>, <span class="hljs-string">"Ref_Hardpoint"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11553</span>
+libNtve_gf_AttachModelToActor(ActorFromDoodad(DoodadFromId(<span class="hljs-number">47</span>)), <span class="hljs-string">"RaynorLab"</span>, <span class="hljs-string">"Ref_Hardpoint 01"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8401</span>
+libNtve_gf_AttachModelToActor(ActorFromDoodad(DoodadFromId(<span class="hljs-number">224</span>)), <span class="hljs-string">"InfestedKerrigan"</span>, <span class="hljs-string">"Ref_Origin"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11530</span>
+libNtve_gf_AttachModelToActor(ActorFromDoodad(DoodadFromId(<span class="hljs-number">1717</span>)), <span class="hljs-string">"KerriganGhostLab"</span>, <span class="hljs-string">"Ref_Hardpoint"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11533</span>
+libNtve_gf_AttachModelToActor(ActorFromDoodad(DoodadFromId(<span class="hljs-number">1717</span>)), <span class="hljs-string">"RaynorLab"</span>, <span class="hljs-string">"Ref_Hardpoint 01"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11550</span>
+libNtve_gf_AttachModelToActor(ActorFromDoodad(DoodadFromId(<span class="hljs-number">47</span>)), <span class="hljs-string">"KerriganGhostLab"</span>, <span class="hljs-string">"Ref_Hardpoint"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11553</span>
+libNtve_gf_AttachModelToActor(ActorFromDoodad(DoodadFromId(<span class="hljs-number">47</span>)), <span class="hljs-string">"RaynorLab"</span>, <span class="hljs-string">"Ref_Hardpoint 01"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8401</span>
+libNtve_gf_AttachModelToActor(ActorFromDoodad(DoodadFromId(<span class="hljs-number">224</span>)), <span class="hljs-string">"InfestedKerrigan"</span>, <span class="hljs-string">"Ref_Origin"</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

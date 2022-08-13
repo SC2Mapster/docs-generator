@@ -1,0 +1,240 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Find Units / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Find Units"/>
+                <meta property="og:description" content="Returns a group of all of the units of the specified type owned by a player within the specified range of a point up to max count units.
+
+Returns: unitgroup"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="find-units"><a class="markdownIt-Anchor" href="#find-units">#</a> Find Units</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Create a list of all player <strong>player</strong>’s units of type <strong>unitType</strong> within range  <strong>withinRange</strong> of the point <strong>centerPoint</strong> up to <strong>maxCount</strong> units<br>
+<em>Flags</em> — <code>Native</code> | <code>Function</code></p>
+</blockquote>
+<p>Returns a group of all of the units of the specified type owned by a player within the specified range of a point up to max count units.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> — Player</li>
+<li><code>string</code> — Unit Type</li>
+<li><code>point</code> — Center Point</li>
+<li><code>fixed</code> — Within Range</li>
+<li><code>int</code> — Max Count</li>
+</ul>
+<p>Returns — <code>unitgroup</code></p>
+<pre class="hljs"><code><span class="hljs-function">native unitgroup <span class="hljs-title">AIFindUnits</span><span class="hljs-params">(
+	<span class="hljs-keyword">int</span> player,
+	<span class="hljs-built_in">string</span> unitType,
+	point p,
+	fixed range,
+	<span class="hljs-keyword">int</span> inMaxCount,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#ai-advanced-tactical-functions">AI Advanced / Tactical / Functions</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/ai-same-command">Same Command</a></strong> — ( AISameCommand )</li>
+<li><em><strong>[F]</strong></em> — <code>unit</code> — <strong><a href="/galaxy/reference/ai-last-attacker">Last Attacker</a></strong> — ( AILastAttacker )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/ai-last-attack">Last Attack</a></strong> — ( AILastAttack )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/ai-control-wants-to-move">Get Wants To Move Status</a></strong> — ( AIControlWantsToMove )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/ai-is-ignored-by-wave">Is Ignored By Wave</a></strong> — ( AIIsIgnoredByWave )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/ai-unit-is-in-combat">Is In Combat</a></strong> — ( AIUnitIsInCombat )</li>
+<li><em><strong>[F]</strong></em> — <code>point</code> — <strong><a href="/galaxy/reference/ai-get-cloaked-attacker">Get Cloaked Attacker</a></strong> — ( AIGetCloakedAttacker )</li>
+<li><em><strong>[F]</strong></em> — <code>point</code> — <strong><a href="/galaxy/reference/ai-best-target-point">Get Best Target Point On Group</a></strong> — ( AIBestTargetPoint )</li>
+<li><em><strong>[F]</strong></em> — <code>unitgroup</code> — <strong><a href="/galaxy/reference/ai-find-units">Find Units</a></strong> — ( AIFindUnits )</li>
+<li><em><strong>[F]</strong></em> — <code>unit</code> — <strong><a href="/galaxy/reference/ai-default-combat-priority">Get Default Combat Priority</a></strong> — ( AIDefaultCombatPriority )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/ai-combat-diff-flag-cat-special-high-prio">Combat Diff Flag Special High Priority</a></strong> — ( AICombatDiffFlagCatSpecialHighPrio )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/ai-combat-diff-flag-cat-splash-high-prio">Combat Diff Flag Splash High Priority</a></strong> — ( AICombatDiffFlagCatSplashHighPrio )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/ai-combat-diff-flag-cat-timed-low-prio">Combat Diff Flag Timed Low Priority</a></strong> — ( AICombatDiffFlagCatTimedLowPrio )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/ai-combat-diff-flag-cat-workers-normal-prio">Combat Diff Flag Workers Normal Priority</a></strong> — ( AICombatDiffFlagCatWorkersNormalPrio )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/ai-combat-diff-flag-cat-sort-buildings-prio">Combat Diff Flag Sort Buildings Priority</a></strong> — ( AICombatDiffFlagCatSortBuildingsPrio )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/ai-combat-diff-flag-tie-break-healers">Combat Diff Flag Healers</a></strong> — ( AICombatDiffFlagTieBreakHealers )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/ai-combat-diff-flag-tie-break-low-hp">Combat Diff Flag Low Health</a></strong> — ( AICombatDiffFlagTieBreakLowHP )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/ai-combat-diff-flag-tie-break-bonus-damage">Combat Diff Flag Bonus Damage</a></strong> — ( AICombatDiffFlagTieBreakBonusDamage )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/ai-combat-diff-flag-tie-break-injured">Combat Diff Flag Injured</a></strong> — ( AICombatDiffFlagTieBreakInjured )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/ai-combat-diff-flag-tie-break-detector">Combat Diff Flag Detector</a></strong> — ( AICombatDiffFlagTieBreakDetector )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/ai-combat-diff-flag-tie-break-range">Combat Diff Flag Siege Range</a></strong> — ( AICombatDiffFlagTieBreakRange )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/ai-is-tactical-disabled">Does Unit Have Tactical Disabled</a></strong> — ( AIIsTacticalDisabled )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="modscoresc2mod"><a class="markdownIt-Anchor" href="#modscoresc2mod">#</a> mods/core.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/core.sc2mod/base.sc2data/TriggerLibs/Tactical/TactProtAI.galaxy#L488">TactProtAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L488</span>
+AIFindUnits(player, c_PB_Nexus, UnitGetPosition(aiUnit), <span class="hljs-number">12</span>, c_noMaxCount)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L489</span>
+AIFindUnits(player, c_PB_Pylon, UnitGetPosition(aiUnit), <span class="hljs-number">12</span>, c_noMaxCount)
+</code></pre>
+<h4 id="modscoresc2mod-2"><a class="markdownIt-Anchor" href="#modscoresc2mod-2">#</a> mods/core.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/core.sc2mod/base.sc2data/TriggerLibs/Tactical/TactTerrAI.galaxy#L872">TactTerrAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L872</span>
+AIFindUnits(player, wanted, UnitGetPosition(aiUnit), c_campaignBunkerLoadRange, c_noMaxCount)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L905</span>
+AIFindUnits(player, wanted, UnitGetPosition(aiUnit), loadRange, c_noMaxCount)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1165</span>
+AIFindUnits(player, null, UnitGetPosition(aiUnit), AIEffectFixed(player, c_EF_D8ChargeDmg, c_fieldAreaRadius2), c_noMaxCount)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1185</span>
+AIFindUnits(player, null, UnitGetPosition(aiUnit), AIEffectFixed(player, c_EF_KD8ChargeDmg, c_fieldAreaRadius0), c_noMaxCount)
+</code></pre>
+<h4 id="modscoresc2mod-3"><a class="markdownIt-Anchor" href="#modscoresc2mod-3">#</a> mods/core.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/core.sc2mod/base.sc2data/TriggerLibs/Tactical/TactZergAI.galaxy#L27">TactZergAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L27</span>
+AIFindUnits(player, null, UnitGetPosition(aiUnit), 
+                        AIAbilityFixed(player, c_AB_Transfusion, c_fieldRange0) + <span class="hljs-number">1</span>,
+                        c_noMaxCount)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L70</span>
+AIFindUnits(player, 
+                             c_ZB_Hatchery_Alias, 
+                             UnitGetPosition(aiUnit), 
+                             <span class="hljs-number">15</span>,
+                             c_noMaxCount)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L897</span>
+AIFindUnits(enemyPlayer, c_PU_Zealot, here, range, c_maxEnemyCount)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L898</span>
+AIFindUnits(enemyPlayer, c_ZU_Zergling, here, range, c_maxEnemyCount)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L899</span>
+AIFindUnits(enemyPlayer, c_TU_Marine, here, range, c_maxEnemyCount)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1242</span>
+AIFindUnits(enemyPlayer, followUnit, UnitGetPosition(aiUnit), AIUnitFixed(player, c_ZU_Overseer, c_fieldSightRange), c_noMaxCount)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/TriggerLibs/Tactical/TactCampAI.galaxy#L74">TactCampAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L74</span>
+AIFindUnits(player, null, UnitGetPosition(aiUnit), 
+							<span class="hljs-number">8</span>, c_noMaxCount)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1648</span>
+AIFindUnits(player, null, UnitGetPosition(aiUnit), 
+                        AIAbilityFixed(player, <span class="hljs-string">"DefensiveMatrixTarget"</span>, c_fieldRange0) + <span class="hljs-number">1</span>,
+                        c_noMaxCount)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod-2"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod-2">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/TriggerLibs/Tactical/TactProtAI.galaxy#L482">TactProtAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L482</span>
+AIFindUnits(player, c_PB_Nexus, UnitGetPosition(aiUnit), <span class="hljs-number">10</span>, c_noMaxCount)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod-3"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod-3">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/TriggerLibs/Tactical/TactTerrAI.galaxy#L843">TactTerrAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L843</span>
+AIFindUnits(player, wanted, UnitGetPosition(aiUnit), c_campaignBunkerLoadRange, c_noMaxCount)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L870</span>
+AIFindUnits(player, wanted, UnitGetPosition(aiUnit), loadRange, c_noMaxCount)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1138</span>
+AIFindUnits(player, null, UnitGetPosition(aiUnit), AIEffectFixed(player, c_EF_D8ChargeDmg, c_fieldAreaRadius2), c_noMaxCount)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1158</span>
+AIFindUnits(player, null, UnitGetPosition(aiUnit), AIEffectFixed(player, c_EF_KD8ChargeDmg, c_fieldAreaRadius0), c_noMaxCount)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod-4"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod-4">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/TriggerLibs/Tactical/TactZergAI.galaxy#L25">TactZergAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L25</span>
+AIFindUnits(player, null, UnitGetPosition(aiUnit), 
+                        AIAbilityFixed(player, c_AB_Transfusion, c_fieldRange0) + <span class="hljs-number">1</span>,
+                        c_noMaxCount)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L68</span>
+AIFindUnits(player, 
+                             c_ZB_Hatchery_Alias, 
+                             UnitGetPosition(aiUnit), 
+                             <span class="hljs-number">15</span>,
+                             c_noMaxCount)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L427</span>
+AIFindUnits(player, null, UnitGetPosition(aiUnit), <span class="hljs-number">5.0</span>, c_noMaxCount)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1106</span>
+AIFindUnits(enemyPlayer, c_PU_Zealot, here, range, c_maxEnemyCount)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1107</span>
+AIFindUnits(enemyPlayer, c_ZU_Zergling, here, range, c_maxEnemyCount)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1108</span>
+AIFindUnits(enemyPlayer, c_TU_Marine, here, range, c_maxEnemyCount)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1437</span>
+AIFindUnits(enemyPlayer, followUnit, UnitGetPosition(aiUnit), AIUnitFixed(player, c_ZU_Overseer, c_fieldSightRange), c_noMaxCount)
+</code></pre>
+<h4 id="modswarcoopwarclassicsystemsc2mod"><a class="markdownIt-Anchor" href="#modswarcoopwarclassicsystemsc2mod">#</a> mods/warcoop/warclassicsystem.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/warcoop/warclassicsystem.sc2mod/base.sc2data/TriggerLibs/Tactical/TacticalAIWar3.galaxy#L347">TacticalAIWar3.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L347</span>
+AIFindUnits(player, null, UnitGetPosition(aiUnit), 
+                        AIAbilityFixed(player, entry, c_fieldRange0) + <span class="hljs-number">2</span>,
+                        c_noMaxCount)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

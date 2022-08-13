@@ -1,0 +1,403 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Wait For Soundtrack / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Wait For Soundtrack"/>
+                <meta property="og:description" content="Waits for soundtrack playback to end."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="wait-for-soundtrack"><a class="markdownIt-Anchor" href="#wait-for-soundtrack">#</a> Wait For Soundtrack</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Wait for <strong>soundtrack</strong> playback to end<br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Waits for soundtrack playback to end.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>string</code> <em>[ gamelink::Soundtrack ]</em> — Soundtrack</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">SoundtrackWait</span><span class="hljs-params">(<span class="hljs-built_in">string</span> soundtrack)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#sound-soundtracks">Sound / Soundtracks</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/soundtrack-play">Play Soundtrack</a></strong> — ( SoundtrackPlay )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/soundtrack-pause">Pause Soundtrack</a></strong> — ( SoundtrackPause )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/soundtrack-stop-current">Stop Soundtrack (Current)</a></strong> — ( SoundtrackStopCurrent )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/soundtrack-stop">Stop Soundtrack (Current &amp; Queued)</a></strong> — ( SoundtrackStop )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/soundtrack-wait">Wait For Soundtrack</a></strong> — ( SoundtrackWait )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/soundtrack-default">Set Default Soundtrack</a></strong> — ( SoundtrackDefault )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/soundtrack-set-continuous">Enable/Disable Soundtrack Continuous</a></strong> — ( SoundtrackSetContinuous )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/soundtrack-set-delay">Set Soundtrack Delay</a></strong> — ( SoundtrackSetDelay )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/soundtrack-set-shuffle">Enable/Disable Soundtrack Shuffle</a></strong> — ( SoundtrackSetShuffle )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/thanson02.sc2map/MapScript.galaxy#L1487">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1487</span>
+SoundtrackWait(<span class="hljs-string">"THanson02MusicEventB"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1510</span>
+SoundtrackWait(<span class="hljs-string">"THanson02MusicEventA"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L17789</span>
+SoundtrackWait(<span class="hljs-string">"EasterEggMusic_TerranUpTheNight"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1487</span>
+SoundtrackWait(<span class="hljs-string">"THanson02MusicEventB"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1510</span>
+SoundtrackWait(<span class="hljs-string">"THanson02MusicEventA"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L17789</span>
+SoundtrackWait(<span class="hljs-string">"EasterEggMusic_TerranUpTheNight"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5452</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5854</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5039</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5069</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5362</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5718</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5722</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5750</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6210</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7279</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7704</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5405</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8893</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9394</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6940</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7521</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5753</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4971</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5439</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5794</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6101</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5849</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6284</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5366</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5757</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10333</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10775</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4803</span>
+SoundtrackWait(lv_mapMusicTrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6892</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8400</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11412</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11795</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12083</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12513</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13548</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8844</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9313</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9635</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6413</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6805</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7964</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8850</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7219</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7498</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5640</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6103</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9998</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10026</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10054</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10082</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10556</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10965</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11435</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11955</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5452</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5854</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5039</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5069</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5362</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5718</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5722</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5750</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6210</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7279</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7704</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5405</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8893</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9394</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6940</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7521</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5753</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4971</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5439</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5794</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6101</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5849</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6284</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5366</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5757</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10333</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10775</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4803</span>
+SoundtrackWait(lv_mapMusicTrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6892</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8400</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11412</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11795</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12083</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12513</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13548</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8844</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9313</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9635</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6413</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6805</span>
+SoundtrackWait(lv_soundtrack)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,169 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Remove Death Models in Region Immediately / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Remove Death Models in Region Immediately"/>
+                <meta property="og:description" content="Destroys all of the unit death models in the specified region immediately."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="remove-death-models-in-region-immediately"><a class="markdownIt-Anchor" href="#remove-death-models-in-region-immediately">#</a> Remove Death Models in Region Immediately</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Remove death models in region <strong>region</strong> immediately<br>
+<em>Flags</em> — <code>Action</code></p>
+</blockquote>
+<p>Destroys all of the unit death models in the specified region immediately.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>region</code> — Region</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">libNtve_gf_RemoveDeathModelsinRegionImmediately</span><span class="hljs-params">(
+	region lp_region,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#actor-destroy-actors">Actor / Destroy Actors</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/actor-scope-kill">Kill Actor Scope</a></strong> — ( ActorScopeKill )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/actor-world-particle-fxdestroy">Kill All Particles</a></strong> — ( ActorWorldParticleFXDestroy )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-kill-model">Kill Model</a></strong> — ( libNtve_gf_KillModel )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/actor-scope-orphan">Orphan Actor Scope</a></strong> — ( ActorScopeOrphan )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-remove-doodadsin-region">Remove Doodads in Region</a></strong> — ( libNtve_gf_RemoveDoodadsinRegion )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-remove-death-modelsin-region">Remove Death Models in Region</a></strong> — ( libNtve_gf_RemoveDeathModelsinRegion )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-remove-death-modelsin-region-immediately">Remove Death Models in Region Immediately</a></strong> — ( libNtve_gf_RemoveDeathModelsinRegionImmediately )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignsswarmsc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmsc2campaign">#</a> campaigns/swarm.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarm.sc2campaign/base.sc2maps/maps/campaign/swarm/zchar02.sc2map/MapScript.galaxy#L4721">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4721</span>
+libNtve_gf_RemoveDeathModelsinRegionImmediately(RegionFromId(<span class="hljs-number">16</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8832</span>
+libNtve_gf_RemoveDeathModelsinRegionImmediately(RegionCircle(PointFromId(<span class="hljs-number">807</span>), <span class="hljs-number">12.0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7317</span>
+libNtve_gf_RemoveDeathModelsinRegionImmediately(RegionPlayableMap())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13393</span>
+libNtve_gf_RemoveDeathModelsinRegionImmediately(RegionFromId(<span class="hljs-number">60</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8337</span>
+libNtve_gf_RemoveDeathModelsinRegionImmediately(RegionFromId(<span class="hljs-number">25</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2482</span>
+libNtve_gf_RemoveDeathModelsinRegionImmediately(RegionFromId(<span class="hljs-number">5</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3632</span>
+libNtve_gf_RemoveDeathModelsinRegionImmediately(RegionFromId(<span class="hljs-number">5</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2516</span>
+libNtve_gf_RemoveDeathModelsinRegionImmediately(RegionFromId(<span class="hljs-number">8</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2685</span>
+libNtve_gf_RemoveDeathModelsinRegionImmediately(RegionFromId(<span class="hljs-number">15</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2482</span>
+libNtve_gf_RemoveDeathModelsinRegionImmediately(RegionFromId(<span class="hljs-number">5</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3632</span>
+libNtve_gf_RemoveDeathModelsinRegionImmediately(RegionFromId(<span class="hljs-number">5</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2516</span>
+libNtve_gf_RemoveDeathModelsinRegionImmediately(RegionFromId(<span class="hljs-number">8</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2685</span>
+libNtve_gf_RemoveDeathModelsinRegionImmediately(RegionFromId(<span class="hljs-number">15</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4721</span>
+libNtve_gf_RemoveDeathModelsinRegionImmediately(RegionFromId(<span class="hljs-number">16</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8832</span>
+libNtve_gf_RemoveDeathModelsinRegionImmediately(RegionCircle(PointFromId(<span class="hljs-number">807</span>), <span class="hljs-number">12.0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7317</span>
+libNtve_gf_RemoveDeathModelsinRegionImmediately(RegionPlayableMap())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13393</span>
+libNtve_gf_RemoveDeathModelsinRegionImmediately(RegionFromId(<span class="hljs-number">60</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8337</span>
+libNtve_gf_RemoveDeathModelsinRegionImmediately(RegionFromId(<span class="hljs-number">25</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8862</span>
+libNtve_gf_RemoveDeathModelsinRegionImmediately(RegionEntireMap())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8862</span>
+libNtve_gf_RemoveDeathModelsinRegionImmediately(RegionEntireMap())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5542</span>
+libNtve_gf_RemoveDeathModelsinRegionImmediately(RegionFromId(<span class="hljs-number">71</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5542</span>
+libNtve_gf_RemoveDeathModelsinRegionImmediately(RegionFromId(<span class="hljs-number">71</span>))
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

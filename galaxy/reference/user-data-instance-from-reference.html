@@ -1,0 +1,240 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>User Instance From Reference / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: User Instance From Reference"/>
+                <meta property="og:description" content="Returns the user instance associated with a user reference value stored in catalog data.
+
+Returns: userinstance [ userinstance ]"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="user-instance-from-reference"><a class="markdownIt-Anchor" href="#user-instance-from-reference">#</a> User Instance From Reference</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — User instance from <strong>reference</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Function</code></p>
+</blockquote>
+<p>Returns the user instance associated with a user reference value stored in catalog data.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>string</code> — Reference</li>
+</ul>
+<p>Returns — <code>string</code> <em>[ userinstance ]</em></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-built_in">string</span> <span class="hljs-title">UserDataInstanceFromReference</span><span class="hljs-params">(<span class="hljs-built_in">string</span> inRef)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#user-data-utility">User Data / Utility</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/user-data-reset-value">Reset User Data Value</a></strong> — ( UserDataResetValue )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/user-data-reset-instance">Reset User Data Instance</a></strong> — ( UserDataResetInstance )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/user-data-reset-type">Reset User Data Type</a></strong> — ( UserDataResetType )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/user-data-reset-all">Reset All User Data</a></strong> — ( UserDataResetAll )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> <em>[ gamelink::User ]</em> — <strong><a href="/galaxy/reference/user-data-type-from-reference">User Type From Reference</a></strong> — ( UserDataTypeFromReference )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> <em>[ userinstance ]</em> — <strong><a href="/galaxy/reference/user-data-instance-from-reference">User Instance From Reference</a></strong> — ( UserDataInstanceFromReference )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignsswarmstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmstorysc2campaign">#</a> campaigns/swarmstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstory.sc2campaign/base.sc2data/TriggerLibs/SwarmCampaignLib.galaxy#L5189">SwarmCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L5189</span>
+UserDataInstanceFromReference(CatalogFieldValueGet(c_gameCatalogMap, (lp_map), <span class="hljs-string">"UserReference"</span>, <span class="hljs-number">1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5994</span>
+UserDataInstanceFromReference(CatalogFieldValueGet(c_gameCatalogObjective, (lp_objective), <span class="hljs-string">"UserReference"</span>, <span class="hljs-number">1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6546</span>
+UserDataInstanceFromReference(CatalogFieldValueGet(c_gameCatalogLocation, (lp_planet), <span class="hljs-string">"UserReference"</span>, c_playerAny))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10089</span>
+UserDataInstanceFromReference(CatalogFieldValueGet(c_gameCatalogArmyCategory, (lp_armyCategory), <span class="hljs-string">"UserReference"</span>, <span class="hljs-number">1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10547</span>
+UserDataInstanceFromReference(CatalogFieldValueGet(c_gameCatalogArmyUpgrade, (lp_armyUpgrade), <span class="hljs-string">"UserReference"</span>, <span class="hljs-number">1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10639</span>
+UserDataInstanceFromReference(CatalogFieldValueGet(c_gameCatalogArmyUnit, (lp_armyUnit), <span class="hljs-string">"UserReference"</span>, <span class="hljs-number">1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12079</span>
+UserDataInstanceFromReference(CatalogFieldValueGet(c_gameCatalogHeroAbil, (lp_ability), <span class="hljs-string">"UserReference"</span>, c_playerAny))
+</code></pre>
+<h4 id="campaignsswarmstoryutilsc2mod"><a class="markdownIt-Anchor" href="#campaignsswarmstoryutilsc2mod">#</a> campaigns/swarmstoryutil.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstoryutil.sc2mod/base.sc2data/Lib281DEC45.galaxy#L477">Lib281DEC45.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L477</span>
+UserDataInstanceFromReference(BankValueGetAsString(lv_storyBank, lv__SectionName, <span class="hljs-string">"DebugStoryScene"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L966</span>
+UserDataInstanceFromReference(DataTableGetString(<span class="hljs-literal">true</span>, lib281DEC45_gf_ZSS_UIArchivesDataString(BattleReportPanelGetSelectedBattleReport(<span class="hljs-number">1</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1344</span>
+UserDataInstanceFromReference(CatalogFieldValueGet(c_gameCatalogLocation, lp_location, <span class="hljs-string">"UserReference"</span>, <span class="hljs-number">1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1715</span>
+UserDataInstanceFromReference(CatalogFieldValueGet(c_gameCatalogMap, (lp_map), <span class="hljs-string">"UserReference"</span>, <span class="hljs-number">1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6203</span>
+UserDataInstanceFromReference(DataTableGetString(<span class="hljs-literal">true</span>, lib281DEC45_gf_ZSS_UIArchivesDataString(BattleReportPanelGetSelectedBattleReport(<span class="hljs-number">1</span>))))
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignLib.galaxy#L1975">VoidCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1975</span>
+UserDataInstanceFromReference(CatalogFieldValueGet(c_gameCatalogLocation, (lp_planet), <span class="hljs-string">"UserReference"</span>, c_playerAny))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2822</span>
+UserDataInstanceFromReference(CatalogFieldValueGet(c_gameCatalogMap, (lp_map), <span class="hljs-string">"UserReference"</span>, <span class="hljs-number">1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3815</span>
+UserDataInstanceFromReference(CatalogFieldValueGet(c_gameCatalogObjective, (lp_objective), <span class="hljs-string">"UserReference"</span>, <span class="hljs-number">1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4459</span>
+UserDataInstanceFromReference(CatalogFieldValueGet(c_gameCatalogArmyCategory, (lp_armyCategory), <span class="hljs-string">"UserReference"</span>, <span class="hljs-number">1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4953</span>
+UserDataInstanceFromReference(CatalogFieldValueGet(c_gameCatalogArmyUnit, (lp_armyUnit), <span class="hljs-string">"UserReference"</span>, <span class="hljs-number">1</span>))
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign-2"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign-2">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignStoryLib.galaxy#L3758">VoidCampaignStoryLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3758</span>
+UserDataInstanceFromReference(DataTableGetString(<span class="hljs-literal">true</span>, (libVCST_gv_pSC_REDIRECTPREFIX + (lp_character))))
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign-3"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign-3">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignUILib.galaxy#L1539">VoidCampaignUILib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1539</span>
+UserDataInstanceFromReference(DataTableGetString(<span class="hljs-literal">true</span>, libVCUI_gf_PU_ArchivesDataString(BattleReportPanelGetSelectedBattleReport(<span class="hljs-number">1</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1646</span>
+UserDataInstanceFromReference(DataTableGetString(<span class="hljs-literal">true</span>, libVCUI_gf_PU_ArchivesDataString(BattleReportPanelGetSelectedBattleReport(<span class="hljs-number">1</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3114</span>
+UserDataInstanceFromReference(CatalogFieldValueGet(c_gameCatalogLocation, lp_location, <span class="hljs-string">"UserReference"</span>, <span class="hljs-number">1</span>))
+</code></pre>
+<h4 id="modsmissionpackscampaigncommonsc2mod"><a class="markdownIt-Anchor" href="#modsmissionpackscampaigncommonsc2mod">#</a> mods/missionpacks/campaigncommon.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/campaigncommon.sc2mod/base.sc2data/LibComC.galaxy#L464">LibComC.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L464</span>
+UserDataInstanceFromReference(CatalogFieldValueGet(c_gameCatalogLocation, (lp_planet), <span class="hljs-string">"UserReference"</span>, c_playerAny))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L817</span>
+UserDataInstanceFromReference(CatalogFieldValueGet(c_gameCatalogMap, (lp_map), <span class="hljs-string">"UserReference"</span>, <span class="hljs-number">1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1470</span>
+UserDataInstanceFromReference(CatalogFieldValueGet(c_gameCatalogObjective, (lp_objective), <span class="hljs-string">"UserReference"</span>, <span class="hljs-number">1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1997</span>
+UserDataInstanceFromReference(CatalogFieldValueGet(c_gameCatalogArmyCategory, (lp_armyCategory), <span class="hljs-string">"UserReference"</span>, <span class="hljs-number">1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2276</span>
+UserDataInstanceFromReference(CatalogFieldValueGet(c_gameCatalogArmyUnit, (lp_armyUnit), <span class="hljs-string">"UserReference"</span>, <span class="hljs-number">1</span>))
+</code></pre>
+<h4 id="modsmissionpacksnovacampaignsc2mod"><a class="markdownIt-Anchor" href="#modsmissionpacksnovacampaignsc2mod">#</a> mods/missionpacks/novacampaign.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/novacampaign.sc2mod/base.sc2data/LibNCST.galaxy#L3227">LibNCST.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3227</span>
+UserDataInstanceFromReference(DataTableGetString(<span class="hljs-literal">true</span>, (libNCST_gv_nSC_REDIRECTPREFIX + (lp_character))))
+</code></pre>
+<h4 id="modsmissionpacksnovacampaignsc2mod-2"><a class="markdownIt-Anchor" href="#modsmissionpacksnovacampaignsc2mod-2">#</a> mods/missionpacks/novacampaign.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/novacampaign.sc2mod/base.sc2data/LibNCUI.galaxy#L667">LibNCUI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L667</span>
+UserDataInstanceFromReference(DataTableGetString(<span class="hljs-literal">true</span>, libNCUI_gf_NU_ArchivesDataString(BattleReportPanelGetSelectedBattleReport(<span class="hljs-number">1</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L808</span>
+UserDataInstanceFromReference(DataTableGetString(<span class="hljs-literal">true</span>, libNCUI_gf_NU_ArchivesDataString(BattleReportPanelGetSelectedBattleReport(<span class="hljs-number">1</span>))))
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOOC.galaxy#L333">LibCOOC.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L333</span>
+UserDataInstanceFromReference(CatalogFieldValueGet(c_gameCatalogMap, (lp_map), <span class="hljs-string">"UserReference"</span>, libCOOC_gv_cCC_DISREGARDPLAYER))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L606</span>
+UserDataInstanceFromReference(CatalogFieldValueGet(c_gameCatalogObjective, (lp_objective), <span class="hljs-string">"UserReference"</span>, libCOOC_gv_cCC_DISREGARDPLAYER))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1419</span>
+UserDataInstanceFromReference(CatalogFieldValueGet(c_gameCatalogCommander, (lp_commander), <span class="hljs-string">"UserReference"</span>, libCOOC_gv_cCC_DISREGARDPLAYER))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2549</span>
+UserDataInstanceFromReference(CatalogFieldValueGet(c_gameCatalogArmyCategory, (lp_armyCategory), <span class="hljs-string">"UserReference"</span>, libCOOC_gv_cCC_DISREGARDPLAYER))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2965</span>
+UserDataInstanceFromReference(CatalogFieldValueGet(c_gameCatalogArmyUpgrade, (lp_armyUpgrade), <span class="hljs-string">"UserReference"</span>, libCOOC_gv_cCC_DISREGARDPLAYER))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3016</span>
+UserDataInstanceFromReference(CatalogFieldValueGet(c_gameCatalogArmyUnit, (lp_armyUnit), <span class="hljs-string">"UserReference"</span>, libCOOC_gv_cCC_DISREGARDPLAYER))
+</code></pre>
+<h4 id="modsvoidprologuesc2mod"><a class="markdownIt-Anchor" href="#modsvoidprologuesc2mod">#</a> mods/voidprologue.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/voidprologue.sc2mod/base.sc2data/LibA3DDD02B.galaxy#L4042">LibA3DDD02B.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4042</span>
+UserDataInstanceFromReference(CatalogFieldValueGet(c_gameCatalogMap, (lp_map), <span class="hljs-string">"UserReference"</span>, <span class="hljs-number">1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4565</span>
+UserDataInstanceFromReference(CatalogFieldValueGet(c_gameCatalogObjective, (lp_objective), <span class="hljs-string">"UserReference"</span>, <span class="hljs-number">1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5620</span>
+UserDataInstanceFromReference(CatalogFieldValueGet(c_gameCatalogArmyCategory, (lp_armyCategory), <span class="hljs-string">"UserReference"</span>, <span class="hljs-number">1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7366</span>
+UserDataInstanceFromReference(DataTableGetString(<span class="hljs-literal">true</span>, libA3DDD02B_gf_PP_ArchivesDataString(BattleReportPanelGetSelectedBattleReport(<span class="hljs-number">1</span>))))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7400</span>
+UserDataInstanceFromReference(DataTableGetString(<span class="hljs-literal">true</span>, libA3DDD02B_gf_PP_ArchivesDataString(BattleReportPanelGetSelectedBattleReport(<span class="hljs-number">1</span>))))
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

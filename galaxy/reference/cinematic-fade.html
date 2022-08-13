@@ -1,0 +1,409 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Fade In/Out / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Fade In/Out"/>
+                <meta property="og:description" content="Fades the screen in or out over a specified amount of time.  If you want to fade in from a Cutscene, use Cutscene fade."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="fade-inout"><a class="markdownIt-Anchor" href="#fade-inout">#</a> Fade In/Out</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — <strong>fadeIn|Fade In/Fade Out</strong> over <strong>duration</strong> seconds using color <strong>color</strong> and <strong>transparency</strong>% transparency (<strong>style</strong> style, <strong>waitUntilDone|Wait/Don’t Wait</strong> until it finishes)<br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Fades the screen in or out over a specified amount of time.  If you want to fade in from a Cutscene, use Cutscene fade.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>bool</code> <em>[ preset::<a href="/galaxy/reference/preset-fade-option">FadeOption</a> ]</em> — Fade In</li>
+<li><code>fixed</code> — Duration</li>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-fade-style">FadeStyle</a> ]</em> — Style</li>
+<li><code>color</code> — Color</li>
+<li><code>fixed</code> — Transparency</li>
+<li><code>bool</code> <em>[ preset::<a href="/galaxy/reference/preset-trigger-wait-option">Trigger_Wait_Option</a> ]</em> — Wait Until Done</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">CinematicFade</span><span class="hljs-params">(
+	<span class="hljs-keyword">bool</span> fadeIn,
+	fixed duration,
+	<span class="hljs-keyword">int</span> style,
+	color inColor,
+	fixed transparency,
+	<span class="hljs-keyword">bool</span> waitUntilDone,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#cinematics-effects">Cinematics / Effects</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/cinematic-fade">Fade In/Out</a></strong> — ( CinematicFade )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/cinematic-overlay">Overlay Image</a></strong> — ( CinematicOverlay )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/select-main-shadow-light">Select Main Shadow Light</a></strong> — ( SelectMainShadowLight )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/challenges/advancedcommand.sc2map/MapScript.galaxy#L410">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L410</span>
+CinematicFade(<span class="hljs-literal">false</span>, <span class="hljs-number">0.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L588</span>
+CinematicFade(<span class="hljs-literal">true</span>, <span class="hljs-number">1.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1239</span>
+CinematicFade(<span class="hljs-literal">false</span>, <span class="hljs-number">1.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1257</span>
+CinematicFade(<span class="hljs-literal">false</span>, <span class="hljs-number">1.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1331</span>
+CinematicFade(<span class="hljs-literal">false</span>, <span class="hljs-number">0.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1359</span>
+CinematicFade(<span class="hljs-literal">true</span>, <span class="hljs-number">1.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1436</span>
+CinematicFade(<span class="hljs-literal">false</span>, lv_fadeDuration, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1463</span>
+CinematicFade(<span class="hljs-literal">true</span>, <span class="hljs-number">1.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L819</span>
+CinematicFade(<span class="hljs-literal">false</span>, <span class="hljs-number">0.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1015</span>
+CinematicFade(<span class="hljs-literal">true</span>, <span class="hljs-number">1.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1035</span>
+CinematicFade(<span class="hljs-literal">false</span>, <span class="hljs-number">1.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1050</span>
+CinematicFade(<span class="hljs-literal">true</span>, <span class="hljs-number">1.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1063</span>
+CinematicFade(<span class="hljs-literal">false</span>, <span class="hljs-number">1.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1070</span>
+CinematicFade(<span class="hljs-literal">true</span>, <span class="hljs-number">1.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1083</span>
+CinematicFade(<span class="hljs-literal">false</span>, <span class="hljs-number">1.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1090</span>
+CinematicFade(<span class="hljs-literal">true</span>, <span class="hljs-number">1.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1150</span>
+CinematicFade(<span class="hljs-literal">false</span>, <span class="hljs-number">1.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1184</span>
+CinematicFade(<span class="hljs-literal">true</span>, <span class="hljs-number">1.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L488</span>
+CinematicFade(<span class="hljs-literal">false</span>, <span class="hljs-number">0.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L659</span>
+CinematicFade(<span class="hljs-literal">true</span>, <span class="hljs-number">1.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1510</span>
+CinematicFade(<span class="hljs-literal">false</span>, <span class="hljs-number">1.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1527</span>
+CinematicFade(<span class="hljs-literal">false</span>, <span class="hljs-number">1.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1612</span>
+CinematicFade(<span class="hljs-literal">false</span>, <span class="hljs-number">0.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1695</span>
+CinematicFade(<span class="hljs-literal">true</span>, <span class="hljs-number">1.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1810</span>
+CinematicFade(<span class="hljs-literal">false</span>, lv_fadeDuration, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1841</span>
+CinematicFade(<span class="hljs-literal">true</span>, <span class="hljs-number">1.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L463</span>
+CinematicFade(<span class="hljs-literal">false</span>, <span class="hljs-number">0.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L520</span>
+CinematicFade(<span class="hljs-literal">true</span>, <span class="hljs-number">1.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1377</span>
+CinematicFade(<span class="hljs-literal">false</span>, <span class="hljs-number">1.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1426</span>
+CinematicFade(<span class="hljs-literal">false</span>, <span class="hljs-number">1.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1654</span>
+CinematicFade(<span class="hljs-literal">true</span>, <span class="hljs-number">1.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1700</span>
+CinematicFade(<span class="hljs-literal">false</span>, lv_fadeDuration, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1747</span>
+CinematicFade(<span class="hljs-literal">true</span>, <span class="hljs-number">1.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1256</span>
+CinematicFade(<span class="hljs-literal">false</span>, <span class="hljs-number">1.0</span>, c_fadeStyleNormal, Color(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1277</span>
+CinematicFade(<span class="hljs-literal">true</span>, <span class="hljs-number">1.0</span>, c_fadeStyleNormal, Color(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1307</span>
+CinematicFade(<span class="hljs-literal">false</span>, <span class="hljs-number">1.0</span>, c_fadeStyleNormal, Color(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1332</span>
+CinematicFade(<span class="hljs-literal">true</span>, <span class="hljs-number">1.0</span>, c_fadeStyleNormal, Color(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2072</span>
+CinematicFade(<span class="hljs-literal">true</span>, <span class="hljs-number">1.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2154</span>
+CinematicFade(<span class="hljs-literal">false</span>, lv_fadeDuration, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2216</span>
+CinematicFade(<span class="hljs-literal">true</span>, <span class="hljs-number">1.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2379</span>
+CinematicFade(<span class="hljs-literal">true</span>, <span class="hljs-number">1.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2430</span>
+CinematicFade(<span class="hljs-literal">false</span>, lv_fadeDuration, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2502</span>
+CinematicFade(<span class="hljs-literal">true</span>, <span class="hljs-number">1.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L767</span>
+CinematicFade(<span class="hljs-literal">false</span>, <span class="hljs-number">0.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L965</span>
+CinematicFade(<span class="hljs-literal">true</span>, <span class="hljs-number">1.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L985</span>
+CinematicFade(<span class="hljs-literal">false</span>, <span class="hljs-number">1.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1000</span>
+CinematicFade(<span class="hljs-literal">true</span>, <span class="hljs-number">1.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1013</span>
+CinematicFade(<span class="hljs-literal">false</span>, <span class="hljs-number">1.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1020</span>
+CinematicFade(<span class="hljs-literal">true</span>, <span class="hljs-number">1.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1034</span>
+CinematicFade(<span class="hljs-literal">false</span>, <span class="hljs-number">1.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1041</span>
+CinematicFade(<span class="hljs-literal">true</span>, <span class="hljs-number">1.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1100</span>
+CinematicFade(<span class="hljs-literal">false</span>, <span class="hljs-number">1.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1133</span>
+CinematicFade(<span class="hljs-literal">true</span>, <span class="hljs-number">1.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L386</span>
+CinematicFade(<span class="hljs-literal">false</span>, <span class="hljs-number">0.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L580</span>
+CinematicFade(<span class="hljs-literal">true</span>, <span class="hljs-number">1.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1275</span>
+CinematicFade(<span class="hljs-literal">false</span>, <span class="hljs-number">1.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1293</span>
+CinematicFade(<span class="hljs-literal">false</span>, <span class="hljs-number">1.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1367</span>
+CinematicFade(<span class="hljs-literal">false</span>, <span class="hljs-number">0.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1394</span>
+CinematicFade(<span class="hljs-literal">true</span>, <span class="hljs-number">1.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1459</span>
+CinematicFade(<span class="hljs-literal">true</span>, <span class="hljs-number">1.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L825</span>
+CinematicFade(<span class="hljs-literal">false</span>, <span class="hljs-number">0.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1035</span>
+CinematicFade(<span class="hljs-literal">true</span>, <span class="hljs-number">1.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1055</span>
+CinematicFade(<span class="hljs-literal">false</span>, <span class="hljs-number">1.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1068</span>
+CinematicFade(<span class="hljs-literal">true</span>, <span class="hljs-number">1.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1081</span>
+CinematicFade(<span class="hljs-literal">false</span>, <span class="hljs-number">1.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1088</span>
+CinematicFade(<span class="hljs-literal">true</span>, <span class="hljs-number">1.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1101</span>
+CinematicFade(<span class="hljs-literal">false</span>, <span class="hljs-number">1.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1108</span>
+CinematicFade(<span class="hljs-literal">true</span>, <span class="hljs-number">1.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1171</span>
+CinematicFade(<span class="hljs-literal">false</span>, <span class="hljs-number">1.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1205</span>
+CinematicFade(<span class="hljs-literal">true</span>, <span class="hljs-number">1.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L402</span>
+CinematicFade(<span class="hljs-literal">false</span>, <span class="hljs-number">0.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L576</span>
+CinematicFade(<span class="hljs-literal">true</span>, <span class="hljs-number">1.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1217</span>
+CinematicFade(<span class="hljs-literal">false</span>, <span class="hljs-number">1.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1235</span>
+CinematicFade(<span class="hljs-literal">false</span>, <span class="hljs-number">1.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1310</span>
+CinematicFade(<span class="hljs-literal">false</span>, <span class="hljs-number">0.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1338</span>
+CinematicFade(<span class="hljs-literal">true</span>, <span class="hljs-number">1.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1400</span>
+CinematicFade(<span class="hljs-literal">true</span>, <span class="hljs-number">1.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3847</span>
+CinematicFade(lp_fadeIn, lp_duration, c_fadeStyleNormal, Color(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4062</span>
+CinematicFade(<span class="hljs-literal">false</span>, <span class="hljs-number">0.0</span>, c_fadeStyleNormal, Color(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4315</span>
+CinematicFade(<span class="hljs-literal">false</span>, <span class="hljs-number">0.0</span>, c_fadeStyleNormal, Color(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8905</span>
+CinematicFade(<span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>, c_fadeStyleNormal, Color(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L888</span>
+CinematicFade(<span class="hljs-literal">false</span>, <span class="hljs-number">0.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L899</span>
+CinematicFade(<span class="hljs-literal">true</span>, <span class="hljs-number">1.5</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5603</span>
+CinematicFade(<span class="hljs-literal">false</span>, <span class="hljs-number">0.1</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5682</span>
+CinematicFade(<span class="hljs-literal">false</span>, <span class="hljs-number">0.1</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5686</span>
+CinematicFade(<span class="hljs-literal">true</span>, <span class="hljs-number">0.1</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6240</span>
+CinematicFade(<span class="hljs-literal">false</span>, <span class="hljs-number">1.0</span>, c_fadeStyleNormal, Color(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6335</span>
+CinematicFade(<span class="hljs-literal">true</span>, <span class="hljs-number">1.0</span>, c_fadeStyleNormal, Color(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6463</span>
+CinematicFade(<span class="hljs-literal">false</span>, lv_fadeDuration, c_fadeStyleNormal, Color(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L757</span>
+CinematicFade(<span class="hljs-literal">false</span>, <span class="hljs-number">0.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L766</span>
+CinematicFade(<span class="hljs-literal">true</span>, <span class="hljs-number">1.5</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4729</span>
+CinematicFade(<span class="hljs-literal">false</span>, <span class="hljs-number">0.1</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4733</span>
+CinematicFade(<span class="hljs-literal">true</span>, <span class="hljs-number">0.1</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4740</span>
+CinematicFade(<span class="hljs-literal">false</span>, <span class="hljs-number">0.1</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5340</span>
+CinematicFade(<span class="hljs-literal">false</span>, <span class="hljs-number">1.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5401</span>
+CinematicFade(<span class="hljs-literal">true</span>, <span class="hljs-number">1.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5421</span>
+CinematicFade(<span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5452</span>
+CinematicFade(<span class="hljs-literal">false</span>, lv_fadeDuration, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L937</span>
+CinematicFade(<span class="hljs-literal">false</span>, <span class="hljs-number">0.0</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L945</span>
+CinematicFade(<span class="hljs-literal">true</span>, <span class="hljs-number">1.5</span>, c_fadeStyleNormal, ColorWithAlpha(<span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

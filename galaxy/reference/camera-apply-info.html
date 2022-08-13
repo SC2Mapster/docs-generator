@@ -1,0 +1,419 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Apply Camera Object / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Apply Camera Object"/>
+                <meta property="og:description" content="Sets a players camera to a camera object.  If you choose to Include Target, then the specified player&#39;s camera will also jump to the target point of the specified camera object.  Otherwise, only the camera object&#39;s properties will be applied to the specified player&#39;s camera."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="apply-camera-object"><a class="markdownIt-Anchor" href="#apply-camera-object">#</a> Apply Camera Object</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Apply <strong>c</strong> for player <strong>player</strong> over <strong>duration</strong> seconds with <strong>initialVelocity</strong>% initial velocity, <strong>decelerate</strong>% deceleration, and <strong>useTarget|Include/Don’t Include Target</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Sets a players camera to a camera object.  If you choose to Include Target, then the specified player*“s camera will also jump to the target point of the specified camera object.  Otherwise, only the camera object”*s properties will be applied to the specified player’s camera.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> — Player</li>
+<li><code>camerainfo</code> — Camera Object</li>
+<li><code>fixed</code> — Duration</li>
+<li><code>fixed</code> — Initial Velocity</li>
+<li><code>fixed</code> — Decelerate</li>
+<li><code>bool</code> <em>[ preset::<a href="/galaxy/reference/preset-camera-use-target-option">CameraUseTargetOption</a> ]</em> — Use Target</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">CameraApplyInfo</span><span class="hljs-params">(
+	<span class="hljs-keyword">int</span> player,
+	camerainfo c,
+	fixed duration,
+	fixed velocity,
+	fixed decelerate,
+	<span class="hljs-keyword">bool</span> useTarget,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#camera-basic">Camera / Basic</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/camera-apply-info">Apply Camera Object</a></strong> — ( CameraApplyInfo )</li>
+<li><em><strong>[F]</strong></em> — <code>camerainfo</code> — <strong><a href="/galaxy/reference/camera-info-default">Default Game Camera</a></strong> — ( CameraInfoDefault )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/camera-pan">Pan Camera</a></strong> — ( CameraPan )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/camera-look-at">Make Camera Look At</a></strong> — ( CameraLookAt )</li>
+<li><em><strong>[F]</strong></em> — <code>point</code> — <strong><a href="/galaxy/reference/camera-get-target">Camera Target Of Player</a></strong> — ( CameraGetTarget )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/camera-get-pitch">Camera Pitch of Player</a></strong> — ( CameraGetPitch )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/camera-get-yaw">Camera Yaw of Player</a></strong> — ( CameraGetYaw )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/camera-get-distance">Camera Distance of Player</a></strong> — ( CameraGetDistance )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/camera-save">Save Camera</a></strong> — ( CameraSave )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/camera-restore">Restore Camera</a></strong> — ( CameraRestore )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/camera-set-channel-on-portrait">Set Camera Channel On Portrait</a></strong> — ( CameraSetChannelOnPortrait )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/camera-clear-channel-on-portrait">Clear Camera Channel On Portrait</a></strong> — ( CameraClearChannelOnPortrait )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/camera-set-data">Set Camera Data</a></strong> — ( CameraSetData )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/challenges/advancedcommand.sc2map/MapScript.galaxy#L722">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L722</span>
+CameraApplyInfo(gv_pLAYER_USER, CameraInfoFromId(<span class="hljs-number">62</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1355</span>
+CameraApplyInfo(gv_pLAYER_USER, CameraInfoFromId(<span class="hljs-number">1710</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1361</span>
+CameraApplyInfo(gv_pLAYER_USER, CameraInfoFromId(<span class="hljs-number">1711</span>), (SoundLengthSync(SoundLink(<span class="hljs-string">"ChallengescombinedExecutor00034"</span>, <span class="hljs-number">-1</span>)) - <span class="hljs-number">1.0</span>), <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1369</span>
+CameraApplyInfo(gv_pLAYER_USER, CameraInfoFromId(<span class="hljs-number">1708</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1370</span>
+CameraApplyInfo(gv_pLAYER_USER, CameraInfoFromId(<span class="hljs-number">1709</span>), (SoundLengthSync(SoundLink(<span class="hljs-string">"ChallengescombinedExecutor00048"</span>, <span class="hljs-number">-1</span>)) - <span class="hljs-number">0.0</span>), <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1399</span>
+CameraApplyInfo(gv_pLAYER_USER, CameraInfoFromId(<span class="hljs-number">1703</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1401</span>
+CameraApplyInfo(gv_pLAYER_USER, CameraInfoFromId(<span class="hljs-number">1704</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1403</span>
+CameraApplyInfo(gv_pLAYER_USER, CameraInfoFromId(<span class="hljs-number">1705</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1405</span>
+CameraApplyInfo(gv_pLAYER_USER, CameraInfoFromId(<span class="hljs-number">248</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1407</span>
+CameraApplyInfo(gv_pLAYER_USER, CameraInfoFromId(<span class="hljs-number">1706</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L913</span>
+CameraApplyInfo(gv_pLAYER_USER, CameraInfoFromId(<span class="hljs-number">49</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L995</span>
+CameraApplyInfo(gv_pLAYER_USER, CameraInfoFromId(<span class="hljs-number">49</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1156</span>
+CameraApplyInfo(gv_pLAYER_USER, CameraInfoFromId(<span class="hljs-number">49</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1337</span>
+CameraApplyInfo(gv_pLAYER_USER, CameraInfoFromId(<span class="hljs-number">49</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2862</span>
+CameraApplyInfo(gv_pLAYER_USER, CameraInfoFromId(<span class="hljs-number">59</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2863</span>
+CameraApplyInfo(gv_pLAYER_USER, CameraInfoFromId(<span class="hljs-number">63</span>), SoundLengthSync(SoundLink(<span class="hljs-string">"ChallengescombinedExecutor00015"</span>, <span class="hljs-number">-1</span>)), <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2874</span>
+CameraApplyInfo(gv_pLAYER_USER, CameraInfoFromId(<span class="hljs-number">64</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2878</span>
+CameraApplyInfo(gv_pLAYER_USER, CameraInfoFromId(<span class="hljs-number">66</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2880</span>
+CameraApplyInfo(gv_pLAYER_USER, CameraInfoFromId(<span class="hljs-number">67</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2882</span>
+CameraApplyInfo(gv_pLAYER_USER, CameraInfoFromId(<span class="hljs-number">68</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L741</span>
+CameraApplyInfo(gv_pLAYER_USER, CameraInfoFromId(<span class="hljs-number">62</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1682</span>
+CameraApplyInfo(gv_pLAYER_USER, CameraInfoFromId(<span class="hljs-number">79</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1696</span>
+CameraApplyInfo(gv_pLAYER_USER, CameraInfoFromId(<span class="hljs-number">80</span>), (SoundLengthSync(SoundLink(<span class="hljs-string">"ChallengescombinedExecutor00012"</span>, <span class="hljs-number">-1</span>)) + <span class="hljs-number">1.0</span>), <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1708</span>
+CameraApplyInfo(gv_pLAYER_USER, CameraInfoFromId(<span class="hljs-number">230</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1709</span>
+CameraApplyInfo(gv_pLAYER_USER, CameraInfoFromId(<span class="hljs-number">231</span>), (SoundLengthSync(SoundLink(<span class="hljs-string">"ChallengescombinedExecutor00013"</span>, <span class="hljs-number">-1</span>)) + <span class="hljs-number">1.0</span>), <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1718</span>
+CameraApplyInfo(gv_pLAYER_USER, CameraInfoFromId(<span class="hljs-number">232</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1719</span>
+CameraApplyInfo(gv_pLAYER_USER, CameraInfoFromId(<span class="hljs-number">233</span>), (SoundLengthSync(SoundLink(<span class="hljs-string">"ChallengescombinedExecutor00014"</span>, <span class="hljs-number">-1</span>)) + <span class="hljs-number">1.0</span>), <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1835</span>
+CameraApplyInfo(gv_pLAYER_USER, CameraInfoFromId(<span class="hljs-number">62</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L519</span>
+CameraApplyInfo(gv_pLAYER_USER, CameraInfoFromId(<span class="hljs-number">41</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1651</span>
+CameraApplyInfo(gv_pLAYER_USER, CameraInfoFromId(<span class="hljs-number">144</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1656</span>
+CameraApplyInfo(gv_pLAYER_USER, CameraInfoFromId(<span class="hljs-number">145</span>), ((SoundLengthSync(SoundLink(<span class="hljs-string">"ChallengescombinedAdjutant00038"</span>, <span class="hljs-number">-1</span>)) + SoundLengthSync(SoundLink(<span class="hljs-string">"ChallengescombinedAdjutant00039"</span>, <span class="hljs-number">-1</span>))) - <span class="hljs-number">1.0</span>), <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1661</span>
+CameraApplyInfo(gv_pLAYER_USER, CameraInfoFromId(<span class="hljs-number">28</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1662</span>
+CameraApplyInfo(gv_pLAYER_USER, CameraInfoFromId(<span class="hljs-number">31</span>), (SoundLengthSync(SoundLink(<span class="hljs-string">"ChallengescombinedAdjutant00040"</span>, <span class="hljs-number">-1</span>)) - <span class="hljs-number">1.0</span>), <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1668</span>
+CameraApplyInfo(gv_pLAYER_USER, CameraInfoFromId(<span class="hljs-number">146</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1741</span>
+CameraApplyInfo(<span class="hljs-number">1</span>, CameraInfoFromId(<span class="hljs-number">41</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1276</span>
+CameraApplyInfo(gv_pLAYER_USER, CameraInfoDefault(), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1331</span>
+CameraApplyInfo(gv_pLAYER_USER, CameraInfoFromId(<span class="hljs-number">64</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2067</span>
+CameraApplyInfo(gv_pLAYER_USER, CameraInfoFromId(<span class="hljs-number">13</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2073</span>
+CameraApplyInfo(gv_pLAYER_USER, CameraInfoFromId(<span class="hljs-number">32</span>), (SoundLengthSync(SoundLink(<span class="hljs-string">"ChallengescombinedAdjutant00031"</span>, <span class="hljs-number">-1</span>)) + (SoundLengthSync(SoundLink(<span class="hljs-string">"ChallengescombinedAdjutant00033"</span>, <span class="hljs-number">-1</span>)) - <span class="hljs-number">1.0</span>)), <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2210</span>
+CameraApplyInfo(gv_pLAYER_USER, CameraInfoFromId(<span class="hljs-number">64</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2375</span>
+CameraApplyInfo(gv_pLAYER_USER, CameraInfoFromId(<span class="hljs-number">110</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2380</span>
+CameraApplyInfo(gv_pLAYER_USER, CameraInfoFromId(<span class="hljs-number">120</span>), (SoundLengthSync(SoundLink(<span class="hljs-string">"ChallengescombinedAdjutant00031"</span>, <span class="hljs-number">-1</span>)) + (SoundLengthSync(SoundLink(<span class="hljs-string">"ChallengescombinedAdjutant00033"</span>, <span class="hljs-number">-1</span>)) - <span class="hljs-number">1.0</span>)), <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2457</span>
+CameraApplyInfo(gv_pLAYER_USER, CameraInfoFromId(<span class="hljs-number">64</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L861</span>
+CameraApplyInfo(gv_pLAYER_USER, CameraInfoFromId(<span class="hljs-number">49</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L944</span>
+CameraApplyInfo(gv_pLAYER_USER, CameraInfoFromId(<span class="hljs-number">49</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1105</span>
+CameraApplyInfo(gv_pLAYER_USER, CameraInfoFromId(<span class="hljs-number">49</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1272</span>
+CameraApplyInfo(gv_pLAYER_USER, CameraInfoFromId(<span class="hljs-number">49</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2704</span>
+CameraApplyInfo(gv_pLAYER_USER, CameraInfoFromId(<span class="hljs-number">45</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2708</span>
+CameraApplyInfo(gv_pLAYER_USER, CameraInfoFromId(<span class="hljs-number">44</span>), (SoundLengthSync(SoundLink(<span class="hljs-string">"ChallengescombinedAdjutant00026"</span>, <span class="hljs-number">-1</span>)) - <span class="hljs-number">0.0</span>), <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2717</span>
+CameraApplyInfo(gv_pLAYER_USER, CameraInfoFromId(<span class="hljs-number">50</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2718</span>
+CameraApplyInfo(gv_pLAYER_USER, CameraInfoFromId(<span class="hljs-number">49</span>), SoundLengthSync(SoundLink(<span class="hljs-string">"ChallengescombinedAdjutant00029"</span>, <span class="hljs-number">-1</span>)), <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2747</span>
+CameraApplyInfo(gv_pLAYER_USER, CameraInfoFromId(<span class="hljs-number">46</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2749</span>
+CameraApplyInfo(gv_pLAYER_USER, CameraInfoFromId(<span class="hljs-number">47</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L704</span>
+CameraApplyInfo(gv_pLAYER_USER, CameraInfoFromId(<span class="hljs-number">62</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1391</span>
+CameraApplyInfo(gv_pLAYER_USER, CameraInfoFromId(<span class="hljs-number">330</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1397</span>
+CameraApplyInfo(gv_pLAYER_USER, CameraInfoFromId(<span class="hljs-number">331</span>), ((<span class="hljs-number">6.0</span> + SoundLengthSync(SoundLink(<span class="hljs-string">"ChallengescombinedAdjutant00006"</span>, <span class="hljs-number">-1</span>))) + (SoundLengthSync(SoundLink(<span class="hljs-string">"ChallengescombinedAdjutant00007"</span>, <span class="hljs-number">-1</span>)) + SoundLengthSync(SoundLink(<span class="hljs-string">"ChallengescombinedAdjutant00008"</span>, <span class="hljs-number">-1</span>)))), <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1454</span>
+CameraApplyInfo(gv_pLAYER_USER, CameraInfoFromId(<span class="hljs-number">62</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L921</span>
+CameraApplyInfo(gv_pLAYER_USER, CameraInfoFromId(<span class="hljs-number">49</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1008</span>
+CameraApplyInfo(gv_pLAYER_USER, CameraInfoFromId(<span class="hljs-number">49</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1176</span>
+CameraApplyInfo(gv_pLAYER_USER, CameraInfoFromId(<span class="hljs-number">49</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1346</span>
+CameraApplyInfo(gv_pLAYER_USER, CameraInfoFromId(<span class="hljs-number">49</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2850</span>
+CameraApplyInfo(gv_pLAYER_USER, CameraInfoFromId(<span class="hljs-number">2</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2863</span>
+CameraApplyInfo(gv_pLAYER_USER, CameraInfoFromId(<span class="hljs-number">3</span>), (SoundLengthSync(SoundLink(<span class="hljs-string">"ChallengescombinedQueen00021"</span>, <span class="hljs-number">0</span>)) + SoundLengthSync(SoundLink(<span class="hljs-string">"ChallengescombinedQueen00022"</span>, <span class="hljs-number">0</span>))), <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2871</span>
+CameraApplyInfo(gv_pLAYER_USER, CameraInfoFromId(<span class="hljs-number">8</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2872</span>
+CameraApplyInfo(gv_pLAYER_USER, CameraInfoFromId(<span class="hljs-number">49</span>), SoundLengthSync(SoundLink(<span class="hljs-string">"ChallengescombinedQueen00024"</span>, <span class="hljs-number">0</span>)), <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2901</span>
+CameraApplyInfo(gv_pLAYER_USER, CameraInfoFromId(<span class="hljs-number">5</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2903</span>
+CameraApplyInfo(gv_pLAYER_USER, CameraInfoFromId(<span class="hljs-number">6</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L692</span>
+CameraApplyInfo(gv_pLAYER_USER, CameraInfoFromId(<span class="hljs-number">62</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1335</span>
+CameraApplyInfo(gv_pLAYER_USER, CameraInfoFromId(<span class="hljs-number">62</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1339</span>
+CameraApplyInfo(gv_pLAYER_USER, CameraInfoFromId(<span class="hljs-number">362</span>), ((SoundLengthSync(SoundLink(<span class="hljs-string">"ChallengescombinedQueen00009"</span>, <span class="hljs-number">0</span>)) + SoundLengthSync(SoundLink(<span class="hljs-string">"ChallengescombinedQueen00010"</span>, <span class="hljs-number">0</span>))) + SoundLengthSync(SoundLink(<span class="hljs-string">"ChallengescombinedQueen00011"</span>, <span class="hljs-number">0</span>))), <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1395</span>
+CameraApplyInfo(gv_pLAYER_USER, CameraInfoFromId(<span class="hljs-number">62</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2483</span>
+CameraApplyInfo(gv_p1_USER, lv_camera, <span class="hljs-number">0.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8607</span>
+CameraApplyInfo(<span class="hljs-number">1</span>, CameraInfoFromId(<span class="hljs-number">343</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8688</span>
+CameraApplyInfo(<span class="hljs-number">1</span>, CameraInfoFromId(<span class="hljs-number">193</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8733</span>
+CameraApplyInfo(<span class="hljs-number">1</span>, CameraInfoFromId(<span class="hljs-number">1</span>), <span class="hljs-number">6.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8735</span>
+CameraApplyInfo(<span class="hljs-number">1</span>, CameraInfoFromId(<span class="hljs-number">342</span>), <span class="hljs-number">10.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8737</span>
+CameraApplyInfo(<span class="hljs-number">1</span>, CameraInfoFromId(<span class="hljs-number">343</span>), <span class="hljs-number">10.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">40</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1664</span>
+CameraApplyInfo(<span class="hljs-number">1</span>, CameraInfoFromId(<span class="hljs-number">2506</span>), <span class="hljs-number">2.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5938</span>
+CameraApplyInfo(gv_p1_USER, CameraInfoFromId(<span class="hljs-number">52</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5940</span>
+CameraApplyInfo(gv_p1_USER, CameraInfoFromId(<span class="hljs-number">2599</span>), (<span class="hljs-number">1.5</span> * SoundLengthSync(SoundLink(<span class="hljs-string">"THanson01BriefingHanson00011"</span>, <span class="hljs-number">0</span>))), <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6026</span>
+CameraApplyInfo(gv_p1_USER, CameraInfoFromId(<span class="hljs-number">2605</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6028</span>
+CameraApplyInfo(gv_p1_USER, CameraInfoFromId(<span class="hljs-number">2671</span>), <span class="hljs-number">10.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6149</span>
+CameraApplyInfo(gv_p1_USER, CameraInfoFromId(<span class="hljs-number">2601</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6151</span>
+CameraApplyInfo(gv_p1_USER, CameraInfoFromId(<span class="hljs-number">2603</span>), (SoundLengthSync(SoundLink(<span class="hljs-string">"THanson01BriefingHanson00012"</span>, <span class="hljs-number">0</span>)) - <span class="hljs-number">1.0</span>), <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6164</span>
+CameraApplyInfo(gv_p1_USER, CameraInfoFromId(<span class="hljs-number">21</span>), (SoundLengthSync(SoundLink(<span class="hljs-string">"THanson01BriefingRaynor00004"</span>, <span class="hljs-number">0</span>)) + SoundLengthSync(SoundLink(<span class="hljs-string">"THanson01BriefingHanson00003"</span>, <span class="hljs-number">0</span>))), <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6330</span>
+CameraApplyInfo(<span class="hljs-number">1</span>, CameraInfoFromId(<span class="hljs-number">178</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6331</span>
+CameraApplyInfo(<span class="hljs-number">1</span>, CameraInfoFromId(<span class="hljs-number">207</span>), <span class="hljs-number">10.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4762</span>
+CameraApplyInfo(gv_pLAYER_01_USER, CameraInfoFromId(<span class="hljs-number">322</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4764</span>
+CameraApplyInfo(gv_pLAYER_01_USER, CameraInfoFromId(<span class="hljs-number">464</span>), (SoundLengthSync(SoundLink(<span class="hljs-string">"THanson02BriefingRaynor00002"</span>, <span class="hljs-number">0</span>)) + SoundLengthSync(SoundLink(<span class="hljs-string">"THanson02BriefingHanson00010"</span>, <span class="hljs-number">-1</span>))), <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4795</span>
+CameraApplyInfo(gv_pLAYER_01_USER, CameraInfoFromId(<span class="hljs-number">10</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4797</span>
+CameraApplyInfo(gv_pLAYER_01_USER, CameraInfoFromId(<span class="hljs-number">56</span>), (SoundLengthSync(SoundLink(<span class="hljs-string">"THanson02BriefingRaynor00011"</span>, <span class="hljs-number">0</span>)) + SoundLengthSync(SoundLink(<span class="hljs-string">"THanson02BriefingRaynor00006"</span>, <span class="hljs-number">-1</span>))), <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4828</span>
+CameraApplyInfo(gv_pLAYER_01_USER, CameraInfoFromId(<span class="hljs-number">1831</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4830</span>
+CameraApplyInfo(gv_pLAYER_01_USER, CameraInfoFromId(<span class="hljs-number">1832</span>), (SoundLengthSync(SoundLink(<span class="hljs-string">"THanson02BriefingRaynor00007"</span>, <span class="hljs-number">0</span>)) + <span class="hljs-number">0.0</span>), <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4862</span>
+CameraApplyInfo(gv_pLAYER_01_USER, CameraInfoFromId(<span class="hljs-number">313</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4873</span>
+CameraApplyInfo(gv_pLAYER_01_USER, CameraInfoFromId(<span class="hljs-number">907</span>), <span class="hljs-number">3.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4926</span>
+CameraApplyInfo(gv_pLAYER_01_USER, CameraInfoFromId(<span class="hljs-number">61</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4951</span>
+CameraApplyInfo(gv_pLAYER_01_USER, CameraInfoFromId(<span class="hljs-number">232</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6026</span>
+CameraApplyInfo(gv_pLAYER01_USER, CameraInfoFromId(<span class="hljs-number">192</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6028</span>
+CameraApplyInfo(gv_pLAYER01_USER, CameraInfoFromId(<span class="hljs-number">193</span>), <span class="hljs-number">14.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6180</span>
+CameraApplyInfo(gv_pLAYER01_USER, CameraInfoFromId(<span class="hljs-number">213</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

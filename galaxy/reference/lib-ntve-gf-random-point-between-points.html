@@ -1,0 +1,199 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Random Point Between Points / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Random Point Between Points"/>
+                <meta property="og:description" content="Returns a random point along the line segment connecting the specified points.
+
+Returns: point"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="random-point-between-points"><a class="markdownIt-Anchor" href="#random-point-between-points">#</a> Random Point Between Points</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Random point between <strong>point1</strong> and <strong>point2</strong><br>
+<em>Flags</em> — <code>Function</code></p>
+</blockquote>
+<p>Returns a random point along the line segment connecting the specified points.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>point</code> — Point 1</li>
+<li><code>point</code> — Point 2</li>
+</ul>
+<p>Returns — <code>point</code></p>
+<pre class="hljs"><code><span class="hljs-function">point <span class="hljs-title">libNtve_gf_RandomPointBetweenPoints</span><span class="hljs-params">(
+	point lp_point1,
+	point lp_point2,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#point-offsets">Point / Offsets</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>point</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-point-facing-angle">Point Facing Angle</a></strong> — ( libNtve_gf_PointFacingAngle )</li>
+<li><em><strong>[F]</strong></em> — <code>point</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-point-with-zoffset">Point With Z Offset</a></strong> — ( libNtve_gf_PointWithZOffset )</li>
+<li><em><strong>[F]</strong></em> — <code>point</code> — <strong><a href="/galaxy/reference/point-with-offset">Point With Offset</a></strong> — ( PointWithOffset )</li>
+<li><em><strong>[F]</strong></em> — <code>point</code> — <strong><a href="/galaxy/reference/point-with-offset-polar">Point With Polar Offset</a></strong> — ( PointWithOffsetPolar )</li>
+<li><em><strong>[F]</strong></em> — <code>point</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-point-offset-towards-point">Point Offset Towards Point</a></strong> — ( libNtve_gf_PointOffsetTowardsPoint )</li>
+<li><em><strong>[F]</strong></em> — <code>point</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-random-point-between-points">Random Point Between Points</a></strong> — ( libNtve_gf_RandomPointBetweenPoints )</li>
+<li><em><strong>[F]</strong></em> — <code>point</code> — <strong><a href="/galaxy/reference/point-reflect">Reflected Point</a></strong> — ( PointReflect )</li>
+<li><em><strong>[F]</strong></em> — <code>point</code> — <strong><a href="/galaxy/reference/point-interpolate">Interpolated Point</a></strong> — ( PointInterpolate )</li>
+<li><em><strong>[F]</strong></em> — <code>point</code> — <strong><a href="/galaxy/reference/mid-point">Mid-Point</a></strong> — ( MidPoint )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/thanson01.sc2map/MapScript.galaxy#L4445">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4445</span>
+libNtve_gf_RandomPointBetweenPoints(PointFromId(<span class="hljs-number">808</span>), PointFromId(<span class="hljs-number">1098</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3848</span>
+libNtve_gf_RandomPointBetweenPoints(PointFromId(<span class="hljs-number">876</span>), PointFromId(<span class="hljs-number">964</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3994</span>
+libNtve_gf_RandomPointBetweenPoints(PointFromId(<span class="hljs-number">572</span>), PointFromId(<span class="hljs-number">591</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2616</span>
+libNtve_gf_RandomPointBetweenPoints(UnitGetPosition(lv_scientist), PointWithOffsetPolar(UnitGetPosition(lv_scientist), RandomFixed(<span class="hljs-number">8.0</span>, <span class="hljs-number">12.0</span>), (AngleBetweenPoints(UnitGetPosition(lv_scientist), UnitGetPosition(UnitGroupUnit(lv_intruderGroup, <span class="hljs-number">1</span>))) + <span class="hljs-number">180.0</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2672</span>
+libNtve_gf_RandomPointBetweenPoints(UnitGetPosition(lv_scientist), PointWithOffsetPolar(UnitGetPosition(lv_scientist), RandomFixed(<span class="hljs-number">8.0</span>, <span class="hljs-number">12.0</span>), (AngleBetweenPoints(UnitGetPosition(lv_scientist), UnitGetPosition(UnitGroupUnit(lv_brutaliskGroup, <span class="hljs-number">1</span>))) + <span class="hljs-number">180.0</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2728</span>
+libNtve_gf_RandomPointBetweenPoints(UnitGetPosition(lv_scientist), PointWithOffsetPolar(UnitGetPosition(lv_scientist), RandomFixed(<span class="hljs-number">8.0</span>, <span class="hljs-number">12.0</span>), (AngleBetweenPoints(UnitGetPosition(lv_scientist), UnitGetPosition(UnitGroupUnit(lv_hybridGroup, <span class="hljs-number">1</span>))) + <span class="hljs-number">180.0</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4445</span>
+libNtve_gf_RandomPointBetweenPoints(PointFromId(<span class="hljs-number">808</span>), PointFromId(<span class="hljs-number">1098</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3848</span>
+libNtve_gf_RandomPointBetweenPoints(PointFromId(<span class="hljs-number">876</span>), PointFromId(<span class="hljs-number">964</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3994</span>
+libNtve_gf_RandomPointBetweenPoints(PointFromId(<span class="hljs-number">572</span>), PointFromId(<span class="hljs-number">591</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2616</span>
+libNtve_gf_RandomPointBetweenPoints(UnitGetPosition(lv_scientist), PointWithOffsetPolar(UnitGetPosition(lv_scientist), RandomFixed(<span class="hljs-number">8.0</span>, <span class="hljs-number">12.0</span>), (AngleBetweenPoints(UnitGetPosition(lv_scientist), UnitGetPosition(UnitGroupUnit(lv_intruderGroup, <span class="hljs-number">1</span>))) + <span class="hljs-number">180.0</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2672</span>
+libNtve_gf_RandomPointBetweenPoints(UnitGetPosition(lv_scientist), PointWithOffsetPolar(UnitGetPosition(lv_scientist), RandomFixed(<span class="hljs-number">8.0</span>, <span class="hljs-number">12.0</span>), (AngleBetweenPoints(UnitGetPosition(lv_scientist), UnitGetPosition(UnitGroupUnit(lv_brutaliskGroup, <span class="hljs-number">1</span>))) + <span class="hljs-number">180.0</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2728</span>
+libNtve_gf_RandomPointBetweenPoints(UnitGetPosition(lv_scientist), PointWithOffsetPolar(UnitGetPosition(lv_scientist), RandomFixed(<span class="hljs-number">8.0</span>, <span class="hljs-number">12.0</span>), (AngleBetweenPoints(UnitGetPosition(lv_scientist), UnitGetPosition(UnitGroupUnit(lv_hybridGroup, <span class="hljs-number">1</span>))) + <span class="hljs-number">180.0</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7197</span>
+libNtve_gf_RandomPointBetweenPoints(PointFromId(<span class="hljs-number">3166</span>), PointFromId(<span class="hljs-number">3167</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8758</span>
+libNtve_gf_RandomPointBetweenPoints(PointFromId(<span class="hljs-number">422</span>), PointFromId(<span class="hljs-number">684</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8764</span>
+libNtve_gf_RandomPointBetweenPoints(PointFromId(<span class="hljs-number">422</span>), PointFromId(<span class="hljs-number">684</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8770</span>
+libNtve_gf_RandomPointBetweenPoints(PointFromId(<span class="hljs-number">684</span>), PointFromId(<span class="hljs-number">849</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8776</span>
+libNtve_gf_RandomPointBetweenPoints(PointFromId(<span class="hljs-number">684</span>), PointFromId(<span class="hljs-number">849</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8780</span>
+libNtve_gf_RandomPointBetweenPoints(PointFromId(<span class="hljs-number">422</span>), PointFromId(<span class="hljs-number">684</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8782</span>
+libNtve_gf_RandomPointBetweenPoints(PointFromId(<span class="hljs-number">684</span>), PointFromId(<span class="hljs-number">849</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8786</span>
+libNtve_gf_RandomPointBetweenPoints(PointFromId(<span class="hljs-number">850</span>), PointFromId(<span class="hljs-number">1355</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8977</span>
+libNtve_gf_RandomPointBetweenPoints(PointFromId(<span class="hljs-number">850</span>), PointFromId(<span class="hljs-number">1355</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7197</span>
+libNtve_gf_RandomPointBetweenPoints(PointFromId(<span class="hljs-number">3166</span>), PointFromId(<span class="hljs-number">3167</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8758</span>
+libNtve_gf_RandomPointBetweenPoints(PointFromId(<span class="hljs-number">422</span>), PointFromId(<span class="hljs-number">684</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8764</span>
+libNtve_gf_RandomPointBetweenPoints(PointFromId(<span class="hljs-number">422</span>), PointFromId(<span class="hljs-number">684</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8770</span>
+libNtve_gf_RandomPointBetweenPoints(PointFromId(<span class="hljs-number">684</span>), PointFromId(<span class="hljs-number">849</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8776</span>
+libNtve_gf_RandomPointBetweenPoints(PointFromId(<span class="hljs-number">684</span>), PointFromId(<span class="hljs-number">849</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8780</span>
+libNtve_gf_RandomPointBetweenPoints(PointFromId(<span class="hljs-number">422</span>), PointFromId(<span class="hljs-number">684</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8782</span>
+libNtve_gf_RandomPointBetweenPoints(PointFromId(<span class="hljs-number">684</span>), PointFromId(<span class="hljs-number">849</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8786</span>
+libNtve_gf_RandomPointBetweenPoints(PointFromId(<span class="hljs-number">850</span>), PointFromId(<span class="hljs-number">1355</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8977</span>
+libNtve_gf_RandomPointBetweenPoints(PointFromId(<span class="hljs-number">850</span>), PointFromId(<span class="hljs-number">1355</span>))
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

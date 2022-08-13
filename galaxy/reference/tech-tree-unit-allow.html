@@ -1,0 +1,418 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Allow/Disallow Unit For Player / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Allow/Disallow Unit For Player"/>
+                <meta property="og:description" content="Allows or disallows a unit to be used by the specified player.  This is only useful if tech restrictions have been enabled using &quot;Enable/Disable Tech Tree Restrictions&quot;.  If the unit has a tech requirement, the requirement must still be met for the player to use the unit."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="allowdisallow-unit-for-player"><a class="markdownIt-Anchor" href="#allowdisallow-unit-for-player">#</a> Allow/Disallow Unit For Player</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — <strong>inAllow|Allow/Disallow</strong> <strong>inUnit</strong> for player <strong>inPlayer</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Allows or disallows a unit to be used by the specified player.  This is only useful if tech restrictions have been enabled using <em>“Enable/Disable Tech Tree Restrictions”</em>.  If the unit has a tech requirement, the requirement must still be met for the player to use the unit.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> — Player</li>
+<li><code>string</code> <em>[ gamelink::Unit ]</em> — Unit</li>
+<li><code>bool</code> <em>[ preset::<a href="/galaxy/reference/preset-allow-disallow-option">AllowDisallowOption</a> ]</em> — Allow</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">TechTreeUnitAllow</span><span class="hljs-params">(
+	<span class="hljs-keyword">int</span> player,
+	<span class="hljs-built_in">string</span> unitType,
+	<span class="hljs-keyword">bool</span> allow,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#tech-tree-individual-restrictions">Tech Tree / Individual Restrictions</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/tech-tree-specific-requirement-enabled">Specific Requirements Are Enabled For Player</a></strong> — ( TechTreeSpecificRequirementEnabled )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/tech-tree-specific-requirement-enable">Enable/Disable SpecificTech Tree Requirements</a></strong> — ( TechTreeSpecificRequirementEnable )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/tech-tree-behavior-allow">Allow/Disallow Behavior For Player</a></strong> — ( TechTreeBehaviorAllow )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/tech-tree-ability-allow">Allow/Disallow Ability For Player</a></strong> — ( TechTreeAbilityAllow )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/tech-tree-unit-allow">Allow/Disallow Unit For Player</a></strong> — ( TechTreeUnitAllow )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/tech-tree-upgrade-allow">Allow/Disallow Upgrade For Player</a></strong> — ( TechTreeUpgradeAllow )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/tech-tree-ability-is-allowed">Ability Is Allowed For Player</a></strong> — ( TechTreeAbilityIsAllowed )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/tech-tree-behavior-is-allowed">Behavior Is Allowed For Player</a></strong> — ( TechTreeBehaviorIsAllowed )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/tech-tree-unit-is-allowed">Unit Is Allowed For Player</a></strong> — ( TechTreeUnitIsAllowed )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/tech-tree-upgrade-is-allowed">Upgrade Is Allowed For Player</a></strong> — ( TechTreeUpgradeIsAllowed )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/tech-tree-upgrade-add-level">Add Upgrade Level For Player</a></strong> — ( TechTreeUpgradeAddLevel )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-set-upgrade-level-for-player">Set Upgrade Level For Player</a></strong> — ( libNtve_gf_SetUpgradeLevelForPlayer )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/tech-tree-set-produce-cap">Set Production Cap For Player</a></strong> — ( TechTreeSetProduceCap )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/tech-tree-get-produce-cap">Production Cap For Player</a></strong> — ( TechTreeGetProduceCap )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/traynor02.sc2map/MapScript.galaxy#L376">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L376</span>
+TechTreeUnitAllow(gv_pLAYER_01_USER, <span class="hljs-string">"BarracksTechLab"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L532</span>
+TechTreeUnitAllow(gv_p2_RAYNOR_LIGHTBLUE, <span class="hljs-string">"Marauder"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L545</span>
+TechTreeUnitAllow(gv_p3_DOMINION_RED, <span class="hljs-string">"AutoTurret"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L546</span>
+TechTreeUnitAllow(gv_p6_DOMINION_ORANGE, <span class="hljs-string">"AutoTurret"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L710</span>
+TechTreeUnitAllow(gv_p01_USER, <span class="hljs-string">"SCV"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L711</span>
+TechTreeUnitAllow(gv_p01_USER, <span class="hljs-string">"Marine"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L712</span>
+TechTreeUnitAllow(gv_p01_USER, <span class="hljs-string">"Marauder"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L713</span>
+TechTreeUnitAllow(gv_p01_USER, <span class="hljs-string">"Reaper"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L714</span>
+TechTreeUnitAllow(gv_p01_USER, <span class="hljs-string">"Ghost"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L715</span>
+TechTreeUnitAllow(gv_p01_USER, <span class="hljs-string">"CommandCenter"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L716</span>
+TechTreeUnitAllow(gv_p01_USER, <span class="hljs-string">"Refinery"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L717</span>
+TechTreeUnitAllow(gv_p01_USER, <span class="hljs-string">"SupplyDepot"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L718</span>
+TechTreeUnitAllow(gv_p01_USER, <span class="hljs-string">"Barracks"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L719</span>
+TechTreeUnitAllow(gv_p01_USER, <span class="hljs-string">"TechLab"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4805</span>
+TechTreeUnitAllow(gv_pLAYER_USER, <span class="hljs-string">"Armory"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4806</span>
+TechTreeUnitAllow(gv_pLAYER_USER, <span class="hljs-string">"FusionCore"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4807</span>
+TechTreeUnitAllow(gv_pLAYER_USER, <span class="hljs-string">"MissileTurret"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4808</span>
+TechTreeUnitAllow(gv_pLAYER_USER, <span class="hljs-string">"Bunker"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3086</span>
+TechTreeUnitAllow(gv_p1_USER, <span class="hljs-string">"Immortal"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3539</span>
+TechTreeUnitAllow(gv_p1_USER, <span class="hljs-string">"DarkTemplar"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3567</span>
+TechTreeUnitAllow(gv_p1_USER, <span class="hljs-string">"HighTemplar"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L376</span>
+TechTreeUnitAllow(gv_pLAYER_01_USER, <span class="hljs-string">"BarracksTechLab"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L532</span>
+TechTreeUnitAllow(gv_p2_RAYNOR_LIGHTBLUE, <span class="hljs-string">"Marauder"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L545</span>
+TechTreeUnitAllow(gv_p3_DOMINION_RED, <span class="hljs-string">"AutoTurret"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L546</span>
+TechTreeUnitAllow(gv_p6_DOMINION_ORANGE, <span class="hljs-string">"AutoTurret"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L710</span>
+TechTreeUnitAllow(gv_p01_USER, <span class="hljs-string">"SCV"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L711</span>
+TechTreeUnitAllow(gv_p01_USER, <span class="hljs-string">"Marine"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L712</span>
+TechTreeUnitAllow(gv_p01_USER, <span class="hljs-string">"Marauder"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L713</span>
+TechTreeUnitAllow(gv_p01_USER, <span class="hljs-string">"Reaper"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L714</span>
+TechTreeUnitAllow(gv_p01_USER, <span class="hljs-string">"Ghost"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L715</span>
+TechTreeUnitAllow(gv_p01_USER, <span class="hljs-string">"CommandCenter"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L716</span>
+TechTreeUnitAllow(gv_p01_USER, <span class="hljs-string">"Refinery"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L717</span>
+TechTreeUnitAllow(gv_p01_USER, <span class="hljs-string">"SupplyDepot"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L718</span>
+TechTreeUnitAllow(gv_p01_USER, <span class="hljs-string">"Barracks"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L719</span>
+TechTreeUnitAllow(gv_p01_USER, <span class="hljs-string">"TechLab"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4805</span>
+TechTreeUnitAllow(gv_pLAYER_USER, <span class="hljs-string">"Armory"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4806</span>
+TechTreeUnitAllow(gv_pLAYER_USER, <span class="hljs-string">"FusionCore"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4807</span>
+TechTreeUnitAllow(gv_pLAYER_USER, <span class="hljs-string">"MissileTurret"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4808</span>
+TechTreeUnitAllow(gv_pLAYER_USER, <span class="hljs-string">"Bunker"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3086</span>
+TechTreeUnitAllow(gv_p1_USER, <span class="hljs-string">"Immortal"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3539</span>
+TechTreeUnitAllow(gv_p1_USER, <span class="hljs-string">"DarkTemplar"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3567</span>
+TechTreeUnitAllow(gv_p1_USER, <span class="hljs-string">"HighTemplar"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="campaignslibertystorysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertystorysc2campaign">#</a> campaigns/libertystory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/libertystory.sc2campaign/base.sc2data/TriggerLibs/CampaignLib.galaxy#L7082">CampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L7082</span>
+TechTreeUnitAllow(lv_player, <span class="hljs-string">"Probe"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7083</span>
+TechTreeUnitAllow(lv_player, <span class="hljs-string">"PhotonCannon"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7084</span>
+TechTreeUnitAllow(lv_player, <span class="hljs-string">"Assimilator"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7089</span>
+TechTreeUnitAllow(lv_player, <span class="hljs-string">"Zealot"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7090</span>
+TechTreeUnitAllow(lv_player, <span class="hljs-string">"Stalker"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7091</span>
+TechTreeUnitAllow(lv_player, <span class="hljs-string">"Archon"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7103</span>
+TechTreeUnitAllow(lv_player, <span class="hljs-string">"DarkTemplar"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7104</span>
+TechTreeUnitAllow(lv_player, <span class="hljs-string">"Immortal"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7105</span>
+TechTreeUnitAllow(lv_player, <span class="hljs-string">"HighTemplar"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7118</span>
+TechTreeUnitAllow(lv_player, <span class="hljs-string">"Colossus"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="campaignsswarmsc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmsc2campaign">#</a> campaigns/swarm.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarm.sc2campaign/base.sc2maps/maps/campaign/voidprologue/voidprologue01.sc2map/MapScript.galaxy#L745">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L745</span>
+TechTreeUnitAllow(lv_indexPlayer, <span class="hljs-string">"Zergling"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L746</span>
+TechTreeUnitAllow(lv_indexPlayer, <span class="hljs-string">"HotSSwarmling"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L747</span>
+TechTreeUnitAllow(lv_indexPlayer, <span class="hljs-string">"Baneling"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L748</span>
+TechTreeUnitAllow(lv_indexPlayer, <span class="hljs-string">"HotSSplitterlingBig"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L749</span>
+TechTreeUnitAllow(lv_indexPlayer, <span class="hljs-string">"Roach"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L750</span>
+TechTreeUnitAllow(lv_indexPlayer, <span class="hljs-string">"RoachCorpser"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L751</span>
+TechTreeUnitAllow(lv_indexPlayer, <span class="hljs-string">"HydraliskLurker"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L752</span>
+TechTreeUnitAllow(lv_indexPlayer, <span class="hljs-string">"Hydralisk"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L753</span>
+TechTreeUnitAllow(lv_indexPlayer, <span class="hljs-string">"SwarmHostMP"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L754</span>
+TechTreeUnitAllow(lv_indexPlayer, <span class="hljs-string">"SwarmHost"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L797</span>
+TechTreeUnitAllow(auto2286982F_var, <span class="hljs-string">"BarracksTechReactor"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L798</span>
+TechTreeUnitAllow(auto2286982F_var, <span class="hljs-string">"FactoryTechReactor"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L799</span>
+TechTreeUnitAllow(auto2286982F_var, <span class="hljs-string">"StarportTechReactor"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L797</span>
+TechTreeUnitAllow(auto2286982F_var, <span class="hljs-string">"BarracksTechReactor"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L798</span>
+TechTreeUnitAllow(auto2286982F_var, <span class="hljs-string">"FactoryTechReactor"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L799</span>
+TechTreeUnitAllow(auto2286982F_var, <span class="hljs-string">"StarportTechReactor"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L745</span>
+TechTreeUnitAllow(lv_indexPlayer, <span class="hljs-string">"Zergling"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L746</span>
+TechTreeUnitAllow(lv_indexPlayer, <span class="hljs-string">"HotSSwarmling"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L747</span>
+TechTreeUnitAllow(lv_indexPlayer, <span class="hljs-string">"Baneling"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L748</span>
+TechTreeUnitAllow(lv_indexPlayer, <span class="hljs-string">"HotSSplitterlingBig"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L749</span>
+TechTreeUnitAllow(lv_indexPlayer, <span class="hljs-string">"Roach"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L750</span>
+TechTreeUnitAllow(lv_indexPlayer, <span class="hljs-string">"RoachCorpser"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L751</span>
+TechTreeUnitAllow(lv_indexPlayer, <span class="hljs-string">"HydraliskLurker"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L752</span>
+TechTreeUnitAllow(lv_indexPlayer, <span class="hljs-string">"Hydralisk"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L753</span>
+TechTreeUnitAllow(lv_indexPlayer, <span class="hljs-string">"SwarmHostMP"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L754</span>
+TechTreeUnitAllow(lv_indexPlayer, <span class="hljs-string">"SwarmHost"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L708</span>
+TechTreeUnitAllow(gv_pLAYER_01_USER, <span class="hljs-string">"CyberneticsCore"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L710</span>
+TechTreeUnitAllow(gv_pLAYER_01_USER, <span class="hljs-string">"Forge"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L711</span>
+TechTreeUnitAllow(gv_pLAYER_01_USER, <span class="hljs-string">"PhotonCannon"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L712</span>
+TechTreeUnitAllow(gv_pLAYER_01_USER, <span class="hljs-string">"SoACaster"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L867</span>
+TechTreeUnitAllow(gv_pLAYER_01_USER, <span class="hljs-string">"KhaydarinMonolith"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1351</span>
+TechTreeUnitAllow(gv_pLAYER_01_USER, <span class="hljs-string">"HotSHunter"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1763</span>
+TechTreeUnitAllow(gv_pLAYER_03_KERRIGAN, <span class="hljs-string">"Zergling"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1764</span>
+TechTreeUnitAllow(gv_pLAYER_03_KERRIGAN, <span class="hljs-string">"HotSSwarmling"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1765</span>
+TechTreeUnitAllow(gv_pLAYER_03_KERRIGAN, <span class="hljs-string">"Baneling"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1766</span>
+TechTreeUnitAllow(gv_pLAYER_03_KERRIGAN, <span class="hljs-string">"HotSSplitterlingBig"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1767</span>
+TechTreeUnitAllow(gv_pLAYER_03_KERRIGAN, <span class="hljs-string">"Roach"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1768</span>
+TechTreeUnitAllow(gv_pLAYER_03_KERRIGAN, <span class="hljs-string">"RoachCorpser"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1769</span>
+TechTreeUnitAllow(gv_pLAYER_03_KERRIGAN, <span class="hljs-string">"HydraliskLurker"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1770</span>
+TechTreeUnitAllow(gv_pLAYER_03_KERRIGAN, <span class="hljs-string">"Hydralisk"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1771</span>
+TechTreeUnitAllow(gv_pLAYER_03_KERRIGAN, <span class="hljs-string">"SwarmHostMP"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1772</span>
+TechTreeUnitAllow(gv_pLAYER_03_KERRIGAN, <span class="hljs-string">"SwarmHost"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1771</span>
+TechTreeUnitAllow(gv_pLAYER_01_USER, <span class="hljs-string">"Overseer"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1797</span>
+TechTreeUnitAllow(gv_pLAYER_02_RAYNOR, <span class="hljs-string">"Bunker"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L708</span>
+TechTreeUnitAllow(gv_pLAYER_01_USER, <span class="hljs-string">"CyberneticsCore"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L710</span>
+TechTreeUnitAllow(gv_pLAYER_01_USER, <span class="hljs-string">"Forge"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L711</span>
+TechTreeUnitAllow(gv_pLAYER_01_USER, <span class="hljs-string">"PhotonCannon"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L712</span>
+TechTreeUnitAllow(gv_pLAYER_01_USER, <span class="hljs-string">"SoACaster"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,427 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Create Text Tag / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Create Text Tag"/>
+                <meta property="og:description" content="Creates a text tag.  Use &quot;Show/Hide Text Tag&quot; to show the text tag. When Fog Of War enforcement is enabled, visibility is determined using the Black Mask by default. Use &quot;Set Visibility Type Of Text Tag&quot; to change this to full Fog Of War visibility, if desired.
+
+Returns: preset [ preset::TextTag ]"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="create-text-tag"><a class="markdownIt-Anchor" href="#create-text-tag">#</a> Create Text Tag</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Create a text tag with the text __text|Text __ for <strong>players</strong>, using a font size of <strong>fontSize</strong>, at <strong>point|Position</strong> and height offset <strong>heightOffset</strong>, initially <strong>visible|Visible/Hidden</strong>, and fog of war enforcement set to <strong>useFogofWar</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Creates a text tag.  Use <em>“Show/Hide Text Tag”</em> to show the text tag. When Fog Of War enforcement is enabled, visibility is determined using the Black Mask by default. Use <em>“Set Visibility Type Of Text Tag”</em> to change this to full Fog Of War visibility, if desired.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>text</code> — Text</li>
+<li><code>int</code> — Font Size</li>
+<li><code>point</code> — Point</li>
+<li><code>fixed</code> — Height Offset</li>
+<li><code>bool</code> <em>[ preset::<a href="/galaxy/reference/preset-visible-hidden-option">VisibleHiddenOption</a> ]</em> — Visible</li>
+<li><code>bool</code> — Use Fog of War</li>
+<li><code>playergroup</code> — Players</li>
+</ul>
+<p>Returns — <code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-text-tag">TextTag</a> ]</em></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">int</span> <span class="hljs-title">TextTagCreate</span><span class="hljs-params">(
+	text inText,
+	<span class="hljs-keyword">int</span> inFontSize,
+	point inPoint,
+	fixed inHeightOffset,
+	<span class="hljs-keyword">bool</span> inShow,
+	<span class="hljs-keyword">bool</span> useFogofWar,
+	playergroup inPlayers,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#text-tag-basic">Text Tag / Basic</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-text-tag">TextTag</a> ]</em> — <strong><a href="/galaxy/reference/text-tag-create">Create Text Tag</a></strong> — ( TextTagCreate )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-text-tag">TextTag</a> ]</em> — <strong><a href="/galaxy/reference/text-tag-last-created">Last Created Text Tag</a></strong> — ( TextTagLastCreated )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/text-tag-show">Show/Hide Text Tag</a></strong> — ( TextTagShow )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/text-tag-visible">Text Tag Is Visible</a></strong> — ( TextTagVisible )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/text-tag-pause">Pause/Unpause Text Tag</a></strong> — ( TextTagPause )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/text-tag-attach-to-unit">Attach Text Tag To Unit</a></strong> — ( TextTagAttachToUnit )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/text-tag-attach-to-unit-point">Attach Text Tag To Unit Attach Point</a></strong> — ( TextTagAttachToUnitPoint )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/text-tag-destroy">Destroy Text Tag</a></strong> — ( TextTagDestroy )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/text-tag-set-position">Set Position Of Text Tag</a></strong> — ( TextTagSetPosition )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/text-tag-set-velocity">Set Velocity Of Text Tag</a></strong> — ( TextTagSetVelocity )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/text-tag-set-gravity">Set Gravity Of Text Tag</a></strong> — ( TextTagSetGravity )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/text-tag-set-text">Set Text Of Text Tag</a></strong> — ( TextTagSetText )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/text-tag-set-time">Set Time Of Text Tag</a></strong> — ( TextTagSetTime )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/challenges/advancedcommand.sc2map/MapScript.galaxy#L526">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L526</span>
+TextTagCreate((IntToText(gv_multikillCounter) + StringExternal(<span class="hljs-string">"Param/Value/65AC0DEF"</span>)), <span class="hljs-number">24</span>, gv_multiKillLastKillPosition, <span class="hljs-number">1.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L536</span>
+TextTagCreate((IntToText(gv_multikillCounter) + StringExternal(<span class="hljs-string">"Param/Value/B51155E6"</span>)), <span class="hljs-number">24</span>, gv_multiKillLastKillPosition, <span class="hljs-number">1.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L546</span>
+TextTagCreate((IntToText(gv_multikillCounter) + StringExternal(<span class="hljs-string">"Param/Value/E455D391"</span>)), <span class="hljs-number">24</span>, gv_multiKillLastKillPosition, <span class="hljs-number">1.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L404</span>
+TextTagCreate(lp_roundText, <span class="hljs-number">60</span>, CameraGetTarget(gv_pLAYER_USER), <span class="hljs-number">2.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L599</span>
+TextTagCreate((IntToText(gv_multikillCounter) + StringExternal(<span class="hljs-string">"Param/Value/38E28403"</span>)), <span class="hljs-number">24</span>, gv_multiKillLastKillPosition, <span class="hljs-number">1.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L609</span>
+TextTagCreate((IntToText(gv_multikillCounter) + StringExternal(<span class="hljs-string">"Param/Value/E31A3CC3"</span>)), <span class="hljs-number">24</span>, gv_multiKillLastKillPosition, <span class="hljs-number">1.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L619</span>
+TextTagCreate((IntToText(gv_multikillCounter) + StringExternal(<span class="hljs-string">"Param/Value/5D00C9C8"</span>)), <span class="hljs-number">24</span>, gv_multiKillLastKillPosition, <span class="hljs-number">1.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L368</span>
+TextTagCreate(lp_roundText, <span class="hljs-number">60</span>, CameraGetTarget(gv_pLAYER_USER), <span class="hljs-number">2.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L520</span>
+TextTagCreate((IntToText(gv_multikillCounter) + StringExternal(<span class="hljs-string">"Param/Value/182CAEAB"</span>)), <span class="hljs-number">24</span>, gv_multiKillLastKillPosition, <span class="hljs-number">1.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L530</span>
+TextTagCreate((IntToText(gv_multikillCounter) + StringExternal(<span class="hljs-string">"Param/Value/44B8485F"</span>)), <span class="hljs-number">24</span>, gv_multiKillLastKillPosition, <span class="hljs-number">1.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L540</span>
+TextTagCreate((IntToText(gv_multikillCounter) + StringExternal(<span class="hljs-string">"Param/Value/7EAAA8B3"</span>)), <span class="hljs-number">24</span>, gv_multiKillLastKillPosition, <span class="hljs-number">1.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L414</span>
+TextTagCreate(lp_roundText, <span class="hljs-number">60</span>, CameraGetTarget(gv_pLAYER_USER), <span class="hljs-number">2.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L517</span>
+TextTagCreate((IntToText(gv_multikillCounter) + StringExternal(<span class="hljs-string">"Param/Value/D791F41E"</span>)), <span class="hljs-number">24</span>, gv_multiKillLastKillPosition, <span class="hljs-number">1.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L527</span>
+TextTagCreate((IntToText(gv_multikillCounter) + StringExternal(<span class="hljs-string">"Param/Value/F7A87031"</span>)), <span class="hljs-number">24</span>, gv_multiKillLastKillPosition, <span class="hljs-number">1.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L537</span>
+TextTagCreate((IntToText(gv_multikillCounter) + StringExternal(<span class="hljs-string">"Param/Value/10C85EAB"</span>)), <span class="hljs-number">24</span>, gv_multiKillLastKillPosition, <span class="hljs-number">1.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3040</span>
+TextTagCreate(lp_text, <span class="hljs-number">24</span>, UnitGetPosition(gv_viking), <span class="hljs-number">1.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7885</span>
+TextTagCreate((StringExternal(<span class="hljs-string">"Param/Value/B43D0432"</span>) + StringExternal(<span class="hljs-string">"Param/Value/C82958EB"</span>) + IntToText(((gv_scoreLastBonusLife + (gv_c_BonusLifeScore * gv_extraLifeMulpitier)) / <span class="hljs-number">1000</span>)) + StringExternal(<span class="hljs-string">"Param/Value/56F048BC"</span>) + StringExternal(<span class="hljs-string">"Param/Value/474EC002"</span>)), <span class="hljs-number">100</span>, PointWithOffset(RegionGetCenter(gf_GetCameraBoundary()), <span class="hljs-number">0.0</span>, <span class="hljs-number">8.0</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L514</span>
+TextTagCreate(StringExternal(<span class="hljs-string">"Param/Value/4111D2AB"</span>), <span class="hljs-number">30</span>, UnitGetPosition(lp_unit), <span class="hljs-number">2.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2368</span>
+TextTagCreate(StringExternal(<span class="hljs-string">"Param/Value/B35796C7"</span>), <span class="hljs-number">30</span>, UnitGetPosition(lv_chosenUnit), <span class="hljs-number">1.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1428</span>
+TextTagCreate(StringExternal(<span class="hljs-string">"Param/Value/28F7B3F3"</span>), <span class="hljs-number">22</span>, lv_textLoc, <span class="hljs-number">0.4</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1432</span>
+TextTagCreate(StringExternal(<span class="hljs-string">"Param/Value/39F32FF0"</span>), <span class="hljs-number">22</span>, lv_textLoc, <span class="hljs-number">0.4</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1441</span>
+TextTagCreate(StringExternal(<span class="hljs-string">"Param/Value/9BD3E383"</span>), <span class="hljs-number">22</span>, lv_textLoc, <span class="hljs-number">0.4</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1445</span>
+TextTagCreate(StringExternal(<span class="hljs-string">"Param/Value/F6FE2311"</span>), <span class="hljs-number">22</span>, lv_textLoc, <span class="hljs-number">0.4</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1504</span>
+TextTagCreate(StringExternal(<span class="hljs-string">"Param/Value/1F273B6C"</span>), <span class="hljs-number">22</span>, lv_textLoc, <span class="hljs-number">0.4</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1508</span>
+TextTagCreate(StringExternal(<span class="hljs-string">"Param/Value/EDE6B222"</span>), <span class="hljs-number">22</span>, lv_textLoc, <span class="hljs-number">0.4</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1517</span>
+TextTagCreate(StringExternal(<span class="hljs-string">"Param/Value/F2D7048C"</span>), <span class="hljs-number">22</span>, lv_textLoc, <span class="hljs-number">0.4</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1521</span>
+TextTagCreate(StringExternal(<span class="hljs-string">"Param/Value/BAB21FB6"</span>), <span class="hljs-number">22</span>, lv_textLoc, <span class="hljs-number">0.4</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1580</span>
+TextTagCreate(StringExternal(<span class="hljs-string">"Param/Value/EE248095"</span>), <span class="hljs-number">22</span>, lv_textLoc, <span class="hljs-number">0.4</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1584</span>
+TextTagCreate(StringExternal(<span class="hljs-string">"Param/Value/99DF0C11"</span>), <span class="hljs-number">22</span>, lv_textLoc, <span class="hljs-number">0.4</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1099</span>
+TextTagCreate(StringExternal(<span class="hljs-string">"Param/Value/4E851134"</span>), <span class="hljs-number">18</span>, PointFromId(<span class="hljs-number">32</span>), <span class="hljs-number">1.0</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1291</span>
+TextTagCreate(StringExternal(<span class="hljs-string">"Param/Value/A0322401"</span>), <span class="hljs-number">18</span>, PointFromId(<span class="hljs-number">688</span>), <span class="hljs-number">1.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L667</span>
+TextTagCreate(StringExternal(<span class="hljs-string">"Param/Value/DC706388"</span>), <span class="hljs-number">18</span>, UnitGetPosition(gv_bunkerBridgeEast), <span class="hljs-number">2.5</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L673</span>
+TextTagCreate(StringExternal(<span class="hljs-string">"Param/Value/DD630F5C"</span>), <span class="hljs-number">18</span>, UnitGetPosition(gv_bunkerBridgeWest), <span class="hljs-number">2.5</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L679</span>
+TextTagCreate(StringExternal(<span class="hljs-string">"Param/Value/24851E7E"</span>), <span class="hljs-number">18</span>, UnitGetPosition(gv_bunkerBaseEast), <span class="hljs-number">2.5</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L685</span>
+TextTagCreate(StringExternal(<span class="hljs-string">"Param/Value/43FACC21"</span>), <span class="hljs-number">18</span>, UnitGetPosition(gv_bunkerBaseWest), <span class="hljs-number">2.5</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1511</span>
+TextTagCreate(StringExternal(<span class="hljs-string">"Param/Value/15C552A2"</span>), <span class="hljs-number">24</span>, UnitGetPosition(UnitFromId(<span class="hljs-number">1167</span>)), <span class="hljs-number">1.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1518</span>
+TextTagCreate(StringExternal(<span class="hljs-string">"Param/Value/E7BF84D7"</span>), <span class="hljs-number">24</span>, UnitGetPosition(UnitFromId(<span class="hljs-number">1167</span>)), <span class="hljs-number">1.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1529</span>
+TextTagCreate(StringExternal(<span class="hljs-string">"Param/Value/44A00372"</span>), <span class="hljs-number">24</span>, UnitGetPosition(UnitFromId(<span class="hljs-number">1167</span>)), <span class="hljs-number">1.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1535</span>
+TextTagCreate(StringExternal(<span class="hljs-string">"Param/Value/F6B6EFD6"</span>), <span class="hljs-number">24</span>, UnitGetPosition(UnitFromId(<span class="hljs-number">1167</span>)), <span class="hljs-number">1.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2872</span>
+TextTagCreate((TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/2519AF5D"</span>), StringExternal(<span class="hljs-string">"Param/Value/D67E2367"</span>), lv_author, c_stringReplaceAll, c_stringCase) + TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/344F6720"</span>), StringExternal(<span class="hljs-string">"Param/Value/A281DAD4"</span>), lv_title, c_stringReplaceAll, c_stringCase)), <span class="hljs-number">32</span>, UnitGetPosition(gf_BriefingScreen(ge_RoomID_RoomBridge, ge_BriefingScreen_Center)), <span class="hljs-number">0.0</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9557</span>
+TextTagCreate(lp_text, <span class="hljs-number">18</span>, UnitGetPosition(lp_unit), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L30078</span>
+TextTagCreate(ConversationDataStateText(<span class="hljs-string">"StoryText|StoryText01"</span>, <span class="hljs-string">"Text"</span>), <span class="hljs-number">32</span>, UnitGetPosition(gf_BriefingScreen(ge_RoomID_RoomBridge, ge_BriefingScreen_Center)), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4159</span>
+TextTagCreate(StringExternal(<span class="hljs-string">"Param/Value/52AB2985"</span>), <span class="hljs-number">22</span>, UnitGetPosition(UnitFromId(<span class="hljs-number">1887</span>)), <span class="hljs-number">2.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L954</span>
+TextTagCreate(TextExpressionAssemble(<span class="hljs-string">"Param/Expression/86CD197B"</span>), <span class="hljs-number">24</span>, lp_location, <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>, PlayerGroupSingle(<span class="hljs-number">1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3040</span>
+TextTagCreate(lp_text, <span class="hljs-number">24</span>, UnitGetPosition(gv_viking), <span class="hljs-number">1.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7885</span>
+TextTagCreate((StringExternal(<span class="hljs-string">"Param/Value/B43D0432"</span>) + StringExternal(<span class="hljs-string">"Param/Value/C82958EB"</span>) + IntToText(((gv_scoreLastBonusLife + (gv_c_BonusLifeScore * gv_extraLifeMulpitier)) / <span class="hljs-number">1000</span>)) + StringExternal(<span class="hljs-string">"Param/Value/56F048BC"</span>) + StringExternal(<span class="hljs-string">"Param/Value/474EC002"</span>)), <span class="hljs-number">100</span>, PointWithOffset(RegionGetCenter(gf_GetCameraBoundary()), <span class="hljs-number">0.0</span>, <span class="hljs-number">8.0</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L514</span>
+TextTagCreate(StringExternal(<span class="hljs-string">"Param/Value/4111D2AB"</span>), <span class="hljs-number">30</span>, UnitGetPosition(lp_unit), <span class="hljs-number">2.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2368</span>
+TextTagCreate(StringExternal(<span class="hljs-string">"Param/Value/B35796C7"</span>), <span class="hljs-number">30</span>, UnitGetPosition(lv_chosenUnit), <span class="hljs-number">1.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1428</span>
+TextTagCreate(StringExternal(<span class="hljs-string">"Param/Value/28F7B3F3"</span>), <span class="hljs-number">22</span>, lv_textLoc, <span class="hljs-number">0.4</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1432</span>
+TextTagCreate(StringExternal(<span class="hljs-string">"Param/Value/39F32FF0"</span>), <span class="hljs-number">22</span>, lv_textLoc, <span class="hljs-number">0.4</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1441</span>
+TextTagCreate(StringExternal(<span class="hljs-string">"Param/Value/9BD3E383"</span>), <span class="hljs-number">22</span>, lv_textLoc, <span class="hljs-number">0.4</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1445</span>
+TextTagCreate(StringExternal(<span class="hljs-string">"Param/Value/F6FE2311"</span>), <span class="hljs-number">22</span>, lv_textLoc, <span class="hljs-number">0.4</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1504</span>
+TextTagCreate(StringExternal(<span class="hljs-string">"Param/Value/1F273B6C"</span>), <span class="hljs-number">22</span>, lv_textLoc, <span class="hljs-number">0.4</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1508</span>
+TextTagCreate(StringExternal(<span class="hljs-string">"Param/Value/EDE6B222"</span>), <span class="hljs-number">22</span>, lv_textLoc, <span class="hljs-number">0.4</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1517</span>
+TextTagCreate(StringExternal(<span class="hljs-string">"Param/Value/F2D7048C"</span>), <span class="hljs-number">22</span>, lv_textLoc, <span class="hljs-number">0.4</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1521</span>
+TextTagCreate(StringExternal(<span class="hljs-string">"Param/Value/BAB21FB6"</span>), <span class="hljs-number">22</span>, lv_textLoc, <span class="hljs-number">0.4</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1580</span>
+TextTagCreate(StringExternal(<span class="hljs-string">"Param/Value/EE248095"</span>), <span class="hljs-number">22</span>, lv_textLoc, <span class="hljs-number">0.4</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1584</span>
+TextTagCreate(StringExternal(<span class="hljs-string">"Param/Value/99DF0C11"</span>), <span class="hljs-number">22</span>, lv_textLoc, <span class="hljs-number">0.4</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1099</span>
+TextTagCreate(StringExternal(<span class="hljs-string">"Param/Value/4E851134"</span>), <span class="hljs-number">18</span>, PointFromId(<span class="hljs-number">32</span>), <span class="hljs-number">1.0</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1291</span>
+TextTagCreate(StringExternal(<span class="hljs-string">"Param/Value/A0322401"</span>), <span class="hljs-number">18</span>, PointFromId(<span class="hljs-number">688</span>), <span class="hljs-number">1.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L667</span>
+TextTagCreate(StringExternal(<span class="hljs-string">"Param/Value/DC706388"</span>), <span class="hljs-number">18</span>, UnitGetPosition(gv_bunkerBridgeEast), <span class="hljs-number">2.5</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L673</span>
+TextTagCreate(StringExternal(<span class="hljs-string">"Param/Value/DD630F5C"</span>), <span class="hljs-number">18</span>, UnitGetPosition(gv_bunkerBridgeWest), <span class="hljs-number">2.5</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L679</span>
+TextTagCreate(StringExternal(<span class="hljs-string">"Param/Value/24851E7E"</span>), <span class="hljs-number">18</span>, UnitGetPosition(gv_bunkerBaseEast), <span class="hljs-number">2.5</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L685</span>
+TextTagCreate(StringExternal(<span class="hljs-string">"Param/Value/43FACC21"</span>), <span class="hljs-number">18</span>, UnitGetPosition(gv_bunkerBaseWest), <span class="hljs-number">2.5</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1511</span>
+TextTagCreate(StringExternal(<span class="hljs-string">"Param/Value/15C552A2"</span>), <span class="hljs-number">24</span>, UnitGetPosition(UnitFromId(<span class="hljs-number">1167</span>)), <span class="hljs-number">1.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1518</span>
+TextTagCreate(StringExternal(<span class="hljs-string">"Param/Value/E7BF84D7"</span>), <span class="hljs-number">24</span>, UnitGetPosition(UnitFromId(<span class="hljs-number">1167</span>)), <span class="hljs-number">1.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1529</span>
+TextTagCreate(StringExternal(<span class="hljs-string">"Param/Value/44A00372"</span>), <span class="hljs-number">24</span>, UnitGetPosition(UnitFromId(<span class="hljs-number">1167</span>)), <span class="hljs-number">1.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1535</span>
+TextTagCreate(StringExternal(<span class="hljs-string">"Param/Value/F6B6EFD6"</span>), <span class="hljs-number">24</span>, UnitGetPosition(UnitFromId(<span class="hljs-number">1167</span>)), <span class="hljs-number">1.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2872</span>
+TextTagCreate((TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/2519AF5D"</span>), StringExternal(<span class="hljs-string">"Param/Value/D67E2367"</span>), lv_author, c_stringReplaceAll, c_stringCase) + TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/344F6720"</span>), StringExternal(<span class="hljs-string">"Param/Value/A281DAD4"</span>), lv_title, c_stringReplaceAll, c_stringCase)), <span class="hljs-number">32</span>, UnitGetPosition(gf_BriefingScreen(ge_RoomID_RoomBridge, ge_BriefingScreen_Center)), <span class="hljs-number">0.0</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9557</span>
+TextTagCreate(lp_text, <span class="hljs-number">18</span>, UnitGetPosition(lp_unit), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L30078</span>
+TextTagCreate(ConversationDataStateText(<span class="hljs-string">"StoryText|StoryText01"</span>, <span class="hljs-string">"Text"</span>), <span class="hljs-number">32</span>, UnitGetPosition(gf_BriefingScreen(ge_RoomID_RoomBridge, ge_BriefingScreen_Center)), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4159</span>
+TextTagCreate(StringExternal(<span class="hljs-string">"Param/Value/52AB2985"</span>), <span class="hljs-number">22</span>, UnitGetPosition(UnitFromId(<span class="hljs-number">1887</span>)), <span class="hljs-number">2.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L954</span>
+TextTagCreate(TextExpressionAssemble(<span class="hljs-string">"Param/Expression/86CD197B"</span>), <span class="hljs-number">24</span>, lp_location, <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>, PlayerGroupSingle(<span class="hljs-number">1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L526</span>
+TextTagCreate((IntToText(gv_multikillCounter) + StringExternal(<span class="hljs-string">"Param/Value/65AC0DEF"</span>)), <span class="hljs-number">24</span>, gv_multiKillLastKillPosition, <span class="hljs-number">1.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L536</span>
+TextTagCreate((IntToText(gv_multikillCounter) + StringExternal(<span class="hljs-string">"Param/Value/B51155E6"</span>)), <span class="hljs-number">24</span>, gv_multiKillLastKillPosition, <span class="hljs-number">1.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L546</span>
+TextTagCreate((IntToText(gv_multikillCounter) + StringExternal(<span class="hljs-string">"Param/Value/E455D391"</span>)), <span class="hljs-number">24</span>, gv_multiKillLastKillPosition, <span class="hljs-number">1.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L404</span>
+TextTagCreate(lp_roundText, <span class="hljs-number">60</span>, CameraGetTarget(gv_pLAYER_USER), <span class="hljs-number">2.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L599</span>
+TextTagCreate((IntToText(gv_multikillCounter) + StringExternal(<span class="hljs-string">"Param/Value/38E28403"</span>)), <span class="hljs-number">24</span>, gv_multiKillLastKillPosition, <span class="hljs-number">1.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L609</span>
+TextTagCreate((IntToText(gv_multikillCounter) + StringExternal(<span class="hljs-string">"Param/Value/E31A3CC3"</span>)), <span class="hljs-number">24</span>, gv_multiKillLastKillPosition, <span class="hljs-number">1.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L619</span>
+TextTagCreate((IntToText(gv_multikillCounter) + StringExternal(<span class="hljs-string">"Param/Value/5D00C9C8"</span>)), <span class="hljs-number">24</span>, gv_multiKillLastKillPosition, <span class="hljs-number">1.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L368</span>
+TextTagCreate(lp_roundText, <span class="hljs-number">60</span>, CameraGetTarget(gv_pLAYER_USER), <span class="hljs-number">2.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L520</span>
+TextTagCreate((IntToText(gv_multikillCounter) + StringExternal(<span class="hljs-string">"Param/Value/182CAEAB"</span>)), <span class="hljs-number">24</span>, gv_multiKillLastKillPosition, <span class="hljs-number">1.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L530</span>
+TextTagCreate((IntToText(gv_multikillCounter) + StringExternal(<span class="hljs-string">"Param/Value/44B8485F"</span>)), <span class="hljs-number">24</span>, gv_multiKillLastKillPosition, <span class="hljs-number">1.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L540</span>
+TextTagCreate((IntToText(gv_multikillCounter) + StringExternal(<span class="hljs-string">"Param/Value/7EAAA8B3"</span>)), <span class="hljs-number">24</span>, gv_multiKillLastKillPosition, <span class="hljs-number">1.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L414</span>
+TextTagCreate(lp_roundText, <span class="hljs-number">60</span>, CameraGetTarget(gv_pLAYER_USER), <span class="hljs-number">2.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L517</span>
+TextTagCreate((IntToText(gv_multikillCounter) + StringExternal(<span class="hljs-string">"Param/Value/D791F41E"</span>)), <span class="hljs-number">24</span>, gv_multiKillLastKillPosition, <span class="hljs-number">1.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L527</span>
+TextTagCreate((IntToText(gv_multikillCounter) + StringExternal(<span class="hljs-string">"Param/Value/F7A87031"</span>)), <span class="hljs-number">24</span>, gv_multiKillLastKillPosition, <span class="hljs-number">1.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L537</span>
+TextTagCreate((IntToText(gv_multikillCounter) + StringExternal(<span class="hljs-string">"Param/Value/10C85EAB"</span>)), <span class="hljs-number">24</span>, gv_multiKillLastKillPosition, <span class="hljs-number">1.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<h4 id="campaignslibertystorysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertystorysc2campaign">#</a> campaigns/libertystory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/libertystory.sc2campaign/base.sc2data/TriggerLibs/CampaignLib.galaxy#L870">CampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L870</span>
+TextTagCreate((StringExternal(<span class="hljs-string">"Param/Value/lib_Camp_F6EDE668"</span>) + IntToText(lp_resourceAmount) + StringExternal(<span class="hljs-string">"Param/Value/lib_Camp_A7A85440"</span>)), <span class="hljs-number">24</span>, UnitGetPosition(lp_cacheUnit), <span class="hljs-number">1.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L879</span>
+TextTagCreate((StringExternal(<span class="hljs-string">"Param/Value/lib_Camp_0DAA8706"</span>) + IntToText(lp_resourceAmount) + StringExternal(<span class="hljs-string">"Param/Value/lib_Camp_8E9001C5"</span>)), <span class="hljs-number">24</span>, UnitGetPosition(lp_cacheUnit), <span class="hljs-number">1.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L914</span>
+TextTagCreate(lv_text, <span class="hljs-number">24</span>, UnitGetPosition(lp_researchUnit), <span class="hljs-number">1.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, PlayerGroupSingle(lp_player))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1148</span>
+TextTagCreate(lv_msg, <span class="hljs-number">24</span>, UnitGetPosition(lp_unit), <span class="hljs-number">0.5</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1553</span>
+TextTagCreate(libCamp_gv__CB_Line[lv_lineIndex], <span class="hljs-number">24</span>, UnitGetPosition(libCamp_gv__CB_Unit[lp_unitIndex]), <span class="hljs-number">0.5</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<h4 id="campaignsswarmsc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmsc2campaign">#</a> campaigns/swarm.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarm.sc2campaign/base.sc2maps/maps/campaign/voidprologue/voidprologue02.sc2map/MapScript.galaxy#L757">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L757</span>
+TextTagCreate(StringExternal(<span class="hljs-string">"Param/Value/7C61B947"</span>), <span class="hljs-number">24</span>, UnitGetPosition(lp_targetUnit), <span class="hljs-number">2.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2188</span>
+TextTagCreate(StringExternal(<span class="hljs-string">"Param/Value/597DD734"</span>), <span class="hljs-number">24</span>, PointFromId(<span class="hljs-number">524</span>), <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2101</span>
+TextTagCreate(TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/AB71505C"</span>), StringExternal(<span class="hljs-string">"Param/Value/F6E2D9A2"</span>), IntToText(lv_numberOfEggs), c_stringReplaceAll, c_stringCase), <span class="hljs-number">24</span>, UnitGetPosition(auto3B0F3FBC_var), <span class="hljs-number">1.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L711</span>
+TextTagCreate(TextExpressionAssemble(<span class="hljs-string">"Param/Expression/0894A15A"</span>), <span class="hljs-number">24</span>, UnitGetPosition(lp_cHOSEN_ESSENCE), <span class="hljs-number">2.0</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L422</span>
+TextTagCreate(StringExternal(<span class="hljs-string">"Param/Value/99E0F636"</span>), <span class="hljs-number">24</span>, UnitGetPosition(lv_essenceUnit), <span class="hljs-number">1.5</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L435</span>
+TextTagCreate(StringExternal(<span class="hljs-string">"Param/Value/6EDB264C"</span>), <span class="hljs-number">24</span>, UnitGetPosition(lv_essenceUnit), <span class="hljs-number">1.5</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>, PlayerGroupAll())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L448</span>
+TextTagCreate(StringExternal(<span class="hljs-string">"Param/Value/62C515F4"</span>), <span class="hljs-number">24</span>, UnitGetPosition(lv_essenceUnit), <span class="hljs-number">1.5</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>, PlayerGroupAll())
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

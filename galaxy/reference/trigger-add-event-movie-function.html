@@ -1,0 +1,168 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Movie Function / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Movie Function"/>
+                <meta property="og:description" content="This event is only usable if you play a movie texture on a model, and that movie texture has a .event file with the same name as the movie texture.  The .event file can specify times when the movie should send an event to the trigger system.  Each event in the .event file has a name that must be specified in the Function Name parameter if you want to respond to that event."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="movie-function"><a class="markdownIt-Anchor" href="#movie-function">#</a> Movie Function</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — A movie function event with name <strong>functionName</strong> happens for Player <strong>player</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Event</code></p>
+</blockquote>
+<p>This event is only usable if you play a movie texture on a model, and that movie texture has a .event file with the same name as the movie texture.  The .event file can specify times when the movie should send an event to the trigger system.  Each event in the .event file has a name that must be specified in the Function Name parameter if you want to respond to that event.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> — Player</li>
+<li><code>string</code> — Function Name</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">TriggerAddEventMovieFunction</span><span class="hljs-params">(
+	trigger t,
+	<span class="hljs-keyword">int</span> player,
+	<span class="hljs-built_in">string</span> functionName,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#cinematics-movie">Cinematics / Movie</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/movie-start-recording">Movie Start Recording</a></strong> — ( MovieStartRecording )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/movie-add-sub-title">Movie Add SubTitle (String)</a></strong> — ( MovieAddSubTitle )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/movie-add-sub-title-text">Movie Add SubTitle (Text)</a></strong> — ( MovieAddSubTitleText )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/movie-add-trigger-function">Movie Add Trigger Function</a></strong> — ( MovieAddTriggerFunction )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/movie-stop-recording">Movie Stop Recording</a></strong> — ( MovieStopRecording )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-movie-dynamic-subtitlesand-duration">Movie Dynamic Subtitles and Duration</a></strong> — ( libNtve_gf_MovieDynamicSubtitlesandDuration )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-movie-function">Movie Function</a></strong> — ( TriggerAddEventMovieFunction )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-movie-started">Movie Started</a></strong> — ( TriggerAddEventMovieStarted )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-movie-finished">Movie Finished</a></strong> — ( TriggerAddEventMovieFinished )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/tstory01.sc2map/MapScript.galaxy#L37595">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L37595</span>
+TriggerAddEventMovieFunction(gt_TVNewsRaynor01Event02, c_playerAny, <span class="hljs-string">"NewsRa1_02"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L37623</span>
+TriggerAddEventMovieFunction(gt_TVNewsRaynor01Event05, c_playerAny, <span class="hljs-string">"NewsRa1_05"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L37719</span>
+TriggerAddEventMovieFunction(gt_TVNewsRaynor02Event03, c_playerAny, <span class="hljs-string">"NewsRa2_03"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L37751</span>
+TriggerAddEventMovieFunction(gt_TVNewsRaynor02Event05, c_playerAny, <span class="hljs-string">"NewsRa2_05"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L37856</span>
+TriggerAddEventMovieFunction(gt_TVNewsHanson01Event01, c_playerAny, <span class="hljs-string">"NewsHa1_01"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L37888</span>
+TriggerAddEventMovieFunction(gt_TVNewsHanson01Event03, c_playerAny, <span class="hljs-string">"NewsHa1_03"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L37984</span>
+TriggerAddEventMovieFunction(gt_TVNewsHanson02Event05, c_playerAny, <span class="hljs-string">"NewsHa2_05"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L38081</span>
+TriggerAddEventMovieFunction(gt_TVNewsHanson03aEvent02, c_playerAny, <span class="hljs-string">"NewsHa3a_02"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L38109</span>
+TriggerAddEventMovieFunction(gt_TVNewsHanson03aEvent06, c_playerAny, <span class="hljs-string">"NewsHa3a_06"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L38207</span>
+TriggerAddEventMovieFunction(gt_TVNewsHanson03bEvent06, c_playerAny, <span class="hljs-string">"NewsHa3b_06"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L37595</span>
+TriggerAddEventMovieFunction(gt_TVNewsRaynor01Event02, c_playerAny, <span class="hljs-string">"NewsRa1_02"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L37623</span>
+TriggerAddEventMovieFunction(gt_TVNewsRaynor01Event05, c_playerAny, <span class="hljs-string">"NewsRa1_05"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L37719</span>
+TriggerAddEventMovieFunction(gt_TVNewsRaynor02Event03, c_playerAny, <span class="hljs-string">"NewsRa2_03"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L37751</span>
+TriggerAddEventMovieFunction(gt_TVNewsRaynor02Event05, c_playerAny, <span class="hljs-string">"NewsRa2_05"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L37856</span>
+TriggerAddEventMovieFunction(gt_TVNewsHanson01Event01, c_playerAny, <span class="hljs-string">"NewsHa1_01"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L37888</span>
+TriggerAddEventMovieFunction(gt_TVNewsHanson01Event03, c_playerAny, <span class="hljs-string">"NewsHa1_03"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L37984</span>
+TriggerAddEventMovieFunction(gt_TVNewsHanson02Event05, c_playerAny, <span class="hljs-string">"NewsHa2_05"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L38081</span>
+TriggerAddEventMovieFunction(gt_TVNewsHanson03aEvent02, c_playerAny, <span class="hljs-string">"NewsHa3a_02"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L38109</span>
+TriggerAddEventMovieFunction(gt_TVNewsHanson03aEvent06, c_playerAny, <span class="hljs-string">"NewsHa3a_06"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L38207</span>
+TriggerAddEventMovieFunction(gt_TVNewsHanson03bEvent06, c_playerAny, <span class="hljs-string">"NewsHa3b_06"</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

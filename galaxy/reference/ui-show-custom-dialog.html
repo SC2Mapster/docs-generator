@@ -1,0 +1,235 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Display Custom Dialog / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Display Custom Dialog"/>
+                <meta property="og:description" content="Displays a custom dialog.  Message Dialogs are informational only and will always have a result of yes.  Query dialogs provide the player with a yes or no option."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="display-custom-dialog"><a class="markdownIt-Anchor" href="#display-custom-dialog">#</a> Display Custom Dialog</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Display a <strong>type</strong> custom dialog with Title <strong>title</strong> and Text <strong>text</strong> for <strong>players</strong> (<strong>pause</strong> game)<br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Displays a custom dialog.  Message Dialogs are informational only and will always have a result of yes.  Query dialogs provide the player with a yes or no option.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>playergroup</code> — Players</li>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-custom-dialog-type">CustomDialogType</a> ]</em> — Type</li>
+<li><code>text</code> — Title</li>
+<li><code>text</code> — Text</li>
+<li><code>bool</code> <em>[ preset::<a href="/galaxy/reference/preset-pause-unpause-option">PauseUnpauseOption</a> ]</em> — Pause</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">UIShowCustomDialog</span><span class="hljs-params">(
+	playergroup inPlayers,
+	<span class="hljs-keyword">int</span> inType,
+	text inTitle,
+	text inText,
+	<span class="hljs-keyword">bool</span> pause,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#ui-custom-dialog">UI / Custom Dialog</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-custom-dialog-dismissed">Custom Dialog Dismissed</a></strong> — ( TriggerAddEventCustomDialogDismissed )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-custom-dialog-result">CustomDialogResult</a> ]</em> — <strong><a href="/galaxy/reference/event-custom-dialog-result">Custom Dialog Result</a></strong> — ( EventCustomDialogResult )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ui-show-custom-dialog">Display Custom Dialog</a></strong> — ( UIShowCustomDialog )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/tarcade.sc2map/MapScript.galaxy#L8438">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L8438</span>
+UIShowCustomDialog(PlayerGroupAll(), <span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/2D8B36F5"</span>), StringExternal(<span class="hljs-string">"Param/Value/B690D296"</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3529</span>
+UIShowCustomDialog(lp_players, libNtve_ge_CustomDialogType_c_customDialogTypeQuery, StringToText(<span class="hljs-string">""</span>), lp_show, lp_show2)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L24563</span>
+UIShowCustomDialog(PlayerGroupAll(), libNtve_ge_CustomDialogType_c_customDialogTypeQuery, StringExternal(<span class="hljs-string">"Param/Value/0A7FFDFF"</span>), StringToText(<span class="hljs-string">""</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L24913</span>
+UIShowCustomDialog(PlayerGroupAll(), libNtve_ge_CustomDialogType_c_customDialogTypeMessage, ConversationDataStateText(<span class="hljs-string">"LabResearchText|LabResearchText01"</span>, <span class="hljs-string">"Text"</span>), (ConversationDataStateText(<span class="hljs-string">"LabResearchText|LabResearchText02"</span>, <span class="hljs-string">"Text"</span>) + libCamp_gf_FormatCredits(libCamp_gf_StoryResearchCreditsPerPoint(), <span class="hljs-literal">false</span>) + ConversationDataStateText(<span class="hljs-string">"LabResearchText|LabResearchText03"</span>, <span class="hljs-string">"Text"</span>)), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L24926</span>
+UIShowCustomDialog(PlayerGroupAll(), libNtve_ge_CustomDialogType_c_customDialogTypeMessage, ConversationDataStateText(<span class="hljs-string">"LabResearchText|LabResearchText04"</span>, <span class="hljs-string">"Text"</span>), (ConversationDataStateText(<span class="hljs-string">"LabResearchText|LabResearchText05"</span>, <span class="hljs-string">"Text"</span>) + libCamp_gf_FormatCredits(libCamp_gf_StoryResearchCreditsPerPoint(), <span class="hljs-literal">false</span>) + ConversationDataStateText(<span class="hljs-string">"LabResearchText|LabResearchText06"</span>, <span class="hljs-string">"Text"</span>) + StringExternal(<span class="hljs-string">"Param/Value/22129F48"</span>) + ConversationDataStateText(<span class="hljs-string">"LabResearchText|LabResearchText07"</span>, <span class="hljs-string">"Text"</span>) + libCamp_gf_FormatCredits(gv_labResearch_ConvertProtoss, <span class="hljs-literal">false</span>) + ConversationDataStateText(<span class="hljs-string">"LabResearchText|LabResearchText15"</span>, <span class="hljs-string">"Text"</span>)), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L24937</span>
+UIShowCustomDialog(PlayerGroupAll(), libNtve_ge_CustomDialogType_c_customDialogTypeMessage, ConversationDataStateText(<span class="hljs-string">"LabResearchText|LabResearchText08"</span>, <span class="hljs-string">"Text"</span>), (ConversationDataStateText(<span class="hljs-string">"LabResearchText|LabResearchText09"</span>, <span class="hljs-string">"Text"</span>) + libCamp_gf_FormatCredits(libCamp_gf_StoryResearchCreditsPerPoint(), <span class="hljs-literal">false</span>) + ConversationDataStateText(<span class="hljs-string">"LabResearchText|LabResearchText10"</span>, <span class="hljs-string">"Text"</span>)), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L24950</span>
+UIShowCustomDialog(PlayerGroupAll(), libNtve_ge_CustomDialogType_c_customDialogTypeMessage, ConversationDataStateText(<span class="hljs-string">"LabResearchText|LabResearchText11"</span>, <span class="hljs-string">"Text"</span>), (ConversationDataStateText(<span class="hljs-string">"LabResearchText|LabResearchText12"</span>, <span class="hljs-string">"Text"</span>) + libCamp_gf_FormatCredits(libCamp_gf_StoryResearchCreditsPerPoint(), <span class="hljs-literal">false</span>) + ConversationDataStateText(<span class="hljs-string">"LabResearchText|LabResearchText13"</span>, <span class="hljs-string">"Text"</span>) + StringExternal(<span class="hljs-string">"Param/Value/785C8705"</span>) + ConversationDataStateText(<span class="hljs-string">"LabResearchText|LabResearchText14"</span>, <span class="hljs-string">"Text"</span>) + libCamp_gf_FormatCredits(gv_labResearch_ConvertZerg, <span class="hljs-literal">false</span>) + ConversationDataStateText(<span class="hljs-string">"LabResearchText|LabResearchText16"</span>, <span class="hljs-string">"Text"</span>)), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L25114</span>
+UIShowCustomDialog(PlayerGroupAll(), libNtve_ge_CustomDialogType_c_customDialogTypeQuery, StringExternal(<span class="hljs-string">"Param/Value/5D9C6F28"</span>), StringExternal(<span class="hljs-string">"Param/Value/3A7F4C53"</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8438</span>
+UIShowCustomDialog(PlayerGroupAll(), <span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/2D8B36F5"</span>), StringExternal(<span class="hljs-string">"Param/Value/B690D296"</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3529</span>
+UIShowCustomDialog(lp_players, libNtve_ge_CustomDialogType_c_customDialogTypeQuery, StringToText(<span class="hljs-string">""</span>), lp_show, lp_show2)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L24563</span>
+UIShowCustomDialog(PlayerGroupAll(), libNtve_ge_CustomDialogType_c_customDialogTypeQuery, StringExternal(<span class="hljs-string">"Param/Value/0A7FFDFF"</span>), StringToText(<span class="hljs-string">""</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L24913</span>
+UIShowCustomDialog(PlayerGroupAll(), libNtve_ge_CustomDialogType_c_customDialogTypeMessage, ConversationDataStateText(<span class="hljs-string">"LabResearchText|LabResearchText01"</span>, <span class="hljs-string">"Text"</span>), (ConversationDataStateText(<span class="hljs-string">"LabResearchText|LabResearchText02"</span>, <span class="hljs-string">"Text"</span>) + libCamp_gf_FormatCredits(libCamp_gf_StoryResearchCreditsPerPoint(), <span class="hljs-literal">false</span>) + ConversationDataStateText(<span class="hljs-string">"LabResearchText|LabResearchText03"</span>, <span class="hljs-string">"Text"</span>)), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L24926</span>
+UIShowCustomDialog(PlayerGroupAll(), libNtve_ge_CustomDialogType_c_customDialogTypeMessage, ConversationDataStateText(<span class="hljs-string">"LabResearchText|LabResearchText04"</span>, <span class="hljs-string">"Text"</span>), (ConversationDataStateText(<span class="hljs-string">"LabResearchText|LabResearchText05"</span>, <span class="hljs-string">"Text"</span>) + libCamp_gf_FormatCredits(libCamp_gf_StoryResearchCreditsPerPoint(), <span class="hljs-literal">false</span>) + ConversationDataStateText(<span class="hljs-string">"LabResearchText|LabResearchText06"</span>, <span class="hljs-string">"Text"</span>) + StringExternal(<span class="hljs-string">"Param/Value/22129F48"</span>) + ConversationDataStateText(<span class="hljs-string">"LabResearchText|LabResearchText07"</span>, <span class="hljs-string">"Text"</span>) + libCamp_gf_FormatCredits(gv_labResearch_ConvertProtoss, <span class="hljs-literal">false</span>) + ConversationDataStateText(<span class="hljs-string">"LabResearchText|LabResearchText15"</span>, <span class="hljs-string">"Text"</span>)), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L24937</span>
+UIShowCustomDialog(PlayerGroupAll(), libNtve_ge_CustomDialogType_c_customDialogTypeMessage, ConversationDataStateText(<span class="hljs-string">"LabResearchText|LabResearchText08"</span>, <span class="hljs-string">"Text"</span>), (ConversationDataStateText(<span class="hljs-string">"LabResearchText|LabResearchText09"</span>, <span class="hljs-string">"Text"</span>) + libCamp_gf_FormatCredits(libCamp_gf_StoryResearchCreditsPerPoint(), <span class="hljs-literal">false</span>) + ConversationDataStateText(<span class="hljs-string">"LabResearchText|LabResearchText10"</span>, <span class="hljs-string">"Text"</span>)), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L24950</span>
+UIShowCustomDialog(PlayerGroupAll(), libNtve_ge_CustomDialogType_c_customDialogTypeMessage, ConversationDataStateText(<span class="hljs-string">"LabResearchText|LabResearchText11"</span>, <span class="hljs-string">"Text"</span>), (ConversationDataStateText(<span class="hljs-string">"LabResearchText|LabResearchText12"</span>, <span class="hljs-string">"Text"</span>) + libCamp_gf_FormatCredits(libCamp_gf_StoryResearchCreditsPerPoint(), <span class="hljs-literal">false</span>) + ConversationDataStateText(<span class="hljs-string">"LabResearchText|LabResearchText13"</span>, <span class="hljs-string">"Text"</span>) + StringExternal(<span class="hljs-string">"Param/Value/785C8705"</span>) + ConversationDataStateText(<span class="hljs-string">"LabResearchText|LabResearchText14"</span>, <span class="hljs-string">"Text"</span>) + libCamp_gf_FormatCredits(gv_labResearch_ConvertZerg, <span class="hljs-literal">false</span>) + ConversationDataStateText(<span class="hljs-string">"LabResearchText|LabResearchText16"</span>, <span class="hljs-string">"Text"</span>)), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L25114</span>
+UIShowCustomDialog(PlayerGroupAll(), libNtve_ge_CustomDialogType_c_customDialogTypeQuery, StringExternal(<span class="hljs-string">"Param/Value/5D9C6F28"</span>), StringExternal(<span class="hljs-string">"Param/Value/3A7F4C53"</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="campaignslibertystorysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertystorysc2campaign">#</a> campaigns/libertystory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/libertystory.sc2campaign/base.sc2data/TriggerLibs/CampaignLib.galaxy#L12408">CampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L12408</span>
+UIShowCustomDialog(PlayerGroupAll(), libNtve_ge_CustomDialogType_c_customDialogTypeMessage, StringExternal(<span class="hljs-string">"Param/Value/lib_Camp_EE77B639"</span>), StringExternal(<span class="hljs-string">"Param/Value/lib_Camp_6FCAE647"</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="campaignsswarmstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmstorysc2campaign">#</a> campaigns/swarmstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstory.sc2campaign/base.sc2data/TriggerLibs/SwarmCampaignLib.galaxy#L22020">SwarmCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L22020</span>
+UIShowCustomDialog(PlayerGroupAll(), libNtve_ge_CustomDialogType_c_customDialogTypeMessage, StringExternal(<span class="hljs-string">"Param/Value/lib_SwaC_4031BB5C"</span>), null, <span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="campaignsswarmstoryutilsc2mod"><a class="markdownIt-Anchor" href="#campaignsswarmstoryutilsc2mod">#</a> campaigns/swarmstoryutil.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstoryutil.sc2mod/base.sc2data/Lib281DEC45.galaxy#L843">Lib281DEC45.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L843</span>
+UIShowCustomDialog(PlayerGroupAll(), libNtve_ge_CustomDialogType_c_customDialogTypeMessage, ConversationDataStateText(<span class="hljs-string">"StoryModeText|UberArchivesIntroTitle"</span>, <span class="hljs-string">"Description"</span>), TextExpressionAssemble(<span class="hljs-string">"Param/Expression/lib_281DEC45_3B6081C9"</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6400</span>
+UIShowCustomDialog(PlayerGroupAll(), libNtve_ge_CustomDialogType_c_customDialogTypeQuery, StringExternal(<span class="hljs-string">"Param/Value/lib_281DEC45_5ADD08C4"</span>), StringToText(<span class="hljs-string">""</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6927</span>
+UIShowCustomDialog(PlayerGroupAll(), libNtve_ge_CustomDialogType_c_customDialogTypeQuery, StringExternal(<span class="hljs-string">"Param/Value/lib_281DEC45_501B0A5D"</span>), StringToText(<span class="hljs-string">""</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8145</span>
+UIShowCustomDialog(PlayerGroupAll(), libNtve_ge_CustomDialogType_c_customDialogTypeQuery, TextExpressionAssemble(<span class="hljs-string">"Param/Expression/lib_281DEC45_AB263B6E"</span>), StringToText(<span class="hljs-string">""</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignLib.galaxy#L9297">VoidCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L9297</span>
+UIShowCustomDialog(PlayerGroupAll(), libNtve_ge_CustomDialogType_c_customDialogTypeMessage, StringExternal(<span class="hljs-string">"Param/Value/lib_VoiC_8BDD7FCF"</span>), null, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9389</span>
+UIShowCustomDialog(PlayerGroupAll(), libNtve_ge_CustomDialogType_c_customDialogTypeMessage, StringExternal(<span class="hljs-string">"Param/Value/lib_VoiC_61FAE583"</span>), null, <span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign-2"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign-2">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignUILib.galaxy#L1429">VoidCampaignUILib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1429</span>
+UIShowCustomDialog(PlayerGroupAll(), libNtve_ge_CustomDialogType_c_customDialogTypeMessage, ConversationDataStateText(<span class="hljs-string">"StoryModeText|MasterArchivesIntroTitle"</span>, <span class="hljs-string">"Description"</span>), TextExpressionAssemble(<span class="hljs-string">"Param/Expression/lib_VCUI_F859D055"</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7296</span>
+UIShowCustomDialog(PlayerGroupAll(), libNtve_ge_CustomDialogType_c_customDialogTypeQuery, StringExternal(<span class="hljs-string">"Param/Value/lib_VCUI_8ADEBB47"</span>), StringToText(<span class="hljs-string">""</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7904</span>
+UIShowCustomDialog(PlayerGroupAll(), libNtve_ge_CustomDialogType_c_customDialogTypeQuery, StringExternal(<span class="hljs-string">"Param/Value/lib_VCUI_5C3EE85B"</span>), StringToText(<span class="hljs-string">""</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8759</span>
+UIShowCustomDialog(PlayerGroupAll(), libNtve_ge_CustomDialogType_c_customDialogTypeQuery, StringExternal(<span class="hljs-string">"Param/Value/lib_VCUI_B359FEC6"</span>), null, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="modsheroesdatastormmod"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/StartingExperienceLib.galaxy#L1878">StartingExperienceLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1878</span>
+UIShowCustomDialog(libCore_gv_playerGroupFromPlayer[libStEx_gv_pLAYER_01_USER], libNtve_ge_CustomDialogType_c_customDialogTypeQuery, StringExternal(<span class="hljs-string">"Param/Value/lib_StEx_DCBF9B21"</span>), lp_question, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="modsmissionpacksnovacampaignsc2mod"><a class="markdownIt-Anchor" href="#modsmissionpacksnovacampaignsc2mod">#</a> mods/missionpacks/novacampaign.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/novacampaign.sc2mod/base.sc2data/LibNCUI.galaxy#L557">LibNCUI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L557</span>
+UIShowCustomDialog(PlayerGroupAll(), libNtve_ge_CustomDialogType_c_customDialogTypeMessage, ConversationDataStateText(<span class="hljs-string">"StoryModeText|MasterArchivesIntroTitle"</span>, <span class="hljs-string">"Description"</span>), TextExpressionAssemble(<span class="hljs-string">"Param/Expression/lib_NCUI_F859D055"</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5737</span>
+UIShowCustomDialog(PlayerGroupAll(), libNtve_ge_CustomDialogType_c_customDialogTypeQuery, StringExternal(<span class="hljs-string">"Param/Value/lib_NCUI_5C3EE85B"</span>), StringToText(<span class="hljs-string">""</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="modsmissionpacksnovacampaignsc2mod-2"><a class="markdownIt-Anchor" href="#modsmissionpacksnovacampaignsc2mod-2">#</a> mods/missionpacks/novacampaign.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/novacampaign.sc2mod/base.sc2data/LibNovC.galaxy#L2458">LibNovC.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2458</span>
+UIShowCustomDialog(PlayerGroupAll(), libNtve_ge_CustomDialogType_c_customDialogTypeMessage, StringExternal(<span class="hljs-string">"Param/Value/lib_NovC_F558D81E"</span>), null, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2984</span>
+UIShowCustomDialog(PlayerGroupAll(), libNtve_ge_CustomDialogType_c_customDialogTypeMessage, StringExternal(<span class="hljs-string">"Param/Value/lib_NovC_8BDD7FCF"</span>), null, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3075</span>
+UIShowCustomDialog(PlayerGroupAll(), libNtve_ge_CustomDialogType_c_customDialogTypeMessage, StringExternal(<span class="hljs-string">"Param/Value/lib_NovC_61FAE583"</span>), null, <span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOOC.galaxy#L4686">LibCOOC.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4686</span>
+UIShowCustomDialog(PlayerGroupAll(), libNtve_ge_CustomDialogType_c_customDialogTypeMessage, null, StringExternal(<span class="hljs-string">"Param/Value/lib_COOC_2E34F462"</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="modsvoidprologuesc2mod"><a class="markdownIt-Anchor" href="#modsvoidprologuesc2mod">#</a> mods/voidprologue.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/voidprologue.sc2mod/base.sc2data/LibA3DDD02B.galaxy#L9196">LibA3DDD02B.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L9196</span>
+UIShowCustomDialog(PlayerGroupAll(), libNtve_ge_CustomDialogType_c_customDialogTypeQuery, StringExternal(<span class="hljs-string">"Param/Value/lib_A3DDD02B_2C050394"</span>), StringToText(<span class="hljs-string">""</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

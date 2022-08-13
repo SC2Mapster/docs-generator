@@ -1,0 +1,470 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Unit Takes Damage / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Unit Takes Damage"/>
+                <meta property="og:description" content="This event fires when a unit takes damage.  Use &quot;Damage Source Position&quot; to get the position of the damage source.  Use &quot;Damaging Player&quot; to get the owner of the unit that is dealing damage.  Use &quot;Damaging Unit&quot; to get the unit that is dealing damage.  Use &quot;Triggering Damage Amount&quot; to get the amount of damage being dealt.  Use &quot;Triggering Player&quot; to get the owner of the unit that is taking damage.  Use &quot;Triggering Unit&quot; to get the unit that is taking damage."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="unit-takes-damage"><a class="markdownIt-Anchor" href="#unit-takes-damage">#</a> Unit Takes Damage</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — <strong>u</strong> takes <strong>damageFatalOption</strong> <strong>damageType</strong> damage (from <strong>damageEffect</strong> effects)<br>
+<em>Flags</em> — <code>Native</code> | <code>Event</code></p>
+</blockquote>
+<p>This event fires when a unit takes damage.  Use <em>“Damage Source Position”</em> to get the position of the damage source.  Use <em>“Damaging Player”</em> to get the owner of the unit that is dealing damage.  Use <em>“Damaging Unit”</em> to get the unit that is dealing damage.  Use <em>“Triggering Damage Amount”</em> to get the amount of damage being dealt.  Use <em>“Triggering Player”</em> to get the owner of the unit that is taking damage.  Use <em>“Triggering Unit”</em> to get the unit that is taking damage.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>unitref</code> <em>[ unit ]</em> — Unit</li>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-damage-type">DamageType</a> ]</em> — Damage Type</li>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-damage-fatal-option">DamageFatalOption</a> ]</em> — Damage Fatal Option</li>
+<li><code>string</code> <em>[ gamelink::Effect ]</em> — Damage Effect</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">TriggerAddEventUnitDamaged</span><span class="hljs-params">(
+	trigger inTrigger,
+	unitref inUnit,
+	<span class="hljs-keyword">int</span> inDamageType,
+	<span class="hljs-keyword">int</span> inDamageFatal,
+	<span class="hljs-built_in">string</span> inEffect,
+)</span></span>;
+</code></pre>
+<h3 id="event-parameters"><a class="markdownIt-Anchor" href="#event-parameters">#</a> Event parameters</h3>
+<ul>
+<li><a href="/galaxy/reference/event-game-user">Triggering Game User</a> — EventGameUser</li>
+<li><a href="/galaxy/reference/event-player">Triggering Player</a> — EventPlayer</li>
+<li><a href="/galaxy/reference/event-unit">Triggering Unit</a> — EventUnit</li>
+<li><a href="/galaxy/reference/event-unit-get-item">Item Used In Attack</a> — EventUnitGetItem</li>
+<li><a href="/galaxy/reference/event-unit-get-item-type">Item Type Used In Attack</a> — EventUnitGetItemType</li>
+<li><a href="/galaxy/reference/event-unit-damage-source-unit">Damaging Unit</a> — EventUnitDamageSourceUnit</li>
+<li><a href="/galaxy/reference/event-unit-damage-source-player">Damaging Player</a> — EventUnitDamageSourcePlayer</li>
+<li><a href="/galaxy/reference/event-unit-damage-amount">Triggering Damage Taken</a> — EventUnitDamageAmount</li>
+<li><a href="/galaxy/reference/event-unit-damage-attempted">Triggering Damage Attempted</a> — EventUnitDamageAttempted</li>
+<li><a href="/galaxy/reference/event-unit-damage-attempted-vitals">Triggering Damage Attempted Vitals</a> — EventUnitDamageAttemptedVitals</li>
+<li><a href="/galaxy/reference/event-unit-damage-absorbed">Triggering Damage Absorbed</a> — EventUnitDamageAbsorbed</li>
+<li><a href="/galaxy/reference/event-unit-damage-behavior-shield">Triggering Damage Behavior Shield</a> — EventUnitDamageBehaviorShield</li>
+<li><a href="/galaxy/reference/event-unit-damage-vitals-leeched">Triggering Vitals Leeched</a> — EventUnitDamageVitalsLeeched</li>
+<li><a href="/galaxy/reference/event-unit-damage-kill-xp">Triggering Unit Kill XP</a> — EventUnitDamageKillXP</li>
+<li><a href="/galaxy/reference/event-unit-damage-source-point">Damage Source Position</a> — EventUnitDamageSourcePoint</li>
+<li><a href="/galaxy/reference/event-unit-heal-launch-unit">Healing Unit</a> — EventUnitHealLaunchUnit</li>
+<li><a href="/galaxy/reference/event-unit-heal-launch-player">Healing Player</a> — EventUnitHealLaunchPlayer</li>
+<li><a href="/galaxy/reference/event-unit-heal-vital">Triggering Heal Vital Type</a> — EventUnitHealVital</li>
+<li><a href="/galaxy/reference/event-unit-heal-amount">Triggering Heal Given</a> — EventUnitHealAmount</li>
+<li><a href="/galaxy/reference/event-unit-spent-vital-vital">Triggering Spent Vital Type</a> — EventUnitSpentVitalVital</li>
+<li><a href="/galaxy/reference/event-unit-spent-vital-amount">Triggering Vital Spent</a> — EventUnitSpentVitalAmount</li>
+</ul>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#unit-combat">Unit / Combat</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/unit-get-damage-dealt-time">Get Unit Damage Dealt Time</a></strong> — ( UnitGetDamageDealtTime )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/unit-get-damage-taken-time">Get Unit Damage Taken Time</a></strong> — ( UnitGetDamageTakenTime )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> <em>[ gamelink::Weapon ]</em> — <strong><a href="/galaxy/reference/event-unit-get-weapon">Weapon Used In Attack</a></strong> — ( EventUnitGetWeapon )</li>
+<li><em><strong>[F]</strong></em> — <code>unit</code> — <strong><a href="/galaxy/reference/event-unit-get-item">Item Used In Attack</a></strong> — ( EventUnitGetItem )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> <em>[ gamelink::Item ]</em> — <strong><a href="/galaxy/reference/event-unit-get-item-type">Item Type Used In Attack</a></strong> — ( EventUnitGetItemType )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-unit-died">Unit Dies</a></strong> — ( TriggerAddEventUnitDied )</li>
+<li><em><strong>[F]</strong></em> — <code>unit</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-killing-unit">Killing Unit</a></strong> — ( libNtve_gf_KillingUnit )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-killing-player">Killing Player</a></strong> — ( libNtve_gf_KillingPlayer )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/event-unit-damage-death-check">Triggering Death Type Check</a></strong> — ( EventUnitDamageDeathCheck )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-unit-removed">Unit Is Being Removed</a></strong> — ( TriggerAddEventUnitRemoved )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-unit-started-attack">Unit Starts Attacking (Deprecated)</a></strong> — ( TriggerAddEventUnitStartedAttack )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-unit-started-attack2">Unit Starts Attacking</a></strong> — ( TriggerAddEventUnitStartedAttack2 )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-unit-attacked">Unit Is Attacked (Deprecated)</a></strong> — ( TriggerAddEventUnitAttacked )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-unit-attacked2">Unit Is Attacked</a></strong> — ( TriggerAddEventUnitAttacked2 )</li>
+<li><em><strong>[F]</strong></em> — <code>unit</code> — <strong><a href="/galaxy/reference/event-unit-target">Attacking Unit</a></strong> — ( EventUnitTarget )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-unit-damage-absorbed">Unit Absorbs Damage</a></strong> — ( TriggerAddEventUnitDamageAbsorbed )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-unit-damaged">Unit Takes Damage</a></strong> — ( TriggerAddEventUnitDamaged )</li>
+<li><em><strong>[F]</strong></em> — <code>unit</code> — <strong><a href="/galaxy/reference/event-unit-damage-source-unit">Damaging Unit</a></strong> — ( EventUnitDamageSourceUnit )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/event-unit-damage-source-player">Damaging Player</a></strong> — ( EventUnitDamageSourcePlayer )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> <em>[ gamelink::Effect ]</em> — <strong><a href="/galaxy/reference/event-unit-damage-effect">Damaging Effect</a></strong> — ( EventUnitDamageEffect )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/event-unit-damage-amount">Triggering Damage Taken</a></strong> — ( EventUnitDamageAmount )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/event-unit-damage-attempted">Triggering Damage Attempted</a></strong> — ( EventUnitDamageAttempted )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/event-unit-damage-attempted-vitals">Triggering Damage Attempted Vitals</a></strong> — ( EventUnitDamageAttemptedVitals )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/event-unit-damage-absorbed">Triggering Damage Absorbed</a></strong> — ( EventUnitDamageAbsorbed )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/event-unit-damage-behavior-shield">Triggering Damage Behavior Shield</a></strong> — ( EventUnitDamageBehaviorShield )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/event-unit-damage-vitals-leeched">Triggering Vitals Leeched</a></strong> — ( EventUnitDamageVitalsLeeched )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/event-unit-damage-kill-xp">Triggering Unit Kill XP</a></strong> — ( EventUnitDamageKillXP )</li>
+<li><em><strong>[F]</strong></em> — <code>point</code> — <strong><a href="/galaxy/reference/event-unit-damage-source-point">Damage Source Position</a></strong> — ( EventUnitDamageSourcePoint )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-unit-healed">Unit is Healed</a></strong> — ( TriggerAddEventUnitHealed )</li>
+<li><em><strong>[F]</strong></em> — <code>unit</code> — <strong><a href="/galaxy/reference/event-unit-heal-launch-unit">Healing Unit</a></strong> — ( EventUnitHealLaunchUnit )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/event-unit-heal-launch-player">Healing Player</a></strong> — ( EventUnitHealLaunchPlayer )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-unit-vital-type">UnitVitalType</a> ]</em> — <strong><a href="/galaxy/reference/event-unit-heal-vital">Triggering Heal Vital Type</a></strong> — ( EventUnitHealVital )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/event-unit-heal-amount">Triggering Heal Given</a></strong> — ( EventUnitHealAmount )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> <em>[ gamelink::Effect ]</em> — <strong><a href="/galaxy/reference/event-unit-heal-effect">Healing Effect</a></strong> — ( EventUnitHealEffect )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-unit-spend-vital">Unit Spends Vital</a></strong> — ( TriggerAddEventUnitSpendVital )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-unit-vital-type">UnitVitalType</a> ]</em> — <strong><a href="/galaxy/reference/event-unit-spent-vital-vital">Triggering Spent Vital Type</a></strong> — ( EventUnitSpentVitalVital )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/event-unit-spent-vital-amount">Triggering Vital Spent</a></strong> — ( EventUnitSpentVitalAmount )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-unit-acquired-target">Unit Acquires Target</a></strong> — ( TriggerAddEventUnitAcquiredTarget )</li>
+<li><em><strong>[F]</strong></em> — <code>unit</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-acquired-target">Acquired Target</a></strong> — ( libNtve_gf_AcquiredTarget )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-unit-revive">Unit Is Revived</a></strong> — ( TriggerAddEventUnitRevive )</li>
+<li><em><strong>[F]</strong></em> — <code>unit</code> — <strong><a href="/galaxy/reference/event-unit-victim-unit">Triggering Victim Unit</a></strong> — ( EventUnitVictimUnit )</li>
+<li><em><strong>[F]</strong></em> — <code>unit</code> — <strong><a href="/galaxy/reference/event-unit-item-used">Triggering Item Used</a></strong> — ( EventUnitItemUsed )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> <em>[ gamelink::Effect ]</em> — <strong><a href="/galaxy/reference/event-unit-effect-used">Triggering Effect Used</a></strong> — ( EventUnitEffectUsed )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/tarcade.sc2map/MapScript.galaxy#L8081">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L8081</span>
+TriggerAddEventUnitDamaged(gt_BossHPBar, null, c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8151</span>
+TriggerAddEventUnitDamaged(gt_UnitHPBar, null, c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2658</span>
+TriggerAddEventUnitDamaged(gt_ConvoyGuardsareUnderAttackQ, null, c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1183</span>
+TriggerAddEventUnitDamaged(gt_InfestorNorthFoundEarly, UnitRefFromUnit(UnitFromId(<span class="hljs-number">1110</span>)), c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1213</span>
+TriggerAddEventUnitDamaged(gt_InfestorSouthFoundEarly, UnitRefFromUnit(UnitFromId(<span class="hljs-number">927</span>)), c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3489</span>
+TriggerAddEventUnitDamaged(gt_TransmissionInfestedRefugeeSightedQ, null, c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3544</span>
+TriggerAddEventUnitDamaged(gt_TransmissionInfestedMarineSightedQ, null, c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3602</span>
+TriggerAddEventUnitDamaged(gt_TransmissionAberrationSightedQ, null, c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4343</span>
+TriggerAddEventUnitDamaged(gt_TransmissionBetaShipUnderAttackQ, null, c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4393</span>
+TriggerAddEventUnitDamaged(gt_TransmissionGammaShipUnderAttackQ, null, c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4443</span>
+TriggerAddEventUnitDamaged(gt_TransmissionOmegaShipUnderAttackQ, null, c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4502</span>
+TriggerAddEventUnitDamaged(gt_VictoryDestroyOrlanCompleted, null, c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4376</span>
+TriggerAddEventUnitDamaged(gt_AchievementOdinHealthBelow30Hard, null, c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5768</span>
+TriggerAddEventUnitDamaged(gt_MidValhallaDoorDamage, UnitRefFromUnit(UnitFromId(<span class="hljs-number">341</span>)), c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1378</span>
+TriggerAddEventUnitDamaged(gt_CiviliansAttackedandCower, null, c_unitDamageTypeAny, c_unitDamageEither, EventUnitDamageEffect())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4908</span>
+TriggerAddEventUnitDamaged(gt_TransmissionCivilianSquishArea1Q, null, c_unitDamageTypeAny, c_unitDamageEither, EventUnitDamageEffect())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4948</span>
+TriggerAddEventUnitDamaged(gt_TransmissionCivilianSquishArea2Q, null, c_unitDamageTypeAny, c_unitDamageEither, EventUnitDamageEffect())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4988</span>
+TriggerAddEventUnitDamaged(gt_TransmissionCivilianSquishArea3Q, null, c_unitDamageTypeAny, c_unitDamageEither, EventUnitDamageEffect())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5028</span>
+TriggerAddEventUnitDamaged(gt_TransmissionCivilianSquishArea4Q, null, c_unitDamageTypeAny, c_unitDamageEither, EventUnitDamageEffect())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5068</span>
+TriggerAddEventUnitDamaged(gt_TransmissionCivilianSquishArea5Q, null, c_unitDamageTypeAny, c_unitDamageEither, EventUnitDamageEffect())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2576</span>
+TriggerAddEventUnitDamaged(gt_ScientistsRunFromFire, null, c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6210</span>
+TriggerAddEventUnitDamaged(gt_FusionCoreTakesDamage, null, c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6240</span>
+TriggerAddEventUnitDamaged(gt_Rockstakedamage, null, c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9961</span>
+TriggerAddEventUnitDamaged(gt_HybridRegeneration, null, c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1214</span>
+TriggerAddEventUnitDamaged(gt_RoadblockAttacked, null, c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2276</span>
+TriggerAddEventUnitDamaged(gt_EscapeDamage, UnitRefFromUnit(UnitFromId(<span class="hljs-number">1615</span>)), c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2277</span>
+TriggerAddEventUnitDamaged(gt_EscapeDamage, UnitRefFromUnit(UnitFromId(<span class="hljs-number">1464</span>)), c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4557</span>
+TriggerAddEventUnitDamaged(gt_ObjectiveDestroyDominionHoloboardsUpdate, null, c_unitDamageTypeAny, c_unitDamageFatal, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1028</span>
+TriggerAddEventUnitDamaged(gt_DirtyBanelingCrewViaDamage, null, c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1736</span>
+TriggerAddEventUnitDamaged(gt_BrutaliskRemovePingActor, UnitRefFromUnit(UnitFromId(<span class="hljs-number">407</span>)), c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1390</span>
+TriggerAddEventUnitDamaged(gt_HarvestingSpeedBumpsNWesternTerritory, null, c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1437</span>
+TriggerAddEventUnitDamaged(gt_HarvestingSpeedBumpsCentralTerritory, null, c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1659</span>
+TriggerAddEventUnitDamaged(gt_ToshVictims, null, c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2372</span>
+TriggerAddEventUnitDamaged(gt_CellBlockAPatrolSearching, null, c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4420</span>
+TriggerAddEventUnitDamaged(gt_StatEnemiesKilledByNukes, null, c_unitDamageTypeAny, c_unitDamageFatal, <span class="hljs-string">"HeroNukeDamage"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4503</span>
+TriggerAddEventUnitDamaged(gt_StatToshLowestHealth, UnitRefFromVariable(<span class="hljs-string">"gv_tosh"</span>), c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1621</span>
+TriggerAddEventUnitDamaged(gt_P1MiTuGuardsEngaged, null, c_unitDamageTypeAny, c_unitDamageNonFatal, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1676</span>
+TriggerAddEventUnitDamaged(gt_P1MiTuHelpMeQ, null, c_unitDamageTypeAny, c_unitDamageNonFatal, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1887</span>
+TriggerAddEventUnitDamaged(gt_P1NighthawkSpot, null, c_unitDamageTypeAny, c_unitDamageNonFatal, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2400</span>
+TriggerAddEventUnitDamaged(gt_P2RavenAttacked, null, c_unitDamageTypeAny, c_unitDamageNonFatal, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2589</span>
+TriggerAddEventUnitDamaged(gt_P2LZVikingsLand, null, c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3177</span>
+TriggerAddEventUnitDamaged(gt_P2BansheeCloak, UnitRefFromUnit(UnitFromId(<span class="hljs-number">684</span>)), c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3874</span>
+TriggerAddEventUnitDamaged(gt_P3SouthViking, null, c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3918</span>
+TriggerAddEventUnitDamaged(gt_P3NorthViking, null, c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3959</span>
+TriggerAddEventUnitDamaged(gt_P3SouthRavenDrone, null, c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4000</span>
+TriggerAddEventUnitDamaged(gt_P3SouthRavenTurrets, null, c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1104</span>
+TriggerAddEventUnitDamaged(gt_OutsideProtossBaseWarpIn, null, c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1321</span>
+TriggerAddEventUnitDamaged(gt_StalkerAggro, null, c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2066</span>
+TriggerAddEventUnitDamaged(gt_Laserisattackedbyenemy, UnitRefFromUnit(UnitFromId(<span class="hljs-number">409</span>)), c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2115</span>
+TriggerAddEventUnitDamaged(gt_LaserisattackedbyplayerQ, UnitRefFromUnit(UnitFromId(<span class="hljs-number">409</span>)), c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1964</span>
+TriggerAddEventUnitDamaged(gt_RipFieldGeneratorResponse1, null, c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1992</span>
+TriggerAddEventUnitDamaged(gt_RipFieldGeneratorResponse2, null, c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2020</span>
+TriggerAddEventUnitDamaged(gt_XelnagaVaultResponse, null, c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2584</span>
+TriggerAddEventUnitDamaged(gt_MothershipWarmholeVAULT, null, c_unitDamageTypeAny, c_unitDamageNonFatal, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2626</span>
+TriggerAddEventUnitDamaged(gt_MothershipWarmhole75health, null, c_unitDamageTypeAny, c_unitDamageNonFatal, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2668</span>
+TriggerAddEventUnitDamaged(gt_MothershipWarmhole30health, null, c_unitDamageTypeAny, c_unitDamageNonFatal, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1759</span>
+TriggerAddEventUnitDamaged(gt__1TeachSnipeTripViaDamage, null, c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1905</span>
+TriggerAddEventUnitDamaged(gt__1TeachSnipeAgainTripViaDamage, null, c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2058</span>
+TriggerAddEventUnitDamaged(gt__1TeachNadesTripViaDamage, null, c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2204</span>
+TriggerAddEventUnitDamaged(gt__1TeachNadesAgainTripViaDamage, null, c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2424</span>
+TriggerAddEventUnitDamaged(gt__1TeachBettyViaDamage, null, c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2608</span>
+TriggerAddEventUnitDamaged(gt__1ZergKillTeamTripViaDamage, null, c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3837</span>
+TriggerAddEventUnitDamaged(gt__2StoryTellingTripViaDamage, null, c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4007</span>
+TriggerAddEventUnitDamaged(gt__2ZombieRaid1TripViaDamage, null, c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4158</span>
+TriggerAddEventUnitDamaged(gt__2ZombieRaid2TripViaDamage, null, c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4439</span>
+TriggerAddEventUnitDamaged(gt__2BanelingSplashDetection, null, c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1893</span>
+TriggerAddEventUnitDamaged(gt_VoidPrisonVictim1Dies, UnitRefFromUnit(UnitFromId(<span class="hljs-number">36</span>)), c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2042</span>
+TriggerAddEventUnitDamaged(gt_DyingUltralisk, UnitRefFromUnit(UnitFromId(<span class="hljs-number">230</span>)), c_unitDamageTypeAny, c_unitDamageNonFatal, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4460</span>
+TriggerAddEventUnitDamaged(gt_DyingUltralisksHatchery2, null, c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5861</span>
+TriggerAddEventUnitDamaged(gt_KerriganRegeneration, null, c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7651</span>
+TriggerAddEventUnitDamaged(gt_AchievementZeratulHurtAdvanced, null, c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1953</span>
+TriggerAddEventUnitDamaged(gt_PsionicShockwaveFirst, null, c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2004</span>
+TriggerAddEventUnitDamaged(gt_PsionicShockwaveSecond, null, c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2059</span>
+TriggerAddEventUnitDamaged(gt_PsionicShockwaveThirdInsane, null, c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8081</span>
+TriggerAddEventUnitDamaged(gt_BossHPBar, null, c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8151</span>
+TriggerAddEventUnitDamaged(gt_UnitHPBar, null, c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2658</span>
+TriggerAddEventUnitDamaged(gt_ConvoyGuardsareUnderAttackQ, null, c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1183</span>
+TriggerAddEventUnitDamaged(gt_InfestorNorthFoundEarly, UnitRefFromUnit(UnitFromId(<span class="hljs-number">1110</span>)), c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1213</span>
+TriggerAddEventUnitDamaged(gt_InfestorSouthFoundEarly, UnitRefFromUnit(UnitFromId(<span class="hljs-number">927</span>)), c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3489</span>
+TriggerAddEventUnitDamaged(gt_TransmissionInfestedRefugeeSightedQ, null, c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3544</span>
+TriggerAddEventUnitDamaged(gt_TransmissionInfestedMarineSightedQ, null, c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3602</span>
+TriggerAddEventUnitDamaged(gt_TransmissionAberrationSightedQ, null, c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4343</span>
+TriggerAddEventUnitDamaged(gt_TransmissionBetaShipUnderAttackQ, null, c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4393</span>
+TriggerAddEventUnitDamaged(gt_TransmissionGammaShipUnderAttackQ, null, c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4443</span>
+TriggerAddEventUnitDamaged(gt_TransmissionOmegaShipUnderAttackQ, null, c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4502</span>
+TriggerAddEventUnitDamaged(gt_VictoryDestroyOrlanCompleted, null, c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4376</span>
+TriggerAddEventUnitDamaged(gt_AchievementOdinHealthBelow30Hard, null, c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5768</span>
+TriggerAddEventUnitDamaged(gt_MidValhallaDoorDamage, UnitRefFromUnit(UnitFromId(<span class="hljs-number">341</span>)), c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1378</span>
+TriggerAddEventUnitDamaged(gt_CiviliansAttackedandCower, null, c_unitDamageTypeAny, c_unitDamageEither, EventUnitDamageEffect())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4908</span>
+TriggerAddEventUnitDamaged(gt_TransmissionCivilianSquishArea1Q, null, c_unitDamageTypeAny, c_unitDamageEither, EventUnitDamageEffect())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4948</span>
+TriggerAddEventUnitDamaged(gt_TransmissionCivilianSquishArea2Q, null, c_unitDamageTypeAny, c_unitDamageEither, EventUnitDamageEffect())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4988</span>
+TriggerAddEventUnitDamaged(gt_TransmissionCivilianSquishArea3Q, null, c_unitDamageTypeAny, c_unitDamageEither, EventUnitDamageEffect())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5028</span>
+TriggerAddEventUnitDamaged(gt_TransmissionCivilianSquishArea4Q, null, c_unitDamageTypeAny, c_unitDamageEither, EventUnitDamageEffect())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5068</span>
+TriggerAddEventUnitDamaged(gt_TransmissionCivilianSquishArea5Q, null, c_unitDamageTypeAny, c_unitDamageEither, EventUnitDamageEffect())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2576</span>
+TriggerAddEventUnitDamaged(gt_ScientistsRunFromFire, null, c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6210</span>
+TriggerAddEventUnitDamaged(gt_FusionCoreTakesDamage, null, c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6240</span>
+TriggerAddEventUnitDamaged(gt_Rockstakedamage, null, c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9961</span>
+TriggerAddEventUnitDamaged(gt_HybridRegeneration, null, c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1214</span>
+TriggerAddEventUnitDamaged(gt_RoadblockAttacked, null, c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2276</span>
+TriggerAddEventUnitDamaged(gt_EscapeDamage, UnitRefFromUnit(UnitFromId(<span class="hljs-number">1615</span>)), c_unitDamageTypeAny, c_unitDamageEither, null)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

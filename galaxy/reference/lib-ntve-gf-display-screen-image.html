@@ -1,0 +1,296 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Display Screen Image / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Display Screen Image"/>
+                <meta property="og:description" content="Creates a screen image, with an identifier chosen by the ScreenImageID parameter, at the specified anchor, with the specified size and offset."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="display-screen-image"><a class="markdownIt-Anchor" href="#display-screen-image">#</a> Display Screen Image</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Display image <strong>screenImageID</strong> of size (<strong>width</strong>, <strong>height</strong>) with image <strong>image</strong> using blend mode <strong>blendMode</strong> at <strong>anchor</strong> with (<strong>offsetX</strong>, <strong>offsetY</strong>)<br>
+<em>Flags</em> — <code>Action</code></p>
+</blockquote>
+<p>Creates a screen image, with an identifier chosen by the ScreenImageID parameter, at the specified anchor, with the specified size and offset.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> — ScreenImageID</li>
+<li><code>string</code> <em>[ filepath ]</em> — Image</li>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-dialog-blend-mode">DialogBlendMode</a> ]</em> — BlendMode</li>
+<li><code>int</code> — Width</li>
+<li><code>int</code> — Height</li>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-anchor">Anchor</a> ]</em> — Anchor</li>
+<li><code>int</code> — OffsetX</li>
+<li><code>int</code> — OffsetY</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">libNtve_gf_DisplayScreenImage</span><span class="hljs-params">(
+	<span class="hljs-keyword">int</span> lp_screenImageID,
+	<span class="hljs-built_in">string</span> lp_image,
+	<span class="hljs-keyword">int</span> lp_blendMode,
+	<span class="hljs-keyword">int</span> lp_width,
+	<span class="hljs-keyword">int</span> lp_height,
+	<span class="hljs-keyword">int</span> lp_anchor,
+	<span class="hljs-keyword">int</span> lp_offsetX,
+	<span class="hljs-keyword">int</span> lp_offsetY,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#dialog-screen-image">Dialog / Screen Image</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-display-screen-image">Display Screen Image</a></strong> — ( libNtve_gf_DisplayScreenImage )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-hide-screen-image">Show/Hide Screen Image</a></strong> — ( libNtve_gf_HideScreenImage )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-pulse-screen-image">Pulse Screen Image</a></strong> — ( libNtve_gf_PulseScreenImage )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-stop-pulsing-screen-image">Stop Pulsing Screen Image</a></strong> — ( libNtve_gf_StopPulsingScreenImage )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ dialog ]</em> — <strong><a href="/galaxy/reference/lib-ntve-gf-screen-image-dialog">Screen Image Dialog</a></strong> — ( libNtve_gf_ScreenImageDialog )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ control ]</em> — <strong><a href="/galaxy/reference/lib-ntve-gf-screen-image-dialog-item">Screen Image Dialog Item</a></strong> — ( libNtve_gf_ScreenImageDialogItem )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/ttutorial01.sc2map/MapScript.galaxy#L1769">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1769</span>
+libNtve_gf_DisplayScreenImage(<span class="hljs-number">1</span>, <span class="hljs-string">"Assets\\Textures\\tutorialmissionobjectiveshighlight.dds"</span>, c_triggerBlendModeAdd, <span class="hljs-number">400</span>, <span class="hljs-number">90</span>, c_anchorTopLeft, <span class="hljs-number">0</span>, <span class="hljs-number">16</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1778</span>
+libNtve_gf_DisplayScreenImage(<span class="hljs-number">1</span>, <span class="hljs-string">"Assets\\Textures\\tutorialminimaphighlight.dds"</span>, c_triggerBlendModeAdd, <span class="hljs-number">404</span>, <span class="hljs-number">372</span>, c_anchorBottomLeft, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1804</span>
+libNtve_gf_DisplayScreenImage(<span class="hljs-number">1</span>, <span class="hljs-string">"Assets\\Textures\\tutorialinfolefthighlight.dds"</span>, c_triggerBlendModeAdd, <span class="hljs-number">313</span>, <span class="hljs-number">246</span>, c_anchorBottomLeft, <span class="hljs-number">390</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1805</span>
+libNtve_gf_DisplayScreenImage(<span class="hljs-number">2</span>, <span class="hljs-string">"Assets\\Textures\\tutorialinforighthighlight.dds"</span>, c_triggerBlendModeAdd, <span class="hljs-number">313</span>, <span class="hljs-number">246</span>, c_anchorBottomRight, <span class="hljs-number">590</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1818</span>
+libNtve_gf_DisplayScreenImage(<span class="hljs-number">1</span>, <span class="hljs-string">"Assets\\Textures\\tutorialcommandcardhighlight.dds"</span>, c_triggerBlendModeAdd, <span class="hljs-number">503</span>, <span class="hljs-number">348</span>, c_anchorBottomRight, <span class="hljs-number">5</span>, <span class="hljs-number">-2</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1834</span>
+libNtve_gf_DisplayScreenImage(<span class="hljs-number">1</span>, <span class="hljs-string">"Assets\\Textures\\tutorialresourceshighlight.dds"</span>, c_triggerBlendModeAdd, <span class="hljs-number">212</span>, <span class="hljs-number">134</span>, c_anchorTopRight, <span class="hljs-number">295</span>, <span class="hljs-number">-34</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1835</span>
+libNtve_gf_DisplayScreenImage(<span class="hljs-number">2</span>, <span class="hljs-string">"Assets\\Textures\\tutorialresourceshighlight.dds"</span>, c_triggerBlendModeAdd, <span class="hljs-number">212</span>, <span class="hljs-number">134</span>, c_anchorTopRight, <span class="hljs-number">145</span>, <span class="hljs-number">-34</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1848</span>
+libNtve_gf_DisplayScreenImage(<span class="hljs-number">3</span>, <span class="hljs-string">"Assets\\Textures\\tutorialresourceshighlight.dds"</span>, c_triggerBlendModeAdd, <span class="hljs-number">212</span>, <span class="hljs-number">134</span>, c_anchorTopRight, <span class="hljs-number">11</span>, <span class="hljs-number">-34</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2130</span>
+libNtve_gf_DisplayScreenImage(<span class="hljs-number">4</span>, <span class="hljs-string">"Assets\\Textures\\tutorialarrow04.dds"</span>, c_triggerBlendModeAdd, <span class="hljs-number">128</span>, <span class="hljs-number">128</span>, c_anchorRight, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2135</span>
+libNtve_gf_DisplayScreenImage(<span class="hljs-number">5</span>, <span class="hljs-string">"Assets\\Textures\\tutorialarrow04.dds"</span>, c_triggerBlendModeAdd, <span class="hljs-number">128</span>, <span class="hljs-number">128</span>, c_anchorBottom, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1769</span>
+libNtve_gf_DisplayScreenImage(<span class="hljs-number">1</span>, <span class="hljs-string">"Assets\\Textures\\tutorialmissionobjectiveshighlight.dds"</span>, c_triggerBlendModeAdd, <span class="hljs-number">400</span>, <span class="hljs-number">90</span>, c_anchorTopLeft, <span class="hljs-number">0</span>, <span class="hljs-number">16</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1778</span>
+libNtve_gf_DisplayScreenImage(<span class="hljs-number">1</span>, <span class="hljs-string">"Assets\\Textures\\tutorialminimaphighlight.dds"</span>, c_triggerBlendModeAdd, <span class="hljs-number">404</span>, <span class="hljs-number">372</span>, c_anchorBottomLeft, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1804</span>
+libNtve_gf_DisplayScreenImage(<span class="hljs-number">1</span>, <span class="hljs-string">"Assets\\Textures\\tutorialinfolefthighlight.dds"</span>, c_triggerBlendModeAdd, <span class="hljs-number">313</span>, <span class="hljs-number">246</span>, c_anchorBottomLeft, <span class="hljs-number">390</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1805</span>
+libNtve_gf_DisplayScreenImage(<span class="hljs-number">2</span>, <span class="hljs-string">"Assets\\Textures\\tutorialinforighthighlight.dds"</span>, c_triggerBlendModeAdd, <span class="hljs-number">313</span>, <span class="hljs-number">246</span>, c_anchorBottomRight, <span class="hljs-number">590</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1818</span>
+libNtve_gf_DisplayScreenImage(<span class="hljs-number">1</span>, <span class="hljs-string">"Assets\\Textures\\tutorialcommandcardhighlight.dds"</span>, c_triggerBlendModeAdd, <span class="hljs-number">503</span>, <span class="hljs-number">348</span>, c_anchorBottomRight, <span class="hljs-number">5</span>, <span class="hljs-number">-2</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1834</span>
+libNtve_gf_DisplayScreenImage(<span class="hljs-number">1</span>, <span class="hljs-string">"Assets\\Textures\\tutorialresourceshighlight.dds"</span>, c_triggerBlendModeAdd, <span class="hljs-number">212</span>, <span class="hljs-number">134</span>, c_anchorTopRight, <span class="hljs-number">295</span>, <span class="hljs-number">-34</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1835</span>
+libNtve_gf_DisplayScreenImage(<span class="hljs-number">2</span>, <span class="hljs-string">"Assets\\Textures\\tutorialresourceshighlight.dds"</span>, c_triggerBlendModeAdd, <span class="hljs-number">212</span>, <span class="hljs-number">134</span>, c_anchorTopRight, <span class="hljs-number">145</span>, <span class="hljs-number">-34</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1848</span>
+libNtve_gf_DisplayScreenImage(<span class="hljs-number">3</span>, <span class="hljs-string">"Assets\\Textures\\tutorialresourceshighlight.dds"</span>, c_triggerBlendModeAdd, <span class="hljs-number">212</span>, <span class="hljs-number">134</span>, c_anchorTopRight, <span class="hljs-number">11</span>, <span class="hljs-number">-34</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2130</span>
+libNtve_gf_DisplayScreenImage(<span class="hljs-number">4</span>, <span class="hljs-string">"Assets\\Textures\\tutorialarrow04.dds"</span>, c_triggerBlendModeAdd, <span class="hljs-number">128</span>, <span class="hljs-number">128</span>, c_anchorRight, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2135</span>
+libNtve_gf_DisplayScreenImage(<span class="hljs-number">5</span>, <span class="hljs-string">"Assets\\Textures\\tutorialarrow04.dds"</span>, c_triggerBlendModeAdd, <span class="hljs-number">128</span>, <span class="hljs-number">128</span>, c_anchorBottom, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2452</span>
+libNtve_gf_DisplayScreenImage(<span class="hljs-number">1</span>, <span class="hljs-string">"Assets\\Textures\\tutorialcommandcardhighlight.dds"</span>, c_triggerBlendModeAdd, <span class="hljs-number">503</span>, <span class="hljs-number">348</span>, c_anchorBottomRight, <span class="hljs-number">5</span>, <span class="hljs-number">-2</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2529</span>
+libNtve_gf_DisplayScreenImage(<span class="hljs-number">1</span>, <span class="hljs-string">"Assets\\Textures\\tutorialcommandcardhighlight.dds"</span>, c_triggerBlendModeAdd, <span class="hljs-number">503</span>, <span class="hljs-number">348</span>, c_anchorBottomRight, <span class="hljs-number">5</span>, <span class="hljs-number">-2</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3562</span>
+libNtve_gf_DisplayScreenImage(<span class="hljs-number">1</span>, <span class="hljs-string">"Assets\\Textures\\tutorialresourceshighlight.dds"</span>, c_triggerBlendModeAdd, <span class="hljs-number">212</span>, <span class="hljs-number">134</span>, c_anchorTopRight, <span class="hljs-number">11</span>, <span class="hljs-number">-34</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3949</span>
+libNtve_gf_DisplayScreenImage(<span class="hljs-number">1</span>, <span class="hljs-string">"Assets\\Textures\\tutorialcommandcardhighlight.dds"</span>, c_triggerBlendModeAdd, <span class="hljs-number">503</span>, <span class="hljs-number">348</span>, c_anchorBottomRight, <span class="hljs-number">5</span>, <span class="hljs-number">-2</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4030</span>
+libNtve_gf_DisplayScreenImage(<span class="hljs-number">1</span>, <span class="hljs-string">"Assets\\Textures\\tutorialcommandcardhighlight.dds"</span>, c_triggerBlendModeAdd, <span class="hljs-number">503</span>, <span class="hljs-number">348</span>, c_anchorBottomRight, <span class="hljs-number">5</span>, <span class="hljs-number">-2</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4833</span>
+libNtve_gf_DisplayScreenImage(<span class="hljs-number">1</span>, <span class="hljs-string">"Assets\\Textures\\tutorialcommandcardhighlight.dds"</span>, c_triggerBlendModeAdd, <span class="hljs-number">503</span>, <span class="hljs-number">348</span>, c_anchorBottomRight, <span class="hljs-number">5</span>, <span class="hljs-number">-2</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4914</span>
+libNtve_gf_DisplayScreenImage(<span class="hljs-number">1</span>, <span class="hljs-string">"Assets\\Textures\\tutorialcommandcardhighlight.dds"</span>, c_triggerBlendModeAdd, <span class="hljs-number">503</span>, <span class="hljs-number">348</span>, c_anchorBottomRight, <span class="hljs-number">5</span>, <span class="hljs-number">-2</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5765</span>
+libNtve_gf_DisplayScreenImage(<span class="hljs-number">1</span>, <span class="hljs-string">"Assets\\Textures\\tutorialcommandcardhighlight.dds"</span>, c_triggerBlendModeAdd, <span class="hljs-number">503</span>, <span class="hljs-number">348</span>, c_anchorBottomRight, <span class="hljs-number">5</span>, <span class="hljs-number">-2</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5842</span>
+libNtve_gf_DisplayScreenImage(<span class="hljs-number">1</span>, <span class="hljs-string">"Assets\\Textures\\tutorialcommandcardhighlight.dds"</span>, c_triggerBlendModeAdd, <span class="hljs-number">503</span>, <span class="hljs-number">348</span>, c_anchorBottomRight, <span class="hljs-number">5</span>, <span class="hljs-number">-2</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2452</span>
+libNtve_gf_DisplayScreenImage(<span class="hljs-number">1</span>, <span class="hljs-string">"Assets\\Textures\\tutorialcommandcardhighlight.dds"</span>, c_triggerBlendModeAdd, <span class="hljs-number">503</span>, <span class="hljs-number">348</span>, c_anchorBottomRight, <span class="hljs-number">5</span>, <span class="hljs-number">-2</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2529</span>
+libNtve_gf_DisplayScreenImage(<span class="hljs-number">1</span>, <span class="hljs-string">"Assets\\Textures\\tutorialcommandcardhighlight.dds"</span>, c_triggerBlendModeAdd, <span class="hljs-number">503</span>, <span class="hljs-number">348</span>, c_anchorBottomRight, <span class="hljs-number">5</span>, <span class="hljs-number">-2</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3562</span>
+libNtve_gf_DisplayScreenImage(<span class="hljs-number">1</span>, <span class="hljs-string">"Assets\\Textures\\tutorialresourceshighlight.dds"</span>, c_triggerBlendModeAdd, <span class="hljs-number">212</span>, <span class="hljs-number">134</span>, c_anchorTopRight, <span class="hljs-number">11</span>, <span class="hljs-number">-34</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3949</span>
+libNtve_gf_DisplayScreenImage(<span class="hljs-number">1</span>, <span class="hljs-string">"Assets\\Textures\\tutorialcommandcardhighlight.dds"</span>, c_triggerBlendModeAdd, <span class="hljs-number">503</span>, <span class="hljs-number">348</span>, c_anchorBottomRight, <span class="hljs-number">5</span>, <span class="hljs-number">-2</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4030</span>
+libNtve_gf_DisplayScreenImage(<span class="hljs-number">1</span>, <span class="hljs-string">"Assets\\Textures\\tutorialcommandcardhighlight.dds"</span>, c_triggerBlendModeAdd, <span class="hljs-number">503</span>, <span class="hljs-number">348</span>, c_anchorBottomRight, <span class="hljs-number">5</span>, <span class="hljs-number">-2</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4833</span>
+libNtve_gf_DisplayScreenImage(<span class="hljs-number">1</span>, <span class="hljs-string">"Assets\\Textures\\tutorialcommandcardhighlight.dds"</span>, c_triggerBlendModeAdd, <span class="hljs-number">503</span>, <span class="hljs-number">348</span>, c_anchorBottomRight, <span class="hljs-number">5</span>, <span class="hljs-number">-2</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4914</span>
+libNtve_gf_DisplayScreenImage(<span class="hljs-number">1</span>, <span class="hljs-string">"Assets\\Textures\\tutorialcommandcardhighlight.dds"</span>, c_triggerBlendModeAdd, <span class="hljs-number">503</span>, <span class="hljs-number">348</span>, c_anchorBottomRight, <span class="hljs-number">5</span>, <span class="hljs-number">-2</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5765</span>
+libNtve_gf_DisplayScreenImage(<span class="hljs-number">1</span>, <span class="hljs-string">"Assets\\Textures\\tutorialcommandcardhighlight.dds"</span>, c_triggerBlendModeAdd, <span class="hljs-number">503</span>, <span class="hljs-number">348</span>, c_anchorBottomRight, <span class="hljs-number">5</span>, <span class="hljs-number">-2</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5842</span>
+libNtve_gf_DisplayScreenImage(<span class="hljs-number">1</span>, <span class="hljs-string">"Assets\\Textures\\tutorialcommandcardhighlight.dds"</span>, c_triggerBlendModeAdd, <span class="hljs-number">503</span>, <span class="hljs-number">348</span>, c_anchorBottomRight, <span class="hljs-number">5</span>, <span class="hljs-number">-2</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3605</span>
+libNtve_gf_DisplayScreenImage(<span class="hljs-number">12</span>, <span class="hljs-string">"Assets\\Textures\\tutorialresourceshighlight.dds"</span>, c_triggerBlendModeAdd, <span class="hljs-number">212</span>, <span class="hljs-number">134</span>, c_anchorTopRight, <span class="hljs-number">2</span>, <span class="hljs-number">-34</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3607</span>
+libNtve_gf_DisplayScreenImage(<span class="hljs-number">16</span>, <span class="hljs-string">"Assets\\Textures\\ui_void_mission_soa_frame_ability_alert_arrowhighlight.dds"</span>, c_triggerBlendModeAdd, <span class="hljs-number">128</span>, <span class="hljs-number">64</span>, c_anchorTopRight, <span class="hljs-number">50</span>, <span class="hljs-number">45</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3926</span>
+libNtve_gf_DisplayScreenImage(<span class="hljs-number">1</span>, <span class="hljs-string">"Assets\\Textures\\tutorialinfolefthighlight.dds"</span>, c_triggerBlendModeAdd, <span class="hljs-number">313</span>, <span class="hljs-number">246</span>, c_anchorBottomLeft, <span class="hljs-number">390</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3927</span>
+libNtve_gf_DisplayScreenImage(<span class="hljs-number">2</span>, <span class="hljs-string">"Assets\\Textures\\tutorialinforighthighlight.dds"</span>, c_triggerBlendModeAdd, <span class="hljs-number">313</span>, <span class="hljs-number">246</span>, c_anchorBottomRight, <span class="hljs-number">590</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3937</span>
+libNtve_gf_DisplayScreenImage(<span class="hljs-number">3</span>, <span class="hljs-string">"Assets\\Textures\\tutorialcommandcardhighlight.dds"</span>, c_triggerBlendModeAdd, <span class="hljs-number">503</span>, <span class="hljs-number">348</span>, c_anchorBottomRight, <span class="hljs-number">5</span>, <span class="hljs-number">-2</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4554</span>
+libNtve_gf_DisplayScreenImage(<span class="hljs-number">8</span>, <span class="hljs-string">"Assets\\Textures\\tutorialminimaphighlight.dds"</span>, c_triggerBlendModeAdd, <span class="hljs-number">404</span>, <span class="hljs-number">372</span>, c_anchorBottomLeft, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4670</span>
+libNtve_gf_DisplayScreenImage(<span class="hljs-number">4</span>, <span class="hljs-string">"Assets\\Textures\\tutorialarrow00.dds"</span>, c_triggerBlendModeAdd, <span class="hljs-number">128</span>, <span class="hljs-number">128</span>, c_anchorRight, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4671</span>
+libNtve_gf_DisplayScreenImage(<span class="hljs-number">5</span>, <span class="hljs-string">"Assets\\Textures\\tutorialarrow00.dds"</span>, c_triggerBlendModeAdd, <span class="hljs-number">128</span>, <span class="hljs-number">128</span>, c_anchorBottom, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4672</span>
+libNtve_gf_DisplayScreenImage(<span class="hljs-number">6</span>, <span class="hljs-string">"Assets\\Textures\\tutorialarrow00.dds"</span>, c_triggerBlendModeAdd, <span class="hljs-number">128</span>, <span class="hljs-number">128</span>, c_anchorLeft, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4673</span>
+libNtve_gf_DisplayScreenImage(<span class="hljs-number">7</span>, <span class="hljs-string">"Assets\\Textures\\tutorialarrow00.dds"</span>, c_triggerBlendModeAdd, <span class="hljs-number">128</span>, <span class="hljs-number">128</span>, c_anchorTop, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2233</span>
+libNtve_gf_DisplayScreenImage(<span class="hljs-number">1</span>, <span class="hljs-string">"Assets\\Textures\\tutorialresourceshighlight.dds"</span>, c_triggerBlendModeAdd, <span class="hljs-number">212</span>, <span class="hljs-number">134</span>, c_anchorTopRight, <span class="hljs-number">2</span>, <span class="hljs-number">-34</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3605</span>
+libNtve_gf_DisplayScreenImage(<span class="hljs-number">12</span>, <span class="hljs-string">"Assets\\Textures\\tutorialresourceshighlight.dds"</span>, c_triggerBlendModeAdd, <span class="hljs-number">212</span>, <span class="hljs-number">134</span>, c_anchorTopRight, <span class="hljs-number">2</span>, <span class="hljs-number">-34</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3607</span>
+libNtve_gf_DisplayScreenImage(<span class="hljs-number">16</span>, <span class="hljs-string">"Assets\\Textures\\ui_void_mission_soa_frame_ability_alert_arrowhighlight.dds"</span>, c_triggerBlendModeAdd, <span class="hljs-number">128</span>, <span class="hljs-number">64</span>, c_anchorTopRight, <span class="hljs-number">50</span>, <span class="hljs-number">45</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3926</span>
+libNtve_gf_DisplayScreenImage(<span class="hljs-number">1</span>, <span class="hljs-string">"Assets\\Textures\\tutorialinfolefthighlight.dds"</span>, c_triggerBlendModeAdd, <span class="hljs-number">313</span>, <span class="hljs-number">246</span>, c_anchorBottomLeft, <span class="hljs-number">390</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3927</span>
+libNtve_gf_DisplayScreenImage(<span class="hljs-number">2</span>, <span class="hljs-string">"Assets\\Textures\\tutorialinforighthighlight.dds"</span>, c_triggerBlendModeAdd, <span class="hljs-number">313</span>, <span class="hljs-number">246</span>, c_anchorBottomRight, <span class="hljs-number">590</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3937</span>
+libNtve_gf_DisplayScreenImage(<span class="hljs-number">3</span>, <span class="hljs-string">"Assets\\Textures\\tutorialcommandcardhighlight.dds"</span>, c_triggerBlendModeAdd, <span class="hljs-number">503</span>, <span class="hljs-number">348</span>, c_anchorBottomRight, <span class="hljs-number">5</span>, <span class="hljs-number">-2</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4554</span>
+libNtve_gf_DisplayScreenImage(<span class="hljs-number">8</span>, <span class="hljs-string">"Assets\\Textures\\tutorialminimaphighlight.dds"</span>, c_triggerBlendModeAdd, <span class="hljs-number">404</span>, <span class="hljs-number">372</span>, c_anchorBottomLeft, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4670</span>
+libNtve_gf_DisplayScreenImage(<span class="hljs-number">4</span>, <span class="hljs-string">"Assets\\Textures\\tutorialarrow00.dds"</span>, c_triggerBlendModeAdd, <span class="hljs-number">128</span>, <span class="hljs-number">128</span>, c_anchorRight, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4671</span>
+libNtve_gf_DisplayScreenImage(<span class="hljs-number">5</span>, <span class="hljs-string">"Assets\\Textures\\tutorialarrow00.dds"</span>, c_triggerBlendModeAdd, <span class="hljs-number">128</span>, <span class="hljs-number">128</span>, c_anchorBottom, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4672</span>
+libNtve_gf_DisplayScreenImage(<span class="hljs-number">6</span>, <span class="hljs-string">"Assets\\Textures\\tutorialarrow00.dds"</span>, c_triggerBlendModeAdd, <span class="hljs-number">128</span>, <span class="hljs-number">128</span>, c_anchorLeft, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4673</span>
+libNtve_gf_DisplayScreenImage(<span class="hljs-number">7</span>, <span class="hljs-string">"Assets\\Textures\\tutorialarrow00.dds"</span>, c_triggerBlendModeAdd, <span class="hljs-number">128</span>, <span class="hljs-number">128</span>, c_anchorTop, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2233</span>
+libNtve_gf_DisplayScreenImage(<span class="hljs-number">1</span>, <span class="hljs-string">"Assets\\Textures\\tutorialresourceshighlight.dds"</span>, c_triggerBlendModeAdd, <span class="hljs-number">212</span>, <span class="hljs-number">134</span>, c_anchorTopRight, <span class="hljs-number">2</span>, <span class="hljs-number">-34</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

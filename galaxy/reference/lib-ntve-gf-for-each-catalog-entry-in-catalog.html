@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>For Each Catalog Entry In Catalog / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: For Each Catalog Entry In Catalog"/>
+                <meta property="og:description" content="Runs the contained actions once for each entry in the catalog (default entries does not count)."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="for-each-catalog-entry-in-catalog"><a class="markdownIt-Anchor" href="#for-each-catalog-entry-in-catalog">#</a> For Each Catalog Entry In Catalog</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — For each entry <strong>entry</strong> in catalog <strong>catalog</strong> do (Actions)<br>
+<em>Flags</em> — <code>SubFunctions</code> | <code>Action</code></p>
+</blockquote>
+<p>Runs the contained actions once for each entry in the catalog (default entries does not count).</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-catalog-type">CatalogType</a> ]</em> — Catalog</li>
+<li><code>anyvariable</code> — Entry</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code>#AUTOVAR(catalog, <span class="hljs-keyword">int</span>) = #PARAM(catalog);
+#AUTOVAR(i) = <span class="hljs-number">1</span>;
+<span class="hljs-keyword">for</span> ( ; #AUTOVAR(i) &lt;= CatalogEntryCount(#PARAM(catalog)) ; #AUTOVAR(i) += <span class="hljs-number">1</span> ) {
+    #PARAM(entry) = CatalogEntryGet(#AUTOVAR(catalog), #AUTOVAR(i));
+    #SUBFUNCS(actions)
+}
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#catalog-loops">Catalog / Loops</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-for-each-catalog-entry-in-catalog">For Each Catalog Entry In Catalog</a></strong> — (  )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-for-each-value-in-catalog-field-array">For Each Value In Catalog Field Array</a></strong> — (  )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-for-each-scope-field-value-in-catalog-field-scope-array">For Each Scope Field Value In Catalog Field Scope Array</a></strong> — (  )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<p>— None found —</p>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

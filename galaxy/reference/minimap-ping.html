@@ -1,0 +1,422 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Ping Minimap / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Ping Minimap"/>
+                <meta property="og:description" content="Pings the minimap using a standard ping model.  This ping cannot be modified after it is created.  Use a &quot;Create Ping&quot; action to create a more customizable ping that can be modified after creation."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="ping-minimap"><a class="markdownIt-Anchor" href="#ping-minimap">#</a> Ping Minimap</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Ping the minimap at <strong>pos|Point</strong> for <strong>players</strong> over <strong>dur</strong> seconds, using the color <strong>color</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Pings the minimap using a standard ping model.  This ping cannot be modified after it is created.  Use a <em>“Create Ping”</em> action to create a more customizable ping that can be modified after creation.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>playergroup</code> — Players</li>
+<li><code>point</code> — Position</li>
+<li><code>fixed</code> — Duration</li>
+<li><code>color</code> — Color</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">MinimapPing</span><span class="hljs-params">(
+	playergroup players,
+	point position,
+	fixed duration,
+	color c,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#ping-basic">Ping / Basic</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-ping">Player Ping</a></strong> — ( TriggerAddEventPing )</li>
+<li><em><strong>[F]</strong></em> — <code>unit</code> — <strong><a href="/galaxy/reference/event-ping-unit">Player Ping Unit</a></strong> — ( EventPingUnit )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> <em>[ gamelink::Unit ]</em> — <strong><a href="/galaxy/reference/event-ping-unit-type">Player Ping Unit Type</a></strong> — ( EventPingUnitType )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/event-ping-unit-control-player">Player Ping Unit ControlPlayer</a></strong> — ( EventPingUnitControlPlayer )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/event-ping-unit-upkeep-player">Player Ping Unit UpkeepPlayer</a></strong> — ( EventPingUnitUpkeepPlayer )</li>
+<li><em><strong>[F]</strong></em> — <code>point</code> — <strong><a href="/galaxy/reference/event-ping-unit-position">Player Ping Unit Position</a></strong> — ( EventPingUnitPosition )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/event-ping-unit-is-under-construction">Player Ping Unit Is Under Construction</a></strong> — ( EventPingUnitIsUnderConstruction )</li>
+<li><em><strong>[F]</strong></em> — <code>point</code> — <strong><a href="/galaxy/reference/event-ping-point">Player Ping Location</a></strong> — ( EventPingPoint )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/event-pinged-minimap">Player Ping Is From Minimap</a></strong> — ( EventPingedMinimap )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/event-ping-option">Player Ping Option</a></strong> — ( EventPingOption )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ping-set-player-pings-shown">Show/Hide Player Pings</a></strong> — ( PingSetPlayerPingsShown )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/minimap-ping">Ping Minimap</a></strong> — ( MinimapPing )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/minimap-ping-possible-enemy-start-locations">Ping Minimap Possible Enemy Start Locations</a></strong> — ( MinimapPingPossibleEnemyStartLocations )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ ping ]</em> — <strong><a href="/galaxy/reference/ping-create">Create Ping (Deprecated)</a></strong> — ( PingCreate )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ ping ]</em> — <strong><a href="/galaxy/reference/ping-create-with-player-id">Create Ping With Point Facing</a></strong> — ( PingCreateWithPlayerId )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ ping ]</em> — <strong><a href="/galaxy/reference/ping-create-from-data">Create Ping From Data</a></strong> — ( PingCreateFromData )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-create-ping-facing-angle">Create Ping Facing Angle</a></strong> — ( libNtve_gf_CreatePingFacingAngle )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ping-set-visible">Show/Hide Ping</a></strong> — ( PingSetVisible )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ ping ]</em> — <strong><a href="/galaxy/reference/ping-last-created">Last Created Ping</a></strong> — ( PingLastCreated )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/ping-is-visible">Ping Is Visible</a></strong> — ( PingIsVisible )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/challenges/protosscombat.sc2map/MapScript.galaxy#L1054">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1054</span>
+MinimapPing(PlayerGroupAll(), PointFromId(<span class="hljs-number">39</span>), <span class="hljs-number">2.0</span>, Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1074</span>
+MinimapPing(PlayerGroupAll(), PointFromId(<span class="hljs-number">4</span>), <span class="hljs-number">2.0</span>, Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1094</span>
+MinimapPing(PlayerGroupAll(), PointFromId(<span class="hljs-number">25</span>), <span class="hljs-number">2.0</span>, Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1223</span>
+MinimapPing(PlayerGroupAll(), PointFromId(<span class="hljs-number">39</span>), <span class="hljs-number">2.0</span>, Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1249</span>
+MinimapPing(PlayerGroupAll(), PointFromId(<span class="hljs-number">4</span>), <span class="hljs-number">2.0</span>, Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1274</span>
+MinimapPing(PlayerGroupAll(), PointFromId(<span class="hljs-number">25</span>), <span class="hljs-number">2.0</span>, Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1409</span>
+MinimapPing(PlayerGroupAll(), PointFromId(<span class="hljs-number">39</span>), <span class="hljs-number">2.0</span>, Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1430</span>
+MinimapPing(PlayerGroupAll(), PointFromId(<span class="hljs-number">4</span>), <span class="hljs-number">2.0</span>, Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1456</span>
+MinimapPing(PlayerGroupAll(), PointFromId(<span class="hljs-number">25</span>), <span class="hljs-number">2.0</span>, Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L203</span>
+MinimapPing(PlayerGroupAll(), RegionGetCenter(lp_mSpawningRegion), <span class="hljs-number">2.0</span>, Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L898</span>
+MinimapPing(PlayerGroupAll(), RegionGetCenter(RegionFromId(<span class="hljs-number">1</span>)), <span class="hljs-number">2.0</span>, Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1004</span>
+MinimapPing(PlayerGroupAll(), PointFromId(<span class="hljs-number">39</span>), <span class="hljs-number">2.0</span>, Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1024</span>
+MinimapPing(PlayerGroupAll(), PointFromId(<span class="hljs-number">4</span>), <span class="hljs-number">2.0</span>, Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1045</span>
+MinimapPing(PlayerGroupAll(), PointFromId(<span class="hljs-number">25</span>), <span class="hljs-number">2.0</span>, Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1172</span>
+MinimapPing(PlayerGroupAll(), PointFromId(<span class="hljs-number">39</span>), <span class="hljs-number">2.0</span>, Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1192</span>
+MinimapPing(PlayerGroupAll(), PointFromId(<span class="hljs-number">4</span>), <span class="hljs-number">2.0</span>, Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1212</span>
+MinimapPing(PlayerGroupAll(), PointFromId(<span class="hljs-number">25</span>), <span class="hljs-number">2.0</span>, Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1343</span>
+MinimapPing(PlayerGroupAll(), PointFromId(<span class="hljs-number">39</span>), <span class="hljs-number">2.0</span>, Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1364</span>
+MinimapPing(PlayerGroupAll(), PointFromId(<span class="hljs-number">4</span>), <span class="hljs-number">2.0</span>, Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1384</span>
+MinimapPing(PlayerGroupAll(), PointFromId(<span class="hljs-number">25</span>), <span class="hljs-number">2.0</span>, Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1072</span>
+MinimapPing(PlayerGroupAll(), PointFromId(<span class="hljs-number">39</span>), <span class="hljs-number">2.0</span>, Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1092</span>
+MinimapPing(PlayerGroupAll(), PointFromId(<span class="hljs-number">4</span>), <span class="hljs-number">2.0</span>, Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1112</span>
+MinimapPing(PlayerGroupAll(), PointFromId(<span class="hljs-number">25</span>), <span class="hljs-number">2.0</span>, Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1242</span>
+MinimapPing(PlayerGroupAll(), PointFromId(<span class="hljs-number">39</span>), <span class="hljs-number">2.0</span>, Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1262</span>
+MinimapPing(PlayerGroupAll(), PointFromId(<span class="hljs-number">4</span>), <span class="hljs-number">2.0</span>, Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1282</span>
+MinimapPing(PlayerGroupAll(), PointFromId(<span class="hljs-number">25</span>), <span class="hljs-number">2.0</span>, Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1415</span>
+MinimapPing(PlayerGroupAll(), PointFromId(<span class="hljs-number">39</span>), <span class="hljs-number">2.0</span>, Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1434</span>
+MinimapPing(PlayerGroupAll(), PointFromId(<span class="hljs-number">4</span>), <span class="hljs-number">2.0</span>, Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1453</span>
+MinimapPing(PlayerGroupAll(), PointFromId(<span class="hljs-number">25</span>), <span class="hljs-number">2.0</span>, Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2844</span>
+MinimapPing(PlayerGroupAll(), UnitGetPosition(UnitFromId(<span class="hljs-number">2010</span>)), <span class="hljs-number">5.0</span>, Color(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2882</span>
+MinimapPing(PlayerGroupAll(), UnitGetPosition(UnitFromId(<span class="hljs-number">397</span>)), <span class="hljs-number">5.0</span>, Color(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2920</span>
+MinimapPing(PlayerGroupAll(), UnitGetPosition(UnitFromId(<span class="hljs-number">612</span>)), <span class="hljs-number">5.0</span>, Color(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2048</span>
+MinimapPing(PlayerGroupAll(), UnitGetPosition(gv_nightDefenderPingUnit), <span class="hljs-number">3.0</span>, Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2403</span>
+MinimapPing(PlayerGroupAll(), RegionGetCenter(RegionFromId(<span class="hljs-number">9</span>)), <span class="hljs-number">5.0</span>, Color(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2412</span>
+MinimapPing(PlayerGroupAll(), RegionGetCenter(RegionFromId(<span class="hljs-number">10</span>)), <span class="hljs-number">5.0</span>, Color(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2421</span>
+MinimapPing(PlayerGroupAll(), RegionGetCenter(RegionFromId(<span class="hljs-number">28</span>)), <span class="hljs-number">5.0</span>, Color(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2430</span>
+MinimapPing(PlayerGroupAll(), RegionGetCenter(RegionFromId(<span class="hljs-number">11</span>)), <span class="hljs-number">5.0</span>, Color(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2439</span>
+MinimapPing(PlayerGroupAll(), RegionGetCenter(RegionFromId(<span class="hljs-number">12</span>)), <span class="hljs-number">5.0</span>, Color(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2448</span>
+MinimapPing(PlayerGroupAll(), RegionGetCenter(RegionFromId(<span class="hljs-number">39</span>)), <span class="hljs-number">5.0</span>, Color(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2457</span>
+MinimapPing(PlayerGroupAll(), RegionGetCenter(RegionFromId(<span class="hljs-number">1</span>)), <span class="hljs-number">5.0</span>, Color(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2466</span>
+MinimapPing(PlayerGroupAll(), RegionGetCenter(RegionFromId(<span class="hljs-number">22</span>)), <span class="hljs-number">5.0</span>, Color(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2475</span>
+MinimapPing(PlayerGroupAll(), RegionGetCenter(RegionFromId(<span class="hljs-number">13</span>)), <span class="hljs-number">5.0</span>, Color(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1314</span>
+MinimapPing(PlayerGroupAll(), UnitGetPosition(gv_purifier), <span class="hljs-number">5.0</span>, Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1410</span>
+MinimapPing(PlayerGroupAll(), UnitGetPosition(gv_purifier), <span class="hljs-number">5.0</span>, Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1524</span>
+MinimapPing(PlayerGroupAll(), UnitGetPosition(gv_purifier), <span class="hljs-number">5.0</span>, Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1638</span>
+MinimapPing(PlayerGroupAll(), UnitGetPosition(gv_purifier), <span class="hljs-number">5.0</span>, Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1744</span>
+MinimapPing(PlayerGroupAll(), UnitGetPosition(gv_purifier), <span class="hljs-number">5.0</span>, Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4233</span>
+MinimapPing(PlayerGroupAll(), UnitGetPosition(gv_purifier), <span class="hljs-number">5.0</span>, Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4280</span>
+MinimapPing(PlayerGroupAll(), UnitGetPosition(gv_purifier), <span class="hljs-number">5.0</span>, Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4330</span>
+MinimapPing(PlayerGroupAll(), UnitGetPosition(lv_ship), <span class="hljs-number">5.0</span>, Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4380</span>
+MinimapPing(PlayerGroupAll(), UnitGetPosition(lv_ship), <span class="hljs-number">5.0</span>, Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4430</span>
+MinimapPing(PlayerGroupAll(), UnitGetPosition(lv_ship), <span class="hljs-number">5.0</span>, Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1685</span>
+MinimapPing(PlayerGroupAll(), RegionGetCenter(gv_infestationRegion[lv_colonyIndex]), <span class="hljs-number">6.0</span>, Color(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1740</span>
+MinimapPing(PlayerGroupAll(), RegionGetCenter(gv_infestationRegion[lv_colonyIndex]), <span class="hljs-number">6.0</span>, Color(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2128</span>
+MinimapPing(PlayerGroupAll(), UnitGetPosition(auto97CB6B13_var), <span class="hljs-number">6.0</span>, Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3564</span>
+MinimapPing(PlayerGroupAll(), PointFromId(<span class="hljs-number">345</span>), <span class="hljs-number">5.0</span>, Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3570</span>
+MinimapPing(PlayerGroupAll(), PointFromId(<span class="hljs-number">486</span>), <span class="hljs-number">5.0</span>, Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3576</span>
+MinimapPing(PlayerGroupAll(), PointFromId(<span class="hljs-number">487</span>), <span class="hljs-number">5.0</span>, Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L989</span>
+MinimapPing(PlayerGroupAll(), PointFromId(<span class="hljs-number">47</span>), <span class="hljs-number">6.0</span>, Color(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3837</span>
+MinimapPing(PlayerGroupAll(), RegionGetCenter(EventUnitRegion()), <span class="hljs-number">6.0</span>, Color(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5641</span>
+MinimapPing(PlayerGroupAll(), PointFromId(<span class="hljs-number">1022</span>), <span class="hljs-number">6.0</span>, Color(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1761</span>
+MinimapPing(PlayerGroupAll(), RegionGetCenter(RegionFromId(<span class="hljs-number">6</span>)), <span class="hljs-number">3.0</span>, Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1882</span>
+MinimapPing(PlayerGroupAll(), PointFromId(<span class="hljs-number">577</span>), <span class="hljs-number">5.0</span>, Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1970</span>
+MinimapPing(PlayerGroupSingle(gv_pLAYER01_USER), RegionGetCenter(RegionFromId(<span class="hljs-number">72</span>)), <span class="hljs-number">6.0</span>, Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2048</span>
+MinimapPing(PlayerGroupSingle(gv_pLAYER01_USER), RegionGetCenter(RegionFromId(<span class="hljs-number">3</span>)), <span class="hljs-number">6.0</span>, Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2137</span>
+MinimapPing(PlayerGroupSingle(gv_pLAYER01_USER), RegionGetCenter(RegionFromId(<span class="hljs-number">71</span>)), <span class="hljs-number">6.0</span>, Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2538</span>
+MinimapPing(PlayerGroupAll(), PointFromId(<span class="hljs-number">509</span>), <span class="hljs-number">6.0</span>, Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4156</span>
+MinimapPing(PlayerGroupAll(), PointWithOffset(lv_damagedPoint, <span class="hljs-number">0.0</span>, <span class="hljs-number">4.0</span>), <span class="hljs-number">6.0</span>, Color(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1698</span>
+MinimapPing(PlayerGroupAll(), UnitGetPosition(gv_brutalisk), <span class="hljs-number">8.0</span>, Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1766</span>
+MinimapPing(PlayerGroupAll(), PointFromId(<span class="hljs-number">443</span>), <span class="hljs-number">8.0</span>, Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1827</span>
+MinimapPing(PlayerGroupAll(), UnitGetPosition(UnitFromId(<span class="hljs-number">1</span>)), <span class="hljs-number">8.0</span>, Color(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2044</span>
+MinimapPing(PlayerGroupAll(), PointFromId(<span class="hljs-number">863</span>), <span class="hljs-number">3.0</span>, Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2164</span>
+MinimapPing(PlayerGroupAll(), UnitGetPosition(lv_coCe), <span class="hljs-number">5.0</span>, Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3302</span>
+MinimapPing(PlayerGroupAll(), RegionGetCenter(RegionFromId(<span class="hljs-number">18</span>)), <span class="hljs-number">2.0</span>, Color(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3586</span>
+MinimapPing(PlayerGroupAll(), RegionGetCenter(RegionFromId(<span class="hljs-number">7</span>)), <span class="hljs-number">5.0</span>, Color(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3607</span>
+MinimapPing(PlayerGroupAll(), RegionGetCenter(RegionFromId(<span class="hljs-number">8</span>)), <span class="hljs-number">5.0</span>, Color(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3628</span>
+MinimapPing(PlayerGroupAll(), RegionGetCenter(RegionFromId(<span class="hljs-number">9</span>)), <span class="hljs-number">5.0</span>, Color(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3739</span>
+MinimapPing(PlayerGroupAll(), RegionGetCenter(RegionFromId(<span class="hljs-number">10</span>)), <span class="hljs-number">5.0</span>, Color(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1119</span>
+MinimapPing(PlayerGroupAll(), UnitGetPosition(auto94E85CCA_var), <span class="hljs-number">2.0</span>, Color(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1130</span>
+MinimapPing(PlayerGroupAll(), UnitGetPosition(auto1F379FE0_var), <span class="hljs-number">2.0</span>, Color(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1142</span>
+MinimapPing(PlayerGroupAll(), UnitGetPosition(autoF1607772_var), <span class="hljs-number">2.0</span>, Color(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1153</span>
+MinimapPing(PlayerGroupAll(), UnitGetPosition(autoCBEBD647_var), <span class="hljs-number">2.0</span>, Color(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1165</span>
+MinimapPing(PlayerGroupAll(), UnitGetPosition(auto3DCF778F_var), <span class="hljs-number">2.0</span>, Color(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1176</span>
+MinimapPing(PlayerGroupAll(), UnitGetPosition(auto9BA8D737_var), <span class="hljs-number">2.0</span>, Color(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2188</span>
+MinimapPing(PlayerGroupAll(), PointFromId(<span class="hljs-number">2056</span>), <span class="hljs-number">5.0</span>, Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2560</span>
+MinimapPing(PlayerGroupAll(), PointFromId(<span class="hljs-number">2057</span>), <span class="hljs-number">5.0</span>, Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1462</span>
+MinimapPing(PlayerGroupAll(), UnitGetPosition(gv_p1GateControl), <span class="hljs-number">2.0</span>, Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1508</span>
+MinimapPing(PlayerGroupAll(), UnitGetPosition(gv_p1Gate), <span class="hljs-number">2.0</span>, Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1658</span>
+MinimapPing(PlayerGroupAll(), RegionGetCenter(RegionFromId(<span class="hljs-number">46</span>)), <span class="hljs-number">2.0</span>, Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1741</span>
+MinimapPing(PlayerGroupAll(), UnitGetPosition(gv_p1Tank), <span class="hljs-number">2.0</span>, Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2695</span>
+MinimapPing(PlayerGroupAll(), PointFromId(<span class="hljs-number">397</span>), <span class="hljs-number">3.0</span>, Color(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">25.10</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2790</span>
+MinimapPing(PlayerGroupAll(), UnitGetPosition(gv_p2GateControl), <span class="hljs-number">2.0</span>, Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2940</span>
+MinimapPing(PlayerGroupAll(), PointFromId(<span class="hljs-number">397</span>), <span class="hljs-number">3.0</span>, Color(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3029</span>
+MinimapPing(PlayerGroupAll(), PointFromId(<span class="hljs-number">397</span>), <span class="hljs-number">3.0</span>, Color(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3132</span>
+MinimapPing(PlayerGroupAll(), UnitGetPosition(gv_p2Gate), <span class="hljs-number">2.0</span>, Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3207</span>
+MinimapPing(PlayerGroupAll(), UnitGetPosition(gv_p2Silo), <span class="hljs-number">2.0</span>, Color(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1783</span>
+MinimapPing(PlayerGroupAll(), RegionGetCenter(RegionFromId(<span class="hljs-number">14</span>)), <span class="hljs-number">2.0</span>, Color(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1787</span>
+MinimapPing(PlayerGroupAll(), RegionGetCenter(RegionFromId(<span class="hljs-number">15</span>)), <span class="hljs-number">2.0</span>, Color(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1791</span>
+MinimapPing(PlayerGroupAll(), RegionGetCenter(RegionFromId(<span class="hljs-number">16</span>)), <span class="hljs-number">2.0</span>, Color(<span class="hljs-number">0.00</span>, <span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L769</span>
+MinimapPing(PlayerGroupAll(), PointFromId(<span class="hljs-number">476</span>), <span class="hljs-number">5.0</span>, Color(<span class="hljs-number">100.00</span>, <span class="hljs-number">0.00</span>, <span class="hljs-number">0.00</span>))
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

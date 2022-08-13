@@ -1,0 +1,420 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Text Message / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Text Message"/>
+                <meta property="og:description" content="Displays a text message in the specified area of the screen."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="text-message"><a class="markdownIt-Anchor" href="#text-message">#</a> Text Message</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Display <strong>message</strong> for <strong>players</strong> to <strong>messageArea|MessageArea</strong> area<br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Displays a text message in the specified area of the screen.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>playergroup</code> — Players</li>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-message-area">MessageArea</a> ]</em> — Message Area</li>
+<li><code>text</code> — Message</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">UIDisplayMessage</span><span class="hljs-params">(
+	playergroup players,
+	<span class="hljs-keyword">int</span> messageArea,
+	text messageText,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#ui-text">UI / Text</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>text</code> — <strong><a href="/galaxy/reference/ui-hot-key-string">Hot Key String</a></strong> — ( UIHotKeyString )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ui-display-message">Text Message</a></strong> — ( UIDisplayMessage )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ui-clear-messages">Clear Text Messages</a></strong> — ( UIClearMessages )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ui-show-cinematic-text">Show Cinematic Text</a></strong> — ( UIShowCinematicText )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ui-hide-cinematic-text">Hide Cinematic Text</a></strong> — ( UIHideCinematicText )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ui-show-text-crawl">Show Text Crawl</a></strong> — ( UIShowTextCrawl )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ui-hide-text-crawl">Hide Text Crawl</a></strong> — ( UIHideTextCrawl )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-ui-error-message">Error Message</a></strong> — ( libNtve_gf_UIErrorMessage )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/challenges/protosscombat.sc2map/MapScript.galaxy#L2189">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2189</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaDirective, (StringExternal(<span class="hljs-string">"Param/Value/FADFE21E"</span>) + StringExternal(<span class="hljs-string">"Param/Value/5DB7E7A6"</span>) + IntToText(UnitGroupCount(lv_unusedUnits, c_unitCountAlive)) + StringExternal(<span class="hljs-string">"Param/Value/ABF0A93D"</span>) + StringExternal(<span class="hljs-string">"Param/Value/107B5B54"</span>) + StringExternal(<span class="hljs-string">"Param/Value/51F7A041"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2196</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaDirective, (StringExternal(<span class="hljs-string">"Param/Value/5B27F18F"</span>) + StringExternal(<span class="hljs-string">"Param/Value/EE014179"</span>) + StringExternal(<span class="hljs-string">"Param/Value/144E9EAD"</span>) + StringExternal(<span class="hljs-string">"Param/Value/C9731453"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2011</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaDirective, (StringExternal(<span class="hljs-string">"Param/Value/39CBB209"</span>) + StringExternal(<span class="hljs-string">"Param/Value/2489989B"</span>) + IntToText(UnitGroupCount(lv_unusedUnits, c_unitCountAlive)) + StringExternal(<span class="hljs-string">"Param/Value/EE0BD289"</span>) + StringExternal(<span class="hljs-string">"Param/Value/27DDFA31"</span>) + StringExternal(<span class="hljs-string">"Param/Value/9798D51C"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2018</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaDirective, (StringExternal(<span class="hljs-string">"Param/Value/4329A3D4"</span>) + StringExternal(<span class="hljs-string">"Param/Value/80036C3A"</span>) + StringExternal(<span class="hljs-string">"Param/Value/E7E79A44"</span>) + StringExternal(<span class="hljs-string">"Param/Value/4F8444FD"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2099</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaDirective, (StringExternal(<span class="hljs-string">"Param/Value/EF0263F8"</span>) + StringExternal(<span class="hljs-string">"Param/Value/F28FEA2B"</span>) + IntToText(UnitGroupCount(lv_unusedUnits, c_unitCountAlive)) + StringExternal(<span class="hljs-string">"Param/Value/E554E1A0"</span>) + StringExternal(<span class="hljs-string">"Param/Value/A8392189"</span>) + StringExternal(<span class="hljs-string">"Param/Value/3086EEEE"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2106</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaDirective, (StringExternal(<span class="hljs-string">"Param/Value/7F119C7A"</span>) + StringExternal(<span class="hljs-string">"Param/Value/AE8ADBCF"</span>) + StringExternal(<span class="hljs-string">"Param/Value/AEE6450C"</span>) + StringExternal(<span class="hljs-string">"Param/Value/EBFCE646"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L491</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, (lp_name + StringExternal(<span class="hljs-string">"Param/Value/51EFF4C4"</span>) + FixedToText(PointGetX(lp_point), <span class="hljs-number">2</span>) + StringExternal(<span class="hljs-string">"Param/Value/C5533173"</span>) + FixedToText(PointGetY(lp_point), <span class="hljs-number">2</span>) + StringExternal(<span class="hljs-string">"Param/Value/ED0C4AD1"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4151</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, (StringExternal(<span class="hljs-string">"Param/Value/797FA206"</span>) + FixedToText(Sin(<span class="hljs-number">180.0</span>), <span class="hljs-number">2</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4152</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, (StringExternal(<span class="hljs-string">"Param/Value/4D1A6221"</span>) + FixedToText(Sin(<span class="hljs-number">90.0</span>), <span class="hljs-number">2</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4153</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, (StringExternal(<span class="hljs-string">"Param/Value/B772DDA5"</span>) + FixedToText(Sin(gv_c_Pai), <span class="hljs-number">2</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1050</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal(<span class="hljs-string">"Param/Value/B9F9F63E"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1069</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal(<span class="hljs-string">"Param/Value/103C91C4"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1348</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaDirective, StringExternal(<span class="hljs-string">"Param/Value/00C70090"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1251</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaDirective, StringExternal(<span class="hljs-string">"Param/Value/A5099609"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4670</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaDebug, lp_msg)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9553</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal(<span class="hljs-string">"Param/Value/CEF2927D"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L15313</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal(<span class="hljs-string">"Param/Value/77BDD6A4"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L15340</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal(<span class="hljs-string">"Param/Value/615132C4"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L18447</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal(<span class="hljs-string">"Param/Value/C4957911"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L18970</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaChat, (StringExternal(<span class="hljs-string">"Param/Value/A1191FC4"</span>) + FixedToText(gv_idleFidgetStartTime, <span class="hljs-number">1</span>) + StringExternal(<span class="hljs-string">"Param/Value/48AD46C5"</span>) + FixedToText(gv_idleFidgetRepeatTime, <span class="hljs-number">1</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L18996</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaDebug, (StringExternal(<span class="hljs-string">"Param/Value/B60C206F"</span>) + IntToText(libCamp_gf_StoryCredits())))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19113</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal(<span class="hljs-string">"Param/Value/F9F016D2"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19117</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, (StringExternal(<span class="hljs-string">"Param/Value/ADF09654"</span>) + FixedToText(PointGetX(lv_loc), c_fixedPrecisionAny) + StringExternal(<span class="hljs-string">"Param/Value/4BAB04B3"</span>) + FixedToText(PointGetY(lv_loc), c_fixedPrecisionAny)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19118</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, (StringExternal(<span class="hljs-string">"Param/Value/DADFB189"</span>) + FixedToText(PointGetFacing(lv_loc), c_fixedPrecisionAny)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1581</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaObjective, StringExternal(<span class="hljs-string">"Param/Value/343397AB"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4730</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaDirective, lv_message1)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1384</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal(<span class="hljs-string">"Param/Value/89D472D7"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1438</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal(<span class="hljs-string">"Param/Value/7FB50F12"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1492</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal(<span class="hljs-string">"Param/Value/91CDDDC1"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1546</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal(<span class="hljs-string">"Param/Value/3260EDA1"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1600</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal(<span class="hljs-string">"Param/Value/EEA24799"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L491</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, (lp_name + StringExternal(<span class="hljs-string">"Param/Value/51EFF4C4"</span>) + FixedToText(PointGetX(lp_point), <span class="hljs-number">2</span>) + StringExternal(<span class="hljs-string">"Param/Value/C5533173"</span>) + FixedToText(PointGetY(lp_point), <span class="hljs-number">2</span>) + StringExternal(<span class="hljs-string">"Param/Value/ED0C4AD1"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4151</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, (StringExternal(<span class="hljs-string">"Param/Value/797FA206"</span>) + FixedToText(Sin(<span class="hljs-number">180.0</span>), <span class="hljs-number">2</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4152</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, (StringExternal(<span class="hljs-string">"Param/Value/4D1A6221"</span>) + FixedToText(Sin(<span class="hljs-number">90.0</span>), <span class="hljs-number">2</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4153</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, (StringExternal(<span class="hljs-string">"Param/Value/B772DDA5"</span>) + FixedToText(Sin(gv_c_Pai), <span class="hljs-number">2</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1050</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal(<span class="hljs-string">"Param/Value/B9F9F63E"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1069</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal(<span class="hljs-string">"Param/Value/103C91C4"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1348</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaDirective, StringExternal(<span class="hljs-string">"Param/Value/00C70090"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1251</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaDirective, StringExternal(<span class="hljs-string">"Param/Value/A5099609"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4670</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaDebug, lp_msg)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9553</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal(<span class="hljs-string">"Param/Value/CEF2927D"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L15313</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal(<span class="hljs-string">"Param/Value/77BDD6A4"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L15340</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal(<span class="hljs-string">"Param/Value/615132C4"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L18447</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal(<span class="hljs-string">"Param/Value/C4957911"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L18970</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaChat, (StringExternal(<span class="hljs-string">"Param/Value/A1191FC4"</span>) + FixedToText(gv_idleFidgetStartTime, <span class="hljs-number">1</span>) + StringExternal(<span class="hljs-string">"Param/Value/48AD46C5"</span>) + FixedToText(gv_idleFidgetRepeatTime, <span class="hljs-number">1</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L18996</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaDebug, (StringExternal(<span class="hljs-string">"Param/Value/B60C206F"</span>) + IntToText(libCamp_gf_StoryCredits())))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19113</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal(<span class="hljs-string">"Param/Value/F9F016D2"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19117</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, (StringExternal(<span class="hljs-string">"Param/Value/ADF09654"</span>) + FixedToText(PointGetX(lv_loc), c_fixedPrecisionAny) + StringExternal(<span class="hljs-string">"Param/Value/4BAB04B3"</span>) + FixedToText(PointGetY(lv_loc), c_fixedPrecisionAny)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19118</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, (StringExternal(<span class="hljs-string">"Param/Value/DADFB189"</span>) + FixedToText(PointGetFacing(lv_loc), c_fixedPrecisionAny)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1581</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaObjective, StringExternal(<span class="hljs-string">"Param/Value/343397AB"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4730</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaDirective, lv_message1)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1384</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal(<span class="hljs-string">"Param/Value/89D472D7"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1438</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal(<span class="hljs-string">"Param/Value/7FB50F12"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1492</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal(<span class="hljs-string">"Param/Value/91CDDDC1"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1546</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal(<span class="hljs-string">"Param/Value/3260EDA1"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1600</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal(<span class="hljs-string">"Param/Value/EEA24799"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2189</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaDirective, (StringExternal(<span class="hljs-string">"Param/Value/FADFE21E"</span>) + StringExternal(<span class="hljs-string">"Param/Value/5DB7E7A6"</span>) + IntToText(UnitGroupCount(lv_unusedUnits, c_unitCountAlive)) + StringExternal(<span class="hljs-string">"Param/Value/ABF0A93D"</span>) + StringExternal(<span class="hljs-string">"Param/Value/107B5B54"</span>) + StringExternal(<span class="hljs-string">"Param/Value/51F7A041"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2196</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaDirective, (StringExternal(<span class="hljs-string">"Param/Value/5B27F18F"</span>) + StringExternal(<span class="hljs-string">"Param/Value/EE014179"</span>) + StringExternal(<span class="hljs-string">"Param/Value/144E9EAD"</span>) + StringExternal(<span class="hljs-string">"Param/Value/C9731453"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2011</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaDirective, (StringExternal(<span class="hljs-string">"Param/Value/39CBB209"</span>) + StringExternal(<span class="hljs-string">"Param/Value/2489989B"</span>) + IntToText(UnitGroupCount(lv_unusedUnits, c_unitCountAlive)) + StringExternal(<span class="hljs-string">"Param/Value/EE0BD289"</span>) + StringExternal(<span class="hljs-string">"Param/Value/27DDFA31"</span>) + StringExternal(<span class="hljs-string">"Param/Value/9798D51C"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2018</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaDirective, (StringExternal(<span class="hljs-string">"Param/Value/4329A3D4"</span>) + StringExternal(<span class="hljs-string">"Param/Value/80036C3A"</span>) + StringExternal(<span class="hljs-string">"Param/Value/E7E79A44"</span>) + StringExternal(<span class="hljs-string">"Param/Value/4F8444FD"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2099</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaDirective, (StringExternal(<span class="hljs-string">"Param/Value/EF0263F8"</span>) + StringExternal(<span class="hljs-string">"Param/Value/F28FEA2B"</span>) + IntToText(UnitGroupCount(lv_unusedUnits, c_unitCountAlive)) + StringExternal(<span class="hljs-string">"Param/Value/E554E1A0"</span>) + StringExternal(<span class="hljs-string">"Param/Value/A8392189"</span>) + StringExternal(<span class="hljs-string">"Param/Value/3086EEEE"</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2106</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaDirective, (StringExternal(<span class="hljs-string">"Param/Value/7F119C7A"</span>) + StringExternal(<span class="hljs-string">"Param/Value/AE8ADBCF"</span>) + StringExternal(<span class="hljs-string">"Param/Value/AEE6450C"</span>) + StringExternal(<span class="hljs-string">"Param/Value/EBFCE646"</span>)))
+</code></pre>
+<h4 id="campaignslibertystorysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertystorysc2campaign">#</a> campaigns/libertystory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/libertystory.sc2campaign/base.sc2data/TriggerLibs/CampaignLib.galaxy#L388">CampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L388</span>
+UIDisplayMessage(lp_toPlayerGroup, c_messageAreaSubtitle, (StringExternal(<span class="hljs-string">"Param/Value/lib_Camp_E402A24F"</span>) + lp_message))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L392</span>
+UIDisplayMessage(lp_toPlayerGroup, c_messageAreaSubtitle, (StringToText(<span class="hljs-string">""</span>) + lp_message))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L396</span>
+UIDisplayMessage(lp_toPlayerGroup, c_messageAreaSubtitle, (StringExternal(<span class="hljs-string">"Param/Value/lib_Camp_0BABB1CE"</span>) + lp_message))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L400</span>
+UIDisplayMessage(lp_toPlayerGroup, c_messageAreaSubtitle, (StringExternal(<span class="hljs-string">"Param/Value/lib_Camp_BD584907"</span>) + lp_message))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L404</span>
+UIDisplayMessage(lp_toPlayerGroup, c_messageAreaSubtitle, (StringExternal(<span class="hljs-string">"Param/Value/lib_Camp_B323D792"</span>) + lp_message))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L408</span>
+UIDisplayMessage(lp_toPlayerGroup, c_messageAreaSubtitle, (StringExternal(<span class="hljs-string">"Param/Value/lib_Camp_CF96AAC8"</span>) + lp_message))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L412</span>
+UIDisplayMessage(lp_toPlayerGroup, c_messageAreaSubtitle, (StringExternal(<span class="hljs-string">"Param/Value/lib_Camp_72F8214E"</span>) + lp_message))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L416</span>
+UIDisplayMessage(lp_toPlayerGroup, c_messageAreaSubtitle, (StringExternal(<span class="hljs-string">"Param/Value/lib_Camp_B35FFFD8"</span>) + lp_message))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L423</span>
+UIDisplayMessage(lp_toPlayerGroup, c_messageAreaSubtitle, lp_message)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13013</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal(<span class="hljs-string">"Param/Value/lib_Camp_70578238"</span>))
+</code></pre>
+<h4 id="campaignsswarmsc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmsc2campaign">#</a> campaigns/swarm.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarm.sc2campaign/base.sc2maps/maps/campaign/swarm/zchar03.sc2map/MapScript.galaxy#L1487">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1487</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaDirective, StringExternal(<span class="hljs-string">"Param/Value/0914F813"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2288</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal(<span class="hljs-string">"Param/Value/0E52710A"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2419</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal(<span class="hljs-string">"Param/Value/EA90CCC8"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2448</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal(<span class="hljs-string">"Param/Value/275F6D3F"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1487</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaDirective, StringExternal(<span class="hljs-string">"Param/Value/0914F813"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2288</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal(<span class="hljs-string">"Param/Value/0E52710A"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2419</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal(<span class="hljs-string">"Param/Value/EA90CCC8"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2448</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal(<span class="hljs-string">"Param/Value/275F6D3F"</span>))
+</code></pre>
+<h4 id="campaignsswarmstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmstorysc2campaign">#</a> campaigns/swarmstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstory.sc2campaign/base.sc2data/TriggerLibs/SwarmCampaignLib.galaxy#L752">SwarmCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L752</span>
+UIDisplayMessage(lp_toPlayerGroup, c_messageAreaSubtitle, TextExpressionAssemble(<span class="hljs-string">"Param/Expression/lib_SwaC_05E157D1"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L756</span>
+UIDisplayMessage(lp_toPlayerGroup, c_messageAreaSubtitle, lp_message)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L761</span>
+UIDisplayMessage(lp_toPlayerGroup, c_messageAreaSubtitle, TextExpressionAssemble(<span class="hljs-string">"Param/Expression/lib_SwaC_ED480A7B"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L766</span>
+UIDisplayMessage(lp_toPlayerGroup, c_messageAreaSubtitle, TextExpressionAssemble(<span class="hljs-string">"Param/Expression/lib_SwaC_A67804BB"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L771</span>
+UIDisplayMessage(lp_toPlayerGroup, c_messageAreaSubtitle, TextExpressionAssemble(<span class="hljs-string">"Param/Expression/lib_SwaC_F1AA9791"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L776</span>
+UIDisplayMessage(lp_toPlayerGroup, c_messageAreaSubtitle, TextExpressionAssemble(<span class="hljs-string">"Param/Expression/lib_SwaC_36788E6C"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L781</span>
+UIDisplayMessage(lp_toPlayerGroup, c_messageAreaSubtitle, TextExpressionAssemble(<span class="hljs-string">"Param/Expression/lib_SwaC_A269CF22"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L786</span>
+UIDisplayMessage(lp_toPlayerGroup, c_messageAreaSubtitle, TextExpressionAssemble(<span class="hljs-string">"Param/Expression/lib_SwaC_E5BD385E"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L791</span>
+UIDisplayMessage(lp_toPlayerGroup, c_messageAreaSubtitle, TextExpressionAssemble(<span class="hljs-string">"Param/Expression/lib_SwaC_D04E5B32"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L798</span>
+UIDisplayMessage(lp_toPlayerGroup, c_messageAreaSubtitle, lp_message)
+</code></pre>
+<h4 id="campaignsvoidsc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidsc2campaign">#</a> campaigns/void.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/void.sc2campaign/base.sc2maps/maps/campaign/void/pstory01.sc2map/MapScript.galaxy#L1612">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1612</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaChat, StringExternal(<span class="hljs-string">"Param/Value/910E1E27"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1656</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaChat, TextExpressionAssemble(<span class="hljs-string">"Param/Expression/35E7C92D"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1612</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaChat, StringExternal(<span class="hljs-string">"Param/Value/910E1E27"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1656</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaChat, TextExpressionAssemble(<span class="hljs-string">"Param/Expression/35E7C92D"</span>))
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignLib.galaxy#L10310">VoidCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L10310</span>
+UIDisplayMessage(PlayerGroupAll(), c_messageAreaError, StringExternal(<span class="hljs-string">"Param/Value/lib_VoiC_1AEBEC50"</span>))
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign-2"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign-2">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignMissionLib.galaxy#L3948">VoidCampaignMissionLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3948</span>
+UIDisplayMessage(lp_toPlayerGroup, c_messageAreaSubtitle, TextExpressionAssemble(<span class="hljs-string">"Param/Expression/lib_VCMI_64DF7A24"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3952</span>
+UIDisplayMessage(lp_toPlayerGroup, c_messageAreaSubtitle, lp_message)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3957</span>
+UIDisplayMessage(lp_toPlayerGroup, c_messageAreaSubtitle, TextExpressionAssemble(<span class="hljs-string">"Param/Expression/lib_VCMI_C1624255"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3962</span>
+UIDisplayMessage(lp_toPlayerGroup, c_messageAreaSubtitle, TextExpressionAssemble(<span class="hljs-string">"Param/Expression/lib_VCMI_A49EDD0B"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3967</span>
+UIDisplayMessage(lp_toPlayerGroup, c_messageAreaSubtitle, TextExpressionAssemble(<span class="hljs-string">"Param/Expression/lib_VCMI_BA0BF873"</span>))
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,317 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Allow/Disallow Upgrade For Player / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Allow/Disallow Upgrade For Player"/>
+                <meta property="og:description" content="Allows or disallows an upgrade to be used by the specified player.  This is only useful if tech restrictions have been enabled using &quot;Enable/Disable Tech Tree Restrictions&quot;.  If the upgrade has a tech requirement, the requirement must still be met for the player to use the upgrade."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="allowdisallow-upgrade-for-player"><a class="markdownIt-Anchor" href="#allowdisallow-upgrade-for-player">#</a> Allow/Disallow Upgrade For Player</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — <strong>inAllow|Allow/Disallow</strong> <strong>inUpgrade</strong> for player <strong>inPlayer</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Allows or disallows an upgrade to be used by the specified player.  This is only useful if tech restrictions have been enabled using <em>“Enable/Disable Tech Tree Restrictions”</em>.  If the upgrade has a tech requirement, the requirement must still be met for the player to use the upgrade.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> — Player</li>
+<li><code>string</code> <em>[ gamelink::Upgrade ]</em> — Upgrade</li>
+<li><code>bool</code> <em>[ preset::<a href="/galaxy/reference/preset-allow-disallow-option">AllowDisallowOption</a> ]</em> — Allow</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">TechTreeUpgradeAllow</span><span class="hljs-params">(
+	<span class="hljs-keyword">int</span> player,
+	<span class="hljs-built_in">string</span> upgradeType,
+	<span class="hljs-keyword">bool</span> allow,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#tech-tree-individual-restrictions">Tech Tree / Individual Restrictions</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/tech-tree-specific-requirement-enabled">Specific Requirements Are Enabled For Player</a></strong> — ( TechTreeSpecificRequirementEnabled )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/tech-tree-specific-requirement-enable">Enable/Disable SpecificTech Tree Requirements</a></strong> — ( TechTreeSpecificRequirementEnable )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/tech-tree-behavior-allow">Allow/Disallow Behavior For Player</a></strong> — ( TechTreeBehaviorAllow )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/tech-tree-ability-allow">Allow/Disallow Ability For Player</a></strong> — ( TechTreeAbilityAllow )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/tech-tree-unit-allow">Allow/Disallow Unit For Player</a></strong> — ( TechTreeUnitAllow )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/tech-tree-upgrade-allow">Allow/Disallow Upgrade For Player</a></strong> — ( TechTreeUpgradeAllow )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/tech-tree-ability-is-allowed">Ability Is Allowed For Player</a></strong> — ( TechTreeAbilityIsAllowed )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/tech-tree-behavior-is-allowed">Behavior Is Allowed For Player</a></strong> — ( TechTreeBehaviorIsAllowed )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/tech-tree-unit-is-allowed">Unit Is Allowed For Player</a></strong> — ( TechTreeUnitIsAllowed )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/tech-tree-upgrade-is-allowed">Upgrade Is Allowed For Player</a></strong> — ( TechTreeUpgradeIsAllowed )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/tech-tree-upgrade-add-level">Add Upgrade Level For Player</a></strong> — ( TechTreeUpgradeAddLevel )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-set-upgrade-level-for-player">Set Upgrade Level For Player</a></strong> — ( libNtve_gf_SetUpgradeLevelForPlayer )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/tech-tree-set-produce-cap">Set Production Cap For Player</a></strong> — ( TechTreeSetProduceCap )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/tech-tree-get-produce-cap">Production Cap For Player</a></strong> — ( TechTreeGetProduceCap )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/challenges/protosscombat.sc2map/MapScript.galaxy#L536">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L536</span>
+TechTreeUpgradeAllow(gv_pLAYER_USER, <span class="hljs-string">"PsiStormTech"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L538</span>
+TechTreeUpgradeAllow(gv_pLAYER_USER, <span class="hljs-string">"haltech"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L607</span>
+TechTreeUpgradeAllow(gv_pLAYER_P09_HORNER, <span class="hljs-string">"OrbitalRelay"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L607</span>
+TechTreeUpgradeAllow(gv_pLAYER_P09_HORNER, <span class="hljs-string">"OrbitalRelay"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L536</span>
+TechTreeUpgradeAllow(gv_pLAYER_USER, <span class="hljs-string">"PsiStormTech"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L538</span>
+TechTreeUpgradeAllow(gv_pLAYER_USER, <span class="hljs-string">"haltech"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="campaignslibertystorysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertystorysc2campaign">#</a> campaigns/libertystory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/libertystory.sc2campaign/base.sc2data/TriggerLibs/CampaignLib.galaxy#L7085">CampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L7085</span>
+TechTreeUpgradeAllow(lv_player, <span class="hljs-string">"BlinkTech"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7092</span>
+TechTreeUpgradeAllow(lv_player, <span class="hljs-string">"ProtossGroundArmorsLevel1"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7093</span>
+TechTreeUpgradeAllow(lv_player, <span class="hljs-string">"ProtossGroundWeaponsLevel1"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7094</span>
+TechTreeUpgradeAllow(lv_player, <span class="hljs-string">"ProtossShieldsLevel1"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7095</span>
+TechTreeUpgradeAllow(lv_player, <span class="hljs-string">"Charge"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7096</span>
+TechTreeUpgradeAllow(lv_player, <span class="hljs-string">"VoidRaySpeedUpgrade"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7097</span>
+TechTreeUpgradeAllow(lv_player, <span class="hljs-string">"ExtendedThermalLance"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7106</span>
+TechTreeUpgradeAllow(lv_player, <span class="hljs-string">"ProtossGroundArmorsLevel2"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7107</span>
+TechTreeUpgradeAllow(lv_player, <span class="hljs-string">"ProtossGroundWeaponsLevel2"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7108</span>
+TechTreeUpgradeAllow(lv_player, <span class="hljs-string">"ProtossShieldsLevel2"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="campaignsswarmsc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmsc2campaign">#</a> campaigns/swarm.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarm.sc2campaign/base.sc2maps/maps/campaign/swarm/zchar02.sc2map/MapScript.galaxy#L779">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L779</span>
+TechTreeUpgradeAllow(gv_pLAYER_02_TERRAN_RED, <span class="hljs-string">"HailstormMissilePods"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L780</span>
+TechTreeUpgradeAllow(gv_pLAYER_03_TERRAN_TEAL, <span class="hljs-string">"HailstormMissilePods"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1145</span>
+TechTreeUpgradeAllow(auto49D74679_var, <span class="hljs-string">"NeoSteelAndShrikeTurretIconUpgrade"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1147</span>
+TechTreeUpgradeAllow(auto49D74679_var, <span class="hljs-string">"NeoSteelFrame"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1149</span>
+TechTreeUpgradeAllow(auto49D74679_var, <span class="hljs-string">"ShrikeTurret"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1151</span>
+TechTreeUpgradeAllow(auto49D74679_var, <span class="hljs-string">"ClusterWarheads"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1152</span>
+TechTreeUpgradeAllow(auto49D74679_var, <span class="hljs-string">"DualFusionWelders"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1153</span>
+TechTreeUpgradeAllow(auto49D74679_var, <span class="hljs-string">"FireSuppressionSystems"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1319</span>
+TechTreeUpgradeAllow(auto25770434_var, <span class="hljs-string">"JackhammerConcussionGrenades"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1336</span>
+TechTreeUpgradeAllow(auto16DEC3D3_var, <span class="hljs-string">"TwinLinkedFlameThrowers"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1338</span>
+TechTreeUpgradeAllow(auto16DEC3D3_var, <span class="hljs-string">"ClusterWarheads"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1518</span>
+TechTreeUpgradeAllow(auto34BD469C_var, <span class="hljs-string">"CombatShield"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1520</span>
+TechTreeUpgradeAllow(auto34BD469C_var, <span class="hljs-string">"JackhammerConcussionGrenades"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L779</span>
+TechTreeUpgradeAllow(gv_pLAYER_02_TERRAN_RED, <span class="hljs-string">"HailstormMissilePods"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L780</span>
+TechTreeUpgradeAllow(gv_pLAYER_03_TERRAN_TEAL, <span class="hljs-string">"HailstormMissilePods"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1145</span>
+TechTreeUpgradeAllow(auto49D74679_var, <span class="hljs-string">"NeoSteelAndShrikeTurretIconUpgrade"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1147</span>
+TechTreeUpgradeAllow(auto49D74679_var, <span class="hljs-string">"NeoSteelFrame"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1149</span>
+TechTreeUpgradeAllow(auto49D74679_var, <span class="hljs-string">"ShrikeTurret"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1151</span>
+TechTreeUpgradeAllow(auto49D74679_var, <span class="hljs-string">"ClusterWarheads"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1152</span>
+TechTreeUpgradeAllow(auto49D74679_var, <span class="hljs-string">"DualFusionWelders"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1153</span>
+TechTreeUpgradeAllow(auto49D74679_var, <span class="hljs-string">"FireSuppressionSystems"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1319</span>
+TechTreeUpgradeAllow(auto25770434_var, <span class="hljs-string">"JackhammerConcussionGrenades"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1336</span>
+TechTreeUpgradeAllow(auto16DEC3D3_var, <span class="hljs-string">"TwinLinkedFlameThrowers"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1338</span>
+TechTreeUpgradeAllow(auto16DEC3D3_var, <span class="hljs-string">"ClusterWarheads"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1518</span>
+TechTreeUpgradeAllow(auto34BD469C_var, <span class="hljs-string">"CombatShield"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1520</span>
+TechTreeUpgradeAllow(auto34BD469C_var, <span class="hljs-string">"JackhammerConcussionGrenades"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L697</span>
+TechTreeUpgradeAllow(gv_pLAYER_03_ZERG_BULLIES, <span class="hljs-string">"overlordtransport"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L699</span>
+TechTreeUpgradeAllow(gv_pLAYER_03_ZERG_BULLIES, <span class="hljs-string">"overlordspeed"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L869</span>
+TechTreeUpgradeAllow(gv_pLAYER_02_DOMINION, <span class="hljs-string">"overlordtransport"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L871</span>
+TechTreeUpgradeAllow(gv_pLAYER_02_DOMINION, <span class="hljs-string">"overlordspeed"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L697</span>
+TechTreeUpgradeAllow(gv_pLAYER_03_ZERG_BULLIES, <span class="hljs-string">"overlordtransport"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L699</span>
+TechTreeUpgradeAllow(gv_pLAYER_03_ZERG_BULLIES, <span class="hljs-string">"overlordspeed"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L869</span>
+TechTreeUpgradeAllow(gv_pLAYER_02_DOMINION, <span class="hljs-string">"overlordtransport"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L871</span>
+TechTreeUpgradeAllow(gv_pLAYER_02_DOMINION, <span class="hljs-string">"overlordspeed"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="modsmissionpacksnovacampaignsc2mod"><a class="markdownIt-Anchor" href="#modsmissionpacksnovacampaignsc2mod">#</a> mods/missionpacks/novacampaign.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/novacampaign.sc2mod/base.sc2data/LibNovC.galaxy#L2110">LibNovC.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2110</span>
+TechTreeUpgradeAllow(lp_player, <span class="hljs-string">"CycloneAirUpgrade"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2134</span>
+TechTreeUpgradeAllow(lp_player, <span class="hljs-string">"TerranInfantryArmorsLevel1"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2135</span>
+TechTreeUpgradeAllow(lp_player, <span class="hljs-string">"TerranInfantryWeaponsLevel1"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2137</span>
+TechTreeUpgradeAllow(lp_player, <span class="hljs-string">"TerranVehicleAndShipArmorsLevel1"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2138</span>
+TechTreeUpgradeAllow(lp_player, <span class="hljs-string">"TerranVehicleAndShipWeaponsLevel1"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2142</span>
+TechTreeUpgradeAllow(lp_player, <span class="hljs-string">"TerranVehicleAndShipArmorsLevel2"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2143</span>
+TechTreeUpgradeAllow(lp_player, <span class="hljs-string">"TerranVehicleAndShipWeaponsLevel2"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2144</span>
+TechTreeUpgradeAllow(lp_player, <span class="hljs-string">"TerranInfantryArmorsLevel2"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2145</span>
+TechTreeUpgradeAllow(lp_player, <span class="hljs-string">"TerranInfantryWeaponsLevel2"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2149</span>
+TechTreeUpgradeAllow(lp_player, <span class="hljs-string">"TerranVehicleAndShipArmorsLevel3"</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="modswarcoopwarcoopdatasc2mod"><a class="markdownIt-Anchor" href="#modswarcoopwarcoopdatasc2mod">#</a> mods/warcoop/warcoopdata.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/warcoop/warcoopdata.sc2mod/base.sc2data/TriggerLibs/WarCoopData.galaxy#L2395">WarCoopData.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2395</span>
+TechTreeUpgradeAllow(lp_player, (lv_to), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3122</span>
+TechTreeUpgradeAllow(lv_player, <span class="hljs-string">"Rhpm"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3123</span>
+TechTreeUpgradeAllow(lv_player, <span class="hljs-string">"Rupm"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3124</span>
+TechTreeUpgradeAllow(lv_player, <span class="hljs-string">"Repm"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3125</span>
+TechTreeUpgradeAllow(lv_player, <span class="hljs-string">"Ropm"</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

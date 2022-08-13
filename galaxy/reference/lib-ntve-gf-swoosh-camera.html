@@ -1,0 +1,421 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Zoom Camera / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Zoom Camera"/>
+                <meta property="og:description" content="Zoom the camera in on a location."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="zoom-camera"><a class="markdownIt-Anchor" href="#zoom-camera">#</a> Zoom Camera</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Zoom camera for player <strong>player</strong> at <strong>location</strong> from <strong>distance1|Distance From</strong> to <strong>distance2|Distance To</strong> over <strong>duration</strong> seconds<br>
+<em>Flags</em> — <code>Action</code></p>
+</blockquote>
+<p>Zoom the camera in on a location.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> — Player</li>
+<li><code>fixed</code> — DistanceFrom</li>
+<li><code>fixed</code> — DistanceTo</li>
+<li><code>point</code> — Location</li>
+<li><code>fixed</code> — Duration</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">libNtve_gf_SwooshCamera</span><span class="hljs-params">(
+	<span class="hljs-keyword">int</span> lp_player,
+	fixed lp_distance1,
+	fixed lp_distance2,
+	point lp_location,
+	fixed lp_duration,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#camera-camera-tricks">Camera / Camera Tricks</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/camera-lock-input">Lock Camera Input</a></strong> — ( CameraLockInput )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/camera-set-bounds">Set Camera Bounds</a></strong> — ( CameraSetBounds )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/camera-shake-start">Shake Camera</a></strong> — ( CameraShakeStart )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/camera-shake">Shake Camera Using Preset</a></strong> — ( CameraShake )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/camera-shake-stop">Stop Shaking Camera</a></strong> — ( CameraShakeStop )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-swoosh-camera">Zoom Camera</a></strong> — ( libNtve_gf_SwooshCamera )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/camera-follow-unit-group">Follow Unit Group with Camera</a></strong> — ( CameraFollowUnitGroup )</li>
+<li><em><strong>[F]</strong></em> — <code>unitgroup</code> — <strong><a href="/galaxy/reference/camera-follow-unit-group-get">Unit Group Followed By Camera</a></strong> — ( CameraFollowUnitGroupGet )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/camera-force-follow-unit-group">Force Follow Unit Group with Camera</a></strong> — ( CameraForceFollowUnitGroup )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/camera-look-at-unit">Make Camera Look At And Follow Unit</a></strong> — ( CameraLookAtUnit )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/camera-look-at-actor">Make Camera Look At And Follow Actor</a></strong> — ( CameraLookAtActor )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/camera-force-mouse-relative">Lock Camera Mouse Relative Mode On/Off</a></strong> — ( CameraForceMouseRelative )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/camera-set-mouse-rotates">Turn Camera Mouse Rotation On/Off</a></strong> — ( CameraSetMouseRotates )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/camera-set-mouse-rotation-speed">Set Camera Mouse Rotation Speed</a></strong> — ( CameraSetMouseRotationSpeed )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/camera-use-height-displacement">Turn Camera Height Displacement On/Off</a></strong> — ( CameraUseHeightDisplacement )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/camera-use-height-smoothing">Turn Camera Height Smoothing On/Off</a></strong> — ( CameraUseHeightSmoothing )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/camera-set-vertical-field-of-view">Turn Camera Vertical Field Of View On/Off</a></strong> — ( CameraSetVerticalFieldOfView )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/thanson01.sc2map/MapScript.galaxy#L894">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L894</span>
+libNtve_gf_SwooshCamera(gv_p1_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), PointFromId(<span class="hljs-number">125</span>), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L765</span>
+libNtve_gf_SwooshCamera(gv_pLAYER_01_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), PointFromId(<span class="hljs-number">453</span>), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L944</span>
+libNtve_gf_SwooshCamera(gv_pLAYER01_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), PlayerStartLocation(gv_pLAYER01_USER), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4678</span>
+libNtve_gf_SwooshCamera(gv_p01_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), CameraInfoGetTarget(CameraInfoFromId(<span class="hljs-number">474</span>)), lv_fadeDuration)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L980</span>
+libNtve_gf_SwooshCamera(gv_pLAYER_01_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), PlayerStartLocation(gv_pLAYER_01_USER), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L903</span>
+libNtve_gf_SwooshCamera(gv_p01_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), CameraInfoGetTarget(CameraInfoFromId(<span class="hljs-number">1055</span>)), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L761</span>
+libNtve_gf_SwooshCamera(gv_p01_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), PointFromId(<span class="hljs-number">966</span>), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5707</span>
+libNtve_gf_SwooshCamera(gv_p01_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), PointFromId(<span class="hljs-number">873</span>), lv_fadeDuration)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6496</span>
+libNtve_gf_SwooshCamera(gv_p01_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), UnitGetPosition(gv_odin), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6624</span>
+libNtve_gf_SwooshCamera(gv_p01_USER, CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), <span class="hljs-number">42.0</span>, UnitGetPosition(gv_odin), <span class="hljs-number">8.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6838</span>
+libNtve_gf_SwooshCamera(gv_p01_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), PlayerStartLocation(gv_p01_USER), lv_fadeDuration)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11445</span>
+libNtve_gf_SwooshCamera(gv_p01_USER, (gv_cameraDefault + <span class="hljs-number">8.0</span>), gv_cameraDefault, PlayerStartLocation(gv_p01_USER), lv_fadeDuration)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12451</span>
+libNtve_gf_SwooshCamera(gv_p01_USER, (gv_cameraDefault + <span class="hljs-number">8.0</span>), gv_cameraDefault, PointWithOffset(PointFromId(<span class="hljs-number">634</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">0.0</span>), lv_fadeDuration)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5163</span>
+libNtve_gf_SwooshCamera(gv_p1_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), CameraInfoGetTarget(CameraInfoFromId(<span class="hljs-number">976</span>)), lv_fadeDuration)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L760</span>
+libNtve_gf_SwooshCamera(gv_pLAYER_01_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), CameraInfoGetTarget(CameraInfoFromId(<span class="hljs-number">1117</span>)), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L854</span>
+libNtve_gf_SwooshCamera(gv_pLAYER01_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), CameraInfoGetTarget(CameraInfoFromId(<span class="hljs-number">598</span>)), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L612</span>
+libNtve_gf_SwooshCamera(gv_p01_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), PlayerStartLocation(gv_p01_USER), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L973</span>
+libNtve_gf_SwooshCamera(gv_p1_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), PlayerStartLocation(gv_p1_USER), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1062</span>
+libNtve_gf_SwooshCamera(gv_p1_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), CameraInfoGetTarget(CameraInfoFromId(<span class="hljs-number">92</span>)), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L912</span>
+libNtve_gf_SwooshCamera(gv_pLAYER01_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), CameraInfoGetTarget(CameraInfoFromId(<span class="hljs-number">74</span>)), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1720</span>
+libNtve_gf_SwooshCamera(gv_p01_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), CameraInfoGetTarget(CameraInfoFromId(<span class="hljs-number">207</span>)), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2001</span>
+libNtve_gf_SwooshCamera(gv_p01_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), CameraInfoGetTarget(CameraInfoFromId(<span class="hljs-number">211</span>)), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2702</span>
+libNtve_gf_SwooshCamera(gv_p01_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), CameraInfoGetTarget(CameraInfoFromId(<span class="hljs-number">250</span>)), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4122</span>
+libNtve_gf_SwooshCamera(gv_p01_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), CameraInfoGetTarget(CameraInfoFromId(<span class="hljs-number">184</span>)), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5691</span>
+libNtve_gf_SwooshCamera(gv_p01_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), CameraInfoGetTarget(CameraInfoFromId(<span class="hljs-number">183</span>)), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6498</span>
+libNtve_gf_SwooshCamera(gv_p01_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), CameraInfoGetTarget(CameraInfoFromId(<span class="hljs-number">74</span>)), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7931</span>
+libNtve_gf_SwooshCamera(gv_p01_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), CameraInfoGetTarget(CameraInfoFromId(<span class="hljs-number">130</span>)), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9343</span>
+libNtve_gf_SwooshCamera(gv_p01_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), CameraInfoGetTarget(CameraInfoFromId(<span class="hljs-number">10</span>)), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L707</span>
+libNtve_gf_SwooshCamera(gv_p1_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), CameraInfoGetTarget(CameraInfoFromId(<span class="hljs-number">26</span>)), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L705</span>
+libNtve_gf_SwooshCamera(gv_p1_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), PlayerStartLocation(gv_p1_USER), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5430</span>
+libNtve_gf_SwooshCamera(gv_p1_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), UnitGetPosition(UnitFromId(<span class="hljs-number">508</span>)), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L938</span>
+libNtve_gf_SwooshCamera(gv_p01_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), PointFromId(<span class="hljs-number">154</span>), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L692</span>
+libNtve_gf_SwooshCamera(gv_pLAYER01_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), PointFromId(<span class="hljs-number">359</span>), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3868</span>
+libNtve_gf_SwooshCamera(gv_pLAYER01_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), PointFromId(<span class="hljs-number">13</span>), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1329</span>
+libNtve_gf_SwooshCamera(gv_p01_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), PlayerStartLocation(gv_p01_USER), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1531</span>
+libNtve_gf_SwooshCamera(gv_p1_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), PlayerStartLocation(gv_p1_USER), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3695</span>
+libNtve_gf_SwooshCamera(gv_p1_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), PointFromId(<span class="hljs-number">137</span>), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5630</span>
+libNtve_gf_SwooshCamera(gv_p1_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), PointFromId(<span class="hljs-number">138</span>), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7571</span>
+libNtve_gf_SwooshCamera(gv_p1_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), PointFromId(<span class="hljs-number">139</span>), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9696</span>
+libNtve_gf_SwooshCamera(gv_p1_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), PointFromId(<span class="hljs-number">2456</span>), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10419</span>
+libNtve_gf_SwooshCamera(gv_p1_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), PointFromId(<span class="hljs-number">2457</span>), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11428</span>
+libNtve_gf_SwooshCamera(gv_p1_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), PointFromId(<span class="hljs-number">86</span>), <span class="hljs-number">1.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1100</span>
+libNtve_gf_SwooshCamera(gv_pLAYER_P01_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), CameraInfoGetTarget(CameraInfoFromId(<span class="hljs-number">353</span>)), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5371</span>
+libNtve_gf_SwooshCamera(gv_pLAYER_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), PlayerStartLocation(gv_pLAYER_USER), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1098</span>
+libNtve_gf_SwooshCamera(gv_p1_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), PlayerStartLocation(gv_p1_USER), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9212</span>
+libNtve_gf_SwooshCamera(gv_p1_USER, <span class="hljs-number">42.0</span>, CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), PointFromId(<span class="hljs-number">854</span>), lv_fadeDuration)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9754</span>
+libNtve_gf_SwooshCamera(gv_p1_USER, <span class="hljs-number">42.0</span>, CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), PointFromId(<span class="hljs-number">53</span>), lv_fadeDuration)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6347</span>
+libNtve_gf_SwooshCamera(gv_p1_USER, <span class="hljs-number">42.0</span>, CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), PointFromId(<span class="hljs-number">2</span>), lv_fadeDuration)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L699</span>
+libNtve_gf_SwooshCamera(gv_p01_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), PointFromId(<span class="hljs-number">425</span>), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6164</span>
+libNtve_gf_SwooshCamera(gv_p01_PLAYER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), CameraInfoGetTarget(CameraInfoFromId(<span class="hljs-number">60</span>)), <span class="hljs-number">1.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6336</span>
+libNtve_gf_SwooshCamera(gv_p01_PLAYER, CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), <span class="hljs-number">42.0</span>, UnitGetPosition(gv_zeratul), <span class="hljs-number">8.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L894</span>
+libNtve_gf_SwooshCamera(gv_p1_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), PointFromId(<span class="hljs-number">125</span>), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L765</span>
+libNtve_gf_SwooshCamera(gv_pLAYER_01_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), PointFromId(<span class="hljs-number">453</span>), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L944</span>
+libNtve_gf_SwooshCamera(gv_pLAYER01_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), PlayerStartLocation(gv_pLAYER01_USER), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4678</span>
+libNtve_gf_SwooshCamera(gv_p01_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), CameraInfoGetTarget(CameraInfoFromId(<span class="hljs-number">474</span>)), lv_fadeDuration)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L980</span>
+libNtve_gf_SwooshCamera(gv_pLAYER_01_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), PlayerStartLocation(gv_pLAYER_01_USER), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L903</span>
+libNtve_gf_SwooshCamera(gv_p01_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), CameraInfoGetTarget(CameraInfoFromId(<span class="hljs-number">1055</span>)), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L761</span>
+libNtve_gf_SwooshCamera(gv_p01_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), PointFromId(<span class="hljs-number">966</span>), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5707</span>
+libNtve_gf_SwooshCamera(gv_p01_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), PointFromId(<span class="hljs-number">873</span>), lv_fadeDuration)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6496</span>
+libNtve_gf_SwooshCamera(gv_p01_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), UnitGetPosition(gv_odin), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6624</span>
+libNtve_gf_SwooshCamera(gv_p01_USER, CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), <span class="hljs-number">42.0</span>, UnitGetPosition(gv_odin), <span class="hljs-number">8.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6838</span>
+libNtve_gf_SwooshCamera(gv_p01_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), PlayerStartLocation(gv_p01_USER), lv_fadeDuration)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11445</span>
+libNtve_gf_SwooshCamera(gv_p01_USER, (gv_cameraDefault + <span class="hljs-number">8.0</span>), gv_cameraDefault, PlayerStartLocation(gv_p01_USER), lv_fadeDuration)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12451</span>
+libNtve_gf_SwooshCamera(gv_p01_USER, (gv_cameraDefault + <span class="hljs-number">8.0</span>), gv_cameraDefault, PointWithOffset(PointFromId(<span class="hljs-number">634</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">0.0</span>), lv_fadeDuration)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5163</span>
+libNtve_gf_SwooshCamera(gv_p1_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), CameraInfoGetTarget(CameraInfoFromId(<span class="hljs-number">976</span>)), lv_fadeDuration)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L760</span>
+libNtve_gf_SwooshCamera(gv_pLAYER_01_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), CameraInfoGetTarget(CameraInfoFromId(<span class="hljs-number">1117</span>)), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L854</span>
+libNtve_gf_SwooshCamera(gv_pLAYER01_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), CameraInfoGetTarget(CameraInfoFromId(<span class="hljs-number">598</span>)), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L612</span>
+libNtve_gf_SwooshCamera(gv_p01_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), PlayerStartLocation(gv_p01_USER), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L973</span>
+libNtve_gf_SwooshCamera(gv_p1_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), PlayerStartLocation(gv_p1_USER), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1062</span>
+libNtve_gf_SwooshCamera(gv_p1_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), CameraInfoGetTarget(CameraInfoFromId(<span class="hljs-number">92</span>)), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L912</span>
+libNtve_gf_SwooshCamera(gv_pLAYER01_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), CameraInfoGetTarget(CameraInfoFromId(<span class="hljs-number">74</span>)), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1720</span>
+libNtve_gf_SwooshCamera(gv_p01_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), CameraInfoGetTarget(CameraInfoFromId(<span class="hljs-number">207</span>)), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2001</span>
+libNtve_gf_SwooshCamera(gv_p01_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), CameraInfoGetTarget(CameraInfoFromId(<span class="hljs-number">211</span>)), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2702</span>
+libNtve_gf_SwooshCamera(gv_p01_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), CameraInfoGetTarget(CameraInfoFromId(<span class="hljs-number">250</span>)), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4122</span>
+libNtve_gf_SwooshCamera(gv_p01_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), CameraInfoGetTarget(CameraInfoFromId(<span class="hljs-number">184</span>)), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5691</span>
+libNtve_gf_SwooshCamera(gv_p01_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), CameraInfoGetTarget(CameraInfoFromId(<span class="hljs-number">183</span>)), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6498</span>
+libNtve_gf_SwooshCamera(gv_p01_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), CameraInfoGetTarget(CameraInfoFromId(<span class="hljs-number">74</span>)), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7931</span>
+libNtve_gf_SwooshCamera(gv_p01_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), CameraInfoGetTarget(CameraInfoFromId(<span class="hljs-number">130</span>)), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9343</span>
+libNtve_gf_SwooshCamera(gv_p01_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), CameraInfoGetTarget(CameraInfoFromId(<span class="hljs-number">10</span>)), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L707</span>
+libNtve_gf_SwooshCamera(gv_p1_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), CameraInfoGetTarget(CameraInfoFromId(<span class="hljs-number">26</span>)), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L705</span>
+libNtve_gf_SwooshCamera(gv_p1_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), PlayerStartLocation(gv_p1_USER), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5430</span>
+libNtve_gf_SwooshCamera(gv_p1_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), UnitGetPosition(UnitFromId(<span class="hljs-number">508</span>)), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L938</span>
+libNtve_gf_SwooshCamera(gv_p01_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), PointFromId(<span class="hljs-number">154</span>), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L692</span>
+libNtve_gf_SwooshCamera(gv_pLAYER01_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), PointFromId(<span class="hljs-number">359</span>), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3868</span>
+libNtve_gf_SwooshCamera(gv_pLAYER01_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), PointFromId(<span class="hljs-number">13</span>), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1329</span>
+libNtve_gf_SwooshCamera(gv_p01_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), PlayerStartLocation(gv_p01_USER), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1531</span>
+libNtve_gf_SwooshCamera(gv_p1_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), PlayerStartLocation(gv_p1_USER), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3695</span>
+libNtve_gf_SwooshCamera(gv_p1_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), PointFromId(<span class="hljs-number">137</span>), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5630</span>
+libNtve_gf_SwooshCamera(gv_p1_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), PointFromId(<span class="hljs-number">138</span>), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7571</span>
+libNtve_gf_SwooshCamera(gv_p1_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), PointFromId(<span class="hljs-number">139</span>), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9696</span>
+libNtve_gf_SwooshCamera(gv_p1_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), PointFromId(<span class="hljs-number">2456</span>), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10419</span>
+libNtve_gf_SwooshCamera(gv_p1_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), PointFromId(<span class="hljs-number">2457</span>), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11428</span>
+libNtve_gf_SwooshCamera(gv_p1_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), PointFromId(<span class="hljs-number">86</span>), <span class="hljs-number">1.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1100</span>
+libNtve_gf_SwooshCamera(gv_pLAYER_P01_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), CameraInfoGetTarget(CameraInfoFromId(<span class="hljs-number">353</span>)), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5371</span>
+libNtve_gf_SwooshCamera(gv_pLAYER_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), PlayerStartLocation(gv_pLAYER_USER), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1098</span>
+libNtve_gf_SwooshCamera(gv_p1_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), PlayerStartLocation(gv_p1_USER), <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9212</span>
+libNtve_gf_SwooshCamera(gv_p1_USER, <span class="hljs-number">42.0</span>, CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), PointFromId(<span class="hljs-number">854</span>), lv_fadeDuration)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9754</span>
+libNtve_gf_SwooshCamera(gv_p1_USER, <span class="hljs-number">42.0</span>, CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), PointFromId(<span class="hljs-number">53</span>), lv_fadeDuration)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6347</span>
+libNtve_gf_SwooshCamera(gv_p1_USER, <span class="hljs-number">42.0</span>, CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), PointFromId(<span class="hljs-number">2</span>), lv_fadeDuration)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L699</span>
+libNtve_gf_SwooshCamera(gv_p01_USER, ((CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance)) + <span class="hljs-number">8.0</span>), CameraInfoGetValue(CameraInfoDefault(), c_cameraValueDistance), PointFromId(<span class="hljs-number">425</span>), <span class="hljs-number">1.5</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

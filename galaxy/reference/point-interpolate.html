@@ -1,0 +1,145 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Interpolated Point / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Interpolated Point"/>
+                <meta property="og:description" content="Returns a point along the line defined by the two given points. The position along the line is determined by the given fraction. 0.0 means the source point, 1.0 means the target point, and 0.5 means half-way between the two. Values outside the 0.0 to 1.0 range result in valid extrapolations along the line beyond the given points.
+
+Returns: point"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="interpolated-point"><a class="markdownIt-Anchor" href="#interpolated-point">#</a> Interpolated Point</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Point interpolated from <strong>sourcePoint</strong> to <strong>targetPoint</strong> by fraction <strong>fraction</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Function</code></p>
+</blockquote>
+<p>Returns a point along the line defined by the two given points. The position along the line is determined by the given fraction. 0.0 means the source point, 1.0 means the target point, and 0.5 means half-way between the two. Values outside the 0.0 to 1.0 range result in valid extrapolations along the line beyond the given points.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>point</code> — Source Point</li>
+<li><code>point</code> — Target Point</li>
+<li><code>fixed</code> — Fraction</li>
+</ul>
+<p>Returns — <code>point</code></p>
+<pre class="hljs"><code><span class="hljs-function">native point <span class="hljs-title">PointInterpolate</span><span class="hljs-params">(
+	point source,
+	point dest,
+	fixed fraction,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#point-offsets">Point / Offsets</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>point</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-point-facing-angle">Point Facing Angle</a></strong> — ( libNtve_gf_PointFacingAngle )</li>
+<li><em><strong>[F]</strong></em> — <code>point</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-point-with-zoffset">Point With Z Offset</a></strong> — ( libNtve_gf_PointWithZOffset )</li>
+<li><em><strong>[F]</strong></em> — <code>point</code> — <strong><a href="/galaxy/reference/point-with-offset">Point With Offset</a></strong> — ( PointWithOffset )</li>
+<li><em><strong>[F]</strong></em> — <code>point</code> — <strong><a href="/galaxy/reference/point-with-offset-polar">Point With Polar Offset</a></strong> — ( PointWithOffsetPolar )</li>
+<li><em><strong>[F]</strong></em> — <code>point</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-point-offset-towards-point">Point Offset Towards Point</a></strong> — ( libNtve_gf_PointOffsetTowardsPoint )</li>
+<li><em><strong>[F]</strong></em> — <code>point</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-random-point-between-points">Random Point Between Points</a></strong> — ( libNtve_gf_RandomPointBetweenPoints )</li>
+<li><em><strong>[F]</strong></em> — <code>point</code> — <strong><a href="/galaxy/reference/point-reflect">Reflected Point</a></strong> — ( PointReflect )</li>
+<li><em><strong>[F]</strong></em> — <code>point</code> — <strong><a href="/galaxy/reference/point-interpolate">Interpolated Point</a></strong> — ( PointInterpolate )</li>
+<li><em><strong>[F]</strong></em> — <code>point</code> — <strong><a href="/galaxy/reference/mid-point">Mid-Point</a></strong> — ( MidPoint )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="modsheromodsgenjistormmod"><a class="markdownIt-Anchor" href="#modsheromodsgenjistormmod">#</a> mods/heromods/genji.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heromods/genji.stormmod/base.stormdata/LibHGen.galaxy#L631">LibHGen.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L631</span>
+PointInterpolate(lv_genjiPosition, lv_initialTargetPoint, lv_interpolationFraction)
+</code></pre>
+<h4 id="modsnovastoryassetssc2mod"><a class="markdownIt-Anchor" href="#modsnovastoryassetssc2mod">#</a> mods/novastoryassets.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/novastoryassets.sc2mod/base2.sc2maps/maps/campaign/nova/nova05.sc2map/MapScript.galaxy#L1184">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1184</span>
+PointInterpolate(lv_startPoint, lv_endPoint, lv_interpolationOffset)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1187</span>
+PointInterpolate(lv_startPoint, lv_endPoint, lv_interpolationOffset)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1184</span>
+PointInterpolate(lv_startPoint, lv_endPoint, lv_interpolationOffset)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1187</span>
+PointInterpolate(lv_startPoint, lv_endPoint, lv_interpolationOffset)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOMU.galaxy#L194">LibCOMU.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L194</span>
+PointInterpolate(lp_pointA, lp_pointB, lv_indexReal)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2070</span>
+PointInterpolate(UnitGetPosition(lp_aIUnit), UnitGetPosition(UnitGroupRandomUnit(lp_nearByUnits, c_unitCountAlive)), <span class="hljs-number">-0.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2075</span>
+PointInterpolate(UnitGetPosition(lp_aIUnit), UnitGetPosition(UnitGroupRandomUnit(lp_nearByUnits, c_unitCountAlive)), <span class="hljs-number">0.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7617</span>
+PointInterpolate(PlayerStartLocation(<span class="hljs-number">1</span>), PlayerStartLocation(<span class="hljs-number">2</span>), <span class="hljs-number">0.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13254</span>
+PointInterpolate(PlayerStartLocation(<span class="hljs-number">1</span>), PlayerStartLocation(<span class="hljs-number">2</span>), <span class="hljs-number">0.5</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

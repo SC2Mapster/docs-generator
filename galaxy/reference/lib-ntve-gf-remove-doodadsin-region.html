@@ -1,0 +1,243 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Remove Doodads in Region / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Remove Doodads in Region"/>
+                <meta property="og:description" content="Instantly removes all doodads of the specified type from a game region.  If the doodad being removed has a footprint, that footprint will still linger, even though the doodad&#39;s actor has been destroyed."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="remove-doodads-in-region"><a class="markdownIt-Anchor" href="#remove-doodads-in-region">#</a> Remove Doodads in Region</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Remove <strong>doodadType</strong> doodads in the <strong>target</strong> region<br>
+<em>Flags</em> — <code>Action</code></p>
+</blockquote>
+<p>Instantly removes all doodads of the specified type from a game region.  If the doodad being removed has a footprint, that footprint will still linger, even though the doodad’s actor has been destroyed.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>region</code> — Target</li>
+<li><code>string</code> <em>[ gamelink::Actor ]</em> — Doodad Type</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">libNtve_gf_RemoveDoodadsinRegion</span><span class="hljs-params">(
+	region lp_target,
+	<span class="hljs-built_in">string</span> lp_doodadType,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#actor-destroy-actors">Actor / Destroy Actors</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/actor-scope-kill">Kill Actor Scope</a></strong> — ( ActorScopeKill )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/actor-world-particle-fxdestroy">Kill All Particles</a></strong> — ( ActorWorldParticleFXDestroy )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-kill-model">Kill Model</a></strong> — ( libNtve_gf_KillModel )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/actor-scope-orphan">Orphan Actor Scope</a></strong> — ( ActorScopeOrphan )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-remove-doodadsin-region">Remove Doodads in Region</a></strong> — ( libNtve_gf_RemoveDoodadsinRegion )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-remove-death-modelsin-region">Remove Death Models in Region</a></strong> — ( libNtve_gf_RemoveDeathModelsinRegion )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-remove-death-modelsin-region-immediately">Remove Death Models in Region Immediately</a></strong> — ( libNtve_gf_RemoveDeathModelsinRegionImmediately )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/tvalerian03.sc2map/MapScript.galaxy#L926">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L926</span>
+libNtve_gf_RemoveDoodadsinRegion(RegionEntireMap(), <span class="hljs-string">"DestroyedPlatformChunks"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L929</span>
+libNtve_gf_RemoveDoodadsinRegion(RegionEntireMap(), <span class="hljs-string">"DestroyedNydusWorm"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L926</span>
+libNtve_gf_RemoveDoodadsinRegion(RegionEntireMap(), <span class="hljs-string">"DestroyedPlatformChunks"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L929</span>
+libNtve_gf_RemoveDoodadsinRegion(RegionEntireMap(), <span class="hljs-string">"DestroyedNydusWorm"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5749</span>
+libNtve_gf_RemoveDoodadsinRegion(RegionFromId(<span class="hljs-number">92</span>), <span class="hljs-string">"PathingandSightBlocker1x1Doodad"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3906</span>
+libNtve_gf_RemoveDoodadsinRegion(RegionFromId(<span class="hljs-number">16</span>), <span class="hljs-string">"Decal"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4113</span>
+libNtve_gf_RemoveDoodadsinRegion(RegionFromId(<span class="hljs-number">20</span>), <span class="hljs-string">"Decal"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11752</span>
+libNtve_gf_RemoveDoodadsinRegion(RegionFromId(<span class="hljs-number">32</span>), <span class="hljs-string">"Decal"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11753</span>
+libNtve_gf_RemoveDoodadsinRegion(RegionFromId(<span class="hljs-number">31</span>), <span class="hljs-string">"Decal"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11754</span>
+libNtve_gf_RemoveDoodadsinRegion(RegionFromId(<span class="hljs-number">30</span>), <span class="hljs-string">"Decal"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11755</span>
+libNtve_gf_RemoveDoodadsinRegion(RegionFromId(<span class="hljs-number">43</span>), <span class="hljs-string">"Decal"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11756</span>
+libNtve_gf_RemoveDoodadsinRegion(RegionFromId(<span class="hljs-number">49</span>), <span class="hljs-string">"Decal"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11757</span>
+libNtve_gf_RemoveDoodadsinRegion(RegionFromId(<span class="hljs-number">51</span>), <span class="hljs-string">"Decal"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12008</span>
+libNtve_gf_RemoveDoodadsinRegion(RegionFromId(<span class="hljs-number">29</span>), null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12149</span>
+libNtve_gf_RemoveDoodadsinRegion(RegionEntireMap(), <span class="hljs-string">"UmojanLabTramBackground"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8617</span>
+libNtve_gf_RemoveDoodadsinRegion(RegionFromId(<span class="hljs-number">15</span>), null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3811</span>
+libNtve_gf_RemoveDoodadsinRegion(RegionCircle(lv_location, <span class="hljs-number">10.0</span>), <span class="hljs-string">"ZerusPoolSparkles"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5749</span>
+libNtve_gf_RemoveDoodadsinRegion(RegionFromId(<span class="hljs-number">92</span>), <span class="hljs-string">"PathingandSightBlocker1x1Doodad"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3906</span>
+libNtve_gf_RemoveDoodadsinRegion(RegionFromId(<span class="hljs-number">16</span>), <span class="hljs-string">"Decal"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4113</span>
+libNtve_gf_RemoveDoodadsinRegion(RegionFromId(<span class="hljs-number">20</span>), <span class="hljs-string">"Decal"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11752</span>
+libNtve_gf_RemoveDoodadsinRegion(RegionFromId(<span class="hljs-number">32</span>), <span class="hljs-string">"Decal"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11753</span>
+libNtve_gf_RemoveDoodadsinRegion(RegionFromId(<span class="hljs-number">31</span>), <span class="hljs-string">"Decal"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11754</span>
+libNtve_gf_RemoveDoodadsinRegion(RegionFromId(<span class="hljs-number">30</span>), <span class="hljs-string">"Decal"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11755</span>
+libNtve_gf_RemoveDoodadsinRegion(RegionFromId(<span class="hljs-number">43</span>), <span class="hljs-string">"Decal"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11756</span>
+libNtve_gf_RemoveDoodadsinRegion(RegionFromId(<span class="hljs-number">49</span>), <span class="hljs-string">"Decal"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11757</span>
+libNtve_gf_RemoveDoodadsinRegion(RegionFromId(<span class="hljs-number">51</span>), <span class="hljs-string">"Decal"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12008</span>
+libNtve_gf_RemoveDoodadsinRegion(RegionFromId(<span class="hljs-number">29</span>), null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12149</span>
+libNtve_gf_RemoveDoodadsinRegion(RegionEntireMap(), <span class="hljs-string">"UmojanLabTramBackground"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8617</span>
+libNtve_gf_RemoveDoodadsinRegion(RegionFromId(<span class="hljs-number">15</span>), null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3811</span>
+libNtve_gf_RemoveDoodadsinRegion(RegionCircle(lv_location, <span class="hljs-number">10.0</span>), <span class="hljs-string">"ZerusPoolSparkles"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2994</span>
+libNtve_gf_RemoveDoodadsinRegion(RegionFromId(<span class="hljs-number">120</span>), <span class="hljs-string">"DOM_Fire_Large_Long"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2995</span>
+libNtve_gf_RemoveDoodadsinRegion(RegionFromId(<span class="hljs-number">120</span>), <span class="hljs-string">"DOM_Fire_Large"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7303</span>
+libNtve_gf_RemoveDoodadsinRegion(RegionFromId(<span class="hljs-number">52</span>), <span class="hljs-string">"PortCity_CarTraffic_a"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7304</span>
+libNtve_gf_RemoveDoodadsinRegion(RegionFromId(<span class="hljs-number">52</span>), <span class="hljs-string">"PortCity_CarTraffic_e"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7305</span>
+libNtve_gf_RemoveDoodadsinRegion(RegionFromId(<span class="hljs-number">52</span>), <span class="hljs-string">"PortCity_CarTraffic_f"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7704</span>
+libNtve_gf_RemoveDoodadsinRegion(RegionFromId(<span class="hljs-number">59</span>), <span class="hljs-string">"PortCity_CarTraffic_d"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7705</span>
+libNtve_gf_RemoveDoodadsinRegion(RegionFromId(<span class="hljs-number">59</span>), <span class="hljs-string">"PortCity_CarTraffic_e"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7706</span>
+libNtve_gf_RemoveDoodadsinRegion(RegionFromId(<span class="hljs-number">59</span>), <span class="hljs-string">"PortCity_CarTraffic_f"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2994</span>
+libNtve_gf_RemoveDoodadsinRegion(RegionFromId(<span class="hljs-number">120</span>), <span class="hljs-string">"DOM_Fire_Large_Long"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2995</span>
+libNtve_gf_RemoveDoodadsinRegion(RegionFromId(<span class="hljs-number">120</span>), <span class="hljs-string">"DOM_Fire_Large"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7303</span>
+libNtve_gf_RemoveDoodadsinRegion(RegionFromId(<span class="hljs-number">52</span>), <span class="hljs-string">"PortCity_CarTraffic_a"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7304</span>
+libNtve_gf_RemoveDoodadsinRegion(RegionFromId(<span class="hljs-number">52</span>), <span class="hljs-string">"PortCity_CarTraffic_e"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7305</span>
+libNtve_gf_RemoveDoodadsinRegion(RegionFromId(<span class="hljs-number">52</span>), <span class="hljs-string">"PortCity_CarTraffic_f"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7704</span>
+libNtve_gf_RemoveDoodadsinRegion(RegionFromId(<span class="hljs-number">59</span>), <span class="hljs-string">"PortCity_CarTraffic_d"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7705</span>
+libNtve_gf_RemoveDoodadsinRegion(RegionFromId(<span class="hljs-number">59</span>), <span class="hljs-string">"PortCity_CarTraffic_e"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7706</span>
+libNtve_gf_RemoveDoodadsinRegion(RegionFromId(<span class="hljs-number">59</span>), <span class="hljs-string">"PortCity_CarTraffic_f"</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

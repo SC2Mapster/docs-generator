@@ -1,0 +1,408 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Play Sound  (Deprecated) / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Play Sound  (Deprecated)"/>
+                <meta property="og:description" content="Plays a sound for the specified player group.  Use the &quot;Last Played Sound&quot; function to refer to this sound."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="play-sound-deprecated"><a class="markdownIt-Anchor" href="#play-sound-deprecated">#</a> Play Sound  (Deprecated)</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Play <strong>soundLink</strong> for <strong>players</strong> (at <strong>volume</strong>% volume, skip the first <strong>offset</strong> seconds)<br>
+<em>Flags</em> — <code>Action</code> | <code>Hidden</code></p>
+</blockquote>
+<p>Plays a sound for the specified player group.  Use the <em>“Last Played Sound”</em> function to refer to this sound.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>soundlink</code> — Sound Link</li>
+<li><code>playergroup</code> — Players</li>
+<li><code>fixed</code> — Volume</li>
+<li><code>fixed</code> — Offset</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">SoundPlay</span><span class="hljs-params">(
+	soundlink lp_soundLink,
+	playergroup lp_players,
+	fixed lp_volume,
+	fixed lp_offset,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#sound-deprecated">Sound / Deprecated</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-set-reverb">Set Sound Reverb (Deprecated)</a></strong> — ( SoundSetReverb )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-play-scene-file">Play Sound Scene File (Deprecated)</a></strong> — ( SoundPlaySceneFile )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-play-scene">Play Sound Scene  (Deprecated)</a></strong> — ( SoundPlayScene )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-play">Play Sound  (Deprecated)</a></strong> — ( SoundPlay )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-play-on-unit">Play Sound On Unit (Deprecated)</a></strong> — ( SoundPlayOnUnit )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-play-at-point">Play Sound At Point (Deprecated)</a></strong> — ( SoundPlayAtPoint )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/challenges/protosscombat.sc2map/MapScript.galaxy#L1670">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1670</span>
+SoundPlay(SoundLink(<span class="hljs-string">"TUIWarningPing"</span>, <span class="hljs-number">0</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L974</span>
+SoundPlay(SoundLink(<span class="hljs-string">"TUIWarningPing"</span>, <span class="hljs-number">0</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1011</span>
+SoundPlay(SoundLink(<span class="hljs-string">"TUIWarningPing"</span>, <span class="hljs-number">0</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1138</span>
+SoundPlay(SoundLink(<span class="hljs-string">"UI_ChallengeCountdown"</span>, <span class="hljs-number">0</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L539</span>
+SoundPlay(SoundLink(<span class="hljs-string">"TUIWarningPing"</span>, <span class="hljs-number">0</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L632</span>
+SoundPlay(SoundLink(<span class="hljs-string">"UI_ObjectiveComplete"</span>, <span class="hljs-number">0</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L801</span>
+SoundPlay(SoundLink(<span class="hljs-string">"TUIWarningPing"</span>, <span class="hljs-number">0</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L981</span>
+SoundPlay(SoundLink(<span class="hljs-string">"UI_ObjectiveComplete"</span>, <span class="hljs-number">0</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1518</span>
+SoundPlay(SoundLink(<span class="hljs-string">"TUIWarningPing"</span>, <span class="hljs-number">0</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1579</span>
+SoundPlay(SoundLink(<span class="hljs-string">"TUIWarningPing"</span>, <span class="hljs-number">0</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L656</span>
+SoundPlay(SoundLink(<span class="hljs-string">"LostViking_Thrust"</span>, <span class="hljs-number">0</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1062</span>
+SoundPlay(SoundLink(<span class="hljs-string">"Mutalisk_Attack"</span>, <span class="hljs-number">0</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1064</span>
+SoundPlay(SoundLink(<span class="hljs-string">"Mutalisk_Attack"</span>, <span class="hljs-number">2</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1066</span>
+SoundPlay(SoundLink(<span class="hljs-string">"Mutalisk_Attack"</span>, <span class="hljs-number">8</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1068</span>
+SoundPlay(SoundLink(<span class="hljs-string">"Mutalisk_Attack"</span>, <span class="hljs-number">5</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3199</span>
+SoundPlay(SoundLink(<span class="hljs-string">"UI_TerranKlaxonAlert"</span>, <span class="hljs-number">0</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7766</span>
+SoundPlay(SoundLink(<span class="hljs-string">"LostViking_LevelStart"</span>, <span class="hljs-number">0</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7820</span>
+SoundPlay(SoundLink(<span class="hljs-string">"Terran_ExplosionMedium"</span>, <span class="hljs-number">3</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7882</span>
+SoundPlay(SoundLink(<span class="hljs-string">"LostViking_GainLIfe"</span>, <span class="hljs-number">0</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8781</span>
+SoundPlay(SoundLink(<span class="hljs-string">"LostViking_VikingMovement"</span>, <span class="hljs-number">0</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2843</span>
+SoundPlay(SoundLink(<span class="hljs-string">"UI_TerranPing"</span>, <span class="hljs-number">0</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2881</span>
+SoundPlay(SoundLink(<span class="hljs-string">"UI_TerranPing"</span>, <span class="hljs-number">0</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2919</span>
+SoundPlay(SoundLink(<span class="hljs-string">"UI_TerranPing"</span>, <span class="hljs-number">0</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3628</span>
+SoundPlay(SoundLink(<span class="hljs-string">"NydusWorm_Birth"</span>, <span class="hljs-number">-1</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3787</span>
+SoundPlay(SoundLink(<span class="hljs-string">"Terran_Veterancy"</span>, <span class="hljs-number">-1</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5327</span>
+SoundPlay(SoundLink(<span class="hljs-string">"UI_TerranPing"</span>, <span class="hljs-number">0</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5942</span>
+SoundPlay(SoundLink(<span class="hljs-string">"THanson01BriefingHanson00010"</span>, <span class="hljs-number">0</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6037</span>
+SoundPlay(SoundLink(<span class="hljs-string">"THanson01BriefingHanson00011"</span>, <span class="hljs-number">0</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6039</span>
+SoundPlay(SoundLink(<span class="hljs-string">"THanson01BriefingHanson00012"</span>, <span class="hljs-number">0</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6153</span>
+SoundPlay(SoundLink(<span class="hljs-string">"THanson01BriefingHanson00005"</span>, <span class="hljs-number">0</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2638</span>
+SoundPlay(SoundLink(<span class="hljs-string">"Ghost_DropPodImpact"</span>, <span class="hljs-number">-1</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2646</span>
+SoundPlay(SoundLink(<span class="hljs-string">"Ghost_DropPodImpact"</span>, <span class="hljs-number">-1</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4029</span>
+SoundPlay(SoundLink(<span class="hljs-string">"Event_Hanson02ZombieHowl"</span>, <span class="hljs-number">-1</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4768</span>
+SoundPlay(SoundLink(<span class="hljs-string">"THanson02BriefingRaynor00002"</span>, <span class="hljs-number">0</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4771</span>
+SoundPlay(SoundLink(<span class="hljs-string">"THanson02BriefingHanson00010"</span>, <span class="hljs-number">0</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4801</span>
+SoundPlay(SoundLink(<span class="hljs-string">"THanson02BriefingRaynor00011"</span>, <span class="hljs-number">0</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4804</span>
+SoundPlay(SoundLink(<span class="hljs-string">"THanson02BriefingRaynor00006"</span>, <span class="hljs-number">0</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4834</span>
+SoundPlay(SoundLink(<span class="hljs-string">"THanson02BriefingRaynor00007"</span>, <span class="hljs-number">0</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4866</span>
+SoundPlay(SoundLink(<span class="hljs-string">"THanson02BriefingHanson00012"</span>, <span class="hljs-number">0</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4870</span>
+SoundPlay(SoundLink(<span class="hljs-string">"THanson02BriefingHanson00008"</span>, <span class="hljs-number">0</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5040</span>
+SoundPlay(SoundLink(<span class="hljs-string">"UI_TerranKlaxonAlert"</span>, <span class="hljs-number">-1</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5051</span>
+SoundPlay(SoundLink(<span class="hljs-string">"UI_TerranKlaxonAlert"</span>, <span class="hljs-number">-1</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5062</span>
+SoundPlay(SoundLink(<span class="hljs-string">"UI_TerranKlaxonAlert"</span>, <span class="hljs-number">-1</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5073</span>
+SoundPlay(SoundLink(<span class="hljs-string">"UI_TerranKlaxonAlert"</span>, <span class="hljs-number">-1</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5083</span>
+SoundPlay(SoundLink(<span class="hljs-string">"UI_TerranKlaxonAlert"</span>, <span class="hljs-number">-1</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6032</span>
+SoundPlay(SoundLink(<span class="hljs-string">"THanson03ABriefingHanson00001"</span>, <span class="hljs-number">-1</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6035</span>
+SoundPlay(SoundLink(<span class="hljs-string">"THanson03ABriefingRaynor00002"</span>, <span class="hljs-number">-1</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6185</span>
+SoundPlay(SoundLink(<span class="hljs-string">"THanson03ABriefingRaynor00004"</span>, <span class="hljs-number">-1</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6191</span>
+SoundPlay(SoundLink(<span class="hljs-string">"THanson03ABriefingSwann00007"</span>, <span class="hljs-number">-1</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6235</span>
+SoundPlay(SoundLink(<span class="hljs-string">"THanson03ABriefingSwann00003"</span>, <span class="hljs-number">-1</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L705</span>
+SoundPlay(SoundLink(<span class="hljs-string">"THanson03BCivilian100023"</span>, <span class="hljs-number">-1</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L714</span>
+SoundPlay(SoundLink(<span class="hljs-string">"THanson03BCivilian400041"</span>, <span class="hljs-number">-1</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L723</span>
+SoundPlay(SoundLink(<span class="hljs-string">"THanson03BCivilian200015"</span>, <span class="hljs-number">-1</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1592</span>
+SoundPlay(SoundLink(<span class="hljs-string">"Event_Hanson02ZombieHowl"</span>, <span class="hljs-number">-1</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4017</span>
+SoundPlay(SoundLink(<span class="hljs-string">"THanson03BBriefingRaynor00002"</span>, <span class="hljs-number">-1</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4021</span>
+SoundPlay(SoundLink(<span class="hljs-string">"THanson03BBriefingRaynor00010"</span>, <span class="hljs-number">-1</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4025</span>
+SoundPlay(SoundLink(<span class="hljs-string">"THanson03BBriefingRaynor00003"</span>, <span class="hljs-number">-1</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4036</span>
+SoundPlay(SoundLink(<span class="hljs-string">"THanson03BBriefingTychus00004"</span>, <span class="hljs-number">-1</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4039</span>
+SoundPlay(SoundLink(<span class="hljs-string">"THanson03BBriefingRaynor00006"</span>, <span class="hljs-number">-1</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4229</span>
+SoundPlay(SoundLink(<span class="hljs-string">"THanson03BBriefingSwann00007"</span>, <span class="hljs-number">-1</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3548</span>
+SoundPlay(SoundLink(<span class="hljs-string">"UI_TerranPing"</span>, <span class="hljs-number">0</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3765</span>
+SoundPlay(SoundLink(<span class="hljs-string">"UI_TerranReminderPing"</span>, <span class="hljs-number">0</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3954</span>
+SoundPlay(SoundLink(<span class="hljs-string">"UI_TerranPing"</span>, <span class="hljs-number">0</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5637</span>
+SoundPlay(SoundLink(<span class="hljs-string">"THorner01BriefingRaynor00018"</span>, <span class="hljs-number">-1</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5639</span>
+SoundPlay(SoundLink(<span class="hljs-string">"THorner01BriefingHorner00002"</span>, <span class="hljs-number">-1</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5642</span>
+SoundPlay(SoundLink(<span class="hljs-string">"THorner01BriefingHorner00004"</span>, <span class="hljs-number">-1</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5721</span>
+SoundPlay(SoundLink(<span class="hljs-string">"THorner01BriefingHorner00006"</span>, <span class="hljs-number">-1</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5723</span>
+SoundPlay(SoundLink(<span class="hljs-string">"THorner01BriefingRaynor00007"</span>, <span class="hljs-number">-1</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5759</span>
+SoundPlay(SoundLink(<span class="hljs-string">"THorner01BriefingHorner00008"</span>, <span class="hljs-number">-1</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5761</span>
+SoundPlay(SoundLink(<span class="hljs-string">"THorner01BriefingRaynor00009"</span>, <span class="hljs-number">-1</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1376</span>
+SoundPlay(SoundLink(<span class="hljs-string">"TUI_StarmapMenuPopup"</span>, <span class="hljs-number">-1</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1464</span>
+SoundPlay(SoundLink(<span class="hljs-string">"UI_TechConsole_Purchase"</span>, <span class="hljs-number">-1</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3929</span>
+SoundPlay(SoundLink(<span class="hljs-string">"IncomingTransmission"</span>, <span class="hljs-number">-1</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5137</span>
+SoundPlay(SoundLink(<span class="hljs-string">"THorner02BriefingHorner00001"</span>, <span class="hljs-number">-1</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5140</span>
+SoundPlay(SoundLink(<span class="hljs-string">"THorner02BriefingHorner00011"</span>, <span class="hljs-number">-1</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5143</span>
+SoundPlay(SoundLink(<span class="hljs-string">"THorner02BriefingRaynor00018"</span>, <span class="hljs-number">-1</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5146</span>
+SoundPlay(SoundLink(<span class="hljs-string">"THorner02BriefingRaynor00002"</span>, <span class="hljs-number">-1</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5240</span>
+SoundPlay(SoundLink(<span class="hljs-string">"THorner02BriefingHan00005"</span>, <span class="hljs-number">-1</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5243</span>
+SoundPlay(SoundLink(<span class="hljs-string">"THorner02BriefingRaynor00006"</span>, <span class="hljs-number">-1</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5292</span>
+SoundPlay(SoundLink(<span class="hljs-string">"THorner02BriefingHorner00007"</span>, <span class="hljs-number">-1</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1387</span>
+SoundPlay(SoundLink(<span class="hljs-string">"TUIWarningPing"</span>, <span class="hljs-number">0</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1565</span>
+SoundPlay(SoundLink(<span class="hljs-string">"Ghost_DropPodImpact"</span>, <span class="hljs-number">-1</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2030</span>
+SoundPlay(SoundLink(<span class="hljs-string">"UI_TerranKlaxonAlert"</span>, <span class="hljs-number">0</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2269</span>
+SoundPlay(SoundLink(<span class="hljs-string">"UI_TerranKlaxonAlert"</span>, <span class="hljs-number">0</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2529</span>
+SoundPlay(SoundLink(<span class="hljs-string">"UI_TerranKlaxonAlert"</span>, <span class="hljs-number">0</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2774</span>
+SoundPlay(SoundLink(<span class="hljs-string">"UI_TerranKlaxonAlert"</span>, <span class="hljs-number">0</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3050</span>
+SoundPlay(SoundLink(<span class="hljs-string">"UI_TerranKlaxonAlert"</span>, <span class="hljs-number">0</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3223</span>
+SoundPlay(SoundLink(<span class="hljs-string">"Alert_TerranCalldownLaunch"</span>, <span class="hljs-number">-1</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3468</span>
+SoundPlay(SoundLink(<span class="hljs-string">"TUIWarningPing"</span>, <span class="hljs-number">0</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3906</span>
+SoundPlay(SoundLink(<span class="hljs-string">"Thor_Movement"</span>, <span class="hljs-number">0</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L476</span>
+SoundPlay(SoundLink(<span class="hljs-string">"TUI_StarmapMenuPopup"</span>, <span class="hljs-number">-1</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L487</span>
+SoundPlay(SoundLink(<span class="hljs-string">"TUI_ArmoryConsoleExit"</span>, <span class="hljs-number">-1</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L490</span>
+SoundPlay(SoundLink(<span class="hljs-string">"TUI_ArmoryConsolePurchase"</span>, <span class="hljs-number">-1</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L493</span>
+SoundPlay(SoundLink(<span class="hljs-string">"TUI_ArmoryConsoleSelect"</span>, <span class="hljs-number">-1</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L515</span>
+SoundPlay(SoundLink(<span class="hljs-string">"TUI_ArmoryConsolePurchase"</span>, <span class="hljs-number">-1</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2757</span>
+SoundPlay(SoundLink(<span class="hljs-string">"Thor_Build"</span>, <span class="hljs-number">0</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5113</span>
+SoundPlay(SoundLink(<span class="hljs-string">"THorner04Reaper00004"</span>, <span class="hljs-number">-1</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5166</span>
+SoundPlay(SoundLink(<span class="hljs-string">"THorner04SiegeTank00022"</span>, <span class="hljs-number">-1</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5219</span>
+SoundPlay(SoundLink(<span class="hljs-string">"Viking_Attack"</span>, <span class="hljs-number">3</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5407</span>
+SoundPlay(SoundLink(<span class="hljs-string">"IncomingTransmission"</span>, <span class="hljs-number">0</span>), PlayerGroupAll(), <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

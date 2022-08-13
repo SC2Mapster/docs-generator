@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Convert Bearings To String / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Convert Bearings To String"/>
+                <meta property="og:description" content="Turns a 3D position and a 3D rotation (via forward an up vectors) into a string that can be used in an actor message.
+
+Returns: string"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="convert-bearings-to-string"><a class="markdownIt-Anchor" href="#convert-bearings-to-string">#</a> Convert Bearings To String</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Flags</em> — <code>Function</code></p>
+</blockquote>
+<p>Turns a 3D position and a 3D rotation (via forward an up vectors) into a string that can be used in an actor message.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>fixed</code> — Position X</li>
+<li><code>fixed</code> — Position Y</li>
+<li><code>fixed</code> — Position Z</li>
+<li><code>fixed</code> — Forward X</li>
+<li><code>fixed</code> — Forward Y</li>
+<li><code>fixed</code> — Forward Z</li>
+<li><code>fixed</code> — Up X</li>
+<li><code>fixed</code> — Up Y</li>
+<li><code>fixed</code> — Up Z</li>
+</ul>
+<p>Returns — <code>string</code></p>
+<pre class="hljs"><code><span class="hljs-function"><span class="hljs-built_in">string</span> <span class="hljs-title">libNtve_gf_ConvertBearingsToString</span><span class="hljs-params">(
+	fixed lp_positionX,
+	fixed lp_positionY,
+	fixed lp_positionZ,
+	fixed lp_forwardX,
+	fixed lp_forwardY,
+	fixed lp_forwardZ,
+	fixed lp_upX,
+	fixed lp_upY,
+	fixed lp_upZ,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#conversion-actor-conversions">Conversion / Actor Conversions</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>string</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-convert-color-to-string">Convert Color To String</a></strong> — ( libNtve_gf_ConvertColorToString )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-convert-bearings-to-string">Convert Bearings To String</a></strong> — ( libNtve_gf_ConvertBearingsToString )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-convert-xyto-string">Convert XY To String</a></strong> — ( libNtve_gf_ConvertXYToString )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-convert3-dvector-to-string">Convert 3D Vector To String</a></strong> — ( libNtve_gf_Convert3DVectorToString )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-convert3-drotation-to-string">Convert 3D Rotation To String</a></strong> — ( libNtve_gf_Convert3DRotationToString )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> <em>[ actormsg ]</em> — <strong><a href="/galaxy/reference/lib-ntve-op-string-to-text">Convert String To Actor Message</a></strong> — (  )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="modscoresc2mod"><a class="markdownIt-Anchor" href="#modscoresc2mod">#</a> mods/core.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/core.sc2mod/base.sc2data/TriggerLibs/NativeLib.galaxy#L857">NativeLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L857</span>
+libNtve_gf_ConvertBearingsToString(lp_positionX, lp_positionY, lp_positionZ, lp_forwardX, lp_forwardY, lp_forwardZ, lp_upX, lp_upY, lp_upZ)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L746</span>
+libNtve_gf_ConvertBearingsToString(lp_positionX, lp_positionY, lp_positionZ, lp_forwardX, lp_forwardY, lp_forwardZ, lp_upX, lp_upY, lp_upZ)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

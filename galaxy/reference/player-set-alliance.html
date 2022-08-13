@@ -1,0 +1,411 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Set Alliance Aspect / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Set Alliance Aspect"/>
+                <meta property="og:description" content="Sets the alliance aspect of one player towards another player, but not vice-versa.  This action will turn enable or disable the chosen Alliance Aspect, such as shared vision or hostility, for the Source Player towards the Target Player.  Pushable means that the Target Player&#39;s units are allowed to push the Source Player&#39;s units out of the way if they are trying to path through them."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="set-alliance-aspect"><a class="markdownIt-Anchor" href="#set-alliance-aspect">#</a> Set Alliance Aspect</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Turn player <strong>inSourcePlayer</strong> <strong>inAllianceId</strong> <strong>ally</strong> towards player <strong>inTargetPlayer</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Sets the alliance aspect of one player towards another player, but not vice-versa.  This action will turn enable or disable the chosen Alliance Aspect, such as shared vision or hostility, for the Source Player towards the Target Player.  Pushable means that the Target Player*“s units are allowed to push the Source Player”*s units out of the way if they are trying to path through them.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> — Source Player</li>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-alliance-aspect">AllianceAspect</a> ]</em> — Alliance Aspect</li>
+<li><code>int</code> — Target Player</li>
+<li><code>bool</code> <em>[ preset::<a href="/galaxy/reference/preset-on-off-option">OnOffOption</a> ]</em> — On/Off</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">PlayerSetAlliance</span><span class="hljs-params">(
+	<span class="hljs-keyword">int</span> inSourcePlayer,
+	<span class="hljs-keyword">int</span> inAllianceId,
+	<span class="hljs-keyword">int</span> inTargetPlayer,
+	<span class="hljs-keyword">bool</span> ally,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#player-alliances">Player / Alliances</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-player-alliance-change">Player Changes Alliances</a></strong> — ( TriggerAddEventPlayerAllianceChange )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-set-alliance">Set Alliance</a></strong> — ( libNtve_gf_SetAlliance )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-set-alliance-one-way">Set Alliance (One-Way)</a></strong> — ( libNtve_gf_SetAllianceOneWay )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/player-set-alliance">Set Alliance Aspect</a></strong> — ( PlayerSetAlliance )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-set-player-group-alliance">Set Alliance For Player Group</a></strong> — ( libNtve_gf_SetPlayerGroupAlliance )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-set-alliance-between-two-player-groups">Set Alliance Between Two Player Groups</a></strong> — ( libNtve_gf_SetAllianceBetweenTwoPlayerGroups )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-set-alliance-aspect-for-player-group">Set Alliance Aspect For Player Group</a></strong> — ( libNtve_gf_SetAllianceAspectForPlayerGroup )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/player-get-alliance">Alliance Aspect</a></strong> — ( PlayerGetAlliance )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-player-is-enemy">Get Relationship Between Players</a></strong> — ( libNtve_gf_PlayerIsEnemy )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/thanson01.sc2map/MapScript.galaxy#L575">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L575</span>
+PlayerSetAlliance(gv_p1_USER, c_allianceIdPushable, gv_p4_COLONISTS, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L576</span>
+PlayerSetAlliance(gv_p2_ZERG_ORANGE_NW, c_allianceIdPushable, gv_p4_COLONISTS, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L577</span>
+PlayerSetAlliance(gv_p3_ZERG_LIGHTBLUE_SE, c_allianceIdPushable, gv_p4_COLONISTS, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L578</span>
+PlayerSetAlliance(gv_p5_ZERG_TACTICALPHASE, c_allianceIdPushable, gv_p4_COLONISTS, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L579</span>
+PlayerSetAlliance(gv_p6_ZERG_NOAIPREPLACED, c_allianceIdPushable, gv_p4_COLONISTS, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L922</span>
+PlayerSetAlliance(gv_p1_USER, c_allianceIdPushable, gv_p4_COLONISTS, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L966</span>
+PlayerSetAlliance(gv_p05_COLONIST, c_allianceIdPushable, gv_p07_ZERG_INFESTED, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L967</span>
+PlayerSetAlliance(gv_p05_COLONIST, c_allianceIdPushable, gv_p03_VIROPHAGE, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L353</span>
+PlayerSetAlliance(gv_p01_USER, c_allianceIdPushable, gv_p02_TYCHUS, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1945</span>
+PlayerSetAlliance(gv_p12_AUTOTURRET_ENEMY, c_allianceIdVision, gv_p01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1946</span>
+PlayerSetAlliance(gv_p08_AUTOTURRET_FRIENDLY, c_allianceIdVision, gv_p01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3099</span>
+PlayerSetAlliance(gv_p08_AUTOTURRET_FRIENDLY, c_allianceIdVision, gv_p01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3100</span>
+PlayerSetAlliance(gv_p12_AUTOTURRET_ENEMY, c_allianceIdVision, gv_p01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3231</span>
+PlayerSetAlliance(gv_p08_AUTOTURRET_FRIENDLY, c_allianceIdVision, gv_p01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3295</span>
+PlayerSetAlliance(gv_p08_AUTOTURRET_FRIENDLY, c_allianceIdVision, gv_p01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3333</span>
+PlayerSetAlliance(gv_p08_AUTOTURRET_FRIENDLY, c_allianceIdVision, gv_p01_USER, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3334</span>
+PlayerSetAlliance(gv_p12_AUTOTURRET_ENEMY, c_allianceIdVision, gv_p01_USER, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3582</span>
+PlayerSetAlliance(gv_p08_AUTOTURRET_FRIENDLY, c_allianceIdVision, gv_p01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3583</span>
+PlayerSetAlliance(gv_p12_AUTOTURRET_ENEMY, c_allianceIdVision, gv_p01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L370</span>
+PlayerSetAlliance(gv_p3_RIKSVILLE_YELLOW, c_allianceIdPushable, gv_p2_DOMINION_RED, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L373</span>
+PlayerSetAlliance(gv_p1_USER, c_allianceIdPushable, gv_p5_RIKSVILLE_PUSHY, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L374</span>
+PlayerSetAlliance(gv_p3_RIKSVILLE_YELLOW, c_allianceIdPushable, gv_p1_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L406</span>
+PlayerSetAlliance(gv_pLAYER_03_COLONISTS, c_allianceIdPushable, gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1881</span>
+PlayerSetAlliance(gv_pLAYER_04_REBELS, c_allianceIdVision, gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L341</span>
+PlayerSetAlliance(gv_p05_TOSH, c_allianceIdVision, gv_p01_USER, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L997</span>
+PlayerSetAlliance(gv_p03_SIMULATOR, c_allianceIdPushable, gv_p01_USER, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L563</span>
+PlayerSetAlliance(gv_p02_ZERG, c_allianceIdPushable, gv_p07_ZERG_KERRIGAN, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L564</span>
+PlayerSetAlliance(gv_p05_ZERG_BASE, c_allianceIdPushable, gv_p07_ZERG_KERRIGAN, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L565</span>
+PlayerSetAlliance(gv_p01_USER, c_allianceIdPushable, gv_p07_ZERG_KERRIGAN, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2420</span>
+PlayerSetAlliance(gv_p07_ZERG_KERRIGAN, c_allianceIdVision, gv_p01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2421</span>
+PlayerSetAlliance(gv_p07_ZERG_KERRIGAN, c_allianceIdVision, gv_p03_MOEBIUS, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L566</span>
+PlayerSetAlliance(gv_p10_HYBRID_MANIFESTATIONS, c_allianceIdVision, gv_p1_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L573</span>
+PlayerSetAlliance(gv_p2_PROTOSS_STALKER, c_allianceIdPushable, gv_p10_HYBRID_MANIFESTATIONS, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L574</span>
+PlayerSetAlliance(gv_p3_PROTOSS_ENEMY, c_allianceIdPushable, gv_p10_HYBRID_MANIFESTATIONS, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L575</span>
+PlayerSetAlliance(gv_p4_PROTOSS_ENEMY, c_allianceIdPushable, gv_p10_HYBRID_MANIFESTATIONS, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L576</span>
+PlayerSetAlliance(gv_p6_PROTOSS_ENEMY, c_allianceIdPushable, gv_p10_HYBRID_MANIFESTATIONS, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4039</span>
+PlayerSetAlliance(gv_p2_PROTOSS_STALKER, c_allianceIdVision, gv_p1_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4057</span>
+PlayerSetAlliance(gv_p2_PROTOSS_STALKER, c_allianceIdVision, gv_p1_USER, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4125</span>
+PlayerSetAlliance(gv_p2_PROTOSS_STALKER, c_allianceIdVision, gv_p1_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4143</span>
+PlayerSetAlliance(gv_p2_PROTOSS_STALKER, c_allianceIdVision, gv_p1_USER, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L575</span>
+PlayerSetAlliance(gv_p1_USER, c_allianceIdPushable, gv_p4_COLONISTS, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L576</span>
+PlayerSetAlliance(gv_p2_ZERG_ORANGE_NW, c_allianceIdPushable, gv_p4_COLONISTS, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L577</span>
+PlayerSetAlliance(gv_p3_ZERG_LIGHTBLUE_SE, c_allianceIdPushable, gv_p4_COLONISTS, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L578</span>
+PlayerSetAlliance(gv_p5_ZERG_TACTICALPHASE, c_allianceIdPushable, gv_p4_COLONISTS, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L579</span>
+PlayerSetAlliance(gv_p6_ZERG_NOAIPREPLACED, c_allianceIdPushable, gv_p4_COLONISTS, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L922</span>
+PlayerSetAlliance(gv_p1_USER, c_allianceIdPushable, gv_p4_COLONISTS, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L966</span>
+PlayerSetAlliance(gv_p05_COLONIST, c_allianceIdPushable, gv_p07_ZERG_INFESTED, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L967</span>
+PlayerSetAlliance(gv_p05_COLONIST, c_allianceIdPushable, gv_p03_VIROPHAGE, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L353</span>
+PlayerSetAlliance(gv_p01_USER, c_allianceIdPushable, gv_p02_TYCHUS, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1945</span>
+PlayerSetAlliance(gv_p12_AUTOTURRET_ENEMY, c_allianceIdVision, gv_p01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1946</span>
+PlayerSetAlliance(gv_p08_AUTOTURRET_FRIENDLY, c_allianceIdVision, gv_p01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3099</span>
+PlayerSetAlliance(gv_p08_AUTOTURRET_FRIENDLY, c_allianceIdVision, gv_p01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3100</span>
+PlayerSetAlliance(gv_p12_AUTOTURRET_ENEMY, c_allianceIdVision, gv_p01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3231</span>
+PlayerSetAlliance(gv_p08_AUTOTURRET_FRIENDLY, c_allianceIdVision, gv_p01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3295</span>
+PlayerSetAlliance(gv_p08_AUTOTURRET_FRIENDLY, c_allianceIdVision, gv_p01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3333</span>
+PlayerSetAlliance(gv_p08_AUTOTURRET_FRIENDLY, c_allianceIdVision, gv_p01_USER, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3334</span>
+PlayerSetAlliance(gv_p12_AUTOTURRET_ENEMY, c_allianceIdVision, gv_p01_USER, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3582</span>
+PlayerSetAlliance(gv_p08_AUTOTURRET_FRIENDLY, c_allianceIdVision, gv_p01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3583</span>
+PlayerSetAlliance(gv_p12_AUTOTURRET_ENEMY, c_allianceIdVision, gv_p01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L370</span>
+PlayerSetAlliance(gv_p3_RIKSVILLE_YELLOW, c_allianceIdPushable, gv_p2_DOMINION_RED, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L373</span>
+PlayerSetAlliance(gv_p1_USER, c_allianceIdPushable, gv_p5_RIKSVILLE_PUSHY, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L374</span>
+PlayerSetAlliance(gv_p3_RIKSVILLE_YELLOW, c_allianceIdPushable, gv_p1_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L406</span>
+PlayerSetAlliance(gv_pLAYER_03_COLONISTS, c_allianceIdPushable, gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1881</span>
+PlayerSetAlliance(gv_pLAYER_04_REBELS, c_allianceIdVision, gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L341</span>
+PlayerSetAlliance(gv_p05_TOSH, c_allianceIdVision, gv_p01_USER, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L997</span>
+PlayerSetAlliance(gv_p03_SIMULATOR, c_allianceIdPushable, gv_p01_USER, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L563</span>
+PlayerSetAlliance(gv_p02_ZERG, c_allianceIdPushable, gv_p07_ZERG_KERRIGAN, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L564</span>
+PlayerSetAlliance(gv_p05_ZERG_BASE, c_allianceIdPushable, gv_p07_ZERG_KERRIGAN, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L565</span>
+PlayerSetAlliance(gv_p01_USER, c_allianceIdPushable, gv_p07_ZERG_KERRIGAN, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2420</span>
+PlayerSetAlliance(gv_p07_ZERG_KERRIGAN, c_allianceIdVision, gv_p01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2421</span>
+PlayerSetAlliance(gv_p07_ZERG_KERRIGAN, c_allianceIdVision, gv_p03_MOEBIUS, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L566</span>
+PlayerSetAlliance(gv_p10_HYBRID_MANIFESTATIONS, c_allianceIdVision, gv_p1_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L573</span>
+PlayerSetAlliance(gv_p2_PROTOSS_STALKER, c_allianceIdPushable, gv_p10_HYBRID_MANIFESTATIONS, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L574</span>
+PlayerSetAlliance(gv_p3_PROTOSS_ENEMY, c_allianceIdPushable, gv_p10_HYBRID_MANIFESTATIONS, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L575</span>
+PlayerSetAlliance(gv_p4_PROTOSS_ENEMY, c_allianceIdPushable, gv_p10_HYBRID_MANIFESTATIONS, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L576</span>
+PlayerSetAlliance(gv_p6_PROTOSS_ENEMY, c_allianceIdPushable, gv_p10_HYBRID_MANIFESTATIONS, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4039</span>
+PlayerSetAlliance(gv_p2_PROTOSS_STALKER, c_allianceIdVision, gv_p1_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4057</span>
+PlayerSetAlliance(gv_p2_PROTOSS_STALKER, c_allianceIdVision, gv_p1_USER, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4125</span>
+PlayerSetAlliance(gv_p2_PROTOSS_STALKER, c_allianceIdVision, gv_p1_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4143</span>
+PlayerSetAlliance(gv_p2_PROTOSS_STALKER, c_allianceIdVision, gv_p1_USER, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6288</span>
+PlayerSetAlliance(gv_pLAYER_07_TALIS, c_allianceIdPushable, gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1977</span>
+PlayerSetAlliance(gv_pLAYER_03_DOMINION_YELLOW, c_allianceIdVision, gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L778</span>
+PlayerSetAlliance(gv_PLAYER_07_DOMINION_GREEN22, c_allianceIdPushable, gv_PLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1169</span>
+PlayerSetAlliance(gv_pLAYER_02_DOMINION2, c_allianceIdControl, gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L938</span>
+PlayerSetAlliance(gv_pLAYER_02_DOMINION2, c_allianceIdPushable, gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L939</span>
+PlayerSetAlliance(gv_pLAYER_02_DOMINION222, c_allianceIdPushable, gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L896</span>
+PlayerSetAlliance(gv_p03_ZERG_ALLY, c_allianceIdPushable, gv_p01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L906</span>
+PlayerSetAlliance(gv_p03_KERRIGAN_AI, c_allianceIdPushable, gv_p01_USER, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L907</span>
+PlayerSetAlliance(gv_p03_KERRIGAN_AI, c_allianceIdPushable, gv_p02_DOMINION, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L908</span>
+PlayerSetAlliance(gv_p03_KERRIGAN_AI, c_allianceIdPushable, gv_p03_DOMINION, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1386</span>
+PlayerSetAlliance(gv_pLAYER_02_BRAKK, c_allianceIdVision, gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5714</span>
+PlayerSetAlliance(gv_pLAYER_02_BRAKK, c_allianceIdVision, gv_pLAYER_01_USER, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1062</span>
+PlayerSetAlliance(gv_pLAYER_01_USER, c_allianceIdVision, gv_pLAYER_03_PROTOSS, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1062</span>
+PlayerSetAlliance(gv_pLAYER_01_USER, c_allianceIdVision, gv_pLAYER_03_PROTOSS, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1977</span>
+PlayerSetAlliance(gv_pLAYER_03_DOMINION_YELLOW, c_allianceIdVision, gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L778</span>
+PlayerSetAlliance(gv_PLAYER_07_DOMINION_GREEN22, c_allianceIdPushable, gv_PLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1169</span>
+PlayerSetAlliance(gv_pLAYER_02_DOMINION2, c_allianceIdControl, gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L938</span>
+PlayerSetAlliance(gv_pLAYER_02_DOMINION2, c_allianceIdPushable, gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L939</span>
+PlayerSetAlliance(gv_pLAYER_02_DOMINION222, c_allianceIdPushable, gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L896</span>
+PlayerSetAlliance(gv_p03_ZERG_ALLY, c_allianceIdPushable, gv_p01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

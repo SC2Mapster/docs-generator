@@ -1,0 +1,465 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Create Units Facing Angle / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Create Units Facing Angle"/>
+                <meta property="og:description" content="Creates units facing a specified angle.  Use the &quot;Last Created Unit&quot; and &quot;Last Created Units&quot; functions to refer to the created units.
+
+Returns: unitgroup"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="create-units-facing-angle"><a class="markdownIt-Anchor" href="#create-units-facing-angle">#</a> Create Units Facing Angle</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Create <strong>count|Number</strong> <strong>type|Unit</strong> for player <strong>player</strong> at <strong>pos</strong> facing <strong>angle</strong> degrees (<strong>flags</strong>)<br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Creates units facing a specified angle.  Use the <em>“Last Created Unit”</em> and <em>“Last Created Units”</em> functions to refer to the created units.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> — Count</li>
+<li><code>string</code> <em>[ gamelink::Unit ]</em> — Type</li>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-unit-create-style2">Unit_Create_Style2</a> ]</em> — Flags</li>
+<li><code>int</code> — Player</li>
+<li><code>point</code> — Point</li>
+<li><code>fixed</code> — Angle</li>
+</ul>
+<p>Returns — <code>unitgroup</code></p>
+<pre class="hljs"><code><span class="hljs-function">native unitgroup <span class="hljs-title">UnitCreate</span><span class="hljs-params">(
+	<span class="hljs-keyword">int</span> inCount,
+	<span class="hljs-built_in">string</span> inUnitType,
+	<span class="hljs-keyword">int</span> inCreateStyle,
+	<span class="hljs-keyword">int</span> inPlayer,
+	point inPos,
+	fixed inFacing,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#unit-basic">Unit / Basic</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-show-kill-display">Unit Show Kill Display</a></strong> — ( UnitShowKillDisplay )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/unit-pathable-to-point">Unit Can Path To Point</a></strong> — ( UnitPathableToPoint )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/unit-pathable-to-unit">Unit Can Path To Unit</a></strong> — ( UnitPathableToUnit )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-create-units-with-default-facing">Create Units With Default Facing</a></strong> — ( libNtve_gf_CreateUnitsWithDefaultFacing )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-create-units-at-point2">Create Units With Point Facing</a></strong> — ( libNtve_gf_CreateUnitsAtPoint2 )</li>
+<li><em><strong>[F]</strong></em> — <code>unitgroup</code> — <strong><a href="/galaxy/reference/unit-create">Create Units Facing Angle</a></strong> — ( UnitCreate )</li>
+<li><em><strong>[F]</strong></em> — <code>unitgroup</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-unit-create-facing-point">Create Units Facing Point</a></strong> — ( libNtve_gf_UnitCreateFacingPoint )</li>
+<li><em><strong>[F]</strong></em> — <code>unit</code> — <strong><a href="/galaxy/reference/unit-last-created">Last Created Unit</a></strong> — ( UnitLastCreated )</li>
+<li><em><strong>[F]</strong></em> — <code>unitgroup</code> — <strong><a href="/galaxy/reference/unit-last-created-group">Last Created Units</a></strong> — ( UnitLastCreatedGroup )</li>
+<li><em><strong>[F]</strong></em> — <code>unit</code> — <strong><a href="/galaxy/reference/unit-get-original-caster">Original Caster Of Unit</a></strong> — ( UnitGetOriginalCaster )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> <em>[ gamelink::Effect ]</em> — <strong><a href="/galaxy/reference/unit-get-original-effect">Effect That Created Unit</a></strong> — ( UnitGetOriginalEffect )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-replace-unit">Replace Unit</a></strong> — ( libNtve_gf_ReplaceUnit )</li>
+<li><em><strong>[F]</strong></em> — <code>unit</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-last-replaced-unit">Last Replaced Unit</a></strong> — ( libNtve_gf_LastReplacedUnit )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-set-owner">Change Owner</a></strong> — ( UnitSetOwner )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-unit-change-owner">Unit Owner Changes</a></strong> — ( TriggerAddEventUnitChangeOwner )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/event-unit-owner-old">Old Unit Owner</a></strong> — ( EventUnitOwnerOld )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/event-unit-owner-new">New Unit Owner</a></strong> — ( EventUnitOwnerNew )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-rescue-unit">Rescue Unit</a></strong> — ( libNtve_gf_RescueUnit )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-rescue-unit2">Rescue Unit Group</a></strong> — ( libNtve_gf_RescueUnit2 )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-kill">Kill Unit</a></strong> — ( UnitKill )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-revive">Revive Unit</a></strong> — ( UnitRevive )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-remove">Remove Unit</a></strong> — ( UnitRemove )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/unit-get-owner">Owner Of Unit</a></strong> — ( UnitGetOwner )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/unit-is-alive">Unit Is Alive</a></strong> — ( UnitIsAlive )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/unit-is-valid">Unit Is Valid</a></strong> — ( UnitIsValid )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-unit-group-is-dead">Unit Group Is Dead</a></strong> — ( libNtve_gf_UnitGroupIsDead )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-set-position">Move Unit Instantly</a></strong> — ( UnitSetPosition )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-set-facing">Make Unit Face Angle</a></strong> — ( UnitSetFacing )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-make-unit-face-point">Make Unit Face Point</a></strong> — ( libNtve_gf_MakeUnitFacePoint )</li>
+<li><em><strong>[F]</strong></em> — <code>point</code> — <strong><a href="/galaxy/reference/unit-get-position">Position Of Unit</a></strong> — ( UnitGetPosition )</li>
+<li><em><strong>[F]</strong></em> — <code>point</code> — <strong><a href="/galaxy/reference/unit-get-goal-position">Goal Position Of Unit</a></strong> — ( UnitGetGoalPosition )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/unit-get-facing">Facing Angle Of Unit</a></strong> — ( UnitGetFacing )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-pause-unit">Pause/Unpause Unit</a></strong> — ( libNtve_gf_PauseUnit )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-pause-all">Pause/Unpause All Units</a></strong> — ( UnitPauseAll )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-sleep-unit">Sleep/WakeUp Unit</a></strong> — ( libNtve_gf_SleepUnit )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-show-hide-unit">Show/Hide Unit</a></strong> — ( libNtve_gf_ShowHideUnit )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-share-visionof-unit">Share Vision of Unit</a></strong> — ( libNtve_gf_ShareVisionofUnit )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-unit-is-paused">Unit Is Paused</a></strong> — ( libNtve_gf_UnitIsPaused )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-unit-is-sleepiing">Unit Is Sleepiing</a></strong> — ( libNtve_gf_UnitIsSleepiing )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-unit-is-hidden">Unit Is Hidden</a></strong> — ( libNtve_gf_UnitIsHidden )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-unit-is-visible-to-player">Unit Is Visible To Player</a></strong> — ( libNtve_gf_UnitIsVisibleToPlayer )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-set-custom-value">Set Unit Custom Value</a></strong> — ( UnitSetCustomValue )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/unit-get-custom-value">Custom Value Of Unit</a></strong> — ( UnitGetCustomValue )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-unit-region">Unit Enters/Leaves Region</a></strong> — ( TriggerAddEventUnitRegion )</li>
+<li><em><strong>[F]</strong></em> — <code>region</code> — <strong><a href="/galaxy/reference/event-unit-region">Triggering Region</a></strong> — ( EventUnitRegion )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-unit-range-point">Unit Enters/Leaves Point</a></strong> — ( TriggerAddEventUnitRangePoint )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-unit-range">Unit Enters/Leaves Range Of Unit</a></strong> — ( TriggerAddEventUnitRange )</li>
+<li><em><strong>[F]</strong></em> — <code>unit</code> — <strong><a href="/galaxy/reference/event-unit-range-unit">Triggering Range Unit</a></strong> — ( EventUnitRangeUnit )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-unit-in-region">Unit In Region</a></strong> — ( libNtve_gf_UnitInRegion )</li>
+<li><em><strong>[F]</strong></em> — <code>unit</code> — <strong><a href="/galaxy/reference/event-unit">Triggering Unit</a></strong> — ( EventUnit )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-load-model">Load Unit Model</a></strong> — ( UnitLoadModel )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-unload-model">Unload Unit Model</a></strong> — ( UnitUnloadModel )</li>
+<li><em><strong>[F]</strong></em> — <code>unit</code> — <strong><a href="/galaxy/reference/unit-agent">Agent Of Player For Unit</a></strong> — ( UnitAgent )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-event-set-null-variable-invalid">Change Empty Unit Variables In Events</a></strong> — ( UnitEventSetNullVariableInvalid )</li>
+<li><em><strong>[F]</strong></em> — <code>text</code> — <strong><a href="/galaxy/reference/unit-get-name">Name of Unit</a></strong> — ( UnitGetName )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/unit-ideal-worker-count">Ideal Harvester Count</a></strong> — ( UnitIdealWorkerCount )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/unit-current-worker-count">Current Harvester Count</a></strong> — ( UnitCurrentWorkerCount )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/challenges/advancedcommand.sc2map/MapScript.galaxy#L689">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L689</span>
+UnitCreate(<span class="hljs-number">1</span>, gv_challengeUnits[lv_i].lv_unitType, <span class="hljs-number">0</span>, gv_challengeUnits[lv_i].lv_player, gv_challengeUnits[lv_i].lv_position, gv_challengeUnits[lv_i].lv_facing)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L166</span>
+UnitCreate(<span class="hljs-number">1</span>, lp_mEnemyAType, <span class="hljs-number">0</span>, gv_pLAYER_COMPUTER1, RegionGetCenter(lp_mSpawningRegion), libNtve_gf_RandomAngle())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L178</span>
+UnitCreate(<span class="hljs-number">1</span>, lp_mEnemyBType, <span class="hljs-number">0</span>, gv_pLAYER_COMPUTER1, RegionGetCenter(lp_mSpawningRegion), libNtve_gf_RandomAngle())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L190</span>
+UnitCreate(<span class="hljs-number">1</span>, lp_mEnemyCType, <span class="hljs-number">0</span>, gv_pLAYER_COMPUTER1, RegionGetCenter(lp_mSpawningRegion), libNtve_gf_RandomAngle())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1572</span>
+UnitCreate(<span class="hljs-number">1</span>, <span class="hljs-string">"SCV"</span>, <span class="hljs-number">0</span>, gv_pLAYER_USER, PointFromId(<span class="hljs-number">33</span>), libNtve_gf_RandomAngle())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1573</span>
+UnitCreate(<span class="hljs-number">1</span>, <span class="hljs-string">"SCV"</span>, <span class="hljs-number">0</span>, gv_pLAYER_USER, PointFromId(<span class="hljs-number">34</span>), libNtve_gf_RandomAngle())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1574</span>
+UnitCreate(<span class="hljs-number">1</span>, <span class="hljs-string">"SCV"</span>, <span class="hljs-number">0</span>, gv_pLAYER_USER, PointFromId(<span class="hljs-number">35</span>), libNtve_gf_RandomAngle())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1575</span>
+UnitCreate(<span class="hljs-number">1</span>, <span class="hljs-string">"SCV"</span>, <span class="hljs-number">0</span>, gv_pLAYER_USER, PointFromId(<span class="hljs-number">36</span>), libNtve_gf_RandomAngle())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1576</span>
+UnitCreate(<span class="hljs-number">1</span>, <span class="hljs-string">"SCV"</span>, <span class="hljs-number">0</span>, gv_pLAYER_USER, PointFromId(<span class="hljs-number">37</span>), libNtve_gf_RandomAngle())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1577</span>
+UnitCreate(<span class="hljs-number">1</span>, <span class="hljs-string">"SCV"</span>, <span class="hljs-number">0</span>, gv_pLAYER_USER, PointFromId(<span class="hljs-number">38</span>), libNtve_gf_RandomAngle())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1578</span>
+UnitCreate(<span class="hljs-number">1</span>, <span class="hljs-string">"SCV"</span>, <span class="hljs-number">0</span>, gv_pLAYER_USER, PointFromId(<span class="hljs-number">39</span>), libNtve_gf_RandomAngle())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1579</span>
+UnitCreate(<span class="hljs-number">1</span>, <span class="hljs-string">"SCV"</span>, <span class="hljs-number">0</span>, gv_pLAYER_USER, PointFromId(<span class="hljs-number">40</span>), libNtve_gf_RandomAngle())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1580</span>
+UnitCreate(<span class="hljs-number">1</span>, <span class="hljs-string">"SCV"</span>, <span class="hljs-number">0</span>, gv_pLAYER_USER, PointFromId(<span class="hljs-number">42</span>), libNtve_gf_RandomAngle())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1581</span>
+UnitCreate(<span class="hljs-number">1</span>, <span class="hljs-string">"SCV"</span>, <span class="hljs-number">0</span>, gv_pLAYER_USER, PointFromId(<span class="hljs-number">43</span>), libNtve_gf_RandomAngle())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1413</span>
+UnitCreate(<span class="hljs-number">1</span>, <span class="hljs-string">"SupplyDepot"</span>, <span class="hljs-number">0</span>, gv_pLAYER_USER, PointFromId(<span class="hljs-number">102</span>), <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2208</span>
+UnitCreate(<span class="hljs-number">1</span>, <span class="hljs-string">"SupplyDepot"</span>, <span class="hljs-number">0</span>, gv_pLAYER_USER, PointFromId(<span class="hljs-number">102</span>), <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2486</span>
+UnitCreate(<span class="hljs-number">1</span>, <span class="hljs-string">"SupplyDepot"</span>, <span class="hljs-number">0</span>, gv_pLAYER_USER, PointFromId(<span class="hljs-number">102</span>), <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L677</span>
+UnitCreate(<span class="hljs-number">1</span>, gv_challengeUnits[lv_i].lv_unitType, c_unitCreateIgnorePlacement, gv_challengeUnits[lv_i].lv_player, gv_challengeUnits[lv_i].lv_position, gv_challengeUnits[lv_i].lv_facing)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L660</span>
+UnitCreate(<span class="hljs-number">1</span>, gv_challengeUnits[lv_i].lv_unitType, <span class="hljs-number">0</span>, gv_challengeUnits[lv_i].lv_player, gv_challengeUnits[lv_i].lv_position, gv_challengeUnits[lv_i].lv_facing)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1801</span>
+UnitCreate(<span class="hljs-number">1</span>, <span class="hljs-string">"SS_TerraTronMissileLauncher"</span>, c_unitCreateIgnorePlacement, UnitGetOwner(gv_boss), lv_finalOffsetPoint, (lp_facing - <span class="hljs-number">90.0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2638</span>
+UnitCreate(<span class="hljs-number">1</span>, gf_BackgroundUnitType(lp_iD), <span class="hljs-number">0</span>, gv_p0_NEUTRAL, gv_bGStart, <span class="hljs-number">180.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2702</span>
+UnitCreate(<span class="hljs-number">1</span>, <span class="hljs-string">"SS_BlackEdgeBorder"</span>, <span class="hljs-number">0</span>, gv_p0_NEUTRAL, PointWithOffset(lv_center, <span class="hljs-number">-36.0</span>, <span class="hljs-number">0.0</span>), <span class="hljs-number">180.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2706</span>
+UnitCreate(<span class="hljs-number">1</span>, <span class="hljs-string">"SS_BlackEdgeBorder"</span>, <span class="hljs-number">0</span>, gv_p0_NEUTRAL, PointWithOffset(lv_center, <span class="hljs-number">35.4</span>, <span class="hljs-number">0.0</span>), <span class="hljs-number">180.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2744</span>
+UnitCreate(lp_count, lp_type, <span class="hljs-number">0</span>, gv_p2_ENEMY, lp_pos, lp_angle)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2895</span>
+UnitCreate(<span class="hljs-number">1</span>, lp_type, <span class="hljs-number">0</span>, gv_p0_NEUTRAL, lp_pos, libNtve_gf_RandomAngle())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5823</span>
+UnitCreate(<span class="hljs-number">1</span>, <span class="hljs-string">"SS_TerraTronMissileSpinnerLauncher"</span>, c_unitCreateIgnorePlacement, UnitGetOwner(gv_boss), UnitGetPosition(gv_missileSpinnerL), lv_facingL)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5829</span>
+UnitCreate(<span class="hljs-number">1</span>, <span class="hljs-string">"SS_TerraTronMissileSpinnerLauncher"</span>, c_unitCreateIgnorePlacement, UnitGetOwner(gv_boss), UnitGetPosition(gv_missileSpinnerR), lv_facingR)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5851</span>
+UnitCreate(<span class="hljs-number">1</span>, <span class="hljs-string">"SS_TerraTronMissileSpinnerLauncher"</span>, c_unitCreateIgnorePlacement, UnitGetOwner(gv_boss), UnitGetPosition(gv_missileSpinnerL), lv_facingL)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5857</span>
+UnitCreate(<span class="hljs-number">1</span>, <span class="hljs-string">"SS_TerraTronMissileSpinnerLauncher"</span>, c_unitCreateIgnorePlacement, UnitGetOwner(gv_boss), UnitGetPosition(gv_missileSpinnerR), lv_facingR)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L306</span>
+UnitCreate(<span class="hljs-number">1</span>, <span class="hljs-string">"ColonistTransport"</span>, <span class="hljs-number">0</span>, gv_p4_COLONISTS, PointFromId(<span class="hljs-number">2906</span>), <span class="hljs-number">180.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L457</span>
+UnitCreate(lp_number, lp_unitType, <span class="hljs-number">0</span>, gv_pLAYER_04_INFESTEDREFUGEES, RegionRandomPoint(lp_spawnRegion), libNtve_gf_RandomAngle())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4923</span>
+UnitCreate(<span class="hljs-number">1</span>, <span class="hljs-string">"InfestedCivilian"</span>, <span class="hljs-number">0</span>, gv_pLAYER_04_INFESTEDREFUGEES, RegionRandomPoint(RegionFromId(<span class="hljs-number">44</span>)), libNtve_gf_RandomAngle())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4941</span>
+UnitCreate(<span class="hljs-number">1</span>, <span class="hljs-string">"InfestedCivilian"</span>, <span class="hljs-number">0</span>, gv_pLAYER_04_INFESTEDREFUGEES, RegionRandomPoint(RegionFromId(<span class="hljs-number">45</span>)), libNtve_gf_RandomAngle())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6009</span>
+UnitCreate(<span class="hljs-number">2</span>, <span class="hljs-string">"Colonist"</span>, <span class="hljs-number">0</span>, gv_pLAYER03_COLONIST, RegionRandomPoint(RegionFromId(<span class="hljs-number">4</span>)), libNtve_gf_RandomAngle())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6010</span>
+UnitCreate(<span class="hljs-number">2</span>, <span class="hljs-string">"Colonist"</span>, <span class="hljs-number">0</span>, gv_pLAYER03_COLONIST, RegionRandomPoint(RegionFromId(<span class="hljs-number">4</span>)), libNtve_gf_RandomAngle())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6011</span>
+UnitCreate(<span class="hljs-number">1</span>, <span class="hljs-string">"ColonistFemale"</span>, <span class="hljs-number">0</span>, gv_pLAYER03_COLONIST, RegionRandomPoint(RegionFromId(<span class="hljs-number">4</span>)), libNtve_gf_RandomAngle())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6012</span>
+UnitCreate(<span class="hljs-number">2</span>, <span class="hljs-string">"Colonist"</span>, <span class="hljs-number">0</span>, gv_pLAYER03_COLONIST, RegionRandomPoint(RegionFromId(<span class="hljs-number">5</span>)), libNtve_gf_RandomAngle())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6013</span>
+UnitCreate(<span class="hljs-number">1</span>, <span class="hljs-string">"ColonistFemale"</span>, <span class="hljs-number">0</span>, gv_pLAYER03_COLONIST, RegionRandomPoint(RegionFromId(<span class="hljs-number">5</span>)), libNtve_gf_RandomAngle())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6014</span>
+UnitCreate(<span class="hljs-number">2</span>, <span class="hljs-string">"Colonist"</span>, <span class="hljs-number">0</span>, gv_pLAYER03_COLONIST, RegionRandomPoint(RegionFromId(<span class="hljs-number">6</span>)), libNtve_gf_RandomAngle())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6015</span>
+UnitCreate(<span class="hljs-number">1</span>, <span class="hljs-string">"ColonistFemale"</span>, <span class="hljs-number">0</span>, gv_pLAYER03_COLONIST, RegionRandomPoint(RegionFromId(<span class="hljs-number">6</span>)), libNtve_gf_RandomAngle())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6016</span>
+UnitCreate(<span class="hljs-number">3</span>, <span class="hljs-string">"Colonist"</span>, <span class="hljs-number">0</span>, gv_pLAYER03_COLONIST, RegionRandomPoint(RegionFromId(<span class="hljs-number">26</span>)), libNtve_gf_RandomAngle())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6017</span>
+UnitCreate(<span class="hljs-number">1</span>, <span class="hljs-string">"ColonistFemale"</span>, <span class="hljs-number">0</span>, gv_pLAYER03_COLONIST, RegionRandomPoint(RegionFromId(<span class="hljs-number">26</span>)), libNtve_gf_RandomAngle())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6018</span>
+UnitCreate(<span class="hljs-number">2</span>, <span class="hljs-string">"Colonist"</span>, <span class="hljs-number">0</span>, gv_pLAYER03_COLONIST, RegionRandomPoint(RegionFromId(<span class="hljs-number">27</span>)), libNtve_gf_RandomAngle())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L335</span>
+UnitCreate(<span class="hljs-number">1</span>, lp_type, <span class="hljs-number">0</span>, gv_p03_VIROPHAGE, RegionRandomPoint(RegionCircle(UnitGetPosition(gv_infestationVirophageUnit[lp_colonyIndex]), <span class="hljs-number">5.0</span>)), libNtve_gf_RandomAngle())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L593</span>
+UnitCreate(<span class="hljs-number">1</span>, lv_defenderType, <span class="hljs-number">0</span>, gv_p07_ZERG_INFESTED, gv_infestationDefenderLocation[lp_colonyIndex][lp_defenderIndex], libNtve_gf_RandomAngle())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L599</span>
+UnitCreate(<span class="hljs-number">1</span>, lv_defenderType, <span class="hljs-number">0</span>, gv_p07_ZERG_INFESTED, gv_infestationDefenderLocation[lp_colonyIndex][lp_defenderIndex], libNtve_gf_RandomAngle())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2185</span>
+UnitCreate(<span class="hljs-number">1</span>, <span class="hljs-string">"Feederling"</span>, <span class="hljs-number">0</span>, gv_p07_ZERG_INFESTED, UnitGetPosition(lv_virophage), <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4529</span>
+UnitCreate(<span class="hljs-number">1</span>, <span class="hljs-string">"Feederling"</span>, <span class="hljs-number">0</span>, gv_p07_ZERG_INFESTED, RegionRandomPoint(RegionFromId(<span class="hljs-number">9</span>)), <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2300</span>
+UnitCreate(<span class="hljs-number">1</span>, <span class="hljs-string">"PalletMinerals"</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, RegionRandomPoint(RegionCircle(UnitGetPosition(gv_trainList[lv_trainIndex].lv_trainCars[RandomInt(<span class="hljs-number">1</span>, gv_trainList[lv_trainIndex].lv_lastCar)]), <span class="hljs-number">2.0</span>)), RandomFixed(<span class="hljs-number">0.0</span>, <span class="hljs-number">360.0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2305</span>
+UnitCreate(<span class="hljs-number">1</span>, <span class="hljs-string">"PalletGas"</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, RegionRandomPoint(RegionCircle(UnitGetPosition(gv_trainList[lv_trainIndex].lv_trainCars[RandomInt(<span class="hljs-number">1</span>, gv_trainList[lv_trainIndex].lv_lastCar)]), <span class="hljs-number">2.0</span>)), RandomFixed(<span class="hljs-number">0.0</span>, <span class="hljs-number">360.0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2312</span>
+UnitCreate(<span class="hljs-number">1</span>, <span class="hljs-string">"AdjutantCapsule"</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, RegionRandomPoint(RegionCircle(UnitGetPosition(gv_trainList[lv_trainIndex].lv_trainCars[lv_trainMidPoint]), <span class="hljs-number">2.0</span>)), (UnitGetFacing(gv_trainList[lv_trainIndex].lv_trainCars[lv_trainMidPoint]) - <span class="hljs-number">90.0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4543</span>
+UnitCreate(<span class="hljs-number">1</span>, <span class="hljs-string">"DominionKillTeam"</span>, <span class="hljs-number">0</span>, gv_pLAYER_02_DOMINION, PointFromId(<span class="hljs-number">532</span>), <span class="hljs-number">90.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4554</span>
+UnitCreate(<span class="hljs-number">1</span>, <span class="hljs-string">"Medic"</span>, <span class="hljs-number">0</span>, gv_pLAYER_02_DOMINION, PointFromId(<span class="hljs-number">532</span>), <span class="hljs-number">90.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4628</span>
+UnitCreate(<span class="hljs-number">1</span>, <span class="hljs-string">"DominionKillTeam"</span>, <span class="hljs-number">0</span>, gv_pLAYER_02_DOMINION, PointFromId(<span class="hljs-number">1797</span>), <span class="hljs-number">45.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4639</span>
+UnitCreate(<span class="hljs-number">1</span>, <span class="hljs-string">"Medic"</span>, <span class="hljs-number">0</span>, gv_pLAYER_02_DOMINION, PointFromId(<span class="hljs-number">1797</span>), <span class="hljs-number">45.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4711</span>
+UnitCreate(<span class="hljs-number">1</span>, <span class="hljs-string">"DominionKillTeam"</span>, <span class="hljs-number">0</span>, gv_pLAYER_02_DOMINION, PointFromId(<span class="hljs-number">532</span>), <span class="hljs-number">45.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1562</span>
+UnitCreate(<span class="hljs-number">1</span>, <span class="hljs-string">"StarportFlying"</span>, <span class="hljs-number">0</span>, gv_p01_USER, PointFromId(<span class="hljs-number">75</span>), <span class="hljs-number">315.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2891</span>
+UnitCreate(<span class="hljs-number">1</span>, <span class="hljs-string">"TychusEjectMissile"</span>, <span class="hljs-number">0</span>, gv_p07_HORNERBASE, UnitGetPosition(gv_odin), UnitGetFacing(gv_odin))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3746</span>
+UnitCreate(<span class="hljs-number">1</span>, <span class="hljs-string">"Raven"</span>, <span class="hljs-number">0</span>, gv_p08_DOMINION, PointFromId(<span class="hljs-number">1076</span>), <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3749</span>
+UnitCreate(<span class="hljs-number">1</span>, <span class="hljs-string">"Raven"</span>, <span class="hljs-number">0</span>, gv_p08_DOMINION, PointFromId(<span class="hljs-number">1369</span>), <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3848</span>
+UnitCreate(<span class="hljs-number">1</span>, <span class="hljs-string">"Raven"</span>, <span class="hljs-number">0</span>, gv_p08_DOMINION, libNtve_gf_RandomPointBetweenPoints(PointFromId(<span class="hljs-number">876</span>), PointFromId(<span class="hljs-number">964</span>)), <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3994</span>
+UnitCreate(<span class="hljs-number">1</span>, <span class="hljs-string">"Raven"</span>, <span class="hljs-number">0</span>, gv_p08_DOMINION, libNtve_gf_RandomPointBetweenPoints(PointFromId(<span class="hljs-number">572</span>), PointFromId(<span class="hljs-number">591</span>)), <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4669</span>
+UnitCreate(<span class="hljs-number">1</span>, <span class="hljs-string">"TransportTruck"</span>, <span class="hljs-number">0</span>, gv_p2_DOMINION_RED, PointFromId(<span class="hljs-number">2676</span>), <span class="hljs-number">45.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4671</span>
+UnitCreate(<span class="hljs-number">1</span>, <span class="hljs-string">"TransportTruck"</span>, <span class="hljs-number">0</span>, gv_p2_DOMINION_RED, PointFromId(<span class="hljs-number">2678</span>), <span class="hljs-number">45.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4830</span>
+UnitCreate(<span class="hljs-number">1</span>, <span class="hljs-string">"Raven"</span>, <span class="hljs-number">0</span>, gv_p2_DOMINION_RED, PointFromId(<span class="hljs-number">2439</span>), <span class="hljs-number">225.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5057</span>
+UnitCreate(<span class="hljs-number">1</span>, <span class="hljs-string">"Marine"</span>, <span class="hljs-number">0</span>, gv_pLAYER_01_USER, lv_marinePoints1[<span class="hljs-number">1</span>], <span class="hljs-number">225.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L384</span>
+UnitCreate(lp_qty, lp_unitType, <span class="hljs-number">0</span>, lp_player, UnitGetPosition(lp_nydus), libNtve_gf_RandomAngle())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L397</span>
+UnitCreate(lp_qty, lp_unitType, <span class="hljs-number">0</span>, lp_player, UnitGetPosition(lp_nydus), libNtve_gf_RandomAngle())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L458</span>
+UnitCreate(lp_qty, lp_unitType, <span class="hljs-number">0</span>, lp_player, UnitGetPosition(lp_nydus), libNtve_gf_RandomAngle())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12563</span>
+UnitCreate(<span class="hljs-number">1</span>, UnitGetType(lv_indexUnit), <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, lv_loc, lp_facing)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12787</span>
+UnitCreate(<span class="hljs-number">1</span>, UnitGetType(lv_indexUnit), <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, lv_loc, lp_facing)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L36625</span>
+UnitCreate(<span class="hljs-number">1</span>, <span class="hljs-string">"SMKerriganPhoto"</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, UnitGetPosition(gf_ActorUnit(ge_ActorID_ActorRaynor)), UnitGetFacing(gf_ActorUnit(ge_ActorID_ActorRaynor)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L37255</span>
+UnitCreate(<span class="hljs-number">1</span>, <span class="hljs-string">"SMHyperionArmoryStage1Set02"</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, UnitGetPosition(gf_RoomUnit(ge_RoomID_RoomArmory)), UnitGetFacing(gf_RoomUnit(ge_RoomID_RoomArmory)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5111</span>
+UnitCreate(<span class="hljs-number">1</span>, <span class="hljs-string">"SpecialOpsDropship"</span>, <span class="hljs-number">0</span>, gv_p01_USER, PointFromId(<span class="hljs-number">792</span>), <span class="hljs-number">45.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5113</span>
+UnitCreate(<span class="hljs-number">1</span>, <span class="hljs-string">"SCV"</span>, <span class="hljs-number">0</span>, gv_p01_USER, PointFromId(<span class="hljs-number">291</span>), libNtve_gf_RandomAngle())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5115</span>
+UnitCreate(<span class="hljs-number">1</span>, <span class="hljs-string">"SCV"</span>, <span class="hljs-number">0</span>, gv_p01_USER, PointFromId(<span class="hljs-number">787</span>), libNtve_gf_RandomAngle())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5117</span>
+UnitCreate(<span class="hljs-number">1</span>, <span class="hljs-string">"SCV"</span>, <span class="hljs-number">0</span>, gv_p01_USER, PointFromId(<span class="hljs-number">788</span>), libNtve_gf_RandomAngle())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5119</span>
+UnitCreate(<span class="hljs-number">1</span>, <span class="hljs-string">"SCV"</span>, <span class="hljs-number">0</span>, gv_p01_USER, PointFromId(<span class="hljs-number">789</span>), libNtve_gf_RandomAngle())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5121</span>
+UnitCreate(<span class="hljs-number">1</span>, <span class="hljs-string">"SCV"</span>, <span class="hljs-number">0</span>, gv_p01_USER, PointFromId(<span class="hljs-number">790</span>), libNtve_gf_RandomAngle())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5124</span>
+UnitCreate(<span class="hljs-number">1</span>, <span class="hljs-string">"Marine"</span>, <span class="hljs-number">0</span>, gv_p01_USER, RegionRandomPoint(RegionFromId(<span class="hljs-number">64</span>)), libNtve_gf_RandomAngle())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5129</span>
+UnitCreate(<span class="hljs-number">1</span>, <span class="hljs-string">"Medic"</span>, <span class="hljs-number">0</span>, gv_p01_USER, RegionRandomPoint(RegionFromId(<span class="hljs-number">66</span>)), libNtve_gf_RandomAngle())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2213</span>
+UnitCreate(<span class="hljs-number">1</span>, <span class="hljs-string">"TerrazineCanister"</span>, <span class="hljs-number">0</span>, gv_p5_TERRAZINE, UnitGetPosition(EventUnit()), <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2797</span>
+UnitCreate(<span class="hljs-number">1</span>, <span class="hljs-string">"Diamondback"</span>, <span class="hljs-number">0</span>, gv_p0_NEUTRAL, RegionGetCenter(RegionFromId(<span class="hljs-number">18</span>)), <span class="hljs-number">43.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2807</span>
+UnitCreate(<span class="hljs-number">1</span>, <span class="hljs-string">"SiegeTank"</span>, <span class="hljs-number">0</span>, gv_p0_NEUTRAL, RegionGetCenter(RegionFromId(<span class="hljs-number">20</span>)), <span class="hljs-number">135.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2814</span>
+UnitCreate(<span class="hljs-number">1</span>, <span class="hljs-string">"SiegeTank"</span>, <span class="hljs-number">0</span>, gv_p0_NEUTRAL, RegionGetCenter(RegionFromId(<span class="hljs-number">19</span>)), <span class="hljs-number">45.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L785</span>
+UnitCreate(<span class="hljs-number">1</span>, <span class="hljs-string">"MineralField"</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, RegionGetCenter(lp_mineralFieldArea), <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4724</span>
+UnitCreate(<span class="hljs-number">1</span>, <span class="hljs-string">"CreepTumorBurrowed"</span>, <span class="hljs-number">0</span>, gv_p2_ZERG, PointFromId(<span class="hljs-number">355</span>), <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4725</span>
+UnitCreate(<span class="hljs-number">1</span>, <span class="hljs-string">"CreepTumorBurrowed"</span>, <span class="hljs-number">0</span>, gv_p2_ZERG, PointFromId(<span class="hljs-number">412</span>), <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4726</span>
+UnitCreate(<span class="hljs-number">1</span>, <span class="hljs-string">"CreepTumorBurrowed"</span>, <span class="hljs-number">0</span>, gv_p2_ZERG, PointFromId(<span class="hljs-number">1918</span>), <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4727</span>
+UnitCreate(<span class="hljs-number">1</span>, <span class="hljs-string">"CreepTumorBurrowed"</span>, <span class="hljs-number">0</span>, gv_p2_ZERG, PointFromId(<span class="hljs-number">1919</span>), <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4884</span>
+UnitCreate(<span class="hljs-number">12</span>, <span class="hljs-string">"Zergling"</span>, <span class="hljs-number">0</span>, gv_p2_ZERG, RegionGetCenter(RegionFromId(<span class="hljs-number">49</span>)), <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4338</span>
+UnitCreate(<span class="hljs-number">1</span>, <span class="hljs-string">"XelNagaTemple"</span>, <span class="hljs-number">0</span>, gv_p8_ANCIENT_TEMPLE, lv_location, lv_facing)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4350</span>
+UnitCreate(<span class="hljs-number">1</span>, <span class="hljs-string">"DrakkenLaserDrill"</span>, c_unitCreateIgnorePlacement, lv_player, lv_location, lv_facing)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4434</span>
+UnitCreate(<span class="hljs-number">1</span>, <span class="hljs-string">"DrakkenLaserDrill"</span>, c_unitCreateIgnorePlacement, lv_player, lv_location, lv_facing)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4654</span>
+UnitCreate(<span class="hljs-number">1</span>, <span class="hljs-string">"RipFieldGenerator"</span>, c_unitCreateIgnorePlacement, gv_pLAYER_05_WORLDSHIP, PointFromId(<span class="hljs-number">169</span>), <span class="hljs-number">270.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L557</span>
+UnitCreate(<span class="hljs-number">1</span>, lp_gankUnitType, <span class="hljs-number">0</span>, gv_p07_ZERG_PINK, RegionRandomPoint(gf_GetClosestRegionToSpawn(lp_spawnRegion)), libNtve_gf_RandomAngle())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L565</span>
+UnitCreate(<span class="hljs-number">1</span>, lp_gankUnitType, <span class="hljs-number">0</span>, gv_p07_ZERG_PINK, RegionRandomPoint(lp_spawnRegion), libNtve_gf_RandomAngle())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L695</span>
+UnitCreate(<span class="hljs-number">1</span>, lp_buildingType, <span class="hljs-number">0</span>, gv_p08_RESCUABLE, gv_bDPLandingPoint, <span class="hljs-number">225.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1744</span>
+UnitCreate(<span class="hljs-number">1</span>, <span class="hljs-string">"SpineCrawlerUprooted"</span>, <span class="hljs-number">0</span>, gv_p07_ZERG_PINK, PointFromId(<span class="hljs-number">36</span>), libNtve_gf_RandomAngle())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1748</span>
+UnitCreate(<span class="hljs-number">1</span>, <span class="hljs-string">"SpineCrawlerUprooted"</span>, <span class="hljs-number">0</span>, gv_p07_ZERG_PINK, PointFromId(<span class="hljs-number">29</span>), libNtve_gf_RandomAngle())
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

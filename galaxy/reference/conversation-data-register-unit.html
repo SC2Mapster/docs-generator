@@ -1,0 +1,231 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Set Data Conversation Unit / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Set Data Conversation Unit"/>
+                <meta property="og:description" content="Sets a conversation state to a unit."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="set-data-conversation-unit"><a class="markdownIt-Anchor" href="#set-data-conversation-unit">#</a> Set Data Conversation Unit</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Set conversation <strong>stateIndex|State</strong> to <strong>unit</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Sets a conversation state to a unit.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>string</code> <em>[ convcharacter ]</em> — State Index</li>
+<li><code>unit</code> — Unit</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">ConversationDataRegisterUnit</span><span class="hljs-params">(
+	<span class="hljs-built_in">string</span> stateIndex,
+	unit u,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#conversation-data-conversations">Conversation / Data Conversations</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/conversation-data-state-set-value">Set Data Conversation State</a></strong> — ( ConversationDataStateSetValue )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/conversation-data-register-portrait">Set Data Conversation Portrait</a></strong> — ( ConversationDataRegisterPortrait )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/conversation-data-register-unit">Set Data Conversation Unit</a></strong> — ( ConversationDataRegisterUnit )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/conversation-data-register-camera">Set Data Conversation Camera</a></strong> — ( ConversationDataRegisterCamera )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/conversation-data-run">Run Data Conversation</a></strong> — ( ConversationDataRun )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/conversation-data-stop">Stop Data Conversation</a></strong> — ( ConversationDataStop )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-conversation-state-changed">Data Conversation State Changed</a></strong> — ( TriggerAddEventConversationStateChanged )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> <em>[ convstateindex ]</em> — <strong><a href="/galaxy/reference/event-conversation-state">Triggering Conversation State</a></strong> — ( EventConversationState )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/tstory01.sc2map/MapScript.galaxy#L10809">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L10809</span>
+ConversationDataRegisterUnit(gf_ConvoCharacter(ge_ActorID_ActorRaynor), gf_ActorUnit(ge_ActorID_ActorRaynor))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10811</span>
+ConversationDataRegisterUnit(gf_ConvoCharacter(lp_actor1), gf_ActorUnit(lp_actor1))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10815</span>
+ConversationDataRegisterUnit(gf_ConvoCharacter(lp_actor2), gf_ActorUnit(lp_actor2))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10820</span>
+ConversationDataRegisterUnit(gf_ConvoCharacter(lp_actor1), gf_ActorUnit(lp_actor1))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10824</span>
+ConversationDataRegisterUnit(gf_ConvoCharacter(lp_actor2), gf_ActorUnit(lp_actor2))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11645</span>
+ConversationDataRegisterUnit(<span class="hljs-string">"Characters|CharRaynor"</span>, gf_ActorUnit(lp_raynor))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11646</span>
+ConversationDataRegisterUnit(gf_ConvoCharacter(lp_to1), gf_ActorUnit(lp_to1))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11647</span>
+ConversationDataRegisterUnit(gf_ConvoCharacter(lp_to2), gf_ActorUnit(lp_to2))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11659</span>
+ConversationDataRegisterUnit(lv_characterIndex1, gf_ActorUnit(lp_to1))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11668</span>
+ConversationDataRegisterUnit(lv_characterIndex2, gf_ActorUnit(lp_to2))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10809</span>
+ConversationDataRegisterUnit(gf_ConvoCharacter(ge_ActorID_ActorRaynor), gf_ActorUnit(ge_ActorID_ActorRaynor))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10811</span>
+ConversationDataRegisterUnit(gf_ConvoCharacter(lp_actor1), gf_ActorUnit(lp_actor1))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10815</span>
+ConversationDataRegisterUnit(gf_ConvoCharacter(lp_actor2), gf_ActorUnit(lp_actor2))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10820</span>
+ConversationDataRegisterUnit(gf_ConvoCharacter(lp_actor1), gf_ActorUnit(lp_actor1))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10824</span>
+ConversationDataRegisterUnit(gf_ConvoCharacter(lp_actor2), gf_ActorUnit(lp_actor2))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11645</span>
+ConversationDataRegisterUnit(<span class="hljs-string">"Characters|CharRaynor"</span>, gf_ActorUnit(lp_raynor))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11646</span>
+ConversationDataRegisterUnit(gf_ConvoCharacter(lp_to1), gf_ActorUnit(lp_to1))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11647</span>
+ConversationDataRegisterUnit(gf_ConvoCharacter(lp_to2), gf_ActorUnit(lp_to2))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11659</span>
+ConversationDataRegisterUnit(lv_characterIndex1, gf_ActorUnit(lp_to1))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11668</span>
+ConversationDataRegisterUnit(lv_characterIndex2, gf_ActorUnit(lp_to2))
+</code></pre>
+<h4 id="campaignsswarmstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmstorysc2campaign">#</a> campaigns/swarmstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstory.sc2campaign/base.sc2data/TriggerLibs/SwarmCampaignLib.galaxy#L7491">SwarmCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L7491</span>
+ConversationDataRegisterUnit(<span class="hljs-string">"char_EvolutionMaster"</span>, libSwaC_gv_zS_ArmyCustomEggRoomEvolutionMaster)
+</code></pre>
+<h4 id="campaignsswarmstoryutilsc2mod"><a class="markdownIt-Anchor" href="#campaignsswarmstoryutilsc2mod">#</a> campaigns/swarmstoryutil.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstoryutil.sc2mod/base.sc2data/Lib281DEC45.galaxy#L3256">Lib281DEC45.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3256</span>
+ConversationDataRegisterUnit(<span class="hljs-string">"char_EvolutionMaster"</span>, lib281DEC45_gf_CharacterUnit(<span class="hljs-string">"Evolution Master"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4704</span>
+ConversationDataRegisterUnit(lib281DEC45_gv_zSS_Characters[lib281DEC45_gf_ZSS_CharacterIndex(lp_character)].lv_conversationLink, lp_charUnit)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4886</span>
+ConversationDataRegisterUnit(lib281DEC45_gv_zSS_Characters[lib281DEC45_gf_ZSS_CharacterIndex(lv_indexCharacter)].lv_conversationLink, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4897</span>
+ConversationDataRegisterUnit(lib281DEC45_gv_zSS_Characters[lib281DEC45_gf_ZSS_CharacterIndex(lv_indexCharacter)].lv_conversationLink, lib281DEC45_gf_CharacterUnit(lv_indexCharacter))
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignStoryLib.galaxy#L4072">VoidCampaignStoryLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4072</span>
+ConversationDataRegisterUnit(libVoiC_gf_PC_ClickableConversationLink(lp_clickableInstance), lp_unit)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5367</span>
+ConversationDataRegisterUnit(libVoiC_gf_PC_ClickableConversationLink(lv_indexClickable), libVCST_gf_ClickableUnit(lv_indexClickable))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6299</span>
+ConversationDataRegisterUnit(libVoiC_gf_PC_ClickableConversationLink(lv_indexClickable), libVCST_gf_ClickableUnit(lv_indexClickable))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6334</span>
+ConversationDataRegisterUnit(libVoiC_gf_PC_ClickableConversationLink(lv_indexClickable), libVCST_gf_ClickableUnit(lv_indexClickable))
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign-2"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign-2">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignUILib.galaxy#L1785">VoidCampaignUILib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1785</span>
+ConversationDataRegisterUnit(libVoiC_gf_PC_ClickableConversationLink(UserDataInstance(<span class="hljs-string">"Clickable"</span>, lv_clickableIndex)), null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3268</span>
+ConversationDataRegisterUnit(libVoiC_gf_PC_ClickableConversationLink(lv_indexClickable), null)
+</code></pre>
+<h4 id="modsmissionpacksnovacampaignsc2mod"><a class="markdownIt-Anchor" href="#modsmissionpacksnovacampaignsc2mod">#</a> mods/missionpacks/novacampaign.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/novacampaign.sc2mod/base.sc2data/LibNCST.galaxy#L3451">LibNCST.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3451</span>
+ConversationDataRegisterUnit(libNovC_gf_NC_ClickableConversationLink(lp_clickableInstance), lp_unit)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4610</span>
+ConversationDataRegisterUnit(libNovC_gf_NC_ClickableConversationLink(lv_indexClickable), libNCST_gf_ClickableUnit(lv_indexClickable))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5183</span>
+ConversationDataRegisterUnit(libNovC_gf_NC_ClickableConversationLink(lv_indexClickable), libNCST_gf_ClickableUnit(lv_indexClickable))
+</code></pre>
+<h4 id="modsmissionpacksnovacampaignsc2mod-2"><a class="markdownIt-Anchor" href="#modsmissionpacksnovacampaignsc2mod-2">#</a> mods/missionpacks/novacampaign.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/novacampaign.sc2mod/base.sc2data/LibNCUI.galaxy#L1017">LibNCUI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1017</span>
+ConversationDataRegisterUnit(<span class="hljs-string">"char_Nova"</span>, null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1543</span>
+ConversationDataRegisterUnit(libNovC_gf_NC_ClickableConversationLink(lv_indexClickable), null)
+</code></pre>
+<h4 id="modsvoidprologuesc2mod"><a class="markdownIt-Anchor" href="#modsvoidprologuesc2mod">#</a> mods/voidprologue.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/voidprologue.sc2mod/base.sc2data/LibA3DDD02B.galaxy#L6847">LibA3DDD02B.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L6847</span>
+ConversationDataRegisterUnit(<span class="hljs-string">"char_RescuedTemplar"</span>, null)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,302 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Send Actor Message As Text / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Send Actor Message As Text"/>
+                <meta property="og:description" content="Sends an actor message to an actor.  An actor message will perform an action and/or trigger an event on the actor it is sent to."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="send-actor-message-as-text"><a class="markdownIt-Anchor" href="#send-actor-message-as-text">#</a> Send Actor Message As Text</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Send message <strong>message</strong> to actor <strong>actor</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Sends an actor message to an actor.  An actor message will perform an action and/or trigger an event on the actor it is sent to.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>actor</code> — Actor</li>
+<li><code>text</code> — Message</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">ActorSendAsText</span><span class="hljs-params">(actor a, text msg)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#actor-send-actor-messages">Actor / Send Actor Messages</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/actor-send">Send Actor Message</a></strong> — ( ActorSend )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/actor-send-as-text">Send Actor Message As Text</a></strong> — ( ActorSendAsText )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-send-actor-message-to-unit">Send Actor Message To Unit</a></strong> — ( libNtve_gf_SendActorMessageToUnit )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/actor-scope-send">Send Actor Message To Scope</a></strong> — ( ActorScopeSend )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-actor-region-send-simple">Send Actor Message To Actor Region</a></strong> — ( libNtve_gf_ActorRegionSendSimple )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/actor-region-send">Send Actor Message To Actor Region With Filters</a></strong> — ( ActorRegionSend )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-send-actor-message-to-game-region">Send Actor Message To Game Region</a></strong> — ( libNtve_gf_SendActorMessageToGameRegion )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-send-actor-message-to-game-region-with-filters">Send Actor Message To Game Region With Filters</a></strong> — ( libNtve_gf_SendActorMessageToGameRegionWithFilters )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/actor-send-to">Send Actor Message Via Name</a></strong> — ( ActorSendTo )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/actor-send-to-as-text">Send Actor Message As Text Via Name</a></strong> — ( ActorSendToAsText )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="modscoresc2mod"><a class="markdownIt-Anchor" href="#modscoresc2mod">#</a> mods/core.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/core.sc2mod/base.sc2data/TriggerLibs/NativeLib.galaxy#L322">NativeLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L322</span>
+ActorSendAsText(lp_actor, StringToText(lv_message))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L198</span>
+ActorSendAsText(lp_actor, StringToText(lv_message))
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodsblackheartsrevengestormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodsblackheartsrevengestormmod">#</a> mods/heroesbrawlmods/brawlmapmods/blackheartsrevenge.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/blackheartsrevenge.stormmod/base.stormdata/LibMDoE.galaxy#L2055">LibMDoE.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2055</span>
+ActorSendAsText(libNtve_gf_MainActorofUnit(libGame_gv_teams[libGame_gv_teamOrderIndex_C].lv_core), StringExternal(<span class="hljs-string">"Param/Value/lib_MDoE_0D0544BF"</span>))
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodscoopdeadmansstandstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodscoopdeadmansstandstormmod">#</a> mods/heroesbrawlmods/brawlmapmods/coop/deadmansstand.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/coop/deadmansstand.stormmod/base.stormdata/LibPEB1.galaxy#L10133">LibPEB1.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L10133</span>
+ActorSendAsText(libNtve_gf_MainActorofUnit(libPEB1_gv_creepCamps[lv_campIndex].lv_iconUnit), StringExternal(<span class="hljs-string">"Param/Value/lib_PEB1_F973FBB8"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10136</span>
+ActorSendAsText(libNtve_gf_MainActorofUnit(libPEB1_gv_creepCamps[lv_campIndex].lv_iconUnit), StringExternal(<span class="hljs-string">"Param/Value/lib_PEB1_48C39864"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10280</span>
+ActorSendAsText(libNtve_gf_MainActorofUnit(libPEB1_gv_creepCamps[lv_campIndex].lv_iconUnit), StringExternal(<span class="hljs-string">"Param/Value/lib_PEB1_D7F27D4C"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10283</span>
+ActorSendAsText(libNtve_gf_MainActorofUnit(libPEB1_gv_creepCamps[lv_campIndex].lv_iconUnit), StringExternal(<span class="hljs-string">"Param/Value/lib_PEB1_65C4AEF7"</span>))
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodscooppvebrawlmodstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodscooppvebrawlmodstormmod">#</a> mods/heroesbrawlmods/brawlmapmods/coop/pvebrawlmod.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/coop/pvebrawlmod.stormmod/base.stormdata/LibPVEB.galaxy#L2195">LibPVEB.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2195</span>
+ActorSendAsText(libNtve_gf_MainActorofUnit(libPVEB_gv_pvEResurrectSpirit[lv_deadPlayer]), StringExternal(<span class="hljs-string">"Param/Value/lib_PVEB_76CB6071"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2196</span>
+ActorSendAsText(libNtve_gf_MainActorofUnit(libPVEB_gv_pvEResurrectSpirit[lv_deadPlayer]), StringExternal(<span class="hljs-string">"Param/Value/lib_PVEB_E2228DC2"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2200</span>
+ActorSendAsText(libNtve_gf_MainActorofUnit(libPVEB_gv_pvEResurrectSpirit[lv_deadPlayer]), StringExternal(<span class="hljs-string">"Param/Value/lib_PVEB_A498886E"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2201</span>
+ActorSendAsText(libNtve_gf_MainActorofUnit(libPVEB_gv_pvEResurrectSpirit[lv_deadPlayer]), StringExternal(<span class="hljs-string">"Param/Value/lib_PVEB_123F11AF"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2202</span>
+ActorSendAsText(libNtve_gf_MainActorofUnit(libPVEB_gv_pvEResurrectSpirit[lv_deadPlayer]), StringExternal(<span class="hljs-string">"Param/Value/lib_PVEB_6F9B2C30"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2206</span>
+ActorSendAsText(libNtve_gf_MainActorofUnit(libPVEB_gv_pvEResurrectSpirit[lv_deadPlayer]), StringExternal(<span class="hljs-string">"Param/Value/lib_PVEB_46843B9C"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2207</span>
+ActorSendAsText(libNtve_gf_MainActorofUnit(libPVEB_gv_pvEResurrectSpirit[lv_deadPlayer]), StringExternal(<span class="hljs-string">"Param/Value/lib_PVEB_353620B6"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2211</span>
+ActorSendAsText(libNtve_gf_MainActorofUnit(libPVEB_gv_pvEResurrectSpirit[lv_deadPlayer]), StringExternal(<span class="hljs-string">"Param/Value/lib_PVEB_D27824FF"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2212</span>
+ActorSendAsText(libNtve_gf_MainActorofUnit(libPVEB_gv_pvEResurrectSpirit[lv_deadPlayer]), StringExternal(<span class="hljs-string">"Param/Value/lib_PVEB_A555EADE"</span>))
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodscooppvemodstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodscooppvemodstormmod">#</a> mods/heroesbrawlmods/brawlmapmods/coop/pvemod.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/coop/pvemod.stormmod/base.stormdata/LibPVEM.galaxy#L1793">LibPVEM.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1793</span>
+ActorSendAsText(libNtve_gf_MainActorofUnit(libPVEM_gv_pvEResurrectSpirit[lv_deadPlayer]), StringExternal(<span class="hljs-string">"Param/Value/lib_PVEM_76CB6071"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1794</span>
+ActorSendAsText(libNtve_gf_MainActorofUnit(libPVEM_gv_pvEResurrectSpirit[lv_deadPlayer]), StringExternal(<span class="hljs-string">"Param/Value/lib_PVEM_E2228DC2"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1798</span>
+ActorSendAsText(libNtve_gf_MainActorofUnit(libPVEM_gv_pvEResurrectSpirit[lv_deadPlayer]), StringExternal(<span class="hljs-string">"Param/Value/lib_PVEM_A498886E"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1799</span>
+ActorSendAsText(libNtve_gf_MainActorofUnit(libPVEM_gv_pvEResurrectSpirit[lv_deadPlayer]), StringExternal(<span class="hljs-string">"Param/Value/lib_PVEM_123F11AF"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1800</span>
+ActorSendAsText(libNtve_gf_MainActorofUnit(libPVEM_gv_pvEResurrectSpirit[lv_deadPlayer]), StringExternal(<span class="hljs-string">"Param/Value/lib_PVEM_6F9B2C30"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1804</span>
+ActorSendAsText(libNtve_gf_MainActorofUnit(libPVEM_gv_pvEResurrectSpirit[lv_deadPlayer]), StringExternal(<span class="hljs-string">"Param/Value/lib_PVEM_46843B9C"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1805</span>
+ActorSendAsText(libNtve_gf_MainActorofUnit(libPVEM_gv_pvEResurrectSpirit[lv_deadPlayer]), StringExternal(<span class="hljs-string">"Param/Value/lib_PVEM_353620B6"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1809</span>
+ActorSendAsText(libNtve_gf_MainActorofUnit(libPVEM_gv_pvEResurrectSpirit[lv_deadPlayer]), StringExternal(<span class="hljs-string">"Param/Value/lib_PVEM_D27824FF"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1810</span>
+ActorSendAsText(libNtve_gf_MainActorofUnit(libPVEM_gv_pvEResurrectSpirit[lv_deadPlayer]), StringExternal(<span class="hljs-string">"Param/Value/lib_PVEM_A555EADE"</span>))
+</code></pre>
+<h4 id="modsheroesdatastormmod"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/HeroesLib.galaxy#L4989">HeroesLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4989</span>
+ActorSendAsText(libNtve_gf_MainActorofUnit(libGame_gv_teams[<span class="hljs-number">1</span>].lv_core), StringExternal(<span class="hljs-string">"Param/Value/lib_Core_7B6F68DA"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4990</span>
+ActorSendAsText(libNtve_gf_MainActorofUnit(libGame_gv_teams[<span class="hljs-number">2</span>].lv_core), StringExternal(<span class="hljs-string">"Param/Value/lib_Core_1BF06750"</span>))
+</code></pre>
+<h4 id="modsheroesdatastormmod-2"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-2">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/MapMechanicsLib.galaxy#L1071">MapMechanicsLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1071</span>
+ActorSendAsText(libNtve_gf_MainActorofUnit(libMapM_gv_jungleCreepCamps[lp_camp].lv_campIconUnit), TextExpressionAssemble(<span class="hljs-string">"Param/Expression/lib_MapM_5E46FF3A"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1160</span>
+ActorSendAsText(libNtve_gf_MainActorofUnit(libMapM_gv_jungleCreepCamps[lp_camp].lv_campIconUnit), TextExpressionAssemble(<span class="hljs-string">"Param/Expression/lib_MapM_A2B826DD"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1164</span>
+ActorSendAsText(libNtve_gf_MainActorofUnit(libMapM_gv_jungleCreepCamps[lp_camp].lv_campIconUnit), TextExpressionAssemble(<span class="hljs-string">"Param/Expression/lib_MapM_BA00E7C6"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2027</span>
+ActorSendAsText(libNtve_gf_MainActorofUnit(lv_minimapUnit), TextExpressionAssemble(<span class="hljs-string">"Param/Expression/lib_MapM_8E3779D5"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2031</span>
+ActorSendAsText(libNtve_gf_MainActorofUnit(lv_minimapUnit), TextExpressionAssemble(<span class="hljs-string">"Param/Expression/lib_MapM_7FB3A831"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2035</span>
+ActorSendAsText(libNtve_gf_MainActorofUnit(lv_minimapUnit), TextExpressionAssemble(<span class="hljs-string">"Param/Expression/lib_MapM_F4E1C8D1"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2039</span>
+ActorSendAsText(libNtve_gf_MainActorofUnit(lv_minimapUnit), TextExpressionAssemble(<span class="hljs-string">"Param/Expression/lib_MapM_CB9A9D3E"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2043</span>
+ActorSendAsText(libNtve_gf_MainActorofUnit(lv_minimapUnit), TextExpressionAssemble(<span class="hljs-string">"Param/Expression/lib_MapM_49D61AB4"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2047</span>
+ActorSendAsText(libNtve_gf_MainActorofUnit(lv_minimapUnit), TextExpressionAssemble(<span class="hljs-string">"Param/Expression/lib_MapM_B9FDC66D"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2051</span>
+ActorSendAsText(libNtve_gf_MainActorofUnit(lv_minimapUnit), TextExpressionAssemble(<span class="hljs-string">"Param/Expression/lib_MapM_5B2FAFC8"</span>))
+</code></pre>
+<h4 id="modsheroesdatastormmod-3"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-3">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/UILib.galaxy#L16320">UILib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L16320</span>
+ActorSendAsText(libNtve_gf_MainActorofUnit(libUIUI_gv_uITargetingHelperPanelTargetUnitsForPlayer[EventPlayer()][lv_frameIndex]), TextExpressionAssemble(<span class="hljs-string">"Param/Expression/lib_UIUI_CFF72C0A"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L16325</span>
+ActorSendAsText(ActorFromActor(libNtve_gf_MainActorofUnit(libUIUI_gv_uITargetingHelperPanelTargetUnitsForPlayer[EventPlayer()][lv_frameIndex]), (<span class="hljs-string">"FriendlyTargetHelperBeamPlayer"</span> + IntToString(EventPlayer()))), TextExpressionAssemble(<span class="hljs-string">"Param/Expression/lib_UIUI_99C703B2"</span>))
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodshanamurastormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodshanamurastormmod">#</a> mods/heroesmapmods/battlegroundmapmods/hanamura.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/hanamura.stormmod/base.stormdata/LibNPLD.galaxy#L638">LibNPLD.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L638</span>
+ActorSendAsText(libNPLD_gv_activePathonMap[libGame_gv_teamOrderIndex_C][<span class="hljs-number">1</span>], StringToText(lv_actorMessageString))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L639</span>
+ActorSendAsText(libNPLD_gv_activePathonMap[libGame_gv_teamOrderIndex_C][<span class="hljs-number">2</span>], StringToText(lv_actorMessageString))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L640</span>
+ActorSendAsText(libNPLD_gv_activePathonMap[libGame_gv_teamChaosIndex_C][<span class="hljs-number">1</span>], StringToText(lv_actorMessageString))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L641</span>
+ActorSendAsText(libNPLD_gv_activePathonMap[libGame_gv_teamChaosIndex_C][<span class="hljs-number">2</span>], StringToText(lv_actorMessageString))
+</code></pre>
+<h4 id="modsheromodsaurielstormmod"><a class="markdownIt-Anchor" href="#modsheromodsaurielstormmod">#</a> mods/heromods/auriel.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heromods/auriel.stormmod/base.stormdata/LibHAUR.galaxy#L1213">LibHAUR.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1213</span>
+ActorSendAsText(libNtve_gf_MainActorofUnit(libHAUR_gv_heroAurielResurrectSpirit[lv_deadPlayer]), StringExternal(<span class="hljs-string">"Param/Value/lib_HAUR_01A53FA0"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1214</span>
+ActorSendAsText(libNtve_gf_MainActorofUnit(libHAUR_gv_heroAurielResurrectSpirit[lv_deadPlayer]), StringExternal(<span class="hljs-string">"Param/Value/lib_HAUR_2B5616E7"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1218</span>
+ActorSendAsText(libNtve_gf_MainActorofUnit(libHAUR_gv_heroAurielResurrectSpirit[lv_deadPlayer]), StringExternal(<span class="hljs-string">"Param/Value/lib_HAUR_8820D07D"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1219</span>
+ActorSendAsText(libNtve_gf_MainActorofUnit(libHAUR_gv_heroAurielResurrectSpirit[lv_deadPlayer]), StringExternal(<span class="hljs-string">"Param/Value/lib_HAUR_60FB7DE7"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1220</span>
+ActorSendAsText(libNtve_gf_MainActorofUnit(libHAUR_gv_heroAurielResurrectSpirit[lv_deadPlayer]), StringExternal(<span class="hljs-string">"Param/Value/lib_HAUR_69526BC8"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1224</span>
+ActorSendAsText(libNtve_gf_MainActorofUnit(libHAUR_gv_heroAurielResurrectSpirit[lv_deadPlayer]), StringExternal(<span class="hljs-string">"Param/Value/lib_HAUR_08EA24F8"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1225</span>
+ActorSendAsText(libNtve_gf_MainActorofUnit(libHAUR_gv_heroAurielResurrectSpirit[lv_deadPlayer]), StringExternal(<span class="hljs-string">"Param/Value/lib_HAUR_36739258"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1229</span>
+ActorSendAsText(libNtve_gf_MainActorofUnit(libHAUR_gv_heroAurielResurrectSpirit[lv_deadPlayer]), StringExternal(<span class="hljs-string">"Param/Value/lib_HAUR_A5770B1C"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1230</span>
+ActorSendAsText(libNtve_gf_MainActorofUnit(libHAUR_gv_heroAurielResurrectSpirit[lv_deadPlayer]), StringExternal(<span class="hljs-string">"Param/Value/lib_HAUR_7A962816"</span>))
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOMI.galaxy#L4462">LibCOMI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4462</span>
+ActorSendAsText(libNtve_gf_MainActorofUnit(lp_biomassUnit), TextExpressionAssemble(<span class="hljs-string">"Param/Expression/lib_COMI_AED708CF"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4466</span>
+ActorSendAsText(libNtve_gf_MainActorofUnit(lp_biomassUnit), TextExpressionAssemble(<span class="hljs-string">"Param/Expression/lib_COMI_139DC70E"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4663</span>
+ActorSendAsText(libNtve_gf_MainActorofUnit(lp_essenceUnit), TextExpressionAssemble(<span class="hljs-string">"Param/Expression/lib_COMI_43337540"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4667</span>
+ActorSendAsText(libNtve_gf_MainActorofUnit(lp_essenceUnit), TextExpressionAssemble(<span class="hljs-string">"Param/Expression/lib_COMI_61EDA91E"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19255</span>
+ActorSendAsText(libNtve_gf_MainActorofUnit(EventUnit()), TextExpressionAssemble(<span class="hljs-string">"Param/Expression/lib_COMI_48E58677"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19285</span>
+ActorSendAsText(libNtve_gf_MainActorofUnit(EventUnit()), TextExpressionAssemble(<span class="hljs-string">"Param/Expression/lib_COMI_4E78EA33"</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L26767</span>
+ActorSendAsText(libNtve_gf_MainActorofUnit(EventUnit()), TextExpressionAssemble(<span class="hljs-string">"Param/Expression/lib_COMI_39D2BF93"</span>))
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

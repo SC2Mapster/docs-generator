@@ -1,0 +1,308 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Add Real Data to Stat Event / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Add Real Data to Stat Event"/>
+                <meta property="og:description" content="Blizzard only.  Adds the Key-Value pair to the Stat Event."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="add-real-data-to-stat-event"><a class="markdownIt-Anchor" href="#add-real-data-to-stat-event">#</a> Add Real Data to Stat Event</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Add <strong>key</strong> = <strong>value</strong> to Stat Event <strong>statEvent|Stat Event.</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Blizzard only.  Adds the Key-Value pair to the Stat Event.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-stat-event">StatEvent</a> ]</em> — Stat Event</li>
+<li><code>string</code> — Key</li>
+<li><code>fixed</code> — Value</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">StatEventAddDataFixed</span><span class="hljs-params">(
+	<span class="hljs-keyword">int</span> statEvent,
+	<span class="hljs-built_in">string</span> key,
+	fixed value,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#stats">Stats</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-stat-event">StatEvent</a> ]</em> — <strong><a href="/galaxy/reference/stat-event-create">Create Stat Event</a></strong> — ( StatEventCreate )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/stat-event-add-data-string">Add String Data to Stat Event</a></strong> — ( StatEventAddDataString )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/stat-event-add-data-int">Add Integer Data to Stat Event</a></strong> — ( StatEventAddDataInt )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/stat-event-add-data-fixed">Add Real Data to Stat Event</a></strong> — ( StatEventAddDataFixed )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/stat-event-send">Send Stat Event</a></strong> — ( StatEventSend )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-stat-event">StatEvent</a> ]</em> — <strong><a href="/galaxy/reference/stat-event-last-created">Last Created Stat Event</a></strong> — ( StatEventLastCreated )</li>
+<li><em><strong>[P]</strong></em> — <strong><a href="/galaxy/reference/preset-stat-event">Stat Event</a></strong></li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignsvoidstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignLib.galaxy#L8103">VoidCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L8103</span>
+StatEventAddDataFixed(lp_event, lp_key, lp_value)
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodscoopdeadmansstandstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodscoopdeadmansstandstormmod">#</a> mods/heroesbrawlmods/brawlmapmods/coop/deadmansstand.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/coop/deadmansstand.stormmod/base.stormdata/LibPEB1.galaxy#L12521">LibPEB1.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L12521</span>
+StatEventAddDataFixed(StatEventLastCreated(), <span class="hljs-string">"Base Integrity"</span>, libPEB1_gv_baseHealthPercent)
+</code></pre>
+<h4 id="modsheroesdatastormmod"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/GameLib.galaxy#L16656">GameLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L16656</span>
+StatEventAddDataFixed(StatEventLastCreated(), <span class="hljs-string">"PositionX"</span>, PointGetX(UnitGetPosition(lv_deadHero)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L16657</span>
+StatEventAddDataFixed(StatEventLastCreated(), <span class="hljs-string">"PositionY"</span>, PointGetY(UnitGetPosition(lv_deadHero)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L18027</span>
+StatEventAddDataFixed(lv_stat, <span class="hljs-string">"XLoc"</span>, PointGetX(lv_point))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L18028</span>
+StatEventAddDataFixed(lv_stat, <span class="hljs-string">"YLoc"</span>, PointGetY(lv_point))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L18179</span>
+StatEventAddDataFixed(lv_stat, <span class="hljs-string">"XLoc"</span>, PointGetX(UnitGetPosition(lv_heroUnit)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L18180</span>
+StatEventAddDataFixed(lv_stat, <span class="hljs-string">"YLoc"</span>, PointGetY(UnitGetPosition(lv_heroUnit)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L18255</span>
+StatEventAddDataFixed(lv_stat, <span class="hljs-string">"XLoc"</span>, PointGetX(UnitGetPosition(lv_heroUnit)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L18256</span>
+StatEventAddDataFixed(lv_stat, <span class="hljs-string">"YLoc"</span>, PointGetY(UnitGetPosition(lv_heroUnit)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L18963</span>
+StatEventAddDataFixed(StatEventLastCreated(), <span class="hljs-string">"GameTime"</span>, libUIUI_gf_HeroesGameTime())
+</code></pre>
+<h4 id="modsheroesdatastormmod-2"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-2">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/MapMechanicsLib.galaxy#L1722">MapMechanicsLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1722</span>
+StatEventAddDataFixed(StatEventLastCreated(), <span class="hljs-string">"TeamID"</span>, libGame_gf_TeamNumberOfPlayer(lp_owner))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1742</span>
+StatEventAddDataFixed(StatEventLastCreated(), <span class="hljs-string">"GameTime"</span>, libUIUI_gf_HeroesGameTime())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3126</span>
+StatEventAddDataFixed(StatEventLastCreated(), <span class="hljs-string">"TeamID"</span>, lv_enemyTeamWinningTeam)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3129</span>
+StatEventAddDataFixed(StatEventLastCreated(), <span class="hljs-string">"GameTime"</span>, libUIUI_gf_HeroesGameTime())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6475</span>
+StatEventAddDataFixed(StatEventLastCreated(), <span class="hljs-string">"TeamID"</span>, lv_collectedTeam)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7497</span>
+StatEventAddDataFixed(StatEventLastCreated(), <span class="hljs-string">"TeamID"</span>, libGame_gf_TeamNumberOfPlayer(libMapM_gv_mMGardensDragonPlayer))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7498</span>
+StatEventAddDataFixed(StatEventLastCreated(), <span class="hljs-string">"GameTime"</span>, libUIUI_gf_HeroesGameTime())
+</code></pre>
+<h4 id="modsheroesdatastormmod-3"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-3">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/SupportLib.galaxy#L569">SupportLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L569</span>
+StatEventAddDataFixed(StatEventLastCreated(), <span class="hljs-string">"GameTime"</span>, TimerGetElapsed(libGame_gv_gameTimer))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L570</span>
+StatEventAddDataFixed(StatEventLastCreated(), <span class="hljs-string">"PreviousGameTime"</span>, libSprt_gv_dataMiningTimeStampofLastPeriodicTransmit)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L573</span>
+StatEventAddDataFixed(StatEventLastCreated(), <span class="hljs-string">"MinionXP"</span>, libGame_gv_players[lv_player].lv_xPRecievedFromMinions)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L574</span>
+StatEventAddDataFixed(StatEventLastCreated(), <span class="hljs-string">"CreepXP"</span>, libGame_gv_players[lv_player].lv_xPRecievedFromCreeps)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L575</span>
+StatEventAddDataFixed(StatEventLastCreated(), <span class="hljs-string">"StructureXP"</span>, libGame_gv_players[lv_player].lv_xPRecievedFromStructures)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L576</span>
+StatEventAddDataFixed(StatEventLastCreated(), <span class="hljs-string">"HeroXP"</span>, libGame_gv_players[lv_player].lv_xPRecievedFromHeroes)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L577</span>
+StatEventAddDataFixed(StatEventLastCreated(), <span class="hljs-string">"TrickleXP"</span>, libGame_gv_players[lv_player].lv_xPRecievedFromTrickle)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L626</span>
+StatEventAddDataFixed(StatEventLastCreated(), <span class="hljs-string">"MapSizeX"</span>, PointGetX(RegionGetBoundsMax(RegionEntireMap())))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L627</span>
+StatEventAddDataFixed(StatEventLastCreated(), <span class="hljs-string">"MapSizeY"</span>, PointGetY(RegionGetBoundsMax(RegionEntireMap())))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L668</span>
+StatEventAddDataFixed(StatEventLastCreated(), <span class="hljs-string">"PositionX"</span>, PointGetX(libGame_gv_townTownData[lv_i].lv_structureSpawnPoints[lv_k]))
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodsbattlefieldofeternitystormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodsbattlefieldofeternitystormmod">#</a> mods/heroesmapmods/battlegroundmapmods/battlefieldofeternity.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/battlefieldofeternity.stormmod/base.stormdata/LibMLBD.galaxy#L591">LibMLBD.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L591</span>
+StatEventAddDataFixed(StatEventLastCreated(), <span class="hljs-string">"Immortal Power Percent"</span>, lv_hPPercent)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L593</span>
+StatEventAddDataFixed(StatEventLastCreated(), <span class="hljs-string">"GameTime"</span>, libUIUI_gf_HeroesGameTime())
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodsblackheartsbaystormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodsblackheartsbaystormmod">#</a> mods/heroesmapmods/battlegroundmapmods/blackheartsbay.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/blackheartsbay.stormmod/base.stormdata/LibBBAY.galaxy#L205">LibBBAY.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L205</span>
+StatEventAddDataFixed(StatEventLastCreated(), <span class="hljs-string">"TeamID"</span>, lv_shipTeam)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L208</span>
+StatEventAddDataFixed(StatEventLastCreated(), <span class="hljs-string">"GameTime"</span>, libUIUI_gf_HeroesGameTime())
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodsbraxisholdoutstormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodsbraxisholdoutstormmod">#</a> mods/heroesmapmods/battlegroundmapmods/braxisholdout.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/braxisholdout.stormmod/base.stormdata/LibSCHO.galaxy#L529">LibSCHO.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L529</span>
+StatEventAddDataFixed(StatEventLastCreated(), <span class="hljs-string">"TeamOrderProgress"</span>, libSCHO_gv_mMHO_TeamProgress[libGame_gv_teamOrderIndex_C])
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L530</span>
+StatEventAddDataFixed(StatEventLastCreated(), <span class="hljs-string">"TeamChaosProgress"</span>, libSCHO_gv_mMHO_TeamProgress[libGame_gv_teamChaosIndex_C])
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L531</span>
+StatEventAddDataFixed(StatEventLastCreated(), <span class="hljs-string">"GameTime"</span>, libUIUI_gf_HeroesGameTime())
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodshauntedminesstormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodshauntedminesstormmod">#</a> mods/heroesmapmods/battlegroundmapmods/hauntedmines.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/hauntedmines.stormmod/base.stormdata/LibMHtM.galaxy#L792">LibMHtM.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L792</span>
+StatEventAddDataFixed(StatEventLastCreated(), <span class="hljs-string">"TeamID"</span>, lp_team)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L793</span>
+StatEventAddDataFixed(StatEventLastCreated(), <span class="hljs-string">"SkullCount"</span>, libMHtM_gv_mMUnderworldSkullCollected[lp_team])
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L794</span>
+StatEventAddDataFixed(StatEventLastCreated(), <span class="hljs-string">"GameTime"</span>, libUIUI_gf_HeroesGameTime())
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodsinfernalshrinesstormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodsinfernalshrinesstormmod">#</a> mods/heroesmapmods/battlegroundmapmods/infernalshrines.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/infernalshrines.stormmod/base.stormdata/LibMSHE.galaxy#L1499">LibMSHE.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1499</span>
+StatEventAddDataFixed(StatEventLastCreated(), <span class="hljs-string">"GameTime"</span>, libUIUI_gf_HeroesGameTime())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1839</span>
+StatEventAddDataFixed(StatEventLastCreated(), <span class="hljs-string">"Siege Damage Done"</span>, libMSHE_gv_punisherSiegeDamage)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1840</span>
+StatEventAddDataFixed(StatEventLastCreated(), <span class="hljs-string">"Hero Damage Done"</span>, libMSHE_gv_punisherHeroDamage)
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodsskytemplestormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodsskytemplestormmod">#</a> mods/heroesmapmods/battlegroundmapmods/skytemple.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/skytemple.stormmod/base.stormdata/LibMLCP.galaxy#L571">LibMLCP.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L571</span>
+StatEventAddDataFixed(StatEventLastCreated(), <span class="hljs-string">"GameTime"</span>, libUIUI_gf_HeroesGameTime())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2816</span>
+StatEventAddDataFixed(StatEventLastCreated(), <span class="hljs-string">"GameTime"</span>, libUIUI_gf_HeroesGameTime())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3018</span>
+StatEventAddDataFixed(StatEventLastCreated(), <span class="hljs-string">"SkyTempleShotsDamage"</span>, EventUnitDamageAmount())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3019</span>
+StatEventAddDataFixed(StatEventLastCreated(), <span class="hljs-string">"GameTime"</span>, libUIUI_gf_HeroesGameTime())
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodstombofthespiderqueenstormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodstombofthespiderqueenstormmod">#</a> mods/heroesmapmods/battlegroundmapmods/tombofthespiderqueen.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/tombofthespiderqueen.stormmod/base.stormdata/LibMSOC.galaxy#L2024">LibMSOC.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2024</span>
+StatEventAddDataFixed(StatEventLastCreated(), <span class="hljs-string">"TeamID"</span>, lv_channelingTeam)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2027</span>
+StatEventAddDataFixed(StatEventLastCreated(), <span class="hljs-string">"GameTime"</span>, libUIUI_gf_HeroesGameTime())
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodstowersofdoomstormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodstowersofdoomstormmod">#</a> mods/heroesmapmods/battlegroundmapmods/towersofdoom.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/towersofdoom.stormmod/base.stormdata/LibMTOD.galaxy#L161">LibMTOD.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L161</span>
+StatEventAddDataFixed(StatEventLastCreated(), <span class="hljs-string">"Start Time"</span>, TimerGetElapsed(libGame_gv_gameTimer))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L179</span>
+StatEventAddDataFixed(StatEventLastCreated(), <span class="hljs-string">"End Time"</span>, TimerGetElapsed(libGame_gv_gameTimer))
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodsvolskayamechanicsstormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodsvolskayamechanicsstormmod">#</a> mods/heroesmapmods/battlegroundmapmods/volskayamechanics.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/volskayamechanics.stormmod/base.stormdata/LibVLSK.galaxy#L123">LibVLSK.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L123</span>
+StatEventAddDataFixed(StatEventLastCreated(), <span class="hljs-string">"GameTime"</span>, libUIUI_gf_HeroesGameTime())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L372</span>
+StatEventAddDataFixed(StatEventLastCreated(), <span class="hljs-string">"LosingTeamProgress"</span>, libVLSK_gf_GetCapturePointVictoryProgressasInt(lp_capturePointIndex, libGame_gf_EnemyTeam(lp_victoryTeam)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L373</span>
+StatEventAddDataFixed(StatEventLastCreated(), <span class="hljs-string">"GameTime"</span>, libUIUI_gf_HeroesGameTime())
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodswarheadjunctionstormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodswarheadjunctionstormmod">#</a> mods/heroesmapmods/battlegroundmapmods/warheadjunction.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/warheadjunction.stormmod/base.stormdata/LibMSC2.galaxy#L372">LibMSC2.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L372</span>
+StatEventAddDataFixed(StatEventLastCreated(), <span class="hljs-string">"GameTime"</span>, libUIUI_gf_HeroesGameTime())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L666</span>
+StatEventAddDataFixed(StatEventLastCreated(), <span class="hljs-string">"GameTime"</span>, libUIUI_gf_HeroesGameTime())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1864</span>
+StatEventAddDataFixed(StatEventLastCreated(), <span class="hljs-string">"GameTime"</span>, libUIUI_gf_HeroesGameTime())
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2114</span>
+StatEventAddDataFixed(StatEventLastCreated(), <span class="hljs-string">"GameTime"</span>, libUIUI_gf_HeroesGameTime())
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOOC.galaxy#L5193">LibCOOC.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L5193</span>
+StatEventAddDataFixed(lp_event, lp_key, lp_value)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,420 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Point Is Passable / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Point Is Passable"/>
+                <meta property="og:description" content="Returns true if the specified point is pathable to ground units.
+
+Returns: bool"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="point-is-passable"><a class="markdownIt-Anchor" href="#point-is-passable">#</a> Point Is Passable</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — <strong>p1</strong> is passable<br>
+<em>Flags</em> — <code>Native</code> | <code>Function</code></p>
+</blockquote>
+<p>Returns true if the specified point is pathable to ground units.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>point</code> — Point</li>
+</ul>
+<p>Returns — <code>bool</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">bool</span> <span class="hljs-title">PointPathingPassable</span><span class="hljs-params">(point p)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#point-pathing">Point / Pathing</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/point-pathing-passable">Point Is Passable</a></strong> — ( PointPathingPassable )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/point-pathing-is-connected">Points Connected By Pathing</a></strong> — ( PointPathingIsConnected )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/point-pathing-cost">Pathing Cost Between Points</a></strong> — ( PointPathingCost )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-pathing-type">PathingType</a> ]</em> — <strong><a href="/galaxy/reference/pathing-type">Pathing Type At Point</a></strong> — ( PathingType )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignsswarmsc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmsc2campaign">#</a> campaigns/swarm.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarm.sc2campaign/base.sc2maps/maps/campaign/voidprologue/voidprologue02.sc2map/MapScript.galaxy#L518">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L518</span>
+PointPathingPassable(lv_validPoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L518</span>
+PointPathingPassable(lv_validPoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L766</span>
+PointPathingPassable(UnitGetPosition(lp_warpPrism))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L835</span>
+PointPathingPassable(lv_testPoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L849</span>
+PointPathingPassable(lv_testPoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1097</span>
+PointPathingPassable(lv_testPoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1111</span>
+PointPathingPassable(lv_testPoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3266</span>
+PointPathingPassable(UnitGetPosition(lv_warpPrism))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3425</span>
+PointPathingPassable(UnitGetPosition(lv_warpPrism))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L766</span>
+PointPathingPassable(UnitGetPosition(lp_warpPrism))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L835</span>
+PointPathingPassable(lv_testPoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L849</span>
+PointPathingPassable(lv_testPoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1097</span>
+PointPathingPassable(lv_testPoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1111</span>
+PointPathingPassable(lv_testPoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3266</span>
+PointPathingPassable(UnitGetPosition(lv_warpPrism))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3425</span>
+PointPathingPassable(UnitGetPosition(lv_warpPrism))
+</code></pre>
+<h4 id="modsheroesbrawlmodsarenamodemodstrialgroundsstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsarenamodemodstrialgroundsstormmod">#</a> mods/heroesbrawlmods/arenamodemods/trialgrounds.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/arenamodemods/trialgrounds.stormmod/base.stormdata/LibAMVS.galaxy#L3117">LibAMVS.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3117</span>
+PointPathingPassable(lv_randPoint)
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodscoopdeadmansstandstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodscoopdeadmansstandstormmod">#</a> mods/heroesbrawlmods/brawlmapmods/coop/deadmansstand.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/coop/deadmansstand.stormmod/base.stormdata/LibPEB1.galaxy#L10580">LibPEB1.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L10580</span>
+PointPathingPassable(lv_proposedSpawnPoints[<span class="hljs-number">1</span>])
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10580</span>
+PointPathingPassable(lv_proposedSpawnPoints[<span class="hljs-number">2</span>])
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10580</span>
+PointPathingPassable(lv_proposedSpawnPoints[<span class="hljs-number">3</span>])
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10580</span>
+PointPathingPassable(lv_proposedSpawnPoints[<span class="hljs-number">4</span>])
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10580</span>
+PointPathingPassable(lv_proposedSpawnPoints[<span class="hljs-number">5</span>])
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2039</span>
+PointPathingPassable(lv_proposedPoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2057</span>
+PointPathingPassable(lv_proposedPoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2061</span>
+PointPathingPassable(lv_proposedPoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2082</span>
+PointPathingPassable(lv_proposedPoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7589</span>
+PointPathingPassable(lv_proposedPoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9684</span>
+PointPathingPassable(lv_proposedSpawnPoints[<span class="hljs-number">1</span>])
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9684</span>
+PointPathingPassable(lv_proposedSpawnPoints[<span class="hljs-number">2</span>])
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9684</span>
+PointPathingPassable(lv_proposedSpawnPoints[<span class="hljs-number">3</span>])
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9684</span>
+PointPathingPassable(lv_proposedSpawnPoints[<span class="hljs-number">4</span>])
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9684</span>
+PointPathingPassable(lv_proposedSpawnPoints[<span class="hljs-number">5</span>])
+</code></pre>
+<h4 id="modsheroesdatastormmod"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/AILib.galaxy#L479">AILib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L479</span>
+PointPathingPassable(UnitGetPosition(lv_u))
+</code></pre>
+<h4 id="modsheroesdatastormmod-2"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-2">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/GameDataHelperLib.galaxy#L6582">GameDataHelperLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L6582</span>
+PointPathingPassable(lv_actualTargetPoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6665</span>
+PointPathingPassable(UnitGetPosition(lv_unit))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7513</span>
+PointPathingPassable(lv_actualTargetPoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7516</span>
+PointPathingPassable(lv_actualTargetPoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7518</span>
+PointPathingPassable(lv_actualTargetPoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7520</span>
+PointPathingPassable(lv_actualTargetPoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7585</span>
+PointPathingPassable(lv_actualTargetPoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7588</span>
+PointPathingPassable(lv_actualTargetPoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7590</span>
+PointPathingPassable(lv_actualTargetPoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7592</span>
+PointPathingPassable(lv_actualTargetPoint)
+</code></pre>
+<h4 id="modsheroesdatastormmod-3"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-3">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/GameLib.galaxy#L9384">GameLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L9384</span>
+PointPathingPassable(UnitGetPosition(lp_creepUnit))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12526</span>
+PointPathingPassable(lv_actualTargetPoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L16217</span>
+PointPathingPassable(lv_targetPoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L16217</span>
+PointPathingPassable(lv_targetPoint2)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L16217</span>
+PointPathingPassable(lv_targetPoint3)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L16226</span>
+PointPathingPassable(lv_targetPoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L16226</span>
+PointPathingPassable(lv_targetPoint2)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L16226</span>
+PointPathingPassable(lv_targetPoint3)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L16248</span>
+PointPathingPassable(lv_targetPoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L16248</span>
+PointPathingPassable(lv_targetPoint2)
+</code></pre>
+<h4 id="modsheroesdatastormmod-4"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-4">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/HeroesLib.galaxy#L2508">HeroesLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2508</span>
+PointPathingPassable(lv_testPoint)
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodshauntedminesstormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodshauntedminesstormmod">#</a> mods/heroesmapmods/battlegroundmapmods/hauntedmines.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/hauntedmines.stormmod/base.stormdata/LibMHtM.galaxy#L1996">LibMHtM.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1996</span>
+PointPathingPassable(lv_skullPosition)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2015</span>
+PointPathingPassable(lv_skullPosition)
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodsinfernalshrinesstormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodsinfernalshrinesstormmod">#</a> mods/heroesmapmods/battlegroundmapmods/infernalshrines.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/infernalshrines.stormmod/base.stormdata/LibMSHE.galaxy#L2072">LibMSHE.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2072</span>
+PointPathingPassable(lv_actualTargetPoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2075</span>
+PointPathingPassable(lv_actualTargetPoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2077</span>
+PointPathingPassable(lv_actualTargetPoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2079</span>
+PointPathingPassable(lv_actualTargetPoint)
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodsinfernalshrinesdatastormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodsinfernalshrinesdatastormmod">#</a> mods/heroesmapmods/battlegroundmapmods/infernalshrinesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/infernalshrinesdata.stormmod/base.stormdata/LibMSHD.galaxy#L134">LibMSHD.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L134</span>
+PointPathingPassable(lv_actualTargetPoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L137</span>
+PointPathingPassable(lv_actualTargetPoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L139</span>
+PointPathingPassable(lv_actualTargetPoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L141</span>
+PointPathingPassable(lv_actualTargetPoint)
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodswarheadjunctiondatastormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodswarheadjunctiondatastormmod">#</a> mods/heroesmapmods/battlegroundmapmods/warheadjunctiondata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/warheadjunctiondata.stormmod/base.stormdata/LibWJDA.galaxy#L92">LibWJDA.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L92</span>
+PointPathingPassable(lv_proposedPoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L110</span>
+PointPathingPassable(lv_proposedPoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L127</span>
+PointPathingPassable(lv_proposedPoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L213</span>
+PointPathingPassable(lv_proposedPoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L248</span>
+PointPathingPassable(lv_proposedPoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L268</span>
+PointPathingPassable(lv_proposedPoint)
+</code></pre>
+<h4 id="modsheromodsgenjistormmod"><a class="markdownIt-Anchor" href="#modsheromodsgenjistormmod">#</a> mods/heromods/genji.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heromods/genji.stormmod/base.stormdata/LibHGen.galaxy#L624">LibHGen.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L624</span>
+PointPathingPassable(lv_interpolationPoint)
+</code></pre>
+<h4 id="modsheromodstracerstormmod"><a class="markdownIt-Anchor" href="#modsheromodstracerstormmod">#</a> mods/heromods/tracer.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heromods/tracer.stormmod/base.stormdata/LibTrac.galaxy#L132">LibTrac.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L132</span>
+PointPathingPassable(libTrac_gv_tracerRecallRecordVariable[lp_player][lv_index].lv_position)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L141</span>
+PointPathingPassable(libTrac_gv_tracerRecallRecordVariable[lp_player][lv_index].lv_position)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1003</span>
+PointPathingPassable(libTrac_gv_tracerRecallRecordVariable[lv_player][<span class="hljs-number">1</span>].lv_position)
+</code></pre>
+<h4 id="modsnovastoryassetssc2mod"><a class="markdownIt-Anchor" href="#modsnovastoryassetssc2mod">#</a> mods/novastoryassets.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/novastoryassets.sc2mod/base.sc2maps/maps/campaign/nova/nova03.sc2map/MapScript.galaxy#L3554">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3554</span>
+PointPathingPassable(lv_targetPoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1034</span>
+PointPathingPassable(PointWithOffsetPolar(UnitGetPosition(gv_eradicatorTypeMissile), <span class="hljs-number">3.0</span>, lv_currentAngle))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1049</span>
+PointPathingPassable(PointWithOffsetPolar(UnitGetPosition(gv_eradicatorTypeMissile), <span class="hljs-number">9.0</span>, lv_currentAngle))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1101</span>
+PointPathingPassable(PointWithOffsetPolar(UnitGetPosition(gv_eradicatorTypeMissile), <span class="hljs-number">3.0</span>, lv_currentAngle))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2008</span>
+PointPathingPassable(lv_impactPoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2015</span>
+PointPathingPassable(lv_impactPoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3554</span>
+PointPathingPassable(lv_targetPoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1034</span>
+PointPathingPassable(PointWithOffsetPolar(UnitGetPosition(gv_eradicatorTypeMissile), <span class="hljs-number">3.0</span>, lv_currentAngle))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1049</span>
+PointPathingPassable(PointWithOffsetPolar(UnitGetPosition(gv_eradicatorTypeMissile), <span class="hljs-number">9.0</span>, lv_currentAngle))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1101</span>
+PointPathingPassable(PointWithOffsetPolar(UnitGetPosition(gv_eradicatorTypeMissile), <span class="hljs-number">3.0</span>, lv_currentAngle))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2008</span>
+PointPathingPassable(lv_impactPoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2015</span>
+PointPathingPassable(lv_impactPoint)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOMI.galaxy#L6718">LibCOMI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L6718</span>
+PointPathingPassable(lv_pointIter)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6806</span>
+PointPathingPassable(lv_pointIter)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6902</span>
+PointPathingPassable(lv_pointIter)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11085</span>
+PointPathingPassable(lv_dropLocation)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11858</span>
+PointPathingPassable(lv_testDropPoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L23135</span>
+PointPathingPassable(PointWithOffsetPolar(UnitGetPosition(auto33602D3D_var), lv_distance, lv_angle))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L25860</span>
+PointPathingPassable(PointWithOffsetPolar(UnitGetPosition(auto7BF82D02_var), lv_distance, lv_angle))
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod-2"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod-2">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOMU.galaxy#L11037">LibCOMU.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L11037</span>
+PointPathingPassable(lv_dropLocation)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11051</span>
+PointPathingPassable(lv_dropLocation)
+</code></pre>
+<h4 id="modswarcoopprogressionequipmentssc2mod"><a class="markdownIt-Anchor" href="#modswarcoopprogressionequipmentssc2mod">#</a> mods/warcoop/progression/equipments.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/warcoop/progression/equipments.sc2mod/base.sc2data/LibPEqu.galaxy#L193">LibPEqu.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L193</span>
+PointPathingPassable(lv_placementPoint)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

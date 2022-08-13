@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Mark Conversation Reply As Read/Unread / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Mark Conversation Reply As Read/Unread"/>
+                <meta property="og:description" content="Marks a conversation reply as either read or unread."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="mark-conversation-reply-as-readunread"><a class="markdownIt-Anchor" href="#mark-conversation-reply-as-readunread">#</a> Mark Conversation Reply As Read/Unread</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Mark <strong>conversationId</strong> <strong>replyId</strong> as <strong>state|Read/Unread</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Marks a conversation reply as either read or unread.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> <em>[ conversation ]</em> — Conversation</li>
+<li><code>int</code> <em>[ reply ]</em> — Reply</li>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-reply-state">ReplyState</a> ]</em> — State</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">ConversationReplySetState</span><span class="hljs-params">(
+	<span class="hljs-keyword">int</span> intId,
+	<span class="hljs-keyword">int</span> replyId,
+	<span class="hljs-keyword">int</span> state,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#conversation-conversation-tools">Conversation / Conversation Tools</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/conversation-reply-set-text">Set Conversation Reply Text</a></strong> — ( ConversationReplySetText )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/conversation-destroy">Remove Conversation</a></strong> — ( ConversationDestroy )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/conversation-reply-destroy">Remove Conversation Reply</a></strong> — ( ConversationReplyDestroy )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/conversation-destroy-all">Remove All Conversations</a></strong> — ( ConversationDestroyAll )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/conversation-reply-destroy-all">Remove All Conversation Replies</a></strong> — ( ConversationReplyDestroyAll )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-reply-state">ReplyState</a> ]</em> — <strong><a href="/galaxy/reference/conversation-reply-get-state">Conversation Reply State</a></strong> — ( ConversationReplyGetState )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/conversation-reply-get-index">Conversation Reply Index</a></strong> — ( ConversationReplyGetIndex )</li>
+<li><em><strong>[F]</strong></em> — <code>text</code> — <strong><a href="/galaxy/reference/conversation-reply-get-text">Conversation Reply Text</a></strong> — ( ConversationReplyGetText )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/conversation-reply-set-state">Mark Conversation Reply As Read/Unread</a></strong> — ( ConversationReplySetState )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> <em>[ convstateindex ]</em> — <strong><a href="/galaxy/reference/conversation-data-state-index">Convert Integer To Conversation State Index</a></strong> — ( ConversationDataStateIndex )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<p>— None found —</p>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

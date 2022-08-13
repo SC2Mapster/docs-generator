@@ -1,0 +1,414 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Select/Deselect Unit / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Select/Deselect Unit"/>
+                <meta property="og:description" content="Selects or deselects a unit for a player."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="selectdeselect-unit"><a class="markdownIt-Anchor" href="#selectdeselect-unit">#</a> Select/Deselect Unit</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — <strong>select|Select/Deselect</strong> <strong>unit</strong> for player <strong>player</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Selects or deselects a unit for a player.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>unit</code> — Unit</li>
+<li><code>int</code> — Player</li>
+<li><code>bool</code> <em>[ preset::<a href="/galaxy/reference/preset-select-deselect-option">SelectDeselectOption</a> ]</em> — Select</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">UnitSelect</span><span class="hljs-params">(
+	unit inUnit,
+	<span class="hljs-keyword">int</span> inPlayer,
+	<span class="hljs-keyword">bool</span> inSelect,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#selection-unit-selection">Selection / Unit Selection</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/unit-subgroup-index-selected">Subgroup Index</a></strong> — ( UnitSubgroupIndexSelected )</li>
+<li><em><strong>[F]</strong></em> — <code>unitgroup</code> — <strong><a href="/galaxy/reference/unit-subgroup-selected">Selected Subgroup Units</a></strong> — ( UnitSubgroupSelected )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-select">Select/Deselect Unit</a></strong> — ( UnitSelect )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-subgroup-index-next">Select Next Subgroup</a></strong> — ( UnitSubgroupIndexNext )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-subgroup-index-previous">Select Previous Subgroup</a></strong> — ( UnitSubgroupIndexPrevious )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-group-select">Select/Deselect Unit Group</a></strong> — ( UnitGroupSelect )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-clear-selection">Clear Unit Selection</a></strong> — ( UnitClearSelection )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/unit-is-selected">Unit Is Selected</a></strong> — ( UnitIsSelected )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-unit-type-is-selected">Unit Type Is Selected</a></strong> — ( libNtve_gf_UnitTypeIsSelected )</li>
+<li><em><strong>[F]</strong></em> — <code>unitgroup</code> — <strong><a href="/galaxy/reference/unit-group-selected">Selected Units</a></strong> — ( UnitGroupSelected )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-unit-selected">Unit Is Selected</a></strong> — ( TriggerAddEventUnitSelected )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-store-unit-selection">Store Unit Selection</a></strong> — ( libNtve_gf_StoreUnitSelection )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-restore-unit-selection">Restore Unit Selection</a></strong> — ( libNtve_gf_RestoreUnitSelection )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-flash-selection">Flash Unit Selection</a></strong> — ( UnitFlashSelection )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/challenges/protosscombat.sc2map/MapScript.galaxy#L318">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L318</span>
+UnitSelect(UnitGroupLoopCurrent(), gv_pLAYER_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L295</span>
+UnitSelect(UnitGroupLoopCurrent(), gv_pLAYER_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L301</span>
+UnitSelect(UnitGroupLoopCurrent(), gv_pLAYER_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3200</span>
+UnitSelect(lv_colonistShip, gv_pLAYER01_USER, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3317</span>
+UnitSelect(lv_colonistShip, gv_pLAYER01_USER, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3434</span>
+UnitSelect(lv_colonistShip, gv_pLAYER01_USER, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L976</span>
+UnitSelect(UnitFromId(<span class="hljs-number">311</span>), gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6497</span>
+UnitSelect(UnitFromId(<span class="hljs-number">1</span>), gv_p01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L755</span>
+UnitSelect(UnitGroupUnit(UnitGroup(<span class="hljs-string">"CommandCenter"</span>, gv_pLAYER_01_USER, RegionEntireMap(), UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))), <span class="hljs-number">0</span>), <span class="hljs-number">1</span>), gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1527</span>
+UnitSelect(UnitFromId(<span class="hljs-number">1167</span>), gv_pLAYER01_USER, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1059</span>
+UnitSelect(gv_tosh, gv_p1_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1240</span>
+UnitSelect(gv_nova, gv_pLAYER01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6090</span>
+UnitSelect(gv_nova, gv_pLAYER01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6374</span>
+UnitSelect(gv_nova, gv_pLAYER01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1714</span>
+UnitSelect(gv_uI_CommandCenter01, gv_p01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2963</span>
+UnitSelect(gv_mov_Marine01, gv_p01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3702</span>
+UnitSelect(UnitGroupLoopCurrent(), gv_p01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4104</span>
+UnitSelect(UnitGroupLoopCurrent(), gv_p01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4542</span>
+UnitSelect(UnitGroupLoopCurrent(), gv_p01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5106</span>
+UnitSelect(UnitGroupLoopCurrent(), gv_p01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5969</span>
+UnitSelect(gv_con_SCV, gv_p01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6490</span>
+UnitSelect(UnitGroupLoopCurrent(), gv_p01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6912</span>
+UnitSelect(UnitGroupLoopCurrent(), gv_p01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8548</span>
+UnitSelect(gv_pro_Barracks, gv_p01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L703</span>
+UnitSelect(UnitGroupUnit(UnitGroup(<span class="hljs-string">"CommandCenter"</span>, gv_p1_USER, RegionCircle(PointFromId(<span class="hljs-number">1</span>), <span class="hljs-number">16.0</span>), UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))), <span class="hljs-number">0</span>), <span class="hljs-number">1</span>), gv_p1_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L683</span>
+UnitSelect(auto4F79FA65_var, gv_pLAYER01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8230</span>
+UnitSelect(lv_lOCAL_ExtractingUnit, gv_p1_USER, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5361</span>
+UnitSelect(UnitGroupUnit(UnitGroup(<span class="hljs-string">"CommandCenter"</span>, gv_pLAYER_USER, RegionEntireMap(), UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))), <span class="hljs-number">0</span>), <span class="hljs-number">1</span>), gv_pLAYER_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1094</span>
+UnitSelect(UnitFromId(<span class="hljs-number">1</span>), gv_p1_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2259</span>
+UnitSelect(gv_tHEONEZERATUL, gv_p1_USER, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2294</span>
+UnitSelect(gv_tHEONEZERATUL, gv_p1_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3896</span>
+UnitSelect(gv_tHEONEZERATUL, gv_p1_USER, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3932</span>
+UnitSelect(gv_tHEONEZERATUL, gv_p1_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L910</span>
+UnitSelect(gv_zeratul, gv_p01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6168</span>
+UnitSelect(gv_zeratul, gv_p01_PLAYER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3200</span>
+UnitSelect(lv_colonistShip, gv_pLAYER01_USER, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3317</span>
+UnitSelect(lv_colonistShip, gv_pLAYER01_USER, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3434</span>
+UnitSelect(lv_colonistShip, gv_pLAYER01_USER, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L976</span>
+UnitSelect(UnitFromId(<span class="hljs-number">311</span>), gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6497</span>
+UnitSelect(UnitFromId(<span class="hljs-number">1</span>), gv_p01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L755</span>
+UnitSelect(UnitGroupUnit(UnitGroup(<span class="hljs-string">"CommandCenter"</span>, gv_pLAYER_01_USER, RegionEntireMap(), UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))), <span class="hljs-number">0</span>), <span class="hljs-number">1</span>), gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1527</span>
+UnitSelect(UnitFromId(<span class="hljs-number">1167</span>), gv_pLAYER01_USER, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1059</span>
+UnitSelect(gv_tosh, gv_p1_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1240</span>
+UnitSelect(gv_nova, gv_pLAYER01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6090</span>
+UnitSelect(gv_nova, gv_pLAYER01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6374</span>
+UnitSelect(gv_nova, gv_pLAYER01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1714</span>
+UnitSelect(gv_uI_CommandCenter01, gv_p01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2963</span>
+UnitSelect(gv_mov_Marine01, gv_p01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3702</span>
+UnitSelect(UnitGroupLoopCurrent(), gv_p01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4104</span>
+UnitSelect(UnitGroupLoopCurrent(), gv_p01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4542</span>
+UnitSelect(UnitGroupLoopCurrent(), gv_p01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5106</span>
+UnitSelect(UnitGroupLoopCurrent(), gv_p01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5969</span>
+UnitSelect(gv_con_SCV, gv_p01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6490</span>
+UnitSelect(UnitGroupLoopCurrent(), gv_p01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6912</span>
+UnitSelect(UnitGroupLoopCurrent(), gv_p01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8548</span>
+UnitSelect(gv_pro_Barracks, gv_p01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L703</span>
+UnitSelect(UnitGroupUnit(UnitGroup(<span class="hljs-string">"CommandCenter"</span>, gv_p1_USER, RegionCircle(PointFromId(<span class="hljs-number">1</span>), <span class="hljs-number">16.0</span>), UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterMissile), (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))), <span class="hljs-number">0</span>), <span class="hljs-number">1</span>), gv_p1_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L683</span>
+UnitSelect(auto4F79FA65_var, gv_pLAYER01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8230</span>
+UnitSelect(lv_lOCAL_ExtractingUnit, gv_p1_USER, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5361</span>
+UnitSelect(UnitGroupUnit(UnitGroup(<span class="hljs-string">"CommandCenter"</span>, gv_pLAYER_USER, RegionEntireMap(), UnitFilter(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterDead - <span class="hljs-number">32</span>)) | (<span class="hljs-number">1</span> &lt;&lt; (c_targetFilterHidden - <span class="hljs-number">32</span>))), <span class="hljs-number">0</span>), <span class="hljs-number">1</span>), gv_pLAYER_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1094</span>
+UnitSelect(UnitFromId(<span class="hljs-number">1</span>), gv_p1_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2259</span>
+UnitSelect(gv_tHEONEZERATUL, gv_p1_USER, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2294</span>
+UnitSelect(gv_tHEONEZERATUL, gv_p1_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3896</span>
+UnitSelect(gv_tHEONEZERATUL, gv_p1_USER, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3932</span>
+UnitSelect(gv_tHEONEZERATUL, gv_p1_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L910</span>
+UnitSelect(gv_zeratul, gv_p01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6168</span>
+UnitSelect(gv_zeratul, gv_p01_PLAYER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L318</span>
+UnitSelect(UnitGroupLoopCurrent(), gv_pLAYER_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L295</span>
+UnitSelect(UnitGroupLoopCurrent(), gv_pLAYER_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L301</span>
+UnitSelect(UnitGroupLoopCurrent(), gv_pLAYER_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3519</span>
+UnitSelect(gv_zeratul, gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3525</span>
+UnitSelect(auto03D406C4_var, gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3532</span>
+UnitSelect(auto92E00B65_var, gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3539</span>
+UnitSelect(auto5E9B51B6_var, gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4986</span>
+UnitSelect(gv_zeratul, gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4992</span>
+UnitSelect(auto478E7D7D_var, gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8999</span>
+UnitSelect(gv_zeratul, gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9005</span>
+UnitSelect(auto343F4C8B_var, gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L327</span>
+UnitSelect(lp_unit, gv_pLAYER_01_USER, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L523</span>
+UnitSelect(lp_eggToCorrupt, gv_pLAYER_01_USER, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L579</span>
+UnitSelect(lp_eggToCorrupt, gv_pLAYER_01_USER, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L678</span>
+UnitSelect(UnitLastCreated(), gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L692</span>
+UnitSelect(UnitLastCreated(), gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2105</span>
+UnitSelect(auto3B0F3FBC_var, gv_pLAYER_01_USER, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3340</span>
+UnitSelect(gv_zagara, gv_pLAYER_01_USER, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L481</span>
+UnitSelect(gv_tHE_ONE_QUEEN, gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1643</span>
+UnitSelect(EventUnitTargetUnit(), gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2695</span>
+UnitSelect(EventUnitTargetUnit(), gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2753</span>
+UnitSelect(UnitFromId(<span class="hljs-number">16</span>), gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3266</span>
+UnitSelect(EventUnitTargetUnit(), gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8853</span>
+UnitSelect(gv_tHE_ONE_QUEEN, gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L589</span>
+UnitSelect(gv_hybridCellArray[lp_index], gv_pLAYER_01_USER, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L665</span>
+UnitSelect(lp_cHOSEN_HYBRID, gv_pLAYER_01_USER, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4871</span>
+UnitSelect(auto05F1752F_var, gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5749</span>
+UnitSelect(gv_dEHAKA, gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6513</span>
+UnitSelect(gv_dEHAKA, gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6798</span>
+UnitSelect(gv_dEHAKA, gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9045</span>
+UnitSelect(auto3CFD6BCB_var, gv_pLAYER_01_USER, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11373</span>
+UnitSelect(gv_kerrigan, gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11688</span>
+UnitSelect(gv_kerrigan, gv_pLAYER_01_USER, <span class="hljs-literal">true</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,425 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Shake Camera / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Shake Camera"/>
+                <meta property="og:description" content="Shakes the camera. If the Duration parameter is set to 0, it will shake the camera until stopped by the &quot;Stop Shaking Camera&quot; action. This action is useful for things such as explosions or earthquakes."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="shake-camera"><a class="markdownIt-Anchor" href="#shake-camera">#</a> Shake Camera</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Shake the camera for player <strong>player</strong> for <strong>duration</strong> seconds, with strength <strong>strength</strong>, frequency <strong>frequency</strong> Hz, and <strong>random</strong>% randomness (Position: <strong>position</strong>, Direction: <strong>direction</strong>)<br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Shakes the camera. If the Duration parameter is set to 0, it will shake the camera until stopped by the <em>“Stop Shaking Camera”</em> action. This action is useful for things such as explosions or earthquakes.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> — Player</li>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-camera-position">CameraPosition</a> ]</em> — Position</li>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-camera-direction">CameraDirection</a> ]</em> — Direction</li>
+<li><code>fixed</code> — Strength</li>
+<li><code>fixed</code> — Frequency</li>
+<li><code>fixed</code> — Random</li>
+<li><code>fixed</code> — Duration</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">CameraShakeStart</span><span class="hljs-params">(
+	<span class="hljs-keyword">int</span> player,
+	<span class="hljs-keyword">int</span> position,
+	<span class="hljs-keyword">int</span> direction,
+	fixed amplitude,
+	fixed frequency,
+	fixed randomPercent,
+	fixed duration,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#camera-camera-tricks">Camera / Camera Tricks</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/camera-lock-input">Lock Camera Input</a></strong> — ( CameraLockInput )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/camera-set-bounds">Set Camera Bounds</a></strong> — ( CameraSetBounds )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/camera-shake-start">Shake Camera</a></strong> — ( CameraShakeStart )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/camera-shake">Shake Camera Using Preset</a></strong> — ( CameraShake )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/camera-shake-stop">Stop Shaking Camera</a></strong> — ( CameraShakeStop )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-swoosh-camera">Zoom Camera</a></strong> — ( libNtve_gf_SwooshCamera )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/camera-follow-unit-group">Follow Unit Group with Camera</a></strong> — ( CameraFollowUnitGroup )</li>
+<li><em><strong>[F]</strong></em> — <code>unitgroup</code> — <strong><a href="/galaxy/reference/camera-follow-unit-group-get">Unit Group Followed By Camera</a></strong> — ( CameraFollowUnitGroupGet )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/camera-force-follow-unit-group">Force Follow Unit Group with Camera</a></strong> — ( CameraForceFollowUnitGroup )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/camera-look-at-unit">Make Camera Look At And Follow Unit</a></strong> — ( CameraLookAtUnit )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/camera-look-at-actor">Make Camera Look At And Follow Actor</a></strong> — ( CameraLookAtActor )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/camera-force-mouse-relative">Lock Camera Mouse Relative Mode On/Off</a></strong> — ( CameraForceMouseRelative )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/camera-set-mouse-rotates">Turn Camera Mouse Rotation On/Off</a></strong> — ( CameraSetMouseRotates )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/camera-set-mouse-rotation-speed">Set Camera Mouse Rotation Speed</a></strong> — ( CameraSetMouseRotationSpeed )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/camera-use-height-displacement">Turn Camera Height Displacement On/Off</a></strong> — ( CameraUseHeightDisplacement )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/camera-use-height-smoothing">Turn Camera Height Smoothing On/Off</a></strong> — ( CameraUseHeightSmoothing )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/camera-set-vertical-field-of-view">Turn Camera Vertical Field Of View On/Off</a></strong> — ( CameraSetVerticalFieldOfView )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/tarcade.sc2map/MapScript.galaxy#L5422">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L5422</span>
+CameraShakeStart(gv_p1_USER, c_cameraPositionTarget, c_cameraDirectionXY, <span class="hljs-number">0.5</span>, <span class="hljs-number">1.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5424</span>
+CameraShakeStart(gv_p1_USER, c_cameraPositionTarget, c_cameraDirectionXY, <span class="hljs-number">0.25</span>, <span class="hljs-number">0.5</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5426</span>
+CameraShakeStart(gv_p1_USER, c_cameraPositionTarget, c_cameraDirectionXY, <span class="hljs-number">0.125</span>, <span class="hljs-number">0.25</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3619</span>
+CameraShakeStart(<span class="hljs-number">1</span>, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.02</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">3.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5380</span>
+CameraShakeStart(gv_p01_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.5</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">1.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1910</span>
+CameraShakeStart(gv_p01_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.5</span>, <span class="hljs-number">1.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">1.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1947</span>
+CameraShakeStart(gv_p01_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.5</span>, <span class="hljs-number">1.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">1.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2100</span>
+CameraShakeStart(gv_p01_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.5</span>, <span class="hljs-number">1.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">1.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2140</span>
+CameraShakeStart(gv_p01_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.5</span>, <span class="hljs-number">1.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">1.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2180</span>
+CameraShakeStart(gv_p01_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.5</span>, <span class="hljs-number">1.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">1.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2221</span>
+CameraShakeStart(gv_p01_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.5</span>, <span class="hljs-number">1.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">1.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4542</span>
+CameraShakeStart(gv_p01_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.5</span>, <span class="hljs-number">1.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">1.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5932</span>
+CameraShakeStart(gv_p01_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.5</span>, <span class="hljs-number">1.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">1.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6063</span>
+CameraShakeStart(gv_p01_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.5</span>, <span class="hljs-number">1.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">1.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6084</span>
+CameraShakeStart(gv_p01_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.5</span>, <span class="hljs-number">1.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">1.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1804</span>
+CameraShakeStart(gv_p1_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.02</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2514</span>
+CameraShakeStart(gv_pLAYER01_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.07</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">3.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3064</span>
+CameraShakeStart(gv_pLAYER01_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.07</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">3.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3072</span>
+CameraShakeStart(gv_pLAYER01_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.07</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">3.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3080</span>
+CameraShakeStart(gv_pLAYER01_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.07</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">3.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3117</span>
+CameraShakeStart(gv_pLAYER01_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.07</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">3.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3125</span>
+CameraShakeStart(gv_pLAYER01_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.07</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">3.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3133</span>
+CameraShakeStart(gv_pLAYER01_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.07</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">3.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3141</span>
+CameraShakeStart(gv_pLAYER01_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.07</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">3.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3178</span>
+CameraShakeStart(gv_pLAYER01_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.07</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">3.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3186</span>
+CameraShakeStart(gv_pLAYER01_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.07</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">3.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L37462</span>
+CameraShakeStart(<span class="hljs-number">1</span>, c_cameraPositionEye, c_cameraDirectionZ, <span class="hljs-number">0.01</span>, <span class="hljs-number">0.009</span>, <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L37463</span>
+CameraShakeStart(<span class="hljs-number">1</span>, c_cameraPositionEye, c_cameraDirectionY, <span class="hljs-number">0.01</span>, <span class="hljs-number">0.0062</span>, <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L37464</span>
+CameraShakeStart(<span class="hljs-number">1</span>, c_cameraPositionEye, c_cameraDirectionX, <span class="hljs-number">0.01</span>, <span class="hljs-number">0.005</span>, <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L37465</span>
+CameraShakeStart(<span class="hljs-number">1</span>, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.02</span>, <span class="hljs-number">0.009</span>, <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L37466</span>
+CameraShakeStart(<span class="hljs-number">1</span>, c_cameraPositionTarget, c_cameraDirectionY, <span class="hljs-number">0.02</span>, <span class="hljs-number">0.0062</span>, <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L37467</span>
+CameraShakeStart(<span class="hljs-number">1</span>, c_cameraPositionTarget, c_cameraDirectionX, <span class="hljs-number">0.02</span>, <span class="hljs-number">0.005</span>, <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2789</span>
+CameraShakeStart(gv_p01_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.05</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">3.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2812</span>
+CameraShakeStart(gv_p01_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.1</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">4.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2833</span>
+CameraShakeStart(<span class="hljs-number">1</span>, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.1</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">4.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2835</span>
+CameraShakeStart(<span class="hljs-number">1</span>, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.06</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3067</span>
+CameraShakeStart(gv_p01_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.05</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">4.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1006</span>
+CameraShakeStart(gv_pLAYER01_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.2</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1776</span>
+CameraShakeStart(gv_p1_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.2</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">3.534</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1863</span>
+CameraShakeStart(gv_p1_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.2</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">3.534</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L824</span>
+CameraShakeStart(gv_p01_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.2</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1398</span>
+CameraShakeStart(gv_p01_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.2</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6696</span>
+CameraShakeStart(<span class="hljs-number">1</span>, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.5</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">1.25</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1433</span>
+CameraShakeStart(gv_p01_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.06</span>, <span class="hljs-number">1.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1770</span>
+CameraShakeStart(gv_p01_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.06</span>, <span class="hljs-number">1.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1867</span>
+CameraShakeStart(gv_p01_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.06</span>, <span class="hljs-number">1.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2472</span>
+CameraShakeStart(gv_p01_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.06</span>, <span class="hljs-number">1.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2638</span>
+CameraShakeStart(gv_p01_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.06</span>, <span class="hljs-number">1.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3037</span>
+CameraShakeStart(<span class="hljs-number">1</span>, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.06</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4967</span>
+CameraShakeStart(gv_p01_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.02</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">3.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5198</span>
+CameraShakeStart(gv_p01_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.06</span>, <span class="hljs-number">1.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5244</span>
+CameraShakeStart(gv_p01_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.06</span>, <span class="hljs-number">1.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5290</span>
+CameraShakeStart(gv_p01_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.06</span>, <span class="hljs-number">1.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4663</span>
+CameraShakeStart(gv_p1_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.06</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">3.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5269</span>
+CameraShakeStart(gv_p1_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.06</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5456</span>
+CameraShakeStart(gv_p1_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.06</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">5.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6410</span>
+CameraShakeStart(gv_p1_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.125</span>, <span class="hljs-number">2.5</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">3.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6523</span>
+CameraShakeStart(gv_p1_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.06</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7074</span>
+CameraShakeStart(gv_p1_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.06</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7168</span>
+CameraShakeStart(gv_p1_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.06</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7218</span>
+CameraShakeStart(gv_p1_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.06</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">1.5</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7262</span>
+CameraShakeStart(gv_p1_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.125</span>, <span class="hljs-number">2.5</span>, <span class="hljs-number">100.0</span>, RandomFixed(<span class="hljs-number">2.0</span>, <span class="hljs-number">4.0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7804</span>
+CameraShakeStart(gv_p1_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.2</span>, <span class="hljs-number">2.5</span>, <span class="hljs-number">100.0</span>, RandomFixed(<span class="hljs-number">2.0</span>, <span class="hljs-number">4.0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5720</span>
+CameraShakeStart(gv_pLAYER_P01_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.1</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">4.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5725</span>
+CameraShakeStart(gv_pLAYER_P01_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.1</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">4.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5731</span>
+CameraShakeStart(gv_pLAYER_P01_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.1</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">6.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5734</span>
+CameraShakeStart(gv_pLAYER_P01_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.1</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">3.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6924</span>
+CameraShakeStart(gv_pLAYER_P01_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.1</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">8.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6931</span>
+CameraShakeStart(gv_pLAYER_P01_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.1</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">4.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6936</span>
+CameraShakeStart(gv_pLAYER_P01_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.1</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">4.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6942</span>
+CameraShakeStart(gv_pLAYER_P01_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.1</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">6.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6945</span>
+CameraShakeStart(gv_pLAYER_P01_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.1</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">3.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3179</span>
+CameraShakeStart(gv_pLAYER_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.03</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">3.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5286</span>
+CameraShakeStart(gv_p1_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.06</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">3.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7083</span>
+CameraShakeStart(<span class="hljs-number">1</span>, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.06</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">3.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2515</span>
+CameraShakeStart(gv_p01_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.07</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">3.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2563</span>
+CameraShakeStart(gv_p01_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.07</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">3.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2611</span>
+CameraShakeStart(gv_p01_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.07</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">3.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4454</span>
+CameraShakeStart(gv_p01_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.3</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">10.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4339</span>
+CameraShakeStart(gv_p01_PLAYER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.02</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">3.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4413</span>
+CameraShakeStart(gv_p01_PLAYER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.02</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">3.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5422</span>
+CameraShakeStart(gv_p1_USER, c_cameraPositionTarget, c_cameraDirectionXY, <span class="hljs-number">0.5</span>, <span class="hljs-number">1.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5424</span>
+CameraShakeStart(gv_p1_USER, c_cameraPositionTarget, c_cameraDirectionXY, <span class="hljs-number">0.25</span>, <span class="hljs-number">0.5</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5426</span>
+CameraShakeStart(gv_p1_USER, c_cameraPositionTarget, c_cameraDirectionXY, <span class="hljs-number">0.125</span>, <span class="hljs-number">0.25</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3619</span>
+CameraShakeStart(<span class="hljs-number">1</span>, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.02</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">3.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5380</span>
+CameraShakeStart(gv_p01_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.5</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">1.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1910</span>
+CameraShakeStart(gv_p01_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.5</span>, <span class="hljs-number">1.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">1.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1947</span>
+CameraShakeStart(gv_p01_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.5</span>, <span class="hljs-number">1.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">1.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2100</span>
+CameraShakeStart(gv_p01_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.5</span>, <span class="hljs-number">1.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">1.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2140</span>
+CameraShakeStart(gv_p01_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.5</span>, <span class="hljs-number">1.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">1.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2180</span>
+CameraShakeStart(gv_p01_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.5</span>, <span class="hljs-number">1.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">1.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2221</span>
+CameraShakeStart(gv_p01_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.5</span>, <span class="hljs-number">1.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">1.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4542</span>
+CameraShakeStart(gv_p01_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.5</span>, <span class="hljs-number">1.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">1.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5932</span>
+CameraShakeStart(gv_p01_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.5</span>, <span class="hljs-number">1.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">1.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6063</span>
+CameraShakeStart(gv_p01_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.5</span>, <span class="hljs-number">1.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">1.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6084</span>
+CameraShakeStart(gv_p01_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.5</span>, <span class="hljs-number">1.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">1.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1804</span>
+CameraShakeStart(gv_p1_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.02</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">2.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2514</span>
+CameraShakeStart(gv_pLAYER01_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.07</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">3.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3064</span>
+CameraShakeStart(gv_pLAYER01_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.07</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">3.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3072</span>
+CameraShakeStart(gv_pLAYER01_USER, c_cameraPositionTarget, c_cameraDirectionZ, <span class="hljs-number">0.07</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">3.0</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

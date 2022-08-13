@@ -1,0 +1,423 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Mute/Unmute Sound Channel / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Mute/Unmute Sound Channel"/>
+                <meta property="og:description" content="Mutes or unmutes a sound channel for the specified player group."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="muteunmute-sound-channel"><a class="markdownIt-Anchor" href="#muteunmute-sound-channel">#</a> Mute/Unmute Sound Channel</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — <strong>mute|Mute/Unmute</strong> <strong>channel</strong> channel for <strong>players</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Mutes or unmutes a sound channel for the specified player group.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>playergroup</code> — Players</li>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-sound-channel">SoundChannel</a> ]</em> — Channel</li>
+<li><code>bool</code> <em>[ preset::<a href="/galaxy/reference/preset-mute-unmute-option">MuteUnmuteOption</a> ]</em> — Mute</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">SoundChannelMute</span><span class="hljs-params">(
+	playergroup players,
+	<span class="hljs-keyword">int</span> channel,
+	<span class="hljs-keyword">bool</span> mute,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#sound-sound-channels">Sound / Sound Channels</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-channel-mute">Mute/Unmute Sound Channel</a></strong> — ( SoundChannelMute )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-channel-pause">Pause Sound Channel</a></strong> — ( SoundChannelPause )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-channel-stop">Stop Sound Channel</a></strong> — ( SoundChannelStop )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-channel-set-volume">Set Sound Channel Volume</a></strong> — ( SoundChannelSetVolume )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-set-all-sound-channel-volumes">Set All Sound Channel Volumes</a></strong> — ( libNtve_gf_SetAllSoundChannelVolumes )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-channel-dspinsert">Insert Sound Channel Digital Effect</a></strong> — ( SoundChannelDSPInsert )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/sound-channel-dspremove">Remove Sound Channel Digital Effect</a></strong> — ( SoundChannelDSPRemove )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertystorysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertystorysc2campaign">#</a> campaigns/libertystory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/libertystory.sc2campaign/base.sc2data/TriggerLibs/CampaignLib.galaxy#L10216">CampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L10216</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryAmbient, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10217</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryDoodad, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10218</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryFlames, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10219</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryCombat, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10220</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryVoice, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10221</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategorySpell, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10222</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategorySPieces, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10223</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategorySEmitters, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10224</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategorySAmbient, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10225</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryReady, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="campaignsswarmstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmstorysc2campaign">#</a> campaigns/swarmstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstory.sc2campaign/base.sc2data/TriggerLibs/SwarmCampaignLib.galaxy#L1499">SwarmCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1499</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryDoodad, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1603</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryDoodad, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3893</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryAlert, lp_muteUnmute)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3894</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryAmbient, lp_muteUnmute)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3895</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryBuild, lp_muteUnmute)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3896</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryCombat, lp_muteUnmute)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3897</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryDeath, lp_muteUnmute)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3898</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryDialogue, lp_muteUnmute)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3899</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryDoodad, lp_muteUnmute)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3900</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryFlames, lp_muteUnmute)
+</code></pre>
+<h4 id="campaignsvoidsc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidsc2campaign">#</a> campaigns/void.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/void.sc2campaign/base.sc2maps/maps/campaign/sc2tutorial.sc2map/MapScript.galaxy#L2474">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2474</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryAmbient, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3829</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryAmbient, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9506</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryAmbient, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9655</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryAmbient, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9688</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryAmbient, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L15263</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryAmbient, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L15457</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryAmbient, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L15522</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryAmbient, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19033</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryAmbient, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19212</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryAmbient, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5120</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryAmbient, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5121</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryDoodad, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5123</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryAmbient, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5124</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryDoodad, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5559</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryDoodad, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5565</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryDoodad, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5696</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryDoodad, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7039</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryDoodad, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8831</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryDoodad, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8837</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryDoodad, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9225</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryDoodad, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9231</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryDoodad, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9692</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryDoodad, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9698</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryDoodad, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2474</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryAmbient, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3829</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryAmbient, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9506</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryAmbient, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9655</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryAmbient, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9688</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryAmbient, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L15263</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryAmbient, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L15457</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryAmbient, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L15522</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryAmbient, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19033</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryAmbient, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19212</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryAmbient, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5120</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryAmbient, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5121</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryDoodad, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5123</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryAmbient, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5124</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryDoodad, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5559</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryDoodad, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5565</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryDoodad, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5696</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryDoodad, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7039</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryDoodad, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8831</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryDoodad, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8837</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryDoodad, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9225</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryDoodad, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9231</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryDoodad, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9692</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryDoodad, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9698</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryDoodad, <span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignLib.galaxy#L4134">VoidCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4134</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryMusic, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4136</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryUI, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8811</span>
+SoundChannelMute(lp_players, lp_muteChannel, lp_muteUnmute)
+</code></pre>
+<h4 id="modsheroesbrawlmodsarenamodemodsattackdefendstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsarenamodemodsattackdefendstormmod">#</a> mods/heroesbrawlmods/arenamodemods/attackdefend.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/arenamodemods/attackdefend.stormmod/base.stormdata/LibAtDe.galaxy#L860">LibAtDe.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L860</span>
+SoundChannelMute(lp_players, c_soundCategoryAmbient, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L861</span>
+SoundChannelMute(lp_players, c_soundCategoryVoice, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L862</span>
+SoundChannelMute(lp_players, c_soundCategoryBuild, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L863</span>
+SoundChannelMute(lp_players, c_soundCategorySAmbient, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L864</span>
+SoundChannelMute(lp_players, c_soundCategoryUser11, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L865</span>
+SoundChannelMute(lp_players, c_soundCategoryAlert, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L866</span>
+SoundChannelMute(lp_players, c_soundCategoryMission, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L867</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryFoley, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L868</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryMovie, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1220</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryAmbient, <span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="modsheroesbrawlmodsarenamodemodsgardenarenastormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsarenamodemodsgardenarenastormmod">#</a> mods/heroesbrawlmods/arenamodemods/gardenarena.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/arenamodemods/gardenarena.stormmod/base.stormdata/LibAMGT.galaxy#L211">LibAMGT.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L211</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryUser14, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L212</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategorySPieces, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L213</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryMessage, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L229</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryUser14, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L230</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategorySPieces, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L231</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryMessage, <span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="modsheroesbrawlmodsarenamodemodstrialgroundsstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsarenamodemodstrialgroundsstormmod">#</a> mods/heroesbrawlmods/arenamodemods/trialgrounds.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/arenamodemods/trialgrounds.stormmod/base.stormdata/LibAMVS.galaxy#L678">LibAMVS.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L678</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryAmbient, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L707</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryAmbient, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="modsheroesbrawlmodsheroselectionmodsingameheroselectionstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsheroselectionmodsingameheroselectionstormmod">#</a> mods/heroesbrawlmods/heroselectionmods/ingameheroselection.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/heroselectionmods/ingameheroselection.stormmod/base.stormdata/LibIGHS.galaxy#L1545">LibIGHS.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1545</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryAmbient, lp_muteUnmute)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1546</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryVoice, lp_muteUnmute)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1547</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryBuild, lp_muteUnmute)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1548</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategorySAmbient, lp_muteUnmute)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1549</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryUser11, lp_muteUnmute)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1550</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryAlert, lp_muteUnmute)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1551</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryMission, lp_muteUnmute)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1552</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryFoley, lp_muteUnmute)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1553</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryMovie, lp_muteUnmute)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1554</span>
+SoundChannelMute(PlayerGroupAll(), c_soundCategoryDoodad, lp_muteUnmute)
+</code></pre>
+<h4 id="modsheroesdatastormmod"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/GameLib.galaxy#L6707">GameLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L6707</span>
+SoundChannelMute(libCore_gv_playerGroupFromPlayer[lp_player], c_soundCategoryAmbient, <span class="hljs-literal">true</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

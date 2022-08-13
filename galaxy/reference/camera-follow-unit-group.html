@@ -1,0 +1,282 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Follow Unit Group with Camera / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Follow Unit Group with Camera"/>
+                <meta property="og:description" content="Follows a unit group with the camera."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="follow-unit-group-with-camera"><a class="markdownIt-Anchor" href="#follow-unit-group-with-camera">#</a> Follow Unit Group with Camera</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — <strong>follow|Follow/Stop Following</strong> for player <strong>player</strong> <strong>unitGroup</strong> with the camera and <strong>keepCurrentTarget</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Follows a unit group with the camera.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> — Player</li>
+<li><code>unitgroup</code> — Unit Group</li>
+<li><code>bool</code> <em>[ preset::<a href="/galaxy/reference/preset-camera-follow-option">CameraFollowOption</a> ]</em> — Follow</li>
+<li><code>bool</code> <em>[ preset::<a href="/galaxy/reference/preset-camera-keep-target-option">CameraKeepTargetOption</a> ]</em> — Keep Current Target</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">CameraFollowUnitGroup</span><span class="hljs-params">(
+	<span class="hljs-keyword">int</span> player,
+	unitgroup group,
+	<span class="hljs-keyword">bool</span> follow,
+	<span class="hljs-keyword">bool</span> isOffset,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#camera-camera-tricks">Camera / Camera Tricks</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/camera-lock-input">Lock Camera Input</a></strong> — ( CameraLockInput )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/camera-set-bounds">Set Camera Bounds</a></strong> — ( CameraSetBounds )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/camera-shake-start">Shake Camera</a></strong> — ( CameraShakeStart )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/camera-shake">Shake Camera Using Preset</a></strong> — ( CameraShake )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/camera-shake-stop">Stop Shaking Camera</a></strong> — ( CameraShakeStop )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-swoosh-camera">Zoom Camera</a></strong> — ( libNtve_gf_SwooshCamera )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/camera-follow-unit-group">Follow Unit Group with Camera</a></strong> — ( CameraFollowUnitGroup )</li>
+<li><em><strong>[F]</strong></em> — <code>unitgroup</code> — <strong><a href="/galaxy/reference/camera-follow-unit-group-get">Unit Group Followed By Camera</a></strong> — ( CameraFollowUnitGroupGet )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/camera-force-follow-unit-group">Force Follow Unit Group with Camera</a></strong> — ( CameraForceFollowUnitGroup )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/camera-look-at-unit">Make Camera Look At And Follow Unit</a></strong> — ( CameraLookAtUnit )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/camera-look-at-actor">Make Camera Look At And Follow Actor</a></strong> — ( CameraLookAtActor )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/camera-force-mouse-relative">Lock Camera Mouse Relative Mode On/Off</a></strong> — ( CameraForceMouseRelative )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/camera-set-mouse-rotates">Turn Camera Mouse Rotation On/Off</a></strong> — ( CameraSetMouseRotates )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/camera-set-mouse-rotation-speed">Set Camera Mouse Rotation Speed</a></strong> — ( CameraSetMouseRotationSpeed )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/camera-use-height-displacement">Turn Camera Height Displacement On/Off</a></strong> — ( CameraUseHeightDisplacement )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/camera-use-height-smoothing">Turn Camera Height Smoothing On/Off</a></strong> — ( CameraUseHeightSmoothing )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/camera-set-vertical-field-of-view">Turn Camera Vertical Field Of View On/Off</a></strong> — ( CameraSetVerticalFieldOfView )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/tzeratul01.sc2map/MapScript.galaxy#L9916">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L9916</span>
+CameraFollowUnitGroup(gv_p1_USER, libNtve_gf_ConvertUnitToUnitGroup(lv_victoryVoidSeeker), <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9925</span>
+CameraFollowUnitGroup(<span class="hljs-number">1</span>, libNtve_gf_ConvertUnitToUnitGroup(lv_victoryVoidSeeker), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9916</span>
+CameraFollowUnitGroup(gv_p1_USER, libNtve_gf_ConvertUnitToUnitGroup(lv_victoryVoidSeeker), <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9925</span>
+CameraFollowUnitGroup(<span class="hljs-number">1</span>, libNtve_gf_ConvertUnitToUnitGroup(lv_victoryVoidSeeker), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4556</span>
+CameraFollowUnitGroup(gv_pLAYER_01_USER, libNtve_gf_ConvertUnitToUnitGroup(gv_cinematicAlarak), <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4569</span>
+CameraFollowUnitGroup(gv_pLAYER_01_USER, libNtve_gf_ConvertUnitToUnitGroup(gv_cinematicAlarak), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4556</span>
+CameraFollowUnitGroup(gv_pLAYER_01_USER, libNtve_gf_ConvertUnitToUnitGroup(gv_cinematicAlarak), <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4569</span>
+CameraFollowUnitGroup(gv_pLAYER_01_USER, libNtve_gf_ConvertUnitToUnitGroup(gv_cinematicAlarak), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignMissionLib.galaxy#L6657">VoidCampaignMissionLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L6657</span>
+CameraFollowUnitGroup(<span class="hljs-number">1</span>, UnitLastCreatedGroup(), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="modsfrontierssc2mod"><a class="markdownIt-Anchor" href="#modsfrontierssc2mod">#</a> mods/frontiers.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/frontiers.sc2mod/base.sc2data/Lib6CB3363F.galaxy#L478">Lib6CB3363F.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L478</span>
+CameraFollowUnitGroup(lv_i, libNtve_gf_ConvertUnitToUnitGroup(lib6CB3363F_gv_fT_PlayerUnit[lv_i]), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2135</span>
+CameraFollowUnitGroup(lv_i, libNtve_gf_ConvertUnitToUnitGroup(lib6CB3363F_gv_fT_PlayerUnit[lv_i]), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="modsheroesbrawlmodsarenamodemodsarenamodestormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsarenamodemodsarenamodestormmod">#</a> mods/heroesbrawlmods/arenamodemods/arenamode.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/arenamodemods/arenamode.stormmod/base.stormdata/LibAREN.galaxy#L762">LibAREN.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L762</span>
+CameraFollowUnitGroup(autoBF8A0686_var, CameraFollowUnitGroupGet(autoBF8A0686_var), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="modsheroesbrawlmodsarenamodemodsattackdefendstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsarenamodemodsattackdefendstormmod">#</a> mods/heroesbrawlmods/arenamodemods/attackdefend.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/arenamodemods/attackdefend.stormmod/base.stormdata/LibAtDe.galaxy#L157">LibAtDe.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L157</span>
+CameraFollowUnitGroup(auto4F553357_var, CameraFollowUnitGroupGet(auto4F553357_var), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="modsheroesbrawlmodsarenamodemodstrialgroundsstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsarenamodemodstrialgroundsstormmod">#</a> mods/heroesbrawlmods/arenamodemods/trialgrounds.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/arenamodemods/trialgrounds.stormmod/base.stormdata/LibAMVS.galaxy#L348">LibAMVS.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L348</span>
+CameraFollowUnitGroup(auto6A7946D4_var, CameraFollowUnitGroupGet(auto6A7946D4_var), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L358</span>
+CameraFollowUnitGroup(auto218DEA82_var, CameraFollowUnitGroupGet(auto218DEA82_var), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodsblackheartsrevengestormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodsblackheartsrevengestormmod">#</a> mods/heroesbrawlmods/brawlmapmods/blackheartsrevenge.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/blackheartsrevenge.stormmod/base.stormdata/LibMDoE.galaxy#L226">LibMDoE.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L226</span>
+CameraFollowUnitGroup(autoC56B2D95_var, CameraFollowUnitGroupGet(autoC56B2D95_var), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2368</span>
+CameraFollowUnitGroup(autoD01FF052_var, CameraFollowUnitGroupGet(autoD01FF052_var), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodscooppvebrawlmodstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodscooppvebrawlmodstormmod">#</a> mods/heroesbrawlmods/brawlmapmods/coop/pvebrawlmod.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/coop/pvebrawlmod.stormmod/base.stormdata/LibPVEB.galaxy#L1277">LibPVEB.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1277</span>
+CameraFollowUnitGroup(lv_itPlayer, CameraFollowUnitGroupGet(lv_itPlayer), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodscooppvemodstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodscooppvemodstormmod">#</a> mods/heroesbrawlmods/brawlmapmods/coop/pvemod.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/coop/pvemod.stormmod/base.stormdata/LibPVEM.galaxy#L1394">LibPVEM.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1394</span>
+CameraFollowUnitGroup(lv_itPlayer, CameraFollowUnitGroupGet(lv_itPlayer), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodslunarfestivalstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodslunarfestivalstormmod">#</a> mods/heroesbrawlmods/brawlmapmods/lunarfestival.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/lunarfestival.stormmod/base.stormdata/LibLNYF.galaxy#L808">LibLNYF.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L808</span>
+CameraFollowUnitGroup(lv_i, libNtve_gf_ConvertUnitToUnitGroup(UnitLastCreated()), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L824</span>
+CameraFollowUnitGroup(libCore_gv_oBSERVER_ObserverUIPlayer, libNtve_gf_ConvertUnitToUnitGroup(UnitLastCreated()), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1149</span>
+CameraFollowUnitGroup(libCore_gv_oBSERVER_ObserverUIPlayer, libGame_gv_players[<span class="hljs-number">1</span>].lv_cameraCurrentTargetGroup, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodspullpartystormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodspullpartystormmod">#</a> mods/heroesbrawlmods/brawlmapmods/pullparty.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/pullparty.stormmod/base.stormdata/LibMMPP.galaxy#L74">LibMMPP.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L74</span>
+CameraFollowUnitGroup(autoC59C0280_var, CameraFollowUnitGroupGet(autoC59C0280_var), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="modsheroesdatastormmod"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/GameLib.galaxy#L1076">GameLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1076</span>
+CameraFollowUnitGroup(lp_player, CameraFollowUnitGroupGet(lp_player), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1077</span>
+CameraFollowUnitGroup(lp_player, libGame_gv_players[lp_player].lv_cameraCurrentTargetGroup, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1087</span>
+CameraFollowUnitGroup(lp_player, CameraFollowUnitGroupGet(lp_player), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1088</span>
+CameraFollowUnitGroup(lp_player, libGame_gv_players[lp_player].lv_cameraCurrentTargetGroup, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1095</span>
+CameraFollowUnitGroup(lp_player, CameraFollowUnitGroupGet(lp_player), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1096</span>
+CameraFollowUnitGroup(lp_player, libGame_gv_players[lp_player].lv_cameraCurrentTargetGroup, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1103</span>
+CameraFollowUnitGroup(lp_player, CameraFollowUnitGroupGet(lp_player), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1108</span>
+CameraFollowUnitGroup(lp_player, CameraFollowUnitGroupGet(lp_player), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1109</span>
+CameraFollowUnitGroup(lp_player, libGame_gv_players[lp_player].lv_cameraCurrentTargetGroup, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1117</span>
+CameraFollowUnitGroup(lp_player, CameraFollowUnitGroupGet(lp_player), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="modsheroesdatastormmod-2"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-2">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/SupportLib.galaxy#L145">SupportLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L145</span>
+CameraFollowUnitGroup(<span class="hljs-number">1</span>, UnitGroupSelected(<span class="hljs-number">1</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L184</span>
+CameraFollowUnitGroup(<span class="hljs-number">1</span>, UnitGroupSelected(<span class="hljs-number">1</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1903</span>
+CameraFollowUnitGroup(<span class="hljs-number">1</span>, UnitGroupSelected(<span class="hljs-number">1</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="modsmissionpacksnovacampaignsc2mod"><a class="markdownIt-Anchor" href="#modsmissionpacksnovacampaignsc2mod">#</a> mods/missionpacks/novacampaign.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/novacampaign.sc2mod/base.sc2data/LibNCMI.galaxy#L5776">LibNCMI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L5776</span>
+CameraFollowUnitGroup(<span class="hljs-number">1</span>, UnitLastCreatedGroup(), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<h4 id="modsnovastoryassetssc2mod"><a class="markdownIt-Anchor" href="#modsnovastoryassetssc2mod">#</a> mods/novastoryassets.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/novastoryassets.sc2mod/base.sc2maps/maps/campaign/nova/nova01.sc2map/MapScript.galaxy#L10109">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L10109</span>
+CameraFollowUnitGroup(gv_pLAYER_01_USER, libNtve_gf_ConvertUnitToUnitGroup(gv_victoryLander), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10411</span>
+CameraFollowUnitGroup(gv_pLAYER_01_USER, libNtve_gf_ConvertUnitToUnitGroup(gv_zeratul), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1132</span>
+CameraFollowUnitGroup(gv_pLAYER_01_USER, libNtve_gf_ConvertUnitToUnitGroup(lp_escourtTarget), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1136</span>
+CameraFollowUnitGroup(gv_pLAYER_01_USER, libNtve_gf_ConvertUnitToUnitGroup(lp_escourtTarget), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10109</span>
+CameraFollowUnitGroup(gv_pLAYER_01_USER, libNtve_gf_ConvertUnitToUnitGroup(gv_victoryLander), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10411</span>
+CameraFollowUnitGroup(gv_pLAYER_01_USER, libNtve_gf_ConvertUnitToUnitGroup(gv_zeratul), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1132</span>
+CameraFollowUnitGroup(gv_pLAYER_01_USER, libNtve_gf_ConvertUnitToUnitGroup(lp_escourtTarget), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1136</span>
+CameraFollowUnitGroup(gv_pLAYER_01_USER, libNtve_gf_ConvertUnitToUnitGroup(lp_escourtTarget), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

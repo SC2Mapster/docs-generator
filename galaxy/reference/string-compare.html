@@ -1,0 +1,179 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>String Compare / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: String Compare"/>
+                <meta property="og:description" content="Returns 0 if the two strings are the same. Positive value means first character that doesn&#39;t match is greater in String1. Negative means it&#39;s greater in String2.
+
+Returns: int"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="string-compare"><a class="markdownIt-Anchor" href="#string-compare">#</a> String Compare</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Compares <strong>s1</strong> to <strong>s2</strong> (<strong>sens|Sensitive/Insensitive</strong> to case)<br>
+<em>Flags</em> — <code>Native</code> | <code>Function</code></p>
+</blockquote>
+<p>Returns 0 if the two strings are the same. Positive value means first character that doesn*“t match is greater in String1. Negative means it”*s greater in String2.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>string</code> — String 1</li>
+<li><code>string</code> — String 2</li>
+<li><code>bool</code> <em>[ preset::<a href="/galaxy/reference/preset-string-case-sensitivity">String_Case_Sensitivity</a> ]</em> — Sensitivity</li>
+</ul>
+<p>Returns — <code>int</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">int</span> <span class="hljs-title">StringCompare</span><span class="hljs-params">(
+	<span class="hljs-built_in">string</span> s1,
+	<span class="hljs-built_in">string</span> s2,
+	<span class="hljs-keyword">bool</span> caseSens,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#string-comparisons">String / Comparisons</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/string-equal">String Equal</a></strong> — ( StringEqual )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/string-compare">String Compare</a></strong> — ( StringCompare )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/string-length">String Length</a></strong> — ( StringLength )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="modsheroesstormmod"><a class="markdownIt-Anchor" href="#modsheroesstormmod">#</a> mods/heroes.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroes.stormmod/base.stormmaps/maps/heroes/singleplayermaps/%2810%29trymemode.stormmap/MapScript.galaxy#L772">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L772</span>
+StringCompare(lv_heroStringIDs, <span class="hljs-string">"Cho"</span>, c_stringNoCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L772</span>
+StringCompare(lv_heroStringIDs, <span class="hljs-string">"Gall"</span>, c_stringNoCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L778</span>
+StringCompare(lv_heroStringIDs, (gv_pLAYER_AI_AllyHero), c_stringNoCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L814</span>
+StringCompare(lv_heroStringIDs, <span class="hljs-string">"Cho"</span>, c_stringNoCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L814</span>
+StringCompare(lv_heroStringIDs, <span class="hljs-string">"Gall"</span>, c_stringNoCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L820</span>
+StringCompare(lv_heroStringIDs, (gv_pLAYER_AI_EnemyHero), c_stringNoCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L772</span>
+StringCompare(lv_heroStringIDs, <span class="hljs-string">"Cho"</span>, c_stringNoCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L772</span>
+StringCompare(lv_heroStringIDs, <span class="hljs-string">"Gall"</span>, c_stringNoCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L778</span>
+StringCompare(lv_heroStringIDs, (gv_pLAYER_AI_AllyHero), c_stringNoCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L814</span>
+StringCompare(lv_heroStringIDs, <span class="hljs-string">"Cho"</span>, c_stringNoCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L814</span>
+StringCompare(lv_heroStringIDs, <span class="hljs-string">"Gall"</span>, c_stringNoCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L820</span>
+StringCompare(lv_heroStringIDs, (gv_pLAYER_AI_EnemyHero), c_stringNoCase)
+</code></pre>
+<h4 id="modsheroesdatastormmod"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/SupportLib.galaxy#L7766">SupportLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L7766</span>
+StringCompare(StringWord(EventChatMessage(<span class="hljs-literal">false</span>), <span class="hljs-number">1</span>), EventChatMessage(<span class="hljs-literal">true</span>), c_stringNoCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8067</span>
+StringCompare(StringWord(EventChatMessage(<span class="hljs-literal">false</span>), <span class="hljs-number">1</span>), EventChatMessage(<span class="hljs-literal">true</span>), c_stringNoCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8078</span>
+StringCompare(EventChatMessage(<span class="hljs-literal">false</span>), EventChatMessage(<span class="hljs-literal">true</span>), c_stringNoCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8234</span>
+StringCompare(StringWord(lv_enteredString, <span class="hljs-number">1</span>), EventChatMessage(<span class="hljs-literal">true</span>), c_stringNoCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8317</span>
+StringCompare(StringWord(EventChatMessage(<span class="hljs-literal">false</span>), <span class="hljs-number">1</span>), EventChatMessage(<span class="hljs-literal">true</span>), c_stringNoCase)
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodsbattlefieldofeternitystormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodsbattlefieldofeternitystormmod">#</a> mods/heroesmapmods/battlegroundmapmods/battlefieldofeternity.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/battlefieldofeternity.stormmod/base.stormdata/LibMLBD.galaxy#L3174">LibMLBD.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3174</span>
+StringCompare(StringWord(EventChatMessage(<span class="hljs-literal">false</span>), <span class="hljs-number">1</span>), EventChatMessage(<span class="hljs-literal">true</span>), c_stringNoCase)
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodswarheadjunctionstormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodswarheadjunctionstormmod">#</a> mods/heroesmapmods/battlegroundmapmods/warheadjunction.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/warheadjunction.stormmod/base.stormdata/LibMSC2.galaxy#L2386">LibMSC2.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2386</span>
+StringCompare(StringWord(EventChatMessage(<span class="hljs-literal">false</span>), <span class="hljs-number">1</span>), EventChatMessage(<span class="hljs-literal">true</span>), c_stringNoCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2430</span>
+StringCompare(StringWord(EventChatMessage(<span class="hljs-literal">false</span>), <span class="hljs-number">1</span>), EventChatMessage(<span class="hljs-literal">true</span>), c_stringNoCase)
+</code></pre>
+<h4 id="modswarcoopwarcoopdatasc2mod"><a class="markdownIt-Anchor" href="#modswarcoopwarcoopdatasc2mod">#</a> mods/warcoop/warcoopdata.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/warcoop/warcoopdata.sc2mod/base.sc2data/TriggerLibs/WarCoopData.galaxy#L416">WarCoopData.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L416</span>
+StringCompare(lv_character, <span class="hljs-string">"0"</span>, c_stringCase)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L416</span>
+StringCompare(lv_character, <span class="hljs-string">"9"</span>, c_stringCase)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

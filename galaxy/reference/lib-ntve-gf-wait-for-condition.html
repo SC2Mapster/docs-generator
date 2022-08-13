@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Wait For Condition / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Wait For Condition"/>
+                <meta property="og:description" content="Pauses a trigger until the specified condition is met.  Real time is normal time.  Game time can pass faster or slower depending on the game speed.  AI time passes at the same rate as game time, but can be paused or unpaused while real time and game time are still running.  It is useful to pause the AI time while a player is watching a cinematic, so timed attack waves will wait until the player is finished with the cinematic before resuming their countdowns."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="wait-for-condition"><a class="markdownIt-Anchor" href="#wait-for-condition">#</a> Wait For Condition</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Wait for (Conditions), checking every <strong>t</strong> <strong>timeType|Real/Game/AI Time</strong> seconds<br>
+<em>Flags</em> — <code>SubFunctions</code> | <code>Action</code></p>
+</blockquote>
+<p>Pauses a trigger until the specified condition is met.  Real time is normal time.  Game time can pass faster or slower depending on the game speed.  AI time passes at the same rate as game time, but can be paused or unpaused while real time and game time are still running.  It is useful to pause the AI time while a player is watching a cinematic, so timed attack waves will wait until the player is finished with the cinematic before resuming their countdowns.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>fixed</code> — Time</li>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-time-type">TimeType</a> ]</em> — Time Type</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-keyword">while</span> (!(#SUBFUNCS(cond,<span class="hljs-string">" &amp;&amp; "</span>))) {
+    Wait(#PARAM(t), #PARAM(timeType));
+}
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#general-waits">General / Waits</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/wait">Wait</a></strong> — ( Wait )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-wait-for-condition">Wait For Condition</a></strong> — (  )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-wait-for-condition-with-maximum-duration">Wait For Condition With Maximum Duration</a></strong> — (  )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-wait-for-timer">Wait For Timer</a></strong> — ( libNtve_gf_WaitForTimer )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-critical-section">Critical Section</a></strong> — (  )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<p>— None found —</p>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

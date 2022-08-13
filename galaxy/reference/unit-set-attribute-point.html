@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Set Unit Attribute Point / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Set Unit Attribute Point"/>
+                <meta property="og:description" content="Sets attribute point on a unit."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="set-unit-attribute-point"><a class="markdownIt-Anchor" href="#set-unit-attribute-point">#</a> Set Unit Attribute Point</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Set <strong>attribute</strong> <strong>baseBonus</strong> attribute point to <strong>count</strong> on unit <strong>unit</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Sets attribute point on a unit.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>unit</code> — Unit</li>
+<li><code>string</code> <em>[ gamelink::Behavior ]</em> — Attribute</li>
+<li><code>bool</code> <em>[ preset::<a href="/galaxy/reference/preset-base-bonus-options">BaseBonusOptions</a> ]</em> — Base/Bonus</li>
+<li><code>int</code> — Count</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">UnitSetAttributePoint</span><span class="hljs-params">(
+	unit inUnit,
+	<span class="hljs-built_in">string</span> attribute,
+	<span class="hljs-keyword">bool</span> baseBonus,
+	<span class="hljs-keyword">int</span> count,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#behavior-attribute">Behavior / Attribute</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/unit-get-attribute-point">Unit Attribute Point</a></strong> — ( UnitGetAttributePoint )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-set-attribute-point">Set Unit Attribute Point</a></strong> — ( UnitSetAttributePoint )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="modsstarcoopstarcoopsc2mod"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOMI.galaxy#L17696">LibCOMI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L17696</span>
+UnitSetAttributePoint(lv_collectorUnit, libCOMI_gv_cM_Dehaka_EssenceAttribute, <span class="hljs-literal">true</span>, RoundI(UnitGetCustomValue(lv_collectorUnit, libCOMI_gv_cM_DehakaEssenceIndex)))
+</code></pre>
+<h4 id="modswarcoopwarclassicsystemsc2mod"><a class="markdownIt-Anchor" href="#modswarcoopwarclassicsystemsc2mod">#</a> mods/warcoop/warclassicsystem.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/warcoop/warclassicsystem.sc2mod/base.sc2data/TriggerLibs/WarClassicSystem.galaxy#L505">WarClassicSystem.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L505</span>
+UnitSetAttributePoint(lv_target, lv_itBuff, <span class="hljs-literal">true</span>, lv_itStack)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L981</span>
+UnitSetAttributePoint(lv_u, <span class="hljs-string">"SubgroupIncrease"</span>, <span class="hljs-literal">true</span>, libGAwX_gv_heroCreationCount)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1656</span>
+UnitSetAttributePoint(lv_u, libGAwX_gv_manaFlareManaTokenLink, <span class="hljs-literal">true</span>, (FixedToInt(lv_mana) + UnitGetAttributePoint(lv_u, libGAwX_gv_manaFlareManaTokenLink, <span class="hljs-literal">true</span>)))
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

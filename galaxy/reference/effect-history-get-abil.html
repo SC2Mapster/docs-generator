@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Effect History Entry Ability / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Effect History Entry Ability"/>
+                <meta property="og:description" content="Returns the ability that originated the effect that was logged in the Effect History at the specified Index.  If the effect came from a weapon rather than an ability, this will return No Game Link.
+
+Returns: gamelink [ gamelink::Abil ]"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="effect-history-entry-ability"><a class="markdownIt-Anchor" href="#effect-history-entry-ability">#</a> Effect History Entry Ability</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Ability for effect history <strong>history</strong> entry <strong>index</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Function</code></p>
+</blockquote>
+<p>Returns the ability that originated the effect that was logged in the Effect History at the specified Index.  If the effect came from a weapon rather than an ability, this will return No Game Link.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>effecthistory</code> — History</li>
+<li><code>int</code> — Index</li>
+</ul>
+<p>Returns — <code>string</code> <em>[ gamelink::Abil ]</em></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-built_in">string</span> <span class="hljs-title">EffectHistoryGetAbil</span><span class="hljs-params">(
+	effecthistory inHistory,
+	<span class="hljs-keyword">int</span> inIndex,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#effect-history-entries">Effect History / Entries</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>string</code> <em>[ gamelink::Abil ]</em> — <strong><a href="/galaxy/reference/effect-history-get-abil">Effect History Entry Ability</a></strong> — ( EffectHistoryGetAbil )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/effect-history-get-amount-fixed">Effect History Entry Amount</a></strong> — ( EffectHistoryGetAmountFixed )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/effect-history-get-amount-int">Effect History Entry Amount As Integer</a></strong> — ( EffectHistoryGetAmountInt )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> <em>[ gamelink::Effect ]</em> — <strong><a href="/galaxy/reference/effect-history-get-effect">Effect History Entry Effect</a></strong> — ( EffectHistoryGetEffect )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/effect-history-get-time">Effect History Entry Time</a></strong> — ( EffectHistoryGetTime )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-effect-history">EffectHistory</a> ]</em> — <strong><a href="/galaxy/reference/effect-history-get-type">Effect History Entry Type</a></strong> — ( EffectHistoryGetType )</li>
+<li><em><strong>[F]</strong></em> — <code>unit</code> — <strong><a href="/galaxy/reference/effect-history-get-unit-by-location">Effect History Entry Unit</a></strong> — ( EffectHistoryGetUnitByLocation )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> <em>[ gamelink::Weapon ]</em> — <strong><a href="/galaxy/reference/effect-history-get-weapon">Effect History Entry Weapon</a></strong> — ( EffectHistoryGetWeapon )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="modsheroesdatastormmod"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/GameLib.galaxy#L1914">GameLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1914</span>
+EffectHistoryGetAbil(lv_effectHistory, lv_itEffectHistoryEntry)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1959</span>
+EffectHistoryGetAbil(lv_effectHistory, lv_itEffectHistoryEntry)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1984</span>
+EffectHistoryGetAbil(lv_effectHistory, lv_itEffectHistoryEntry)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1992</span>
+EffectHistoryGetAbil(lv_effectHistory, lv_itEffectHistoryEntry)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1993</span>
+EffectHistoryGetAbil(lv_effectHistory, lv_itEffectHistoryEntry)
+</code></pre>
+<h4 id="modsheroesdatastormmod-2"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-2">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/UILib.galaxy#L9353">UILib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L9353</span>
+EffectHistoryGetAbil(lv_history, lv_itEntry)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

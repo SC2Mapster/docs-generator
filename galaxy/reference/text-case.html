@@ -1,0 +1,227 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Convert Text Case / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Convert Text Case"/>
+                <meta property="og:description" content="Converts text to upper case or lower case.
+
+Returns: text"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="convert-text-case"><a class="markdownIt-Anchor" href="#convert-text-case">#</a> Convert Text Case</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Text(<strong>t</strong>) as <strong>case|Lower/Upper Case</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Function</code></p>
+</blockquote>
+<p>Converts text to upper case or lower case.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>text</code> — Text</li>
+<li><code>bool</code> <em>[ preset::<a href="/galaxy/reference/preset-string-case-option">String_Case_Option</a> ]</em> — Case</li>
+</ul>
+<p>Returns — <code>text</code></p>
+<pre class="hljs"><code><span class="hljs-function">native text <span class="hljs-title">TextCase</span><span class="hljs-params">(text t, <span class="hljs-keyword">bool</span> upper)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#string-formatting">String / Formatting</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>text</code> — <strong><a href="/galaxy/reference/text-time-format">Convert Time To Text</a></strong> — ( TextTimeFormat )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> — <strong><a href="/galaxy/reference/string-case">Convert String Case</a></strong> — ( StringCase )</li>
+<li><em><strong>[F]</strong></em> — <code>text</code> — <strong><a href="/galaxy/reference/text-case">Convert Text Case</a></strong> — ( TextCase )</li>
+<li><em><strong>[F]</strong></em> — <code>text</code> — <strong><a href="/galaxy/reference/string-external">Convert Game Text</a></strong> — ( StringExternal )</li>
+<li><em><strong>[F]</strong></em> — <code>text</code> — <strong><a href="/galaxy/reference/string-external-hotkey">Convert Game Hotkey</a></strong> — ( StringExternalHotkey )</li>
+<li><em><strong>[F]</strong></em> — <code>text</code> — <strong><a href="/galaxy/reference/string-external-asset">Convert Game Asset</a></strong> — ( StringExternalAsset )</li>
+<li><em><strong>[F]</strong></em> — <code>text</code> — <strong><a href="/galaxy/reference/text-with-color">Text With Color</a></strong> — ( TextWithColor )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/text-expression-set-token">Set Text Expression Token</a></strong> — ( TextExpressionSetToken )</li>
+<li><em><strong>[F]</strong></em> — <code>text</code> — <strong><a href="/galaxy/reference/text-expression-assemble">Text Expression</a></strong> — ( TextExpressionAssemble )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/tarcade.sc2map/MapScript.galaxy#L3842">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3842</span>
+TextCase(libNtve_gf_DialogItemText(lp_button, <span class="hljs-number">1</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8515</span>
+TextCase(StringExternal(<span class="hljs-string">"Param/Value/E8F22CDE"</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10470</span>
+TextCase(DifficultyNameCampaign(lp_difficulty), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13794</span>
+TextCase(ConversationDataStateName(lp_convoID), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L566</span>
+TextCase(lp_buttonText, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L584</span>
+TextCase(lp_buttonText, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1254</span>
+TextCase(StringExternal(<span class="hljs-string">"Param/Value/B72655EF"</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1266</span>
+TextCase(StringExternal(<span class="hljs-string">"Param/Value/15DA9B3E"</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1276</span>
+TextCase(StringExternal(<span class="hljs-string">"Param/Value/E60F4B90"</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3842</span>
+TextCase(libNtve_gf_DialogItemText(lp_button, <span class="hljs-number">1</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8515</span>
+TextCase(StringExternal(<span class="hljs-string">"Param/Value/E8F22CDE"</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10470</span>
+TextCase(DifficultyNameCampaign(lp_difficulty), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13794</span>
+TextCase(ConversationDataStateName(lp_convoID), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L566</span>
+TextCase(lp_buttonText, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L584</span>
+TextCase(lp_buttonText, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1254</span>
+TextCase(StringExternal(<span class="hljs-string">"Param/Value/B72655EF"</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1266</span>
+TextCase(StringExternal(<span class="hljs-string">"Param/Value/15DA9B3E"</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1276</span>
+TextCase(StringExternal(<span class="hljs-string">"Param/Value/E60F4B90"</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="campaignslibertystorysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertystorysc2campaign">#</a> campaigns/libertystory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/libertystory.sc2campaign/base.sc2data/TriggerLibs/CampaignLib.galaxy#L2802">CampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2802</span>
+TextCase(libCamp_gf_MissionName(lp_mission), <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="campaignsswarmstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmstorysc2campaign">#</a> campaigns/swarmstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstory.sc2campaign/base.sc2data/TriggerLibs/SwarmCampaignLib.galaxy#L8666">SwarmCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L8666</span>
+TextCase(libSwaC_gf_ZS_StoryArmyUpgradeName(libSwaC_gv_zS_ArmyCustomUpgradeCurrent), <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="modsheroesstormmod"><a class="markdownIt-Anchor" href="#modsheroesstormmod">#</a> mods/heroes.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroes.stormmod/base.stormmaps/maps/heroes/singleplayermaps/startingexperience/tutorialveteran.stormmap/MapScript.galaxy#L3555">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3555</span>
+TextCase(StringExternal(<span class="hljs-string">"Param/Value/62CFC26E"</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4029</span>
+TextCase(StringExternal(<span class="hljs-string">"Param/Value/19C54563"</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4919</span>
+TextCase(StringExternal(<span class="hljs-string">"Param/Value/2B86BC31"</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5492</span>
+TextCase(StringExternal(<span class="hljs-string">"Param/Value/42D7B07C"</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6515</span>
+TextCase(StringExternal(<span class="hljs-string">"Param/Value/8C7A1145"</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7586</span>
+TextCase(StringExternal(<span class="hljs-string">"Param/Value/A7D5CCCB"</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3555</span>
+TextCase(StringExternal(<span class="hljs-string">"Param/Value/62CFC26E"</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4029</span>
+TextCase(StringExternal(<span class="hljs-string">"Param/Value/19C54563"</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4919</span>
+TextCase(StringExternal(<span class="hljs-string">"Param/Value/2B86BC31"</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5492</span>
+TextCase(StringExternal(<span class="hljs-string">"Param/Value/42D7B07C"</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6515</span>
+TextCase(StringExternal(<span class="hljs-string">"Param/Value/8C7A1145"</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7586</span>
+TextCase(StringExternal(<span class="hljs-string">"Param/Value/A7D5CCCB"</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOMU.galaxy#L2989">LibCOMU.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2989</span>
+TextCase(UnitTypeGetName(UnitGetType(lv_bonusUnit)), <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod-2"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod-2">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOUI.galaxy#L1860">LibCOUI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1860</span>
+TextCase(StringExternal(<span class="hljs-string">"UI/GameSpeed/Fasr"</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1864</span>
+TextCase(StringExternal(<span class="hljs-string">"UI/GameSpeed/Fast"</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1871</span>
+TextCase(StringExternal(<span class="hljs-string">"UI/GameSpeed/Norm"</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1875</span>
+TextCase(StringExternal(<span class="hljs-string">"UI/GameSpeed/Slow"</span>), <span class="hljs-literal">true</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

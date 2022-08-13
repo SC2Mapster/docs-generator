@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Set Animation Time / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Set Animation Time"/>
+                <meta property="og:description" content="Skips ahead in an animation, chosen by the Identifier parameter, to a time chosen by the Time value. If the Scaled parameter is set to Absolute, the time will be set according to the actual length of the animation for the model. If the Scaled parameter is set to Scaled, the time will be set relevent to the animation length determined by the actor controlling the animation."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="set-animation-time"><a class="markdownIt-Anchor" href="#set-animation-time">#</a> Set Animation Time</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Set the <strong>identifier</strong> <strong>scaled|Absolute/Scaled</strong> animation time for <strong>target</strong> to <strong>time</strong><br>
+<em>Flags</em> — <code>Action</code></p>
+</blockquote>
+<p>Skips ahead in an animation, chosen by the Identifier parameter, to a time chosen by the Time value. If the Scaled parameter is set to Absolute, the time will be set according to the actual length of the animation for the model. If the Scaled parameter is set to Scaled, the time will be set relevent to the animation length determined by the actor controlling the animation.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>actor</code> — Target</li>
+<li><code>string</code> — Identifier</li>
+<li><code>fixed</code> — Time</li>
+<li><code>bool</code> <em>[ preset::<a href="/galaxy/reference/preset-animation-scale-option">AnimationScaleOption</a> ]</em> — Scaled</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">libNtve_gf_SetAnimationTime</span><span class="hljs-params">(
+	actor lp_target,
+	<span class="hljs-built_in">string</span> lp_identifier,
+	fixed lp_time,
+	<span class="hljs-keyword">bool</span> lp_scaled,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#animation-advanced">Animation / Advanced</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>generichandle</code> <em>[ animlengthquery ]</em> — <strong><a href="/galaxy/reference/anim-length-query-last-created">Last Animation Query</a></strong> — ( AnimLengthQueryLastCreated )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/anim-length-query-by-name">Query Animation Length By Identifier</a></strong> — ( AnimLengthQueryByName )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/anim-length-query-by-props">Query Animation Length By Props</a></strong> — ( AnimLengthQueryByProps )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/anim-length-query-wait">Wait for Animation Length Queries</a></strong> — ( AnimLengthQueryWait )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/anim-wait">Wait for Animation</a></strong> — ( AnimWait )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/anim-length-sync">Animation Length</a></strong> — ( AnimLengthSync )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/anim-length-remaining-sync">Animation Time Remaining</a></strong> — ( AnimLengthRemainingSync )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-set-animation-time">Set Animation Time</a></strong> — ( libNtve_gf_SetAnimationTime )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-set-animation-time-scale">Set Animation Time Scale</a></strong> — ( libNtve_gf_SetAnimationTimeScale )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-set-animation-completion">Set Animation Completion</a></strong> — ( libNtve_gf_SetAnimationCompletion )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-set-animation-duration">Set Animation Duration</a></strong> — ( libNtve_gf_SetAnimationDuration )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/model-animation-load">Load Model Animation</a></strong> — ( ModelAnimationLoad )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/model-animation-load-overriding">Load Overriding Model Animation</a></strong> — ( ModelAnimationLoadOverriding )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/model-animation-unload">Unload Model Animation</a></strong> — ( ModelAnimationUnload )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-type-animation-load">Load Animation for Unit Type</a></strong> — ( UnitTypeAnimationLoad )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-type-animation-load-overriding">Load Overriding Animation for Unit Type</a></strong> — ( UnitTypeAnimationLoadOverriding )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-type-animation-unload">Unload Animation for Unit Type</a></strong> — ( UnitTypeAnimationUnload )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<p>— None found —</p>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Line Crosses Cliff / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Line Crosses Cliff"/>
+                <meta property="og:description" content="native bool CrossCliff(point inFrom, point inDest);"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="line-crosses-cliff"><a class="markdownIt-Anchor" href="#line-crosses-cliff">#</a> Line Crosses Cliff</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — The line from <strong>from</strong> to <strong>destination</strong> crosses a cliff edge.<br>
+<em>Flags</em> — <code>Native</code> | <code>Function</code></p>
+</blockquote>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>point</code> — From</li>
+<li><code>point</code> — Destination</li>
+</ul>
+<p>Returns — <code>bool</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">bool</span> <span class="hljs-title">CrossCliff</span><span class="hljs-params">(point inFrom, point inDest)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#environment-terrain-and-water">Environment / Terrain And Water</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/environment-show">Show/Hide Environment</a></strong> — ( EnvironmentShow )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/world-height">Height At Point</a></strong> — ( WorldHeight )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> <em>[ gamelink::TerrainTex ]</em> — <strong><a href="/galaxy/reference/terrain-texture">Terrain Texture At Point</a></strong> — ( TerrainTexture )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/cliff-level">Cliff Level Of Point (Integer)</a></strong> — ( CliffLevel )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/point-pathing-cliff-level">Cliff Level Of Point (Real)</a></strong> — ( PointPathingCliffLevel )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/cross-cliff">Line Crosses Cliff</a></strong> — ( CrossCliff )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/has-custom-cell-attribute">Terrain Has Custom Attribute</a></strong> — ( HasCustomCellAttribute )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/terrain-show-region">Show/Hide Terrain</a></strong> — ( TerrainShowRegion )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/water-set-state">Set Water State</a></strong> — ( WaterSetState )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/water-pause">Pause/Unpause Water Transition</a></strong> — ( WaterPause )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="modsheroesdatastormmod"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/StartingExperienceLib.galaxy#L1952">StartingExperienceLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1952</span>
+CrossCliff(lp_locationFrom, lp_locationTarget)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOMU.galaxy#L173">LibCOMU.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L173</span>
+CrossCliff(lp_testPoint, PointWithOffsetPolar(lp_testPoint, lp_testDistance, <span class="hljs-number">0.0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L173</span>
+CrossCliff(lp_testPoint, PointWithOffsetPolar(lp_testPoint, lp_testDistance, <span class="hljs-number">45.0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L173</span>
+CrossCliff(lp_testPoint, PointWithOffsetPolar(lp_testPoint, lp_testDistance, <span class="hljs-number">90.0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L173</span>
+CrossCliff(lp_testPoint, PointWithOffsetPolar(lp_testPoint, lp_testDistance, <span class="hljs-number">135.0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L173</span>
+CrossCliff(lp_testPoint, PointWithOffsetPolar(lp_testPoint, lp_testDistance, <span class="hljs-number">180.0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L173</span>
+CrossCliff(lp_testPoint, PointWithOffsetPolar(lp_testPoint, lp_testDistance, <span class="hljs-number">225.0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L173</span>
+CrossCliff(lp_testPoint, PointWithOffsetPolar(lp_testPoint, lp_testDistance, <span class="hljs-number">270.0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L173</span>
+CrossCliff(lp_testPoint, PointWithOffsetPolar(lp_testPoint, lp_testDistance, <span class="hljs-number">315.0</span>))
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

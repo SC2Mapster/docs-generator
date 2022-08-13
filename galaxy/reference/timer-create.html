@@ -1,0 +1,405 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>New Timer / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: New Timer"/>
+                <meta property="og:description" content="Creates a new timer.
+
+Returns: timer"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="new-timer"><a class="markdownIt-Anchor" href="#new-timer">#</a> New Timer</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — New timer<br>
+<em>Flags</em> — <code>Native</code> | <code>Function</code></p>
+</blockquote>
+<p>Creates a new timer.</p>
+<p>Returns — <code>timer</code></p>
+<pre class="hljs"><code><span class="hljs-function">native timer <span class="hljs-title">TimerCreate</span><span class="hljs-params">()</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#timer-timers">Timer / Timers</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/set-score-timer">Set Score Timer</a></strong> — ( SetScoreTimer )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-time-elapsed">Time Elapsed</a></strong> — ( TriggerAddEventTimeElapsed )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-time-periodic">Periodic Event</a></strong> — ( TriggerAddEventTimePeriodic )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/timer-start">Start Timer</a></strong> — ( TimerStart )</li>
+<li><em><strong>[F]</strong></em> — <code>timer</code> — <strong><a href="/galaxy/reference/timer-last-started">Last Started Timer</a></strong> — ( TimerLastStarted )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/timer-restart">Restart Timer</a></strong> — ( TimerRestart )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/timer-pause">Pause/Unpause Timer</a></strong> — ( TimerPause )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-stop-timer">Stop Timer</a></strong> — ( libNtve_gf_StopTimer )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/timer-is-paused">Timer Is Paused</a></strong> — ( TimerIsPaused )</li>
+<li><em><strong>[F]</strong></em> — <code>timer</code> — <strong><a href="/galaxy/reference/timer-create">New Timer</a></strong> — ( TimerCreate )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/timer-get-duration">Duration Of Timer</a></strong> — ( TimerGetDuration )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-timer">Timer Expires</a></strong> — ( TriggerAddEventTimer )</li>
+<li><em><strong>[F]</strong></em> — <code>timer</code> — <strong><a href="/galaxy/reference/event-timer">Triggering Timer</a></strong> — ( EventTimer )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/challenges/advancedcommand.sc2map/MapScript.galaxy#L76">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L76</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L115</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L78</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L71</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L81</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L132</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L109</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L77</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L112</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L77</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L194</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L202</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L223</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5039</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L129</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L130</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L131</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L131</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L141</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L144</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L145</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L552</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L621</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L653</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L674</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1459</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L163</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1776</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L117</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L119</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L120</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L123</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L136</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L106</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L151</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L152</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L153</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L154</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L169</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L170</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L171</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L172</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L173</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L174</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L964</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L105</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L107</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L108</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L109</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L85</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L109</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L110</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4122</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4234</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L149</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L201</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L202</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L85</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L86</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L87</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L89</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2281</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L118</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L125</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L128</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L801</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1371</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L92</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L102</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L134</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L135</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L136</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L147</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5447</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5718</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L196</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L160</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L169</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L170</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L171</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L172</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L173</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L174</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L175</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L466</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L130</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2975</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3060</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L135</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L156</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4710</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4762</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4818</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5223</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L161</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L162</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L164</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L176</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L189</span>
+TimerCreate()
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L95</span>
+TimerCreate()
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

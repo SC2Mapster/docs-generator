@@ -1,0 +1,271 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Pathing Cost Between Points / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Pathing Cost Between Points"/>
+                <meta property="og:description" content="Returns the ground pathing cost between two points as an integer.
+
+Returns: int"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="pathing-cost-between-points"><a class="markdownIt-Anchor" href="#pathing-cost-between-points">#</a> Pathing Cost Between Points</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Pathing cost between <strong>p1|Point</strong> and <strong>p2|Point</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Function</code></p>
+</blockquote>
+<p>Returns the ground pathing cost between two points as an integer.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>point</code> — Point 1</li>
+<li><code>point</code> — Point 2</li>
+</ul>
+<p>Returns — <code>int</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">int</span> <span class="hljs-title">PointPathingCost</span><span class="hljs-params">(point p1, point p2)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#point-pathing">Point / Pathing</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/point-pathing-passable">Point Is Passable</a></strong> — ( PointPathingPassable )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/point-pathing-is-connected">Points Connected By Pathing</a></strong> — ( PointPathingIsConnected )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/point-pathing-cost">Pathing Cost Between Points</a></strong> — ( PointPathingCost )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-pathing-type">PathingType</a> ]</em> — <strong><a href="/galaxy/reference/pathing-type">Pathing Type At Point</a></strong> — ( PathingType )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignsswarmsc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmsc2campaign">#</a> campaigns/swarm.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarm.sc2campaign/base.sc2maps/maps/campaign/swarm/zchar03.sc2map/MapScript.galaxy#L513">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L513</span>
+PointPathingCost(UnitGetPosition(lp_diamondback), lv_moveTo)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L516</span>
+PointPathingCost(UnitGetPosition(lp_diamondback), lv_moveToA)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L516</span>
+PointPathingCost(UnitGetPosition(lp_diamondback), lv_moveToB)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L528</span>
+PointPathingCost(UnitGetPosition(lp_diamondback), lv_moveToA)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L532</span>
+PointPathingCost(UnitGetPosition(lp_diamondback), lv_moveToB)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L804</span>
+PointPathingCost(UnitGetPosition(lp_diamondback), lv_moveTo)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L807</span>
+PointPathingCost(UnitGetPosition(lp_diamondback), lv_moveToA)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L807</span>
+PointPathingCost(UnitGetPosition(lp_diamondback), lv_moveToB)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L819</span>
+PointPathingCost(UnitGetPosition(lp_diamondback), lv_moveToA)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L823</span>
+PointPathingCost(UnitGetPosition(lp_diamondback), lv_moveToB)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L507</span>
+PointPathingCost(UnitGetPosition(lp_diamondback), lv_moveTo)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L510</span>
+PointPathingCost(UnitGetPosition(lp_diamondback), lv_moveToA)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L510</span>
+PointPathingCost(UnitGetPosition(lp_diamondback), lv_moveToB)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L522</span>
+PointPathingCost(UnitGetPosition(lp_diamondback), lv_moveToA)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L526</span>
+PointPathingCost(UnitGetPosition(lp_diamondback), lv_moveToB)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L513</span>
+PointPathingCost(UnitGetPosition(lp_diamondback), lv_moveTo)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L516</span>
+PointPathingCost(UnitGetPosition(lp_diamondback), lv_moveToA)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L516</span>
+PointPathingCost(UnitGetPosition(lp_diamondback), lv_moveToB)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L528</span>
+PointPathingCost(UnitGetPosition(lp_diamondback), lv_moveToA)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L532</span>
+PointPathingCost(UnitGetPosition(lp_diamondback), lv_moveToB)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L804</span>
+PointPathingCost(UnitGetPosition(lp_diamondback), lv_moveTo)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L807</span>
+PointPathingCost(UnitGetPosition(lp_diamondback), lv_moveToA)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L807</span>
+PointPathingCost(UnitGetPosition(lp_diamondback), lv_moveToB)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L819</span>
+PointPathingCost(UnitGetPosition(lp_diamondback), lv_moveToA)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L823</span>
+PointPathingCost(UnitGetPosition(lp_diamondback), lv_moveToB)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L507</span>
+PointPathingCost(UnitGetPosition(lp_diamondback), lv_moveTo)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L510</span>
+PointPathingCost(UnitGetPosition(lp_diamondback), lv_moveToA)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L510</span>
+PointPathingCost(UnitGetPosition(lp_diamondback), lv_moveToB)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L522</span>
+PointPathingCost(UnitGetPosition(lp_diamondback), lv_moveToA)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L526</span>
+PointPathingCost(UnitGetPosition(lp_diamondback), lv_moveToB)
+</code></pre>
+<h4 id="campaignsswarmstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmstorysc2campaign">#</a> campaigns/swarmstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstory.sc2campaign/base.sc2data/TriggerLibs/SwarmCampaignDataHelperLib.galaxy#L98">SwarmCampaignDataHelperLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L98</span>
+PointPathingCost(lv_k, <span class="hljs-keyword">lv_t</span>)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignMissionLib.galaxy#L5657">VoidCampaignMissionLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L5657</span>
+PointPathingCost(lv_k, <span class="hljs-keyword">lv_t</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5741</span>
+PointPathingCost(lv_k, <span class="hljs-keyword">lv_t</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5825</span>
+PointPathingCost(lv_k, <span class="hljs-keyword">lv_t</span>)
+</code></pre>
+<h4 id="modsheroesdatastormmod"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/GameDataHelperLib.galaxy#L8670">GameDataHelperLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L8670</span>
+PointPathingCost(UnitGetPosition(autoC170BB9F_var), lv_actualTargetPoint)
+</code></pre>
+<h4 id="modsmissionpacksnovacampaignsc2mod"><a class="markdownIt-Anchor" href="#modsmissionpacksnovacampaignsc2mod">#</a> mods/missionpacks/novacampaign.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/novacampaign.sc2mod/base.sc2data/LibNCMI.galaxy#L4715">LibNCMI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4715</span>
+PointPathingCost(lv_k, <span class="hljs-keyword">lv_t</span>)
+</code></pre>
+<h4 id="modsnovastoryassetssc2mod"><a class="markdownIt-Anchor" href="#modsnovastoryassetssc2mod">#</a> mods/novastoryassets.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/novastoryassets.sc2mod/base.sc2maps/maps/campaign/nova/nova02.sc2map/MapScript.galaxy#L4428">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4428</span>
+PointPathingCost(UnitGetPosition(UnitGroupLoopCurrent()), UnitGroupCenterOfGroup(lv_waveGroup))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7585</span>
+PointPathingCost(UnitGetPosition(gv_stone), UnitGetPosition(lv_closestEnemyTargetUnit))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7595</span>
+PointPathingCost(PointFromName((lv_movePointString + IntToString(lv_movePointIter))), UnitGetPosition(lv_closestEnemyTargetUnit))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7595</span>
+PointPathingCost(PointFromName((lv_movePointString + IntToString(lv_movePointIter))), UnitGetPosition(lv_closestEnemyTargetUnit))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7595</span>
+PointPathingCost(lv_movePoint, UnitGetPosition(lv_closestEnemyTargetUnit))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4428</span>
+PointPathingCost(UnitGetPosition(UnitGroupLoopCurrent()), UnitGroupCenterOfGroup(lv_waveGroup))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7585</span>
+PointPathingCost(UnitGetPosition(gv_stone), UnitGetPosition(lv_closestEnemyTargetUnit))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7595</span>
+PointPathingCost(PointFromName((lv_movePointString + IntToString(lv_movePointIter))), UnitGetPosition(lv_closestEnemyTargetUnit))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7595</span>
+PointPathingCost(PointFromName((lv_movePointString + IntToString(lv_movePointIter))), UnitGetPosition(lv_closestEnemyTargetUnit))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7595</span>
+PointPathingCost(lv_movePoint, UnitGetPosition(lv_closestEnemyTargetUnit))
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOMI.galaxy#L6718">LibCOMI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L6718</span>
+PointPathingCost(PlayerStartLocation(libCOMI_gv_cM_ZeratulPlayer), lv_pointIter)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6807</span>
+PointPathingCost(lv_pathingCheckPoint, lv_pointIter)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6903</span>
+PointPathingCost(lv_pathingCheckPoint, lv_pointIter)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L20970</span>
+PointPathingCost(lv_k, <span class="hljs-keyword">lv_t</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L23333</span>
+PointPathingCost(lv_k, <span class="hljs-keyword">lv_t</span>)
+</code></pre>
+<h4 id="modswarcoopprogressionequipmentssc2mod"><a class="markdownIt-Anchor" href="#modswarcoopprogressionequipmentssc2mod">#</a> mods/warcoop/progression/equipments.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/warcoop/progression/equipments.sc2mod/base.sc2data/LibPEqu.galaxy#L193">LibPEqu.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L193</span>
+PointPathingCost(lv_placementPoint, UnitGetPosition(lv_hero))
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,185 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Unit Research Progress / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Unit Research Progress"/>
+                <meta property="og:description" content="This event fires when a unit&#39;s research progress reaches a certain point.  Use &quot;Triggering Player&quot; to get the player that started the research.  Use &quot;Triggering Unit&quot; to get the unit that is doing the research.  Use &quot;Triggering Progress Upgrade&quot; to get the upgrade being researched."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="unit-research-progress"><a class="markdownIt-Anchor" href="#unit-research-progress">#</a> Unit Research Progress</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — <strong>u</strong> research progress is <strong>stage</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Event</code></p>
+</blockquote>
+<p>This event fires when a unit’s research progress reaches a certain point.  Use <em>“Triggering Player”</em> to get the player that started the research.  Use <em>“Triggering Unit”</em> to get the unit that is doing the research.  Use <em>“Triggering Progress Upgrade”</em> to get the upgrade being researched.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>unitref</code> <em>[ unit ]</em> — Unit</li>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-unit-progress">Unit_Progress</a> ]</em> — Stage</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">TriggerAddEventUnitResearchProgress</span><span class="hljs-params">(
+	trigger t,
+	unitref u,
+	<span class="hljs-keyword">int</span> stage,
+)</span></span>;
+</code></pre>
+<h3 id="event-parameters"><a class="markdownIt-Anchor" href="#event-parameters">#</a> Event parameters</h3>
+<ul>
+<li><a href="/galaxy/reference/event-game-user">Triggering Game User</a> — EventGameUser</li>
+<li><a href="/galaxy/reference/event-player">Triggering Player</a> — EventPlayer</li>
+<li><a href="/galaxy/reference/event-unit-progress-unit">Triggering Progress Unit</a> — EventUnitProgressUnit</li>
+<li><a href="/galaxy/reference/lib-ntve-gf-triggering-progress-upgrade">Triggering Progress Upgrade</a> — libNtve_gf_TriggeringProgressUpgrade</li>
+</ul>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#unit-progress-and-queues">Unit / Progress And Queues</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-set-progress-complete">Set Unit Progress</a></strong> — ( UnitSetProgressComplete )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/unit-get-progress-complete">Unit Progress (Percent)</a></strong> — ( UnitGetProgressComplete )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/unit-set-progress-stage">Pause/Resume/Cancel Unit Progress Bar</a></strong> — ( UnitSetProgressStage )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/unit-check-progress-state">Unit Progress Bar Check</a></strong> — ( UnitCheckProgressState )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-unit-is-under-construction">Unit Is Under Construction</a></strong> — ( libNtve_gf_UnitIsUnderConstruction )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-unit-arm-magazine-progress">Unit Arming Progress</a></strong> — ( TriggerAddEventUnitArmMagazineProgress )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-unit-construct-progress">Unit Construction Progress</a></strong> — ( TriggerAddEventUnitConstructProgress )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-unit-learn-progress">Unit Learn Progress</a></strong> — ( TriggerAddEventUnitLearnProgress )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-unit-research-progress">Unit Research Progress</a></strong> — ( TriggerAddEventUnitResearchProgress )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-unit-revive-progress">Unit Revive Progress</a></strong> — ( TriggerAddEventUnitReviveProgress )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-unit-specialize-progress">Unit Specialization Progress</a></strong> — ( TriggerAddEventUnitSpecializeProgress )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-unit-train-progress">Unit Training Progress</a></strong> — ( TriggerAddEventUnitTrainProgress )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> <em>[ gamelink ]</em> — <strong><a href="/galaxy/reference/event-unit-progress-object-type">Triggering Progress Object</a></strong> — ( EventUnitProgressObjectType )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> <em>[ gamelink::Abil ]</em> — <strong><a href="/galaxy/reference/lib-ntve-gf-triggering-progress-ability">Triggering Progress Ability</a></strong> — ( libNtve_gf_TriggeringProgressAbility )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> <em>[ gamelink::Effect ]</em> — <strong><a href="/galaxy/reference/lib-ntve-gf-triggering-progress-effect">Triggering Progress Effect</a></strong> — ( libNtve_gf_TriggeringProgressEffect )</li>
+<li><em><strong>[F]</strong></em> — <code>unit</code> — <strong><a href="/galaxy/reference/event-unit-progress-unit">Triggering Progress Unit</a></strong> — ( EventUnitProgressUnit )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> <em>[ gamelink::Unit ]</em> — <strong><a href="/galaxy/reference/lib-ntve-gf-triggering-progress-unit-type">Triggering Progress Unit Type</a></strong> — ( libNtve_gf_TriggeringProgressUnitType )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> <em>[ gamelink::Upgrade ]</em> — <strong><a href="/galaxy/reference/lib-ntve-gf-triggering-progress-upgrade">Triggering Progress Upgrade</a></strong> — ( libNtve_gf_TriggeringProgressUpgrade )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/unit-queue-item-count">Number Of Items In Training Queue Slot</a></strong> — ( UnitQueueItemCount )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> <em>[ gamelink ]</em> — <strong><a href="/galaxy/reference/unit-queue-item-get">Queued Object In Training Queue Slot</a></strong> — ( UnitQueueItemGet )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> <em>[ gamelink::Behavior ]</em> — <strong><a href="/galaxy/reference/lib-ntve-gf-queued-behavior-type-in-training-queue-slot">Queued Behavior Type In Training Queue Slot</a></strong> — ( libNtve_gf_QueuedBehaviorTypeInTrainingQueueSlot )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> <em>[ gamelink::Unit ]</em> — <strong><a href="/galaxy/reference/lib-ntve-gf-queued-unit-type-in-training-queue-slot">Queued Unit Type In Training Queue Slot</a></strong> — ( libNtve_gf_QueuedUnitTypeInTrainingQueueSlot )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> <em>[ gamelink::Upgrade ]</em> — <strong><a href="/galaxy/reference/lib-ntve-gf-queued-upgrade-type-in-training-queue-slot">Queued Upgrade Type In Training Queue Slot</a></strong> — ( libNtve_gf_QueuedUpgradeTypeInTrainingQueueSlot )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/unit-queue-get-property">Training Queue Property Of Unit</a></strong> — ( UnitQueueGetProperty )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/unit-queue-item-type-check">Training Queue Slot Type Check</a></strong> — ( UnitQueueItemTypeCheck )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/unit-queue-item-time">Training Queue Time</a></strong> — ( UnitQueueItemTime )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignsswarmsc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmsc2campaign">#</a> campaigns/swarm.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarm.sc2campaign/base.sc2maps/maps/campaign/swarm/zlab03.sc2map/MapScript.galaxy#L5530">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L5530</span>
+TriggerAddEventUnitResearchProgress(gt_EvolutionUpgradePurchased, null, c_unitProgressStageStart)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5530</span>
+TriggerAddEventUnitResearchProgress(gt_EvolutionUpgradePurchased, null, c_unitProgressStageStart)
+</code></pre>
+<h4 id="campaignsswarmstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmstorysc2campaign">#</a> campaigns/swarmstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstory.sc2campaign/base.sc2data/TriggerLibs/SwarmCampaignLib.galaxy#L18823">SwarmCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L18823</span>
+TriggerAddEventUnitResearchProgress(libSwaC_gt_ZS_CampaignStatsWeaponArmorUpgrades, null, c_unitProgressStageComplete)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOMI.galaxy#L15182">LibCOMI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L15182</span>
+TriggerAddEventUnitResearchProgress(libCOMI_gt_CM_Abathur_MeleeBonusUpgrade, null, c_unitProgressStageComplete)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L18089</span>
+TriggerAddEventUnitResearchProgress(libCOMI_gt_CM_Fenix_AchievementCarrierResearched, null, c_unitProgressStageComplete)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L18837</span>
+TriggerAddEventUnitResearchProgress(libCOMI_gt_CM_Fenix_ChampionUpgradeResearched, null, c_unitProgressStageComplete)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19263</span>
+TriggerAddEventUnitResearchProgress(libCOMI_gt_CM_Fenix_ConclaiveTrainStart, null, c_unitProgressStageStart)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19264</span>
+TriggerAddEventUnitResearchProgress(libCOMI_gt_CM_Fenix_ConclaiveTrainStart, null, c_unitProgressStageResume)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19293</span>
+TriggerAddEventUnitResearchProgress(libCOMI_gt_CM_Fenix_ConclaiveTrainStop, null, c_unitProgressStagePause)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19294</span>
+TriggerAddEventUnitResearchProgress(libCOMI_gt_CM_Fenix_ConclaiveTrainStop, null, c_unitProgressStageCancel)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19295</span>
+TriggerAddEventUnitResearchProgress(libCOMI_gt_CM_Fenix_ConclaiveTrainStop, null, c_unitProgressStageComplete)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L26195</span>
+TriggerAddEventUnitResearchProgress(libCOMI_gt_CM_Tychus_UltimateAchievement, null, c_unitProgressStageComplete)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L26393</span>
+TriggerAddEventUnitResearchProgress(libCOMI_gt_CM_Tychus_TriUnitSpeed_Upgrade, null, c_unitProgressStageComplete)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod-2"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod-2">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOOC.galaxy#L6424">LibCOOC.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L6424</span>
+TriggerAddEventUnitResearchProgress(libCOOC_gt_CC_SharedUpgradesRecheck, null, c_unitProgressStageComplete)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod-3"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod-3">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOUI.galaxy#L9357">LibCOUI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L9357</span>
+TriggerAddEventUnitResearchProgress(libCOUI_gt_CU_TychusEquipmentUpgraded, null, c_unitProgressStageComplete)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

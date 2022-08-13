@@ -1,0 +1,291 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Minimum (Real) / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Minimum (Real)"/>
+                <meta property="og:description" content="Returns the lowest of the two real values specified.
+
+Returns: fixed"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="minimum-real"><a class="markdownIt-Anchor" href="#minimum-real">#</a> Minimum (Real)</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Min(<strong>value1</strong>, <strong>value2</strong>)<br>
+<em>Flags</em> — <code>Native</code> | <code>Function</code></p>
+</blockquote>
+<p>Returns the lowest of the two real values specified.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>fixed</code> — Value 1</li>
+<li><code>fixed</code> — Value 2</li>
+</ul>
+<p>Returns — <code>fixed</code></p>
+<pre class="hljs"><code><span class="hljs-function">native fixed <span class="hljs-title">MinF</span><span class="hljs-params">(fixed x1, fixed x2)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#math-conditionals">Math / Conditionals</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/min-i">Minimum (Integer)</a></strong> — ( MinI )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/min-f">Minimum (Real)</a></strong> — ( MinF )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/max-i">Maximum (Integer)</a></strong> — ( MaxI )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/max-f">Maximum (Real)</a></strong> — ( MaxF )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/tarcade.sc2map/MapScript.galaxy#L1177">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1177</span>
+MinF(gf_ConvertShooterXToMapX(<span class="hljs-number">15.0</span>), lv_xNew)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2985</span>
+MinF(lv_xRight, PointGetX(lv_center))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2986</span>
+MinF(lv_yTop, PointGetY(lv_center))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L32158</span>
+MinF((<span class="hljs-number">6.33</span> - (<span class="hljs-number">1.0</span> + <span class="hljs-number">0.2</span> + <span class="hljs-number">0.25</span> + <span class="hljs-number">0.75</span> + <span class="hljs-number">4.0</span>)), (SoundLengthSync(SoundLink(<span class="hljs-string">"TTychus05BriefingTychus00010"</span>, <span class="hljs-number">0</span>)) - (<span class="hljs-number">0.25</span> + <span class="hljs-number">0.75</span> + <span class="hljs-number">4.0</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L484</span>
+MinF(TimerGetRemaining(lv_cooldownTimer), lv_mutaSpawnPeriod)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1177</span>
+MinF(gf_ConvertShooterXToMapX(<span class="hljs-number">15.0</span>), lv_xNew)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2985</span>
+MinF(lv_xRight, PointGetX(lv_center))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2986</span>
+MinF(lv_yTop, PointGetY(lv_center))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L32158</span>
+MinF((<span class="hljs-number">6.33</span> - (<span class="hljs-number">1.0</span> + <span class="hljs-number">0.2</span> + <span class="hljs-number">0.25</span> + <span class="hljs-number">0.75</span> + <span class="hljs-number">4.0</span>)), (SoundLengthSync(SoundLink(<span class="hljs-string">"TTychus05BriefingTychus00010"</span>, <span class="hljs-number">0</span>)) - (<span class="hljs-number">0.25</span> + <span class="hljs-number">0.75</span> + <span class="hljs-number">4.0</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L484</span>
+MinF(TimerGetRemaining(lv_cooldownTimer), lv_mutaSpawnPeriod)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2242</span>
+MinF(<span class="hljs-number">0.5</span>, (DistanceBetweenPoints(CameraGetTarget(gv_pLAYER_01_USER), lv_target) * <span class="hljs-number">0.5</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4376</span>
+MinF(<span class="hljs-number">0.5</span>, (DistanceBetweenPoints(CameraGetTarget(gv_pLAYER_01_USER), lv_target) * <span class="hljs-number">0.5</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5368</span>
+MinF(gv_lowestLockDownTime, TimerGetRemaining(gv_s2_LockdownTimer))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6066</span>
+MinF(gv_lowestLockDownTime, TimerGetRemaining(gv_s2_LockdownTimer))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7137</span>
+MinF(gv_lowestLockDownTime, TimerGetRemaining(gv_s2_LockdownTimer))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2327</span>
+MinF(<span class="hljs-number">2.0</span>, (DistanceBetweenPoints(PointFromId(<span class="hljs-number">515</span>), UnitGetPosition(gv_hyperion)) / <span class="hljs-number">1.0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2242</span>
+MinF(<span class="hljs-number">0.5</span>, (DistanceBetweenPoints(CameraGetTarget(gv_pLAYER_01_USER), lv_target) * <span class="hljs-number">0.5</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4376</span>
+MinF(<span class="hljs-number">0.5</span>, (DistanceBetweenPoints(CameraGetTarget(gv_pLAYER_01_USER), lv_target) * <span class="hljs-number">0.5</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5368</span>
+MinF(gv_lowestLockDownTime, TimerGetRemaining(gv_s2_LockdownTimer))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6066</span>
+MinF(gv_lowestLockDownTime, TimerGetRemaining(gv_s2_LockdownTimer))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7137</span>
+MinF(gv_lowestLockDownTime, TimerGetRemaining(gv_s2_LockdownTimer))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2327</span>
+MinF(<span class="hljs-number">2.0</span>, (DistanceBetweenPoints(PointFromId(<span class="hljs-number">515</span>), UnitGetPosition(gv_hyperion)) / <span class="hljs-number">1.0</span>))
+</code></pre>
+<h4 id="campaignsswarmstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmstorysc2campaign">#</a> campaigns/swarmstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstory.sc2campaign/base.sc2data/TriggerLibs/SwarmCampaignLib.galaxy#L16911">SwarmCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L16911</span>
+MinF(lv_indexTimes, <span class="hljs-number">3.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L21486</span>
+MinF((lv_maxTotalDuration/lv_levelUpCount), lv_levelDuration)
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodscooppvebrawlmodstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodscooppvebrawlmodstormmod">#</a> mods/heroesbrawlmods/brawlmapmods/coop/pvebrawlmod.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/coop/pvebrawlmod.stormmod/base.stormdata/LibPVEB.galaxy#L2471">LibPVEB.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2471</span>
+MinF(lv_newBehaviorTime, UnitBehaviorDuration(lv_itUnit, <span class="hljs-string">"PVEResurrectCastTracking"</span>))
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodscooppvemodstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodscooppvemodstormmod">#</a> mods/heroesbrawlmods/brawlmapmods/coop/pvemod.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/coop/pvemod.stormmod/base.stormdata/LibPVEM.galaxy#L2028">LibPVEM.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2028</span>
+MinF(lv_newBehaviorTime, UnitBehaviorDuration(lv_itUnit, <span class="hljs-string">"DeadHeroResurrectCastTrackingBehavior"</span>))
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodslunarfestivalstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodslunarfestivalstormmod">#</a> mods/heroesbrawlmods/brawlmapmods/lunarfestival.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/lunarfestival.stormmod/base.stormdata/LibLNYF.galaxy#L1541">LibLNYF.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1541</span>
+MinF((libLNYF_gv_movement.lv_speed[autoE34AC8EB_var] + <span class="hljs-number">1.0</span>), lv_maxSpeed)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1542</span>
+MinF((libLNYF_gv_movement.lv_speed[autoE34AC8EB_var] + <span class="hljs-number">1.0</span>), lv_maxSpeed)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1545</span>
+MinF((libLNYF_gv_movement.lv_speed[autoE34AC8EB_var] + <span class="hljs-number">0.5</span>), lv_maxSpeed)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1546</span>
+MinF((libLNYF_gv_movement.lv_speed[autoE34AC8EB_var] + <span class="hljs-number">0.5</span>), lv_maxSpeed)
+</code></pre>
+<h4 id="modsheroesdatastormmod"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/AILib.galaxy#L2245">AILib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2245</span>
+MinF(MaxF(libAIAI_gv_aIGateNearbyRange, (lv_offsetFromEdge + (<span class="hljs-number">0.5</span> * lv_originalDistance))), lv_maxSearchRadius)
+</code></pre>
+<h4 id="modsheroesdatastormmod-2"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-2">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/GameLib.galaxy#L1481">GameLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1481</span>
+MinF(lv_percentReduction, <span class="hljs-number">0.9</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6108</span>
+MinF(libCore_gv_bALDeathTimes[lv_itLevel], libCore_gv_sYSDeathTimerCap)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11210</span>
+MinF(TimerGetElapsed(libGame_gv_matchGameplayTimer), (libCore_gv_dataXPBrawlMetaXPMaximumDuration * <span class="hljs-number">60.0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11211</span>
+MinF(TimerGetElapsed(libGame_gv_matchGameplayTimer), (libCore_gv_dataXPBrawlMetaXPExpectedDuration * <span class="hljs-number">60.0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L17432</span>
+MinF((lv_currentDeathTime - lv_spiritOfRedemptionLowDeathTimeAdjustment_C), lv_spiritOfRedemptionBuffDuration)
+</code></pre>
+<h4 id="modsheroesdatastormmod-3"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-3">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/HeroesLib.galaxy#L1699">HeroesLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1699</span>
+MinF(lv_deathTime, libCore_gv_sYSDeathTimerCap)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1707</span>
+MinF(MaxF(<span class="hljs-number">7.0</span>, (lv_deathTime / <span class="hljs-number">2.0</span>)), <span class="hljs-number">15.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1710</span>
+MinF(MaxF(<span class="hljs-number">7.0</span>, (lv_deathTime / <span class="hljs-number">2.0</span>)), <span class="hljs-number">20.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1713</span>
+MinF(lv_deathTime, <span class="hljs-number">30.0</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1716</span>
+MinF(lv_deathTime, <span class="hljs-number">15.0</span>)
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodsvolskayasoundstormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodsvolskayasoundstormmod">#</a> mods/heroesmapmods/battlegroundmapmods/volskayasound.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/volskayasound.stormmod/base.stormdata/LibVLSS.galaxy#L48">LibVLSS.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L48</span>
+MinF(libVLSK_gf_CapturingProgressOfTeam(lp_team, lp_capturePointIndex), (libVLSK_gv_capturePointContestTimeGoal_C / <span class="hljs-number">2.0</span>))
+</code></pre>
+<h4 id="modsheromodsgenjistormmod"><a class="markdownIt-Anchor" href="#modsheromodsgenjistormmod">#</a> mods/heromods/genji.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heromods/genji.stormmod/base.stormdata/LibHGen.galaxy#L102">LibHGen.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L102</span>
+MinF((PlayerScoreValueGetAsFixed(lp_genjiPlayer, libHGen_gv_heroGenjiDeflectDragonClawDamageAbsorbedScore) + lp_incomingDamage), lv_damageThreshold)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L556</span>
+MinF(lv_duration, <span class="hljs-number">8.0</span>)
+</code></pre>
+<h4 id="modsheromodsguldanstormmod"><a class="markdownIt-Anchor" href="#modsheromodsguldanstormmod">#</a> mods/heromods/guldan.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heromods/guldan.stormmod/base.stormdata/LibHGUL.galaxy#L222">LibHGUL.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L222</span>
+MinF(libHGUL_gv_heroGuldanDarknessWithinDamageTracker[EventUnitDamageSourcePlayer()], CatalogFieldValueGetAsFixed(c_gameCatalogEffect, <span class="hljs-string">"GuldanLifeTapDarknessWithinDamageThreshold"</span>, <span class="hljs-string">"Amount"</span>, EventUnitDamageSourcePlayer()))
+</code></pre>
+<h4 id="modsheromodsimperiusstormmod"><a class="markdownIt-Anchor" href="#modsheromodsimperiusstormmod">#</a> mods/heromods/imperius.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heromods/imperius.stormmod/base.stormdata/LibHIMP.galaxy#L129">LibHIMP.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L129</span>
+MinF(AbsF((lv_imperiusUnitFacing360 - lv_relativeAngle360)), AbsF(((lv_imperiusUnitFacing360 + lv_relativeAngle360) - <span class="hljs-number">360.0</span>)))
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOMI.galaxy#L3924">LibCOMI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3924</span>
+MinF(lv_lastseenhealth, lp_maxHealth)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5038</span>
+MinF(lv_factionMaxStacks, lv_factionScore)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6545</span>
+MinF((<span class="hljs-number">180.0</span> - lv_masteryTimeReduction), (lv_targetMissionTime - GameGetMissionTime()))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19600</span>
+MinF(lv_distance, lv_maxRange)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod-2"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod-2">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOMU.galaxy#L13597">LibCOMU.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L13597</span>
+MinF(lv_healRemaining, UnitGetCustomValue(lv_indexUnit, libCOMU_gv_cTC_TempDamageCustomIndex))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13598</span>
+MinF((UnitGetPropertyFixed(lv_indexUnit, c_unitPropLifeMax, c_unitPropCurrent) - UnitGetPropertyFixed(lv_indexUnit, c_unitPropLife, c_unitPropCurrent)), lv_healRemaining)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13604</span>
+MinF((UnitGetPropertyFixed(lv_indexUnit, c_unitPropShieldsMax, c_unitPropCurrent) - UnitGetPropertyFixed(lv_indexUnit, c_unitPropShields, c_unitPropCurrent)), lv_healRemaining)
+</code></pre>
+<h4 id="modswarcooplegendsjainaproudmooresc2mod"><a class="markdownIt-Anchor" href="#modswarcooplegendsjainaproudmooresc2mod">#</a> mods/warcoop/legends/jainaproudmoore.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/warcoop/legends/jainaproudmoore.sc2mod/base.sc2data/LibLJai.galaxy#L73">LibLJai.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L73</span>
+MinF((UnitBehaviorCount(lv_jaina, <span class="hljs-string">"AttInt"</span>)*<span class="hljs-number">0.04</span>), <span class="hljs-number">1.4</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

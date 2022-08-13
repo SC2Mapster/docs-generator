@@ -1,0 +1,441 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Stop Timer / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Stop Timer"/>
+                <meta property="og:description" content="Stops a timer, making its elapsed and remaining time 0."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="stop-timer"><a class="markdownIt-Anchor" href="#stop-timer">#</a> Stop Timer</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Stop <strong>timer</strong><br>
+<em>Flags</em> — <code>Action</code></p>
+</blockquote>
+<p>Stops a timer, making its elapsed and remaining time 0.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>timer</code> — Timer</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">libNtve_gf_StopTimer</span><span class="hljs-params">(timer lp_timer)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#timer-timers">Timer / Timers</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/set-score-timer">Set Score Timer</a></strong> — ( SetScoreTimer )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-time-elapsed">Time Elapsed</a></strong> — ( TriggerAddEventTimeElapsed )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-time-periodic">Periodic Event</a></strong> — ( TriggerAddEventTimePeriodic )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/timer-start">Start Timer</a></strong> — ( TimerStart )</li>
+<li><em><strong>[F]</strong></em> — <code>timer</code> — <strong><a href="/galaxy/reference/timer-last-started">Last Started Timer</a></strong> — ( TimerLastStarted )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/timer-restart">Restart Timer</a></strong> — ( TimerRestart )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/timer-pause">Pause/Unpause Timer</a></strong> — ( TimerPause )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-stop-timer">Stop Timer</a></strong> — ( libNtve_gf_StopTimer )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/timer-is-paused">Timer Is Paused</a></strong> — ( TimerIsPaused )</li>
+<li><em><strong>[F]</strong></em> — <code>timer</code> — <strong><a href="/galaxy/reference/timer-create">New Timer</a></strong> — ( TimerCreate )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/timer-get-duration">Duration Of Timer</a></strong> — ( TimerGetDuration )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-timer">Timer Expires</a></strong> — ( TriggerAddEventTimer )</li>
+<li><em><strong>[F]</strong></em> — <code>timer</code> — <strong><a href="/galaxy/reference/event-timer">Triggering Timer</a></strong> — ( EventTimer )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignsvoidstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignStoryLib.galaxy#L3079">VoidCampaignStoryLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3079</span>
+libNtve_gf_StopTimer(libVCST_gv_pS_KaraxPickupTimer)
+</code></pre>
+<h4 id="modsheroesstormmod"><a class="markdownIt-Anchor" href="#modsheroesstormmod">#</a> mods/heroes.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroes.stormmod/base.stormmaps/maps/heroes/singleplayermaps/%2810%29trymemode.stormmap/MapScript.galaxy#L2538">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2538</span>
+libNtve_gf_StopTimer(gv_targetDummyHideUITimer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1569</span>
+libNtve_gf_StopTimer(gv__2B_ChallengeTimer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7154</span>
+libNtve_gf_StopTimer(gv__2B_ChallengeTimer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7210</span>
+libNtve_gf_StopTimer(gv__2B_ChallengeTimer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2538</span>
+libNtve_gf_StopTimer(gv_targetDummyHideUITimer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1569</span>
+libNtve_gf_StopTimer(gv__2B_ChallengeTimer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7154</span>
+libNtve_gf_StopTimer(gv__2B_ChallengeTimer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7210</span>
+libNtve_gf_StopTimer(gv__2B_ChallengeTimer)
+</code></pre>
+<h4 id="modsheroesbrawlmodsarenamodemodsarenamodestormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsarenamodemodsarenamodestormmod">#</a> mods/heroesbrawlmods/arenamodemods/arenamode.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/arenamodemods/arenamode.stormmod/base.stormdata/LibAREN.galaxy#L404">LibAREN.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L404</span>
+libNtve_gf_StopTimer(libGame_gv_gameTimer)
+</code></pre>
+<h4 id="modsheroesbrawlmodsarenamodemodsattackdefendstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsarenamodemodsattackdefendstormmod">#</a> mods/heroesbrawlmods/arenamodemods/attackdefend.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/arenamodemods/attackdefend.stormmod/base.stormdata/LibAtDe.galaxy#L103">LibAtDe.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L103</span>
+libNtve_gf_StopTimer(libGame_gv_gameTimer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1129</span>
+libNtve_gf_StopTimer(libGame_gv_players[lv_i].lv_respawnTimer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1130</span>
+libNtve_gf_StopTimer(libGame_gv_players[lv_i].lv_deathToastTimer)
+</code></pre>
+<h4 id="modsheroesbrawlmodsarenamodemodstrialgroundsstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsarenamodemodstrialgroundsstormmod">#</a> mods/heroesbrawlmods/arenamodemods/trialgrounds.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/arenamodemods/trialgrounds.stormmod/base.stormdata/LibAMVS.galaxy#L2124">LibAMVS.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2124</span>
+libNtve_gf_StopTimer(libAMVS_gv_revealTimer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2125</span>
+libNtve_gf_StopTimer(libAMVS_gv_revealWarningTimer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2126</span>
+libNtve_gf_StopTimer(libAMVS_gv_aRM_TrialGrounds.lv_elevatorTimer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2127</span>
+libNtve_gf_StopTimer(libAMVS_gv_saZo.lv_shockTimer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2130</span>
+libNtve_gf_StopTimer(libVLSK_gv_capturePointCooldownTimer)
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodsblackheartsrevengestormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodsblackheartsrevengestormmod">#</a> mods/heroesbrawlmods/brawlmapmods/blackheartsrevenge.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/blackheartsrevenge.stormmod/base.stormdata/LibMDoE.galaxy#L2336">LibMDoE.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2336</span>
+libNtve_gf_StopTimer(libMDoE_gv_mDoE_Boat[libAtDe_gv_attackDefend.lv_attackingTeam].lv_boatAttackCoreTimer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2337</span>
+libNtve_gf_StopTimer(libMDoE_gv_mDoE_Boat[libAtDe_gv_attackDefend.lv_attackingTeam].lv_boatProgressTimer)
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodscoopdeadmansstandstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodscoopdeadmansstandstormmod">#</a> mods/heroesbrawlmods/brawlmapmods/coop/deadmansstand.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/coop/deadmansstand.stormmod/base.stormdata/LibPEB1.galaxy#L5844">LibPEB1.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L5844</span>
+libNtve_gf_StopTimer(libPEB1_gv_murkyDeathTimer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10770</span>
+libNtve_gf_StopTimer(libGame_gv_players[lv_targetPlayer].lv_respawnTimer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10771</span>
+libNtve_gf_StopTimer(libGame_gv_players[lv_targetPlayer].lv_respawnSoundCueTimer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13038</span>
+libNtve_gf_StopTimer(libGame_gv_openTheGatesTimer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13186</span>
+libNtve_gf_StopTimer(libGame_gv_openTheGatesTimer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3139</span>
+libNtve_gf_StopTimer(libGame_gv_openTheGatesTimer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3202</span>
+libNtve_gf_StopTimer(libGame_gv_openTheGatesTimer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3632</span>
+libNtve_gf_StopTimer(libGame_gv_openTheGatesTimer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3820</span>
+libNtve_gf_StopTimer(libPEB1_gv_zergHeroEventWaitTimer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3984</span>
+libNtve_gf_StopTimer(libGame_gv_openTheGatesTimer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4123</span>
+libNtve_gf_StopTimer(libPEB1_gv_zergHeroEventWaitTimer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4537</span>
+libNtve_gf_StopTimer(libPEB1_gv_pvEMurkyDeathTimer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8074</span>
+libNtve_gf_StopTimer(libPEB1_gv_zergHeroEventWaitTimer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8137</span>
+libNtve_gf_StopTimer(libPEB1_gv_holdoutTimer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8436</span>
+libNtve_gf_StopTimer(libPEB1_gv_zergHeroEventWaitTimer)
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodscooppvebrawlmodstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodscooppvebrawlmodstormmod">#</a> mods/heroesbrawlmods/brawlmapmods/coop/pvebrawlmod.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/coop/pvebrawlmod.stormmod/base.stormdata/LibPVEB.galaxy#L949">LibPVEB.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L949</span>
+libNtve_gf_StopTimer(libGame_gv_players[lp_player].lv_respawnTimer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L950</span>
+libNtve_gf_StopTimer(libGame_gv_players[lp_player].lv_respawnSoundCueTimer)
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodscooppvebrawluimodstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodscooppvebrawluimodstormmod">#</a> mods/heroesbrawlmods/brawlmapmods/coop/pvebrawluimod.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/coop/pvebrawluimod.stormmod/base.stormdata/LibPBUI.galaxy#L1478">LibPBUI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1478</span>
+libNtve_gf_StopTimer(libPBUI_gv_curateHeroSelectionSetting.lv_countdownTimer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1572</span>
+libNtve_gf_StopTimer(libPBUI_gv_curateHeroSelectionSetting.lv_countdownTimer)
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodscooppvemodstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodscooppvemodstormmod">#</a> mods/heroesbrawlmods/brawlmapmods/coop/pvemod.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/coop/pvemod.stormmod/base.stormdata/LibPVEM.galaxy#L506">LibPVEM.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L506</span>
+libNtve_gf_StopTimer(libGame_gv_players[lp_player].lv_respawnTimer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L507</span>
+libNtve_gf_StopTimer(libGame_gv_players[lp_player].lv_respawnSoundCueTimer)
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodscooppvemodstormmod-2"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodscooppvemodstormmod-2">#</a> mods/heroesbrawlmods/brawlmapmods/coop/pvemod.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/coop/pvemod.stormmod/base.stormdata/LibPVEU.galaxy#L1747">LibPVEU.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1747</span>
+libNtve_gf_StopTimer(libPVEU_gv_pvEUICurateHeroSelectionSetting.lv_countdownTimer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1850</span>
+libNtve_gf_StopTimer(libPVEU_gv_pvEUICurateHeroSelectionSetting.lv_countdownTimer)
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodshanamurapayloadpushstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodshanamurapayloadpushstormmod">#</a> mods/heroesbrawlmods/brawlmapmods/hanamurapayloadpush.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/hanamurapayloadpush.stormmod/base.stormdata/LibMHPP.galaxy#L135">LibMHPP.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L135</span>
+libNtve_gf_StopTimer(libMHPP_gv_payload.lv_overtimeTimer)
+</code></pre>
+<h4 id="modsheroesbrawlmodsbrawlmapmodspullpartystormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsbrawlmapmodspullpartystormmod">#</a> mods/heroesbrawlmods/brawlmapmods/pullparty.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/brawlmapmods/pullparty.stormmod/base.stormdata/LibMMPP.galaxy#L55">LibMMPP.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L55</span>
+libNtve_gf_StopTimer(libGame_gv_players[auto81D315E2_var].lv_respawnTimer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L56</span>
+libNtve_gf_StopTimer(libGame_gv_players[auto81D315E2_var].lv_respawnSoundCueTimer)
+</code></pre>
+<h4 id="modsheroesbrawlmodsheroselectionmodsingameheroselectionstormmod"><a class="markdownIt-Anchor" href="#modsheroesbrawlmodsheroselectionmodsingameheroselectionstormmod">#</a> mods/heroesbrawlmods/heroselectionmods/ingameheroselection.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesbrawlmods/heroselectionmods/ingameheroselection.stormmod/base.stormdata/LibIGHS.galaxy#L1711">LibIGHS.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1711</span>
+libNtve_gf_StopTimer(libIGHS_gv_shuffleSettings.lv_heroPickTimer)
+</code></pre>
+<h4 id="modsheroesdatastormmod"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/GameDataHelperLib.galaxy#L1794">GameDataHelperLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1794</span>
+libNtve_gf_StopTimer(lv_timer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13402</span>
+libNtve_gf_StopTimer(libGDHL_gv_lostVikingsPlayer[lv_lVPlayer].lv_erikDeathTimer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13412</span>
+libNtve_gf_StopTimer(libGDHL_gv_lostVikingsPlayer[lv_lVPlayer].lv_baleogDeathTimer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L13422</span>
+libNtve_gf_StopTimer(libGDHL_gv_lostVikingsPlayer[lv_lVPlayer].lv_olafDeathTimer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L19625</span>
+libNtve_gf_StopTimer(libGDHL_gv_mishaDeathTimer[lv_rexxarPlayer])
+</code></pre>
+<h4 id="modsheroesdatastormmod-2"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-2">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/GameLib.galaxy#L14078">GameLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L14078</span>
+libNtve_gf_StopTimer(libGame_gv_towerTeamCoreAlertTimer[lv_itTeamNumber])
+</code></pre>
+<h4 id="modsheroesdatastormmod-3"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-3">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/StartingExperienceLib.galaxy#L5353">StartingExperienceLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L5353</span>
+libNtve_gf_StopTimer(libStEx_gv_targetDummyPeaceTimer)
+</code></pre>
+<h4 id="modsheroesdatastormmod-4"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-4">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/SupportLib.galaxy#L8579">SupportLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L8579</span>
+libNtve_gf_StopTimer(libGame_gv_openTheGatesTimer)
+</code></pre>
+<h4 id="modsheroesdatastormmod-5"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-5">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/UILib.galaxy#L1374">UILib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1374</span>
+libNtve_gf_StopTimer(libGame_gv_players[lp_player].lv_deathToastTimer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5742</span>
+libNtve_gf_StopTimer(libUIUI_gv_killLogItems[lp_indextoRemove].lv_timer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7427</span>
+libNtve_gf_StopTimer(libUIUI_gv_pingInputSuppressionTimer[lp_player])
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7428</span>
+libNtve_gf_StopTimer(libUIUI_gv_pingCountResetTimer[lp_player])
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7429</span>
+libNtve_gf_StopTimer(libUIUI_gv_pingLockoutTimer[lp_player])
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodsalteracpassstormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodsalteracpassstormmod">#</a> mods/heroesmapmods/battlegroundmapmods/alteracpass.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/alteracpass.stormmod/base.stormdata/LibMMAP.galaxy#L424">LibMMAP.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L424</span>
+libNtve_gf_StopTimer(libMMAP_gv_aVMechanics[lp_team].lv_defenderSpawnTimer[lv_u])
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L617</span>
+libNtve_gf_StopTimer(libMMAP_gv_aVMechanics[lp_team].lv_defenderSpawnTimer[lv_i])
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodshanamurastormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodshanamurastormmod">#</a> mods/heroesmapmods/battlegroundmapmods/hanamura.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/hanamura.stormmod/base.stormdata/LibMHmu.galaxy#L1954">LibMHmu.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1954</span>
+libNtve_gf_StopTimer(libMHmu_gv_hanamuraMM10secondcountdownTimer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1963</span>
+libNtve_gf_StopTimer(libMHmu_gv_elevator_Forced_Lower_Timer)
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodsinfernalshrinesstormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodsinfernalshrinesstormmod">#</a> mods/heroesmapmods/battlegroundmapmods/infernalshrines.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/infernalshrines.stormmod/base.stormdata/LibMSHE.galaxy#L2449">LibMSHE.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2449</span>
+libNtve_gf_StopTimer(libMSHE_gv_mMISObjectivePreviewTimer)
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodstowersofdoomstormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodstowersofdoomstormmod">#</a> mods/heroesmapmods/battlegroundmapmods/towersofdoom.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/towersofdoom.stormmod/base.stormdata/LibMTOD.galaxy#L2793">LibMTOD.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2793</span>
+libNtve_gf_StopTimer(libMTOD_gv_mMToDScalingTimer)
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodsvolskayamechanicsstormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodsvolskayamechanicsstormmod">#</a> mods/heroesmapmods/battlegroundmapmods/volskayamechanics.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/volskayamechanics.stormmod/base.stormdata/LibVLSK.galaxy#L1846">LibVLSK.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1846</span>
+libNtve_gf_StopTimer(libVLSK_gv_pilotNeededTimer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1876</span>
+libNtve_gf_StopTimer(libVLSK_gv_gunnerNeededTimer)
+</code></pre>
+<h4 id="modsheromodsaurielstormmod"><a class="markdownIt-Anchor" href="#modsheromodsaurielstormmod">#</a> mods/heromods/auriel.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heromods/auriel.stormmod/base.stormdata/LibHAUR.galaxy#L1512">LibHAUR.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1512</span>
+libNtve_gf_StopTimer(libGame_gv_players[lv_targetPlayer].lv_respawnSoundCueTimer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1513</span>
+libNtve_gf_StopTimer(libGame_gv_players[lv_targetPlayer].lv_respawnTimer)
+</code></pre>
+<h4 id="modsheromodschogallstormmod"><a class="markdownIt-Anchor" href="#modsheromodschogallstormmod">#</a> mods/heromods/chogall.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heromods/chogall.stormmod/base.stormdata/LibHCHO.galaxy#L2250">LibHCHO.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2250</span>
+libNtve_gf_StopTimer(libGame_gv_players[lv_gallPlayer].lv_respawnSoundCueTimer)
+</code></pre>
+<h4 id="modsmissionpacksnovacampaignsc2mod"><a class="markdownIt-Anchor" href="#modsmissionpacksnovacampaignsc2mod">#</a> mods/missionpacks/novacampaign.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/novacampaign.sc2mod/base.sc2data/LibNCUI.galaxy#L1457">LibNCUI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1457</span>
+libNtve_gf_StopTimer(libNCUI_gv_nU_MissionNewsButtonCalloutModeTimer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1458</span>
+libNtve_gf_StopTimer(libNCUI_gv_nU_MissionNewsButtonNormalModeTimer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2059</span>
+libNtve_gf_StopTimer(libNCUI_gv_nU_UpgradesReigelResponseTimer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2789</span>
+libNtve_gf_StopTimer(libNCUI_gv_nU_EquipmentReigelResponseTimer)
+</code></pre>
+<h4 id="modsnovastoryassetssc2mod"><a class="markdownIt-Anchor" href="#modsnovastoryassetssc2mod">#</a> mods/novastoryassets.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/novastoryassets.sc2mod/base2.sc2maps/maps/campaign/nova/nova04.sc2map/MapScript.galaxy#L1634">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1634</span>
+libNtve_gf_StopTimer(gv_s1_Timer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2923</span>
+libNtve_gf_StopTimer(gv_s1_Timer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3355</span>
+libNtve_gf_StopTimer(gv_defenseModeTimer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1313</span>
+libNtve_gf_StopTimer(gv_eradicatorPlayerEntranceLoiterTimer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2232</span>
+libNtve_gf_StopTimer(gv_xanthosTimeoutTimer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2324</span>
+libNtve_gf_StopTimer(gv_xanthosTimer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1634</span>
+libNtve_gf_StopTimer(gv_s1_Timer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2923</span>
+libNtve_gf_StopTimer(gv_s1_Timer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3355</span>
+libNtve_gf_StopTimer(gv_defenseModeTimer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1313</span>
+libNtve_gf_StopTimer(gv_eradicatorPlayerEntranceLoiterTimer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2232</span>
+libNtve_gf_StopTimer(gv_xanthosTimeoutTimer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2324</span>
+libNtve_gf_StopTimer(gv_xanthosTimer)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOMI.galaxy#L31786">LibCOMI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L31786</span>
+libNtve_gf_StopTimer(libCOMI_gv_cM_DehakaVOLearnReminderTimer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L32365</span>
+libNtve_gf_StopTimer(libCOMI_gv_cM_TychusVOTransportReminderTimer)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod-2"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod-2">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOMU.galaxy#L11010">LibCOMU.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L11010</span>
+libNtve_gf_StopTimer(lv_dropPodTimers[lv_indexPlayer])
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11842</span>
+libNtve_gf_StopTimer(lv_riftTimer)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11843</span>
+libNtve_gf_StopTimer(lv_riftTrickleTimer)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

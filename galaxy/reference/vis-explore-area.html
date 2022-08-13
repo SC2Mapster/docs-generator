@@ -1,0 +1,412 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Explore/Unexplore Area / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Explore/Unexplore Area"/>
+                <meta property="og:description" content="Sets the specified region for the specified player to explored or unexplored."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="exploreunexplore-area"><a class="markdownIt-Anchor" href="#exploreunexplore-area">#</a> Explore/Unexplore Area</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Change visibility for player <strong>player</strong> to <strong>state|Explored/Unexplored</strong> within <strong>area</strong> and <strong>cliffLevel|Do/Do Not</strong> check cliff level<br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Sets the specified region for the specified player to explored or unexplored.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> — Player</li>
+<li><code>region</code> — Area</li>
+<li><code>bool</code> <em>[ preset::<a href="/galaxy/reference/preset-explored-unexplored-option">ExploredUnexploredOption</a> ]</em> — State</li>
+<li><code>bool</code> <em>[ preset::<a href="/galaxy/reference/preset-do-do-not-option">Do_Do_Not_Option</a> ]</em> — Check Cliff Level</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">VisExploreArea</span><span class="hljs-params">(
+	<span class="hljs-keyword">int</span> player,
+	region area,
+	<span class="hljs-keyword">bool</span> explored,
+	<span class="hljs-keyword">bool</span> checkCliffLevel,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#visibility-basic">Visibility / Basic</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/vis-reveal-area">Reveal Area</a></strong> — ( VisRevealArea )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/vis-explore-area">Explore/Unexplore Area</a></strong> — ( VisExploreArea )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/vis-fill-area">Fill Area Visibility</a></strong> — ( VisFillArea )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/vis-enable">Enable/Disable Visibility</a></strong> — ( VisEnable )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-show-hide-placement-models">Show/Hide Placement Models</a></strong> — ( libNtve_gf_ShowHidePlacementModels )</li>
+<li><em><strong>[F]</strong></em> — <code>fixed</code> — <strong><a href="/galaxy/reference/vis-get-fo-walpha">Get Fog of War Alpha</a></strong> — ( VisGetFoWAlpha )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/vis-set-fo-walpha">Set Fog of War Alpha</a></strong> — ( VisSetFoWAlpha )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/vis-reset-fo-walpha">Reset Fog of War Alpha</a></strong> — ( VisResetFoWAlpha )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/vis-is-enabled">Visibility Is Enabled</a></strong> — ( VisIsEnabled )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/vis-is-visible-for-player">Point Is Visible For Player</a></strong> — ( VisIsVisibleForPlayer )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/challenges/advancedcommand.sc2map/MapScript.galaxy#L414">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L414</span>
+VisExploreArea(gv_pLAYER_USER, RegionEntireMap(), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L723</span>
+VisExploreArea(gv_pLAYER_USER, RegionPlayableMap(), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1458</span>
+VisExploreArea(gv_pLAYER_USER, RegionEntireMap(), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L827</span>
+VisExploreArea(gv_pLAYER_USER, RegionEntireMap(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L914</span>
+VisExploreArea(gv_pLAYER_USER, RegionEntireMap(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1367</span>
+VisExploreArea(gv_pLAYER_USER, RegionEntireMap(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2941</span>
+VisExploreArea(gv_pLAYER_USER, RegionEntireMap(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L493</span>
+VisExploreArea(gv_pLAYER_USER, RegionEntireMap(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L742</span>
+VisExploreArea(gv_pLAYER_USER, RegionPlayableMap(), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1834</span>
+VisExploreArea(gv_pLAYER_USER, RegionEntireMap(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L619</span>
+VisExploreArea(gv_pLAYER_USER, RegionEntireMap(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1737</span>
+VisExploreArea(gv_pLAYER_USER, RegionEntireMap(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1396</span>
+VisExploreArea(gv_pLAYER_USER, RegionEntireMap(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1397</span>
+VisExploreArea(gv_p2_ENEMY_ZERG, RegionEntireMap(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1398</span>
+VisExploreArea(gv_p3_ENEMY_PROTOSS, RegionEntireMap(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2182</span>
+VisExploreArea(gv_pLAYER_USER, RegionEntireMap(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2458</span>
+VisExploreArea(gv_pLAYER_USER, RegionEntireMap(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L775</span>
+VisExploreArea(gv_pLAYER_USER, RegionEntireMap(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L862</span>
+VisExploreArea(gv_pLAYER_USER, RegionEntireMap(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1301</span>
+VisExploreArea(gv_pLAYER_USER, RegionEntireMap(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2805</span>
+VisExploreArea(gv_pLAYER_USER, RegionEntireMap(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L390</span>
+VisExploreArea(gv_pLAYER_USER, RegionEntireMap(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L579</span>
+VisExploreArea(gv_pLAYER_USER, RegionEntireMap(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L705</span>
+VisExploreArea(gv_pLAYER_USER, RegionEntireMap(), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1453</span>
+VisExploreArea(gv_pLAYER_USER, RegionEntireMap(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L832</span>
+VisExploreArea(gv_pLAYER_USER, RegionEntireMap(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L922</span>
+VisExploreArea(gv_pLAYER_USER, RegionEntireMap(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2960</span>
+VisExploreArea(gv_pLAYER_USER, RegionEntireMap(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L406</span>
+VisExploreArea(gv_pLAYER_USER, RegionEntireMap(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L693</span>
+VisExploreArea(gv_pLAYER_USER, RegionEntireMap(), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1394</span>
+VisExploreArea(gv_pLAYER_USER, RegionEntireMap(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1703</span>
+VisExploreArea(gv_p1_USER, RegionFromId(<span class="hljs-number">42</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5324</span>
+VisExploreArea(gv_p1_USER, RegionFromId(<span class="hljs-number">34</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L786</span>
+VisExploreArea(gv_pLAYER_01_USER, RegionCircle(PointFromId(<span class="hljs-number">19</span>), <span class="hljs-number">16.0</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L787</span>
+VisExploreArea(gv_pLAYER_01_USER, RegionCircle(PointFromId(<span class="hljs-number">73</span>), <span class="hljs-number">16.0</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L788</span>
+VisExploreArea(gv_pLAYER_01_USER, RegionCircle(PointFromId(<span class="hljs-number">74</span>), <span class="hljs-number">16.0</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L789</span>
+VisExploreArea(gv_pLAYER_01_USER, RegionCircle(PointFromId(<span class="hljs-number">669</span>), <span class="hljs-number">12.0</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L790</span>
+VisExploreArea(gv_pLAYER_01_USER, RegionCircle(PointFromId(<span class="hljs-number">707</span>), <span class="hljs-number">12.0</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4669</span>
+VisExploreArea(gv_p01_USER, RegionEntireMap(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3371</span>
+VisExploreArea(gv_pLAYER_01_USER, RegionCircle(gv_trainPath[lv_currentPingPoint], <span class="hljs-number">12.0</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3385</span>
+VisExploreArea(gv_pLAYER_01_USER, RegionCircle(gv_trainPath[lv_currentPingPoint], <span class="hljs-number">12.0</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3427</span>
+VisExploreArea(gv_pLAYER_01_USER, RegionCircle(gv_trainPath[lv_currentPingPoint], <span class="hljs-number">12.0</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3482</span>
+VisExploreArea(gv_pLAYER_01_USER, RegionCircle(gv_trainPath[lv_currentPingPoint], <span class="hljs-number">12.0</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L752</span>
+VisExploreArea(gv_p01_USER, RegionFromId(<span class="hljs-number">15</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11412</span>
+VisExploreArea(gv_p01_USER, RegionEntireMap(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5056</span>
+VisExploreArea(gv_p1_USER, RegionEntireMap(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5057</span>
+VisExploreArea(gv_p1_USER, RegionFromId(<span class="hljs-number">32</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5153</span>
+VisExploreArea(gv_p1_USER, RegionEntireMap(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5154</span>
+VisExploreArea(gv_p1_USER, RegionFromId(<span class="hljs-number">32</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L757</span>
+VisExploreArea(gv_pLAYER_01_USER, RegionFromId(<span class="hljs-number">23</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L483</span>
+VisExploreArea(gv_p01_USER, RegionFromId(<span class="hljs-number">20</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1765</span>
+VisExploreArea(gv_p01_USER, RegionCircle(PointFromId(<span class="hljs-number">443</span>), <span class="hljs-number">8.0</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3593</span>
+VisExploreArea(gv_p01_USER, RegionCircle(UnitGetPosition(autoFB64C290_var), <span class="hljs-number">2.0</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3601</span>
+VisExploreArea(gv_p01_USER, RegionCircle(UnitGetPosition(auto54C05CEA_var), <span class="hljs-number">2.0</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3614</span>
+VisExploreArea(gv_p01_USER, RegionCircle(UnitGetPosition(autoF08FD742_var), <span class="hljs-number">2.0</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3622</span>
+VisExploreArea(gv_p01_USER, RegionCircle(UnitGetPosition(auto16481552_var), <span class="hljs-number">2.0</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3635</span>
+VisExploreArea(gv_p01_USER, RegionCircle(UnitGetPosition(auto32D3A7DE_var), <span class="hljs-number">2.0</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3643</span>
+VisExploreArea(gv_p01_USER, RegionCircle(UnitGetPosition(auto187B1827_var), <span class="hljs-number">2.0</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3746</span>
+VisExploreArea(gv_p01_USER, RegionCircle(UnitGetPosition(autoE35494DE_var), <span class="hljs-number">2.0</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3754</span>
+VisExploreArea(gv_p01_USER, RegionCircle(UnitGetPosition(autoF24145D4_var), <span class="hljs-number">2.0</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L766</span>
+VisExploreArea(gv_pLAYER01_USER, RegionFromId(<span class="hljs-number">18</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6094</span>
+VisExploreArea(gv_pLAYER01_USER, RegionEntireMap(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6422</span>
+VisExploreArea(gv_pLAYER01_USER, RegionFromId(<span class="hljs-number">31</span>), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L669</span>
+VisExploreArea(gv_p01_USER, RegionEntireMap(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1800</span>
+VisExploreArea(gv_p01_USER, RegionEntireMap(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1993</span>
+VisExploreArea(gv_p01_USER, RegionEntireMap(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3205</span>
+VisExploreArea(gv_p01_USER, RegionEntireMap(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L724</span>
+VisExploreArea(gv_pLAYER01_USER, RegionCircle(PointFromId(<span class="hljs-number">13</span>), <span class="hljs-number">6.0</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1182</span>
+VisExploreArea(gv_pLAYER01_USER, gv_wall_of_Fire_DamageRegion, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2487</span>
+VisExploreArea(gv_pLAYER01_USER, RegionCircle(UnitGetPosition(autoF023E1E1_var), <span class="hljs-number">2.0</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5283</span>
+VisExploreArea(gv_pLAYER_01_USER, gv_mapAreaNormal, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3716</span>
+VisExploreArea(gv_p1_USER, RegionFromId(<span class="hljs-number">10</span>), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5352</span>
+VisExploreArea(gv_pLAYER_USER, RegionEntireMap(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9752</span>
+VisExploreArea(<span class="hljs-number">1</span>, RegionEntireMap(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9762</span>
+VisExploreArea(<span class="hljs-number">1</span>, RegionEntireMap(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6317</span>
+VisExploreArea(gv_p1_USER, RegionEntireMap(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L588</span>
+VisExploreArea(gv_p01_USER, RegionFromId(<span class="hljs-number">38</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1703</span>
+VisExploreArea(gv_p1_USER, RegionFromId(<span class="hljs-number">42</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5324</span>
+VisExploreArea(gv_p1_USER, RegionFromId(<span class="hljs-number">34</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L786</span>
+VisExploreArea(gv_pLAYER_01_USER, RegionCircle(PointFromId(<span class="hljs-number">19</span>), <span class="hljs-number">16.0</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L787</span>
+VisExploreArea(gv_pLAYER_01_USER, RegionCircle(PointFromId(<span class="hljs-number">73</span>), <span class="hljs-number">16.0</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L788</span>
+VisExploreArea(gv_pLAYER_01_USER, RegionCircle(PointFromId(<span class="hljs-number">74</span>), <span class="hljs-number">16.0</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L789</span>
+VisExploreArea(gv_pLAYER_01_USER, RegionCircle(PointFromId(<span class="hljs-number">669</span>), <span class="hljs-number">12.0</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L790</span>
+VisExploreArea(gv_pLAYER_01_USER, RegionCircle(PointFromId(<span class="hljs-number">707</span>), <span class="hljs-number">12.0</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4669</span>
+VisExploreArea(gv_p01_USER, RegionEntireMap(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3371</span>
+VisExploreArea(gv_pLAYER_01_USER, RegionCircle(gv_trainPath[lv_currentPingPoint], <span class="hljs-number">12.0</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3385</span>
+VisExploreArea(gv_pLAYER_01_USER, RegionCircle(gv_trainPath[lv_currentPingPoint], <span class="hljs-number">12.0</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3427</span>
+VisExploreArea(gv_pLAYER_01_USER, RegionCircle(gv_trainPath[lv_currentPingPoint], <span class="hljs-number">12.0</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3482</span>
+VisExploreArea(gv_pLAYER_01_USER, RegionCircle(gv_trainPath[lv_currentPingPoint], <span class="hljs-number">12.0</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L752</span>
+VisExploreArea(gv_p01_USER, RegionFromId(<span class="hljs-number">15</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11412</span>
+VisExploreArea(gv_p01_USER, RegionEntireMap(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5056</span>
+VisExploreArea(gv_p1_USER, RegionEntireMap(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5057</span>
+VisExploreArea(gv_p1_USER, RegionFromId(<span class="hljs-number">32</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5153</span>
+VisExploreArea(gv_p1_USER, RegionEntireMap(), <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5154</span>
+VisExploreArea(gv_p1_USER, RegionFromId(<span class="hljs-number">32</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L757</span>
+VisExploreArea(gv_pLAYER_01_USER, RegionFromId(<span class="hljs-number">23</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L483</span>
+VisExploreArea(gv_p01_USER, RegionFromId(<span class="hljs-number">20</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1765</span>
+VisExploreArea(gv_p01_USER, RegionCircle(PointFromId(<span class="hljs-number">443</span>), <span class="hljs-number">8.0</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3593</span>
+VisExploreArea(gv_p01_USER, RegionCircle(UnitGetPosition(autoFB64C290_var), <span class="hljs-number">2.0</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3601</span>
+VisExploreArea(gv_p01_USER, RegionCircle(UnitGetPosition(auto54C05CEA_var), <span class="hljs-number">2.0</span>), <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

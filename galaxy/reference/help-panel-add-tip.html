@@ -1,0 +1,367 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Create Tip / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Create Tip"/>
+                <meta property="og:description" content="Creates a tip that will display above the command card, and also adds the tip to the help panel."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="create-tip"><a class="markdownIt-Anchor" href="#create-tip">#</a> Create Tip</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Create a tip with title <strong>title</strong>, description <strong>description</strong>, alert text <strong>alertText</strong> and icon <strong>icon</strong> for <strong>players</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Creates a tip that will display above the command card, and also adds the tip to the help panel.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>playergroup</code> — Players</li>
+<li><code>text</code> — Title</li>
+<li><code>text</code> — Description</li>
+<li><code>text</code> — Alert Text</li>
+<li><code>string</code> <em>[ filepath ]</em> — Icon</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">HelpPanelAddTip</span><span class="hljs-params">(
+	playergroup players,
+	text titleText,
+	text descriptionText,
+	text alertText,
+	<span class="hljs-built_in">string</span> iconPath,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#ui-help-panel">UI / Help Panel</a></p>
+<ul>
+<li><em><strong>[P]</strong></em> — <strong><a href="/galaxy/reference/preset-help-item">Help Item</a></strong></li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/help-panel-destroy-help-item">Destroy HelpItem</a></strong> — ( HelpPanelDestroyHelpItem )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-help-item">HelpItem</a> ]</em> — <strong><a href="/galaxy/reference/help-panel-last-created-help-item">Last Created HelpItem</a></strong> — ( HelpPanelLastCreatedHelpItem )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/help-panel-display-page">Display Help Page</a></strong> — ( HelpPanelDisplayPage )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/help-panel-add-tip">Create Tip</a></strong> — ( HelpPanelAddTip )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/help-panel-destroy-all-tips">Destroy All Tips</a></strong> — ( HelpPanelDestroyAllTips )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/help-panel-destroy-all-tutorials">Destroy All Tutorials</a></strong> — ( HelpPanelDestroyAllTutorials )</li>
+<li><em><strong>[F]</strong></em> — <code>text</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-format-tip-title">Format Tip Title</a></strong> — ( libNtve_gf_FormatTipTitle )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/tip-alert-panel-clear">Clear All Tip Alerts</a></strong> — ( TipAlertPanelClear )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/help-panel-add-hint">Create Cheat</a></strong> — ( HelpPanelAddHint )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/help-panel-add-tutorial">Create Tutorial</a></strong> — ( HelpPanelAddTutorial )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/help-panel-add-message">Create Message Log Entry</a></strong> — ( HelpPanelAddMessage )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/help-panel-enable-tech-tree-button">Enable/Disable Help Panel Tech Tree Button</a></strong> — ( HelpPanelEnableTechTreeButton )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/help-panel-enable-tech-glossary-button">Enable/Disable Help Panel Tech Glossary Button</a></strong> — ( HelpPanelEnableTechGlossaryButton )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/help-panel-show-tech-tree-race">Show/Hide Help Panel Tech Tree Race</a></strong> — ( HelpPanelShowTechTreeRace )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/tech-tree-unit-help">Show/Hide Help For Unit</a></strong> — ( TechTreeUnitHelp )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/tech-tree-unit-help-default">Set Help Panel Default Visibility</a></strong> — ( TechTreeUnitHelpDefault )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/help-panel-set-help-item-darkened-when-viewed">Set Help Item Darkened When Viewed</a></strong> — ( HelpPanelSetHelpItemDarkenedWhenViewed )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/challenges/advancedcommand.sc2map/MapScript.galaxy#L1287">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1287</span>
+HelpPanelAddTip(PlayerGroupAll(), libNtve_gf_FormatTipTitle(StringExternal(<span class="hljs-string">"Param/Value/7E527772"</span>), libNtve_ge_TipType_NormalTip), StringExternal(<span class="hljs-string">"Param/Value/7D92B505"</span>), StringExternal(<span class="hljs-string">"Param/Value/C18025A3"</span>), <span class="hljs-string">"Assets\\Textures\\btn-tips-hotkeys.dds"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2776</span>
+HelpPanelAddTip(PlayerGroupAll(), libNtve_gf_FormatTipTitle(StringExternal(<span class="hljs-string">"Param/Value/7C514131"</span>), libNtve_ge_TipType_NormalTip), StringExternal(<span class="hljs-string">"Param/Value/2C943937"</span>), StringExternal(<span class="hljs-string">"Param/Value/29E9F2A9"</span>), <span class="hljs-string">"Assets\\Textures\\btn-tips-counter.dds"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1558</span>
+HelpPanelAddTip(PlayerGroupAll(), libNtve_gf_FormatTipTitle(StringExternal(<span class="hljs-string">"Param/Value/0D3E7D92"</span>), libNtve_ge_TipType_NormalTip), StringExternal(<span class="hljs-string">"Param/Value/2161299B"</span>), StringExternal(<span class="hljs-string">"Param/Value/E1795675"</span>), <span class="hljs-string">"Assets\\Textures\\btn-ability-protoss-hallucination.dds"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1458</span>
+HelpPanelAddTip(PlayerGroupAll(), libNtve_gf_FormatTipTitle(StringExternal(<span class="hljs-string">"Param/Value/71938F52"</span>), libNtve_ge_TipType_NormalTip), StringExternal(<span class="hljs-string">"Param/Value/05D1BD6F"</span>), StringExternal(<span class="hljs-string">"Param/Value/C9844762"</span>), <span class="hljs-string">"Assets\\Textures\\btn-ability-terran-gather.dds"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1855</span>
+HelpPanelAddTip(PlayerGroupAll(), libNtve_gf_FormatTipTitle(StringExternal(<span class="hljs-string">"Param/Value/23F5F5FB"</span>), <span class="hljs-number">0</span>), StringExternal(<span class="hljs-string">"Param/Value/C2523A1A"</span>), StringExternal(<span class="hljs-string">"Param/Value/7A749526"</span>), <span class="hljs-string">"Assets\\Textures\\btn-unit-terran-scv.dds"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1908</span>
+HelpPanelAddTip(PlayerGroupAll(), libNtve_gf_FormatTipTitle(StringExternal(<span class="hljs-string">"Param/Value/9E29324F"</span>), <span class="hljs-number">0</span>), StringExternal(<span class="hljs-string">"Param/Value/F1657940"</span>), StringExternal(<span class="hljs-string">"Param/Value/79D61687"</span>), <span class="hljs-string">"Assets\\Textures\\btn-building-terran-bunker.dds"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2617</span>
+HelpPanelAddTip(PlayerGroupAll(), libNtve_gf_FormatTipTitle(StringExternal(<span class="hljs-string">"Param/Value/C82C41EA"</span>), libNtve_ge_TipType_NormalTip), StringExternal(<span class="hljs-string">"Param/Value/A16EA607"</span>), StringExternal(<span class="hljs-string">"Param/Value/4A7610A3"</span>), <span class="hljs-string">"Assets\\Textures\\btn-tips-counter.dds"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1323</span>
+HelpPanelAddTip(PlayerGroupAll(), libNtve_gf_FormatTipTitle(StringExternal(<span class="hljs-string">"Param/Value/281C43B8"</span>), libNtve_ge_TipType_NormalTip), StringExternal(<span class="hljs-string">"Param/Value/807BC830"</span>), StringExternal(<span class="hljs-string">"Param/Value/8F76BB63"</span>), <span class="hljs-string">"Assets\\Textures\\btn-ability-terran-cloak.dds"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2762</span>
+HelpPanelAddTip(PlayerGroupAll(), libNtve_gf_FormatTipTitle(StringExternal(<span class="hljs-string">"Param/Value/F1BE80BE"</span>), <span class="hljs-number">0</span>), StringExternal(<span class="hljs-string">"Param/Value/7912E567"</span>), StringExternal(<span class="hljs-string">"Param/Value/95410D87"</span>), <span class="hljs-string">"Assets\\Textures\\btn-tips-counter.dds"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1266</span>
+HelpPanelAddTip(PlayerGroupAll(), libNtve_gf_FormatTipTitle(StringExternal(<span class="hljs-string">"Param/Value/3BDDB46D"</span>), libNtve_ge_TipType_NormalTip), StringExternal(<span class="hljs-string">"Param/Value/2CCFDAD6"</span>), StringExternal(<span class="hljs-string">"Param/Value/DE8E59B8"</span>), <span class="hljs-string">"Assets\\Textures\\btn-ability-zerg-burrow.dds"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3984</span>
+HelpPanelAddTip(PlayerGroupAll(), libNtve_gf_FormatTipTitle(StringExternal(<span class="hljs-string">"Param/Value/47389DBA"</span>), libNtve_ge_TipType_NormalTip), StringExternal(<span class="hljs-string">"Param/Value/A4DB4B84"</span>), StringExternal(<span class="hljs-string">"Param/Value/327C19BC"</span>), <span class="hljs-string">"Assets\\Textures\\btn-tips-tutorial.dds"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3822</span>
+HelpPanelAddTip(PlayerGroupAll(), libNtve_gf_FormatTipTitle(StringExternal(<span class="hljs-string">"Param/Value/97842D38"</span>), libNtve_ge_TipType_NormalTip), StringExternal(<span class="hljs-string">"Param/Value/A9228879"</span>), StringExternal(<span class="hljs-string">"Param/Value/AC22A39E"</span>), <span class="hljs-string">"Assets\\Textures\\ui_icon_attention.dds"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1828</span>
+HelpPanelAddTip(PlayerGroupAll(), libNtve_gf_FormatTipTitle(StringExternal(<span class="hljs-string">"Param/Value/32C54194"</span>), <span class="hljs-number">0</span>), StringExternal(<span class="hljs-string">"Param/Value/7BA2B87F"</span>), StringExternal(<span class="hljs-string">"Param/Value/BB3BD1D4"</span>), <span class="hljs-string">"Assets\\Textures\\ui_icon_attention.dds"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2646</span>
+HelpPanelAddTip(PlayerGroupAll(), libNtve_gf_FormatTipTitle(StringExternal(<span class="hljs-string">"Param/Value/7C0933F7"</span>), <span class="hljs-number">0</span>), StringExternal(<span class="hljs-string">"Param/Value/CFFCD42F"</span>), StringExternal(<span class="hljs-string">"Param/Value/6B82A1F8"</span>), <span class="hljs-string">"Assets\\Textures\\ui_icon_attention.dds"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4052</span>
+HelpPanelAddTip(PlayerGroupAll(), libNtve_gf_FormatTipTitle(StringExternal(<span class="hljs-string">"Param/Value/2E7757E2"</span>), <span class="hljs-number">0</span>), StringExternal(<span class="hljs-string">"Param/Value/F25B7ABC"</span>), StringExternal(<span class="hljs-string">"Param/Value/2B0F35E5"</span>), <span class="hljs-string">"Assets\\Textures\\ui_icon_attention.dds"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5644</span>
+HelpPanelAddTip(PlayerGroupAll(), libNtve_gf_FormatTipTitle(StringExternal(<span class="hljs-string">"Param/Value/D4DC0A28"</span>), <span class="hljs-number">0</span>), StringExternal(<span class="hljs-string">"Param/Value/3F56CB4F"</span>), StringExternal(<span class="hljs-string">"Param/Value/2B3ABFB0"</span>), <span class="hljs-string">"Assets\\Textures\\ui_icon_attention.dds"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6429</span>
+HelpPanelAddTip(PlayerGroupAll(), libNtve_gf_FormatTipTitle(StringExternal(<span class="hljs-string">"Param/Value/988567B7"</span>), <span class="hljs-number">0</span>), StringExternal(<span class="hljs-string">"Param/Value/5E95162A"</span>), StringExternal(<span class="hljs-string">"Param/Value/6CAFE8CA"</span>), <span class="hljs-string">"Assets\\Textures\\ui_icon_attention.dds"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7879</span>
+HelpPanelAddTip(PlayerGroupAll(), libNtve_gf_FormatTipTitle(StringExternal(<span class="hljs-string">"Param/Value/9C4D3794"</span>), <span class="hljs-number">0</span>), StringExternal(<span class="hljs-string">"Param/Value/05EFAF32"</span>), StringExternal(<span class="hljs-string">"Param/Value/C4C7C132"</span>), <span class="hljs-string">"Assets\\Textures\\ui_icon_attention.dds"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9283</span>
+HelpPanelAddTip(PlayerGroupAll(), libNtve_gf_FormatTipTitle(StringExternal(<span class="hljs-string">"Param/Value/204E58DF"</span>), <span class="hljs-number">0</span>), StringExternal(<span class="hljs-string">"Param/Value/D8402356"</span>), StringExternal(<span class="hljs-string">"Param/Value/2E8FB36E"</span>), <span class="hljs-string">"Assets\\Textures\\ui_icon_attention.dds"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9837</span>
+HelpPanelAddTip(PlayerGroupAll(), libNtve_gf_FormatTipTitle(StringExternal(<span class="hljs-string">"Param/Value/7A155F2A"</span>), <span class="hljs-number">0</span>), StringExternal(<span class="hljs-string">"Param/Value/599EEA23"</span>), StringExternal(<span class="hljs-string">"Param/Value/F6B8188C"</span>), <span class="hljs-string">"Assets\\Textures\\ui_icon_attention.dds"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3984</span>
+HelpPanelAddTip(PlayerGroupAll(), libNtve_gf_FormatTipTitle(StringExternal(<span class="hljs-string">"Param/Value/47389DBA"</span>), libNtve_ge_TipType_NormalTip), StringExternal(<span class="hljs-string">"Param/Value/A4DB4B84"</span>), StringExternal(<span class="hljs-string">"Param/Value/327C19BC"</span>), <span class="hljs-string">"Assets\\Textures\\btn-tips-tutorial.dds"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3822</span>
+HelpPanelAddTip(PlayerGroupAll(), libNtve_gf_FormatTipTitle(StringExternal(<span class="hljs-string">"Param/Value/97842D38"</span>), libNtve_ge_TipType_NormalTip), StringExternal(<span class="hljs-string">"Param/Value/A9228879"</span>), StringExternal(<span class="hljs-string">"Param/Value/AC22A39E"</span>), <span class="hljs-string">"Assets\\Textures\\ui_icon_attention.dds"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1828</span>
+HelpPanelAddTip(PlayerGroupAll(), libNtve_gf_FormatTipTitle(StringExternal(<span class="hljs-string">"Param/Value/32C54194"</span>), <span class="hljs-number">0</span>), StringExternal(<span class="hljs-string">"Param/Value/7BA2B87F"</span>), StringExternal(<span class="hljs-string">"Param/Value/BB3BD1D4"</span>), <span class="hljs-string">"Assets\\Textures\\ui_icon_attention.dds"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2646</span>
+HelpPanelAddTip(PlayerGroupAll(), libNtve_gf_FormatTipTitle(StringExternal(<span class="hljs-string">"Param/Value/7C0933F7"</span>), <span class="hljs-number">0</span>), StringExternal(<span class="hljs-string">"Param/Value/CFFCD42F"</span>), StringExternal(<span class="hljs-string">"Param/Value/6B82A1F8"</span>), <span class="hljs-string">"Assets\\Textures\\ui_icon_attention.dds"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4052</span>
+HelpPanelAddTip(PlayerGroupAll(), libNtve_gf_FormatTipTitle(StringExternal(<span class="hljs-string">"Param/Value/2E7757E2"</span>), <span class="hljs-number">0</span>), StringExternal(<span class="hljs-string">"Param/Value/F25B7ABC"</span>), StringExternal(<span class="hljs-string">"Param/Value/2B0F35E5"</span>), <span class="hljs-string">"Assets\\Textures\\ui_icon_attention.dds"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5644</span>
+HelpPanelAddTip(PlayerGroupAll(), libNtve_gf_FormatTipTitle(StringExternal(<span class="hljs-string">"Param/Value/D4DC0A28"</span>), <span class="hljs-number">0</span>), StringExternal(<span class="hljs-string">"Param/Value/3F56CB4F"</span>), StringExternal(<span class="hljs-string">"Param/Value/2B3ABFB0"</span>), <span class="hljs-string">"Assets\\Textures\\ui_icon_attention.dds"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6429</span>
+HelpPanelAddTip(PlayerGroupAll(), libNtve_gf_FormatTipTitle(StringExternal(<span class="hljs-string">"Param/Value/988567B7"</span>), <span class="hljs-number">0</span>), StringExternal(<span class="hljs-string">"Param/Value/5E95162A"</span>), StringExternal(<span class="hljs-string">"Param/Value/6CAFE8CA"</span>), <span class="hljs-string">"Assets\\Textures\\ui_icon_attention.dds"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7879</span>
+HelpPanelAddTip(PlayerGroupAll(), libNtve_gf_FormatTipTitle(StringExternal(<span class="hljs-string">"Param/Value/9C4D3794"</span>), <span class="hljs-number">0</span>), StringExternal(<span class="hljs-string">"Param/Value/05EFAF32"</span>), StringExternal(<span class="hljs-string">"Param/Value/C4C7C132"</span>), <span class="hljs-string">"Assets\\Textures\\ui_icon_attention.dds"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9283</span>
+HelpPanelAddTip(PlayerGroupAll(), libNtve_gf_FormatTipTitle(StringExternal(<span class="hljs-string">"Param/Value/204E58DF"</span>), <span class="hljs-number">0</span>), StringExternal(<span class="hljs-string">"Param/Value/D8402356"</span>), StringExternal(<span class="hljs-string">"Param/Value/2E8FB36E"</span>), <span class="hljs-string">"Assets\\Textures\\ui_icon_attention.dds"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9837</span>
+HelpPanelAddTip(PlayerGroupAll(), libNtve_gf_FormatTipTitle(StringExternal(<span class="hljs-string">"Param/Value/7A155F2A"</span>), <span class="hljs-number">0</span>), StringExternal(<span class="hljs-string">"Param/Value/599EEA23"</span>), StringExternal(<span class="hljs-string">"Param/Value/F6B8188C"</span>), <span class="hljs-string">"Assets\\Textures\\ui_icon_attention.dds"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1287</span>
+HelpPanelAddTip(PlayerGroupAll(), libNtve_gf_FormatTipTitle(StringExternal(<span class="hljs-string">"Param/Value/7E527772"</span>), libNtve_ge_TipType_NormalTip), StringExternal(<span class="hljs-string">"Param/Value/7D92B505"</span>), StringExternal(<span class="hljs-string">"Param/Value/C18025A3"</span>), <span class="hljs-string">"Assets\\Textures\\btn-tips-hotkeys.dds"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1458</span>
+HelpPanelAddTip(PlayerGroupAll(), libNtve_gf_FormatTipTitle(StringExternal(<span class="hljs-string">"Param/Value/71938F52"</span>), libNtve_ge_TipType_NormalTip), StringExternal(<span class="hljs-string">"Param/Value/05D1BD6F"</span>), StringExternal(<span class="hljs-string">"Param/Value/C9844762"</span>), <span class="hljs-string">"Assets\\Textures\\btn-ability-terran-gather.dds"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2776</span>
+HelpPanelAddTip(PlayerGroupAll(), libNtve_gf_FormatTipTitle(StringExternal(<span class="hljs-string">"Param/Value/7C514131"</span>), libNtve_ge_TipType_NormalTip), StringExternal(<span class="hljs-string">"Param/Value/2C943937"</span>), StringExternal(<span class="hljs-string">"Param/Value/29E9F2A9"</span>), <span class="hljs-string">"Assets\\Textures\\btn-tips-counter.dds"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1558</span>
+HelpPanelAddTip(PlayerGroupAll(), libNtve_gf_FormatTipTitle(StringExternal(<span class="hljs-string">"Param/Value/0D3E7D92"</span>), libNtve_ge_TipType_NormalTip), StringExternal(<span class="hljs-string">"Param/Value/2161299B"</span>), StringExternal(<span class="hljs-string">"Param/Value/E1795675"</span>), <span class="hljs-string">"Assets\\Textures\\btn-ability-protoss-hallucination.dds"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1855</span>
+HelpPanelAddTip(PlayerGroupAll(), libNtve_gf_FormatTipTitle(StringExternal(<span class="hljs-string">"Param/Value/23F5F5FB"</span>), <span class="hljs-number">0</span>), StringExternal(<span class="hljs-string">"Param/Value/C2523A1A"</span>), StringExternal(<span class="hljs-string">"Param/Value/7A749526"</span>), <span class="hljs-string">"Assets\\Textures\\btn-unit-terran-scv.dds"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1908</span>
+HelpPanelAddTip(PlayerGroupAll(), libNtve_gf_FormatTipTitle(StringExternal(<span class="hljs-string">"Param/Value/9E29324F"</span>), <span class="hljs-number">0</span>), StringExternal(<span class="hljs-string">"Param/Value/F1657940"</span>), StringExternal(<span class="hljs-string">"Param/Value/79D61687"</span>), <span class="hljs-string">"Assets\\Textures\\btn-building-terran-bunker.dds"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2617</span>
+HelpPanelAddTip(PlayerGroupAll(), libNtve_gf_FormatTipTitle(StringExternal(<span class="hljs-string">"Param/Value/C82C41EA"</span>), libNtve_ge_TipType_NormalTip), StringExternal(<span class="hljs-string">"Param/Value/A16EA607"</span>), StringExternal(<span class="hljs-string">"Param/Value/4A7610A3"</span>), <span class="hljs-string">"Assets\\Textures\\btn-tips-counter.dds"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1323</span>
+HelpPanelAddTip(PlayerGroupAll(), libNtve_gf_FormatTipTitle(StringExternal(<span class="hljs-string">"Param/Value/281C43B8"</span>), libNtve_ge_TipType_NormalTip), StringExternal(<span class="hljs-string">"Param/Value/807BC830"</span>), StringExternal(<span class="hljs-string">"Param/Value/8F76BB63"</span>), <span class="hljs-string">"Assets\\Textures\\btn-ability-terran-cloak.dds"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2762</span>
+HelpPanelAddTip(PlayerGroupAll(), libNtve_gf_FormatTipTitle(StringExternal(<span class="hljs-string">"Param/Value/F1BE80BE"</span>), <span class="hljs-number">0</span>), StringExternal(<span class="hljs-string">"Param/Value/7912E567"</span>), StringExternal(<span class="hljs-string">"Param/Value/95410D87"</span>), <span class="hljs-string">"Assets\\Textures\\btn-tips-counter.dds"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1266</span>
+HelpPanelAddTip(PlayerGroupAll(), libNtve_gf_FormatTipTitle(StringExternal(<span class="hljs-string">"Param/Value/3BDDB46D"</span>), libNtve_ge_TipType_NormalTip), StringExternal(<span class="hljs-string">"Param/Value/2CCFDAD6"</span>), StringExternal(<span class="hljs-string">"Param/Value/DE8E59B8"</span>), <span class="hljs-string">"Assets\\Textures\\btn-ability-zerg-burrow.dds"</span>)
+</code></pre>
+<h4 id="campaignslibertystorysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertystorysc2campaign">#</a> campaigns/libertystory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/libertystory.sc2campaign/base.sc2data/TriggerLibs/CampaignLib.galaxy#L778">CampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L778</span>
+HelpPanelAddTip(lp_players, libNtve_gf_FormatTipTitle(ConversationDataStateName(lp_convoState), lp_tipType), ConversationDataStateText(lp_convoState, <span class="hljs-string">"Description"</span>), ConversationDataStateName(lp_convoState), ConversationDataStateImagePath(lp_convoState))
+</code></pre>
+<h4 id="campaignsswarmsc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmsc2campaign">#</a> campaigns/swarm.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarm.sc2campaign/base.sc2maps/maps/campaign/swarm/zzerus02.sc2map/MapScript.galaxy#L2798">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2798</span>
+HelpPanelAddTip(PlayerGroupAll(), libNtve_gf_FormatTipTitle(StringExternal(<span class="hljs-string">"Param/Value/8D5C3B50"</span>), libNtve_ge_TipType_NormalTip), StringExternal(<span class="hljs-string">"Param/Value/C53808A7"</span>), StringExternal(<span class="hljs-string">"Param/Value/992A8311"</span>), <span class="hljs-string">"Assets\\Textures\\btn-ability-zerg-swarmseeds-color.dds"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2798</span>
+HelpPanelAddTip(PlayerGroupAll(), libNtve_gf_FormatTipTitle(StringExternal(<span class="hljs-string">"Param/Value/8D5C3B50"</span>), libNtve_ge_TipType_NormalTip), StringExternal(<span class="hljs-string">"Param/Value/C53808A7"</span>), StringExternal(<span class="hljs-string">"Param/Value/992A8311"</span>), <span class="hljs-string">"Assets\\Textures\\btn-ability-zerg-swarmseeds-color.dds"</span>)
+</code></pre>
+<h4 id="campaignsswarmstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmstorysc2campaign">#</a> campaigns/swarmstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstory.sc2campaign/base.sc2data/TriggerLibs/SwarmCampaignLib.galaxy#L2199">SwarmCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2199</span>
+HelpPanelAddTip(PlayerGroupAll(), libNtve_gf_FormatTipTitle(UserDataGetText(<span class="hljs-string">"CampaignTips"</span>, libSwaC_gv_zS_MissionTip[lv_index], <span class="hljs-string">"Name"</span>, <span class="hljs-number">1</span>), libNtve_ge_TipType_NormalTip), UserDataGetText(<span class="hljs-string">"CampaignTips"</span>, libSwaC_gv_zS_MissionTip[lv_index], <span class="hljs-string">"Description"</span>, <span class="hljs-number">1</span>), UserDataGetText(<span class="hljs-string">"CampaignTips"</span>, libSwaC_gv_zS_MissionTip[lv_index], <span class="hljs-string">"Name"</span>, <span class="hljs-number">1</span>), UserDataGetImagePath(<span class="hljs-string">"CampaignTips"</span>, libSwaC_gv_zS_MissionTip[lv_index], <span class="hljs-string">"Icon"</span>, <span class="hljs-number">1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3687</span>
+HelpPanelAddTip(lp_players, libNtve_gf_FormatTipTitle(UserDataGetText(<span class="hljs-string">"CampaignTips"</span>, lp_tipData, <span class="hljs-string">"Name"</span>, <span class="hljs-number">1</span>), lp_tipType), UserDataGetText(<span class="hljs-string">"CampaignTips"</span>, lp_tipData, <span class="hljs-string">"Description"</span>, <span class="hljs-number">1</span>), UserDataGetText(<span class="hljs-string">"CampaignTips"</span>, lp_tipData, <span class="hljs-string">"Name"</span>, <span class="hljs-number">1</span>), UserDataGetImagePath(<span class="hljs-string">"CampaignTips"</span>, lp_tipData, <span class="hljs-string">"Icon"</span>, <span class="hljs-number">1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L16709</span>
+HelpPanelAddTip(PlayerGroupAll(), libNtve_gf_FormatTipTitle(UserDataGetText(<span class="hljs-string">"CampaignTips"</span>, <span class="hljs-string">"MineralPickup"</span>, <span class="hljs-string">"Name"</span>, <span class="hljs-number">1</span>), libNtve_ge_TipType_NormalTip), UserDataGetText(<span class="hljs-string">"CampaignTips"</span>, <span class="hljs-string">"MineralPickup"</span>, <span class="hljs-string">"Description"</span>, <span class="hljs-number">1</span>), UserDataGetText(<span class="hljs-string">"CampaignTips"</span>, <span class="hljs-string">"MineralPickup"</span>, <span class="hljs-string">"Name"</span>, <span class="hljs-number">1</span>), UserDataGetImagePath(<span class="hljs-string">"CampaignTips"</span>, <span class="hljs-string">"MineralPickup"</span>, <span class="hljs-string">"Icon"</span>, <span class="hljs-number">1</span>))
+</code></pre>
+<h4 id="campaignsswarmstoryutilsc2mod"><a class="markdownIt-Anchor" href="#campaignsswarmstoryutilsc2mod">#</a> campaigns/swarmstoryutil.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstoryutil.sc2mod/base.sc2data/Lib281DEC45.galaxy#L2164">Lib281DEC45.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2164</span>
+HelpPanelAddTip(PlayerGroupAll(), libNtve_gf_FormatTipTitle(UserDataGetText(<span class="hljs-string">"CampaignTips"</span>, lp_tip, <span class="hljs-string">"Name"</span>, <span class="hljs-number">1</span>), libNtve_ge_TipType_NormalTip), UserDataGetText(<span class="hljs-string">"CampaignTips"</span>, lp_tip, <span class="hljs-string">"Description"</span>, <span class="hljs-number">1</span>), UserDataGetText(<span class="hljs-string">"CampaignTips"</span>, lp_tip, <span class="hljs-string">"Name"</span>, <span class="hljs-number">1</span>), UserDataGetImagePath(<span class="hljs-string">"CampaignTips"</span>, lp_tip, <span class="hljs-string">"Icon"</span>, <span class="hljs-number">1</span>))
+</code></pre>
+<h4 id="campaignsvoidsc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidsc2campaign">#</a> campaigns/void.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/void.sc2campaign/base.sc2maps/maps/campaign/void/ppurifier02.sc2map/MapScript.galaxy#L4995">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4995</span>
+HelpPanelAddTip(PlayerGroupAll(), libNtve_gf_FormatTipTitle(StringExternal(<span class="hljs-string">"Param/Value/6B7818A3"</span>), libNtve_ge_TipType_NewUnit), StringExternal(<span class="hljs-string">"Param/Value/9773AB86"</span>), StringExternal(<span class="hljs-string">"Param/Value/0B117EE5"</span>), <span class="hljs-string">"Assets\\Textures\\btn-unit-protoss-colossus.dds"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6749</span>
+HelpPanelAddTip(PlayerGroupAll(), libNtve_gf_FormatTipTitle(StringExternal(<span class="hljs-string">"Param/Value/CBE4889D"</span>), libNtve_ge_TipType_NewAbility), StringExternal(<span class="hljs-string">"Param/Value/93B12A3B"</span>), StringExternal(<span class="hljs-string">"Param/Value/5877DF48"</span>), <span class="hljs-string">"Assets\\Textures\\abilityicon_infestedcortex_square.dds"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4995</span>
+HelpPanelAddTip(PlayerGroupAll(), libNtve_gf_FormatTipTitle(StringExternal(<span class="hljs-string">"Param/Value/6B7818A3"</span>), libNtve_ge_TipType_NewUnit), StringExternal(<span class="hljs-string">"Param/Value/9773AB86"</span>), StringExternal(<span class="hljs-string">"Param/Value/0B117EE5"</span>), <span class="hljs-string">"Assets\\Textures\\btn-unit-protoss-colossus.dds"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6749</span>
+HelpPanelAddTip(PlayerGroupAll(), libNtve_gf_FormatTipTitle(StringExternal(<span class="hljs-string">"Param/Value/CBE4889D"</span>), libNtve_ge_TipType_NewAbility), StringExternal(<span class="hljs-string">"Param/Value/93B12A3B"</span>), StringExternal(<span class="hljs-string">"Param/Value/5877DF48"</span>), <span class="hljs-string">"Assets\\Textures\\abilityicon_infestedcortex_square.dds"</span>)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignStoryLib.galaxy#L1366">VoidCampaignStoryLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1366</span>
+HelpPanelAddTip(PlayerGroupAll(), libNtve_gf_FormatTipTitle(UserDataGetText(<span class="hljs-string">"CampaignTips"</span>, lp_tip, <span class="hljs-string">"Name"</span>, <span class="hljs-number">1</span>), libNtve_ge_TipType_NormalTip), UserDataGetText(<span class="hljs-string">"CampaignTips"</span>, lp_tip, <span class="hljs-string">"Description"</span>, <span class="hljs-number">1</span>), UserDataGetText(<span class="hljs-string">"CampaignTips"</span>, lp_tip, <span class="hljs-string">"Name"</span>, <span class="hljs-number">1</span>), UserDataGetImagePath(<span class="hljs-string">"CampaignTips"</span>, lp_tip, <span class="hljs-string">"Icon"</span>, <span class="hljs-number">1</span>))
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign-2"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign-2">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignUILib.galaxy#L5282">VoidCampaignUILib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L5282</span>
+HelpPanelAddTip(PlayerGroupAll(), libNtve_gf_FormatTipTitle(lp_tipName, lp_tipType), lp_tipDescription, lp_tipAlertText, lp_tipIcon)
+</code></pre>
+<h4 id="modsheroesdatastormmod"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/StartingExperienceLib.galaxy#L2107">StartingExperienceLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2107</span>
+HelpPanelAddTip(PlayerGroupAll(), libNtve_gf_FormatTipTitle(StringExternal(<span class="hljs-string">"Param/Value/lib_StEx_0CE727AE"</span>), libNtve_ge_TipType_NormalTip), StringExternal(<span class="hljs-string">"Param/Value/lib_StEx_E19BA64B"</span>), StringToText(<span class="hljs-string">""</span>), <span class="hljs-string">"Assets\\Textures\\storm_ui_tutorial_help_abilities.dds"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2110</span>
+HelpPanelAddTip(PlayerGroupAll(), libNtve_gf_FormatTipTitle(StringExternal(<span class="hljs-string">"Param/Value/lib_StEx_0737CA73"</span>), libNtve_ge_TipType_NormalTip), StringExternal(<span class="hljs-string">"Param/Value/lib_StEx_45CA47BF"</span>), StringToText(<span class="hljs-string">""</span>), <span class="hljs-string">"Assets\\Textures\\storm_ui_tutorial_help_xp.dds"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2113</span>
+HelpPanelAddTip(PlayerGroupAll(), libNtve_gf_FormatTipTitle(StringExternal(<span class="hljs-string">"Param/Value/lib_StEx_97C55EC6"</span>), libNtve_ge_TipType_NormalTip), StringExternal(<span class="hljs-string">"Param/Value/lib_StEx_C7FB4256"</span>), StringToText(<span class="hljs-string">""</span>), <span class="hljs-string">"Assets\\Textures\\storm_ui_tutorial_help_map_mechanic.dds"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2116</span>
+HelpPanelAddTip(PlayerGroupAll(), libNtve_gf_FormatTipTitle(StringExternal(<span class="hljs-string">"Param/Value/lib_StEx_B60E19F5"</span>), libNtve_ge_TipType_NormalTip), StringExternal(<span class="hljs-string">"Param/Value/lib_StEx_3896CC49"</span>), StringToText(<span class="hljs-string">""</span>), <span class="hljs-string">"Assets\\Textures\\storm_ui_tutorial_help_healing.dds"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2119</span>
+HelpPanelAddTip(PlayerGroupAll(), libNtve_gf_FormatTipTitle(StringExternal(<span class="hljs-string">"Param/Value/lib_StEx_2E35BAF5"</span>), libNtve_ge_TipType_NormalTip), StringExternal(<span class="hljs-string">"Param/Value/lib_StEx_3682D851"</span>), StringToText(<span class="hljs-string">""</span>), <span class="hljs-string">"Assets\\Textures\\storm_ui_tutorial_help_hearthstone.dds"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2122</span>
+HelpPanelAddTip(PlayerGroupAll(), libNtve_gf_FormatTipTitle(StringExternal(<span class="hljs-string">"Param/Value/lib_StEx_80505C32"</span>), libNtve_ge_TipType_NormalTip), StringExternal(<span class="hljs-string">"Param/Value/lib_StEx_37DF965F"</span>), StringToText(<span class="hljs-string">""</span>), <span class="hljs-string">"Assets\\Textures\\storm_ui_tutorial_help_heroic.dds"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2125</span>
+HelpPanelAddTip(PlayerGroupAll(), libNtve_gf_FormatTipTitle(StringExternal(<span class="hljs-string">"Param/Value/lib_StEx_FDD67387"</span>), libNtve_ge_TipType_NormalTip), StringExternal(<span class="hljs-string">"Param/Value/lib_StEx_52663342"</span>), StringToText(<span class="hljs-string">""</span>), <span class="hljs-string">"Assets\\Textures\\storm_ui_tutorial_help_mercs.dds"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2128</span>
+HelpPanelAddTip(PlayerGroupAll(), libNtve_gf_FormatTipTitle(StringExternal(<span class="hljs-string">"Param/Value/lib_StEx_99089475"</span>), libNtve_ge_TipType_NormalTip), StringExternal(<span class="hljs-string">"Param/Value/lib_StEx_741B5677"</span>), StringToText(<span class="hljs-string">""</span>), <span class="hljs-string">"Assets\\Textures\\storm_ui_tutorial_help_mount.dds"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2131</span>
+HelpPanelAddTip(PlayerGroupAll(), libNtve_gf_FormatTipTitle(StringExternal(<span class="hljs-string">"Param/Value/lib_StEx_7F8B70CB"</span>), libNtve_ge_TipType_NormalTip), StringExternal(<span class="hljs-string">"Param/Value/lib_StEx_BF002365"</span>), StringToText(<span class="hljs-string">""</span>), <span class="hljs-string">"Assets\\Textures\\storm_ui_tutorial_help_talents.dds"</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2134</span>
+HelpPanelAddTip(PlayerGroupAll(), libNtve_gf_FormatTipTitle(StringExternal(<span class="hljs-string">"Param/Value/lib_StEx_EE76EC22"</span>), libNtve_ge_TipType_NormalTip), StringExternal(<span class="hljs-string">"Param/Value/lib_StEx_3DF27B85"</span>), StringToText(<span class="hljs-string">""</span>), <span class="hljs-string">"Assets\\Textures\\storm_ui_tutorial_help_tower.dds"</span>)
+</code></pre>
+<h4 id="modsmissionpacksnovacampaignsc2mod"><a class="markdownIt-Anchor" href="#modsmissionpacksnovacampaignsc2mod">#</a> mods/missionpacks/novacampaign.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/novacampaign.sc2mod/base.sc2data/LibNCST.galaxy#L1247">LibNCST.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1247</span>
+HelpPanelAddTip(PlayerGroupAll(), libNtve_gf_FormatTipTitle(UserDataGetText(<span class="hljs-string">"CampaignTips"</span>, lp_tip, <span class="hljs-string">"Name"</span>, <span class="hljs-number">1</span>), libNtve_ge_TipType_NormalTip), UserDataGetText(<span class="hljs-string">"CampaignTips"</span>, lp_tip, <span class="hljs-string">"Description"</span>, <span class="hljs-number">1</span>), UserDataGetText(<span class="hljs-string">"CampaignTips"</span>, lp_tip, <span class="hljs-string">"Name"</span>, <span class="hljs-number">1</span>), UserDataGetImagePath(<span class="hljs-string">"CampaignTips"</span>, lp_tip, <span class="hljs-string">"Icon"</span>, <span class="hljs-number">1</span>))
+</code></pre>
+<h4 id="modsmissionpacksnovacampaignsc2mod-2"><a class="markdownIt-Anchor" href="#modsmissionpacksnovacampaignsc2mod-2">#</a> mods/missionpacks/novacampaign.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/novacampaign.sc2mod/base.sc2data/LibNCUI.galaxy#L3729">LibNCUI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3729</span>
+HelpPanelAddTip(PlayerGroupAll(), libNtve_gf_FormatTipTitle(lp_tipName, lp_tipType), lp_tipDescription, lp_tipAlertText, lp_tipIcon)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOUI.galaxy#L5150">LibCOUI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L5150</span>
+HelpPanelAddTip(lp_players, libNtve_gf_FormatTipTitle(lp_tipName, lp_tipType), lp_tipDescription, lp_tipAlertText, lp_tipIcon)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6042</span>
+HelpPanelAddTip(PlayerGroupAll(), libNtve_gf_FormatTipTitle(libCOOC_gf_CC_CommanderGeneralTipTitle(lv_generalTipInstance), libNtve_ge_TipType_NormalTip), libCOOC_gf_CC_CommanderGeneralTipDetails(lv_generalTipInstance), StringToText(<span class="hljs-string">""</span>), libCOOC_gf_CC_CommanderGeneralTipIcon(lv_generalTipInstance))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6063</span>
+HelpPanelAddTip(PlayerGroupAll(), libNtve_gf_FormatTipTitle(libCOMU_gf_CT_MutatorName(lv_indexMutator), libNtve_ge_TipType_NormalTip), libCOMU_gf_CT_MutatorDescription(lv_indexMutator), StringToText(<span class="hljs-string">""</span>), libCOMU_gf_CT_MutatorIcon(lv_indexMutator))
+</code></pre>
+<h4 id="modsvoidprologuesc2mod"><a class="markdownIt-Anchor" href="#modsvoidprologuesc2mod">#</a> mods/voidprologue.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/voidprologue.sc2mod/base.sc2data/LibA3DDD02B.galaxy#L1497">LibA3DDD02B.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1497</span>
+HelpPanelAddTip(PlayerGroupAll(), libNtve_gf_FormatTipTitle(UserDataGetText(<span class="hljs-string">"CampaignTips"</span>, libA3DDD02B_gv_pP_MissionTip[lv_index], <span class="hljs-string">"Name"</span>, <span class="hljs-number">1</span>), libNtve_ge_TipType_NormalTip), UserDataGetText(<span class="hljs-string">"CampaignTips"</span>, libA3DDD02B_gv_pP_MissionTip[lv_index], <span class="hljs-string">"Description"</span>, <span class="hljs-number">1</span>), UserDataGetText(<span class="hljs-string">"CampaignTips"</span>, libA3DDD02B_gv_pP_MissionTip[lv_index], <span class="hljs-string">"Name"</span>, <span class="hljs-number">1</span>), UserDataGetImagePath(<span class="hljs-string">"CampaignTips"</span>, libA3DDD02B_gv_pP_MissionTip[lv_index], <span class="hljs-string">"Icon"</span>, <span class="hljs-number">1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2400</span>
+HelpPanelAddTip(lp_players, libNtve_gf_FormatTipTitle(UserDataGetText(<span class="hljs-string">"CampaignTips"</span>, lp_tipData, <span class="hljs-string">"Name"</span>, <span class="hljs-number">1</span>), lp_tipType), UserDataGetText(<span class="hljs-string">"CampaignTips"</span>, lp_tipData, <span class="hljs-string">"Description"</span>, <span class="hljs-number">1</span>), UserDataGetText(<span class="hljs-string">"CampaignTips"</span>, lp_tipData, <span class="hljs-string">"Name"</span>, <span class="hljs-number">1</span>), UserDataGetImagePath(<span class="hljs-string">"CampaignTips"</span>, lp_tipData, <span class="hljs-string">"Icon"</span>, <span class="hljs-number">1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8025</span>
+HelpPanelAddTip(PlayerGroupAll(), libNtve_gf_FormatTipTitle(UserDataGetText(<span class="hljs-string">"CampaignTips"</span>, <span class="hljs-string">"Zealot"</span>, <span class="hljs-string">"Name"</span>, <span class="hljs-number">1</span>), libNtve_ge_TipType_NormalTip), UserDataGetText(<span class="hljs-string">"CampaignTips"</span>, <span class="hljs-string">"Zealot"</span>, <span class="hljs-string">"Description"</span>, <span class="hljs-number">1</span>), UserDataGetText(<span class="hljs-string">"CampaignTips"</span>, <span class="hljs-string">"Zealot"</span>, <span class="hljs-string">"Name"</span>, <span class="hljs-number">1</span>), UserDataGetImagePath(<span class="hljs-string">"CampaignTips"</span>, <span class="hljs-string">"Zealot"</span>, <span class="hljs-string">"Icon"</span>, <span class="hljs-number">1</span>))
+</code></pre>
+<h4 id="modswarcoopwarmeleeaisc2mod"><a class="markdownIt-Anchor" href="#modswarcoopwarmeleeaisc2mod">#</a> mods/warcoop/warmeleeai.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/warcoop/warmeleeai.sc2mod/base.sc2data/LibW3AI.galaxy#L105">LibW3AI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L105</span>
+HelpPanelAddTip(PlayerGroupAll(), TextExpressionAssemble(<span class="hljs-string">"Param/Expression/lib_W3AI_E3E15860"</span>), UserDataGetText(lv_type, lv_entry, <span class="hljs-string">"Patch Notes"</span>, <span class="hljs-number">1</span>), StringToText(<span class="hljs-string">""</span>), UserDataGetImagePath(lv_type, lv_entry, <span class="hljs-string">"Icon"</span>, <span class="hljs-number">1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L131</span>
+HelpPanelAddTip(PlayerGroupAll(), TextExpressionAssemble(<span class="hljs-string">"Param/Expression/lib_W3AI_665882ED"</span>), UserDataGetText(lv_type, lv_entry, <span class="hljs-string">"Patch Notes"</span>, <span class="hljs-number">1</span>), StringToText(<span class="hljs-string">""</span>), <span class="hljs-string">"Assets\\Textures\\BTN\\war3_btnengineeringupgrade.dds"</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

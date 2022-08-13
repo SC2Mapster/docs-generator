@@ -1,0 +1,441 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Upgrade Count For Player / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Upgrade Count For Player"/>
+                <meta property="og:description" content="Returns the count of the specified upgrade for the specified player.
+
+Returns: int"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="upgrade-count-for-player"><a class="markdownIt-Anchor" href="#upgrade-count-for-player">#</a> Upgrade Count For Player</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — <strong>upgradeType</strong> count for player <strong>player</strong>, counting <strong>countType</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Function</code></p>
+</blockquote>
+<p>Returns the count of the specified upgrade for the specified player.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>int</code> — Player</li>
+<li><code>string</code> <em>[ gamelink::Upgrade ]</em> — Upgrade</li>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-tech-tree-count-type">TechTreeCountType</a> ]</em> — Count Type</li>
+</ul>
+<p>Returns — <code>int</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">int</span> <span class="hljs-title">TechTreeUpgradeCount</span><span class="hljs-params">(
+	<span class="hljs-keyword">int</span> player,
+	<span class="hljs-built_in">string</span> upgradeType,
+	<span class="hljs-keyword">int</span> countType,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#tech-tree-counts">Tech Tree / Counts</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/tech-tree-behavior-count">Behavior Count For Player</a></strong> — ( TechTreeBehaviorCount )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/tech-tree-ability-count">Ability Count For Player</a></strong> — ( TechTreeAbilityCount )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/tech-tree-unit-count">Unit Count For Player</a></strong> — ( TechTreeUnitCount )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/tech-tree-unit-alias-count">Unit Alias Count For Player</a></strong> — ( TechTreeUnitAliasCount )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/tech-tree-upgrade-count">Upgrade Count For Player</a></strong> — ( TechTreeUpgradeCount )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/unit-tech-tree-behavior-count">Tech Tree Behavior Count For Unit</a></strong> — ( UnitTechTreeBehaviorCount )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/unit-tech-tree-unit-count">Tech Tree Unit Count For Unit</a></strong> — ( UnitTechTreeUnitCount )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/unit-tech-tree-upgrade-count">Tech Tree Upgrade Count For Unit</a></strong> — ( UnitTechTreeUpgradeCount )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertystorysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertystorysc2campaign">#</a> campaigns/libertystory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/libertystory.sc2campaign/base.sc2data/TriggerLibs/CampaignLib.galaxy#L5348">CampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L5348</span>
+TechTreeUpgradeCount(lp_player, <span class="hljs-string">"CellularReactors"</span>, c_techCountQueuedOrBetter)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7016</span>
+TechTreeUpgradeCount(lp_player, <span class="hljs-string">"NeoSteelFrame"</span>, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7016</span>
+TechTreeUpgradeCount(lp_player, <span class="hljs-string">"ShrikeTurret"</span>, c_techCountCompleteOnly)
+</code></pre>
+<h4 id="campaignsswarmsc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmsc2campaign">#</a> campaigns/swarm.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarm.sc2campaign/base.sc2maps/maps/campaign/swarm/evolution/zevolutionswarmhost.sc2map/MapScript.galaxy#L940">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L940</span>
+TechTreeUpgradeCount(gv_pLAYER_01_USER, <span class="hljs-string">"HotSBurrowSwarmHost"</span>, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L940</span>
+TechTreeUpgradeCount(gv_pLAYER_01_USER, <span class="hljs-string">"HotSBurrowSwarmHost"</span>, c_techCountCompleteOnly)
+</code></pre>
+<h4 id="campaignsswarmstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsswarmstorysc2campaign">#</a> campaigns/swarmstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/swarmstory.sc2campaign/base.sc2data/TriggerLibs/SwarmCampaignLib.galaxy#L4572">SwarmCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4572</span>
+TechTreeUpgradeCount(<span class="hljs-number">1</span>, <span class="hljs-string">"K5AutoExtractor"</span>, c_techCountQueuedOrBetter)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7334</span>
+TechTreeUpgradeCount(<span class="hljs-number">1</span>, <span class="hljs-string">"HotSHaveUltralisk"</span>, c_techCountQueuedOrBetter)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7334</span>
+TechTreeUpgradeCount(<span class="hljs-number">1</span>, <span class="hljs-string">"HotSTorrasque"</span>, c_techCountQueuedOrBetter)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7334</span>
+TechTreeUpgradeCount(<span class="hljs-number">1</span>, <span class="hljs-string">"HotSNoxious"</span>, c_techCountQueuedOrBetter)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7334</span>
+TechTreeUpgradeCount(<span class="hljs-number">1</span>, <span class="hljs-string">"HotSMutaliskViper"</span>, c_techCountQueuedOrBetter)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7334</span>
+TechTreeUpgradeCount(<span class="hljs-number">1</span>, <span class="hljs-string">"HotSMutaliskBroodlord"</span>, c_techCountQueuedOrBetter)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7340</span>
+TechTreeUpgradeCount(<span class="hljs-number">1</span>, <span class="hljs-string">"HotSMutaliskViper"</span>, c_techCountQueuedOrBetter)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7340</span>
+TechTreeUpgradeCount(<span class="hljs-number">1</span>, <span class="hljs-string">"HotSMutaliskBroodlord"</span>, c_techCountQueuedOrBetter)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L17336</span>
+TechTreeUpgradeCount(<span class="hljs-number">1</span>, <span class="hljs-string">"K5ZerglingRespawn"</span>, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L17382</span>
+TechTreeUpgradeCount(<span class="hljs-number">1</span>, <span class="hljs-string">"K5ZerglingRespawn"</span>, c_techCountCompleteOnly)
+</code></pre>
+<h4 id="campaignsvoidsc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidsc2campaign">#</a> campaigns/void.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/void.sc2campaign/base.sc2maps/maps/campaign/void/paiur05.sc2map/MapScript.galaxy#L1430">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1430</span>
+TechTreeUpgradeCount(gv_pLAYER_01_USER, <span class="hljs-string">"SOASuperShield"</span>, c_techCountQueuedOrBetter)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1348</span>
+TechTreeUpgradeCount(gv_pLAYER_01_USER, <span class="hljs-string">"SOASuperShield"</span>, c_techCountQueuedOrBetter)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1714</span>
+TechTreeUpgradeCount(gv_pLAYER_01_USER, <span class="hljs-string">"SOAAutoAssimilator"</span>, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L936</span>
+TechTreeUpgradeCount(gv_pLAYER_01_USER, <span class="hljs-string">"SOASuperShield"</span>, c_techCountQueuedOrBetter)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1322</span>
+TechTreeUpgradeCount(gv_pLAYER_01_USER, <span class="hljs-string">"SOASuperShield"</span>, c_techCountQueuedOrBetter)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1430</span>
+TechTreeUpgradeCount(gv_pLAYER_01_USER, <span class="hljs-string">"SOASuperShield"</span>, c_techCountQueuedOrBetter)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1348</span>
+TechTreeUpgradeCount(gv_pLAYER_01_USER, <span class="hljs-string">"SOASuperShield"</span>, c_techCountQueuedOrBetter)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1714</span>
+TechTreeUpgradeCount(gv_pLAYER_01_USER, <span class="hljs-string">"SOAAutoAssimilator"</span>, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L936</span>
+TechTreeUpgradeCount(gv_pLAYER_01_USER, <span class="hljs-string">"SOASuperShield"</span>, c_techCountQueuedOrBetter)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1322</span>
+TechTreeUpgradeCount(gv_pLAYER_01_USER, <span class="hljs-string">"SOASuperShield"</span>, c_techCountQueuedOrBetter)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignLib.galaxy#L5593">VoidCampaignLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L5593</span>
+TechTreeUpgradeCount(<span class="hljs-number">1</span>, UserDataGetUpgrade(<span class="hljs-string">"CampaignPerk"</span>, lp_ability, <span class="hljs-string">"Upgrade"</span>, <span class="hljs-number">1</span>), c_techCountQueuedOrBetter)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign-2"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign-2">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignMissionLib.galaxy#L502">VoidCampaignMissionLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L502</span>
+TechTreeUpgradeCount(auto27618A4A_var, <span class="hljs-string">"SOAUIFreezePrevent"</span>, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L601</span>
+TechTreeUpgradeCount(auto146275EF_var, <span class="hljs-string">"SOAUIFreezePrevent"</span>, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3846</span>
+TechTreeUpgradeCount(<span class="hljs-number">1</span>, <span class="hljs-string">"K5AutoExtractor"</span>, c_techCountQueuedOrBetter)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5183</span>
+TechTreeUpgradeCount(autoD511EADB_var, <span class="hljs-string">"SOASuperShield"</span>, c_techCountQueuedOrBetter)
+</code></pre>
+<h4 id="campaignsvoidstorysc2campaign-3"><a class="markdownIt-Anchor" href="#campaignsvoidstorysc2campaign-3">#</a> campaigns/voidstory.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/voidstory.sc2campaign/base.sc2data/TriggerLibs/VoidCampaignUILib.galaxy#L2845">VoidCampaignUILib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2845</span>
+TechTreeUpgradeCount(<span class="hljs-number">0</span>, UserDataGetUpgrade(<span class="hljs-string">"SpearofAdunUpgrade"</span>, lp_upgrade, <span class="hljs-string">"Upgrade"</span>, <span class="hljs-number">1</span>), c_techCountQueuedOrBetter)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2849</span>
+TechTreeUpgradeCount(<span class="hljs-number">0</span>, UserDataGetUpgrade(<span class="hljs-string">"SpearofAdunUpgrade"</span>, lp_upgrade, <span class="hljs-string">"Upgrade"</span>, <span class="hljs-number">1</span>), c_techCountQueuedOrBetter)
+</code></pre>
+<h4 id="modscoresc2mod"><a class="markdownIt-Anchor" href="#modscoresc2mod">#</a> mods/core.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/core.sc2mod/base.sc2data/TriggerLibs/NativeLib.galaxy#L4549">NativeLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4549</span>
+TechTreeUpgradeCount(lp_p, lp_upgrade, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3807</span>
+TechTreeUpgradeCount(lp_p, lp_upgrade, c_techCountCompleteOnly)
+</code></pre>
+<h4 id="modsheroesmapmodsbattlegroundmapmodswarcraftdatastormmod"><a class="markdownIt-Anchor" href="#modsheroesmapmodsbattlegroundmapmodswarcraftdatastormmod">#</a> mods/heroesmapmods/battlegroundmapmods/warcraftdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesmapmods/battlegroundmapmods/warcraftdata.stormmod/base.stormdata/Lib7EB401DE.galaxy#L119">Lib7EB401DE.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L119</span>
+TechTreeUpgradeCount(libCore_gv_cOMPUTER_TeamOrder, <span class="hljs-string">"IsAlliance"</span>, c_techCountCompleteOnly)
+</code></pre>
+<h4 id="modsmissionpacksnovacampaignsc2mod"><a class="markdownIt-Anchor" href="#modsmissionpacksnovacampaignsc2mod">#</a> mods/missionpacks/novacampaign.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/novacampaign.sc2mod/base.sc2data/LibNCMI.galaxy#L3956">LibNCMI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3956</span>
+TechTreeUpgradeCount(<span class="hljs-number">1</span>, <span class="hljs-string">"K5AutoExtractor"</span>, c_techCountQueuedOrBetter)
+</code></pre>
+<h4 id="modsmissionpacksnovacampaignsc2mod-2"><a class="markdownIt-Anchor" href="#modsmissionpacksnovacampaignsc2mod-2">#</a> mods/missionpacks/novacampaign.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/missionpacks/novacampaign.sc2mod/base.sc2data/LibNovC.galaxy#L1988">LibNovC.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1988</span>
+TechTreeUpgradeCount(lp_player, UserDataGetUpgrade(<span class="hljs-string">"CampaignPerk"</span>, lp_perk, <span class="hljs-string">"Upgrade"</span>, lv_upgradeIndex), c_techCountCompleteOnly)
+</code></pre>
+<h4 id="modsnovastoryassetssc2mod"><a class="markdownIt-Anchor" href="#modsnovastoryassetssc2mod">#</a> mods/novastoryassets.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/novastoryassets.sc2mod/base.sc2maps/maps/campaign/nova/nova03.sc2map/MapScript.galaxy#L7694">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L7694</span>
+TechTreeUpgradeCount(gv_pLAYER_01_USER, <span class="hljs-string">"TerranInfantryArmorsLevel1"</span>, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7694</span>
+TechTreeUpgradeCount(gv_pLAYER_02_NOVASUPPORT, <span class="hljs-string">"TerranInfantryArmorsLevel1"</span>, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7698</span>
+TechTreeUpgradeCount(gv_pLAYER_01_USER, <span class="hljs-string">"TerranInfantryWeaponsLevel1"</span>, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7698</span>
+TechTreeUpgradeCount(gv_pLAYER_02_NOVASUPPORT, <span class="hljs-string">"TerranInfantryWeaponsLevel1"</span>, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7702</span>
+TechTreeUpgradeCount(gv_pLAYER_02_NOVASUPPORT, <span class="hljs-string">"TerranInfantryArmorsLevel1"</span>, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7702</span>
+TechTreeUpgradeCount(gv_pLAYER_02_NOVASUPPORT, <span class="hljs-string">"TerranInfantryWeaponsLevel1"</span>, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6516</span>
+TechTreeUpgradeCount(gv_pLAYER_01_USER, <span class="hljs-string">"InternalizedTechModuleBanshee"</span>, c_techCountQueuedOrBetter)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L681</span>
+TechTreeUpgradeCount(gv_pLAYER_01_USER, <span class="hljs-string">"InternalizedTechModuleSiegeTank"</span>, c_techCountQueuedOrBetter)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1004</span>
+TechTreeUpgradeCount(lp_owner, <span class="hljs-string">"PersonalCloaking"</span>, c_techCountQueuedOrBetter)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7694</span>
+TechTreeUpgradeCount(gv_pLAYER_01_USER, <span class="hljs-string">"TerranInfantryArmorsLevel1"</span>, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7694</span>
+TechTreeUpgradeCount(gv_pLAYER_02_NOVASUPPORT, <span class="hljs-string">"TerranInfantryArmorsLevel1"</span>, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7698</span>
+TechTreeUpgradeCount(gv_pLAYER_01_USER, <span class="hljs-string">"TerranInfantryWeaponsLevel1"</span>, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7698</span>
+TechTreeUpgradeCount(gv_pLAYER_02_NOVASUPPORT, <span class="hljs-string">"TerranInfantryWeaponsLevel1"</span>, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7702</span>
+TechTreeUpgradeCount(gv_pLAYER_02_NOVASUPPORT, <span class="hljs-string">"TerranInfantryArmorsLevel1"</span>, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7702</span>
+TechTreeUpgradeCount(gv_pLAYER_02_NOVASUPPORT, <span class="hljs-string">"TerranInfantryWeaponsLevel1"</span>, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6516</span>
+TechTreeUpgradeCount(gv_pLAYER_01_USER, <span class="hljs-string">"InternalizedTechModuleBanshee"</span>, c_techCountQueuedOrBetter)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L681</span>
+TechTreeUpgradeCount(gv_pLAYER_01_USER, <span class="hljs-string">"InternalizedTechModuleSiegeTank"</span>, c_techCountQueuedOrBetter)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1004</span>
+TechTreeUpgradeCount(lp_owner, <span class="hljs-string">"PersonalCloaking"</span>, c_techCountQueuedOrBetter)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOMI.galaxy#L3267">LibCOMI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3267</span>
+TechTreeUpgradeCount(lp_player, lv_upgrade, c_techCountQueuedOrBetter)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3947</span>
+TechTreeUpgradeCount(lp_player, <span class="hljs-string">"MasteryKerriganArmyGasCost"</span>, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3992</span>
+TechTreeUpgradeCount(lp_player, <span class="hljs-string">"MasteryMengskRoyalGuardCost"</span>, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4052</span>
+TechTreeUpgradeCount(lp_player, <span class="hljs-string">"MasteryZagaraRoachDropDamageAndHealth"</span>, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4074</span>
+TechTreeUpgradeCount(lp_player, <span class="hljs-string">"MasteryKaraxUnitVital"</span>, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4123</span>
+TechTreeUpgradeCount(lp_player, <span class="hljs-string">"MasterySwannImmortalityProtocol"</span>, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4140</span>
+TechTreeUpgradeCount(lp_player, <span class="hljs-string">"MasteryKerriganMutatingCarapaceLifeDegradation"</span>, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4155</span>
+TechTreeUpgradeCount(lp_player, <span class="hljs-string">"MasteryKerriganResearchSpeedandCost"</span>, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4176</span>
+TechTreeUpgradeCount(lp_player, <span class="hljs-string">"MasteryStetmannUpgradeResearchCost"</span>, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4204</span>
+TechTreeUpgradeCount(lp_player, lp_masteryUpgrade, c_techCountCompleteOnly)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod-2"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod-2">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOOC.galaxy#L1014">LibCOOC.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1014</span>
+TechTreeUpgradeCount(lp_player, lv_upgrade, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1015</span>
+TechTreeUpgradeCount(lp_player, lv_upgrade, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2188</span>
+TechTreeUpgradeCount(lp_player, <span class="hljs-string">"SuperiorCommand"</span>, c_techCountQueuedOrBetter)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3805</span>
+TechTreeUpgradeCount(lv_itPlayer, lp_checkUpgrade, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3811</span>
+TechTreeUpgradeCount(lv_itPlayer, lp_checkUpgrade, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3811</span>
+TechTreeUpgradeCount(lv_itPlayerApplyTarget, lp_checkUpgrade, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3812</span>
+TechTreeUpgradeCount(lv_itPlayer, lp_checkUpgrade, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3918</span>
+TechTreeUpgradeCount(lp_player, <span class="hljs-string">"MasteryKerriganArmyGasCost"</span>, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3922</span>
+TechTreeUpgradeCount(lp_player, <span class="hljs-string">"MasterySwannImmortalityProtocol"</span>, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3926</span>
+TechTreeUpgradeCount(lp_player, <span class="hljs-string">"MasteryKaraxUnitVital"</span>, c_techCountCompleteOnly)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod-3"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod-3">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOUI.galaxy#L4612">LibCOUI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L4612</span>
+TechTreeUpgradeCount(lp_player, <span class="hljs-string">"MasteryMengskStartingImperialMandate"</span>, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4618</span>
+TechTreeUpgradeCount(lp_player, <span class="hljs-string">"MasteryMengskRoyalGuardImperialMandateRegeneration"</span>, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4624</span>
+TechTreeUpgradeCount(lp_player, <span class="hljs-string">"MasteryMengskTrooperImperialMandateRegeneration"</span>, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4769</span>
+TechTreeUpgradeCount(lp_player, <span class="hljs-string">"FenixCommander"</span>, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5308</span>
+TechTreeUpgradeCount(lv_tychusplayer, <span class="hljs-string">"TychusCoopFifthHeroUpgrade"</span>, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9477</span>
+TechTreeUpgradeCount(libCOMI_gf_CM_ZeratulProphecyEventGetPlayer(), <span class="hljs-string">"ZeratulArtifactUpgradeTier3A"</span>, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9480</span>
+TechTreeUpgradeCount(libCOMI_gf_CM_ZeratulProphecyEventGetPlayer(), <span class="hljs-string">"ZeratulArtifactUpgradeTier3B"</span>, c_techCountCompleteOnly)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod-4"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod-4">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/TriggerLibs/Tactical/TactCampAI.galaxy#L1577">TactCampAI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1577</span>
+TechTreeUpgradeCount(player, c_ZR_RoachUnderground, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1602</span>
+TechTreeUpgradeCount(player, c_ZR_RoachUnderground, c_techCountCompleteOnly)
+</code></pre>
+<h4 id="modsvoidprologuesc2mod"><a class="markdownIt-Anchor" href="#modsvoidprologuesc2mod">#</a> mods/voidprologue.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/voidprologue.sc2mod/base.sc2data/LibA3DDD02B.galaxy#L3465">LibA3DDD02B.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L3465</span>
+TechTreeUpgradeCount(<span class="hljs-number">1</span>, <span class="hljs-string">"K5AutoExtractor"</span>, c_techCountQueuedOrBetter)
+</code></pre>
+<h4 id="modswarcoopprogressionequipmentssc2mod"><a class="markdownIt-Anchor" href="#modswarcoopprogressionequipmentssc2mod">#</a> mods/warcoop/progression/equipments.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/warcoop/progression/equipments.sc2mod/base.sc2data/LibPEqu.galaxy#L49">LibPEqu.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L49</span>
+TechTreeUpgradeCount(lv_attackingowner, <span class="hljs-string">"ArtifactHeroAttackTeleport"</span>, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L101</span>
+TechTreeUpgradeCount(lv_player, <span class="hljs-string">"ArtifactShredders"</span>, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L137</span>
+TechTreeUpgradeCount(lv_player, <span class="hljs-string">"ArtifactGreaterStaffofTeleportation"</span>, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L170</span>
+TechTreeUpgradeCount(lv_player, <span class="hljs-string">"ArtifactGreaterStaffofTeleportation"</span>, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L232</span>
+TechTreeUpgradeCount(lv_player, <span class="hljs-string">"ArtifactCaskofHolyWater"</span>, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L259</span>
+TechTreeUpgradeCount(UnitGetOwner(EventUnitProgressUnit()), <span class="hljs-string">"ArtifactCaskofHolyWater"</span>, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L308</span>
+TechTreeUpgradeCount(lv_player, <span class="hljs-string">"ArtifactShepherdsStaff"</span>, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L335</span>
+TechTreeUpgradeCount(UnitGetOwner(EventUnitProgressUnit()), <span class="hljs-string">"ArtifactShepherdsStaff"</span>, c_techCountCompleteOnly)
+</code></pre>
+<h4 id="modswarcoopwarclassicsc2mod"><a class="markdownIt-Anchor" href="#modswarcoopwarclassicsc2mod">#</a> mods/warcoop/warclassic.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/warcoop/warclassic.sc2mod/base.sc2data/TriggerLibs/WarClassic.galaxy#L1132">WarClassic.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1132</span>
+TechTreeUpgradeCount(lv_p, <span class="hljs-string">"Rhrt"</span>, c_techCountCompleteOnly)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1136</span>
+TechTreeUpgradeCount(lv_p, <span class="hljs-string">"Robk"</span>, c_techCountCompleteOnly)
+</code></pre>
+<h4 id="modswarcoopwarmeleeaisc2mod"><a class="markdownIt-Anchor" href="#modswarcoopwarmeleeaisc2mod">#</a> mods/warcoop/warmeleeai.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/warcoop/warmeleeai.sc2mod/base.sc2data/TriggerLibs/Common_ai.galaxy#L39">Common_ai.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L39</span>
+TechTreeUpgradeCount(player, id, c_techCountCompleteOnly)
+</code></pre>
+<h4 id="modswarcoopwarmeleeaisc2mod-2"><a class="markdownIt-Anchor" href="#modswarcoopwarmeleeaisc2mod-2">#</a> mods/warcoop/warmeleeai.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/warcoop/warmeleeai.sc2mod/base.sc2data/TriggerLibs/Orc/Orc.galaxy#L23">Orc.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L23</span>
+TechTreeUpgradeCount(player,aliasType,c_techCountQueuedOrBetter)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

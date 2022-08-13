@@ -1,0 +1,173 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Overlay Image / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Overlay Image"/>
+                <meta property="og:description" content="Fade in or out a texture overlay over a specified amount of time."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="overlay-image"><a class="markdownIt-Anchor" href="#overlay-image">#</a> Overlay Image</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — <strong>fadeIn|Fade In/Fade Out</strong> texture overlay <strong>imagePath</strong> over <strong>duration</strong> seconds using <strong>transparency</strong>% transparency (<strong>waitUntilDone|Wait/Don’t Wait</strong> until it finishes)<br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Fade in or out a texture overlay over a specified amount of time.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>bool</code> <em>[ preset::<a href="/galaxy/reference/preset-fade-option">FadeOption</a> ]</em> — Fade In</li>
+<li><code>fixed</code> — Duration</li>
+<li><code>string</code> <em>[ filepath ]</em> — Image</li>
+<li><code>fixed</code> — Transparency</li>
+<li><code>bool</code> <em>[ preset::<a href="/galaxy/reference/preset-trigger-wait-option">Trigger_Wait_Option</a> ]</em> — Wait Until Done</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">CinematicOverlay</span><span class="hljs-params">(
+	<span class="hljs-keyword">bool</span> fadeIn,
+	fixed duration,
+	<span class="hljs-built_in">string</span> imagePath,
+	fixed transparency,
+	<span class="hljs-keyword">bool</span> waitUntilDone,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#cinematics-effects">Cinematics / Effects</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/cinematic-fade">Fade In/Out</a></strong> — ( CinematicFade )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/cinematic-overlay">Overlay Image</a></strong> — ( CinematicOverlay )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/select-main-shadow-light">Select Main Shadow Light</a></strong> — ( SelectMainShadowLight )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/campaign/thorner05s.sc2map/MapScript.galaxy#L2898">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2898</span>
+CinematicOverlay(<span class="hljs-literal">false</span>, <span class="hljs-number">0.0</span>, <span class="hljs-string">"Assets\\Textures\\securitycam1.dds"</span>, <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3102</span>
+CinematicOverlay(<span class="hljs-literal">true</span>, <span class="hljs-number">0.0</span>, <span class="hljs-string">"Assets\\Textures\\securitycam1.dds"</span>, <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4003</span>
+CinematicOverlay(<span class="hljs-literal">true</span>, <span class="hljs-number">0.0</span>, <span class="hljs-string">"Assets\\Textures\\securitycam1.dds"</span>, <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4818</span>
+CinematicOverlay(<span class="hljs-literal">true</span>, <span class="hljs-number">0.0</span>, <span class="hljs-string">"Assets\\Textures\\securitycam1.dds"</span>, <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5263</span>
+CinematicOverlay(<span class="hljs-literal">true</span>, <span class="hljs-number">0.0</span>, <span class="hljs-string">"Assets\\Textures\\securitycam1.dds"</span>, <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5749</span>
+CinematicOverlay(<span class="hljs-literal">true</span>, <span class="hljs-number">0.0</span>, <span class="hljs-string">"Assets\\Textures\\securitycam1.dds"</span>, <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2898</span>
+CinematicOverlay(<span class="hljs-literal">false</span>, <span class="hljs-number">0.0</span>, <span class="hljs-string">"Assets\\Textures\\securitycam1.dds"</span>, <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3102</span>
+CinematicOverlay(<span class="hljs-literal">true</span>, <span class="hljs-number">0.0</span>, <span class="hljs-string">"Assets\\Textures\\securitycam1.dds"</span>, <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4003</span>
+CinematicOverlay(<span class="hljs-literal">true</span>, <span class="hljs-number">0.0</span>, <span class="hljs-string">"Assets\\Textures\\securitycam1.dds"</span>, <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4818</span>
+CinematicOverlay(<span class="hljs-literal">true</span>, <span class="hljs-number">0.0</span>, <span class="hljs-string">"Assets\\Textures\\securitycam1.dds"</span>, <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5263</span>
+CinematicOverlay(<span class="hljs-literal">true</span>, <span class="hljs-number">0.0</span>, <span class="hljs-string">"Assets\\Textures\\securitycam1.dds"</span>, <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5749</span>
+CinematicOverlay(<span class="hljs-literal">true</span>, <span class="hljs-number">0.0</span>, <span class="hljs-string">"Assets\\Textures\\securitycam1.dds"</span>, <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6396</span>
+CinematicOverlay(<span class="hljs-literal">true</span>, <span class="hljs-number">0.0</span>, <span class="hljs-string">"Assets\\Textures\\securitycam1.dds"</span>, <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6855</span>
+CinematicOverlay(<span class="hljs-literal">false</span>, <span class="hljs-number">0.0</span>, <span class="hljs-string">"Assets\\Textures\\securitycam1.dds"</span>, <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8414</span>
+CinematicOverlay(<span class="hljs-literal">true</span>, <span class="hljs-number">1.0</span>, <span class="hljs-string">"Assets\\Textures\\securitycam1.dds"</span>, <span class="hljs-number">0.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8430</span>
+CinematicOverlay(<span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>, <span class="hljs-string">"Assets\\Textures\\securitycam1.dds"</span>, <span class="hljs-number">0.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8614</span>
+CinematicOverlay(<span class="hljs-literal">false</span>, <span class="hljs-number">0.0</span>, <span class="hljs-string">"Assets\\Textures\\securitycam1.dds"</span>, <span class="hljs-number">0.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6396</span>
+CinematicOverlay(<span class="hljs-literal">true</span>, <span class="hljs-number">0.0</span>, <span class="hljs-string">"Assets\\Textures\\securitycam1.dds"</span>, <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6855</span>
+CinematicOverlay(<span class="hljs-literal">false</span>, <span class="hljs-number">0.0</span>, <span class="hljs-string">"Assets\\Textures\\securitycam1.dds"</span>, <span class="hljs-number">0.0</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8414</span>
+CinematicOverlay(<span class="hljs-literal">true</span>, <span class="hljs-number">1.0</span>, <span class="hljs-string">"Assets\\Textures\\securitycam1.dds"</span>, <span class="hljs-number">0.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8430</span>
+CinematicOverlay(<span class="hljs-literal">false</span>, <span class="hljs-number">2.0</span>, <span class="hljs-string">"Assets\\Textures\\securitycam1.dds"</span>, <span class="hljs-number">0.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8614</span>
+CinematicOverlay(<span class="hljs-literal">false</span>, <span class="hljs-number">0.0</span>, <span class="hljs-string">"Assets\\Textures\\securitycam1.dds"</span>, <span class="hljs-number">0.0</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

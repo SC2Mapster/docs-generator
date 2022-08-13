@@ -1,0 +1,153 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Create Alert With No Source / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Create Alert With No Source"/>
+                <meta property="og:description" content="Creates an alert displaying the custom alert text."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="create-alert-with-no-source"><a class="markdownIt-Anchor" href="#create-alert-with-no-source">#</a> Create Alert With No Source</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Create a <strong>alertType|Alert Type</strong> alert for player <strong>player</strong> with the text: <strong>text</strong> (Custom icon: <strong>icon</strong>)<br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Creates an alert displaying the custom alert text.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>string</code> <em>[ gamelink::Alert ]</em> — Alert Type</li>
+<li><code>int</code> — Player</li>
+<li><code>text</code> — Text</li>
+<li><code>string</code> <em>[ filepath ]</em> — Icon</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">UIAlert</span><span class="hljs-params">(
+	<span class="hljs-built_in">string</span> alert,
+	<span class="hljs-keyword">int</span> player,
+	text message,
+	<span class="hljs-built_in">string</span> icon,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#ui-alerts">UI / Alerts</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-alert">Alert</a></strong> — ( TriggerAddEventAlert )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> <em>[ gamelink::Alert ]</em> — <strong><a href="/galaxy/reference/event-alert">Triggering Alert</a></strong> — ( EventAlert )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ui-alert-point">Create Alert At Point</a></strong> — ( UIAlertPoint )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ui-alert-unit">Create Alert At Unit</a></strong> — ( UIAlertUnit )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ui-alert">Create Alert With No Source</a></strong> — ( UIAlert )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ui-alert-clear">Clear Alerts</a></strong> — ( UIAlertClear )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ui-set-alert-type-visible">Show/Hide Alert Type</a></strong> — ( UISetAlertTypeVisible )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="modsheroesdatastormmod"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/GameDataHelperLib.galaxy#L2004">GameDataHelperLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2004</span>
+UIAlert(<span class="hljs-string">"YourHeroHasDied"</span>, lv_deadPlayer, StringToText(<span class="hljs-string">""</span>), null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4618</span>
+UIAlert(<span class="hljs-string">"HearthstoneUsed"</span>, lv_hearthstonePlayer, StringToText(<span class="hljs-string">""</span>), null)
+</code></pre>
+<h4 id="modsheroesdatastormmod-2"><a class="markdownIt-Anchor" href="#modsheroesdatastormmod-2">#</a> mods/heroesdata.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heroesdata.stormmod/base.stormdata/TriggerLibs/GameLib.galaxy#L6337">GameLib.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L6337</span>
+UIAlert(<span class="hljs-string">"EnemyHeroKilled"</span>, lv_itPlayer, StringToText(<span class="hljs-string">""</span>), null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6865</span>
+UIAlert(<span class="hljs-string">"YourHeroHasRevived"</span>, lp_player, StringToText(<span class="hljs-string">""</span>), null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L14343</span>
+UIAlert(<span class="hljs-string">"YourHeroHasBeenRooted"</span>, UnitGetOwner(lv_unit), StringToText(<span class="hljs-string">""</span>), null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L14401</span>
+UIAlert(<span class="hljs-string">"YourHeroHasBeenStunned"</span>, UnitGetOwner(lv_unit), StringToText(<span class="hljs-string">""</span>), null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L16617</span>
+UIAlert(<span class="hljs-string">"YourHeroHasDied"</span>, lv_deadPlayer, StringToText(<span class="hljs-string">""</span>), null)
+</code></pre>
+<h4 id="modsheromodschogallstormmod"><a class="markdownIt-Anchor" href="#modsheromodschogallstormmod">#</a> mods/heromods/chogall.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heromods/chogall.stormmod/base.stormdata/LibHCHO.galaxy#L2004">LibHCHO.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L2004</span>
+UIAlert(<span class="hljs-string">"YourHeroHasBeenRooted"</span>, lv_gallPlayer, StringToText(<span class="hljs-string">""</span>), null)
+</code></pre>
+<h4 id="modsheromodsdvastormmod"><a class="markdownIt-Anchor" href="#modsheromodsdvastormmod">#</a> mods/heromods/dva.stormmod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/heromods/dva.stormmod/base.stormdata/LibHDVA.galaxy#L329">LibHDVA.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L329</span>
+UIAlert(<span class="hljs-string">"YourHeroHasRevived"</span>, lp_player, StringToText(<span class="hljs-string">""</span>), null)
+</code></pre>
+<h4 id="modsstarcoopstarcoopsc2mod"><a class="markdownIt-Anchor" href="#modsstarcoopstarcoopsc2mod">#</a> mods/starcoop/starcoop.sc2mod</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/mods/starcoop/starcoop.sc2mod/base.sc2data/LibCOMI.galaxy#L7517">LibCOMI.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L7517</span>
+UIAlert(<span class="hljs-string">"VictoryAlertCoop"</span>, lv_indexPlayer, StringToText(<span class="hljs-string">""</span>), null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7521</span>
+UIAlert(<span class="hljs-string">"DefeatAlertCoop"</span>, lv_indexPlayer, StringToText(<span class="hljs-string">""</span>), null)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7525</span>
+UIAlert(<span class="hljs-string">"DrawAlertCoop"</span>, lv_indexPlayer, StringToText(<span class="hljs-string">""</span>), null)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

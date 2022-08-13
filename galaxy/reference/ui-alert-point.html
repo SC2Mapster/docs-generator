@@ -1,0 +1,411 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Create Alert At Point / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Create Alert At Point"/>
+                <meta property="og:description" content="Creates an alert with a spacebar point (point that the camera will jump to when the player presses the spacebar) at the target point displaying the custom alert text."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="create-alert-at-point"><a class="markdownIt-Anchor" href="#create-alert-at-point">#</a> Create Alert At Point</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Create a <strong>alertType|Alert Type</strong> alert at <strong>point</strong> for player <strong>player</strong> with the text: <strong>text</strong> (Custom icon: <strong>icon</strong>)<br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Creates an alert with a spacebar point (point that the camera will jump to when the player presses the spacebar) at the target point displaying the custom alert text.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>string</code> <em>[ gamelink::Alert ]</em> — Alert Type</li>
+<li><code>int</code> — Player</li>
+<li><code>text</code> — Text</li>
+<li><code>string</code> <em>[ filepath ]</em> — Icon</li>
+<li><code>point</code> — Point</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">UIAlertPoint</span><span class="hljs-params">(
+	<span class="hljs-built_in">string</span> alert,
+	<span class="hljs-keyword">int</span> player,
+	text message,
+	<span class="hljs-built_in">string</span> icon,
+	point p,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#ui-alerts">UI / Alerts</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-alert">Alert</a></strong> — ( TriggerAddEventAlert )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> <em>[ gamelink::Alert ]</em> — <strong><a href="/galaxy/reference/event-alert">Triggering Alert</a></strong> — ( EventAlert )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ui-alert-point">Create Alert At Point</a></strong> — ( UIAlertPoint )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ui-alert-unit">Create Alert At Unit</a></strong> — ( UIAlertUnit )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ui-alert">Create Alert With No Source</a></strong> — ( UIAlert )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ui-alert-clear">Clear Alerts</a></strong> — ( UIAlertClear )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/ui-set-alert-type-visible">Show/Hide Alert Type</a></strong> — ( UISetAlertTypeVisible )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/challenges/advancedcommand.sc2map/MapScript.galaxy#L596">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L596</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_pLAYER_USER, StringToText(<span class="hljs-string">""</span>), null, PointFromId(<span class="hljs-number">2</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1455</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_pLAYER_USER, StringToText(<span class="hljs-string">""</span>), null, PointFromId(<span class="hljs-number">2</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1055</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_pLAYER_USER, StringExternal(<span class="hljs-string">"Param/Value/B2FE915C"</span>), null, PointFromId(<span class="hljs-number">39</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1075</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_pLAYER_USER, StringExternal(<span class="hljs-string">"Param/Value/5C69D3C8"</span>), null, PointFromId(<span class="hljs-number">4</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1095</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_pLAYER_USER, StringExternal(<span class="hljs-string">"Param/Value/5D638B92"</span>), null, PointFromId(<span class="hljs-number">25</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1224</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_pLAYER_USER, StringExternal(<span class="hljs-string">"Param/Value/A515F5AA"</span>), null, PointFromId(<span class="hljs-number">39</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1250</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_pLAYER_USER, StringExternal(<span class="hljs-string">"Param/Value/0F7BF892"</span>), null, PointFromId(<span class="hljs-number">4</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1275</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_pLAYER_USER, StringExternal(<span class="hljs-string">"Param/Value/443A63F6"</span>), null, PointFromId(<span class="hljs-number">25</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1410</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_pLAYER_USER, StringExternal(<span class="hljs-string">"Param/Value/3BA0B13E"</span>), null, PointFromId(<span class="hljs-number">39</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1431</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_pLAYER_USER, StringExternal(<span class="hljs-string">"Param/Value/E5D916E2"</span>), null, PointFromId(<span class="hljs-number">4</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1457</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_pLAYER_USER, StringExternal(<span class="hljs-string">"Param/Value/1A5010DA"</span>), null, PointFromId(<span class="hljs-number">25</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L204</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_pLAYER_USER, StringExternal(<span class="hljs-string">"Param/Value/7F998200"</span>), null, RegionGetCenter(lp_mSpawningRegion))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L897</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_pLAYER_USER, StringExternal(<span class="hljs-string">"Param/Value/D3FF4C4D"</span>), null, RegionGetCenter(RegionFromId(<span class="hljs-number">1</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L511</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_pLAYER_USER, StringToText(<span class="hljs-string">""</span>), null, PointFromId(<span class="hljs-number">1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L816</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, <span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/1916E6FE"</span>), null, RegionGetCenter(RegionFromId(<span class="hljs-number">4</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1735</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_pLAYER_USER, StringToText(<span class="hljs-string">""</span>), null, PointFromId(<span class="hljs-number">1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L469</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, <span class="hljs-number">1</span>, StringExternal(<span class="hljs-string">"Param/Value/7257C198"</span>), null, PointFromId(<span class="hljs-number">37</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L541</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_pLAYER_USER, StringExternal(<span class="hljs-string">"Param/Value/7F2B3FA5"</span>), null, PointFromId(<span class="hljs-number">47</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L803</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_pLAYER_USER, StringExternal(<span class="hljs-string">"Param/Value/274D3D89"</span>), null, PointFromId(<span class="hljs-number">3</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L943</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_pLAYER_USER, StringToText(<span class="hljs-string">""</span>), null, PointFromId(<span class="hljs-number">1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1005</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_pLAYER_USER, StringExternal(<span class="hljs-string">"Param/Value/B2FE915C"</span>), null, PointFromId(<span class="hljs-number">39</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1025</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_pLAYER_USER, StringExternal(<span class="hljs-string">"Param/Value/5C69D3C8"</span>), null, PointFromId(<span class="hljs-number">4</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1046</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_pLAYER_USER, StringExternal(<span class="hljs-string">"Param/Value/5D638B92"</span>), null, PointFromId(<span class="hljs-number">25</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1106</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_pLAYER_USER, StringToText(<span class="hljs-string">""</span>), null, PointFromId(<span class="hljs-number">1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1173</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_pLAYER_USER, StringExternal(<span class="hljs-string">"Param/Value/6478EE9B"</span>), null, PointFromId(<span class="hljs-number">39</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1193</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_pLAYER_USER, StringExternal(<span class="hljs-string">"Param/Value/071D4669"</span>), null, PointFromId(<span class="hljs-number">4</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1213</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_pLAYER_USER, StringExternal(<span class="hljs-string">"Param/Value/A826AE89"</span>), null, PointFromId(<span class="hljs-number">25</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1273</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_pLAYER_USER, StringToText(<span class="hljs-string">""</span>), null, PointFromId(<span class="hljs-number">1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1344</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_pLAYER_USER, StringExternal(<span class="hljs-string">"Param/Value/0C5EC80B"</span>), null, PointFromId(<span class="hljs-number">39</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1073</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_pLAYER_USER, StringExternal(<span class="hljs-string">"Param/Value/B2FE915C"</span>), null, PointFromId(<span class="hljs-number">39</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1093</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_pLAYER_USER, StringExternal(<span class="hljs-string">"Param/Value/5C69D3C8"</span>), null, PointFromId(<span class="hljs-number">4</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1113</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_pLAYER_USER, StringExternal(<span class="hljs-string">"Param/Value/5D638B92"</span>), null, PointFromId(<span class="hljs-number">25</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1243</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_pLAYER_USER, StringExternal(<span class="hljs-string">"Param/Value/4F31FD38"</span>), null, PointFromId(<span class="hljs-number">39</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1263</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_pLAYER_USER, StringExternal(<span class="hljs-string">"Param/Value/0C5A1A78"</span>), null, PointFromId(<span class="hljs-number">4</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1283</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_pLAYER_USER, StringExternal(<span class="hljs-string">"Param/Value/EFF9C977"</span>), null, PointFromId(<span class="hljs-number">25</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1416</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_pLAYER_USER, StringExternal(<span class="hljs-string">"Param/Value/20A9CC39"</span>), null, PointFromId(<span class="hljs-number">39</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1435</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_pLAYER_USER, StringExternal(<span class="hljs-string">"Param/Value/32A8F9A9"</span>), null, PointFromId(<span class="hljs-number">4</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1454</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_pLAYER_USER, StringExternal(<span class="hljs-string">"Param/Value/EDCAAD5A"</span>), null, PointFromId(<span class="hljs-number">25</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2972</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_pLAYER_USER, StringExternal(<span class="hljs-string">"Param/Value/E760DE32"</span>), null, PointFromId(<span class="hljs-number">1</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1407</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_pLAYER_USER, StringExternal(<span class="hljs-string">"Param/Value/FF05D03F"</span>), null, PointFromId(<span class="hljs-number">2</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L356</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_p1_USER, StringExternal(<span class="hljs-string">"Param/Value/EB027D65"</span>), null, UnitGetPosition(lp_unit))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L962</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_p1_USER, StringToText(<span class="hljs-string">""</span>), null, PointFromId(<span class="hljs-number">1646</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1565</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_p1_USER, StringExternal(<span class="hljs-string">"Param/Value/627AAE91"</span>), null, PointFromId(<span class="hljs-number">1649</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1956</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_p1_USER, StringToText(<span class="hljs-string">""</span>), null, PointFromId(<span class="hljs-number">3242</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2227</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_p1_USER, StringExternal(<span class="hljs-string">"Param/Value/11DE9B3E"</span>), null, PointFromId(<span class="hljs-number">3242</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2623</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_p1_USER, StringToText(<span class="hljs-string">""</span>), null, UnitGetPosition(UnitGroupRandomUnit(gv_convoyGuards, c_unitCountAlive)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L489</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, <span class="hljs-number">1</span>, StringToText(<span class="hljs-string">""</span>), null, PointFromId(<span class="hljs-number">453</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1841</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_pLAYER_01_USER, StringExternal(<span class="hljs-string">"Param/Value/47574D9D"</span>), <span class="hljs-string">"Assets\\Textures\\btn-unit-zerg-infestedmarine.dds"</span>, UnitGetPosition(autoE55A534E_var))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3303</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_pLAYER_01_USER, StringExternal(<span class="hljs-string">"Param/Value/8C423762"</span>), null, RegionGetCenter(RegionFromId(<span class="hljs-number">7</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L459</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_pLAYER01_USER, StringToText(<span class="hljs-string">""</span>), null, PointFromId(<span class="hljs-number">15</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4819</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_pLAYER01_USER, StringToText(<span class="hljs-string">""</span>), null, RegionGetCenter(RegionFromId(<span class="hljs-number">13</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4862</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_pLAYER01_USER, StringToText(<span class="hljs-string">""</span>), null, RegionGetCenter(RegionFromId(<span class="hljs-number">15</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4905</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_pLAYER01_USER, StringToText(<span class="hljs-string">""</span>), null, RegionGetCenter(RegionFromId(<span class="hljs-number">16</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4948</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_pLAYER01_USER, StringToText(<span class="hljs-string">""</span>), null, RegionGetCenter(RegionFromId(<span class="hljs-number">17</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4991</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_pLAYER01_USER, StringToText(<span class="hljs-string">""</span>), null, RegionGetCenter(RegionFromId(<span class="hljs-number">22</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1128</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_p01_USER, StringExternal(<span class="hljs-string">"Param/Value/2733AFE1"</span>), null, UnitGetPosition(UnitFromId(<span class="hljs-number">163</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1248</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_p01_USER, StringExternal(<span class="hljs-string">"Param/Value/C5C06D21"</span>), null, PointFromId(<span class="hljs-number">292</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1516</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_p01_USER, StringExternal(<span class="hljs-string">"Param/Value/02A5C7BE"</span>), null, RegionGetCenter(gv_infestationRegion[lv_colonyIndex]))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1574</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_p01_USER, StringExternal(<span class="hljs-string">"Param/Value/B93EE334"</span>), null, RegionGetCenter(gv_infestationRegion[lv_colonyIndex]))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1686</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_p01_USER, StringExternal(<span class="hljs-string">"Param/Value/FF1DC2BE"</span>), null, RegionGetCenter(gv_infestationRegion[lv_colonyIndex]))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1741</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_p01_USER, StringExternal(<span class="hljs-string">"Param/Value/DB76461B"</span>), null, RegionGetCenter(gv_infestationRegion[lv_colonyIndex]))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2591</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_p01_USER, StringExternal(<span class="hljs-string">"Param/Value/B39E1F3D"</span>), null, RegionGetCenter(RegionFromId(<span class="hljs-number">32</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2663</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_p01_USER, StringExternal(<span class="hljs-string">"Param/Value/EBA1CDE6"</span>), null, RegionGetCenter(RegionFromId(<span class="hljs-number">31</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2735</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_p01_USER, StringExternal(<span class="hljs-string">"Param/Value/B647C5DF"</span>), null, RegionGetCenter(RegionFromId(<span class="hljs-number">15</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3565</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_pLAYER_01_USER, StringToText(<span class="hljs-string">""</span>), null, PointFromId(<span class="hljs-number">345</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3571</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_pLAYER_01_USER, StringToText(<span class="hljs-string">""</span>), null, PointFromId(<span class="hljs-number">486</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3577</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_pLAYER_01_USER, StringToText(<span class="hljs-string">""</span>), null, PointFromId(<span class="hljs-number">487</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L414</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_p01_USER, StringToText(<span class="hljs-string">""</span>), null, PointFromId(<span class="hljs-number">46</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L990</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_p01_USER, StringExternal(<span class="hljs-string">"Param/Value/813453E8"</span>), null, PointFromId(<span class="hljs-number">47</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3752</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_p01_USER, StringExternal(<span class="hljs-string">"Param/Value/6AF13D92"</span>), null, UnitGetPosition(UnitFromId(<span class="hljs-number">327</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3836</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_p01_USER, StringExternal(<span class="hljs-string">"Param/Value/E41F86F3"</span>), null, RegionGetCenter(EventUnitRegion()))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3932</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_p01_USER, StringExternal(<span class="hljs-string">"Param/Value/4950C282"</span>), null, PointFromId(<span class="hljs-number">1243</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4966</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_p01_USER, StringExternal(<span class="hljs-string">"Param/Value/D16B38BA"</span>), null, UnitGetPosition(EventUnit()))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L765</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_p01_USER, StringExternal(<span class="hljs-string">"Param/Value/9E4D978B"</span>), null, PointFromId(<span class="hljs-number">966</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3339</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_p01_USER, StringExternal(<span class="hljs-string">"Param/Value/8B3AA905"</span>), null, PointFromId(<span class="hljs-number">734</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4967</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_p01_USER, StringExternal(<span class="hljs-string">"Param/Value/FAEB47D8"</span>), null, UnitGetPosition(EventUnit()))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5642</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_p01_USER, StringExternal(<span class="hljs-string">"Param/Value/2642EE49"</span>), null, PointFromId(<span class="hljs-number">1022</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11448</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_p01_USER, StringExternal(<span class="hljs-string">"Param/Value/9C68C38F"</span>), null, PointFromId(<span class="hljs-number">3</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L680</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_p1_USER, StringExternal(<span class="hljs-string">"Param/Value/B544795D"</span>), null, PointFromId(<span class="hljs-number">505</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L973</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_p1_USER, StringToText(<span class="hljs-string">""</span>), null, UnitGetPosition(gv_crazyOldClarice))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1141</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_p1_USER, StringToText(<span class="hljs-string">""</span>), null, UnitGetPosition(UnitFromId(<span class="hljs-number">59</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1402</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_p1_USER, StringToText(<span class="hljs-string">""</span>), null, UnitGetPosition(gv_mutteringJohn))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1762</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_p1_USER, StringExternal(<span class="hljs-string">"Param/Value/ED89FBB2"</span>), null, RegionGetCenter(RegionFromId(<span class="hljs-number">6</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2153</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_p1_USER, StringExternal(<span class="hljs-string">"Param/Value/EE3C9CCF"</span>), null, RegionGetCenter(RegionFromId(<span class="hljs-number">19</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2786</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_p1_USER, StringExternal(<span class="hljs-string">"Param/Value/A8484597"</span>), null, RegionGetCenter(RegionFromId(<span class="hljs-number">92</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4357</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_p1_USER, StringExternal(<span class="hljs-string">"Param/Value/C24BF20E"</span>), null, UnitGetPosition(UnitFromId(<span class="hljs-number">158</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1369</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_pLAYER_01_USER, StringExternal(<span class="hljs-string">"Param/Value/A087C9B6"</span>), <span class="hljs-string">"Assets\\Textures\\btn-unit-terran-scv.dds"</span>, PointFromId(<span class="hljs-number">688</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1883</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_pLAYER_01_USER, StringExternal(<span class="hljs-string">"Param/Value/E0ECCB59"</span>), <span class="hljs-string">"Assets\\Textures\\btn-command-attack.dds"</span>, PointFromId(<span class="hljs-number">577</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L842</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_pLAYER01_USER, StringExternal(<span class="hljs-string">"Param/Value/04D269FC"</span>), null, UnitGetPosition(UnitFromId(<span class="hljs-number">23</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1971</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_pLAYER01_USER, StringExternal(<span class="hljs-string">"Param/Value/DC769176"</span>), null, RegionGetCenter(RegionFromId(<span class="hljs-number">72</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2049</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_pLAYER01_USER, StringExternal(<span class="hljs-string">"Param/Value/14F8338E"</span>), null, RegionGetCenter(RegionFromId(<span class="hljs-number">3</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2138</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_pLAYER01_USER, StringExternal(<span class="hljs-string">"Param/Value/CAB93CB5"</span>), null, RegionGetCenter(RegionFromId(<span class="hljs-number">71</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2539</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_pLAYER01_USER, StringExternal(<span class="hljs-string">"Param/Value/F29197A1"</span>), null, PointFromId(<span class="hljs-number">509</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3444</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_pLAYER01_USER, StringExternal(<span class="hljs-string">"Param/Value/2365FCD3"</span>), null, lv_triggeredPoint)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4155</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_pLAYER01_USER, StringExternal(<span class="hljs-string">"Param/Value/6C722AC4"</span>), null, PointWithOffset(lv_damagedPoint, <span class="hljs-number">0.0</span>, <span class="hljs-number">4.0</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L633</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_p01_USER, StringExternal(<span class="hljs-string">"Param/Value/7EB94612"</span>), null, PointFromId(<span class="hljs-number">10</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1767</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_p01_USER, StringExternal(<span class="hljs-string">"Param/Value/CF3F607E"</span>), null, PointFromId(<span class="hljs-number">443</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2043</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_p01_USER, StringExternal(<span class="hljs-string">"Param/Value/0E5F3E16"</span>), null, PointFromId(<span class="hljs-number">863</span>))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2346</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_p01_USER, StringExternal(<span class="hljs-string">"Param/Value/83BA4089"</span>), null, UnitGetPosition(UnitFromId(<span class="hljs-number">803</span>)))
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2425</span>
+UIAlertPoint(<span class="hljs-string">"Trigger"</span>, gv_p01_USER, StringExternal(<span class="hljs-string">"Param/Value/8A5216EA"</span>), null, UnitGetPosition(UnitFromId(<span class="hljs-number">1392</span>)))
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,428 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Allow Trigger To Be Skipped / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Allow Trigger To Be Skipped"/>
+                <meta property="og:description" content="Allows the current trigger to be skipped when the Required Count number of players hit the escape key."/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="allow-trigger-to-be-skipped"><a class="markdownIt-Anchor" href="#allow-trigger-to-be-skipped">#</a> Allow Trigger To Be Skipped</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Allow this trigger to be skipped by <strong>players</strong>, requiring at least <strong>requiredCount|Count</strong>, and run <strong>onSkip|Trigger</strong> if skipped (<strong>check|Check/Ignore Conditions</strong>, <strong>wait|Wait/Don’t Wait</strong> until it finishes)<br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Allows the current trigger to be skipped when the Required Count number of players hit the escape key.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>playergroup</code> — Players</li>
+<li><code>int</code> — Required Count</li>
+<li><code>trigger</code> — On Skip</li>
+<li><code>bool</code> <em>[ preset::<a href="/galaxy/reference/preset-trigger-check-conditions">Trigger_Check_Conditions</a> ]</em> — Check</li>
+<li><code>bool</code> <em>[ preset::<a href="/galaxy/reference/preset-trigger-wait-option">Trigger_Wait_Option</a> ]</em> — Wait</li>
+</ul>
+<p>Returns — <code>void</code></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">void</span> <span class="hljs-title">TriggerSkippableBegin</span><span class="hljs-params">(
+	playergroup allowedToSkip,
+	<span class="hljs-keyword">int</span> requiredCount,
+	trigger onSkip,
+	<span class="hljs-keyword">bool</span> testConds,
+	<span class="hljs-keyword">bool</span> waitUntilDone,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#trigger-basic">Trigger / Basic</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>trigger</code> — <strong><a href="/galaxy/reference/lib-ntve-op-create-trigger-from-trigger">Create Trigger From Trigger</a></strong> — (  )</li>
+<li><em><strong>[F]</strong></em> — <code>trigger</code> — <strong><a href="/galaxy/reference/trigger-create">New Trigger</a></strong> — ( TriggerCreate )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-execute">Run Trigger</a></strong> — ( TriggerExecute )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-trigger-execute-by-name">Run Trigger By Name</a></strong> — ( libNtve_gf_TriggerExecuteByName )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-stop">Stop Trigger</a></strong> — ( TriggerStop )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-destroy">Destroy Trigger</a></strong> — ( TriggerDestroy )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-enable">Turn Trigger On/Off</a></strong> — ( TriggerEnable )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/trigger-is-enabled">Trigger Is On</a></strong> — ( TriggerIsEnabled )</li>
+<li><em><strong>[F]</strong></em> — <code>trigger</code> — <strong><a href="/galaxy/reference/trigger-get-current">Current Trigger</a></strong> — ( TriggerGetCurrent )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-wait-for-trigger">Wait For Trigger</a></strong> — ( TriggerWaitForTrigger )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-current-trigger-thread-set-flags">Current Trigger Thread SetFlags</a></strong> — ( TriggerCurrentTriggerThreadSetFlags )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-skippable-begin">Allow Trigger To Be Skipped</a></strong> — ( TriggerSkippableBegin )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-trigger-skipped">Player Skips Trigger</a></strong> — ( TriggerAddEventTriggerSkipped )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/lib-ntve-gf-register-events">Register Events</a></strong> — (  )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-send-event">Send Generic Event</a></strong> — ( TriggerSendEvent )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/trigger-add-event-generic">Generic Event</a></strong> — ( TriggerAddEventGeneric )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> — <strong><a href="/galaxy/reference/trigger-event-param-name">Generic Event Parameter</a></strong> — ( TriggerEventParamName )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> — <strong><a href="/galaxy/reference/event-generic-name">Triggering Event Name</a></strong> — ( EventGenericName )</li>
+<li><em><strong>[F]</strong></em> — <code>trigger</code> — <strong><a href="/galaxy/reference/event-trigger">Triggering Trigger</a></strong> — ( EventTrigger )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/trigger-active-count">Trigger Active Count</a></strong> — ( TriggerActiveCount )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/trigger-get-exec-count">Trigger Execution Count</a></strong> — ( TriggerGetExecCount )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> — <strong><a href="/galaxy/reference/trigger-get-eval-count">Trigger Evaluation Count</a></strong> — ( TriggerGetEvalCount )</li>
+<li><em><strong>[F]</strong></em> — <code>string</code> — <strong><a href="/galaxy/reference/trigger-get-function">Trigger Function Name</a></strong> — ( TriggerGetFunction )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/trigger-evaluate">Evaluate Trigger Conditions</a></strong> — ( TriggerEvaluate )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/challenges/advancedcommand.sc2map/MapScript.galaxy#L1356">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L1356</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2864</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1693</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1652</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2070</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2377</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2705</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1392</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2860</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1336</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8555</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6333</span>
+TriggerSkippableBegin(PlayerGroupSingle(gv_p1_USER), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5399</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6662</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4538</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5925</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5483</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5755</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5520</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5863</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6347</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6617</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7128</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11298</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11634</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12011</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12222</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12754</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4964</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5345</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5574</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5825</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4918</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5192</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L14381</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L14443</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L18807</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L23358</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L23391</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L23431</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L23649</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L23674</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L25448</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L26453</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5133</span>
+TriggerSkippableBegin(PlayerGroupSingle(gv_p01_USER), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4293</span>
+TriggerSkippableBegin(PlayerGroupSingle(gv_p1_USER), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5299</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5997</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6278</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5089</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5219</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5798</span>
+TriggerSkippableBegin(PlayerGroupSingle(gv_p1_USER), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6107</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3712</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4033</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4889</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5141</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5570</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5846</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6151</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7738</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9494</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9880</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10251</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10614</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11072</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11603</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12059</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5711</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6596</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6922</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5214</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5649</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8953</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9419</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L9918</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6227</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6755</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7112</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4809</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5197</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, gt_VictoryCineSkipped, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6054</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6316</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6697</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L8555</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6333</span>
+TriggerSkippableBegin(PlayerGroupSingle(gv_p1_USER), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5399</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6662</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4538</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5925</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5483</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5755</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5520</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5863</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6347</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L6617</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L7128</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11298</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L11634</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L12011</span>
+TriggerSkippableBegin(PlayerGroupAll(), <span class="hljs-number">0</span>, null, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,411 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Create Objective / Reference / Galaxy API / StarCraft II API Documentation</title>
+            <meta property="og:type" content="article"/>
+            <meta property="og:site_name" content="StarCraft II API Documentation"/>
+            
+                <meta property="og:image" content="/favicon-32.png"/>
+            
+            <meta property="og:title" content="Galaxy: Create Objective"/>
+                <meta property="og:description" content="Creates an objective.  Objectives appear in the upper left corner of the UI, and are can be used to create goals for players to accomplish.
+
+Returns: objective [ objective ]"/>
+                
+        <link rel="stylesheet" href="/dist/main.css?557f25f">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+                        <div class="bd-toc-item ">
+                            <a class="bd-toc-link" href="/galaxy">
+                                Galaxy
+                            </a>
+
+                            <ul class="nav bd-sidenav">
+                                <li class="">
+                                    <a href="/galaxy/reference">Reference API</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="/ui-layout">UI Layout</a>
+
+                            <ul class="nav bd-sidenav">
+                                <li><a href="/ui-layout/frame-type">Frame types</a></li>
+                                <li><a href="/ui-layout/frame-class">Frame classes</a></li>
+                                <li><a href="/ui-layout/type">Basic types</a></li>
+                                <li><a href="/ui-layout/complex-type">Complex types</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    
+                </div>
+
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    
+                        
+    <h1 id="create-objective"><a class="markdownIt-Anchor" href="#create-objective">#</a> Create Objective</h1>
+
+
+
+
+
+
+
+    <blockquote>
+<p><em>Grammar</em> — Create a <strong>state</strong> <strong>primary|Primary/Secondary</strong> objective with text <strong>name</strong> and description <strong>description</strong><br>
+<em>Flags</em> — <code>Native</code> | <code>Action</code></p>
+</blockquote>
+<p>Creates an objective.  Objectives appear in the upper left corner of the UI, and are can be used to create goals for players to accomplish.</p>
+<h3 id="arguments"><a class="markdownIt-Anchor" href="#arguments">#</a> Arguments</h3>
+<ul>
+<li><code>text</code> — Text</li>
+<li><code>text</code> — Description</li>
+<li><code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-objective-state">ObjectiveState</a> ]</em> — State</li>
+<li><code>bool</code> <em>[ preset::<a href="/galaxy/reference/preset-objective-type">Objective_Type</a> ]</em> — Type</li>
+</ul>
+<p>Returns — <code>int</code> <em>[ objective ]</em></p>
+<pre class="hljs"><code><span class="hljs-function">native <span class="hljs-keyword">int</span> <span class="hljs-title">ObjectiveCreate</span><span class="hljs-params">(
+	text inName,
+	text inDescription,
+	<span class="hljs-keyword">int</span> inState,
+	<span class="hljs-keyword">bool</span> inPrimary,
+)</span></span>;
+</code></pre>
+<h3 id="related"><a class="markdownIt-Anchor" href="#related">#</a> Related</h3>
+<p>Category: <a href="/galaxy/reference#objective-basic">Objective / Basic</a></p>
+<ul>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ objective ]</em> — <strong><a href="/galaxy/reference/objective-create">Create Objective</a></strong> — ( ObjectiveCreate )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ objective ]</em> — <strong><a href="/galaxy/reference/objective-create-for-players">Create Objective For Players</a></strong> — ( ObjectiveCreateForPlayers )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/objective-show">Show/Hide Objective</a></strong> — ( ObjectiveShow )</li>
+<li><em><strong>[F]</strong></em> — <code>void</code> — <strong><a href="/galaxy/reference/objective-set-state">Set Objective State</a></strong> — ( ObjectiveSetState )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ objective ]</em> — <strong><a href="/galaxy/reference/objective-last-created">Last Created Objective</a></strong> — ( ObjectiveLastCreated )</li>
+<li><em><strong>[F]</strong></em> — <code>bool</code> — <strong><a href="/galaxy/reference/objective-visible">Objective Is Visible</a></strong> — ( ObjectiveVisible )</li>
+<li><em><strong>[F]</strong></em> — <code>int</code> <em>[ preset::<a href="/galaxy/reference/preset-objective-state">ObjectiveState</a> ]</em> — <strong><a href="/galaxy/reference/objective-get-state">Objective State</a></strong> — ( ObjectiveGetState )</li>
+</ul>
+<h3 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h3>
+<h4 id="campaignslibertysc2campaign"><a class="markdownIt-Anchor" href="#campaignslibertysc2campaign">#</a> campaigns/liberty.sc2campaign</h4>
+<p>— <em><a href="https://github.com/SC2Mapster/SC2GameData/blob/7c48d4d63384a76b9272f91ca5e33b902501ed5b/campaigns/liberty.sc2campaign/base.sc2maps/maps/challenges/advancedcommand.sc2map/MapScript.galaxy#L955">MapScript.galaxy</a></em></p>
+<pre class="hljs"><code><span class="hljs-comment">// L955</span>
+ObjectiveCreate(TextReplaceWord((StringExternal(<span class="hljs-string">"Param/Value/53FCAC82"</span>) + gv_ratingTextBronze + StringExternal(<span class="hljs-string">"Param/Value/029129D5"</span>)), StringExternal(<span class="hljs-string">"Param/Value/5F6EBF43"</span>), IntToText(gv_winningScoreBronze), c_stringReplaceAll, c_stringCase), TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/32DF2F98"</span>), StringExternal(<span class="hljs-string">"Param/Value/8AA09FB4"</span>), IntToText(gv_winningScoreBronze), c_stringReplaceAll, c_stringCase), c_objectiveStateActive, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L958</span>
+ObjectiveCreate(TextReplaceWord((StringExternal(<span class="hljs-string">"Param/Value/04CFC30A"</span>) + gv_ratingTextSilver + StringExternal(<span class="hljs-string">"Param/Value/7F7B82FC"</span>)), StringExternal(<span class="hljs-string">"Param/Value/D75FAE77"</span>), IntToText(gv_winningScoreSilver), c_stringReplaceAll, c_stringCase), TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/2B200293"</span>), StringExternal(<span class="hljs-string">"Param/Value/E7477835"</span>), IntToText(gv_winningScoreSilver), c_stringReplaceAll, c_stringCase), c_objectiveStateActive, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L961</span>
+ObjectiveCreate(TextReplaceWord((StringExternal(<span class="hljs-string">"Param/Value/AA04631D"</span>) + gv_ratingTextGold + StringExternal(<span class="hljs-string">"Param/Value/D59DA782"</span>)), StringExternal(<span class="hljs-string">"Param/Value/4D415390"</span>), IntToText(gv_winningScoreGold), c_stringReplaceAll, c_stringCase), TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/677E8B18"</span>), StringExternal(<span class="hljs-string">"Param/Value/3F40F919"</span>), IntToText(gv_winningScoreGold), c_stringReplaceAll, c_stringCase), c_objectiveStateActive, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2265</span>
+ObjectiveCreate(TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/54C42162"</span>), StringExternal(<span class="hljs-string">"Param/Value/56D79116"</span>), IntToText(gv_roundCount), c_stringReplaceAll, c_stringCase), StringExternal(<span class="hljs-string">"Param/Value/D651CBDC"</span>), c_objectiveStateActive, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2274</span>
+ObjectiveCreate(TextReplaceWord((StringExternal(<span class="hljs-string">"Param/Value/203A7B8C"</span>) + gv_ratingTextSilver + StringExternal(<span class="hljs-string">"Param/Value/51853534"</span>)), StringExternal(<span class="hljs-string">"Param/Value/52B42A7D"</span>), IntToText(gv_winningScoreSilver), c_stringReplaceAll, c_stringCase), TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/E6A97E03"</span>), StringExternal(<span class="hljs-string">"Param/Value/6F02CE23"</span>), IntToText(gv_winningScoreSilver), c_stringReplaceAll, c_stringCase), c_objectiveStateActive, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2277</span>
+ObjectiveCreate(TextReplaceWord((StringExternal(<span class="hljs-string">"Param/Value/52A3B2DA"</span>) + gv_ratingTextGold + StringExternal(<span class="hljs-string">"Param/Value/10814915"</span>)), StringExternal(<span class="hljs-string">"Param/Value/6128B216"</span>), IntToText(gv_winningScoreGold), c_stringReplaceAll, c_stringCase), TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/B73A69D3"</span>), StringExternal(<span class="hljs-string">"Param/Value/BE8D77BE"</span>), IntToText(gv_winningScoreGold), c_stringReplaceAll, c_stringCase), c_objectiveStateActive, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1224</span>
+ObjectiveCreate(TextReplaceWord((StringExternal(<span class="hljs-string">"Param/Value/7317C301"</span>) + gv_ratingTextBronze + StringExternal(<span class="hljs-string">"Param/Value/EDEC0D20"</span>)), StringExternal(<span class="hljs-string">"Param/Value/BA56269E"</span>), IntToText(gv_winningScoreBronze), c_stringReplaceAll, c_stringCase), TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/F403DB8E"</span>), StringExternal(<span class="hljs-string">"Param/Value/17A3EDD0"</span>), IntToText(gv_winningScoreBronze), c_stringReplaceAll, c_stringCase), c_objectiveStateActive, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1227</span>
+ObjectiveCreate(TextReplaceWord((StringExternal(<span class="hljs-string">"Param/Value/0985B5EC"</span>) + gv_ratingTextSilver + StringExternal(<span class="hljs-string">"Param/Value/28F0A7BF"</span>)), StringExternal(<span class="hljs-string">"Param/Value/FCE6EAF4"</span>), IntToText(gv_winningScoreSilver), c_stringReplaceAll, c_stringCase), TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/22099900"</span>), StringExternal(<span class="hljs-string">"Param/Value/B4DFD7CB"</span>), IntToText(gv_winningScoreSilver), c_stringReplaceAll, c_stringCase), c_objectiveStateActive, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1230</span>
+ObjectiveCreate(TextReplaceWord((StringExternal(<span class="hljs-string">"Param/Value/605D19F2"</span>) + gv_ratingTextGold + StringExternal(<span class="hljs-string">"Param/Value/11A93DBC"</span>)), StringExternal(<span class="hljs-string">"Param/Value/0E47DE2A"</span>), IntToText(gv_winningScoreGold), c_stringReplaceAll, c_stringCase), TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/D6349BB2"</span>), StringExternal(<span class="hljs-string">"Param/Value/0FAD66E8"</span>), IntToText(gv_winningScoreGold), c_stringReplaceAll, c_stringCase), c_objectiveStateActive, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1130</span>
+ObjectiveCreate((TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/07CB6342"</span>), StringExternal(<span class="hljs-string">"Param/Value/CDF4E3C5"</span>), IntToText(gv_marineBuiltCount), c_stringReplaceAll, c_stringCase) + TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/9CE8ADE0"</span>), StringExternal(<span class="hljs-string">"Param/Value/0FD78E04"</span>), IntToText(gv_marineNeeded), c_stringReplaceAll, c_stringCase) + StringExternal(<span class="hljs-string">"Param/Value/353DA9AD"</span>)), TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/BCEC4C42"</span>), StringExternal(<span class="hljs-string">"Param/Value/CC8DF48B"</span>), IntToText(gv_marineNeeded), c_stringReplaceAll, c_stringCase), c_objectiveStateActive, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1133</span>
+ObjectiveCreate((TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/E5A32A1B"</span>), StringExternal(<span class="hljs-string">"Param/Value/4BBAF9F5"</span>), IntToText(gv_tankBuiltCount), c_stringReplaceAll, c_stringCase) + TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/11077E9C"</span>), StringExternal(<span class="hljs-string">"Param/Value/84920319"</span>), IntToText(gv_tanksNeeded), c_stringReplaceAll, c_stringCase) + StringExternal(<span class="hljs-string">"Param/Value/8B7A0F30"</span>)), TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/172D839D"</span>), StringExternal(<span class="hljs-string">"Param/Value/4726D1B5"</span>), IntToText(gv_tanksNeeded), c_stringReplaceAll, c_stringCase), c_objectiveStateActive, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1136</span>
+ObjectiveCreate((TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/FB85A5A6"</span>), StringExternal(<span class="hljs-string">"Param/Value/F48A93A8"</span>), IntToText(gv_ghostsBuiltCount), c_stringReplaceAll, c_stringCase) + TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/E3C9AF93"</span>), StringExternal(<span class="hljs-string">"Param/Value/6B895D03"</span>), IntToText(gv_ghostsNeeded), c_stringReplaceAll, c_stringCase) + StringExternal(<span class="hljs-string">"Param/Value/27D75572"</span>)), TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/B707EFF9"</span>), StringExternal(<span class="hljs-string">"Param/Value/2BD283C3"</span>), IntToText(gv_ghostsNeeded), c_stringReplaceAll, c_stringCase), c_objectiveStateActive, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1139</span>
+ObjectiveCreate((StringExternal(<span class="hljs-string">"Param/Value/2D1A7D91"</span>) + gv_ratingTextSilver + StringExternal(<span class="hljs-string">"Param/Value/D49EB45B"</span>)), StringExternal(<span class="hljs-string">"Param/Value/F6D49F5C"</span>), c_objectiveStateActive, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1142</span>
+ObjectiveCreate((StringExternal(<span class="hljs-string">"Param/Value/C882F5DF"</span>) + gv_ratingTextGold + StringExternal(<span class="hljs-string">"Param/Value/2F85EA17"</span>)), StringExternal(<span class="hljs-string">"Param/Value/3CB6E58B"</span>), c_objectiveStateActive, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1750</span>
+ObjectiveCreate(StringExternal(<span class="hljs-string">"Param/Value/C643D3CC"</span>), StringExternal(<span class="hljs-string">"Param/Value/AACF2B33"</span>), c_objectiveStateActive, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1753</span>
+ObjectiveCreate(StringExternal(<span class="hljs-string">"Param/Value/CE6AC15F"</span>), StringExternal(<span class="hljs-string">"Param/Value/7B33532F"</span>), c_objectiveStateActive, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1756</span>
+ObjectiveCreate(TextReplaceWord((StringExternal(<span class="hljs-string">"Param/Value/49304EAE"</span>) + gv_ratingTextSilver + StringExternal(<span class="hljs-string">"Param/Value/3077DE16"</span>)), StringExternal(<span class="hljs-string">"Param/Value/75080C2D"</span>), IntToText(gv_silverLosses), c_stringReplaceAll, c_stringCase), (StringExternal(<span class="hljs-string">"Param/Value/C0A8E02F"</span>) + IntToText(gv_silverLosses) + StringExternal(<span class="hljs-string">"Param/Value/0E5A0996"</span>)), c_objectiveStateActive, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1759</span>
+ObjectiveCreate(TextReplaceWord((StringExternal(<span class="hljs-string">"Param/Value/4377C835"</span>) + gv_ratingTextGold + StringExternal(<span class="hljs-string">"Param/Value/D7702915"</span>)), StringExternal(<span class="hljs-string">"Param/Value/238D3C64"</span>), IntToText(gv_goldLosses), c_stringReplaceAll, c_stringCase), (StringExternal(<span class="hljs-string">"Param/Value/717B40B9"</span>) + IntToText(gv_goldLosses) + StringExternal(<span class="hljs-string">"Param/Value/CA719937"</span>)), c_objectiveStateActive, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2096</span>
+ObjectiveCreate(TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/BABA6EED"</span>), StringExternal(<span class="hljs-string">"Param/Value/AD04669B"</span>), IntToText(gv_roundCount), c_stringReplaceAll, c_stringCase), StringExternal(<span class="hljs-string">"Param/Value/FA4EE24B"</span>), c_objectiveStateActive, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2105</span>
+ObjectiveCreate(TextReplaceWord((StringExternal(<span class="hljs-string">"Param/Value/C9E0F07E"</span>) + gv_ratingTextSilver + StringExternal(<span class="hljs-string">"Param/Value/8B193142"</span>)), StringExternal(<span class="hljs-string">"Param/Value/FF3A1403"</span>), IntToText(gv_winningScoreSilver), c_stringReplaceAll, c_stringCase), TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/24751C21"</span>), StringExternal(<span class="hljs-string">"Param/Value/CAB13CCB"</span>), IntToText(gv_winningScoreSilver), c_stringReplaceAll, c_stringCase), c_objectiveStateActive, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2108</span>
+ObjectiveCreate(TextReplaceWord((StringExternal(<span class="hljs-string">"Param/Value/69B8B409"</span>) + gv_ratingTextGold + StringExternal(<span class="hljs-string">"Param/Value/DFFC2E41"</span>)), StringExternal(<span class="hljs-string">"Param/Value/F68901EC"</span>), IntToText(gv_winningScoreGold), c_stringReplaceAll, c_stringCase), TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/3D3762C1"</span>), StringExternal(<span class="hljs-string">"Param/Value/8FB1EBC6"</span>), IntToText(gv_winningScoreGold), c_stringReplaceAll, c_stringCase), c_objectiveStateActive, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L960</span>
+ObjectiveCreate(TextReplaceWord((StringExternal(<span class="hljs-string">"Param/Value/EFE754C7"</span>) + gv_ratingTextBronze + StringExternal(<span class="hljs-string">"Param/Value/8C10741F"</span>)), StringExternal(<span class="hljs-string">"Param/Value/BD16A3E9"</span>), IntToText(gv_winningScoreBronze), c_stringReplaceAll, c_stringCase), TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/ACF57983"</span>), StringExternal(<span class="hljs-string">"Param/Value/7643C36C"</span>), IntToText(gv_winningScoreBronze), c_stringReplaceAll, c_stringCase), c_objectiveStateActive, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L963</span>
+ObjectiveCreate(TextReplaceWord((StringExternal(<span class="hljs-string">"Param/Value/D90D6F5A"</span>) + gv_ratingTextSilver + StringExternal(<span class="hljs-string">"Param/Value/2163B4C0"</span>)), StringExternal(<span class="hljs-string">"Param/Value/CFD416AF"</span>), IntToText(gv_winningScoreSilver), c_stringReplaceAll, c_stringCase), TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/3C92E42C"</span>), StringExternal(<span class="hljs-string">"Param/Value/0159C03F"</span>), IntToText(gv_winningScoreSilver), c_stringReplaceAll, c_stringCase), c_objectiveStateActive, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L966</span>
+ObjectiveCreate(TextReplaceWord((StringExternal(<span class="hljs-string">"Param/Value/44DF095B"</span>) + gv_ratingTextGold + StringExternal(<span class="hljs-string">"Param/Value/B960EE27"</span>)), StringExternal(<span class="hljs-string">"Param/Value/BF39FAE0"</span>), IntToText(gv_winningScoreGold), c_stringReplaceAll, c_stringCase), TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/51F8FB98"</span>), StringExternal(<span class="hljs-string">"Param/Value/CF1192E2"</span>), IntToText(gv_winningScoreGold), c_stringReplaceAll, c_stringCase), c_objectiveStateActive, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2205</span>
+ObjectiveCreate(TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/849B54A1"</span>), StringExternal(<span class="hljs-string">"Param/Value/8BFF5549"</span>), IntToText(gv_roundCount), c_stringReplaceAll, c_stringCase), StringExternal(<span class="hljs-string">"Param/Value/2C1E1D77"</span>), c_objectiveStateActive, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2214</span>
+ObjectiveCreate(TextReplaceWord((StringExternal(<span class="hljs-string">"Param/Value/C68EE48D"</span>) + gv_ratingTextSilver + StringExternal(<span class="hljs-string">"Param/Value/6501C3BD"</span>)), StringExternal(<span class="hljs-string">"Param/Value/D8461B70"</span>), IntToText(gv_winningScoreSilver), c_stringReplaceAll, c_stringCase), TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/F50A1C45"</span>), StringExternal(<span class="hljs-string">"Param/Value/012557E7"</span>), IntToText(gv_winningScoreSilver), c_stringReplaceAll, c_stringCase), c_objectiveStateActive, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2217</span>
+ObjectiveCreate(TextReplaceWord((StringExternal(<span class="hljs-string">"Param/Value/96804F89"</span>) + gv_ratingTextGold + StringExternal(<span class="hljs-string">"Param/Value/5B8E052D"</span>)), StringExternal(<span class="hljs-string">"Param/Value/F5702168"</span>), IntToText(gv_winningScoreGold), c_stringReplaceAll, c_stringCase), TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/89E785A7"</span>), StringExternal(<span class="hljs-string">"Param/Value/6BCFF374"</span>), IntToText(gv_winningScoreGold), c_stringReplaceAll, c_stringCase), c_objectiveStateActive, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L919</span>
+ObjectiveCreate(TextReplaceWord((StringExternal(<span class="hljs-string">"Param/Value/9BB95271"</span>) + gv_ratingTextBronze + StringExternal(<span class="hljs-string">"Param/Value/B8BF9F5E"</span>)), StringExternal(<span class="hljs-string">"Param/Value/8DE488BF"</span>), IntToText(gv_winningScoreBronze), c_stringReplaceAll, c_stringCase), TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/7EBC70BE"</span>), StringExternal(<span class="hljs-string">"Param/Value/70D690E3"</span>), IntToText(gv_winningScoreBronze), c_stringReplaceAll, c_stringCase), c_objectiveStateActive, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L922</span>
+ObjectiveCreate(TextReplaceWord((StringExternal(<span class="hljs-string">"Param/Value/AA563A58"</span>) + gv_ratingTextSilver + StringExternal(<span class="hljs-string">"Param/Value/5B5C35FD"</span>)), StringExternal(<span class="hljs-string">"Param/Value/22FC8E39"</span>), IntToText(gv_winningScoreSilver), c_stringReplaceAll, c_stringCase), TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/BA81DF4E"</span>), StringExternal(<span class="hljs-string">"Param/Value/728AC594"</span>), IntToText(gv_winningScoreSilver), c_stringReplaceAll, c_stringCase), c_objectiveStateActive, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L925</span>
+ObjectiveCreate(TextReplaceWord((StringExternal(<span class="hljs-string">"Param/Value/244C17E1"</span>) + gv_ratingTextGold + StringExternal(<span class="hljs-string">"Param/Value/51EBBEFD"</span>)), StringExternal(<span class="hljs-string">"Param/Value/0E2B6A3B"</span>), IntToText(gv_winningScoreGold), c_stringReplaceAll, c_stringCase), TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/3120DE77"</span>), StringExternal(<span class="hljs-string">"Param/Value/772D05BB"</span>), IntToText(gv_winningScoreGold), c_stringReplaceAll, c_stringCase), c_objectiveStateActive, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5293</span>
+ObjectiveCreate(StringExternal(<span class="hljs-string">"Param/Value/E2D2B8C2"</span>), StringExternal(<span class="hljs-string">"Param/Value/75A746D2"</span>), c_objectiveStateActive, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5388</span>
+ObjectiveCreate((StringExternal(<span class="hljs-string">"Param/Value/DA0F59F5"</span>) + IntToText(gv_colonistsSaved) + StringExternal(<span class="hljs-string">"Param/Value/02AC2B85"</span>) + IntToText(gv_colonistsSaveQuota) + StringExternal(<span class="hljs-string">"Param/Value/9D657228"</span>)), StringExternal(<span class="hljs-string">"Param/Value/2A5C2427"</span>), c_objectiveStateActive, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5392</span>
+ObjectiveCreate((TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/16FE1334"</span>), StringExternal(<span class="hljs-string">"Param/Value/8B5EA2CC"</span>), IntToText(gv_colonistsDeathQuota), c_stringReplaceAll, c_stringCase) + TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/E0B8EF62"</span>), StringExternal(<span class="hljs-string">"Param/Value/BEDB5804"</span>), IntToText(gv_colonistsKilled), c_stringReplaceAll, c_stringCase)), StringExternal(<span class="hljs-string">"Param/Value/9A73EBCA"</span>), c_objectiveStateActive, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5488</span>
+ObjectiveCreate((StringExternal(<span class="hljs-string">"Param/Value/3851E49D"</span>) + IntToText(gv_bonusObjectiveCollectChrysalisFound) + StringExternal(<span class="hljs-string">"Param/Value/42B56155"</span>)), StringExternal(<span class="hljs-string">"Param/Value/05BF0798"</span>), c_objectiveStateActive, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4480</span>
+ObjectiveCreate((StringExternal(<span class="hljs-string">"Param/Value/A583A361"</span>) + TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/DDDA8C18"</span>), StringExternal(<span class="hljs-string">"Param/Value/F10F8990"</span>), IntToText(UnitGroupCount(UnitGroup(null, gv_pLAYER_03_INFESTED_REFUGEES, null, UnitFilter((<span class="hljs-number">1</span> &lt;&lt; c_targetFilterStructure) | (<span class="hljs-number">1</span> &lt;&lt; c_targetFilterPreventDefeat), <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0</span>), c_unitCountAlive)), c_stringReplaceAll, c_stringCase) + StringExternal(<span class="hljs-string">"Param/Value/4FE95072"</span>)), StringExternal(<span class="hljs-string">"Param/Value/43FE14C8"</span>), c_objectiveStateActive, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4593</span>
+ObjectiveCreate((StringExternal(<span class="hljs-string">"Param/Value/DBD089CB"</span>) + IntToText(gv_infestorsKilled) + StringExternal(<span class="hljs-string">"Param/Value/2148E280"</span>)), StringExternal(<span class="hljs-string">"Param/Value/84F789E6"</span>), c_objectiveStateActive, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5491</span>
+ObjectiveCreate(StringExternal(<span class="hljs-string">"Param/Value/AD2F9FE8"</span>), StringExternal(<span class="hljs-string">"Param/Value/A1645D39"</span>), c_objectiveStateActive, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5579</span>
+ObjectiveCreate(StringExternal(<span class="hljs-string">"Param/Value/D5ED231C"</span>), StringExternal(<span class="hljs-string">"Param/Value/3BF6C822"</span>), c_objectiveStateActive, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5640</span>
+ObjectiveCreate(StringExternal(<span class="hljs-string">"Param/Value/523C2823"</span>), StringExternal(<span class="hljs-string">"Param/Value/35629878"</span>), c_objectiveStateHidden, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5731</span>
+ObjectiveCreate(StringExternal(<span class="hljs-string">"Param/Value/8BE98668"</span>), StringExternal(<span class="hljs-string">"Param/Value/27A32384"</span>), c_objectiveStateHidden, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5822</span>
+ObjectiveCreate(StringExternal(<span class="hljs-string">"Param/Value/E5B125BB"</span>), StringExternal(<span class="hljs-string">"Param/Value/3794325E"</span>), c_objectiveStateHidden, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3792</span>
+ObjectiveCreate((StringExternal(<span class="hljs-string">"Param/Value/708B2E3E"</span>)), StringExternal(<span class="hljs-string">"Param/Value/E1B705C0"</span>), c_objectiveStateActive, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5244</span>
+ObjectiveCreate((StringExternal(<span class="hljs-string">"Param/Value/64161632"</span>) + IntToText(gv_trainsDestroyed) + StringExternal(<span class="hljs-string">"Param/Value/34DAEE79"</span>) + IntToText(gv_trainsNeeded) + StringExternal(<span class="hljs-string">"Param/Value/C646D92B"</span>)), StringExternal(<span class="hljs-string">"Param/Value/119F32A8"</span>), c_objectiveStateActive, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5309</span>
+ObjectiveCreate((StringExternal(<span class="hljs-string">"Param/Value/3E57C24F"</span>) + IntToText(gv_trainsMissed) + StringExternal(<span class="hljs-string">"Param/Value/BA2A32B4"</span>)), StringExternal(<span class="hljs-string">"Param/Value/E0AD56FA"</span>), c_objectiveStateActive, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5313</span>
+ObjectiveCreate((StringExternal(<span class="hljs-string">"Param/Value/63DC7731"</span>) + IntToText(gv_trainsMissed) + StringExternal(<span class="hljs-string">"Param/Value/A3B95560"</span>)), StringExternal(<span class="hljs-string">"Param/Value/1061A0FF"</span>), c_objectiveStateActive, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5402</span>
+ObjectiveCreate((StringExternal(<span class="hljs-string">"Param/Value/3A5F61B2"</span>) + IntToText(gv_diamondbacksFound) + StringExternal(<span class="hljs-string">"Param/Value/7B6819D5"</span>) + IntToText(gv_totalDiamondbacks) + StringExternal(<span class="hljs-string">"Param/Value/FA2AF1A7"</span>)), StringExternal(<span class="hljs-string">"Param/Value/EF484F1C"</span>), c_objectiveStateActive, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5490</span>
+ObjectiveCreate((StringExternal(<span class="hljs-string">"Param/Value/3CEE170B"</span>) + IntToText(gv_defilerSkeletonsFound) + StringExternal(<span class="hljs-string">"Param/Value/D3D4BBC6"</span>) + IntToText(gv_defilerSkeletonsNeeded) + StringExternal(<span class="hljs-string">"Param/Value/39CA4198"</span>)), StringExternal(<span class="hljs-string">"Param/Value/C2BBE6CB"</span>), c_objectiveStateActive, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4741</span>
+ObjectiveCreate((StringExternal(<span class="hljs-string">"Param/Value/1589E053"</span>) + TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/D33401E3"</span>), StringExternal(<span class="hljs-string">"Param/Value/9590FC4A"</span>), IntToText(gv_mERC_CONTRACT_PRICE), c_stringReplaceAll, c_stringCase) + StringExternal(<span class="hljs-string">"Param/Value/E8C55C35"</span>)), StringExternal(<span class="hljs-string">"Param/Value/EADB19A4"</span>), c_objectiveStateActive, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4834</span>
+ObjectiveCreate(StringExternal(<span class="hljs-string">"Param/Value/9FFE53DF"</span>), StringExternal(<span class="hljs-string">"Param/Value/149F8BF7"</span>), c_objectiveStateActive, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4926</span>
+ObjectiveCreate((StringExternal(<span class="hljs-string">"Param/Value/29858229"</span>) + libCamp_gf_StoryResearchSupplementTextForObjective(libCamp_ge_StoryResearchObject_ResearchObjectFindProtossRelicContraband, libCamp_ge_StoryResearchObjectiveTextStyle_Multipart, gv_contrabandRelicsTotal, gv_contrabandRelicsFound) + StringToText(<span class="hljs-string">""</span>)), StringExternal(<span class="hljs-string">"Param/Value/BBBD9501"</span>), c_objectiveStateActive, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4674</span>
+ObjectiveCreate(StringExternal(<span class="hljs-string">"Param/Value/85BC6DAF"</span>), StringExternal(<span class="hljs-string">"Param/Value/4DF1D7BC"</span>), c_objectiveStateActive, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4680</span>
+ObjectiveCreate(StringExternal(<span class="hljs-string">"Param/Value/83B223A5"</span>), StringExternal(<span class="hljs-string">"Param/Value/11837275"</span>), c_objectiveStateActive, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4763</span>
+ObjectiveCreate(StringExternal(<span class="hljs-string">"Param/Value/B6A1D7EC"</span>), StringExternal(<span class="hljs-string">"Param/Value/35A07756"</span>), c_objectiveStateActive, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4766</span>
+ObjectiveCreate(StringExternal(<span class="hljs-string">"Param/Value/9A3A5393"</span>), StringExternal(<span class="hljs-string">"Param/Value/4F1324DA"</span>), c_objectiveStateActive, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4854</span>
+ObjectiveCreate(StringExternal(<span class="hljs-string">"Param/Value/932ED8C2"</span>), StringExternal(<span class="hljs-string">"Param/Value/16ADA481"</span>), c_objectiveStateHidden, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4935</span>
+ObjectiveCreate((StringExternal(<span class="hljs-string">"Param/Value/15C1693C"</span>) + IntToText(gv_devourerSamplesFound) + StringExternal(<span class="hljs-string">"Param/Value/FAD28B57"</span>) + IntToText(gv_devourerSamplesTotal) + StringExternal(<span class="hljs-string">"Param/Value/9AE22435"</span>)), StringExternal(<span class="hljs-string">"Param/Value/9337876A"</span>), c_objectiveStateActive, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5672</span>
+ObjectiveCreate(StringExternal(<span class="hljs-string">"Param/Value/CA64DF53"</span>), StringExternal(<span class="hljs-string">"Param/Value/159C9C00"</span>), c_objectiveStateActive, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5736</span>
+ObjectiveCreate(StringExternal(<span class="hljs-string">"Param/Value/05E3338B"</span>), StringExternal(<span class="hljs-string">"Param/Value/7C54A1E1"</span>), c_objectiveStateActive, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5739</span>
+ObjectiveCreate(StringExternal(<span class="hljs-string">"Param/Value/7B03FE31"</span>), StringExternal(<span class="hljs-string">"Param/Value/A9280EFD"</span>), c_objectiveStateActive, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5742</span>
+ObjectiveCreate(StringExternal(<span class="hljs-string">"Param/Value/60581E90"</span>), StringExternal(<span class="hljs-string">"Param/Value/43AA9BFF"</span>), c_objectiveStateActive, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10417</span>
+ObjectiveCreate(StringExternal(<span class="hljs-string">"Param/Value/7F3E9E69"</span>), StringExternal(<span class="hljs-string">"Param/Value/45CD0F73"</span>), c_objectiveStateActive, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10419</span>
+ObjectiveCreate(StringExternal(<span class="hljs-string">"Param/Value/C8F06BE4"</span>), StringExternal(<span class="hljs-string">"Param/Value/25108B5E"</span>), c_objectiveStateHidden, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10421</span>
+ObjectiveCreate(StringExternal(<span class="hljs-string">"Param/Value/9067AA1F"</span>), StringExternal(<span class="hljs-string">"Param/Value/D20106AB"</span>), c_objectiveStateHidden, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10627</span>
+ObjectiveCreate(StringExternal(<span class="hljs-string">"Param/Value/FF4B30F8"</span>), StringExternal(<span class="hljs-string">"Param/Value/3AA81C0C"</span>), c_objectiveStateActive, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10772</span>
+ObjectiveCreate((StringExternal(<span class="hljs-string">"Param/Value/91F3CB3D"</span>) + libCamp_gf_StoryResearchSupplementTextForObjective(libCamp_ge_StoryResearchObject_ResearchObjectKilltheBrutalisk, libCamp_ge_StoryResearchObjectiveTextStyle_Lumpsum, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>)), StringExternal(<span class="hljs-string">"Param/Value/AF4A6014"</span>), c_objectiveStateActive, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L10861</span>
+ObjectiveCreate((StringExternal(<span class="hljs-string">"Param/Value/C2FF6FE6"</span>) + libCamp_gf_StoryResearchSupplementTextForObjective(libCamp_ge_StoryResearchObject_ResearchObjectFindProtossRelics, libCamp_ge_StoryResearchObjectiveTextStyle_Multipart, gv_obejctiveProtossRelicsTotalFirstHalf, <span class="hljs-number">0</span>)), StringExternal(<span class="hljs-string">"Param/Value/322A1BDF"</span>), c_objectiveStateActive, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4348</span>
+ObjectiveCreate(StringExternal(<span class="hljs-string">"Param/Value/803351AA"</span>), StringExternal(<span class="hljs-string">"Param/Value/35F6BD78"</span>), c_objectiveStateActive, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4418</span>
+ObjectiveCreate(StringExternal(<span class="hljs-string">"Param/Value/36E48EA7"</span>), StringExternal(<span class="hljs-string">"Param/Value/410310C4"</span>), c_objectiveStateActive, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4478</span>
+ObjectiveCreate(StringExternal(<span class="hljs-string">"Param/Value/67FC761F"</span>), StringExternal(<span class="hljs-string">"Param/Value/9E29DE5C"</span>), c_objectiveStateActive, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4420</span>
+ObjectiveCreate(StringExternal(<span class="hljs-string">"Param/Value/F014BD9E"</span>), StringExternal(<span class="hljs-string">"Param/Value/1834D61B"</span>), c_objectiveStateActive, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4514</span>
+ObjectiveCreate(StringExternal(<span class="hljs-string">"Param/Value/CF60F8FD"</span>), StringExternal(<span class="hljs-string">"Param/Value/5E553DF6"</span>), c_objectiveStateActive, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4433</span>
+ObjectiveCreate(StringExternal(<span class="hljs-string">"Param/Value/58ACACB4"</span>), StringExternal(<span class="hljs-string">"Param/Value/E68CA25F"</span>), c_objectiveStateActive, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4495</span>
+ObjectiveCreate((StringExternal(<span class="hljs-string">"Param/Value/F805BF8E"</span>) + IntToText(gv_rebelFightersRescued) + StringExternal(<span class="hljs-string">"Param/Value/E7E8684A"</span>) + StringExternal(<span class="hljs-string">"Param/Value/62BDD509"</span>)), StringExternal(<span class="hljs-string">"Param/Value/A1EE5B7F"</span>), c_objectiveStateActive, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4520</span>
+ObjectiveCreate((TextReplaceWord(StringExternal(<span class="hljs-string">"Param/Value/D3C035F7"</span>), StringExternal(<span class="hljs-string">"Param/Value/8BAF666E"</span>), IntToText(gv_objectiveMineralsQuota), c_stringReplaceAll, c_stringCase)), StringExternal(<span class="hljs-string">"Param/Value/0022CD68"</span>), c_objectiveStateActive, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4581</span>
+ObjectiveCreate(StringExternal(<span class="hljs-string">"Param/Value/F42E1CF8"</span>), StringExternal(<span class="hljs-string">"Param/Value/51C93208"</span>), c_objectiveStateActive, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4643</span>
+ObjectiveCreate((StringExternal(<span class="hljs-string">"Param/Value/E070E0FC"</span>) + libCamp_gf_StoryResearchSupplementTextForObjective(libCamp_ge_StoryResearchObject_ResearchObjectKilltheBrutalisk, libCamp_ge_StoryResearchObjectiveTextStyle_Lumpsum, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>)), StringExternal(<span class="hljs-string">"Param/Value/E8235891"</span>), c_objectiveStateActive, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3739</span>
+ObjectiveCreate((StringExternal(<span class="hljs-string">"Param/Value/EF426788"</span>) + IntToText(gv_playerScore) + StringExternal(<span class="hljs-string">"Param/Value/074D92F4"</span>) + IntToText(gv_playerCollectionQuota) + StringExternal(<span class="hljs-string">"Param/Value/505C291C"</span>)), StringExternal(<span class="hljs-string">"Param/Value/DD65E84C"</span>), c_objectiveStateActive, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3743</span>
+ObjectiveCreate((StringExternal(<span class="hljs-string">"Param/Value/3EB88A22"</span>) + IntToText(gv_protossScore) + StringExternal(<span class="hljs-string">"Param/Value/51F25B27"</span>)), StringExternal(<span class="hljs-string">"Param/Value/3D598152"</span>), c_objectiveStateActive, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3858</span>
+ObjectiveCreate((StringExternal(<span class="hljs-string">"Param/Value/BD9FF1D1"</span>) + libCamp_gf_StoryResearchSupplementTextForObjective(libCamp_ge_StoryResearchObject_ResearchObjectFindProtossRelics, libCamp_ge_StoryResearchObjectiveTextStyle_Multipart, gv_bonusObjectiveCollectRelicsNeeded, gv_bonusObjectiveCollectRelicsFound)), StringExternal(<span class="hljs-string">"Param/Value/9A49CF2B"</span>), c_objectiveStateActive, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4770</span>
+ObjectiveCreate(StringExternal(<span class="hljs-string">"Param/Value/D2D30F59"</span>), StringExternal(<span class="hljs-string">"Param/Value/AEA83BA8"</span>), c_objectiveStateActive, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4779</span>
+ObjectiveCreate(StringExternal(<span class="hljs-string">"Param/Value/19F8DA70"</span>), StringExternal(<span class="hljs-string">"Param/Value/C829731D"</span>), c_objectiveStateActive, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4868</span>
+ObjectiveCreate(StringExternal(<span class="hljs-string">"Param/Value/1A489F89"</span>), StringExternal(<span class="hljs-string">"Param/Value/A5253672"</span>), c_objectiveStateHidden, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4931</span>
+ObjectiveCreate(StringExternal(<span class="hljs-string">"Param/Value/05DF4AC2"</span>), StringExternal(<span class="hljs-string">"Param/Value/F0DF8BF5"</span>), c_objectiveStateHidden, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5191</span>
+ObjectiveCreate(StringExternal(<span class="hljs-string">"Param/Value/820914DC"</span>), StringExternal(<span class="hljs-string">"Param/Value/7F9AF8BD"</span>), c_objectiveStateActive, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5195</span>
+ObjectiveCreate(StringExternal(<span class="hljs-string">"Param/Value/16D72A28"</span>), StringExternal(<span class="hljs-string">"Param/Value/BCE76B36"</span>), c_objectiveStateActive, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5199</span>
+ObjectiveCreate(StringExternal(<span class="hljs-string">"Param/Value/7ED3A1C9"</span>), StringExternal(<span class="hljs-string">"Param/Value/526417E1"</span>), c_objectiveStateActive, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5347</span>
+ObjectiveCreate(StringExternal(<span class="hljs-string">"Param/Value/6689C8DD"</span>), StringExternal(<span class="hljs-string">"Param/Value/EFF9976E"</span>), c_objectiveStateActive, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L5433</span>
+ObjectiveCreate(StringToText(<span class="hljs-string">""</span>), StringExternal(<span class="hljs-string">"Param/Value/7518EA21"</span>), c_objectiveStateActive, <span class="hljs-literal">false</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L1918</span>
+ObjectiveCreate(StringExternal(<span class="hljs-string">"Param/Value/E4F8D808"</span>), StringExternal(<span class="hljs-string">"Param/Value/87E9DD21"</span>), c_objectiveStateActive, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2236</span>
+ObjectiveCreate((StringExternal(<span class="hljs-string">"Param/Value/6D7774ED"</span>) + gv_tEXTUP + gv_tEXTDOWN + gv_tEXTLEFT + gv_tEXTRIGHT), StringExternal(<span class="hljs-string">"Param/Value/5EB2ED6A"</span>), c_objectiveStateActive, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2547</span>
+ObjectiveCreate(StringExternal(<span class="hljs-string">"Param/Value/0F5AAC03"</span>), StringExternal(<span class="hljs-string">"Param/Value/E74D0D6B"</span>), c_objectiveStateActive, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L2877</span>
+ObjectiveCreate(StringExternal(<span class="hljs-string">"Param/Value/D51180E1"</span>), StringExternal(<span class="hljs-string">"Param/Value/50430381"</span>), c_objectiveStateActive, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3123</span>
+ObjectiveCreate(StringExternal(<span class="hljs-string">"Param/Value/E019520B"</span>), StringExternal(<span class="hljs-string">"Param/Value/A292FE8B"</span>), c_objectiveStateActive, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3329</span>
+ObjectiveCreate(StringExternal(<span class="hljs-string">"Param/Value/1C04A952"</span>), StringExternal(<span class="hljs-string">"Param/Value/D2EEC3FE"</span>), c_objectiveStateActive, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3611</span>
+ObjectiveCreate(StringExternal(<span class="hljs-string">"Param/Value/16B2218B"</span>), StringExternal(<span class="hljs-string">"Param/Value/0E0A5E06"</span>), c_objectiveStateActive, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L3945</span>
+ObjectiveCreate(StringExternal(<span class="hljs-string">"Param/Value/925E3AAF"</span>), StringExternal(<span class="hljs-string">"Param/Value/AB5D89E3"</span>), c_objectiveStateActive, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4359</span>
+ObjectiveCreate(StringExternal(<span class="hljs-string">"Param/Value/31DEF9EE"</span>), StringExternal(<span class="hljs-string">"Param/Value/018284E3"</span>), c_objectiveStateActive, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4924</span>
+ObjectiveCreate(StringExternal(<span class="hljs-string">"Param/Value/EEAB7369"</span>), StringExternal(<span class="hljs-string">"Param/Value/A8D72A25"</span>), c_objectiveStateActive, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4118</span>
+ObjectiveCreate(StringExternal(<span class="hljs-string">"Param/Value/9E172D60"</span>), StringExternal(<span class="hljs-string">"Param/Value/7B506F18"</span>), c_objectiveStateActive, <span class="hljs-literal">true</span>)
+</code></pre>
+<pre class="hljs"><code><span class="hljs-comment">// L4223</span>
+ObjectiveCreate(StringExternal(<span class="hljs-string">"Param/Value/88629B8D"</span>), StringExternal(<span class="hljs-string">"Param/Value/35A1F683"</span>), c_objectiveStateActive, <span class="hljs-literal">true</span>)
+</code></pre>
+
+
+
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+</html>
